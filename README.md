@@ -3,13 +3,13 @@
 * Connects E3 boiler controller through CAN UDS or doip
 * Read known datapoints
 
-# Requirements
+## Requirements
     pip3 install -r requirements.txt
 
-# Setup CAN Bus
+## Setup CAN Bus
     sudo ip link set can0 up type can bitrate 250000
 
-# Usage
+## Usage
     python3 Open3Eclient.py -c can0 -h
     usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-a] [-r READ] [-t TIMESTEP] [-v]
 
@@ -23,7 +23,7 @@
                             read continious with delay in s
     -v, --verbose         verbose info
 
-# Read dids
+## Read dids
     python3 Open3Eclient.py -c can0 -r 268 -v
     0x10c FlowTempSensor 27.2
 
@@ -36,7 +36,11 @@
     python3 Open3Eclient.py -c can0 -r 1043 -v
     0x413 FlowMeterSensor 2412.0
 
-# Interval Readout
+## use doip instead (connected service access point)
+    python3 Open3Eclient.py -d 192.168.0.1 -r 377 -v
+    0x179 IdentNumber XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+## Interval Readout
     python3 Open3Eclient.py -c can0 -r 1043 -t 1
     2412.0
     2413.0
