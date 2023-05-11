@@ -14,7 +14,7 @@
    limitations under the License.
 """
 
-import udsoncan 
+import udsoncan
 from doipclient import DoIPClient
 from doipclient.connectors import DoIPClientUDSConnector
 from udsoncan.connections import IsoTPSocketConnection
@@ -60,6 +60,12 @@ with Client(conn, request_timeout=10, config=config) as client:
     client.logger.setLevel(loglevel)
 
     if(args.read != None):
+        if(args.mqtt != None):
+            mqttParamas = args.mqtt.split(":")
+            client1 = paho.Client("Open3E")
+            if(len(mqttParamas) == 5):
+                client1.username_pw_set(mqttParamas[3], password=mqttParamas[4])
+            client1.connect(mqttParamas[0], int(mqttParamas[1]))
         while(True):
             dids = args.read.split(",")
             for did in dids:
@@ -71,13 +77,7 @@ with Client(conn, request_timeout=10, config=config) as client:
                 else:
                     print (response.service_data.values[did])
                 if(args.mqtt != None):
-                    mqttParamas = args.mqtt.split(":")
-                    client1 = paho.Client("Open3E")
-                    if(len(mqttParamas) == 5):
-                        client1.username_pw_set(mqttParamas[3], password=mqttParamas[4])
-                    client1.connect(mqttParamas[0], int(mqttParamas[1])) 
                     ret = client1.publish(mqttParamas[2] + "/" + dataIdentifiers[did].id, response.service_data.values[did])
-                    
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
@@ -90,4 +90,3 @@ with Client(conn, request_timeout=10, config=config) as client:
                     print (hex(did), dataIdentifiers[did].id, response.service_data.values[did])
                 else:
                     print (hex(did), response.service_data.values[did])
-
