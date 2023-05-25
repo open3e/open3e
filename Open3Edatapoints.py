@@ -30,6 +30,7 @@ dataIdentifiers = {
     355 : O3EInt16(9, "SecondaryHeatExchangerLiquidTempSensor"),
     1043 : O3EInt16(5, "FlowMeterSensor"),
     377 : RawCodec(16, "IdentNumber"),
+    381	: O3EInt8(4, "CentralHeatingPump", offset = 1),
     424 : O3EInt16(9, "Mixer1TempSetpoint"),
     426 : O3EInt16(9, "Mixer2TempSetpoint"),
     428 : O3EInt16(9, "Mixer3TempSetpoint"),

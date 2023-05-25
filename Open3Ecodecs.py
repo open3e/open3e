@@ -39,16 +39,18 @@ class RawCodec(udsoncan.DidCodec):
 class O3EInt16(udsoncan.DidCodec):
     string_len: int
 
-    def __init__(self, string_len: int, idStr: str):
+    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
+        self.scale = scale
+        self.offset = offset
 
     def encode(self, string_ascii: float) -> bytes:
         raise Exception("not implemented yet")
         return ""
 
     def decode(self, string_bin: bytes) -> float:
-        return ((int(string_bin[1]) << 8) + int(string_bin[0])) / 10;
+        return ((int(string_bin[self.offset + 1]) << 8) + int(string_bin[self.offset + 0])) / self.scale;
 
     def __len__(self) -> int:
         return self.string_len
@@ -56,16 +58,18 @@ class O3EInt16(udsoncan.DidCodec):
 class O3EInt8(udsoncan.DidCodec):
     string_len: int
 
-    def __init__(self, string_len: int, idStr: str):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
+        self.scale = scale
+        self.offset = offset
 
     def encode(self, string_ascii: float) -> bytes:
         raise Exception("not implemented yet")
         return ""
 
     def decode(self, string_bin: bytes) -> float:
-        return int(string_bin[0]);
+        return int(float(string_bin[self.offset]) / self.scale);
 
     def __len__(self) -> int:
         return self.string_len
