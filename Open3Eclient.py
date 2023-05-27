@@ -71,6 +71,7 @@ with Client(conn, request_timeout=10, config=config) as client:
             for did in dids:
                 did = eval(did)
                 response = client.read_data_by_identifier([did])
+                time.sleep(0.1)
                 if(args.verbose == True):
                     print (hex(did), dataIdentifiers[did].id, response.service_data.values[did])
                 else:
