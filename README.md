@@ -10,8 +10,8 @@
     sudo ip link set can0 up type can bitrate 250000
 
 # Usage
-    python Open3Eclient.py -h
-    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-a] [-r READ] [-t TIMESTEP] [-m MQTT] [-v]
+    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-a] [-r READ] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING]
+                        [-muser MQTTUSER] [-mpass MQTTPASS] [-v]
 
     optional arguments:
     -h, --help            show this help message and exit
@@ -21,7 +21,13 @@
     -r READ, --read READ  read did, e.g. 0x173,0x174
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
-    -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname:(USER):(PASS)
+    -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
+    -mfstr MQTTFORMATSTRING, --mqttformatstring MQTTFORMATSTRING
+                            mqtt formatstring e.g. {didNumber}_{didName}
+    -muser MQTTUSER, --mqttuser MQTTUSER
+                            mqtt username
+    -mpass MQTTPASS, --mqttpass MQTTPASS
+                            mqtt password
     -v, --verbose         verbose info
 
 # Read dids
@@ -48,3 +54,6 @@
 # Publish datapoints to mqtt
     python Open3Eclient.py -c can0 -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan datapoints and publish data to broker 192.168.0.5
+
+    python Open3Eclient.py -c can0 -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor

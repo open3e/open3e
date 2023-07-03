@@ -23,6 +23,7 @@ class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
+        self.complex = False
 
     def encode(self, string_ascii: Any) -> bytes:
         if len(string_ascii) != self.string_len:
@@ -39,18 +40,21 @@ class RawCodec(udsoncan.DidCodec):
 class O3EInt16(udsoncan.DidCodec):
     string_len: int
 
-    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
         self.string_len = string_len
         self.id = idStr
+        self.complex = False
         self.scale = scale
         self.offset = offset
+        self.signed = signed
 
     def encode(self, string_ascii: float) -> bytes:
         raise Exception("not implemented yet")
         return ""
 
     def decode(self, string_bin: bytes) -> float:
-        return ((int(string_bin[self.offset + 1]) << 8) + int(string_bin[self.offset + 0])) / self.scale;
+        val = int.from_bytes([string_bin[self.offset + 1],string_bin[self.offset + 0]], byteorder="big", signed=self.signed)
+        return val / self.scale;
 
     def __len__(self) -> int:
         return self.string_len
@@ -58,18 +62,85 @@ class O3EInt16(udsoncan.DidCodec):
 class O3EInt8(udsoncan.DidCodec):
     string_len: int
 
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         self.string_len = string_len
         self.id = idStr
+        self.complex = False
         self.scale = scale
         self.offset = offset
+        self.signed = signed
 
     def encode(self, string_ascii: float) -> bytes:
         raise Exception("not implemented yet")
         return ""
 
     def decode(self, string_bin: bytes) -> float:
-        return int(float(string_bin[self.offset]) / self.scale);
+        val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
+        return int(float(val) / self.scale);
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
+class O3ECompStat(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+
+    def encode(self, string_ascii: float) -> bytes:
+        raise Exception("not implemented yet")
+        return ""
+
+    def decode(self, string_bin: bytes): #-> int:
+        return {
+            "starts": int.from_bytes([string_bin[7],string_bin[6]], byteorder="big", signed=False),
+            "hours": int.from_bytes([string_bin[11],string_bin[10]], byteorder="big", signed=False)
+        }
+
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3EAddElHeaterStat(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+
+    def encode(self, string_ascii: float) -> bytes:
+        raise Exception("not implemented yet")
+        return ""
+
+    def decode(self, string_bin: bytes): #-> int:
+        return {
+            "starts": int.from_bytes([string_bin[4],string_bin[3]], byteorder="big", signed=False),
+            "hours": int.from_bytes([string_bin[8],string_bin[7]], byteorder="big", signed=False)
+        }
+
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3EHeatingCurve(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+
+    def encode(self, string_ascii: float) -> bytes:
+        raise Exception("not implemented yet")
+        return ""
+
+    def decode(self, string_bin: bytes): #-> int:
+        return {
+            "slope": float(string_bin[0]) / 10.0,
+            "offset": int.from_bytes([string_bin[1]], byteorder="big", signed=True)
+        }
 
     def __len__(self) -> int:
         return self.string_len

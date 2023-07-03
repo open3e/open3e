@@ -41,7 +41,10 @@ parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.16
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
-parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname:(USER):(PASS)")
+parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
+parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
+parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username")
+parser.add_argument("-mpass", "--mqttpass", type=str, help="mqtt password")
 parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 
@@ -63,21 +66,38 @@ with Client(conn, request_timeout=10, config=config) as client:
         if(args.mqtt != None):
             mqttParamas = args.mqtt.split(":")
             client1 = paho.Client("Open3E")
-            if(len(mqttParamas) == 5):
-                client1.username_pw_set(mqttParamas[3], password=mqttParamas[4])
+            if((args.mqttuser != None) and (args.mqttpass != None)):
+                client1.username_pw_set(args.mqttuser , password=args.mqttpass)
             client1.connect(mqttParamas[0], int(mqttParamas[1]))
+            print("Read dids and publish to mqtt...")
         while(True):
             dids = args.read.split(",")
             for did in dids:
                 did = eval(did)
                 response = client.read_data_by_identifier([did])
                 time.sleep(0.1)
-                if(args.verbose == True):
-                    print (hex(did), dataIdentifiers[did].id, response.service_data.values[did])
-                else:
-                    print (response.service_data.values[did])
                 if(args.mqtt != None):
-                    ret = client1.publish(mqttParamas[2] + "/" + dataIdentifiers[did].id, response.service_data.values[did])
+                    # if no format string is set
+                    if(args.mqttformatstring == None):
+                        mqttformatstring = "{didName}" # default
+                    else:
+                        mqttformatstring = args.mqttformatstring
+                    publishStr = mqttformatstring.format(
+                        didName = dataIdentifiers[did].id,
+                        didNumber = did
+                    )
+                    if(dataIdentifiers[did].complex == True): 
+                        # complex datatype
+                        for key, value in response.service_data.values[did].items():
+                            ret = client1.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
+                    else: 
+                        # scalar datatype
+                        ret = client1.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
+                else:
+                    if(args.verbose == True):
+                        print (did, dataIdentifiers[did].id, response.service_data.values[did])
+                    else:
+                        print (response.service_data.values[did])
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
