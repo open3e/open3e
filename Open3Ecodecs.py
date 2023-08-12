@@ -17,6 +17,8 @@
 import udsoncan 
 from typing import Optional, Any
 
+flag_rawmode = True
+
 class RawCodec(udsoncan.DidCodec):
     string_len: int
 
@@ -26,9 +28,10 @@ class RawCodec(udsoncan.DidCodec):
         self.complex = False
 
     def encode(self, string_ascii: Any) -> bytes:
-        if len(string_ascii) != self.string_len:
+        string_bin = bytes.fromhex(string_ascii)
+        if len(string_bin) != self.string_len:
             raise ValueError('String must be %d long' % self.string_len)
-        return string_ascii
+        return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         string_ascii = string_bin.hex()
@@ -48,11 +51,14 @@ class O3EInt16(udsoncan.DidCodec):
         self.offset = offset
         self.signed = signed
 
-    def encode(self, string_ascii: float) -> bytes:
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         raise Exception("not implemented yet")
-        return ""
 
-    def decode(self, string_bin: bytes) -> float:
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
         val = int.from_bytes([string_bin[self.offset + 1],string_bin[self.offset + 0]], byteorder="big", signed=self.signed)
         return val / self.scale;
 
@@ -70,11 +76,14 @@ class O3EInt8(udsoncan.DidCodec):
         self.offset = offset
         self.signed = signed
 
-    def encode(self, string_ascii: float) -> bytes:
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         raise Exception("not implemented yet")
-        return ""
 
-    def decode(self, string_bin: bytes) -> float:
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
         val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
         return int(float(val) / self.scale);
 
@@ -90,11 +99,14 @@ class O3ECompStat(udsoncan.DidCodec):
         self.id = idStr
         self.complex = True
 
-    def encode(self, string_ascii: float) -> bytes:
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         raise Exception("not implemented yet")
-        return ""
 
-    def decode(self, string_bin: bytes): #-> int:
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
         return {
             "starts": int.from_bytes([string_bin[7],string_bin[6]], byteorder="big", signed=False),
             "hours": int.from_bytes([string_bin[11],string_bin[10]], byteorder="big", signed=False)
@@ -111,11 +123,14 @@ class O3EAddElHeaterStat(udsoncan.DidCodec):
         self.id = idStr
         self.complex = True
 
-    def encode(self, string_ascii: float) -> bytes:
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         raise Exception("not implemented yet")
-        return ""
 
-    def decode(self, string_bin: bytes): #-> int:
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
         return {
             "starts": int.from_bytes([string_bin[4],string_bin[3]], byteorder="big", signed=False),
             "hours": int.from_bytes([string_bin[8],string_bin[7]], byteorder="big", signed=False)
@@ -132,11 +147,13 @@ class O3EHeatingCurve(udsoncan.DidCodec):
         self.id = idStr
         self.complex = True
 
-    def encode(self, string_ascii: float) -> bytes:
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         raise Exception("not implemented yet")
-        return ""
 
-    def decode(self, string_bin: bytes): #-> int:
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): return RawCodec.decode(self, string_bin)
         return {
             "slope": float(string_bin[0]) / 10.0,
             "offset": int.from_bytes([string_bin[1]], byteorder="big", signed=True)

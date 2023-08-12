@@ -31,6 +31,7 @@ import Open3Edatapoints
 from Open3Edatapoints import *
 
 import Open3Ecodecs
+from Open3Ecodecs import *
 
 udsoncan.setup_logging()
 loglevel = logging.ERROR
@@ -40,6 +41,8 @@ parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
 parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
+parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
+parser.add_argument("-w", "--write", type=str, help="write did, e.g. 0x173=0x1000 (raw data only!)")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
@@ -61,6 +64,8 @@ config['data_identifiers'] = dataIdentifiers
 
 with Client(conn, request_timeout=10, config=config) as client:
     client.logger.setLevel(loglevel)
+
+    Open3Ecodecs.flag_rawmode = args.raw
 
     if(args.read != None):
         if(args.mqtt != None):
@@ -110,3 +115,16 @@ with Client(conn, request_timeout=10, config=config) as client:
                     print (hex(did), dataIdentifiers[did].id, response.service_data.values[did])
                 else:
                     print (hex(did), response.service_data.values[did])
+        # experimental write to did
+        if(args.write != None):
+            if(args.raw == False):
+                raise Exception("Error: write only accepts raw data, use -raw param")
+            writeArg = args.write.split("=")
+            didKey=eval(writeArg[0])
+            didVal=writeArg[1]
+            if(args.verbose == True):
+                print("Write did", didKey, "with value", didVal, "...")
+            response = client.write_data_by_identifier(didKey, didVal)
+            if(args.verbose == True):
+                print("done.")
+            time.sleep(0.1)

@@ -131,7 +131,7 @@ dataIdentifiers = {
     2549	: O3EInt16(9, "MixerFourCircuitRoomTemperatureSetpointCooling", signed=True),
     2557	: O3EInt8(1, "HeatPumpState"),
     2560	: O3EInt8(1, "SmartGridFeatureSelection"),
-    2569	: RawCodec(2, "CompressorSpeedRps"),
+    2569	: O3EInt16(2, "CompressorSpeedRps", scale = 10),
     2626	: O3EInt16(4, "MaximumPowerElectricalHeater", scale = 1),
     2629	: O3EInt16(4, "DesiredThermalCapacity", scale = 1),
     2634	: O3EInt8(1, "NoiseReductionMode"),
@@ -141,5 +141,5 @@ dataIdentifiers = {
     2806	: O3EInt8(2, "RefrigerationCircuitOperationMode", offset = 1),
     2853	: RawCodec(2, "ExternalHeaterTimeIntegralThershold"),
     2940	: RawCodec(3, "ExternalHeaterDelayTimer"),
-    3015	: O3EInt16(9, "HeatSinkTemperatureSensor", signed=True)
+    3015	: O3EInt16(9, "HeatSinkTemperatureSensor", signed=True),
 }

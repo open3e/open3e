@@ -10,15 +10,18 @@
     sudo ip link set can0 up type can bitrate 250000
 
 # Usage
-    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-a] [-r READ] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING]
+    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING]
                         [-muser MQTTUSER] [-mpass MQTTPASS] [-v]
 
-    optional arguments:
+    options:
     -h, --help            show this help message and exit
     -c CAN, --can CAN     use can device, e.g. can0
     -d DOIP, --doip DOIP  use doip access, e.g. 192.168.1.1
     -a, --scanall         dump all dids
     -r READ, --read READ  read did, e.g. 0x173,0x174
+    -raw, --raw           return raw data for all dids
+    -w WRITE, --write WRITE
+                            write did, e.g. 0x173=0x1000 (raw data only!)
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
@@ -50,6 +53,10 @@
     2411.0
     2412.0
     ...
+
+# Write did (experimental)
+    python3 Open3Eclient.py -d 127.0.0.1 -w 268=f8009f007b02f80000 -raw
+    -> writes hex string to did 268
 
 # Publish datapoints to mqtt
     python Open3Eclient.py -c can0 -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
