@@ -1,4 +1,4 @@
-udsoncan-1.17.1
-doipclient-1.0.8
-can-isotp-1.8
-paho-mqtt-1.6.1
+udsoncan
+doipclient
+can-isotp
+paho-mqtt
