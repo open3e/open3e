@@ -17,7 +17,7 @@
 import Open3Ecodecs
 from Open3Ecodecs import *
 
-dataIdentifiers = {
+dataIdentifiersVcal = {
     256	: RawCodec(36, "BusIdentification"),
     268	: O3EInt16(9, "FlowTemperatureSensor", signed=True),
     269	: O3EInt16(9, "ReturnTemperatureSensor", signed=True),

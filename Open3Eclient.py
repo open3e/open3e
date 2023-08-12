@@ -27,8 +27,11 @@ import argparse
 import time
 import paho.mqtt.client as paho
 
-import Open3Edatapoints
-from Open3Edatapoints import *
+import Open3EdatapointsVcal
+import Open3EdatapointsVdens
+
+from Open3EdatapointsVcal import *
+from Open3EdatapointsVdens import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
@@ -39,6 +42,7 @@ loglevel = logging.ERROR
 parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
 parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
+parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal")
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
@@ -51,15 +55,29 @@ parser.add_argument("-mpass", "--mqttpass", type=str, help="mqtt password")
 parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 
+if(args.dev == None):
+    args.dev = "vcal"
+
 if(args.doip != None):
     conn = DoIPClientUDSConnector (DoIPClient(args.doip, 0x680))
 
 if(args.can != None):
     conn = IsoTPSocketConnection(args.can, rxid=0x690, txid=0x680)
+    # workaround missing padding for vdens (thanks to Phil, JB and HB!)
+    if(args.dev == "vdens"):
+        conn.tpsock.set_opts(txpad=0x00)
 
 conn.logger.setLevel(loglevel)
 
 config = dict(udsoncan.configs.default_client_config)
+
+# load datapoints for selected device
+dataIdentifiers = None
+if(args.dev == "vcal"):
+    dataIdentifiers = dataIdentifiersVcal
+if(args.dev == "vdens"):
+    dataIdentifiers = dataIdentifiersVdens    
+
 config['data_identifiers'] = dataIdentifiers
 
 with Client(conn, request_timeout=10, config=config) as client:
