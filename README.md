@@ -57,8 +57,8 @@
     ...
 
 # Write did (experimental)
-    python3 Open3Eclient.py -d 127.0.0.1 -dev vcal -w 268=f8009f007b02f80000 -raw
-    -> writes hex string to did 268
+    python3 Open3Eclient.py -c can0 -dev vdens -raw -w 396=D601
+    -> sets domestic hot water setpoint to 48degC
 
 # Publish datapoints to mqtt
     python Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
