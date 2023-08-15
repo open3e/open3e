@@ -130,9 +130,9 @@ with Client(conn, request_timeout=10, config=config) as client:
             for did in dataIdentifiers.keys():
                 response = client.read_data_by_identifier([did])
                 if(args.verbose == True):
-                    print (hex(did), dataIdentifiers[did].id, response.service_data.values[did])
+                    print (did, dataIdentifiers[did].id, response.service_data.values[did])
                 else:
-                    print (hex(did), response.service_data.values[did])
+                    print (did, response.service_data.values[did])
         # experimental write to did
         if(args.write != None):
             if(args.raw == False):
