@@ -88,10 +88,12 @@ with Client(conn, request_timeout=10, config=config) as client:
     if(args.read != None):
         if(args.mqtt != None):
             mqttParamas = args.mqtt.split(":")
-            client1 = paho.Client("Open3E")
+            client_mqtt = paho.Client("Open3E")
             if((args.mqttuser != None) and (args.mqttpass != None)):
-                client1.username_pw_set(args.mqttuser , password=args.mqttpass)
-            client1.connect(mqttParamas[0], int(mqttParamas[1]))
+                client_mqtt.username_pw_set(args.mqttuser , password=args.mqttpass)
+            client_mqtt.connect(mqttParamas[0], int(mqttParamas[1]))
+            client_mqtt.reconnect_delay_set(min_delay=1, max_delay=30)
+            client_mqtt.loop_start()
             print("Read dids and publish to mqtt...")
         while(True):
             dids = args.read.split(",")
@@ -112,10 +114,10 @@ with Client(conn, request_timeout=10, config=config) as client:
                     if(dataIdentifiers[did].complex == True): 
                         # complex datatype
                         for key, value in response.service_data.values[did].items():
-                            ret = client1.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
+                            ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
                     else: 
                         # scalar datatype
-                        ret = client1.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
+                        ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
                 else:
                     if(args.verbose == True):
                         print (did, dataIdentifiers[did].id, response.service_data.values[did])
