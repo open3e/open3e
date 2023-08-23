@@ -80,7 +80,12 @@ if(args.dev == "vdens"):
 
 config['data_identifiers'] = dataIdentifiers
 
-with Client(conn, request_timeout=10, config=config) as client:
+# increase default timeout
+config['request_timeout'] = 20
+config['p2_timeout'] = 20
+config['p2_star_timeout'] = 20
+
+with Client(conn, config=config) as client:
     client.logger.setLevel(loglevel)
 
     Open3Ecodecs.flag_rawmode = args.raw
