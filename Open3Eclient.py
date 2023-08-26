@@ -46,7 +46,7 @@ parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or 
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
-parser.add_argument("-w", "--write", type=str, help="write did, e.g. 0x173=0x1000 (raw data only!)")
+parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
@@ -146,7 +146,7 @@ with Client(conn, config=config) as client:
                 raise Exception("Error: write only accepts raw data, use -raw param")
             writeArg = args.write.split("=")
             didKey=eval(writeArg[0])
-            didVal=writeArg[1]
+            didVal=str(writeArg[1]).replace("0x","")
             if(args.verbose == True):
                 print("Write did", didKey, "with value", didVal, "...")
             response = client.write_data_by_identifier(didKey, didVal)

@@ -23,7 +23,7 @@
     -r READ, --read READ  read did, e.g. 0x173,0x174
     -raw, --raw           return raw data for all dids
     -w WRITE, --write WRITE
-                            write did, e.g. 0x173=0x1000 (raw data only!)
+                            write did, e.g. -w 396=D601 (raw data only!)
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
