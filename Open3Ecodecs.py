@@ -161,3 +161,26 @@ class O3EHeatingCurve(udsoncan.DidCodec):
 
     def __len__(self) -> int:
         return self.string_len
+    
+class O3EOperationState(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): return RawCodec.decode(self, string_bin)
+        return {
+            "mode": int(string_bin[0]),
+            "state": int(string_bin[1]),
+        }
+
+    def __len__(self) -> int:
+        return self.string_len
