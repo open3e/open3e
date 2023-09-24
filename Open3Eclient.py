@@ -33,6 +33,7 @@ import Open3EdatapointsVx3
 
 from Open3EdatapointsVcal import *
 from Open3EdatapointsVdens import *
+from Open3EdatapointsVx3 import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
