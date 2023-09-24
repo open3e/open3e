@@ -19,5 +19,6 @@ from Open3Ecodecs import *
 
 dataIdentifiersVx3 = {
     256	: RawCodec(36, "BusIdentification"),
-    
+    1834 : O3EInt8(4, "ElectricalEnergyStorageStateOfEnergy"),
+    1664 : O3EInt8(1, "ElectricalEnergyStorageStateOfCharge"),
 }
