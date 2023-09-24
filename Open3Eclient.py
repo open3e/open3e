@@ -79,7 +79,7 @@ if(args.dev == "vcal"):
     dataIdentifiers = dataIdentifiersVcal
 if(args.dev == "vdens"):
     dataIdentifiers = dataIdentifiersVdens    
-if(args.dev == "vdens"):
+if(args.dev == "vx3"):
     dataIdentifiers = dataIdentifiersVx3
 
 config['data_identifiers'] = dataIdentifiers
