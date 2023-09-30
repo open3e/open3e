@@ -187,7 +187,7 @@ dataIdentifiersVcal = {
             787	: RawCodec(57, "MixerFourCircuitTimeScheduleSaturday"),
             788	: RawCodec(57, "MixerFourCircuitTimeScheduleSunday"),
             873	: RawCodec(2, "LegionellaProtectionActivation"),
-            874	: RawCodec(3, "LegionellaProtectionTargetTemperatureSetpoint"),
+            874	: O3EInt16(3, "LegionellaProtectionTargetTemperatureSetpoint"),
             875	: RawCodec(2, "LegionellaProtectionStartTime"),
             876	: O3EInt8(1, "LegionellaProtectionWeekday"),
             877	: RawCodec(3, "LegionellaProtectionLastSuccessfulStartTime"),
