@@ -90,6 +90,58 @@ class O3EInt8(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EInt32(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+        self.scale = scale
+        self.offset = offset
+        self.signed = signed
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        val = int.from_bytes(string_bin[0:4], byteorder="little", signed=self.signed)
+        return int(float(val) / self.scale);
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
+class O3E3PhasePower(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return {
+            "sum": int.from_bytes(string_bin[0:4], byteorder="little", signed=False),
+            "phase1": int.from_bytes(string_bin[4:8], byteorder="little", signed=False),
+            "phase2": int.from_bytes(string_bin[8:12], byteorder="little", signed=False),
+            "phase3": int.from_bytes(string_bin[12:16], byteorder="little", signed=False)
+        }
+
+    def __len__(self) -> int:
+        return self.string_len
+
 
 class O3ECompStat(udsoncan.DidCodec):
     string_len: int
