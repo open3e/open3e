@@ -60,7 +60,7 @@ class O3EInt16(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         val = int.from_bytes([string_bin[self.offset + 1],string_bin[self.offset + 0]], byteorder="big", signed=self.signed)
-        return val / self.scale;
+        return val / self.scale
 
     def __len__(self) -> int:
         return self.string_len
@@ -84,12 +84,11 @@ class O3EInt8(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        result = dict()
-        index = 0
-        for subType in self.subTypes:
-            result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
-            index+=subType.string_len
-        return dict(result)
+        val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
+        return int(float(val) / self.scale)
+
+    def __len__(self) -> int:
+        return self.string_len
 
 class O3EInt32(udsoncan.DidCodec):
     string_len: int
@@ -111,7 +110,7 @@ class O3EInt32(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         val = int.from_bytes(string_bin[0:4], byteorder="little", signed=self.signed)
-        return float(val) / self.scale;
+        return float(val) / self.scale
 
     def __len__(self) -> int:
         return self.string_len
@@ -136,11 +135,8 @@ class O3EComplexType(udsoncan.DidCodec):
         result = dict()
         index = 0
         for subType in self.subTypes:
-            codecType = subType['type']
-            subType.pop('type')
-            codec = codecType(**subType)
-            result[subType['idStr']] = codec.decode(string_bin[index:index+subType['string_len']])
-            index+=subType['string_len']
+            result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
+            index+=subType.string_len
         return dict(result)
     
     def __len__(self) -> int:
