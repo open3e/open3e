@@ -84,11 +84,12 @@ class O3EInt8(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
-        return int(float(val) / self.scale);
-
-    def __len__(self) -> int:
-        return self.string_len
+        result = dict()
+        index = 0
+        for subType in self.subTypes:
+            result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
+            index+=subType.string_len
+        return dict(result)
 
 class O3EInt32(udsoncan.DidCodec):
     string_len: int
