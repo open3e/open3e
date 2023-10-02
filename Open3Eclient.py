@@ -76,11 +76,11 @@ config = dict(udsoncan.configs.default_client_config)
 # load datapoints for selected device
 dataIdentifiers = None
 if(args.dev == "vcal"):
-    dataIdentifiers = dataIdentifiersVcal
+    dataIdentifiers = dataIdentifiersVcal[0x680]["dids"]
 if(args.dev == "vdens"):
-    dataIdentifiers = dataIdentifiersVdens    
+    dataIdentifiers = dataIdentifiersVdens[0x680]["dids"]
 if(args.dev == "vx3"):
-    dataIdentifiers = dataIdentifiersVx3
+    dataIdentifiers = dataIdentifiersVx3[0x680]["dids"]
 
 config['data_identifiers'] = dataIdentifiers
 
