@@ -153,7 +153,7 @@ dataIdentifiersVx3 = {
             1812: RawCodec(2, "PointOfCommonCouplingConfiguredEnergyMeter"),
             1822: RawCodec(51, "ThreePhaseInverterCurrent"),
             1823: RawCodec(27, "ThreePhaseInverterVoltage"),
-            1824: O3EComplexType(16, "ThreePhaseInverterCurrentPower", [O3EInt16(string_len=4, idStr="cumulated", scale=1), O3EInt16(string_len=4, idStr="L1", scale=1), O3EInt16(string_len=4, idStr="L2", scale=1), O3EInt16(string_len=4, idStr="L3", scale=1)]),
+            1824: O3EComplexType(16, "ThreePhaseInverterCurrentPower", [O3EInt32(string_len=4, idStr="cumulated", scale=1), O3EInt32(string_len=4, idStr="L1", scale=1), O3EInt32(string_len=4, idStr="L2", scale=1), O3EInt32(string_len=4, idStr="L3", scale=1)]),
             1825: RawCodec(16, "ThreePhaseInverterCurrentApparentPower"),
             1826: RawCodec(4, "ThreePhaseInverterMaximunNominalPower"),
             1827: RawCodec(4, "InverterElectricalEnergyStorageMaximumNominalChargePower"),
