@@ -18,7 +18,7 @@
     -h, --help            show this help message and exit
     -c CAN, --can CAN     use can device, e.g. can0
     -d DOIP, --doip DOIP  use doip access, e.g. 192.168.1.1
-    -dev DEV, --dev DEV   boiler type --dev vdens or --dev vcal
+    -dev DEV, --dev DEV   boiler type --dev vdens or --dev vcal || pv/battery --dev vx3
     -a, --scanall         dump all dids
     -r READ, --read READ  read did, e.g. 0x173,0x174
     -raw, --raw           return raw data for all dids
@@ -47,6 +47,9 @@
 
     python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -v
     0x413 FlowMeterSensor 2412.0
+
+    python3 Open3Eclient.py -c can0 -dev vx3 -r 1664 -v
+    1664 ElectricalEnergyStorageStateOfCharge 44
 
 # Interval Readout
     python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -t 1
