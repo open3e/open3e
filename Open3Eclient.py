@@ -29,9 +29,11 @@ import paho.mqtt.client as paho
 
 import Open3EdatapointsVcal
 import Open3EdatapointsVdens
+import Open3EdatapointsVx3
 
 from Open3EdatapointsVcal import *
 from Open3EdatapointsVdens import *
+from Open3EdatapointsVx3 import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
@@ -42,7 +44,7 @@ loglevel = logging.ERROR
 parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
 parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
-parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal")
+parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
@@ -77,6 +79,8 @@ if(args.dev == "vcal"):
     dataIdentifiers = dataIdentifiersVcal[0x680]["dids"]
 if(args.dev == "vdens"):
     dataIdentifiers = dataIdentifiersVdens[0x680]["dids"]
+if(args.dev == "vx3"):
+    dataIdentifiers = dataIdentifiersVx3[0x680]["dids"]
 
 config['data_identifiers'] = dataIdentifiers
 
