@@ -144,7 +144,7 @@ dataIdentifiersVx3 = {
             1710: RawCodec(8, "FunctionalSoftwareVersion"),
             1718: RawCodec(2, "ElectricalEnergySystemConfiguration"),
             1801: O3EComplexType(40, "ElectricalEnergyStorageEnergyTransferStatistic", [O3EInt32(4, "BatteryChargeToday", scale=1.0), O3EInt32(4, "BatteryChargeWeek", scale=1.0), O3EInt32(4, "BatteryChargeMonth", scale=1.0), O3EInt32(4, "BatteryDischargeYear", scale=1.0), O3EInt32(4, "BatteryChargeTotal", scale=1.0), O3EInt32(4, "BatteryDischargeToday", scale=1.0), O3EInt32(4, "BatteryDischargeWeek", scale=1.0), O3EInt32(4, "BatteryDischargeMonth", scale=1.0), O3EInt32(4, "BatteryDischargeYear", scale=1.0), O3EInt32(4, "BatteryDischargeTotal", scale=1.0)]),
-            1802: RawCodec(80, "EnergyProductionPhotovoltaic"),
+            1802: O3EComplexType(80, "EnergyProductionPhotovoltaic", [O3EInt32(4, "PhotovoltaicProductionToday"), O3EInt32(4, "PhotovoltaicProductionWeek"), O3EInt32(4, "PhotovoltaicProductionMonth"), O3EInt32(4, "PhotovoltaicProductionYear"), O3EInt32(4, "PhotovoltaicProductionTotal"), RawCodec(60, "Uninterpreted")]),
             1807: RawCodec(10, "ElectricalEnergyInverterDcInputOne"),
             1808: RawCodec(10, "ElectricalEnergyInverterDcInputTwo"),
             1809: RawCodec(10, "ElectricalEnergyInverterDcInputThree"),
