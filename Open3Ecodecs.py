@@ -109,7 +109,7 @@ class O3EInt32(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes(string_bin[0:4], byteorder="little", signed=self.signed)
+        val = int.from_bytes(string_bin[self.offset:4], byteorder="little", signed=self.signed)
         return float(val) / self.scale
 
     def __len__(self) -> int:
