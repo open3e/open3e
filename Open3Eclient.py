@@ -66,8 +66,7 @@ if(args.doip != None):
 if(args.can != None):
     conn = IsoTPSocketConnection(args.can, rxid=0x690, txid=0x680)
     # workaround missing padding for vdens (thanks to Phil, JB and HB!)
-    if(True):  #if(args.dev == "vdens"):
-        conn.tpsock.set_opts(txpad=0x00)
+    conn.tpsock.set_opts(txpad=0x00)
 
 conn.logger.setLevel(loglevel)
 
