@@ -2,6 +2,7 @@
 
 * Connects E3 boiler (vcal or vdens) controller through CAN UDS or doip
 * Read known datapoints
+* Listen to commands on mqtt
 * Experimental (!) write support (untested)
 
 # Requirements
@@ -12,7 +13,7 @@
 
 # Usage
     usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER]
-                           [-mpass MQTTPASS] [-v]
+                           [-mpass MQTTPASS] [-v] [-l CMND-TOPIC]
 
     options:
     -h, --help            show this help message and exit
@@ -33,7 +34,8 @@
                             mqtt username
     -mpass MQTTPASS, --mqttpass MQTTPASS
                             mqtt password
-    -v, --verbose         verbose info
+	-l, --listen		mqtt topic to listen for commands, e.g. open3e/cmnd
+    -v, --verbose		verbose info
 
 # Read dids
     python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v
@@ -69,3 +71,19 @@
 
     python Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
+
+# Listener mode
+    python Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    
+    will listen for commands on topic open3e/cmnd with payload in json format:
+    {"mode": "read"|"write"|"write-raw", "data":[list of data]}
+    
+    to read dids 271 and 274:
+    {"mode": "read", "data":[271,274]}
+    
+    to write value of 45.0 to did 396 and value of 21.5 to did 424:
+    {"mode": "write", "data":[[396,45.0],[424,21.5]]}
+    
+    Option -m is mandatory for this mode.
+    Options -r, -t, -v may be used in parallel.
+    

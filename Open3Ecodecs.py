@@ -54,7 +54,12 @@ class O3EInt16(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        else:
+            if (self.offset != 0):
+                raise("O3EInt16.encode(): offset!=0 not implemented yet") 
+            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
+            string_bin = val.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
+            return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
@@ -79,7 +84,12 @@ class O3EInt8(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        else:
+            if (self.offset != 0):
+                raise("O3EInt16.encode(): offset!=0 not implemented yet") 
+            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
+            string_bin = val.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
+            return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 

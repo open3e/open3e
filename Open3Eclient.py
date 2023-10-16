@@ -26,6 +26,7 @@ import logging
 import argparse
 import time
 import paho.mqtt.client as paho
+import json
 
 import Open3EdatapointsVcal
 import Open3EdatapointsVdens
@@ -37,6 +38,115 @@ from Open3EdatapointsVx3 import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
+
+cmnd_queue = []
+cmnds      = ['read','write','write-raw']
+
+def on_connect(client, userdata, flags, rc):
+    client.subscribe(args.listen)
+	
+def on_disconnect(client, userdata, rc):
+    if rc != 0:
+        print('mqtt broker disconnected. rc = ' + str(rc))
+ 
+def on_message(client, userdata, msg):
+    global cmnd_queue
+    topic   = str(msg.topic)            # Topic in String umwandeln
+    if topic == args.listen:
+        try:
+            payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
+            cmnd_queue.append(payload)
+        except:
+            print('bad payload: '+str(msg.payload)+'; topic: '+str(msg.topic))
+            payload = ''
+
+def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
+    global cmnd_queue
+    next_read_time = time.time()
+    while True:
+        if len(cmnd_queue) > 0:
+            cd = cmnd_queue.pop(0)
+
+            if not cd['mode'] in cmnds:
+                print('bad mode value = ' + str(cd['mode'])+'\nSupported commands are: '+json.dumps(cmnds)[1:-1])
+                pass
+
+            if cd['mode'] == 'read':
+                Open3Ecodecs.flag_rawmode = False
+                dids = cd['data']
+                for did in dids:
+                    readByDid(eval(str(did)), client, client_mqtt, mqttParamas, dataIdentifiers)
+                    time.sleep(0.01)            # 10 ms delay before next request
+
+            if cd['mode'] == 'write':
+                # ToDo: Umrechnung über Codec ergänzen. Wechselwirkung mit flag_rawmode beachten!
+                Open3Ecodecs.flag_rawmode = False
+                for wd in cd['data']:
+                    didKey = eval(str(wd[0]))    # key: convert numeric or string parameter to numeric value
+                    didVal = eval(str(wd[1]))    # value: dto.
+                    writeByDid(didKey, didVal, client)
+                    time.sleep(0.1)
+                  
+            if cd['mode'] == 'write-raw':
+                Open3Ecodecs.flag_rawmode = True
+                for wd in cd['data']:
+                    wd[0] = eval(str(wd[0]))    # key: convert numeric or string parameter to numeric value
+                    wd[1] = eval(str(wd[1]))    # value: dto.
+                    didKey = eval(str(wd[0]))                   # key is submitted as numeric value
+                    didVal = ''.join('{:04x}'.format(wd[1]))    # val is submitted as hex-string w/o change of byte-order
+                    writeByDid(didKey, didVal, client)
+                    time.sleep(0.1)
+        else:
+            if (args.read != None):
+                if (next_read_time > 0) and (time.time() > next_read_time):
+                    # add dids to read to command queue
+                    dids = args.read.split(",")
+                    cmnd_queue.append({'mode':'read', 'data': dids})
+                    if(args.timestep != None):
+                        next_read_time = next_read_time + eval(args.timestep)
+                    else:
+                        next_read_time = 0    # Don't do it again
+                  
+        time.sleep(0.01)
+
+
+def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
+    response = client.read_data_by_identifier([did])
+    if(args.mqtt != None):
+        # if no format string is set
+        if(args.mqttformatstring == None):
+            mqttformatstring = "{didName}" # default
+        else:
+            mqttformatstring = args.mqttformatstring
+        publishStr = mqttformatstring.format(
+            didName = dataIdentifiers[did].id,
+            didNumber = did
+        )
+        if(dataIdentifiers[did].complex == True): 
+            # complex datatype
+            for key, value in response.service_data.values[did].items():
+                ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
+        else:
+            # scalar datatype
+            ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
+        if(args.verbose == True):
+            print (did, dataIdentifiers[did].id, response.service_data.values[did])
+    else:
+        if(args.verbose == True):
+            print (did, dataIdentifiers[did].id, response.service_data.values[did])
+        else:
+            print (response.service_data.values[did])
+
+def writeByDid(didKey, didVal, client):
+    if(args.verbose == True):
+        print("Write did", didKey, "with value", didVal, "...")
+    response = client.write_data_by_identifier(didKey, didVal)
+    if(args.verbose == True):
+        print("done.")
+
+#
+# Main
+#
 
 udsoncan.setup_logging()
 loglevel = logging.ERROR
@@ -50,6 +160,7 @@ parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
 parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
+parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
 parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username")
@@ -93,66 +204,58 @@ with Client(conn, config=config) as client:
 
     Open3Ecodecs.flag_rawmode = args.raw
 
-    if(args.read != None):
-        if(args.mqtt != None):
-            mqttParamas = args.mqtt.split(":")
-            client_mqtt = paho.Client("Open3E")
-            if((args.mqttuser != None) and (args.mqttpass != None)):
-                client_mqtt.username_pw_set(args.mqttuser , password=args.mqttpass)
-            client_mqtt.connect(mqttParamas[0], int(mqttParamas[1]))
-            client_mqtt.reconnect_delay_set(min_delay=1, max_delay=30)
-            client_mqtt.loop_start()
+    client_mqtt = None
+    mqttParamas = None
+    if(args.mqtt != None):
+        mqttParamas = args.mqtt.split(":")
+        client_mqtt = paho.Client("Open3E")
+        if((args.mqttuser != None) and (args.mqttpass != None)):
+            client_mqtt.username_pw_set(args.mqttuser , password=args.mqttpass)
+        client_mqtt.connect(mqttParamas[0], int(mqttParamas[1]))
+        client_mqtt.reconnect_delay_set(min_delay=1, max_delay=30)
+        client_mqtt.loop_start()
+        if (args.listen != None):
+            client_mqtt.on_connect = on_connect
+            client_mqtt.on_disconnect = on_disconnect
+            client_mqtt.on_message = on_message
+            print("Enter listener mode, waiting for commands on mqtt")
+        else:
             print("Read dids and publish to mqtt...")
-        while(True):
-            dids = args.read.split(",")
-            for did in dids:
-                did = eval(did)
-                response = client.read_data_by_identifier([did])
-                time.sleep(0.1)
-                if(args.mqtt != None):
-                    # if no format string is set
-                    if(args.mqttformatstring == None):
-                        mqttformatstring = "{didName}" # default
-                    else:
-                        mqttformatstring = args.mqttformatstring
-                    publishStr = mqttformatstring.format(
-                        didName = dataIdentifiers[did].id,
-                        didNumber = did
-                    )
-                    if(dataIdentifiers[did].complex == True): 
-                        # complex datatype
-                        for key, value in response.service_data.values[did].items():
-                            ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
-                    else: 
-                        # scalar datatype
-                        ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
+    if (args.listen != None):
+        if (args.mqtt == None):
+            print('mqtt option is mandatory for listener mode')
+            exit(0)
+        try:
+            cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers)
+        except (KeyboardInterrupt, InterruptedError):
+            # <STRG-C> oder SIGINT empfangen
+            # SIGINT kann z.B. mit <kill -s SIGINT pid> gesendet werden
+            pass
+    else:
+        if(args.read != None):
+            while(True):
+                dids = args.read.split(",")
+                for did in dids:
+                    readByDid(eval(did), client, client_mqtt, mqttParamas, dataIdentifiers)
+                    time.sleep(0.01)
+                if(args.timestep != None):
+                    time.sleep(float(eval(args.timestep)))
                 else:
+                    break
+        else:
+            if(args.scanall == True):
+                for did in dataIdentifiers.keys():
+                    response = client.read_data_by_identifier([did])
                     if(args.verbose == True):
                         print (did, dataIdentifiers[did].id, response.service_data.values[did])
                     else:
-                        print (response.service_data.values[did])
-            if(args.timestep != None):
-                time.sleep(float(eval(args.timestep)))
-            else:
-                break
-    else:
-        if(args.scanall == True):
-            for did in dataIdentifiers.keys():
-                response = client.read_data_by_identifier([did])
-                if(args.verbose == True):
-                    print (did, dataIdentifiers[did].id, response.service_data.values[did])
-                else:
-                    print (did, response.service_data.values[did])
-        # experimental write to did
-        if(args.write != None):
-            if(args.raw == False):
-                raise Exception("Error: write only accepts raw data, use -raw param")
-            writeArg = args.write.split("=")
-            didKey=eval(writeArg[0])
-            didVal=str(writeArg[1]).replace("0x","")
-            if(args.verbose == True):
-                print("Write did", didKey, "with value", didVal, "...")
-            response = client.write_data_by_identifier(didKey, didVal)
-            if(args.verbose == True):
-                print("done.")
-            time.sleep(0.1)
+                        print (did, response.service_data.values[did])
+            # experimental write to did
+            if(args.write != None):
+                if(args.raw == False):
+                    raise Exception("Error: write only accepts raw data, use -raw param")
+                writeArg = args.write.split("=")
+                didKey=eval(writeArg[0])
+                didVal=str(writeArg[1]).replace("0x","")
+                writeByDid(didKey, didVal, client)
+                time.sleep(0.1)
