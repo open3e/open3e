@@ -40,11 +40,14 @@ class RawCodec(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EInt16(udsoncan.DidCodec):
-    string_len: int
 
-    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
+class O3EInt(udsoncan.DidCodec):
+    string_len: int
+    byte_width: int
+
+    def __init__(self, string_len: int, idStr: str, byte_width: int, scale: float = 1.0, offset: int = 0, signed=False):
         self.string_len = string_len
+        self.byte_width = byte_width
         self.id = idStr
         self.complex = False
         self.scale = scale
@@ -54,66 +57,61 @@ class O3EInt16(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        else:
+            if (self.offset != 0):
+                raise("O3EInt.encode(): offset!=0 not implemented yet") 
+            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
+            string_bin = val.to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
+            return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes([string_bin[self.offset + 1],string_bin[self.offset + 0]], byteorder="big", signed=self.signed)
-        return val / self.scale
-
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EInt8(udsoncan.DidCodec):
-    string_len: int
-
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-        self.scale = scale
-        self.offset = offset
-        self.signed = signed
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
-        return int(float(val) / self.scale)
-
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EInt32(udsoncan.DidCodec):
-    string_len: int
-
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-        self.scale = scale
-        self.offset = offset
-        self.signed = signed
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        val = int.from_bytes(string_bin[self.offset:self.offset+4], byteorder="little", signed=self.signed)
+        val = int.from_bytes(string_bin[self.offset:self.offset + self.byte_width], byteorder="little", signed=self.signed)
         return float(val) / self.scale
 
     def __len__(self) -> int:
         return self.string_len
+
+class O3EInt8(O3EInt):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        O3EInt.__init__(self, string_len, idStr, byte_width=1, scale=scale, offset=offset, signed=signed)
+
+class O3EInt16(O3EInt):
+    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
+        O3EInt.__init__(self, string_len, idStr, byte_width=2, scale=scale, offset=offset, signed=signed)
+
+class O3EInt32(O3EInt):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
+
+
+class O3EBoolean(udsoncan.DidCodec):
+    string_len: int
+
+    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+        self.string_len = string_len
+        self.id = idStr
+        self.offset = offset
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        val = int.from_bytes(string_bin[self.offset:self.offset+1], byteorder="little", signed=False)
+        if(val==0):
+            return "off"
+        else:
+            return "on"
+
+    def __len__(self) -> int:
+        return self.string_len
+
 
 class O3EComplexType(udsoncan.DidCodec):
     string_len: int
