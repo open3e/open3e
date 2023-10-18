@@ -20,8 +20,6 @@ from typing import Optional, Any
 flag_rawmode = True
 
 class RawCodec(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -42,9 +40,6 @@ class RawCodec(udsoncan.DidCodec):
 
 
 class O3EInt(udsoncan.DidCodec):
-    string_len: int
-    byte_width: int
-
     def __init__(self, string_len: int, idStr: str, byte_width: int, scale: float = 1.0, offset: int = 0, signed=False):
         self.string_len = string_len
         self.byte_width = byte_width
@@ -87,8 +82,6 @@ class O3EInt32(O3EInt):
 
 
 class O3EBoolean(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
@@ -114,8 +107,6 @@ class O3EBoolean(udsoncan.DidCodec):
 
 
 class O3EComplexType(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str, subTypes : list):
         self.string_len = string_len
         self.id = idStr
@@ -142,8 +133,6 @@ class O3EComplexType(udsoncan.DidCodec):
 
 
 class O3ECompStat(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -166,8 +155,6 @@ class O3ECompStat(udsoncan.DidCodec):
         return self.string_len
 
 class O3EAddElHeaterStat(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -190,8 +177,6 @@ class O3EAddElHeaterStat(udsoncan.DidCodec):
         return self.string_len
 
 class O3EHeatingCurve(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -213,8 +198,6 @@ class O3EHeatingCurve(udsoncan.DidCodec):
         return self.string_len
     
 class O3EOperationState(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
