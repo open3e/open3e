@@ -7,15 +7,14 @@
 # Requirements
 For a fresh Raspberry PI install git, python3 and python-pip first:
     sudo apt install git python3-full python3-pip
-Now clone this repository to your system:
+  Now clone this repository to your system: 
     git clone https://github.com/abnoname/open3e.git
-Change into the directory
+  Change into the directory
     cd open3e
-Eventually run:    
+  Eventually run:
     pip3 install -r requirements.txt
 
-If you get the error "error: externally-managed-environment" you could add --break-system-packages to the preveious command.
-(please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)
+  If you get the error "error: externally-managed-environment" you could add --break-system-packages to the preveious command. (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
 
 # Setup CAN Bus
     sudo ip link set can0 up type can bitrate 250000
