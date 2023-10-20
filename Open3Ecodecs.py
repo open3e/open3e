@@ -16,12 +16,13 @@
 
 import udsoncan 
 from typing import Optional, Any
+import datetime
+import json
+import Open3Eerrors
 
 flag_rawmode = True
 
 class RawCodec(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -40,76 +41,55 @@ class RawCodec(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EInt16(udsoncan.DidCodec):
-    string_len: int
 
+class O3EInt(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, byte_width: int, scale: float = 1.0, offset: int = 0, signed=False):
+        self.string_len = string_len
+        self.byte_width = byte_width
+        self.id = idStr
+        self.complex = False
+        self.scale = scale
+        self.offset = offset
+        self.signed = signed
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        else:
+            if (self.offset != 0):
+                raise("O3EInt.encode(): offset!=0 not implemented yet") 
+            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
+            string_bin = val.to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
+            return string_bin
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        val = int.from_bytes(string_bin[self.offset:self.offset + self.byte_width], byteorder="little", signed=self.signed)
+        return float(val) / self.scale
+
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3EInt8(O3EInt):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        O3EInt.__init__(self, string_len, idStr, byte_width=1, scale=scale, offset=offset, signed=signed)
+
+class O3EInt16(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-        self.scale = scale
-        self.offset = offset
-        self.signed = signed
+        O3EInt.__init__(self, string_len, idStr, byte_width=2, scale=scale, offset=offset, signed=signed)
 
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        else:
-            if (self.offset != 0):
-                raise("O3EInt16.encode(): offset!=0 not implemented yet") 
-            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
-            string_bin = val.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
-            return string_bin
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        val = int.from_bytes([string_bin[self.offset + 1],string_bin[self.offset + 0]], byteorder="big", signed=self.signed)
-        return val / self.scale
-
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EInt8(udsoncan.DidCodec):
-    string_len: int
-
+class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
+
+
+class O3EBoolean(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
-        self.complex = False
-        self.scale = scale
         self.offset = offset
-        self.signed = signed
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        else:
-            if (self.offset != 0):
-                raise("O3EInt16.encode(): offset!=0 not implemented yet") 
-            val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
-            string_bin = val.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
-            return string_bin
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        val = int.from_bytes([string_bin[self.offset]], byteorder="big", signed=self.signed)
-        return int(float(val) / self.scale)
-
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EInt32(udsoncan.DidCodec):
-    string_len: int
-
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
-        self.string_len = string_len
-        self.id = idStr
         self.complex = False
-        self.scale = scale
-        self.offset = offset
-        self.signed = signed
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
@@ -119,15 +99,17 @@ class O3EInt32(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes(string_bin[self.offset:self.offset+4], byteorder="little", signed=self.signed)
-        return float(val) / self.scale
+        val = int.from_bytes(string_bin[self.offset:self.offset+1], byteorder="little", signed=False)
+        if(val==0):
+            return "off"
+        else:
+            return "on"
 
     def __len__(self) -> int:
         return self.string_len
 
-class O3EComplexType(udsoncan.DidCodec):
-    string_len: int
 
+class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
         self.string_len = string_len
         self.id = idStr
@@ -152,10 +134,72 @@ class O3EComplexType(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EErrorDtcList(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {
+            "cntDtc": int.from_bytes(string_bin[0:2], byteorder="little", signed=False),
+            "errors": []
+            }
+        for ofs in range(0,result["cntDtc"]):
+            result["errors"].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs]))
+        return json.dumps(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3EErrorDtcHistory(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {
+            "cntDtc": int.from_bytes(string_bin[0:2], byteorder="little", signed=False),
+            "totDtc": int.from_bytes(string_bin[2:4], byteorder="little", signed=False),
+            "errors": []
+            }
+        for ofs in range(0,result["cntDtc"]):
+            result["errors"].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs]))
+        return json.dumps(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
+
+def toErrorEvent(string_bin:bytes):
+    id = int.from_bytes(string_bin[0:2], byteorder="little", signed=False)
+    dt = datetime.datetime(
+             string_bin[2]*100+string_bin[3], # year
+             string_bin[4],                   # month
+             string_bin[5],                   # day
+             string_bin[7],                   # hour
+             string_bin[8],                   # minute
+             string_bin[9]                    # second
+            )
+    event = {
+        "id" : id,
+        "error": Open3Eerrors.E3errors[id],
+        "dt": dt.strftime('%c'),            # Date & Time local format
+        "ts": int(dt.timestamp()*1000)      # Unix timestamp (ms)
+    }
+    return event;
 
 class O3ECompStat(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -178,8 +222,6 @@ class O3ECompStat(udsoncan.DidCodec):
         return self.string_len
 
 class O3EAddElHeaterStat(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -202,8 +244,6 @@ class O3EAddElHeaterStat(udsoncan.DidCodec):
         return self.string_len
 
 class O3EHeatingCurve(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -225,8 +265,6 @@ class O3EHeatingCurve(udsoncan.DidCodec):
         return self.string_len
     
 class O3EOperationState(udsoncan.DidCodec):
-    string_len: int
-
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr

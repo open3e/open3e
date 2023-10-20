@@ -111,7 +111,10 @@ def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
 
 
 def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
-    response = client.read_data_by_identifier([did])
+    try:
+        response = client.read_data_by_identifier([did])
+    except TimeoutError:
+        return
     if(args.mqtt != None):
         # if no format string is set
         if(args.mqttformatstring == None):
