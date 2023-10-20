@@ -162,7 +162,7 @@ dataIdentifiersVx3 = {
             1830: O3EInt16(4, "InverterElectricalEnergyStorageCurrentMaximumlDishargePower", scale=1.0),
             1831: O3EComplexType(12, "PhotovoltaicCurrentStringPower", [O3EInt32(4, "String1", scale=1.0), O3EInt32(4, "String2", scale=1.0), O3EInt32(4, "String3", scale=1.0)]),
             1832: O3EComplexType(12, "PhotovoltaicStringCurrent", [O3EInt32(4, "String1", scale=1.0), O3EInt32(4, "String2", scale=1.0), O3EInt32(4, "String3", scale=1.0)]),
-            1833: O3EComplexType(12, "PhotovoltaicStringVoltage", [O3EInt32(4, "String1", scale=1.0), O3EInt32(4, "String2", scale=1.0), O3EInt32(4, "String3", scale=1.0)]),
+            1833: O3EComplexType(12, "PhotovoltaicStringVoltage", [O3EInt32(4, "String1", scale=1000.0), O3EInt32(4, "String2", scale=1000.0), O3EInt32(4, "String3", scale=1000.0)]),
             1834: O3EInt8(4, "ElectricalEnergyStorageStateOfEnergy"),
             1835: RawCodec(20, "ManufacturerProperties"),
             1836: O3EInt32(4, "ElectricalEnergyStorageCurrentPower", scale=1.0, signed=True),
