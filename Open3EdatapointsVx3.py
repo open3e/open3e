@@ -33,7 +33,7 @@ dataIdentifiersVx3 = {
             264: RawCodec(124, "WarningDtcHistory"),
             265: RawCodec(122, "ErrorDtcList"),
             266: RawCodec(124, "ErrorDtcHistory"),
-            377: RawCodec(16, "ViessmannIdentificationNumber"),
+            377: O3EUtf8(16, "ViessmannIdentificationNumber"),
             378: RawCodec(4, "PointOfCommonCouplingPhaseOne"),
             379: RawCodec(4, "PointOfCommonCouplingPhaseTwo"),
             380: RawCodec(4, "PointOfCommonCouplingPhaseThree"),
