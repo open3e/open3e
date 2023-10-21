@@ -126,7 +126,7 @@ dataIdentifiersVx3 = {
             1684: RawCodec(9, "AmbientTemperatureSensor"),
             1685: RawCodec(3, "ElectricalEnergyInverterDCConfiguration"),
             1686: RawCodec(3, "ElectricalEnergySystemPhotovoltaicLimitation"),
-            1687: RawCodec(2, "ElectricalEnergySystemPhotovoltaicConfiguration"),
+            1687: O3EInt16(2, "ElectricalEnergySystemPhotovoltaicConfiguration", scale=10),
             1690: RawCodec(17, "ElectricalEnergySystemPhotovoltaicStatus"),
             1691: RawCodec(1, "BusTopologyScanStatus"),
             1692: RawCodec(1, "PowerGridCodeConfiguration"),
