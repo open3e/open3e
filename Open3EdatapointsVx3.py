@@ -22,7 +22,7 @@ dataIdentifiersVx3 = {
         "name": "EMCU", "tx": 0x680, "rx": 0x690,
         "dids":
         {
-            256: RawCodec(36, "BusIdentification"),
+            256: O3EComplexType(36, "BusIdentification", [O3EInt32(1, "Busadresse"), O3EInt32(1, "Bustyp"),O3EInt32(1, "Geräteeigenschaft"),O3EInt32(1, "Gerätefunktion.Wert"), RawCodec(8, "SW-Version"), RawCodec(8, "HW-Version"),O3EUtf8(16, "VIN")]),
             257: RawCodec(122, "StatusDtcList"),
             258: RawCodec(122, "StatusDtcHistory"),
             259: RawCodec(122, "InfoDtcList"),
