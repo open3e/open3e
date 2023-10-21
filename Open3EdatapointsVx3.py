@@ -81,7 +81,7 @@ dataIdentifiersVx3 = {
             961: RawCodec(2, "SecurityAlgorithmNumber"),
             962: RawCodec(8, "BootLoaderVersion"),
             964: RawCodec(1, "ActiveDiagnosticSession"),
-            1132: RawCodec(97, "ViessmannIdentificationNumberListInternal"),
+            1132: O3EComplexType(97, "ViessmannIdentificationNumberListInternal", [O3EInt8(1, "Count"), O3EUtf8(16, "VIN1"), O3EUtf8(16, "VIN2"), O3EUtf8(16, "VIN3"), O3EUtf8(16, "VIN4"), O3EUtf8(16, "VIN5"), O3EUtf8(16, "VIN6")]),
             1138: RawCodec(1, "AccentLedBar"),
             1165: RawCodec(1, "BackendConnectionStatus"),
             1166: RawCodec(5, "ResetDtcHistory"),
