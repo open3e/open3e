@@ -106,6 +106,27 @@ class O3EBoolean(udsoncan.DidCodec):
         return self.string_len
 
 
+class O3EUtf8(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+        self.string_len = string_len
+        self.id = idStr
+        self.offset = offset
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return string_bin[self.offset:self.string_len].decode('utf-8')
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
         self.string_len = string_len
