@@ -81,6 +81,27 @@ class O3EInt32(O3EInt):
         O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
 
 
+class O3EByteval(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+        self.string_len = string_len
+        self.id = idStr
+        self.offset = offset
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return int(string_bin[self.offset])
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
 class O3EBoolean(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
