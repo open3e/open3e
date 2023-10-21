@@ -127,6 +127,87 @@ class O3EUtf8(udsoncan.DidCodec):
         return self.string_len
 
 
+class O3ESoftvers(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        lstv = []
+        for i in range(0, 7, 2):
+            lstv.append(str(int.from_bytes(string_bin[i:i+2], byteorder="little")))
+        return ".".join(lstv)
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
+class O3EIp4addr(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return f"{int(string_bin[0]):03d}.{int(string_bin[1]):03d}.{int(string_bin[2]):03d}.{int(string_bin[3]):03d}"
+
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3ESdate(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return f"{int(string_bin[0]):02d}.{int(string_bin[1]):02d}.{2000+int(string_bin[2])}"
+
+    def __len__(self) -> int:
+        return self.string_len
+
+class O3EStime(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        return f"{int(string_bin[0]):02d}:{int(string_bin[1]):02d}:{int(string_bin[2]):02d}"
+
+    def __len__(self) -> int:
+        return self.string_len
+
+
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
         self.string_len = string_len
