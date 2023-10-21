@@ -76,7 +76,7 @@ dataIdentifiersVx3 = {
             918: RawCodec(1, "TradeFairMode"),
             921: RawCodec(2, "ExternalAccessInProgress"),
             924: RawCodec(1, "StartUpWizard"),
-            928: RawCodec(16, "ElectronicTraceabilityNumber"),
+            928: O3EUtf8(16, "ElectronicTraceabilityNumber"),
             954: O3EComplexType(181, "BusTopologyMatrix", [O3EInt8(1, "Count Geräte"),O3EInt8(1, "Busadresse1"),O3EInt8(1, "Bustyp1"),O3EInt8(1, "Geräteeigenschaft1"),O3EInt8(1, "Gerätefunktion.Wert1"),RawCodec(8, "SW-Version1"), RawCodec(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EInt8(1, "Busadresse2"),O3EInt8(1, "Bustyp2"),O3EInt8(1, "Geräteeigenschaft2"),O3EInt8(1, "Gerätefunktion.Wert2"),RawCodec(8, "SW-Version2"), RawCodec(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EInt8(1, "Busadresse3"),O3EInt8(1, "Bustyp3"),O3EInt8(1, "Geräteeigenschaft3"),O3EInt8(1, "Gerätefunktion.Wert3"),RawCodec(8, "SW-Version3"), RawCodec(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EInt8(1, "Busadresse4"),O3EInt8(1, "Bustyp4"),O3EInt8(1, "Geräteeigenschaft4"),O3EInt8(1, "Gerätefunktion.Wert4"),RawCodec(8, "SW-Version4"), RawCodec(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EInt8(1, "Busadresse5"),O3EInt8(1, "Bustyp5"),O3EInt8(1, "Geräteeigenschaft5"),O3EInt8(1, "Gerätefunktion.Wert5"),RawCodec(8, "SW-Version5"), RawCodec(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),
             961: RawCodec(2, "SecurityAlgorithmNumber"),
             962: RawCodec(8, "BootLoaderVersion"),
