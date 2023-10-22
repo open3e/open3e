@@ -170,6 +170,27 @@ class O3ESoftvers(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EMacAdr(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str): #string_bin = bytes.fromhex(string_ascii)
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        lstv = []
+        for i in range(0, 5, 1):
+            lstv.append(str(format(int.from_bytes(string_bin[i:i+1]), 'X')))
+        return ".".join(lstv)
+
+    def __len__(self) -> int:
+        return self.string_len
 
 class O3EIp4addr(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
