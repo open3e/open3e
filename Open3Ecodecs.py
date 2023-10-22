@@ -186,7 +186,7 @@ class O3EMacAdr(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         lstv = []
         for i in range(6):
-            lstv.append(string_bin[i:i+1].hex())
+            lstv.append(string_bin[i:i+1].hex().upper())
         return "-".join(lstv)
 
     def __len__(self) -> int:
