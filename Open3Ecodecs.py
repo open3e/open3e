@@ -143,7 +143,12 @@ class O3EUtf8(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        return string_bin[self.offset:self.string_len].decode('utf-8')
+        mystr=""
+        for i in range(self.offset, self.string_len):
+            if(string_bin[i] == 0):
+                break
+            mystr += string_bin[i:i+1].decode('utf-8')
+        return mystr
 
     def __len__(self) -> int:
         return self.string_len
