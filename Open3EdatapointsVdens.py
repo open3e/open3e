@@ -310,7 +310,6 @@ dataIdentifiersVdens = {
             1177 : RawCodec(1, "AcknowledgeServiceAlarmMessage"),
             1178 : RawCodec(1, "AcknowledgeErrorAlarmMessage"),	
             1190 : O3EInt16(4, "ThermalPower"),
-            1190 : O3EInt16(4, "ThermalPower"),
             1191 : RawCodec(1, "FuelCellStatus"),	
             1192 : O3EComplexType(10, "MixerOneCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Vorlauf_Minimum", signed=True), O3EInt16(2, "Vorlauf_Maximum", signed=True)]),
             1193 : O3EComplexType(10, "MixerTwoCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Vorlauf_Minimum", signed=True), O3EInt16(2, "Vorlauf_Maximum", signed=True)]),
@@ -621,7 +620,7 @@ dataIdentifiersVdens = {
             2855 : O3EInt16(3, "MixerOneCircuitFrostProtectionConfiguration", signed=True, offset = 1),
             2856 : O3EInt16(3, "MixerTwoCircuitFrostProtectionConfiguration", signed=True, offset = 1),
             2857 : O3EInt16(3, "MixerThreeCircuitFrostProtectionConfiguration", signed=True, offset = 1),
-            2858 : O3EInt16(3, "MixerFourCircuitFrostProtectionConfiguration", signed=True, offset = 1)
+            2858 : O3EInt16(3, "MixerFourCircuitFrostProtectionConfiguration", signed=True, offset = 1),
             2937 : RawCodec(2, "SystemPumpConfiguration"),
             2938 : RawCodec(4, "CascadeSystemPump"),	
         }
