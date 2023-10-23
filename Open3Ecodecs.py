@@ -83,7 +83,7 @@ class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
 
-class O3EByteval(udsoncan.DidCodec):
+class O3EByteVal(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
@@ -148,7 +148,7 @@ class O3EUtf8(udsoncan.DidCodec):
         return self.string_len
 
 
-class O3ESoftvers(udsoncan.DidCodec):
+class O3ESoftVers(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -170,7 +170,7 @@ class O3ESoftvers(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EMacAdr(udsoncan.DidCodec):
+class O3EMacAddr(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str): #string_bin = bytes.fromhex(string_ascii)
         self.string_len = string_len
         self.id = idStr
@@ -192,7 +192,7 @@ class O3EMacAdr(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EIp4addr(udsoncan.DidCodec):
+class O3EIp4Addr(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
