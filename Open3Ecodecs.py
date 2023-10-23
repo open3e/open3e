@@ -83,6 +83,7 @@ class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
 
+
 class O3EByteVal(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
@@ -103,7 +104,7 @@ class O3EByteVal(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EBoolean(udsoncan.DidCodec):
+class O3EBool(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
         self.string_len = string_len
         self.id = idStr
@@ -248,6 +249,29 @@ class O3EStime(udsoncan.DidCodec):
 
     def __len__(self) -> int:
         return self.string_len
+
+
+class O3EUtc(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+        self.string_len = string_len
+        self.id = idStr
+        self.offset = offset
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes: 
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        val = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:4], byteorder="little", signed=False)).strftime('%Y-%m-%d %H:%M:%S')
+        return val
+
+    def __len__(self) -> int:
+        return self.string_len
+
 
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
