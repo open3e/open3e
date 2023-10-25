@@ -316,7 +316,7 @@ class O3EErrorDtcList(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         result = {
-            "cntDtc": int.from_bytes(string_bin[0:2], byteorder="little", signed=False),
+            "cntDtc": string_bin[0],
             "errors": []
             }
         for ofs in range(0,result["cntDtc"]):
@@ -339,7 +339,7 @@ class O3EErrorDtcHistory(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         result = {
-            "cntDtc": int.from_bytes(string_bin[0:2], byteorder="little", signed=False),
+            "cntDtc": string_bin[0],
             "totDtc": int.from_bytes(string_bin[2:4], byteorder="little", signed=False),
             "errors": []
             }
@@ -350,19 +350,45 @@ class O3EErrorDtcHistory(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-def toErrorEvent(string_bin:bytes):
+class O3EEventLoggingHistory(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {
+            "cntEvt": string_bin[0],
+            "events": []
+            }
+        for ofs in range(0,result["cntEvt"]):
+            result["events"].append(toErrorEvent(string_bin[2+9*ofs:2+9+9*ofs],timeformat='ts',txt="event"))
+        return json.dumps(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
+
+def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error"):
     id = int.from_bytes(string_bin[0:2], byteorder="little", signed=False)
-    dt = datetime.datetime(
-             string_bin[2]*100+string_bin[3], # year
-             string_bin[4],                   # month
-             string_bin[5],                   # day
-             string_bin[7],                   # hour
-             string_bin[8],                   # minute
-             string_bin[9]                    # second
-            )
+    if timeformat == 'VM':
+        dt = datetime.datetime(
+                 string_bin[2]*100+string_bin[3], # year
+                 string_bin[4],                   # month
+                 string_bin[5],                   # day
+                 string_bin[7],                   # hour
+                 string_bin[8],                   # minute
+                 string_bin[9]                    # second
+                )
+    if timeformat == 'ts':
+        dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[2:6], byteorder="little", signed=False))
     event = {
-        "id" : id,
-        "error": Open3Eerrors.E3errors[id],
+        "id": id,
+        txt : Open3Eerrors.E3errors[id],
         "dt": dt.strftime('%c'),            # Date & Time local format
         "ts": int(dt.timestamp()*1000)      # Unix timestamp (ms)
     }
