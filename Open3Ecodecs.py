@@ -303,6 +303,36 @@ class O3EComplexType(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EDtcList(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, dtcType: str, subType: str="default"):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+        self.dtcType = dtcType
+        self.subType = subType
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        dtc = self.dtcType
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {
+            "cntEvt": string_bin[0],
+            dtc: []
+            }
+        for ofs in range(0,result["cntEvt"]):
+            if self.subType == "History":
+                result[dtc].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs],timeformat='VM',txt="eventDescription"))
+            else:
+                result[dtc].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs],timeformat='VM',txt="eventDescription"))
+        return json.dumps(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
+
+
 class O3EErrorDtcList(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
@@ -386,9 +416,14 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error"):
                 )
     if timeformat == 'ts':
         dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[2:6], byteorder="little", signed=False))
+    
+    try:
+        text = Open3Eerrors.E3errors[id]
+    except:
+        text = "Error Description not found"
     event = {
         "id": id,
-        txt : Open3Eerrors.E3errors[id],
+        txt : text,
         "dt": dt.strftime('%c'),            # Date & Time local format
         "ts": int(dt.timestamp()*1000)      # Unix timestamp (ms)
     }

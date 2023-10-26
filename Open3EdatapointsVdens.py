@@ -35,7 +35,7 @@ dataIdentifiersVdens = {
             261 : RawCodec(122, "ServiceDtcList"),
             262 : RawCodec(122, "ServiceDtcHistory"),
             263 : RawCodec(122, "WarningDtcList"),
-            264 : RawCodec(124, "WarningDtcHistory"),
+            264 : O3EErrorDtcHistory(124, "WarningDtcHistory"),
             265 : O3EErrorDtcList(122, "ErrorDtcList"),
             266 : O3EErrorDtcHistory(124, "ErrorDtcHistory"),
             268	: O3EComplexType(9, "FlowTemperatureSensor", [O3EInt16(2, "Vorlauf_Ist", signed=True), O3EInt16(2, "Vorlauf_Min", signed=True), O3EInt16(2, "Vorlauf_Max", signed=True), O3EInt16(2, "Vorlauf_Mittelwert", signed=True)]),

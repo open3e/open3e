@@ -1,0 +1,18 @@
+2023-10-19 19:36:35 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0x06eb
+2023-10-19 19:54:05 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0x092f
+2023-10-19 20:00:50 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0x012d
+2023-10-19 20:02:28 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0x012d
+2023-10-24 13:37:12 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. Global request timeout time has expired (timeout=20.000 sec)
+2023-10-25 21:15:03 [ERROR] UdsClient: [UnexpectedResponseException] : ReadDataByIdentifier service execution returned a valid response but unexpected. Details : Server returned values for 1 data identifier that were not requested. Dids are : {258} 
+2023-10-26 11:12:15 [ERROR] UdsClient: [OSError] : [Errno 100] Network is down
+2023-10-26 12:02:19 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 12:04:36 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 13:06:39 [ERROR] UdsClient: [NameError] : name 'StatusName' is not defined
+2023-10-26 13:09:45 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 13:15:13 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 13:16:54 [ERROR] UdsClient: [KeyError] : 'entries'
+2023-10-26 13:17:33 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 13:19:57 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 13:21:28 [ERROR] UdsClient: [KeyError] : 3075
+2023-10-26 13:23:00 [ERROR] UdsClient: [KeyError] : 13840
+2023-10-26 13:31:28 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. Global request timeout time has expired (timeout=20.000 sec)
