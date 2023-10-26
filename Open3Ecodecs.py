@@ -18,9 +18,11 @@ import udsoncan
 from typing import Optional, Any
 import datetime
 import json
-import Open3Eerrors
+import Open3Eerrors 
+import Open3EStatus, Open3EInfos, Open3EWarnings
 
 flag_rawmode = True
+flag_dev = "vcal"
 
 class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
@@ -324,9 +326,9 @@ class O3EDtcList(udsoncan.DidCodec):
             }
         for ofs in range(0,result["cntEvt"]):
             if self.subType == "History":
-                result[dtc].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs],timeformat='VM',txt="eventDescription"))
+                result[dtc].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs],timeformat='VM',txt="eventDescription", type=dtc))
             else:
-                result[dtc].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs],timeformat='VM',txt="eventDescription"))
+                result[dtc].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs],timeformat='VM',txt="eventDescription", type=dtc))
         return json.dumps(result)
     
     def __len__(self) -> int:
@@ -403,7 +405,7 @@ class O3EEventLoggingHistory(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error"):
+def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
     id = int.from_bytes(string_bin[0:2], byteorder="little", signed=False)
     if timeformat == 'VM':
         dt = datetime.datetime(
@@ -416,11 +418,22 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error"):
                 )
     if timeformat == 'ts':
         dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[2:6], byteorder="little", signed=False))
+    text = ""
     
+    # load Errors for selected Eventtype
     try:
-        text = Open3Eerrors.E3errors[id]
+        if(type == "Error"):
+            text = Open3Eerrors.E3errors[id]
+        if(type == "Status"):
+            text = Open3EStatus.E3Status[id]    
+        if(flag_dev == "Info"):
+            text = Open3EInfos.E3Infos[id]
+        if(flag_dev == "Warning"):
+            text = Open3EWarnings.E3Warnings[id]    
     except:
-        text = "Error Description not found"
+        text = "Description not found"
+    
+    
     event = {
         "id": id,
         txt : text,

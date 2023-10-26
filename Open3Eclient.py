@@ -206,6 +206,7 @@ with Client(conn, config=config) as client:
     client.logger.setLevel(loglevel)
 
     Open3Ecodecs.flag_rawmode = args.raw
+    Open3Ecodecs.flag_dev = args.dev
 
     client_mqtt = None
     mqttParamas = None

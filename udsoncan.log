@@ -16,3 +16,4 @@
 2023-10-26 13:21:28 [ERROR] UdsClient: [KeyError] : 3075
 2023-10-26 13:23:00 [ERROR] UdsClient: [KeyError] : 13840
 2023-10-26 13:31:28 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. Global request timeout time has expired (timeout=20.000 sec)
+2023-10-26 15:45:43 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
