@@ -419,16 +419,17 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
     if timeformat == 'ts':
         dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[2:6], byteorder="little", signed=False))
     text = ""
-    
+    print(type)
     # load Errors for selected Eventtype
     try:
         if(type == "Error"):
             text = Open3Eerrors.E3errors[id]
         if(type == "Status"):
             text = Open3EStatus.E3Status[id]    
-        if(flag_dev == "Info"):
+        if(type == "Info"):
             text = Open3EInfos.E3Infos[id]
-        if(flag_dev == "Warning"):
+        if(type == "Warning"):
+            print(id)
             text = Open3EWarnings.E3Warnings[id]    
     except:
         text = "Description not found"
