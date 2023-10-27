@@ -1845,10 +1845,91 @@ E3Enums = {
         163: "InfoHasBeenConfirmed"
     },
 
-    "TimeSetSrcs" : {
+    "TimeSettingSources" : {
         0: "Local",
-        1: "Superordinate System",
-        2: "Network Time Protocol",
+        1: "SuperordinateSystem",
+        2: "NetworkTimeProtocol",
         3: "TCU"
+    },
+    
+    "RegulationTypes" : {
+        0	:	"Nothing",
+        1	:	"ConstantControlled",
+        4	:	"WeatherByOutsideSensorControlled",
+        7	:	"WeatherByOutsideSensorAndRoomCorrectionControlled",
+        10	:	"ConstantControlledWithExternalThermostat",
+        13	:	"WeatherByOutsideAndZones",
+        15	:	"WeatherByOutsideSensorAndAutomaticAdaptationControlled",
+    }, 
+
+    "Priorities" : {
+        0	:	"Off",
+        1	:	"DomesticHotWater",
+    },
+    
+    "RemoteControls" : {
+        0	:	"Nothing",
+        48	:	"RemoteControlOne",
+        49	:	"RemoteControlTwo",
+        50	:	"RemoteControlThree",
+        51	:	"RemoteControlFour",
+    },
+    
+    "BusTypes" : {
+        0	:	"OwnBus",
+        1	:	"PlusBus",
+        2	:	"CanInternal",
+        3	:	"CanExternal",
+        4	:	"InternalUart",
+        5	:	"Zigbee",
+        6	:	"CanRaw",
+        7	:	"Unkown",
+        8	:	"ModBus",
+        9	:	"EEBUS",
+        10	:	"PlusBusTwo",
+        11	:	"ISquaredCBus",
+    },  
+    
+    "MixerCircuitTypes" : {
+        0	:	"NormalCentralHeating",
+        1	:	"UnderFloorCentralHeating",
+        2	:	"SwimmingPool",
+        3	:	"Baseboard",
+        4	:	"Radiator",
+        5	:	"RadiantUnderfloorHeating",
+        6	:	"Snowmelt",
+        7	:	"AirHandler",
+        8	:	"FanCoil",
+    }, 
+    
+    "DigitalInputConfigurations" : { 
+        0	:	"Nothing",
+        1	:	"FaultSignal",
+        2	:	"DhwCirculation",
+        3	:	"FaultSignalAndLocked",
+        4	:	"ExternalHeatDemand",
+        5	:	"ExternalLocked",
+        6	:	"ExternalThermostat",
+        7	:	"RoomTemperatureLimiter",
+        8	:	"CallForHeat",
+        9	:	"SmartGridReadyInputOne",
+        10	:	"SmartGridReadyInputTwo",
+        11	:	"PowerSupplierLock",
+        12	:	"ExternalCoolingDemand",
+        13	:	"PrioritizedDemandDeactivationOtherCircuits",
+        14	:	"LockCircuitOne",
+        15	:	"LockCircuitTwo",
+        16	:	"ExternalDemandAutomatic",
+        17	:	"FanControl",
+        18	:	"FanRpmControl",
+        19	:	"DefrostHeaterControlOne",
+        20	:	"DefrostHeaterControlTwo",
+        21	:	"DayNigthOperation",
+        22	:	"DayNigthOperationPlusDirectControlDigitalOutputOne",
+        23	:	"PermanentHeating",
+        24	:	"DirectControlDryContactOne",
+        25	:	"DirectControlDryContactTwo",
+        26	:	"DirectControlDryContactThree",
+        27	:	"DirectControlDigitalOutputTwentyFourVolt",
     },
 }
