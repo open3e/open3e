@@ -119,7 +119,7 @@ dataIdentifiersVx3 = {
             1590: RawCodec(6, "ElectricalEnergySystemOperationState"),
             1591: RawCodec(6, "ElectricalEnergyInverterOperationState"),
             1592: RawCodec(1, "ElectricalEnergyInverterPath"),
-            1603: O3EComplexType(4, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)])
+            1603: O3EComplexType(4, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
             1607: RawCodec(1, "MalfunctionUnitBlocked"),
             1660: RawCodec(16, "SupportedFeatures"),
             1664: O3EInt8(1, "ElectricalEnergyStorageStateOfCharge"),
