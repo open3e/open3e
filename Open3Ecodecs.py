@@ -281,7 +281,7 @@ class O3EUtc(udsoncan.DidCodec):
         return self.string_len
 
 
-class O3EEnumVal(udsoncan.DidCodec):
+class O3EEnum(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, listStr:str):
         self.string_len = string_len
         self.id = idStr
@@ -296,8 +296,8 @@ class O3EEnumVal(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         try:
             val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
-            enmtxt = Open3Eenums.E3Enums[self.listStr][val]
-            return enmtxt
+            txt = Open3Eenums.E3Enums[self.listStr][val]
+            return txt
         except:
             err = "Enum not found"
             return f"{err}: {self.listStr}.{val}"
