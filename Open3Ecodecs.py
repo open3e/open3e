@@ -445,6 +445,7 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
     text = ""
 
     # load Errors for selected Eventtype
+    # print(type, id)
     try:
         text = Open3Eenums.E3Enums[type][id]
     except:
