@@ -18,8 +18,6 @@ import udsoncan
 from typing import Optional, Any
 import datetime
 import json
-import Open3Eerrors 
-import Open3EStatus, Open3EInfos, Open3EWarnings
 import Open3Eenums
 
 flag_rawmode = True
@@ -324,7 +322,6 @@ class O3EComplexType(udsoncan.DidCodec):
         result = dict()
         index = 0
         for subType in self.subTypes:
-            print(subType)
             result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
             index+=subType.string_len
         return dict(result)
@@ -446,20 +443,12 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
     if timeformat == 'ts':
         dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[2:6], byteorder="little", signed=False))
     text = ""
-    print(type)
+
     # load Errors for selected Eventtype
     try:
-        if(type == "Error"):
-            text = Open3Eerrors.E3errors[id]
-        if(type == "Status"):
-            text = Open3EStatus.E3Status[id]    
-        if(type == "Info"):
-            text = Open3EInfos.E3Infos[id]
-        if(type == "Warning"):
-            text = Open3EWarnings.E3Warnings[id]    
+        text = Open3Eenums.E3Enums[type][id]
     except:
         text = "Description not found"
-    
     
     event = {
         "id": id,
