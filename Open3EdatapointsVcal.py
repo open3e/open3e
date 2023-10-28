@@ -27,7 +27,7 @@ dataIdentifiersVcal = {
         "name": "HPMU", "tx": 0x680, "rx": 0x690, 
         "dids" : 
         {
-            256	: RawCodec(36, "BusIdentification"),
+            256	: O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EByteVal(1, "BusType"),O3EByteVal(1, "DeviceProperty"),O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"),O3EUtf8(16, "VIN")]),
             257	: O3EDtcList(122, "StatusDtcList", dtcType ="Status"),
             258	: O3EDtcList(122, "StatusDtcHistory", dtcType ="Status" ),
             259	: O3EDtcList(122, "InfoDtcList", dtcType ="Info"),
@@ -67,7 +67,7 @@ dataIdentifiersVcal = {
             355	: O3EInt16(9, "SecondaryHeatExchangerLiquidTemperatureSensor", signed=True),
             377	: RawCodec(16, "ViessmannIdentificationNumber"),
             381	: O3EInt8(4, "CentralHeatingPump", offset = 1),
-            382	: RawCodec(5, "UnitsAndFormats"),
+            382:  O3EComplexType(5, "UnitsAndFormats", [O3EByteVal(1, "Maßeinheit"), O3EByteVal(1, "Datumsformat"),O3EByteVal(1, "Zeitformat"),O3EByteVal(1, "Zeitzone"),]),
             389	: O3EInt8(1, "ElectronicExpansionValveOneCurrentPositionPercent"),
             391	: O3EInt8(1, "ElectronicExpansionValveTwoCurrentPositionPercent"),
             396	: O3EInt16(2, "DomesticHotWaterTemperatureSetpoint", signed=True),
@@ -120,16 +120,16 @@ dataIdentifiersVcal = {
             593	: RawCodec(6, "GatewayMac"),
             602	: O3EInt8(1, "GatewayRemoteLocalNetworkStatus"),
             603	: O3EInt8(1, "GatewayApEnable"),
-            604	: RawCodec(76, "GatewayApDataSet"),
-            607	: RawCodec(20, "GatewayRemoteIp"),
+            604 : O3EComplexType(76, "GatewayApDataSet", [O3EUtf8(32, "SSID Access Point"), O3EUtf8(40, "Password Access Point"),O3EIp4Addr(4, "IP-Address Access Point")]),
+            607 : O3EComplexType(20, "GatewayRemoteIp", [O3EIp4Addr(4, "WLAN IP"), O3EIp4Addr(4, "SubnetMask"),O3EIp4Addr(4, "Gateway IP"),O3EIp4Addr(4, "DNS Server 1"),O3EIp4Addr(4, "DNS Server 2")]),
             616	: O3EInt8(1, "GatewayRemoteEnable"),
             618	: O3EInt8(1, "GatewayRemoteIpStatic"),
             619	: RawCodec(2, "GatewayRemoteScanNetwork"),
             620	: O3EInt8(1, "DiagnosticServiceConnectionStatus"),
             621	: RawCodec(181, "ObjectContactDetails"),
             622	: RawCodec(181, "CustomerDetails"),
-            623	: RawCodec(181, "ServiceEngineer"),
-            624	: RawCodec(181, "TechnicalSupport"),
+            623 : O3EComplexType(181, "ServiceEngineer", [O3EUtf8(20, "Name"),O3EUtf8(15, "Forename"),O3EUtf8(20, "Street"),O3EUtf8(10, "Street add."),O3EUtf8(7, "ZIP"),O3EUtf8(15, "Region"),O3EUtf8(15, "City"),O3EUtf8(16, "Phone"),O3EUtf8(16, "Mobile"),O3EUtf8(20, "Email"),O3EUtf8(1, "Country"),O3EUtf8(15, "Identification Number")]), #Länge Email und Identnummer nicht testbar ggf. ändern
+            624 : O3EComplexType(181, "TechnicalSupport", [O3EUtf8(20, "Name"),O3EUtf8(15, "Forename"),O3EUtf8(20, "Street"),O3EUtf8(10, "Street add."),O3EUtf8(7, "ZIP"),O3EUtf8(15, "Region"),O3EUtf8(15, "City"),O3EUtf8(16, "Phone"),O3EUtf8(16, "Mobile"),O3EUtf8(20, "Email"),O3EUtf8(1, "Country"),O3EUtf8(15, "Identification Number")]), #Länge Email und Identnummer nicht testbar ggf. ändern
             625	: RawCodec(26, "ObjectDetails"),
             627	: RawCodec(40, "CentralHeatingOneCircuitName"),
             628	: RawCodec(40, "CentralHeatingTwoCircuitName"),
@@ -219,8 +219,7 @@ dataIdentifiersVcal = {
             935	: O3EInt16(9, "MixerThreeCircuitProperty"),
             936	: O3EInt16(9, "MixerFourCircuitProperty"),
             952	: RawCodec(51, "HydraulicMatrix"),
-            954	: RawCodec(181, "BusTopologyMatrix"),
-            961	: RawCodec(2, "SecurityAlgorithmNumber"),
+            954 : O3EComplexType(181, "BusTopologyMatrix", [O3EByteVal(1, "Count"),O3EByteVal(1, "NodeID1"),O3EByteVal(1, "BusType1"),O3EByteVal(1, "DeviceProperty1"),O3EByteVal(1, "DeviceFunction1"),O3ESoftVers(8, "SW-Version1"), O3ESoftVers(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EByteVal(1, "BusAddress2"),O3EByteVal(1, "BusType2"),O3EByteVal(1, "DeviceProperty2"),O3EByteVal(1, "DeviceFunction2"),O3ESoftVers(8, "SW-Version2"), O3ESoftVers(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EByteVal(1, "BusAddress3"),O3EByteVal(1, "BusType3"),O3EByteVal(1, "DeviceProperty3"),O3EByteVal(1, "DeviceFunction3"),O3ESoftVers(8, "SW-Version3"), O3ESoftVers(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EByteVal(1, "BusAddress4"),O3EByteVal(1, "BusType4"),O3EByteVal(1, "DeviceProperty4"),O3EByteVal(1, "DeviceFunction4"),O3ESoftVers(8, "SW-Version4"), O3ESoftVers(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EByteVal(1, "BusAddress5"),O3EByteVal(1, "BusType5"),O3EByteVal(1, "DeviceProperty5"),O3EByteVal(1, "DeviceFunction5"),O3ESoftVers(8, "SW-Version5"), O3ESoftVers(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),            961	: RawCodec(2, "SecurityAlgorithmNumber"),
             962	: RawCodec(8, "BootLoaderVersion"),
             964	: O3EInt8(1, "ActiveDiagnosticSession"),
             987	: O3EInt16(2, "MixerOneCircuitFlowTemperatureTargetSetpoint"),
@@ -277,10 +276,10 @@ dataIdentifiersVcal = {
             1242	: O3EInt8(1, "MixerTwoCircuitPumpMode"),
             1243	: O3EInt8(1, "MixerThreeCircuitPumpMode"),
             1244	: O3EInt8(1, "MixerFourCircuitPumpMode"),
-            1286	: RawCodec(181, "BusTopologyMatrixTwo"),
-            1287	: RawCodec(181, "BusTopologyMatrixThree"),
-            1288	: RawCodec(181, "BusTopologyMatrixFour"),
-            1289	: RawCodec(181, "BusTopologyMatrixFive"),
+            1286    : O3EComplexType(181, "BusTopologyMatrixTwo", [O3EByteVal(1, "Count"),O3EByteVal(1, "NodeID1"),O3EByteVal(1, "BusType1"),O3EByteVal(1, "DeviceProperty1"),O3EByteVal(1, "DeviceFunction1"),O3ESoftVers(8, "SW-Version1"), O3ESoftVers(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EByteVal(1, "BusAddress2"),O3EByteVal(1, "BusType2"),O3EByteVal(1, "DeviceProperty2"),O3EByteVal(1, "DeviceFunction2"),O3ESoftVers(8, "SW-Version2"), O3ESoftVers(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EByteVal(1, "BusAddress3"),O3EByteVal(1, "BusType3"),O3EByteVal(1, "DeviceProperty3"),O3EByteVal(1, "DeviceFunction3"),O3ESoftVers(8, "SW-Version3"), O3ESoftVers(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EByteVal(1, "BusAddress4"),O3EByteVal(1, "BusType4"),O3EByteVal(1, "DeviceProperty4"),O3EByteVal(1, "DeviceFunction4"),O3ESoftVers(8, "SW-Version4"), O3ESoftVers(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EByteVal(1, "BusAddress5"),O3EByteVal(1, "BusType5"),O3EByteVal(1, "DeviceProperty5"),O3EByteVal(1, "DeviceFunction5"),O3ESoftVers(8, "SW-Version5"), O3ESoftVers(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),
+            1287    : O3EComplexType(181, "BusTopologyMatrixThree", [O3EByteVal(1, "Count"),O3EByteVal(1, "NodeID1"),O3EByteVal(1, "BusType1"),O3EByteVal(1, "DeviceProperty1"),O3EByteVal(1, "DeviceFunction1"),O3ESoftVers(8, "SW-Version1"), O3ESoftVers(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EByteVal(1, "BusAddress2"),O3EByteVal(1, "BusType2"),O3EByteVal(1, "DeviceProperty2"),O3EByteVal(1, "DeviceFunction2"),O3ESoftVers(8, "SW-Version2"), O3ESoftVers(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EByteVal(1, "BusAddress3"),O3EByteVal(1, "BusType3"),O3EByteVal(1, "DeviceProperty3"),O3EByteVal(1, "DeviceFunction3"),O3ESoftVers(8, "SW-Version3"), O3ESoftVers(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EByteVal(1, "BusAddress4"),O3EByteVal(1, "BusType4"),O3EByteVal(1, "DeviceProperty4"),O3EByteVal(1, "DeviceFunction4"),O3ESoftVers(8, "SW-Version4"), O3ESoftVers(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EByteVal(1, "BusAddress5"),O3EByteVal(1, "BusType5"),O3EByteVal(1, "DeviceProperty5"),O3EByteVal(1, "DeviceFunction5"),O3ESoftVers(8, "SW-Version5"), O3ESoftVers(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),
+            1288    : O3EComplexType(181, "BusTopologyMatrixFour", [O3EByteVal(1, "Count"),O3EByteVal(1, "NodeID1"),O3EByteVal(1, "BusType1"),O3EByteVal(1, "DeviceProperty1"),O3EByteVal(1, "DeviceFunction1"),O3ESoftVers(8, "SW-Version1"), O3ESoftVers(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EByteVal(1, "BusAddress2"),O3EByteVal(1, "BusType2"),O3EByteVal(1, "DeviceProperty2"),O3EByteVal(1, "DeviceFunction2"),O3ESoftVers(8, "SW-Version2"), O3ESoftVers(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EByteVal(1, "BusAddress3"),O3EByteVal(1, "BusType3"),O3EByteVal(1, "DeviceProperty3"),O3EByteVal(1, "DeviceFunction3"),O3ESoftVers(8, "SW-Version3"), O3ESoftVers(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EByteVal(1, "BusAddress4"),O3EByteVal(1, "BusType4"),O3EByteVal(1, "DeviceProperty4"),O3EByteVal(1, "DeviceFunction4"),O3ESoftVers(8, "SW-Version4"), O3ESoftVers(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EByteVal(1, "BusAddress5"),O3EByteVal(1, "BusType5"),O3EByteVal(1, "DeviceProperty5"),O3EByteVal(1, "DeviceFunction5"),O3ESoftVers(8, "SW-Version5"), O3ESoftVers(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),
+            1289    : O3EComplexType(181, "BusTopologyMatrixFive", [O3EByteVal(1, "Count"),O3EByteVal(1, "NodeID1"),O3EByteVal(1, "BusType1"),O3EByteVal(1, "DeviceProperty1"),O3EByteVal(1, "DeviceFunction1"),O3ESoftVers(8, "SW-Version1"), O3ESoftVers(8, "HW-Version1"),O3EUtf8(16, "VIN1"), O3EByteVal(1, "BusAddress2"),O3EByteVal(1, "BusType2"),O3EByteVal(1, "DeviceProperty2"),O3EByteVal(1, "DeviceFunction2"),O3ESoftVers(8, "SW-Version2"), O3ESoftVers(8, "HW-Version2"),O3EUtf8(16, "VIN2"),O3EByteVal(1, "BusAddress3"),O3EByteVal(1, "BusType3"),O3EByteVal(1, "DeviceProperty3"),O3EByteVal(1, "DeviceFunction3"),O3ESoftVers(8, "SW-Version3"), O3ESoftVers(8, "HW-Version3"),O3EUtf8(16, "VIN3"),O3EByteVal(1, "BusAddress4"),O3EByteVal(1, "BusType4"),O3EByteVal(1, "DeviceProperty4"),O3EByteVal(1, "DeviceFunction4"),O3ESoftVers(8, "SW-Version4"), O3ESoftVers(8, "HW-Version4"),O3EUtf8(16, "VIN4"),O3EByteVal(1, "BusAddress5"),O3EByteVal(1, "BusType5"),O3EByteVal(1, "DeviceProperty5"),O3EByteVal(1, "DeviceFunction5"),O3ESoftVers(8, "SW-Version5"), O3ESoftVers(8, "HW-Version5"),O3EUtf8(16, "VIN5")]),
             1290	: RawCodec(4, "DomesticHotWaterShiftLoadPump"),
             1294	: RawCodec(124, "EnergyConsumptionCentralHeatingMonthMatrix"),
             1311	: RawCodec(124, "EnergyConsumptionDomesticHotWaterMonthMatrix"),
@@ -566,7 +565,8 @@ dataIdentifiersVcal = {
             3113	: RawCodec(8, "DeviceDigitalOutputOneValueStatistical"),
             3114	: RawCodec(8, "DeviceDigitalOutputTwoValueStatistical"),
             3155	: RawCodec(5, "DomesticHotWaterShiftLoadPumpStatus"),
-            3156	: O3EInt8(1, "DomesticHotWaterShiftLoadPumpType")
+            3156	: O3EInt8(1, "DomesticHotWaterShiftLoadPumpType"),
+            3191    : RawCodec(199, "ExtendedEventLoggingHistory")
         }
     },
     # VCMU Interner CAN-BUS: 54

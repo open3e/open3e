@@ -17,3 +17,7 @@
 2023-10-26 13:23:00 [ERROR] UdsClient: [KeyError] : 13840
 2023-10-26 13:31:28 [ERROR] UdsClient: [TimeoutException] : Did not receive response in time. Global request timeout time has expired (timeout=20.000 sec)
 2023-10-26 15:45:43 [ERROR] UdsClient: [TypeError] : list.append() takes no keyword arguments
+2023-10-26 21:08:23 [ERROR] UdsClient: [ConfigError] : Actual data identifier configuration contains no definition for data identifier 0x0c77
+2023-10-27 10:15:44 [ERROR] UdsClient: [AttributeError] : 'list' object has no attribute 'decode'
+2023-10-27 10:24:39 [ERROR] UdsClient: [AttributeError] : 'list' object has no attribute 'decode'
+2023-10-27 10:24:54 [ERROR] UdsClient: [AttributeError] : 'list' object has no attribute 'decode'
