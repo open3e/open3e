@@ -20,6 +20,7 @@ import datetime
 import json
 import Open3Eerrors 
 import Open3EStatus, Open3EInfos, Open3EWarnings
+import Open3Eenums
 
 flag_rawmode = True
 flag_dev = "vcal"
@@ -279,6 +280,31 @@ class O3EUtc(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+
+class O3EEnum(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, listStr:str):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = False
+        self.listStr = listStr
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> str:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        try:
+            val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
+            txt = Open3Eenums.E3Enums[self.listStr][val]
+            return txt
+        except:
+            err = "Enum not found"
+            return f"{err}: {self.listStr}.{val}"
+        
+    def __len__(self) -> int:
+        return self.string_len
+       
 
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
