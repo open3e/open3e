@@ -287,7 +287,12 @@ class O3EEnum(udsoncan.DidCodec):
         self.listStr = listStr
 
     def encode(self, string_ascii: Any) -> bytes:        
-        raise Exception("not implemented yet")
+        #raise Exception("not implemented yet")
+        for key, value in Open3Eenums.E3Enums[self.listStr].items():
+            if value.lower() == string_ascii.lower():
+                string_bin = key.to_bytes(length=self.string_len,byteorder="little",signed=False)
+                return string_bin
+        raise Exception("not found")
 
     def decode(self, string_bin: bytes) -> str:
         if(flag_rawmode == True): 
