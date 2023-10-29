@@ -57,3 +57,5 @@ Fertig. Die evtl. bisher konfigurierte CAN-Initialisierung sollte man nun abscha
 Jetzt einmal den Rechner neu starten und der CAN-Adapter sollte automatisch konfiguriert werden.
 
 Funktioniert bei mir unter Raspi Buster und Ubuntu 22.04TLS.
+
+Contributed by https://github.com/MyHomeMyData
