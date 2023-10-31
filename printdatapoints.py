@@ -15,7 +15,6 @@
 """
 
 import argparse
-
 parser = argparse.ArgumentParser()
 parser.add_argument("-dev", "--dev", type=str, help="--dev vdens or vcal or vx3 or vair")
 args = parser.parse_args()
@@ -33,11 +32,12 @@ if(args.dev == "vx3"):
 if(args.dev == "vair"):
     devfile = "Open3EdatapointsVair.py"
 
-def read_enums(file):
+unifile = "Open3Edatapoints.py"
+
+def readfile(file):
     dic = {}
     with open(file, 'r') as file:
         lines = file.readlines()
-
     for line in lines:
         line = line.strip()
         if line:
@@ -46,13 +46,10 @@ def read_enums(file):
                 did = parts[0].strip()
                 stuff = parts[1].strip()
                 dic[did] = stuff
-
     return dic
 
-unifile = "Open3Edatapoints.py"
-
-dicuni = read_enums(unifile)
-dicdev = read_enums(devfile)
+dicuni = readfile(unifile)
+dicdev = readfile(devfile)
 
 for did in dicdev:
     if did.isnumeric():
