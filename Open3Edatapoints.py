@@ -21,8 +21,6 @@ from Open3Ecodecs import *
 # https://viguide.viessmann.com/installations/10000017?gatewaySerial=7736170-gw-serial-17&deviceSerial=7720533-device-serial
 
 dataIdentifiers = {
-    # HPMU Führungsgerät Interner CAN-BUS: 1
-    # Heat Pump Management Unit 
     0x680 : {
         "name": "HPMU", "tx": 0x680, "rx": 0x690, 
         "dids" : 
