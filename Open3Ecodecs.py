@@ -155,7 +155,7 @@ class O3EUtf8(udsoncan.DidCodec):
         return self.string_len
 
 
-class O3ESoftVers(udsoncan.DidCodec):
+class O3EVers4Int(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -237,6 +237,38 @@ class O3ESdate(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EDateTime(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, timeformat: str="VM"):
+        self.string_len = string_len
+        self.id = idStr
+        self.timeformat = timeformat
+        self.complex = False
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        
+        if self.timeformat == 'VM':
+            dt = datetime.datetime(
+                 string_bin[0]*100+string_bin[1], # year
+                 string_bin[2],                   # month
+                 string_bin[3],                   # day
+                 string_bin[5],                   # hour
+                 string_bin[6],                   # minute
+                 string_bin[7]                    # second
+                )
+        if self.timeformat == 'ts':
+            dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:6], byteorder="little", signed=False))
+        return (dt.strftime('%c')),            # Date & Time local format
+
+    def __len__(self) -> int:
+        return self.string_len
+
 class O3EStime(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
@@ -308,6 +340,48 @@ class O3EEnum(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
        
+class O3EList(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, subTypes: list):
+        self.string_len = string_len
+        self.id = idStr
+        self.complex = True
+        self.subTypes = subTypes
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        subTypes = self.subTypes
+        idStr = self.id
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {}
+        index=0 # not 1
+        count = 0
+        for subType in self.subTypes:
+            nameStr = subType.__class__.__name__
+
+            # we expect a byte element with the name "Count"
+            if subType.id == 'Count':
+                count = subType.decode(string_bin[index:index+subType.string_len])
+                result[subType.id]=count 
+                index =+ subType.string_len
+                continue
+
+            if nameStr == 'O3EComplexType':
+                i=0
+                result[idStr] = []
+                while i < count:
+                    result[idStr].append(subType.decode(string_bin[index:index+subType.string_len]))
+                    index+=subType.string_len
+                    i += 1
+                continue
+
+        return json.dumps(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
+
 
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):

@@ -196,7 +196,7 @@ lstpops = []
 for itm in dataIdentifiers:
     if not (itm in dataIdentifiersDev):
         lstpops.append(itm)
-    elif not (dataIdentifiersDev[itm] is None):  # None means 'no change'
+    elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
 #        print("change", itm, type(dataIdentifiers[itm]).__name__, dataIdentifiers[itm].string_len, type(dataIdentifiersDev[itm]).__name__, dataIdentifiersDev[itm].string_len)
         dataIdentifiers[itm] = dataIdentifiersDev[itm]
 
