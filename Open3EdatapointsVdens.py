@@ -17,10 +17,7 @@
 import Open3Ecodecs
 from Open3Ecodecs import *
 
-# Datapoints sourced from ViGuide Demo Mode:
-# https://viguide.viessmann.com/installations/10000008?gatewaySerial=7571381-gw-serial&deviceSerial=7690296-device-serial
-
-dataIdentifiersVdens = {
+dataIdentifiers = {
     # HMU Führungsgerät Interner CAN-BUS: 1
     # Heat Management Unit 
     0x680 : {

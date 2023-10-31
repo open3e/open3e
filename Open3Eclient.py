@@ -183,6 +183,7 @@ config = dict(udsoncan.configs.default_client_config)
 
 # load datapoints for selected device
 dataIdentifiersDev = None
+"""
 if(args.dev == "vcal"):
     import Open3EdatapointsVcal
     from Open3EdatapointsVcal import *
@@ -199,6 +200,13 @@ if(args.dev == "vair"):
     import Open3EdatapointsVair
     from Open3EdatapointsVair import *
     dataIdentifiersDev = dataIdentifiersVair[0x680]["dids"]
+"""
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+import importlib
+module_name =  "Open3Edatapoints" + args.dev.capitalize()
+didmodule = importlib.import_module(module_name)
+dataIdentifiersDev = didmodule.dataIdentifiers[0x680]["dids"]
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # load general datapoints table
 dataIdentifiers = dataIdentifiers[0x680]["dids"]

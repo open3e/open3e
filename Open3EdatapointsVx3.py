@@ -17,7 +17,7 @@
 import Open3Ecodecs
 from Open3Ecodecs import *
 
-dataIdentifiersVx3 = {
+dataIdentifiers = {
     0x680: {
         "name": "EMCU", "tx": 0x680, "rx": 0x690,
         "dids":

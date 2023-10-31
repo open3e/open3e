@@ -17,7 +17,7 @@
 import Open3Ecodecs
 from Open3Ecodecs import *
 
-dataIdentifiersVair = {
+dataIdentifiers = {
     # VCU Führungsgerät Externer CAN-BUS: 1
     # Ventilations Control Unit
     0x680 : {
