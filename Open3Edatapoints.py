@@ -1054,8 +1054,10 @@ dataIdentifiers = {
             3108 : RawCodec(9, "PhotovoltaicsActivePowerLimitationRampRate"),
             3113 : RawCodec(8, "DeviceDigitalOutputOneValueStatistical"),
             3114 : RawCodec(8, "DeviceDigitalOutputTwoValueStatistical"),
+            3134 : RawCodec(8, "DomesticHotWaterCirculationPumpStatistical"), 
             3155 : RawCodec(5, "DomesticHotWaterShiftLoadPumpStatus"),
             3156 : O3EInt8(1, "DomesticHotWaterShiftLoadPumpType"),
+            3190 : O3EInt8(1, "RefrigerantCircuitFourWayValvePosition"),
             3191 : RawCodec(199, "ExtendedEventLoggingHistory"),
         }
     }
