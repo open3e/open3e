@@ -28,13 +28,8 @@ import time
 import paho.mqtt.client as paho
 import json
 
-import Open3EdatapointsVcal
-import Open3EdatapointsVdens
-import Open3EdatapointsVx3
-
-from Open3EdatapointsVcal import *
-from Open3EdatapointsVdens import *
-from Open3EdatapointsVx3 import *
+import Open3Edatapoints
+from Open3Edatapoints import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
@@ -187,13 +182,46 @@ conn.logger.setLevel(loglevel)
 config = dict(udsoncan.configs.default_client_config)
 
 # load datapoints for selected device
-dataIdentifiers = None
+dataIdentifiersDev = None
 if(args.dev == "vcal"):
-    dataIdentifiers = dataIdentifiersVcal[0x680]["dids"]
+    import Open3EdatapointsVcal
+    from Open3EdatapointsVcal import *
+    dataIdentifiersDev = dataIdentifiersVcal[0x680]["dids"]
 if(args.dev == "vdens"):
-    dataIdentifiers = dataIdentifiersVdens[0x680]["dids"]
+    import Open3EdatapointsVdens
+    from Open3EdatapointsVdens import *
+    dataIdentifiersDev = dataIdentifiersVdens[0x680]["dids"]
 if(args.dev == "vx3"):
-    dataIdentifiers = dataIdentifiersVx3[0x680]["dids"]
+    import Open3EdatapointsVx3
+    from Open3EdatapointsVx3 import *
+    dataIdentifiersDev = dataIdentifiersVx3[0x680]["dids"]
+if(args.dev == "vair"):
+    import Open3EdatapointsVair
+    from Open3EdatapointsVair import *
+    dataIdentifiersDev = dataIdentifiersVair[0x680]["dids"]
+
+# load general datapoints table
+dataIdentifiers = dataIdentifiers[0x680]["dids"]
+
+# overlay device dids over general table 
+lstpops = []
+for itm in dataIdentifiers:
+    if not (itm in dataIdentifiersDev):
+        lstpops.append(itm)
+    elif not (dataIdentifiersDev[itm] is None):  # None means 'no change'
+#        print("change", itm, type(dataIdentifiers[itm]).__name__, dataIdentifiers[itm].string_len, type(dataIdentifiersDev[itm]).__name__, dataIdentifiersDev[itm].string_len)
+        dataIdentifiers[itm] = dataIdentifiersDev[itm]
+
+# remove dids not existing with the device
+for itm in lstpops:
+    dataIdentifiers.pop(itm)
+
+# debug only - see what we have now with this device
+#for itm in dataIdentifiers:
+#    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}")
+
+# probably useless but to indicate that it's not required anymore
+dataIdentifiersDev = None
 
 config['data_identifiers'] = dataIdentifiers
 
