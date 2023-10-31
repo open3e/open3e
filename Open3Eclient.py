@@ -27,6 +27,8 @@ import argparse
 import time
 import paho.mqtt.client as paho
 import json
+import importlib
+
 
 import Open3Edatapoints
 from Open3Edatapoints import *
@@ -182,31 +184,9 @@ conn.logger.setLevel(loglevel)
 config = dict(udsoncan.configs.default_client_config)
 
 # load datapoints for selected device
-dataIdentifiersDev = None
-"""
-if(args.dev == "vcal"):
-    import Open3EdatapointsVcal
-    from Open3EdatapointsVcal import *
-    dataIdentifiersDev = dataIdentifiersVcal[0x680]["dids"]
-if(args.dev == "vdens"):
-    import Open3EdatapointsVdens
-    from Open3EdatapointsVdens import *
-    dataIdentifiersDev = dataIdentifiersVdens[0x680]["dids"]
-if(args.dev == "vx3"):
-    import Open3EdatapointsVx3
-    from Open3EdatapointsVx3 import *
-    dataIdentifiersDev = dataIdentifiersVx3[0x680]["dids"]
-if(args.dev == "vair"):
-    import Open3EdatapointsVair
-    from Open3EdatapointsVair import *
-    dataIdentifiersDev = dataIdentifiersVair[0x680]["dids"]
-"""
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import importlib
 module_name =  "Open3Edatapoints" + args.dev.capitalize()
 didmodule = importlib.import_module(module_name)
 dataIdentifiersDev = didmodule.dataIdentifiers[0x680]["dids"]
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # load general datapoints table
 dataIdentifiers = dataIdentifiers[0x680]["dids"]
@@ -230,6 +210,7 @@ for itm in lstpops:
 
 # probably useless but to indicate that it's not required anymore
 dataIdentifiersDev = None
+didmodule = None
 
 config['data_identifiers'] = dataIdentifiers
 

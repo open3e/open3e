@@ -22,16 +22,7 @@ args = parser.parse_args()
 if(args.dev == None):
     args.dev = "vcal"
 
-devfile = ""
-if(args.dev == "vcal"):
-    devfile = "Open3EdatapointsVcal.py"
-if(args.dev == "vdens"):
-    devfile = "Open3EdatapointsVdens.py"
-if(args.dev == "vx3"):
-    devfile = "Open3EdatapointsVx3.py"
-if(args.dev == "vair"):
-    devfile = "Open3EdatapointsVair.py"
-
+devfile = "Open3Edatapoints" + args.dev.capitalize() +".py"
 unifile = "Open3Edatapoints.py"
 
 def readfile(file):
@@ -52,7 +43,7 @@ dicuni = readfile(unifile)
 dicdev = readfile(devfile)
 
 for did in dicdev:
-    if did.isnumeric():
+    if did.isdigit():
         if dicdev[did].lower().startswith("none"):
             if did in dicuni:
                 dicdev[did] = dicuni[did]
