@@ -42,7 +42,7 @@ def read_enums(file):
         line = line.strip()
         if line:
             parts = line.split(':')
-            if len(parts) == 2:
+            if len(parts) > 1:
                 did = parts[0].strip()
                 stuff = parts[1].strip()
                 dic[did] = stuff
