@@ -145,7 +145,7 @@ dataIdentifiers = {
             619 : None,
             621 : None,
             622 : None,
-            623 : RawCodec(181, "ServiceEngineer"),
+            623 : None,
             625 : None,
             627 : RawCodec(12, "CentralHeatingOneCircuitName"),
             628 : RawCodec(12, "CentralHeatingTwoCircuitName"),
