@@ -146,12 +146,12 @@ class O3EUtf8(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         mystr = string_bin[self.offset:self.offset+self.string_len].decode('utf-8')
         return mystr.replace('\x00', '')
-
+       
     def __len__(self) -> int:
         return self.string_len
 
 
-class O3EVers4Int(udsoncan.DidCodec):
+class O3ESoftVers(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -328,7 +328,7 @@ class O3EEnum(udsoncan.DidCodec):
         try:
             val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
             txt = Open3Eenums.E3Enums[self.listStr][val]
-            return txt
+            return f"{val}: {txt}"
         except:
             err = "Enum not found"
             return f"{err}: {self.listStr}.{val}"
@@ -352,26 +352,28 @@ class O3EList(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         result = {}
-        index=0 # not 1
+        index = 0
         count = 0
         for subType in self.subTypes:
             nameStr = subType.__class__.__name__
-
             # we expect a byte element with the name "Count"
             if subType.id == 'Count':
                 count = subType.decode(string_bin[index:index+subType.string_len])
                 result[subType.id]=count 
-                index =+ subType.string_len
-                continue
+                index =+ subType.string_len 
 
-            if nameStr == 'O3EComplexType':
+            elif nameStr == 'O3EComplexType':
                 i=0
                 result[idStr] = []
                 while i < count:
                     result[idStr].append(subType.decode(string_bin[index:index+subType.string_len]))
                     index+=subType.string_len
                     i += 1
-                continue
+
+            else:
+                result[subType.id]=subType.decode(string_bin[index:index+subType.string_len]) 
+                index = index + subType.string_len
+
 
         return json.dumps(result)
     
@@ -400,83 +402,6 @@ class O3EComplexType(udsoncan.DidCodec):
             result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
             index+=subType.string_len
         return dict(result)
-    
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EDtcList(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, dtcType: str, subType: str="default"):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-        self.dtcType = dtcType
-        self.subType = subType
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        dtc = self.dtcType
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        result = {
-            "cntEvt": string_bin[0],
-            dtc: []
-            }
-        for ofs in range(0,result["cntEvt"]):
-            if self.subType == "History":
-                result[dtc].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs],timeformat='VM',txt="eventDescription", type=dtc))
-            else:
-                result[dtc].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs],timeformat='VM',txt="eventDescription", type=dtc))
-        return json.dumps(result)
-    
-    def __len__(self) -> int:
-        return self.string_len
-
-
-class O3EErrorDtcList(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        result = {
-            "cntDtc": string_bin[0],
-            "errors": []
-            }
-        for ofs in range(0,result["cntDtc"]):
-            result["errors"].append(toErrorEvent(string_bin[2+12*ofs:2+12+12*ofs]))
-        return json.dumps(result)
-    
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3EErrorDtcHistory(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = False
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        result = {
-            "cntDtc": string_bin[0],
-            "totDtc": int.from_bytes(string_bin[2:4], byteorder="little", signed=False),
-            "errors": []
-            }
-        for ofs in range(0,result["cntDtc"]):
-            result["errors"].append(toErrorEvent(string_bin[4+12*ofs:4+12+12*ofs]))
-        return json.dumps(result)
     
     def __len__(self) -> int:
         return self.string_len
@@ -594,27 +519,6 @@ class O3EHeatingCurve(udsoncan.DidCodec):
         return {
             "slope": float(string_bin[0]) / 10.0,
             "offset": int.from_bytes([string_bin[1]], byteorder="big", signed=True)
-        }
-
-    def __len__(self) -> int:
-        return self.string_len
-    
-class O3EOperationState(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-        self.complex = True
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): return RawCodec.decode(self, string_bin)
-        return {
-            "mode": int(string_bin[0]),
-            "state": int(string_bin[1]),
         }
 
     def __len__(self) -> int:
