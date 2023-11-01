@@ -1936,8 +1936,8 @@ E3Enums = {
     "Countries" : {
         0: "Germany",
         1: "Austria",
-        2: "FrFrance",
-        3: "UkUnitedKingdom",
+        2: "France",
+        3: "UnitedKingdom",
         4: "Afghanistan",
         5: "Albania",
         6: "Algeria",
