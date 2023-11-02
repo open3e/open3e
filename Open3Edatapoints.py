@@ -907,7 +907,7 @@ dataIdentifiers = {
             2600 : RawCodec(2, "ElectricalHeaterActivation"),
             2601 : RawCodec(2, "ElectricalHeaterVentilationConfiguration"),
             2604 : O3EByteVal(1, "LevelSwitchActivation"),
-            2605 : O3EComplexType(4, "QuickModeRuntime",[O3EInt16(2, "Geräuschreduzierte Lüftung", scale=1.0), O3EInt16(2, "Intensivlüftung", scale=1.0)]),
+            2605 : O3EComplexType(4, "QuickModeRuntime",[O3EInt16(2, "NoiseReduced", scale=1.0), O3EInt16(2, "Intensive", scale=1.0)]),
             2606 : O3EByteVal(1, "ExternalTriggerActivation"),
             2607 : O3EByteVal(1, "ExternalTriggerSettings"),
             2608 : RawCodec(28, "FilterSettings"),
