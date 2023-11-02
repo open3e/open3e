@@ -36,7 +36,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     -h, --help            show this help message and exit
     -c CAN, --can CAN     use can device, e.g. can0
     -d DOIP, --doip DOIP  use doip access, e.g. 192.168.1.1
-    -dev DEV, --dev DEV   boiler type --dev vdens or --dev vcal || pv/battery --dev vx3
+    -dev DEV, --dev DEV   boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair
     -a, --scanall         dump all dids
     -r READ, --read READ  read did, e.g. 0x173,0x174
     -raw, --raw           return raw data for all dids
