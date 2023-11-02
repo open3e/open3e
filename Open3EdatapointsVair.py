@@ -57,7 +57,7 @@ dataIdentifiers = {
            506 : None,
            507 : None,
            508 : None,
-           510 : None,
+           #510 : None,
            511 : None,
            512 : None,
            513 : None,
