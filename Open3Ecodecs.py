@@ -100,7 +100,7 @@ class O3EByteVal(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        return int(string_bin[self.offset])
+        return int.from_bytes(string_bin[self.offset:self.offset+self.string_len], byteorder="little", signed=False)
 
     def __len__(self) -> int:
         return self.string_len
@@ -120,7 +120,7 @@ class O3EBool(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes(string_bin[self.offset:self.offset+1], byteorder="little", signed=False)
+        val = int(string_bin[self.offset])
         if(val==0):
             return "off"
         else:
