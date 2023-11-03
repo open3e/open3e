@@ -229,7 +229,7 @@ with Client(conn, config=config) as client:
     mqttParamas = None
     if(args.mqtt != None):
         mqttParamas = args.mqtt.split(":")
-        client_mqtt = paho.Client("Open3E")
+        client_mqtt = paho.Client("Open3E"+'_'+str(int(time.time()*1000)))  # Unique mqtt id using timestamp
         if((args.mqttuser != None) and (args.mqttpass != None)):
             client_mqtt.username_pw_set(args.mqttuser , password=args.mqttpass)
         client_mqtt.connect(mqttParamas[0], int(mqttParamas[1]))
@@ -249,8 +249,8 @@ with Client(conn, config=config) as client:
         try:
             cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers)
         except (KeyboardInterrupt, InterruptedError):
-            # <STRG-C> oder SIGINT empfangen
-            # SIGINT kann z.B. mit <kill -s SIGINT pid> gesendet werden
+            # <STRG-C> oder SIGINT to stop
+            # Use <kill -s SIGINT pid> to send SIGINT
             pass
     else:
         if(args.read != None):
