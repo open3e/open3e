@@ -1,2 +1,5 @@
-__pycache__/Open3Ecodecs.cpython-39.pyc
-__pycache__/Open3Edatapoints.cpython-39.pyc
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+# local log files
+udsoncan.log
