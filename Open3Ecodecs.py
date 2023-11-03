@@ -282,7 +282,7 @@ class O3EStime(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         lstv = []
         itms = 3       
-        if(self.noSec) itms = 2
+        if(self.noSec): itms = 2
         for i in range(itms):
             lstv.append(f"{(string_bin[i]):02d}")
         return ":".join(lstv)
