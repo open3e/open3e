@@ -266,11 +266,10 @@ class O3EDateTime(udsoncan.DidCodec):
         return self.string_len
 
 class O3EStime(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, noSec: bool = False):
+    def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
         self.complex = False
-        self.noSec = noSec
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
@@ -281,9 +280,7 @@ class O3EStime(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         lstv = []
-        itms = 3       
-        if(self.noSec): itms = 2
-        for i in range(itms):
+        for i in range(self.string_len):
             lstv.append(f"{(string_bin[i]):02d}")
         return ":".join(lstv)
 
