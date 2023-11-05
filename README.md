@@ -86,7 +86,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan datapoints and publish data to broker 192.168.0.5
 
-    python Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    python3 Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
 
 # Listener mode
