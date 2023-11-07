@@ -342,7 +342,7 @@ class O3EList(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes: list):
         self.string_len = string_len
         self.id = idStr
-        self.complex = True
+        self.complex = False
         self.subTypes = subTypes
 
     def encode(self, string_ascii: Any) -> bytes:        
