@@ -111,7 +111,7 @@ def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
     try:
         response = client.read_data_by_identifier([did])
     except TimeoutError:
-        return
+        return 
     if(args.mqtt != None):
         # if no format string is set
         if(args.mqttformatstring == None):
@@ -181,15 +181,13 @@ if(args.can != None):
 
 conn.logger.setLevel(loglevel)
 
-config = dict(udsoncan.configs.default_client_config)
-
 # load datapoints for selected device
 module_name =  "Open3Edatapoints" + args.dev.capitalize()
-didmodule = importlib.import_module(module_name)
-dataIdentifiersDev = didmodule.dataIdentifiers[0x680]["dids"]
+didmoduledev = importlib.import_module(module_name)
+dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
 
-# load general datapoints table
-dataIdentifiers = dataIdentifiers[0x680]["dids"]
+# load general datapoints table from Open3Edatapoints.py
+dataIdentifiers = dataIdentifiers["dids"]
 
 # overlay device dids over general table 
 lstpops = []
@@ -197,7 +195,6 @@ for itm in dataIdentifiers:
     if not (itm in dataIdentifiersDev):
         lstpops.append(itm)
     elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
-#        print("change", itm, type(dataIdentifiers[itm]).__name__, dataIdentifiers[itm].string_len, type(dataIdentifiersDev[itm]).__name__, dataIdentifiersDev[itm].string_len)
         dataIdentifiers[itm] = dataIdentifiersDev[itm]
 
 # remove dids not existing with the device
@@ -206,18 +203,21 @@ for itm in lstpops:
 
 # debug only - see what we have now with this device
 #for itm in dataIdentifiers:
-#    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}")
+#    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}, {dataIdentifiers[itm].string_len}")
 
 # probably useless but to indicate that it's not required anymore
 dataIdentifiersDev = None
-didmodule = None
+didmoduledev = None
 
+
+# configuration for udsoncan client
+config = dict(udsoncan.configs.default_client_config)
 config['data_identifiers'] = dataIdentifiers
-
 # increase default timeout
 config['request_timeout'] = 20
 config['p2_timeout'] = 20
 config['p2_star_timeout'] = 20
+
 
 with Client(conn, config=config) as client:
     client.logger.setLevel(loglevel)
@@ -227,6 +227,7 @@ with Client(conn, config=config) as client:
 
     client_mqtt = None
     mqttParamas = None
+    # MQTT setup ~~~~~~~~~~~~~~~~~~
     if(args.mqtt != None):
         mqttParamas = args.mqtt.split(":")
         client_mqtt = paho.Client("Open3E"+'_'+str(int(time.time()*1000)))  # Unique mqtt id using timestamp
@@ -242,6 +243,7 @@ with Client(conn, config=config) as client:
             print("Enter listener mode, waiting for commands on mqtt")
         else:
             print("Read dids and publish to mqtt...")
+    # listener mode ~~~~~~~~~~~~~~~~~~
     if (args.listen != None):
         if (args.mqtt == None):
             print('mqtt option is mandatory for listener mode')
@@ -252,10 +254,11 @@ with Client(conn, config=config) as client:
             # <STRG-C> oder SIGINT to stop
             # Use <kill -s SIGINT pid> to send SIGINT
             pass
+    # traditional commands ~~~~~~~~~~~~~~~~~~ 
     else:
         if(args.read != None):
+            dids = args.read.split(",")
             while(True):
-                dids = args.read.split(",")
                 for did in dids:
                     readByDid(eval(did), client, client_mqtt, mqttParamas, dataIdentifiers)
                     time.sleep(0.01)
@@ -265,12 +268,14 @@ with Client(conn, config=config) as client:
                     break
         else:
             if(args.scanall == True):
-                for did in dataIdentifiers.keys():
-                    response = client.read_data_by_identifier([did])
-                    if(args.verbose == True):
-                        print (did, dataIdentifiers[did].id, response.service_data.values[did])
-                    else:
-                        print (did, response.service_data.values[did])
+                for did in dataIdentifiers:
+                    readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers)
+#                for did in dataIdentifiers.keys():
+#                    response = client.read_data_by_identifier([did])
+#                    if(args.verbose == True):
+#                        print (did, dataIdentifiers[did].id, response.service_data.values[did])
+#                    else:
+#                        print (did, response.service_data.values[did])
             # experimental write to did
             if(args.write != None):
                 if(args.raw == False):
