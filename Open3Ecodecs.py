@@ -357,14 +357,13 @@ class O3EList(udsoncan.DidCodec):
         index = 0
         count = 0
         for subType in self.subTypes:
-            nameStr = subType.__class__.__name__
             # we expect a byte element with the name "Count"
             if subType.id == 'Count':
                 count = subType.decode(string_bin[index:index+subType.string_len])
                 result[subType.id]=count 
                 index =+ subType.string_len 
 
-            elif nameStr == 'O3EComplexType':
+            elif type(subType) is O3EComplexType:
                 i=0
                 result[idStr] = []
                 while i < count:
@@ -375,7 +374,6 @@ class O3EList(udsoncan.DidCodec):
             else:
                 result[subType.id]=subType.decode(string_bin[index:index+subType.string_len]) 
                 index = index + subType.string_len
-
 
         return json.dumps(result)
     
