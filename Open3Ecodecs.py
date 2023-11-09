@@ -260,7 +260,7 @@ class O3EDateTime(udsoncan.DidCodec):
                 )
         if self.timeformat == 'ts':
             dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:6], byteorder="little", signed=False))
-        return (dt.strftime('%c')),            # Date & Time local format
+        return str(dt) #(dt.strftime('%c')),            # Date & Time local format
 
     def __len__(self) -> int:
         return self.string_len
@@ -358,24 +358,23 @@ class O3EList(udsoncan.DidCodec):
         count = 0
         for subType in self.subTypes:
             # we expect a byte element with the name "Count"
-            if subType.id == 'Count':
-                count = subType.decode(string_bin[index:index+subType.string_len])
+            if subType.id.lower() == 'count':
+                count = int(subType.decode(string_bin[index:index+subType.string_len]))
                 result[subType.id]=count 
                 index =+ subType.string_len 
 
             elif type(subType) is O3EComplexType:
-                i=0
                 result[idStr] = []
-                while i < count:
+                for i in range(count):
                     result[idStr].append(subType.decode(string_bin[index:index+subType.string_len]))
                     index+=subType.string_len
-                    i += 1
 
             else:
                 result[subType.id]=subType.decode(string_bin[index:index+subType.string_len]) 
                 index = index + subType.string_len
 
         return json.dumps(result)
+        #return dict(result)
     
     def __len__(self) -> int:
         return self.string_len
