@@ -87,8 +87,8 @@ def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
             if cd['mode'] == 'write-raw':
                 Open3Ecodecs.flag_rawmode = True
                 for wd in cd['data']:
-                    didKey = eval(str(wd[0]))                               # key is submitted as numeric value
-                    didVal = ''.join('{:04x}'.format(eval(str(wd[1]))))     # val is submitted as hex-string w/o change of byte-order
+                    didKey = eval(str(wd[0]))               # key is submitted as numeric value
+                    didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                     writeByDid(didKey, didVal, client)
                     time.sleep(0.1)
         else:
