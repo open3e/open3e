@@ -264,22 +264,22 @@ with Client(conn, config=config) as client:
                     time.sleep(float(eval(args.timestep)))
                 else:
                     break
-        else:
-            if(args.scanall == True):
-                for did in dataIdentifiers:
-                    readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers)
+        elif(args.scanall == True):
+            for did in dataIdentifiers:
+                readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers)
+                time.sleep(0.01)
 #                for did in dataIdentifiers.keys():
 #                    response = client.read_data_by_identifier([did])
 #                    if(args.verbose == True):
 #                        print (did, dataIdentifiers[did].id, response.service_data.values[did])
 #                    else:
 #                        print (did, response.service_data.values[did])
-            # experimental write to did
-            if(args.write != None):
-                if(args.raw == False):
-                    raise Exception("Error: write only accepts raw data, use -raw param")
-                writeArg = args.write.split("=")
-                didKey=eval(writeArg[0])
-                didVal=str(writeArg[1]).replace("0x","")
-                writeByDid(didKey, didVal, client)
-                time.sleep(0.1)
+        # experimental write to did
+        elif(args.write != None):
+            if(args.raw == False):
+                raise Exception("Error: write only accepts raw data, use -raw param")
+            writeArg = args.write.split("=")
+            didKey=eval(writeArg[0])
+            didVal=str(writeArg[1]).replace("0x","")
+            writeByDid(didKey, didVal, client)
+            time.sleep(0.1)
