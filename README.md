@@ -100,6 +100,14 @@ If you get the error "error: externally-managed-environment" you could add *--br
     
     to write value of 45.0 to did 396 and value of 21.5 to did 424:
     {"mode": "write", "data":[[396,45.0],[424,21.5]]}
+
+    to set frost protect threshold to -9°C in complex did:
+    {"mode": "write-raw", "data":[[2855,"01A6FF"]]}
+    (A6FF lsb..msb -> 0xFFA6 -> -90 -> -9.0°C; Byte 0 unchanged)
+
+    to set frost protect threshold and eco function threshold to -9°C (complex dids):
+    {"mode": "write-raw", "data":[[2855,"01A6FF"],[2426,"01A6FF000A00"]]}
+
     
     Option -m is mandatory for this mode.
     Options -r, -t, -v may be used in parallel.
