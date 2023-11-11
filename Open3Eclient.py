@@ -106,6 +106,15 @@ def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
 
 
 def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
+    def mqttdump(topic, obj):
+        if (type(obj)==dict):
+            for k, itm in obj.items():
+                mqttdump(topic+'/'+str(k),itm)
+        elif (type(obj)==list):
+            for k in range(len(obj)):
+                mqttdump(topic+'/'+str(k),obj[k])
+        else:
+            ret = client_mqtt.publish(topic, str(obj))                  
     try:
         response = client.read_data_by_identifier([did])
     except TimeoutError:
@@ -120,13 +129,12 @@ def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
             didName = dataIdentifiers[did].id,
             didNumber = did
         )
-        if(dataIdentifiers[did].complex == True): 
-            # complex datatype
-            for key, value in response.service_data.values[did].items():
-                ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr + "/" + str(key), str(value))
+        if(args.json == True): 
+            # Send one JSON message 
+            ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, json.dumps(response.service_data.values[did]))    
         else:
-            # scalar datatype
-            ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
+            # Split down to scalar types
+            mqttdump(mqttParamas[2] + "/" + publishStr, response.service_data.values[did])
         if(args.verbose == True):
             print (did, dataIdentifiers[did].id, response.service_data.values[did])
     else:
@@ -163,6 +171,7 @@ parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
 parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username")
 parser.add_argument("-mpass", "--mqttpass", type=str, help="mqtt password")
+parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
 parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 

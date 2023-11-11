@@ -30,7 +30,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
 
 # Usage
     usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER]
-                           [-mpass MQTTPASS] [-v] [-l CMND-TOPIC]
+                           [-mpass MQTTPASS] [-j] [-v] [-l CMND-TOPIC]
 
     options:
     -h, --help            show this help message and exit
@@ -51,8 +51,9 @@ If you get the error "error: externally-managed-environment" you could add *--br
                             mqtt username
     -mpass MQTTPASS, --mqttpass MQTTPASS
                             mqtt password
-	-l, --listen		mqtt topic to listen for commands, e.g. open3e/cmnd
+	-j, --json          send JSON structure via MQTT
     -v, --verbose		verbose info
+	-l, --listen		mqtt topic to listen for commands, e.g. open3e/cmnd
 
 # Read dids
     python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v

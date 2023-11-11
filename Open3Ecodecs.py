@@ -238,7 +238,7 @@ class O3EDateTime(udsoncan.DidCodec):
         self.string_len = string_len
         self.id = idStr
         self.timeformat = timeformat
-        self.complex = False
+        self.complex = True
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
@@ -260,7 +260,9 @@ class O3EDateTime(udsoncan.DidCodec):
                 )
         if self.timeformat == 'ts':
             dt = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:6], byteorder="little", signed=False))
-        return str(dt) #(dt.strftime('%c')),            # Date & Time local format
+        return { "DateTime": str(dt),
+                 "Timestamp": int(dt.timestamp()*1000)
+               }
 
     def __len__(self) -> int:
         return self.string_len
@@ -303,7 +305,7 @@ class O3EUtc(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         val = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:4], byteorder="little", signed=False)).strftime('%Y-%m-%d %H:%M:%S')
-        return val
+        return str(val)
 
     def __len__(self) -> int:
         return self.string_len
@@ -313,7 +315,7 @@ class O3EEnum(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, listStr:str):
         self.string_len = string_len
         self.id = idStr
-        self.complex = False
+        self.complex = True
         self.listStr = listStr
 
     def encode(self, string_ascii: Any) -> bytes:        
@@ -330,10 +332,11 @@ class O3EEnum(udsoncan.DidCodec):
         try:
             val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
             txt = Open3Eenums.E3Enums[self.listStr][val]
-            return f"{val}: {txt}"
+            return {"ID": val,
+                    "Text": txt }
         except:
-            err = "Enum not found"
-            return f"{err}: {self.listStr}.{val}"
+            return {"ID": str(self.listStr),
+                    "Text": "Enum not found" }
         
     def __len__(self) -> int:
         return self.string_len
@@ -342,7 +345,7 @@ class O3EList(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes: list):
         self.string_len = string_len
         self.id = idStr
-        self.complex = False
+        self.complex = True
         self.subTypes = subTypes
 
     def encode(self, string_ascii: Any) -> bytes:        
@@ -364,17 +367,16 @@ class O3EList(udsoncan.DidCodec):
                 index =+ subType.string_len 
 
             elif type(subType) is O3EComplexType:
-                result[idStr] = []
+                result[subType.id] = []
                 for i in range(count):
-                    result[idStr].append(subType.decode(string_bin[index:index+subType.string_len]))
+                    result[subType.id].append(subType.decode(string_bin[index:index+subType.string_len]))
                     index+=subType.string_len
 
             else:
                 result[subType.id]=subType.decode(string_bin[index:index+subType.string_len]) 
                 index = index + subType.string_len
 
-        return json.dumps(result)
-        #return dict(result)
+        return dict(result)
     
     def __len__(self) -> int:
         return self.string_len
@@ -409,7 +411,7 @@ class O3EEventLoggingHistory(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
-        self.complex = False
+        self.complex = True
 
     def encode(self, string_ascii: Any) -> bytes:        
         raise Exception("not implemented yet")
@@ -422,13 +424,13 @@ class O3EEventLoggingHistory(udsoncan.DidCodec):
             "events": []
             }
         for ofs in range(0,result["cntEvt"]):
-            result["events"].append(toErrorEvent(string_bin[2+9*ofs:2+9+9*ofs],timeformat='ts',txt="event"))
-        return json.dumps(result)
+            result["events"].append(toErrorEvent(string_bin[2+9*ofs:2+9+9*ofs],timeformat='ts',txt="Event"))
+        return result
     
     def __len__(self) -> int:
         return self.string_len
 
-def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
+def toErrorEvent(string_bin:bytes, timeformat='VM', txt="Error", type="Info" ):
     id = int.from_bytes(string_bin[0:2], byteorder="little", signed=False)
     if timeformat == 'VM':
         dt = datetime.datetime(
@@ -451,12 +453,12 @@ def toErrorEvent(string_bin:bytes, timeformat='VM', txt="error", type="Info" ):
         text = "Description not found"
     
     event = {
-        "id": id,
-        txt : text,
-        "dt": dt.strftime('%c'),            # Date & Time local format
-        "ts": int(dt.timestamp()*1000)      # Unix timestamp (ms)
+        "ID"       : id,
+        txt        : text,
+        "DateTime" : str(dt),                    # Date & Time
+        "Timestamp": int(dt.timestamp()*1000)    # Unix timestamp (ms)
     }
-    return event;
+    return event
 
 class O3ECompStat(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
