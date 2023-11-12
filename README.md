@@ -94,10 +94,16 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode": "read"|"write"|"write-raw", "data":[list of data]}
+    {"mode": "read"|"read-json"|"read-raw"|"write"|"write-raw", "data":[list of data]}
     
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
+    
+    to read dids 265 and 266 as JSON-objects (even w/o option -json):
+    {"mode": "read-json", "data":[265,266]}
+    
+    to read dids 265 and 266 as raw data (even w/o option -raw):
+    {"mode": "read-raw", "data":[265,266]}
     
     to write value of 45.0 to did 396 and value of 21.5 to did 424:
     {"mode": "write", "data":[[396,45.0],[424,21.5]]}
@@ -109,7 +115,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     to set frost protect threshold and eco function threshold to -9°C (complex dids):
     {"mode": "write-raw", "data":[[2855,"01A6FF"],[2426,"01A6FF000A00"]]}
 
-    
+ 
     Option -m is mandatory for this mode.
-    Options -r, -t, -v may be used in parallel.
+    Options -r, -t, -j, -v may be used in parallel.
     

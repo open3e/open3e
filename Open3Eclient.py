@@ -37,7 +37,7 @@ import Open3Ecodecs
 from Open3Ecodecs import *
 
 cmnd_queue = []
-cmnds      = ['read','write','write-raw']
+cmnds      = ['read','read-json','read-raw','write','write-raw']
 
 def on_connect(client, userdata, flags, rc):
     client.subscribe(args.listen)
@@ -68,11 +68,11 @@ def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
                 print('bad mode value = ' + str(cd['mode'])+'\nSupported commands are: '+json.dumps(cmnds)[1:-1])
                 pass
 
-            if cd['mode'] == 'read':
-                Open3Ecodecs.flag_rawmode = False
+            if cd['mode'] in ['read','read-json','read-raw']:
+                Open3Ecodecs.flag_rawmode = (cd['mode']=='read-raw')
                 dids = cd['data']
                 for did in dids:
-                    readByDid(eval(str(did)), client, client_mqtt, mqttParamas, dataIdentifiers)
+                    readByDid(eval(str(did)), client, client_mqtt, mqttParamas, dataIdentifiers, forceJson=(cd['mode']=='read-json'))
                     time.sleep(0.01)            # 10 ms delay before next request
 
             if cd['mode'] == 'write':
@@ -105,7 +105,7 @@ def cmnd_loop(client, client_mqtt, mqttParamas, dataIdentifiers):
         time.sleep(0.01)
 
 
-def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
+def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers, forceJson=False):
     def mqttdump(topic, obj):
         if (type(obj)==dict):
             for k, itm in obj.items():
@@ -129,7 +129,7 @@ def readByDid(did, client, client_mqtt, mqttParamas, dataIdentifiers):
             didName = dataIdentifiers[did].id,
             didNumber = did
         )
-        if(args.json == True): 
+        if (args.json == True) or forceJson: 
             # Send one JSON message 
             ret = client_mqtt.publish(mqttParamas[2] + "/" + publishStr, json.dumps(response.service_data.values[did]))    
         else:
