@@ -23,6 +23,10 @@ import Open3Eclass
 # default ECU address
 deftx = 0x680
 
+# ECUs and their addresses
+lstecus = {}
+dicdevaddrs = {}  # str:int
+
 
 # utils ~~~~~~~~~~~~~~~~~~~~~~~
 def getint(v) -> int:
@@ -31,6 +35,12 @@ def getint(v) -> int:
     else:
         return int(eval(str(v)))
 
+def addrofdev(v) -> int: 
+    if(v in dicdevaddrs):
+        return dicdevaddrs[v]
+    else:
+        return v
+        
 def get_ecudid(v):
     s = str(v)
     parts = s.split(".")
@@ -45,9 +55,9 @@ def eval_complex(v) -> list: # returns list of [ecu,did] items
     parts = s.split(".")
     if(len(parts) == 1):
         # only did
-        return [[deftx,getint(parts[0])]]
+        return [[deftx,getint(addrofdev(parts[0]))]]
     elif(len(parts) == 2):  # maybe later 3: ecu.did.sub... 
-        ecu = getint(parts[0])
+        ecu = getint(addrofdev((parts[0])))
         parts[1] = parts[1].replace('[','').replace(']','')
         parts = parts[1].split(",")
         if(len(parts) == 1):
@@ -114,7 +124,7 @@ def listen(listento:str, readdids=None, timestep=0):
                 payload = ''
 
     def getaddr(cd):
-        if 'addr' in cd: return getint(cd['addr'])
+        if 'addr' in cd: return getint(addrofdev(cd['addr']))
         else: return deftx         
 
     def cmnd_loop():
@@ -223,8 +233,6 @@ if(args.verbose == None):
 
 
 # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-lstecus = {}
-
 if(args.config != None):
     # get configuration from file
     with open(args.config, 'r') as file:
@@ -238,6 +246,7 @@ if(args.config != None):
 #            print("Device:", device["dev"])
             ecutx = getint(device['tx'])
             dev = device['dev']
+            dicdevaddrs[dev] = ecutx
             ecu = Open3Eclass.O3Eclass(ecutx=ecutx, device=dev, doip=args.doip, can=args.can, 
                                         mqttconstr=args.mqtt, mqttuser=args.mqttuser, mqttformat=args.mqttformatstring,
                                         json=args.json, raw=args.raw, verbose=args.verbose)
