@@ -1,0 +1,25 @@
+[
+  {
+    "timestep": "1",
+    "devices": 
+      [
+        {
+          "tx": "0x680",
+          "dev": "vcal",
+          "rdids": "256",
+          "xtime": "2"
+        },
+        {
+          "tx": "0x6A1",
+          "dev": "vx3",
+          "rdids": "257,258",
+          "xtime": "3"
+        },
+        {
+          "tx": "0x68C",
+          "dev": "vcmu"
+        }
+      ]
+  }
+]
+

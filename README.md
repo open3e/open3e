@@ -33,20 +33,21 @@ If you get the error "error: externally-managed-environment" you could add *--br
                            [-mpass MQTTPASS] [-j] [-v] [-l CMND-TOPIC]
 
     options:
-    -h, --help            show this help message and exit
-    -c CAN, --can CAN     use can device, e.g. can0
-    -d DOIP, --doip DOIP  use doip access, e.g. 192.168.1.1
-    -dev DEV, --dev DEV   boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair
-    -a, --scanall         dump all dids
-    -r READ, --read READ  read did, e.g. 0x173,0x174
-    -raw, --raw           return raw data for all dids
+    -h, --help              show this help message and exit
+    -c CAN, --can CAN       use can device, e.g. can0
+    -d DOIP, --doip DOIP    use doip access, e.g. 192.168.1.1
+    -dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair
+    -a, --scanall           dump all dids
+    -r READ, --read READ    read did, e.g. 0x173,0x174
+    -raw, --raw             return raw data for all dids
     -w WRITE, --write WRITE
                             write did, e.g. -w 396=D601 (raw data only!)
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
     -mfstr MQTTFORMATSTRING, --mqttformatstring MQTTFORMATSTRING
-                            mqtt formatstring e.g. {didNumber}_{didName}
+                            mqtt formatstring e.g. {ecuAddr:X}_{device}_{didNumber}_{didName}
+                            ':X' is optional and sets Format of ECU address. may be X, x, d, ...
     -muser MQTTUSER, --mqttuser MQTTUSER
                             mqtt username
     -mpass MQTTPASS, --mqttpass MQTTPASS
@@ -94,7 +95,12 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
+<<<<<<< HEAD
     {"mode": "read"|"read-json"|"read-raw"|"write"|"write-raw", "data":[list of data]}
+=======
+    {"mode":"read"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"} 
+    rem: "addr" is optional, otherwise defaut ECU address used
+>>>>>>> feat-classmulti
     
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
