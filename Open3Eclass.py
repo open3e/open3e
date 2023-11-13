@@ -43,7 +43,6 @@ class O3Eclass():
         self.mqtt_client = None
         self.mqttFormat = mqttformat
         self.mqttTopic = None
-        self.mqttecufmt = 'X'
         
         # init only, obsolete?!
         Open3Ecodecs.flag_rawmode = self.raw
@@ -125,12 +124,6 @@ class O3Eclass():
             self.mqtt_client.loop_start()
             if(self.mqttFormat == None):
                 self.mqttFormat = "{didName}" # default
-            else:
-                # check for ecuAddr format
-                match = re.search(r'{ecuAddr:(.*?)}', self.mqttFormat)
-                if match:
-                    self.mqttecufmt = match.group(1)
-                    self.mqttFormat = self.mqttFormat.replace(match.group(0), '{ecuAddr}')
 
 
     #++++++++++++++++++++++++++++++
@@ -161,7 +154,7 @@ class O3Eclass():
         
         if(self.mqtt_client != None):
             publishStr = self.mqttFormat.format(
-                ecuAddr = str(format(self.tx, self.mqttecufmt)),
+                ecuAddr = self.tx,
                 device = self.device,
                 didName = self.dataIdentifiers[did].id,
                 didNumber = did
