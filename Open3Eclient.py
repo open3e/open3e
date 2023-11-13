@@ -17,6 +17,7 @@
 import argparse
 import time
 import json
+import paho.mqtt.client as paho
 
 import Open3Eclass
 
@@ -24,7 +25,7 @@ import Open3Eclass
 deftx = 0x680
 
 # ECUs and their addresses
-lstecus = {}
+lstecus = {}     # addr:ecu
 dicdevaddrs = {}  # str:int
 
 
@@ -35,11 +36,17 @@ def getint(v) -> int:
     else:
         return int(eval(str(v)))
 
-def addrofdev(v) -> int: 
+def addr_of_dev(v) -> int: 
     if(v in dicdevaddrs):
         return dicdevaddrs[v]
-    else:
-        return v
+    return v
+
+def dev_of_addr(addr:int):
+    for key, val in dicdevaddrs.items():
+        if val == addr:
+            return key
+    # If the value is not found, you might want to handle this case accordingly
+    return None
         
 def get_ecudid(v):
     s = str(v)
@@ -55,9 +62,9 @@ def eval_complex(v) -> list: # returns list of [ecu,did] items
     parts = s.split(".")
     if(len(parts) == 1):
         # only did
-        return [[deftx,getint(addrofdev(parts[0]))]]
+        return [[deftx,getint(addr_of_dev(parts[0]))]]
     elif(len(parts) == 2):  # maybe later 3: ecu.did.sub... 
-        ecu = getint(addrofdev((parts[0])))
+        ecu = getint(addr_of_dev((parts[0])))
         parts[1] = parts[1].replace('[','').replace(']','')
         parts = parts[1].split(",")
         if(len(parts) == 1):
@@ -94,16 +101,17 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 def ensure_ecu(addr:int):
     if(not (addr in lstecus)):
-        ecu = Open3Eclass.O3Eclass(ecutx=addr, device=args.dev, doip=args.doip, can=args.can, 
-                                    mqttconstr=args.mqtt, mqttuser=args.mqttuser, mqttformat=args.mqttformatstring,
-                                    json=args.json, raw=args.raw, verbose=args.verbose)
+        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, 
+                                    device=args.dev, raw=args.raw, verbose=args.verbose)
         lstecus[addr] = ecu
 
     
  
 
 def listen(listento:str, readdids=None, timestep=0):
-    import paho.mqtt.client as paho
+    if(args.mqtt == None):
+        raise Exception('mqtt option is mandatory for listener mode')
+
     cmnd_queue = []
     
     def on_connect(client, userdata, flags, rc):
@@ -124,8 +132,8 @@ def listen(listento:str, readdids=None, timestep=0):
                 payload = ''
 
     def getaddr(cd):
-        if 'addr' in cd: return getint(addrofdev(cd['addr']))
-        else: return deftx         
+        if 'addr' in cd: return getint(addr_of_dev(cd['addr']))
+        else: return deftx 
 
     def cmnd_loop():
         cmnds = ['read','read-json','read-raw','write','write-raw']
@@ -143,7 +151,7 @@ def listen(listento:str, readdids=None, timestep=0):
                     dids = cd['data']
                     ensure_ecu(addr) 
                     for did in dids:
-                        lstecus[addr].readByDid(getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                        readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
                         time.sleep(0.01)            # 10 ms delay before next request
 
                 if cd['mode'] == 'write':
@@ -178,24 +186,73 @@ def listen(listento:str, readdids=None, timestep=0):
                     
             time.sleep(0.01)
 
-    # MQTT setup ~~~~~~~~~~~~~~~~~~
-    if(args.mqtt == None):
-        raise Exception('mqtt option is mandatory for listener mode')
-    client_mqtt = paho.Client("Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
-    if(args.mqttuser != None):
-        mlst = args.mqttuser.split(':')
-        client_mqtt.username_pw_set(mlst[0], password=mlst[1])
-    mlst = args.mqtt.split(':')
-    client_mqtt.on_connect = on_connect
-    client_mqtt.on_disconnect = on_disconnect
-    client_mqtt.on_message = on_message
-    client_mqtt.connect(mlst[0], int(mlst[1]))
-    client_mqtt.reconnect_delay_set(min_delay=1, max_delay=30)
-    client_mqtt.loop_start()
+    mqtt_client.on_connect = on_connect
+    mqtt_client.on_disconnect = on_disconnect
+    mqtt_client.on_message = on_message
     print("Enter listener mode, waiting for commands on mqtt...")
 
     # and go...
     cmnd_loop() 
+
+
+def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
+    if(raw == None): 
+        raw = args.raw
+    try:
+        value,idstr =  lstecus[addr].readByDid(did, raw=args.raw)
+        showread(addr, did, value, idstr, json, msglvl)    
+    except TimeoutError:
+        return
+    
+
+def showread(addr, did, value, idstr, json=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+    def mqttdump(topic, obj):
+        if (type(obj)==dict):
+            for k, itm in obj.items():
+                mqttdump(topic+'/'+str(k),itm)
+        elif (type(obj)==list):
+            for k in range(len(obj)):
+                mqttdump(topic+'/'+str(k),obj[k])
+        else:
+            ret = mqtt_client.publish(topic, str(obj))     
+
+    if(json == None): 
+        json = args.json
+
+    if(mqtt_client != None):
+        publishStr = args.mqttformatstring.format(
+            ecuAddr = addr,
+            device = dev_of_addr(addr),
+            didName = idstr,
+            didNumber = did
+        )
+        
+        if(json):
+            # Send one JSON message
+            ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
+        else:
+            # Split down to scalar types
+            mqttdump(mqttTopic + "/" + publishStr, value)
+        
+        if(args.verbose == True):
+            print (hex(addr), did, idstr, value)
+    else:
+        if(args.verbose == True):
+            print (hex(addr), did, idstr, value)
+        else:
+            mlst = []
+            if((msglvl & 4) != 0):
+                mlst.append(str(hex(addr)))
+            if((msglvl & 1) != 0):
+                mlst.append(str(did))
+            if((msglvl & 2) != 0):
+                mlst.append(idstr)
+            mlst.append(str(value))
+            msg = " ".join(mlst)
+            print(msg)
+
+
+
 
 
 #~~~~~~~~~~~~~~~~~~~~~~
@@ -244,20 +301,32 @@ if(args.config != None):
         for device in entry["devices"]:
 #            print("TX:", device["tx"])
 #            print("Device:", device["dev"])
-            ecutx = getint(device['tx'])
+            addr = getint(device['tx'])
             dev = device['dev']
-            dicdevaddrs[dev] = ecutx
-            ecu = Open3Eclass.O3Eclass(ecutx=ecutx, device=dev, doip=args.doip, can=args.can, 
-                                        mqttconstr=args.mqtt, mqttuser=args.mqttuser, mqttformat=args.mqttformatstring,
-                                        json=args.json, raw=args.raw, verbose=args.verbose)
-            lstecus[ecutx] = ecu
+            dicdevaddrs[dev] = addr
+            ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, 
+                                        device=dev, raw=args.raw, verbose=args.verbose)
+            lstecus[addr] = ecu
 else:
-    ecu = Open3Eclass.O3Eclass(ecutx=deftx, device=args.dev, doip=args.doip, can=args.can, 
-                                mqttconstr=args.mqtt, mqttuser=args.mqttuser, mqttformat=args.mqttformatstring,
-                                json=args.json, raw=args.raw, verbose=args.verbose)
+    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can,
+                                device=args.dev, raw=args.raw, verbose=args.verbose)
     lstecus[deftx] = ecu
     
 
+# MQTT setup ~~~~~~~~~~~~~~~~~~
+mqtt_client = None
+if(args.mqtt != None):
+    mqtt_client = paho.Client("Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+    if(args.mqttuser != None):
+        mlst = args.mqttuser.split(':')
+        mqtt_client.username_pw_set(mlst[0], password=mlst[1])
+    mlst = args.mqtt.split(':')
+    mqttTopic = mlst[2] 
+    mqtt_client.connect(mlst[0], int(mlst[1]))
+    mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
+    mqtt_client.loop_start()
+    
+    
 # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 try:
 
@@ -273,7 +342,8 @@ try:
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(lstecus) > 1): mlvl |= 4  # show ecu addr
-                lstecus[ecudid[0]].readByDid(ecudid[1], msglvl=mlvl)
+                val,idstr = lstecus[ecudid[0]].readByDid(ecudid[1])
+                showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1])
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
@@ -287,7 +357,9 @@ try:
         ecu,didkey = get_ecudid(writeArg[0])
         didVal=str(writeArg[1]).replace("0x","")
         ensure_ecu(ecu)
-        lstecus[ecu].writeByDid(didkey, didVal)
+        print(f"write {ecu}.{didkey} = {didVal}")
+        succ,code = lstecus[ecu].writeByDid(didkey, didVal)
+        print(f"success: {succ}, code: {code}")
         time.sleep(0.1)
 
     # scanall
@@ -295,8 +367,11 @@ try:
         msglvl = 1  # show did nr
         if(len(lstecus) > 1):
             msglvl = 5  # show ECU addr also
-        for ecu in lstecus.values():
-            ecu.readAll(msglvl=msglvl)
+        for addr,ecu in lstecus.items():
+            lst = ecu.readAll()
+            for itm in lst:
+                showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
+
 
 except (KeyboardInterrupt, InterruptedError):
     # <STRG-C> oder SIGINT to stop

@@ -46,8 +46,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
     -mfstr MQTTFORMATSTRING, --mqttformatstring MQTTFORMATSTRING
-                            mqtt formatstring e.g. {ecuAddr:X}_{device}_{didNumber}_{didName}
-                            ':X' is optional and sets Format of ECU address. may be X, x, d, ...
+                            mqtt formatstring e.g. {ecuAddr:03X}_{device}_{didNumber}_{didName}
     -muser MQTTUSER, --mqttuser MQTTUSER
                             mqtt username
     -mpass MQTTPASS, --mqttpass MQTTPASS
@@ -95,12 +94,8 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-<<<<<<< HEAD
-    {"mode": "read"|"read-json"|"read-raw"|"write"|"write-raw", "data":[list of data]}
-=======
     {"mode":"read"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"} 
     rem: "addr" is optional, otherwise defaut ECU address used
->>>>>>> feat-classmulti
     
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
