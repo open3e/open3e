@@ -101,7 +101,7 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 def ensure_ecu(addr:int):
     if(not (addr in dicecus)):
-        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can) 
+        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
         dicecus[addr] = ecu
 
  
@@ -298,15 +298,13 @@ if(args.config != None):
         addrtx = getint(config.get("tx"))
         dplist = config.get("dpList")
         # make ecu
-        ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can)
-        ecu.setDatapoints(dplist)
+        ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
         dicecus[addrtx] = ecu
         dicdevaddrs[device] = addrtx
 
 else:
     # only default device
-    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can)
-    ecu.setDatapoints(args.dev)
+    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
     dicecus[deftx] = ecu
     dicdevaddrs[args.dev] = deftx
 
