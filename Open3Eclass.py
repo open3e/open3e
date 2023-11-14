@@ -67,17 +67,17 @@ class O3Eclass():
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
-    def setDatapoints(self, device:str):
+    def setDatapoints(self, dev:str):
         # (re)load general datapoints table from Open3Edatapoints.py
         self.dataIdentifiers = dict(dataIdentifiers["dids"])
 
         # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
-        if(device != None):  #!?! was kommt aus config.json?!?
-            if(device != ''):  #!?! was kommt aus config.json?!?
-                if('.py' in device):
-                    module_name = device.replace('.py', '')
+        if(dev != None):  #!?! was kommt aus config.json?!?
+            if(dev != ''):  #!?! was kommt aus config.json?!?
+                if('.py' in dev):
+                    module_name = dev.replace('.py', '')
                 else:
-                    module_name =  "Open3Edatapoints" + device.capitalize()
+                    module_name = "Open3Edatapoints" + dev.capitalize()
 
                 # load datapoints for selected device
                 didmoduledev = importlib.import_module(module_name)
