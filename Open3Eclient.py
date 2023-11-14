@@ -25,7 +25,7 @@ import Open3Eclass
 deftx = 0x680
 
 # ECUs and their addresses
-lstecus = {}      # addr:ecu
+dicecus = {}      # addr:ecu
 dicdevaddrs = {}  # devstr:addr
 
 
@@ -100,10 +100,9 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 
 def ensure_ecu(addr:int):
-    if(not (addr in lstecus)):
-        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, 
-                                    device=args.dev, raw=args.raw, verbose=args.verbose)
-        lstecus[addr] = ecu
+    if(not (addr in dicecus)):
+        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can) 
+        dicecus[addr] = ecu
 
  
 # subs  ~~~~~~~~~~~~~~~~~~~~~~~
@@ -162,7 +161,7 @@ def listen(listento:str, readdids=None, timestep=0):
                     for wd in cd['data']:
                         didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
                         didVal = getint(wd[1])    # value: dto.
-                        lstecus[addr].writeByDid(didKey, didVal, raw=False) 
+                        dicecus[addr].writeByDid(didKey, didVal, raw=False) 
                         time.sleep(0.1)
                     
                 if cd['mode'] == 'write-raw':
@@ -171,7 +170,7 @@ def listen(listento:str, readdids=None, timestep=0):
                     for wd in cd['data']:
                         didKey = getint(wd[0])                  # key is submitted as numeric value
                         didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                        lstecus[addr].writeByDid(didKey, didVal, raw=True)
+                        dicecus[addr].writeByDid(didKey, didVal, raw=True)
                         time.sleep(0.1)
             else:
                 if (readdids != None):
@@ -199,7 +198,7 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     if(raw == None): 
         raw = args.raw
     try:
-        value,idstr =  lstecus[addr].readByDid(did, raw=args.raw)
+        value,idstr =  dicecus[addr].readByDid(did, raw=args.raw)
         showread(addr, did, value, idstr, json, msglvl)    
     except TimeoutError:
         return
@@ -293,21 +292,22 @@ if(args.verbose == None):
 if(args.config != None):
     # get configuration from file
     with open(args.config, 'r') as file:
-        data = json.load(file)
-
+        devjson = json.load(file)
     # make ECU list
-    for entry in data:
-        for device in entry["devices"]:
-            addr = getint(device['tx'])
-            dev = device['dev']
-            dicdevaddrs[dev] = addr
-            ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, 
-                                        device=dev, raw=args.raw, verbose=args.verbose)
-            lstecus[addr] = ecu
+    for device, config in devjson.items():
+        addrtx = getint(config.get("tx"))
+        dplist = config.get("dpList")
+        # make ecu
+        ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can)
+        ecu.setDatapoints(dplist)
+        dicecus[addrtx] = ecu
+        dicdevaddrs[device] = addrtx
+
 else:
-    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can,
-                                device=args.dev, raw=args.raw, verbose=args.verbose)
-    lstecus[deftx] = ecu
+    # only default device
+    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can)
+    dicecus[deftx] = ecu
+    #? dicdevaddrs[device] = addrtx
     
 
 # MQTT setup ~~~~~~~~~~~~~~~~~~
@@ -335,12 +335,12 @@ try:
         jobs =  eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl += 1  # show did nr
-        if(len(lstecus) > 1): mlvl |= 4  # show ecu addr
+        if(len(dicecus) > 1): mlvl |= 4  # show ecu addr
         while(True):
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
-                if(len(lstecus) > 1): mlvl |= 4  # show ecu addr
-                val,idstr = lstecus[ecudid[0]].readByDid(ecudid[1])
+                if(len(dicecus) > 1): mlvl |= 4  # show ecu addr
+                val,idstr = dicecus[ecudid[0]].readByDid(ecudid[1])
                 showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1])
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
@@ -358,17 +358,17 @@ try:
             didVal=str(writeArg[1]).replace("0x","")
             ensure_ecu(ecu)
             print(f"write {ecu}.{didkey} = {didVal}")
-            succ,code = lstecus[ecu].writeByDid(didkey, didVal)
+            succ,code = dicecus[ecu].writeByDid(didkey, didVal)
             print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
 
     # scanall
     elif(args.scanall == True):
         msglvl = 1  # show did nr
-        if(len(lstecus) > 1):
+        if(len(dicecus) > 1):
             msglvl = 5  # show ECU addr also
-        for addr,ecu in lstecus.items():
-            lst = ecu.readAll()
+        for addr,ecu in dicecus.items():
+            lst = ecu.readAll(args.raw)
             for itm in lst:
                 showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
 
@@ -378,6 +378,8 @@ except (KeyboardInterrupt, InterruptedError):
     pass
                 
 # close all connections before exit
-for ecu in lstecus.values():
+for ecu in dicecus.values():
+    if(args.verbose):
+        print(f"closing {hex(ecu.tx)} - bye!")
     ecu.close()
     

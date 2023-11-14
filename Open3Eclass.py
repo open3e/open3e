@@ -24,50 +24,13 @@ class O3Eclass():
     def __init__(self, ecutx:int=0x680, ecurx:int=0,
                  doip:str=None, # doip mode if not empty  
                  can:str='can0', 
-                 device:str='None',
                  raw=False, 
-                 verbose=False,
                 ):
 
-        self.device = device
-        self.verbose = verbose
-        self.raw = raw
         self.tx = ecutx 
-        
-        # init only, obsolete?!
-        Open3Ecodecs.flag_rawmode = self.raw
-
 
         # load general datapoints table from Open3Edatapoints.py
-        self.dataIdentifiers = dict(dataIdentifiers["dids"])
-
-        # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
-        if(device != None):  #!?! was kommt aus config.json?!?
-            # load datapoints for selected device
-            module_name =  "Open3Edatapoints" + device.capitalize()
-            didmoduledev = importlib.import_module(module_name)
-            dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
-
-            # overlay device dids over general table 
-            lstpops = []
-            for itm in self.dataIdentifiers:
-                if not (itm in dataIdentifiersDev):
-                    lstpops.append(itm)
-                elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
-                    self.dataIdentifiers[itm] = dataIdentifiersDev[itm]
-
-            # remove dids not existing with the device
-            for itm in lstpops:
-                self.dataIdentifiers.pop(itm)
-
-            # debug only - see what we have now with this device
-            #for itm in dataIdentifiers:
-            #    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}, {dataIdentifiers[itm].string_len}")
-
-            # probably useless but to indicate that it's not required anymore
-            dataIdentifiersDev = None
-            didmoduledev = None
-            
+        self.dataIdentifiers = dict(dataIdentifiers["dids"])            
 
         # ECU addresses
         if(ecurx == 0):
@@ -105,6 +68,43 @@ class O3Eclass():
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
+    def setDatapoints(self, device:str):
+        # (re)load general datapoints table from Open3Edatapoints.py
+        self.dataIdentifiers = dict(dataIdentifiers["dids"])
+
+        # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
+        if(device != None):  #!?! was kommt aus config.json?!?
+            if(device != ''):  #!?! was kommt aus config.json?!?
+                if('.py' in device):
+                    module_name = device.replace('.py', '')
+                else:
+                    module_name =  "Open3Edatapoints" + device.capitalize()
+
+                # load datapoints for selected device
+                didmoduledev = importlib.import_module(module_name)
+                dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
+
+                # overlay device dids over general table 
+                lstpops = []
+                for itm in self.dataIdentifiers:
+                    if not (itm in dataIdentifiersDev):
+                        lstpops.append(itm)
+                    elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
+                        self.dataIdentifiers[itm] = dataIdentifiersDev[itm]
+
+                # remove dids not existing with the device
+                for itm in lstpops:
+                    self.dataIdentifiers.pop(itm)
+
+                # debug only - see what we have now with this device
+                #for itm in dataIdentifiers:
+                #    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}, {dataIdentifiers[itm].string_len}")
+
+                # probably useless but to indicate that it's not required anymore
+                dataIdentifiersDev = None
+                didmoduledev = None
+
+
     def readByDid(self, did:int, raw=False): 
         Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.read_data_by_identifier([did])
@@ -128,8 +128,6 @@ class O3Eclass():
 
 
     def close(self):
-        if(self.verbose):
-            print(f"closing {hex(self.tx)} - bye!")
         self.uds_client.close()
         if(self.mqtt_client != None):
             self.mqtt_client.disconnect()
