@@ -24,7 +24,6 @@ class O3Eclass():
     def __init__(self, ecutx:int=0x680, ecurx:int=0,
                  doip:str=None, # doip mode if not empty  
                  can:str='can0', 
-                 raw=False, 
                 ):
 
         self.tx = ecutx 
