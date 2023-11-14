@@ -353,7 +353,7 @@ try:
             raise Exception("Error: write only accepts raw data, use -raw param")
         jobs = args.write.split(",")
         for job in jobs:
-            writeArg = args.write.split("=")
+            writeArg = job.split("=")
             ecu,didkey = get_ecudid(writeArg[0])
             didVal=str(writeArg[1]).replace("0x","")
             ensure_ecu(ecu)
