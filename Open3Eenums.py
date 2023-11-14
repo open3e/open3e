@@ -1,4 +1,4 @@
-﻿"""
+"""
    Copyright 2023 abnoname
    
    Licensed under the Apache License, Version 2.0 (the "License");
@@ -1888,6 +1888,9 @@ E3Enums = {
         9: "EEBUS",
         10: "PlusBusTwo",
         11: "ISquaredCBus",
+        12: "HEMS_Bus",
+        13: "TL_SolarLogBus",
+        14: "ServiceBus",
     },  
     
     "MixerCircuitTypes" : {
