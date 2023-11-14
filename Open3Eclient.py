@@ -25,8 +25,8 @@ import Open3Eclass
 deftx = 0x680
 
 # ECUs and their addresses
-lstecus = {}     # addr:ecu
-dicdevaddrs = {}  # str:int
+lstecus = {}      # addr:ecu
+dicdevaddrs = {}  # devstr:addr
 
 
 # utils ~~~~~~~~~~~~~~~~~~~~~~~
@@ -105,9 +105,8 @@ def ensure_ecu(addr:int):
                                     device=args.dev, raw=args.raw, verbose=args.verbose)
         lstecus[addr] = ecu
 
-    
  
-
+# subs  ~~~~~~~~~~~~~~~~~~~~~~~
 def listen(listento:str, readdids=None, timestep=0):
     if(args.mqtt == None):
         raise Exception('mqtt option is mandatory for listener mode')
@@ -132,8 +131,10 @@ def listen(listento:str, readdids=None, timestep=0):
                 payload = ''
 
     def getaddr(cd):
-        if 'addr' in cd: return getint(addr_of_dev(cd['addr']))
-        else: return deftx 
+        if 'addr' in cd: 
+            return getint(addr_of_dev(cd['addr']))
+        else: 
+            return deftx 
 
     def cmnd_loop():
         cmnds = ['read','read-json','read-raw','write','write-raw']
@@ -190,7 +191,6 @@ def listen(listento:str, readdids=None, timestep=0):
     mqtt_client.on_disconnect = on_disconnect
     mqtt_client.on_message = on_message
     print("Enter listener mode, waiting for commands on mqtt...")
-
     # and go...
     cmnd_loop() 
 
@@ -297,10 +297,7 @@ if(args.config != None):
 
     # make ECU list
     for entry in data:
-#        print("Interval:", entry["timestep"])
         for device in entry["devices"]:
-#            print("TX:", device["tx"])
-#            print("Device:", device["dev"])
             addr = getint(device['tx'])
             dev = device['dev']
             dicdevaddrs[dev] = addr
@@ -338,6 +335,7 @@ try:
         jobs =  eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl += 1  # show did nr
+        if(len(lstecus) > 1): mlvl |= 4  # show ecu addr
         while(True):
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
@@ -353,14 +351,16 @@ try:
     elif(args.write != None):
         if(args.raw != True):
             raise Exception("Error: write only accepts raw data, use -raw param")
-        writeArg = args.write.split("=")
-        ecu,didkey = get_ecudid(writeArg[0])
-        didVal=str(writeArg[1]).replace("0x","")
-        ensure_ecu(ecu)
-        print(f"write {ecu}.{didkey} = {didVal}")
-        succ,code = lstecus[ecu].writeByDid(didkey, didVal)
-        print(f"success: {succ}, code: {code}")
-        time.sleep(0.1)
+        jobs = args.write.split(",")
+        for job in jobs:
+            writeArg = args.write.split("=")
+            ecu,didkey = get_ecudid(writeArg[0])
+            didVal=str(writeArg[1]).replace("0x","")
+            ensure_ecu(ecu)
+            print(f"write {ecu}.{didkey} = {didVal}")
+            succ,code = lstecus[ecu].writeByDid(didkey, didVal)
+            print(f"success: {succ}, code: {code}")
+            time.sleep(0.1)
 
     # scanall
     elif(args.scanall == True):
@@ -371,7 +371,6 @@ try:
             lst = ecu.readAll()
             for itm in lst:
                 showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
-
 
 except (KeyboardInterrupt, InterruptedError):
     # <STRG-C> oder SIGINT to stop
