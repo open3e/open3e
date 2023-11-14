@@ -306,8 +306,10 @@ if(args.config != None):
 else:
     # only default device
     ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can)
+    ecu.setDatapoints(args.dev)
     dicecus[deftx] = ecu
-    #? dicdevaddrs[device] = addrtx
+    dicdevaddrs[args.dev] = deftx
+
     
 
 # MQTT setup ~~~~~~~~~~~~~~~~~~
