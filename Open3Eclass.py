@@ -112,7 +112,6 @@ class O3Eclass():
             Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
             # return value and idstr
-            print(response.service_data.values[did])
             return response.service_data.values[did],self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
