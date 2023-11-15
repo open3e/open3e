@@ -198,16 +198,16 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     if(raw == None): 
         raw = args.raw
     try:
-        value,idstr =  dicecus[addr].readByDid(did, raw=args.raw)
+        value,idstr =  dicecus[addr].readByDid(did, raw)
         showread(addr, did, value, idstr, json, msglvl)    
     except TimeoutError:
         return
     
 
-def showread(addr, did, value, idstr, json=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
     def mqttdump(topic, obj):
         if (type(obj)==dict):
-            for k, itm in obj.items():
+            for k,itm in obj.items():
                 mqttdump(topic+'/'+str(k),itm)
         elif (type(obj)==list):
             for k in range(len(obj)):
@@ -215,8 +215,8 @@ def showread(addr, did, value, idstr, json=None, msglvl=0):   # msglvl: bcd, 1=d
         else:
             ret = mqtt_client.publish(topic, str(obj))     
 
-    if(json == None): 
-        json = args.json
+    if(fjson == None): 
+        fjson = args.json
 
     if(mqtt_client != None):
         publishStr = args.mqttformatstring.format(
@@ -226,7 +226,7 @@ def showread(addr, did, value, idstr, json=None, msglvl=0):   # msglvl: bcd, 1=d
             didNumber = did
         )
         
-        if(json):
+        if(fjson):
             # Send one JSON message
             ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
         else:

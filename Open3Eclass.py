@@ -6,12 +6,11 @@ from udsoncan.connections import IsoTPSocketConnection
 from udsoncan.client import Client
 from udsoncan.exceptions import *
 from udsoncan.services import *
+
 from typing import Optional, Any
 import logging
-import time
-import paho.mqtt.client as paho
 import importlib
-import re
+import binascii
 
 import Open3Edatapoints
 from Open3Edatapoints import *
@@ -108,12 +107,15 @@ class O3Eclass():
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
-    def readByDid(self, did:int, raw=False): 
-        Open3Ecodecs.flag_rawmode = raw
-        response = self.uds_client.read_data_by_identifier([did])
-        # return value and idstr
-        return response.service_data.values[did],self.dataIdentifiers[did].id
-
+    def readByDid(self, did:int, raw=False):
+        if(did in self.dataIdentifiers): 
+            Open3Ecodecs.flag_rawmode = raw
+            response = self.uds_client.read_data_by_identifier([did])
+            # return value and idstr
+            print(response.service_data.values[did])
+            return response.service_data.values[did],self.dataIdentifiers[did].id
+        else:
+            return self.readPure(did)
 
     def writeByDid(self, did:int, val, raw=True):
         Open3Ecodecs.flag_rawmode = raw
@@ -129,6 +131,23 @@ class O3Eclass():
             lst.append([did, value, idstr])
         return lst 
 
+
+    def readPure(self, did:int):
+        response = udsoncan.Response()
+        try:
+            response = self.uds_client.send_request(
+                udsoncan.Request(
+                    service=udsoncan.services.ReadDataByIdentifier,
+                    data=(did).to_bytes(2, byteorder='big')
+                )
+            )
+            if(response.positive):
+                return binascii.hexlify(response.data[2:]).decode('utf-8'), f"unknown/len:{len(response)-3}"
+            else:
+                return f"negative response, {response.code}:{response.invalid_reason}", "unknown"
+        except Exception as ex:
+            return ex.args, "unknown"
+  
 
     def close(self):
         self.uds_client.close()
