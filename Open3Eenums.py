@@ -1112,7 +1112,8 @@ E3Enums = {
         1093:"FailureCommunicationTankLoadController",
         1094:"NoWaterFlowDHWTankLoadSystem",
         1095:"ViewedErrorList",
-        1096:"ErrorHasBeenConfirmed"
+        1096:"ErrorHasBeenConfirmed",
+        1183:"FailureStartCompressor" # https://www.viessmann-community.com/t5/Waermepumpe-Hybridsysteme/Vitocal-252-A-10-Fehlermeldung-F-1183-in-ViCare-und-im/td-p/382461
     },
 
     "Warnings" : {
