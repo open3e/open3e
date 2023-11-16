@@ -141,7 +141,7 @@ class O3Eclass():
                 )
             )
             if(response.positive):
-                return binascii.hexlify(response.data[2:]).decode('utf-8'), f"unknown/len:{len(response)-3}"
+                return binascii.hexlify(response.data[2:]).decode('utf-8'), f"unknown:len={len(response)-3}"
             else:
                 return f"negative response, {response.code}:{response.invalid_reason}", "unknown"
         except Exception as ex:

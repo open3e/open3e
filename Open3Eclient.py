@@ -136,7 +136,7 @@ def listen(listento:str, readdids=None, timestep=0):
             return deftx 
 
     def cmnd_loop():
-        cmnds = ['read','read-json','read-raw','write','write-raw']
+        cmnds = ['read','read-json','read-raw','read-pure','write','write-raw']
         next_read_time = time.time()
         while True:
             if len(cmnd_queue) > 0:
@@ -152,6 +152,14 @@ def listen(listento:str, readdids=None, timestep=0):
                     ensure_ecu(addr) 
                     for did in dids:
                         readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                        time.sleep(0.01)            # 10 ms delay before next request
+
+                if cd['mode'] == 'read-pure':
+                    addr = getaddr(cd)
+                    dids = cd['data']
+                    ensure_ecu(addr) 
+                    for did in dids:
+                        readpure(addr, getint(did), json=(cd['mode']=='read-json'))
                         time.sleep(0.01)            # 10 ms delay before next request
 
                 if cd['mode'] == 'write':
@@ -203,6 +211,12 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     except TimeoutError:
         return
     
+def readpure(addr:int, did:int, json=None, msglvl=0):
+    try:
+        value,idstr =  dicecus[addr].readPure(did)
+        showread(addr, did, value, idstr, json, msglvl)    
+    except TimeoutError:
+        return
 
 def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
     def mqttdump(topic, obj):
