@@ -179,8 +179,8 @@ def write_devices_json(lstecus:list):
     mylist = []
     # reformat list contents
     for cob,prop in lstecus:
-        scob = shex(cob)
-        sdplist = "Open3Edatapoints_" + scob + ".py"
+        scob = hex(cob)
+        sdplist = "Open3Edatapoints_" + shex(cob) + ".py"
         sprop = Open3Eenums.E3Enums['Devices'][prop]
         mylist.append((scob, sdplist, sprop))
     # make for dump
