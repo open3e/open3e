@@ -9,17 +9,17 @@
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
     sudo apt install git python3 python3-pip  
-  
+
 Now clone this repository to your system:  
 
     git clone https://github.com/abnoname/open3e.git  
-      
+
 Change into the directory
 
     cd open3e
-      
+
 Eventually run:
-  
+
     pip3 install -r requirements.txt  
 
 If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the preveious command.<br>
@@ -29,8 +29,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     sudo ip link set can0 up type can bitrate 250000
 
 # Usage
-    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER]
-                           [-mpass MQTTPASS] [-j] [-v] [-l CMND-TOPIC]
+    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC]
 
     options:
     -h, --help              show this help message and exit
@@ -46,28 +45,27 @@ If you get the error "error: externally-managed-environment" you could add *--br
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
     -mfstr MQTTFORMATSTRING, --mqttformatstring MQTTFORMATSTRING
-                            mqtt formatstring e.g. {ecuAddr:X}_{device}_{didNumber}_{didName}
-                            ':X' is optional and sets Format of ECU address. may be X, x, d, ...
-    -muser MQTTUSER, --mqttuser MQTTUSER
-                            mqtt username
-    -mpass MQTTPASS, --mqttpass MQTTPASS
-                            mqtt password
-	-j, --json          send JSON structure via MQTT
-    -v, --verbose		verbose info
-	-l, --listen		mqtt topic to listen for commands, e.g. open3e/cmnd
+                            mqtt formatstring e.g. {ecuAddr:03X}_{device}_{didNumber:04d}_{didName}
+    -muser MQTTUSER:PASSW, --mqttuser MQTTUSER:PASSW
+                            mqtt username:password
+    -cnfg DEVICES.JSON, --config DEVICES.JSON 
+                            use multi-ECU configuration file
+    -j, --json              send JSON structure via MQTT
+    -v, --verbose           verbose info
+    -l, --listen            mqtt topic to listen for commands, e.g. open3e/cmnd
 
 # Read dids
     python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v
-    0x10c FlowTempSensor 27.2
+    268 FlowTempSensor 27.2
 
     python3 Open3Eclient.py -c can0 -dev vcal -r 318 -v
-    0x13e WaterPressureSensor 1.8
+    318 WaterPressureSensor 1.8
 
     python3 Open3Eclient.py -c can0 -dev vcal -r 377 -v
-    0x179 IdentNumber XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    377 IdentNumber 7XXXXXXXXXXXXX
 
     python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -v
-    0x413 FlowMeterSensor 2412.0
+    1043 FlowMeterSensor 2412.0
 
     python3 Open3Eclient.py -c can0 -dev vx3 -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44
@@ -95,12 +93,8 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-<<<<<<< HEAD
-    {"mode": "read"|"read-json"|"read-raw"|"write"|"write-raw", "data":[list of data]}
-=======
-    {"mode":"read"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"} 
+    {"mode":"read"|"read-raw"|"read-pure"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
->>>>>>> feat-classmulti
     
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
@@ -125,3 +119,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
     
+
+# Depict System
+    In advance of starting the client, run `python3 Open3E_depictSystem.py` to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
+    Use Open3Eclient with cmd line argument -cnfg devices.json afterwards.

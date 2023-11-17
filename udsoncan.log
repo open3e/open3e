@@ -1,5 +1,0 @@
-2023-11-03 11:35:08 [ERROR] UdsClient: [IndexError] : index out of range
-2023-11-03 11:36:20 [ERROR] UdsClient: [IndexError] : index out of range
-2023-11-03 11:37:51 [ERROR] UdsClient: [IndexError] : index out of range
-2023-11-03 11:39:00 [ERROR] UdsClient: [AttributeError] : 'O3EComplexType' object has no attribute 'idStr'
-2023-11-03 11:39:23 [ERROR] UdsClient: [IndexError] : index out of range
