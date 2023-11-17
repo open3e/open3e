@@ -29,7 +29,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     sudo ip link set can0 up type can bitrate 250000
 
 # Usage
-    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC]
+    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -48,11 +48,13 @@ If you get the error "error: externally-managed-environment" you could add *--br
                             mqtt formatstring e.g. {ecuAddr:03X}_{device}_{didNumber:04d}_{didName}
     -muser MQTTUSER:PASSW, --mqttuser MQTTUSER:PASSW
                             mqtt username:password
+    -tx ECUADDR, --ecuaddr ECUADDR
+                            sets the default ECU Address different from 0x680
     -cnfg DEVICES.JSON, --config DEVICES.JSON 
-                            use multi-ECU configuration file
+                            use multi-ECU configuration file, e.g. `devices.json` created by Open3E_depictSystem
     -j, --json              send JSON structure via MQTT
     -v, --verbose           verbose info
-    -l, --listen            mqtt topic to listen for commands, e.g. open3e/cmnd
+    -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
 
 # Read dids
     python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v
