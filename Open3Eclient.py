@@ -382,6 +382,8 @@ try:
         if(len(dicecus) > 1):
             msglvl = 5  # show ECU addr also
         for addr,ecu in dicecus.items():
+            #? if(args.verbose == True):
+            print(f"reading {dicecus[addr].numdps} datapoints - please be patient...")
             lst = ecu.readAll(args.raw)
             for itm in lst:
                 showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)

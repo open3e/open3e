@@ -28,6 +28,7 @@ class O3Eclass():
 
         self.tx = ecutx 
         self.dev = dev  # not necessary
+        self.numdps = 0
 
         # load general datapoints table from Open3Edatapoints.py
         self.dataIdentifiers = dict(dataIdentifiers["dids"])            
@@ -70,6 +71,9 @@ class O3Eclass():
                 # probably useless but to indicate that it's not required anymore
                 dataIdentifiersDev = None
                 didmoduledev = None
+                # for info
+                self.numdps = len(self.dataIdentifiers)
+
             
         # ECU addresses ~~~~~~~~~~~~~~~~~~
         if(ecurx == 0):
