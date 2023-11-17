@@ -253,4 +253,12 @@ for cob,prop in lst_ecus:
         write_simul_datafile(lst_dids, cob, prop)
     # write ECU specific datapoints_did.py
     write_datapoints_file(lst_dids, cob, prop)
+# report
+print("\nconfiguration:")
+with open('devices.json', 'r') as file:
+    lines = file.readlines()
+for line in lines:
+    line = line.replace('\n','')
+    print(line)
+print("\nrun Open3Eclient with -mqtt and -a to get EVERYTHING on your MQTT app.")
     
