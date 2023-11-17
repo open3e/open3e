@@ -42,7 +42,6 @@ class O3Eclass():
                     module_name = "Open3Edatapoints" + dev.capitalize()
 
                 # load datapoints for selected device
-                module_name =  "Open3Edatapoints" + dev.capitalize()
                 didmoduledev = importlib.import_module(module_name)
                 dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
 
