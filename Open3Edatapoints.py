@@ -24,7 +24,7 @@ dataIdentifiers = {
     "name": "general", 
     "dids" : 
     {
-        256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")]),
+        256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty","Devices"), O3EEnum(1, "DeviceFunction","Devices"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")]),
         257 : O3EList(122, "StatusDtcList", [O3EByteVal(2, "Count"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"State","States"), O3EDateTime(8, "DateTime"),O3EByteVal(2, "Unknown")] )]),
         258 : O3EList(122, "StatusDtcHistory", [O3EByteVal(2, "Count"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"State","States"), O3EDateTime(8, "DateTime"),O3EByteVal(2, "Unknown")] )]),
         259 : O3EList(122, "InfoDtcList", [O3EByteVal(2, "Count"), O3EComplexType(12, "ListEntries",[O3EEnum(2,"Info","Infos"), O3EDateTime(8, "DateTime"),O3EByteVal(2, "Unknown")] )]),
