@@ -121,5 +121,6 @@ If you get the error "error: externally-managed-environment" you could add *--br
     
 
 # Depict System
-    In advance of starting the client, run `python3 Open3E_depictSystem.py` to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
-    Use Open3Eclient with cmd line argument -cnfg devices.json afterwards.
+    In advance of starting the client, run `python3 Open3E_depictSystem.py` 
+    to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
+    Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
