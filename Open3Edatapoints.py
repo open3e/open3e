@@ -67,6 +67,7 @@ dataIdentifiers = {
         329 : O3EComplexType(9, "ExtractAirTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         330 : O3EComplexType(9, "ExhaustAirTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         331 : O3EComplexType(9, "FlueGasTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True)]),
+        323 : RawCodec(9, "EnhancedVapourInjectionTemperatureSensor"),
         334 : O3EComplexType(9, "MixerOneCircuitRoomTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         335 : O3EComplexType(9, "MixerTwoCircuitRoomTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         336 : O3EComplexType(9, "MixerThreeCircuitRoomTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
@@ -499,6 +500,7 @@ dataIdentifiers = {
         1443 : RawCodec(41, "NoiseReductionTimeScheduleFriday"),
         1444 : RawCodec(41, "NoiseReductionTimeScheduleSaturday"),
         1445 : RawCodec(41, "NoiseReductionTimeScheduleSunday"),
+        1451 : RawCodec(4, "ApplicationChecksum"),
         1467 : RawCodec(2, "SafetyRelevantRemoteUnlock"),
         1468 : RawCodec(9, "FuelCellGasPressure"),
         1469 : RawCodec(31, "SensorActuatorTestGroupHeatEngine"),
@@ -1025,12 +1027,11 @@ dataIdentifiers = {
         2528 : RawCodec(96, "GeneratedCoolingOutputYearMatrix"),
         2529 : RawCodec(24, "GeneratedCoolingOutput"),
         2533 : RawCodec(27, "PowerGridCodeSettingsNormSix"),
-        2534 : O3EList(181, "BusTopologyMatrixSix", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2535 : O3EList(181, "BusTopologyMatrixSeven", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2536 : O3EList(181, "BusTopologyMatrixEight", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2537 : O3EList(181, "BusTopologyMatrixNine", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2538 : O3EList(181, "BusTopologyMatrixTen", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2538 : RawCodec(181, "BusTopologyMatrixTen"),#+++
+        #2534 : O3EList(181, "BusTopologyMatrixSix", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
+        2534 : RawCodec(181, "BusTopologyMatrixSix"),#+++
+        2535 : RawCodec(181, "BusTopologyMatrixSeven"),#+++
+        2536 : RawCodec(181, "BusTopologyMatrixEight"),#+++
+        2537 : RawCodec(181, "BusTopologyMatrixNine"),#+++
         2538 : RawCodec(181, "BusTopologyMatrixTen"),#+++
         2539 : RawCodec(40, "AlternatingCurrentEnergyStatistic"),
         2540 : RawCodec(6, "NoiseReductionSettings"),
@@ -1061,6 +1062,7 @@ dataIdentifiers = {
         2569 : O3EInt16(2, "CompressorSpeedRps", scale = 10),
         2570 : O3EInt16(2, "CompressorModulType"),#+++
         2571 : O3EInt16(2, "CompressorSuctionSuperheat"),#+++
+        2572 : RawCodec(4, "ActualCompressorInletMassflow"),
         2573 : RawCodec(2, "CompressorOnTimer"),
         2574 : O3EInt16(8, "NominalPowerElectricalHeater", scale = 1),
         2575 : O3EInt16(2, "RefrigerationCycleApplicationState"),#+++
