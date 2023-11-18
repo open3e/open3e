@@ -13,7 +13,6 @@ import importlib
 import binascii
 
 import Open3Edatapoints
-from Open3Edatapoints import *
 
 import Open3Ecodecs
 from Open3Ecodecs import *
@@ -23,15 +22,19 @@ class O3Eclass():
     def __init__(self, ecutx:int=0x680, ecurx:int=0,
                  doip:str=None, # doip mode if not empty  
                  can:str='can0', 
-                 dev:str=None
+                 dev=None
                 ):
 
         self.tx = ecutx 
         self.dev = dev  # not necessary
         self.numdps = 0
 
+        # ECU addresses ~~~~~~~~~~~~~~~~~~
+        if(ecurx == 0):
+            ecurx = ecutx + 0x10
+
         # load general datapoints table from Open3Edatapoints.py
-        self.dataIdentifiers = dict(dataIdentifiers["dids"])            
+        self.dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])            
 
         # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
         if(dev != None):  #!?! was kommt aus config.json?!?
@@ -74,10 +77,6 @@ class O3Eclass():
                 self.numdps = len(self.dataIdentifiers)
 
             
-        # ECU addresses ~~~~~~~~~~~~~~~~~~
-        if(ecurx == 0):
-            ecurx = ecutx + 0x10
-
         # select CAN / DoIP ~~~~~~~~~~~~~~~~~~
         if(doip != None):
             conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))

@@ -297,8 +297,8 @@ parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
 args = parser.parse_args()
 
 
-if(args.dev == None):
-    args.dev = "vcal"
+# if(args.dev == None):
+#     args.dev = "vcal"
 
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
@@ -320,13 +320,15 @@ if(args.config != None):
         ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
         dicecus[addrtx] = ecu
         dicdevaddrs[device] = addrtx
-
 else:
+    # # look if devices.json exists
+    # if(os.path.exists(file)):
+    #     # use it
+
     # only default device
     ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
     dicecus[deftx] = ecu
     dicdevaddrs[args.dev] = deftx
-
     
 
 # MQTT setup ~~~~~~~~~~~~~~~~~~
@@ -353,7 +355,7 @@ try:
     elif(args.read != None):
         jobs =  eval_complex_list(args.read)
         mlvl = 0  # only val 
-        if(len(jobs) > 1): mlvl += 1  # show did nr
+        if(len(jobs) > 1): mlvl |= 1  # show did nr
         if(len(dicecus) > 1): mlvl |= 4  # show ecu addr
         while(True):
             for ecudid in jobs:
