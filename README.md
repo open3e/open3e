@@ -28,6 +28,14 @@ If you get the error "error: externally-managed-environment" you could add *--br
 # Setup CAN Bus
     sudo ip link set can0 up type can bitrate 250000
 
+# Depict System
+In advance of first time starting the client and after every firmware update, run 
+    
+    python3 Open3E_depictSystem.py
+    
+to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
+Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
+
 # Usage
     usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
@@ -95,7 +103,7 @@ If you get the error "error: externally-managed-environment" you could add *--br
     python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
     
     to read dids 271 and 274:
@@ -121,8 +129,3 @@ If you get the error "error: externally-managed-environment" you could add *--br
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
     
-
-# Depict System
-    In advance of starting the client, run `python3 Open3E_depictSystem.py` 
-    to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
-    Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
