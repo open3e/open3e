@@ -19,8 +19,8 @@
 # +++++++++++++++++++++++++++++++++++++++++++++++ 
 interface = "can0"
 
-# cob scan, default 0x600 to 0x6ff  
-startcob = 0x600
+# cob scan, default 0x680 to 0x6ff  
+startcob = 0x680
 lastcob = 0x6ff
 
 # did scan, default 256 to 3500
