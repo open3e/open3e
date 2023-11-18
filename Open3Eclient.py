@@ -129,14 +129,14 @@ def listen(listento:str, readdids=None, timestep=0):
                 print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
                 payload = ''
 
-    def getaddr(cd):
+    def getaddr(cd) -> int:
         if 'addr' in cd: 
             return getint(addr_of_dev(cd['addr']))
         else: 
             return deftx 
 
     def cmnd_loop():
-        cmnds = ['read','read-json','read-raw','read-pure','write','write-raw']
+        cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw']
         next_read_time = time.time()
         while True:
             if len(cmnd_queue) > 0:
@@ -144,9 +144,8 @@ def listen(listento:str, readdids=None, timestep=0):
 
                 if not cd['mode'] in cmnds:
                     print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
-                    pass
 
-                if cd['mode'] in ['read','read-json','read-raw']:
+                elif cd['mode'] in ['read','read-json','read-raw']:
                     addr = getaddr(cd)
                     dids = cd['data']
                     ensure_ecu(addr) 
@@ -154,7 +153,7 @@ def listen(listento:str, readdids=None, timestep=0):
                         readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
                         time.sleep(0.01)            # 10 ms delay before next request
 
-                if cd['mode'] == 'read-pure':
+                elif cd['mode'] == 'read-pure':
                     addr = getaddr(cd)
                     dids = cd['data']
                     ensure_ecu(addr) 
@@ -162,7 +161,15 @@ def listen(listento:str, readdids=None, timestep=0):
                         readpure(addr, getint(did), json=(cd['mode']=='read-json'))
                         time.sleep(0.01)            # 10 ms delay before next request
 
-                if cd['mode'] == 'write':
+                elif cd['mode'] == 'read-all':
+                    addr = getaddr(cd)
+                    lst = dicecus[addr].readAll(args.raw)
+                    if(args.verbose == True):
+                        print(f"reading {hex(addr)}, {dicecus[addr].numdps} datapoints, please be patient...")
+                    for itm in lst:
+                        showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
+
+                elif cd['mode'] == 'write':
                     # ToDo: Umrechnung über Codec ergänzen. Wechselwirkung mit flag_rawmode beachten!
                     addr = getaddr(cd)
                     ensure_ecu(addr)
@@ -172,7 +179,7 @@ def listen(listento:str, readdids=None, timestep=0):
                         dicecus[addr].writeByDid(didKey, didVal, raw=False) 
                         time.sleep(0.1)
                     
-                if cd['mode'] == 'write-raw':
+                elif cd['mode'] == 'write-raw':
                     addr = getaddr(cd)
                     ensure_ecu(addr)
                     for wd in cd['data']:
@@ -263,8 +270,6 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             mlst.append(str(value))
             msg = " ".join(mlst)
             print(msg)
-
-
 
 
 
@@ -383,7 +388,7 @@ try:
             msglvl = 5  # show ECU addr also
         for addr,ecu in dicecus.items():
             #? if(args.verbose == True):
-            print(f"reading {dicecus[addr].numdps} datapoints - please be patient...")
+            print(f"reading {hex(addr)}, {dicecus[addr].numdps} datapoints, please be patient...")
             lst = ecu.readAll(args.raw)
             for itm in lst:
                 showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
