@@ -30,7 +30,7 @@ lastdid = 3500
 # use device string of device property of BusIdentification 
 #usedevstr = False
 
-# write file for virtualE3 
+# write files for virtualE3 
 writesimul = True
 
 # end of adjusts 
@@ -77,8 +77,9 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
                     )
                 )
                 if response.positive:
-                    devprop = response.data[2+2]  # PCI,DL, devprop is 3rd byte of diddata 
-                    print(f"ECU found: {hex(tx)} : {prop_str(devprop)}")
+                    iprop = response.data[2+2]  # PCI,DL, devprop is 3rd byte of diddata
+                    devprop = prop_str(iprop)
+                    print(f"ECU found: {hex(tx)} : {devprop}")
                     lstfounds.append((tx,devprop))
                     lstskips.append(rx)
     #            else:
@@ -112,13 +113,16 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
                 if response.positive:
                     dlen = len(response) - 3
                     data = response.data[2:]
-                    print(f"found {did}:{dlen}")
+                    dstr = "(unknown)"
+                    if(did in dicDidEnums):
+                        dstr = dicDidEnums[did]
+                    print(f"found {did}:{dlen}:{dstr}")
                     lstfounds.append((did,dlen,data))
     #            else:
     #                print(f"{did}:0")
             except Exception as e:
-                pass
                 # print(f"# DID {did}: Fehler: {e}")
+                pass
             time.sleep(0.02)
     client.close()
     print(f"{len(lstfounds)} DIDs found.")
@@ -127,16 +131,14 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
 
 # utils ~~~~~~~~~~~~~~~~~~~~~~
 def did_info(did:int) -> tuple:  # (didlen,idstr)
-    global dic_didenums
     if(did in dataIdentifiers):
         didlen = vars(dataIdentifiers[did])['string_len']
         idstr = vars(dataIdentifiers[did])['id'] 
         return (didlen,idstr)
-    elif(did in dic_didenums):
-        return (0, dic_didenums[did])
+    elif(did in dicDidEnums):
+        return (0, dicDidEnums[did])
     else:
         return (0, "Unknown")
-
 
 def prop_str(devprop:int) -> str:
     if(devprop in e3Devices):
@@ -146,6 +148,7 @@ def prop_str(devprop:int) -> str:
 
 def shex(nbr:int) -> str:
     return format(nbr, '03x')
+
 
 def read_didenums(file):
     dicenums = {}
@@ -181,8 +184,7 @@ def write_devices_json(lstecus:list):
     for cob,prop in lstecus:
         scob = hex(cob)
         sdplist = "Open3Edatapoints_" + shex(cob) + ".py"
-        sprop = Open3Eenums.E3Enums['Devices'][prop]
-        mylist.append((scob, sdplist, sprop))
+        mylist.append((scob, sdplist, prop))
     # make for dump
     result_dict = {}
     for mytuple in mylist:
@@ -195,25 +197,25 @@ def write_devices_json(lstecus:list):
     print("done.")
 
 
-def write_simul_datafile(lstdids:list, cobid:int, devprop:int):
+def write_simul_datafile(lstdids:list, cobid:int, devprop:str):
     filename = "virtdata_" + shex(cobid) + ".txt"
     print(f"write simulation data file {filename} ...")
     with open(filename, "w") as file:
-        file.write(f"# {hex(cobid)}:{prop_str(devprop)}\n")
+        file.write(f"# {hex(cobid)}:{devprop}\n")
         for did,dlen,data in lstdids:
             sdata = binascii.hexlify(data).decode('utf-8')
             file.write(str(did) + " " + sdata + "\n")
     print("done.")
 
 
-def write_datapoints_file(lstdids:list, cobid:int, devprop:int):
+def write_datapoints_file(lstdids:list, cobid:int, devprop:str):
     filename = "Open3Edatapoints_" + shex(cobid) + ".py"
     print(f"write datapoints file {filename} ...")
     with open(filename, "w") as file:
-        shead = 'import Open3Ecodecs\n'
+        shead =  'import Open3Ecodecs\n'
         shead += 'from Open3Ecodecs import *\n\n'
         shead += 'dataIdentifiers = {\n'
-        shead += '    \"name\": \"' + prop_str(devprop) + '\",\n'
+        shead += '    \"name\": \"' + str(devprop) + '\",\n'
         shead += '    \"dids\" :\n'
         shead += '    {\n'
         file.write(shead)
@@ -237,22 +239,22 @@ def write_datapoints_file(lstdids:list, cobid:int, devprop:int):
 # peparations
 dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])
 e3Devices = Open3Eenums.E3Enums['Devices']
-dic_didenums = read_didenums("DidEnums.txt")
+dicDidEnums = read_didenums("DidEnums.txt")
 
 # scan ECUs/COB-IDs
-lst_ecus = scan_cobs(startcob, lastcob)
+lstEcus = scan_cobs(startcob, lastcob)
 
 # generate devices.json
-write_devices_json(lst_ecus)
+write_devices_json(lstEcus)
 
 # scan dids of each responding ECU
-for cob,prop in lst_ecus:
-    lst_dids = scan_dids(cob, startdid, lastdid)
+for cob,prop in lstEcus:
+    lstdids = scan_dids(cob, startdid, lastdid)
     # write sumilation data in case
     if(writesimul):
-        write_simul_datafile(lst_dids, cob, prop)
+        write_simul_datafile(lstdids, cob, prop)
     # write ECU specific datapoints_did.py
-    write_datapoints_file(lst_dids, cob, prop)
+    write_datapoints_file(lstdids, cob, prop)
 # report
 print("\nconfiguration:")
 with open('devices.json', 'r') as file:
