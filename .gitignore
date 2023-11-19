@@ -4,3 +4,8 @@ __pycache__/
 # local log files
 udsoncan.log
 scan.log
+# user specific files
+devices*
+Open3Edatapoints_*
+virtdata_*
+.vscode/
