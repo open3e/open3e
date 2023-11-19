@@ -25,8 +25,8 @@ import Open3Eclass
 deftx = 0x680
 
 # ECUs and their addresses
-dicecus = {}      # addr:ecu
-dicdevaddrs = {}  # devstr:addr
+dicEcus = {}      # addr:ecu
+dicDevAddrs = {}  # devstr:addr
 
 
 # utils ~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,12 +37,12 @@ def getint(v) -> int:
         return int(eval(str(v)))
 
 def addr_of_dev(v) -> int: 
-    if(v in dicdevaddrs):
-        return dicdevaddrs[v]
+    if(v in dicDevAddrs):
+        return dicDevAddrs[v]
     return v
 
 def dev_of_addr(addr:int):
-    for key, val in dicdevaddrs.items():
+    for key, val in dicDevAddrs.items():
         if val == addr:
             return key
     # If the value is not found, you might want to handle this case accordingly
@@ -100,9 +100,9 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 
 def ensure_ecu(addr:int):
-    if(not (addr in dicecus)):
+    if(not (addr in dicEcus)):
         ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
-        dicecus[addr] = ecu
+        dicEcus[addr] = ecu
 
  
 # subs  ~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,9 +163,9 @@ def listen(listento:str, readdids=None, timestep=0):
 
                 elif cd['mode'] == 'read-all':
                     addr = getaddr(cd)
-                    lst = dicecus[addr].readAll(args.raw)
+                    lst = dicEcus[addr].readAll(args.raw)
                     if(args.verbose == True):
-                        print(f"reading {hex(addr)}, {dicecus[addr].numdps} datapoints, please be patient...")
+                        print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
                     for itm in lst:
                         showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
 
@@ -176,7 +176,7 @@ def listen(listento:str, readdids=None, timestep=0):
                     for wd in cd['data']:
                         didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
                         didVal = getint(wd[1])    # value: dto.
-                        dicecus[addr].writeByDid(didKey, didVal, raw=False) 
+                        dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
                         time.sleep(0.1)
                     
                 elif cd['mode'] == 'write-raw':
@@ -185,7 +185,7 @@ def listen(listento:str, readdids=None, timestep=0):
                     for wd in cd['data']:
                         didKey = getint(wd[0])                  # key is submitted as numeric value
                         didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                        dicecus[addr].writeByDid(didKey, didVal, raw=True)
+                        dicEcus[addr].writeByDid(didKey, didVal, raw=True)
                         time.sleep(0.1)
             else:
                 if (readdids != None):
@@ -213,14 +213,14 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     if(raw == None): 
         raw = args.raw
     try:
-        value,idstr =  dicecus[addr].readByDid(did, raw)
+        value,idstr =  dicEcus[addr].readByDid(did, raw)
         showread(addr, did, value, idstr, json, msglvl)    
     except TimeoutError:
         return
     
 def readpure(addr:int, did:int, json=None, msglvl=0):
     try:
-        value,idstr =  dicecus[addr].readPure(did)
+        value,idstr =  dicEcus[addr].readPure(did)
         showread(addr, did, value, idstr, json, msglvl)    
     except TimeoutError:
         return
@@ -281,10 +281,12 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
 parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
 parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
+parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
+parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
 parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
 parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
-parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
 parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
+parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
 parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
@@ -292,13 +294,11 @@ parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formats
 parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
 parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
 parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
-parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
-parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
 args = parser.parse_args()
 
 
-# if(args.dev == None):
-#     args.dev = "vcal"
+if((args.doip == None) and (args.can == None)):
+    raise Exception("Error: No interface specified. --can or --doip mandatory.")
 
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
@@ -309,6 +309,8 @@ if(args.verbose == None):
 
 # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if(args.config != None):
+    if(args.config == 'dev'):  # short
+        args.config = 'devices.json'
     # get configuration from file
     with open(args.config, 'r') as file:
         devjson = json.load(file)
@@ -318,20 +320,16 @@ if(args.config != None):
         dplist = config.get("dpList")
         # make ecu
         ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
-        dicecus[addrtx] = ecu
-        dicdevaddrs[device] = addrtx
+        dicEcus[addrtx] = ecu
+        dicDevAddrs[device] = addrtx
 else:
-    # # look if devices.json exists
-    # if(os.path.exists(file)):
-    #     # use it
-
     # only default device
     ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
-    dicecus[deftx] = ecu
-    dicdevaddrs[args.dev] = deftx
+    dicEcus[deftx] = ecu
+    dicDevAddrs[args.dev] = deftx
     
 
-# MQTT setup ~~~~~~~~~~~~~~~~~~
+# MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 mqtt_client = None
 if(args.mqtt != None):
     mqtt_client = paho.Client("Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
@@ -356,12 +354,12 @@ try:
         jobs =  eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl |= 1  # show did nr
-        if(len(dicecus) > 1): mlvl |= 4  # show ecu addr
+        if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
         while(True):
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
-                if(len(dicecus) > 1): mlvl |= 4  # show ecu addr
-                val,idstr = dicecus[ecudid[0]].readByDid(ecudid[1])
+                if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
+                val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1])
                 showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1])
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
@@ -379,18 +377,18 @@ try:
             didVal=str(writeArg[1]).replace("0x","")
             ensure_ecu(ecu)
             print(f"write {ecu}.{didkey} = {didVal}")
-            succ,code = dicecus[ecu].writeByDid(didkey, didVal)
+            succ,code = dicEcus[ecu].writeByDid(didkey, didVal)
             print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
 
     # scanall
     elif(args.scanall == True):
         msglvl = 1  # show did nr
-        if(len(dicecus) > 1):
+        if(len(dicEcus) > 1):
             msglvl = 5  # show ECU addr also
-        for addr,ecu in dicecus.items():
+        for addr,ecu in dicEcus.items():
             #? if(args.verbose == True):
-            print(f"reading {hex(addr)}, {dicecus[addr].numdps} datapoints, please be patient...")
+            print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
             lst = ecu.readAll(args.raw)
             for itm in lst:
                 showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
@@ -401,7 +399,7 @@ except (KeyboardInterrupt, InterruptedError):
     pass
                 
 # close all connections before exit
-for ecu in dicecus.values():
+for ecu in dicEcus.values():
     if(args.verbose):
         print(f"closing {hex(ecu.tx)} - bye!")
     ecu.close()

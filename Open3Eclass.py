@@ -13,7 +13,6 @@ import importlib
 import binascii
 
 import Open3Edatapoints
-
 import Open3Ecodecs
 from Open3Ecodecs import *
 
