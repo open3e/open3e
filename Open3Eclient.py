@@ -28,6 +28,7 @@ deftx = 0x680
 dicEcus = {}      # addr:ecu
 dicDevAddrs = {}  # devstr:addr
 
+cmnd_queue = []   # command queue to serialize bus traffic
 
 # utils ~~~~~~~~~~~~~~~~~~~~~~~
 def getint(v) -> int:
@@ -104,30 +105,28 @@ def ensure_ecu(addr:int):
         ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
         dicEcus[addr] = ecu
 
+def on_connect(client, userdata, flags, rc):
+    if args.listen != None:
+        client.subscribe(args.listen)
+    
+def on_disconnect(client, userdata, rc):
+    if rc != 0:
+        print('mqtt broker disconnected. rc = ' + str(rc))
+
+def on_message(client, userdata, msg):
+    topic = str(msg.topic)            # Topic in String umwandeln
+    if topic == args.listen:
+        try:
+            payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
+            cmnd_queue.append(payload)
+        except:
+            print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
+            payload = ''
  
 # subs  ~~~~~~~~~~~~~~~~~~~~~~~
-def listen(listento:str, readdids=None, timestep=0):
+def listen(readdids=None, timestep=0):
     if(args.mqtt == None):
         raise Exception('mqtt option is mandatory for listener mode')
-
-    cmnd_queue = []
-    
-    def on_connect(client, userdata, flags, rc):
-        client.subscribe(listento)
-        
-    def on_disconnect(client, userdata, rc):
-        if rc != 0:
-            print('mqtt broker disconnected. rc = ' + str(rc))
-    
-    def on_message(client, userdata, msg):
-        topic = str(msg.topic)            # Topic in String umwandeln
-        if topic == listento:
-            try:
-                payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
-                cmnd_queue.append(payload)
-            except:
-                print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
-                payload = ''
 
     def getaddr(cd) -> int:
         if 'addr' in cd: 
@@ -201,9 +200,6 @@ def listen(listento:str, readdids=None, timestep=0):
                     
             time.sleep(0.01)
 
-    mqtt_client.on_connect = on_connect
-    mqtt_client.on_disconnect = on_disconnect
-    mqtt_client.on_message = on_message
     print("Enter listener mode, waiting for commands on mqtt...")
     # and go...
     cmnd_loop() 
@@ -272,7 +268,6 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             print(msg)
 
 
-
 #~~~~~~~~~~~~~~~~~~~~~~
 # Main
 #~~~~~~~~~~~~~~~~~~~~~~
@@ -338,6 +333,9 @@ if(args.mqtt != None):
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])
     mlst = args.mqtt.split(':')
     mqttTopic = mlst[2] 
+    mqtt_client.on_connect = on_connect
+    mqtt_client.on_disconnect = on_disconnect
+    mqtt_client.on_message = on_message
     mqtt_client.connect(mlst[0], int(mlst[1]))
     mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
     mqtt_client.loop_start()
@@ -347,7 +345,7 @@ if(args.mqtt != None):
 try:
 
     if(args.listen != None):
-        listen(args.listen, args.read, args.timestep)
+        listen(args.read, args.timestep)
 
     # read cmd line - TODO: lists from config file
     elif(args.read != None):
