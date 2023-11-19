@@ -337,7 +337,7 @@ dataIdentifiers = {
         1040 : O3EComplexType(6, "SupplyAirFan",[RawCodec(3, "?1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "?2")]),
         1041 : O3EComplexType(6, "ExhaustAirFan",[RawCodec(3, "?1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "?2")]),
         1042 : RawCodec(9, "PrimaryHeatExchangerTemperatureSensor"),            
-        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Volumenstrom_Ist"), O3EInt16(2, "Volumenstrom_Min")]),
+        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Actual"), O3EInt16(2, "Minimum")]),
         1044 : RawCodec(2, "SecondaryCentralHeatingPump"),
         1047 : RawCodec(11, "TimeSeriesRecordedFlowTemperatureSensor"),
         1084 : RawCodec(4, "FlowTemperatureMinimumMaximumLimit"),
