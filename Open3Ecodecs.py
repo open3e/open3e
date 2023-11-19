@@ -92,7 +92,8 @@ class O3EByteVal(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
+        return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
@@ -309,6 +310,8 @@ class O3EEnum(udsoncan.DidCodec):
         self.listStr = listStr
 
     def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         #raise Exception("not implemented yet")
         for key, value in Open3Eenums.E3Enums[self.listStr].items():
             if value.lower() == string_ascii.lower():
@@ -325,8 +328,8 @@ class O3EEnum(udsoncan.DidCodec):
             return {"ID": val,
                     "Text": txt }
         except:
-            return {"ID": str(self.listStr),
-                    "Text": "Enum not found" }
+            return {"ID": val,
+                    "Text": "Enum not found in " + self.listStr}
         
     def __len__(self) -> int:
         return self.string_len
