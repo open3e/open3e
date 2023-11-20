@@ -37,7 +37,7 @@ to scan the system and generate devices.json and Open3Edatapoints_678.py files.
 Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
 
 # Usage
-    usage: Open3Eclient.py [-h] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
+    usage: Open3Eclient.py [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -63,6 +63,7 @@ Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
     -j, --json              send JSON structure via MQTT
     -v, --verbose           verbose info
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
+    @argsfile               use arguments given in a file. Seperate line for each argument.
 
 # Read dids
     python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v
@@ -79,6 +80,16 @@ Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
 
     python3 Open3Eclient.py -c can0 -dev vx3 -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44
+
+    python3 Open3Eclient.py @myargs
+        with content of file myargs:
+        -c
+        can0
+        -dev
+        vx3
+        -r
+        1664
+        -v
 
 # Interval Readout
     python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -t 1
