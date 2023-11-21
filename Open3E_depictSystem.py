@@ -27,11 +27,8 @@ lastcob = 0x6ff
 startdid = 256
 lastdid = 3500
 
-# use device string of device property of BusIdentification 
-#usedevstr = False
-
 # write files for virtualE3 
-writesimul = True
+writesimul = False
 
 # end of adjusts 
 # +++++++++++++++++++++++++++++++++++++++++++++++ 
