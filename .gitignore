@@ -5,6 +5,7 @@ __pycache__/
 udsoncan.log
 scan.log
 # user specific files
+config.json
 devices*
 Open3Edatapoints_*
 virtdata_*
