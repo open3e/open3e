@@ -92,7 +92,8 @@ class O3EByteVal(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
+        return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
@@ -146,7 +147,7 @@ class O3EUtf8(udsoncan.DidCodec):
         return self.string_len
 
 
-class O3ESoftVers(udsoncan.DidCodec):
+class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -160,7 +161,7 @@ class O3ESoftVers(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         lstv = []
-        for i in range(0, 7, 2):
+        for i in range(0, self.string_len, 2):
             lstv.append(str(int.from_bytes(string_bin[i:i+2], byteorder="little")))
         return ".".join(lstv)
 
@@ -188,7 +189,7 @@ class O3EMacAddr(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EIp4Addr(udsoncan.DidCodec):
+class O3EIp4Addr(udsoncan.DidCodec):  # also working with Ip6
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
@@ -201,7 +202,10 @@ class O3EIp4Addr(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        return f"{int(string_bin[0]):03d}.{int(string_bin[1]):03d}.{int(string_bin[2]):03d}.{int(string_bin[3]):03d}"
+        lstv = []
+        for i in range(self.string_len):
+            lstv.append(format(int(string_bin[i]), '03d'))
+        return ".".join(lstv)
 
     def __len__(self) -> int:
         return self.string_len
@@ -306,6 +310,8 @@ class O3EEnum(udsoncan.DidCodec):
         self.listStr = listStr
 
     def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
         #raise Exception("not implemented yet")
         for key, value in Open3Eenums.E3Enums[self.listStr].items():
             if value.lower() == string_ascii.lower():
@@ -322,8 +328,8 @@ class O3EEnum(udsoncan.DidCodec):
             return {"ID": val,
                     "Text": txt }
         except:
-            return {"ID": str(self.listStr),
-                    "Text": "Enum not found" }
+            return {"ID": val,
+                    "Text": "Enum not found in " + self.listStr}
         
     def __len__(self) -> int:
         return self.string_len
