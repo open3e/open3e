@@ -298,9 +298,6 @@ if((args.doip == None) and (args.can == None)):
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
 
-if(args.verbose == None):
-    args.verbose = False   
-
 
 # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if(args.config != None):
