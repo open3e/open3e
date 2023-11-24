@@ -126,8 +126,8 @@ Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
     to read dids 265 and 266 as raw data (even w/o option -raw):
     {"mode": "read-raw", "data":[265,266]}
     
-    to write value of 45.0 to did 396 and value of 21.5 to did 424:
-    {"mode": "write", "data":[[396,45.0],[424,21.5]]}
+    to write value of 21.5 to did 395 and value of 45.0 to did 396:
+    {"mode": "write", "data":[[395,21.5],[396,45.0]]}
 
     to set frost protect threshold to -9°C in complex did
     (A6FF lsb..msb -> 0xFFA6 -> -90 -> -9.0°C; Byte 0 unchanged):
