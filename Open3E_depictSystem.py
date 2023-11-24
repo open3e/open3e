@@ -13,6 +13,7 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 """
+# thanks to Hendrik 'surt91' Schawe
 
 # +++++++++++++++++++++++++++++++++++++++++++++++
 # please adjust! 
@@ -26,9 +27,6 @@ lastcob = 0x6ff
 # did scan, default 256 to 3500
 startdid = 256
 lastdid = 3500
-
-# use device string of device property of BusIdentification 
-#usedevstr = False
 
 # write files for virtualE3 
 writesimul = True

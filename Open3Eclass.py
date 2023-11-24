@@ -131,7 +131,7 @@ class O3Eclass():
             lst.append([did, value, idstr])
         return lst 
 
-
+    # reading without knowing length / codec
     def readPure(self, did:int):
         response = udsoncan.Response()
         try:
