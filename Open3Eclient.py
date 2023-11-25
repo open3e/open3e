@@ -356,7 +356,7 @@ try:
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1])
+                val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1], args.raw)
                 showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1])
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
