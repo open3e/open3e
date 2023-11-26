@@ -352,7 +352,7 @@ try:
 
     # read cmd line - TODO: lists from config file
     elif(args.read != None):
-        jobs =  eval_complex_list(args.read)
+        jobs = eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl |= 1  # show did nr
         if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
@@ -378,7 +378,7 @@ try:
             didVal=str(writeArg[1]).replace("0x","")
             ensure_ecu(ecu)
             print(f"write {ecu}.{didkey} = {didVal}")
-            succ,code = dicEcus[ecu].writeByDid(didkey, didVal)
+            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
             print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
 
