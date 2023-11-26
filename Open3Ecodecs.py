@@ -329,7 +329,7 @@ class O3EEnum(udsoncan.DidCodec):
                     "Text": txt }
         except:
             return {"ID": val,
-                    "Text": "Enum not found in " + self.listStr}
+                    "Text": "not found in " + self.listStr}
         
     def __len__(self) -> int:
         return self.string_len

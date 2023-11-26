@@ -13,11 +13,26 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 """
+# thanks to Hendrik 'surt91' Schawe
 
-# +++++++++++++++++++++++++++++++++++++++++++++++
-# please adjust! 
-# +++++++++++++++++++++++++++++++++++++++++++++++ 
-interface = "can0"
+
+import time
+import binascii
+import json
+import argparse
+
+import udsoncan
+from udsoncan.connections import IsoTPSocketConnection
+from udsoncan.client import Client
+from udsoncan.services import ReadDataByIdentifier
+
+from doipclient import DoIPClient
+from doipclient.connectors import DoIPClientUDSConnector
+
+import Open3Edatapoints
+from Open3Edatapoints import *
+import Open3Eenums
+
 
 # cob scan, default 0x680 to 0x6ff  
 startcob = 0x680
@@ -27,43 +42,27 @@ lastcob = 0x6ff
 startdid = 256
 lastdid = 3500
 
-# write files for virtualE3 
-writesimul = False
-
-# end of adjusts 
-# +++++++++++++++++++++++++++++++++++++++++++++++ 
-
-
-
-
-import time
-import binascii
-import json
-
-import udsoncan
-from udsoncan.connections import IsoTPSocketConnection
-from udsoncan.client import Client
-from udsoncan.services import ReadDataByIdentifier
-
-import Open3Edatapoints
-from Open3Edatapoints import *
-import Open3Eenums
-
+# connection
+can = "can0"
 
 
 # scan methods ~~~~~~~~~~~~~~~~~~~~~~
 def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tuples (cobid,devprop)
     lstfounds = []
-    lstskips =[]  # skip respond cobs    
+    lstskips = []  # skip respond cobs    
     chkdid = 256
 
     print(f"scan COB-IDs {hex(startcob)} to {hex(lastcob)} ...") 
     for tx in range(startcob, lastcob + 1):
         if(tx in lstskips):
             continue
-        rx = tx + 0x10
-        conn = IsoTPSocketConnection(interface, rxid=rx, txid=tx)
-        conn.tpsock.set_opts(txpad=0x00)
+
+        if(args.doip != None):
+            conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
+        else:
+            rx = tx + 0x10
+            conn = IsoTPSocketConnection(can, rxid=rx, txid=tx)
+            conn.tpsock.set_opts(txpad=0x00)
         
         with Client(conn) as client:
             try:
@@ -91,12 +90,15 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
 
 
 def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples (did,len,data)
-    print(f"scan DIDs {startdid} to {lastdid} ...") 
+    print(f"scan {shex(ecutx)} DIDs {startdid} to {lastdid} ...") 
     lstfounds = []
-    rx = ecutx + 0x10
 
-    conn = IsoTPSocketConnection(interface, rxid=rx, txid=ecutx)
-    conn.tpsock.set_opts(txpad=0x00)
+    if(args.doip != None):
+        conn = DoIPClientUDSConnector(DoIPClient(args.doip, ecutx))
+    else:
+        rx = ecutx + 0x10
+        conn = IsoTPSocketConnection(can, rxid=rx, txid=ecutx)
+        conn.tpsock.set_opts(txpad=0x00)
 
     with Client(conn) as client:
         for did in range(startdid, lastdid+1):
@@ -122,7 +124,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
                 pass
             time.sleep(0.02)
     client.close()
-    print(f"{len(lstfounds)} DIDs found.")
+    print(f"{len(lstfounds)} DIDs found on {shex(ecutx)}.")
     return lstfounds
 
 
@@ -233,6 +235,15 @@ def write_datapoints_file(lstdids:list, cobid:int, devprop:str):
 # Main
 # +++++++++++++++++++++++++++++++++
 
+parser = argparse.ArgumentParser()
+parser.add_argument("-c", "--can", type=str, help="use CAN device, e.g. can0")
+parser.add_argument("-d", "--doip", type=str, help="use DoIP access, e.g. 192.168.1.1")
+parser.add_argument("-s", "--simul", action='store_true', help="write simulation data files")
+args = parser.parse_args()
+
+if(args.can != None):
+    can = args.can
+
 # peparations
 dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])
 e3Devices = Open3Eenums.E3Enums['Devices']
@@ -247,10 +258,10 @@ write_devices_json(lstEcus)
 # scan dids of each responding ECU
 for cob,prop in lstEcus:
     lstdids = scan_dids(cob, startdid, lastdid)
-    # write sumilation data in case
-    if(writesimul):
+    # write sumilation data for virtualE3in case
+    if(args.simul):
         write_simul_datafile(lstdids, cob, prop)
-    # write ECU specific datapoints_did.py
+    # write ECU specific datapoints_cob.py
     write_datapoints_file(lstdids, cob, prop)
 # report
 print("\nconfiguration:")

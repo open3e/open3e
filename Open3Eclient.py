@@ -82,10 +82,10 @@ def eval_complex(v) -> list: # returns list of [ecu,did] items
 def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
     sl = list(str(v).replace(' ',''))
     open = 0
-    for i in range(len(sl)-1, -1, -1):
-        if sl[i] == ']':
+    for i in range(len(sl)):
+        if sl[i] == '[':
             open += 1
-        elif sl[i] == '[':
+        elif sl[i] == ']':
             open -= 1
         elif open <= 0:
             if sl[i] == ",":
@@ -136,7 +136,10 @@ def listen(readdids=None, timestep=0):
 
     def cmnd_loop():
         cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw']
-        next_read_time = time.time()
+        if(readdids != None):
+            jobs =  eval_complex_list(readdids)
+            next_read_time = time.time()
+
         while True:
             if len(cmnd_queue) > 0:
                 cd = cmnd_queue.pop(0)
@@ -190,7 +193,6 @@ def listen(readdids=None, timestep=0):
                 if (readdids != None):
                     if (next_read_time > 0) and (time.time() > next_read_time):
                         # add dids to read to command queue
-                        jobs =  eval_complex_list(readdids)
                         for ecudid in jobs:
                             cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
                         if(timestep != None):
@@ -236,7 +238,7 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
         fjson = args.json
 
     if(mqtt_client != None):
-        publishStr = args.mqttformatstring.format(
+        publishStr = mqttformatstring.format(
             ecuAddr = addr,
             device = dev_of_addr(addr),
             didName = idstr,
@@ -330,6 +332,10 @@ if(args.mqtt != None):
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])
     mlst = args.mqtt.split(':')
     mqttTopic = mlst[2] 
+    if(args.mqttformatstring == None):
+        mqttformatstring = "{didName}" # default
+    else:
+        mqttformatstring = args.mqttformatstring
     mqtt_client.on_connect = on_connect
     mqtt_client.on_disconnect = on_disconnect
     mqtt_client.on_message = on_message
@@ -346,7 +352,7 @@ try:
 
     # read cmd line - TODO: lists from config file
     elif(args.read != None):
-        jobs =  eval_complex_list(args.read)
+        jobs = eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl |= 1  # show did nr
         if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
@@ -372,7 +378,7 @@ try:
             didVal=str(writeArg[1]).replace("0x","")
             ensure_ecu(ecu)
             print(f"write {ecu}.{didkey} = {didVal}")
-            succ,code = dicEcus[ecu].writeByDid(didkey, didVal)
+            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
             print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
 
@@ -398,4 +404,8 @@ for ecu in dicEcus.values():
     if(args.verbose):
         print(f"closing {hex(ecu.tx)} - bye!")
     ecu.close()
+
+if(mqtt_client != None):
+    mqtt_client.disconnect()
+
     

@@ -108,7 +108,7 @@ class O3Eclass():
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
-    def readByDid(self, did:int, raw=False):
+    def readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers): 
             Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
@@ -117,21 +117,21 @@ class O3Eclass():
         else:
             return self.readPure(did)
 
-    def writeByDid(self, did:int, val, raw=True):
+    def writeByDid(self, did:int, val, raw:bool):
         Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val)
         succ = (response.valid & response.positive)
         return succ, response.code
 
 
-    def readAll(self, raw=None):
+    def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
             value,idstr = self.readByDid(int(did), raw=raw)
             lst.append([did, value, idstr])
         return lst 
 
-
+    # reading without knowing length / codec
     def readPure(self, did:int):
         response = udsoncan.Response()
         try:
