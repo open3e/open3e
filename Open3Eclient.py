@@ -238,7 +238,7 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
         fjson = args.json
 
     if(mqtt_client != None):
-        publishStr = args.mqttformatstring.format(
+        publishStr = mqttformatstring.format(
             ecuAddr = addr,
             device = dev_of_addr(addr),
             didName = idstr,
@@ -332,6 +332,10 @@ if(args.mqtt != None):
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])
     mlst = args.mqtt.split(':')
     mqttTopic = mlst[2] 
+    if(args.mqttformatstring == None):
+        mqttformatstring = "{didName}" # default
+    else:
+        mqttformatstring = args.mqttformatstring
     mqtt_client.on_connect = on_connect
     mqtt_client.on_disconnect = on_disconnect
     mqtt_client.on_message = on_message
