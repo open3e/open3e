@@ -2244,4 +2244,17 @@ E3Enums = {
         64 : "DHWTS",
         65 : "VENTILATIONUNIT",
     },
+
+    "GasTypes" : {
+        1 : "LLGas",
+        2 : "EGas",
+        3 : "LiquidGas",
+    },
+
+    "BuildingTypes" : {
+        0: "OneFamily",
+        1: "MultiFamilyOnlyHeating",
+    },
+    
+
 }
