@@ -350,18 +350,17 @@ try:
     if(args.listen != None):
         listen(args.read, args.timestep)
 
-    # read cmd line - TODO: lists from config file
+    # read cmd line
     elif(args.read != None):
         jobs = eval_complex_list(args.read)
         mlvl = 0  # only val 
         if(len(jobs) > 1): mlvl |= 1  # show did nr
-        if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
         while(True):
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
                 val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1], args.raw)
-                showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1])
+                showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1], msglvl=mlvl)
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
