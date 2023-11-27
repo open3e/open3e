@@ -14,16 +14,8 @@
    limitations under the License.
 """
 
+
 import argparse
-parser = argparse.ArgumentParser()
-parser.add_argument("-dev", "--dev", type=str, help="--dev vdens or vcal or vx3 or vair")
-args = parser.parse_args()
-
-if(args.dev == None):
-    args.dev = "vcal"
-
-devfile = "Open3Edatapoints" + args.dev.capitalize() +".py"
-unifile = "Open3Edatapoints.py"
 
 def readfile(file):
     dic = {}
@@ -33,19 +25,42 @@ def readfile(file):
         line = line.strip()
         if line:
             parts = line.split(':')
-            if len(parts) > 1:
-                did = parts[0].strip()
-                stuff = parts[1].strip()
-                dic[did] = stuff
+            parts[0] = parts[0].strip()
+            if parts[0].isdigit():  # no def, comment etc
+                if len(parts) > 1:
+                    did = parts[0]
+                    stuff = parts[1].strip()
+                    dic[did] = stuff
     return dic
+
+
+# ++++++++++++++++++
+# Main
+# ++++++++++++++++++
+
+parser = argparse.ArgumentParser()
+parser.add_argument("-dev", "--dev", type=str, help="--dev vdens or vcal or vx3 or vair")
+args = parser.parse_args()
+
+dev = "vcal"
+devfile = ""
+unifile = "Open3Edatapoints.py"
+
+if(args.dev != None):
+    dev = args.dev
+
+if('.py' in dev):
+    devfile = dev
+else:
+    devfile = "Open3Edatapoints" + dev.capitalize() + ".py"
+
 
 dicuni = readfile(unifile)
 dicdev = readfile(devfile)
 
 for did in dicdev:
-    if did.isdigit():
-        if dicdev[did].lower().startswith("none"):
-            if did in dicuni:
-                dicdev[did] = dicuni[did]
-        print(f"{did} : {dicdev[did]}")
+    if dicdev[did].lower().startswith("none"):
+        if did in dicuni:
+            dicdev[did] = dicuni[did]
+    print(f"{did} : {dicdev[did]}")
 
