@@ -100,7 +100,13 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
         conn = IsoTPSocketConnection(can, rxid=rx, txid=ecutx)
         conn.tpsock.set_opts(txpad=0x00)
 
-    with Client(conn) as client:
+    # increase timeout
+    config = dict(udsoncan.configs.default_client_config)
+    config['request_timeout'] = 3
+    config['p2_timeout'] = 3
+    config['p2_star_timeout'] = 3
+
+    with Client(conn, config=config) as client:
         for did in range(startdid, lastdid+1):
             try:
                 response = client.send_request(
@@ -122,7 +128,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
             except Exception as e:
                 # print(f"# DID {did}: Fehler: {e}")
                 pass
-            time.sleep(0.02)
+            time.sleep(0.05)
     client.close()
     print(f"{len(lstfounds)} DIDs found on {shex(ecutx)}.")
     return lstfounds
