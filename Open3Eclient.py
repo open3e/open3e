@@ -164,10 +164,10 @@ def listen(readdids=None, timestep=0):
                         time.sleep(0.01)            # 10 ms delay before next request
 
                 elif cd['mode'] == 'read-all':
-                    addr = getaddr(cd)
-                    lst = dicEcus[addr].readAll(args.raw)
                     if(args.verbose == True):
                         print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
+                    addr = getaddr(cd)
+                    lst = dicEcus[addr].readAll(args.raw)
                     for itm in lst:
                         showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
 
