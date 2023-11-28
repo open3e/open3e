@@ -440,22 +440,3 @@ class O3EAddElHeaterStat(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
-class O3EHeatingCurve(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): return RawCodec.decode(self, string_bin)
-        return {
-            "slope": float(string_bin[0]) / 10.0,
-            "offset": int.from_bytes([string_bin[1]], byteorder="big", signed=True)
-        }
-
-    def __len__(self) -> int:
-        return self.string_len

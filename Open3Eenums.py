@@ -2244,4 +2244,34 @@ E3Enums = {
         64 : "DHWTS",
         65 : "VENTILATIONUNIT",
     },
+
+    "GasTypes" : {
+        1 : "LLGas",
+        2 : "EGas",
+        3 : "LiquidGas",
+    },
+
+    "BuildingTypes" : {
+        0 : "OneFamily",
+        1 : "MultiFamilyOnlyHeating",
+        2 : "MultiFamilyHeatingDomesticHotWater",
+        3 : "TownHouse",
+    },
+
+    "DateFormats" : {
+        0 : "DayMonthYear",
+        1 : "MonthDayYear",
+        2 : "YearMonthDay",
+    },
+
+    "TimeFormats" : {
+        0 : "TwentyFourHours",
+        1 : "TwelveHours",
+    },
+    
+    "Units" : {
+        0 : "Metric",
+        1 : "Imperial",
+    },
+    
 }
