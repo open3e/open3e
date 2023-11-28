@@ -819,7 +819,7 @@ dataIdentifiers = {
         2236 : RawCodec(10, "CascadeDeviceSetpoint"),
         2237 : RawCodec(18, "CascadeDeviceStatus"),
         2239 : RawCodec(1, "ElectricEnergyStorageControlMode"),
-        2240 : RawCodec(9, "BatteryTemperatureSensor"),
+        2240 : O3EComplexType(9, "BatteryTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         2241 : RawCodec(1, "OutsideTemperatureSensorSource"),
         2242 : RawCodec(27, "PowerGridCodeSettingsNormTwo"),
         2244 : RawCodec(27, "PowerGridCodeSettingsNormFour"),
