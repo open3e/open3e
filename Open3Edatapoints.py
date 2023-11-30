@@ -695,7 +695,7 @@ dataIdentifiers = {
         1834 : O3EComplexType(4, "ElectricalEnergyStorageStateOfEnergy", [O3EInt16(2, "StateOfEnergy", scale=1.0, signed=False), O3EInt16(2, "Unkown", scale=1.0, signed=False)]),            
         1835 : RawCodec(20, "ManufacturerProperties"),
         1836 : O3EInt32(4, "ElectricalEnergyStorageCurrentPower", scale=1.0, signed=True),
-        1837 : O3EInt16(4, "ElectricalEnergyStorageCurrent", scale=1.0. signed=True),
+        1837 : O3EInt16(4, "ElectricalEnergyStorageCurrent", scale=1.0, signed=True),
         1838 : O3EInt16(2, "ElectricalEnergyStorageVoltage"),
         1839 : RawCodec(4, "ElectricalEnergyStorageUsableEnergy"),
         1840 : RawCodec(4, "ElectricalEnergyStorageUsableNominalEnergy"),
