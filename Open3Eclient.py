@@ -46,8 +46,7 @@ def dev_of_addr(addr:int):
     for key, val in dicDevAddrs.items():
         if val == addr:
             return key
-    # If the value is not found, you might want to handle this case accordingly
-    return None
+    return hex(addr)
         
 def get_ecudid(v):
     s = str(v)
@@ -102,9 +101,12 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 def ensure_ecu(addr:int):
     if(not (addr in dicEcus)):
+       # make ecu with no name str
         ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
         dicEcus[addr] = ecu
 
+
+# listen events ~~~~~~~~~~~~~~~~~~~~~~~
 def on_connect(client, userdata, flags, rc):
     if args.listen != None:
         client.subscribe(args.listen)
@@ -122,7 +124,8 @@ def on_message(client, userdata, msg):
         except:
             print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
             payload = ''
- 
+
+
 # subs  ~~~~~~~~~~~~~~~~~~~~~~~
 def listen(readdids=None, timestep=0):
     if(args.mqtt == None):
@@ -253,10 +256,10 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             mqttdump(mqttTopic + "/" + publishStr, value)
         
         if(args.verbose == True):
-            print (hex(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, value)
     else:
         if(args.verbose == True):
-            print (hex(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, value)
         else:
             mlst = []
             if((msglvl & 4) != 0):
@@ -346,11 +349,11 @@ if(args.mqtt != None):
     
 # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 try:
-
+   # listener mode
     if(args.listen != None):
         listen(args.read, args.timestep)
 
-    # read cmd line
+    # read cmd line reads
     elif(args.read != None):
         jobs = eval_complex_list(args.read)
         mlvl = 0  # only val 
@@ -405,6 +408,8 @@ for ecu in dicEcus.values():
     ecu.close()
 
 if(mqtt_client != None):
+    if(args.verbose):
+        print("closing MQTT client")
     mqtt_client.disconnect()
 
     
