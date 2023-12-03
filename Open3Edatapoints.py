@@ -1069,7 +1069,7 @@ dataIdentifiers = {
         2501 : O3EByteVal(1, "MixerThreeCircuitPumpType"),
         2502 : O3EByteVal(1, "MixerFourCircuitPumpType"),
         2515 : O3EList(124, "EnergyConsumptionDomesticHotWaterMonthMatrixElectricHeater", [O3EInt16(2, "1"), O3EInt16(2, "2"), O3EInt16(2, "3"), O3EInt16(2, "4"), O3EInt16(2, "5"), O3EInt16(2, "6"), O3EInt16(2, "7"), O3EInt16(2, "8"), O3EInt16(2, "9"), O3EInt16(2, "10"), O3EInt16(2, "11"), O3EInt16(2, "12"), O3EInt16(2, "13"), O3EInt16(2, "14"), O3EInt16(2, "15"), O3EInt16(2, "16"), O3EInt16(2, "17"), O3EInt16(2, "18"), O3EInt16(2, "19"), O3EInt16(2, "20"), O3EInt16(2, "21"), O3EInt16(2, "22"), O3EInt16(2, "23"), O3EInt16(2, "24"), O3EInt16(2, "25"), O3EInt16(2, "26"), O3EInt16(2, "27"), O3EInt16(2, "28"), O3EInt16(2, "29"), O3EInt16(2, "30"), O3EInt16(2, "31")]),
-        2516 : O3EComplextype(96, "EnergyConsumptionDomesticHotWaterYearMatrixElectricHeater",  [
+        2516 : O3EComplexType(96, "EnergyConsumptionDomesticHotWaterYearMatrixElectricHeater",  [
             O3EList(48, "CurrentYear", [O3EInt32(4, "January", scale=10), O3EInt32(4, "February", scale=10), O3EInt32(4, "March", scale=10), O3EInt32(4, "April", scale=10), O3EInt32(4, "May", scale=10), O3EInt32(4, "June", scale=10),
                                                                       O3EInt32(4, "July", scale=10), O3EInt32(4, "August", scale=10), O3EInt32(4, "September", scale=10), O3EInt32(4, "October", scale=10), O3EInt32(4, "November", scale=10), O3EInt32(4, "December", scale=10)]),
             O3EList(48, "LastYear", [O3EInt32(4, "January", scale=10), O3EInt32(4, "February", scale=10), O3EInt32(4, "March", scale=10), O3EInt32(4, "April", scale=10), O3EInt32(4, "May", scale=10), O3EInt32(4, "June", scale=10),
