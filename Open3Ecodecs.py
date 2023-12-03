@@ -335,10 +335,11 @@ class O3EEnum(udsoncan.DidCodec):
         return self.string_len
        
 class O3EList(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, subTypes: list):
+    def __init__(self, string_len: int, idStr: str, subTypes: list, arraylength: int=0):
         self.string_len = string_len
         self.id = idStr
         self.subTypes = subTypes
+        self.len = len
 
     def encode(self, string_ascii: Any) -> bytes:        
         raise Exception("not implemented yet")
@@ -350,9 +351,11 @@ class O3EList(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         result = {}
         index = 0
-        count = 0
+        if(self.len == 0): 
+            count = 0
+
         for subType in self.subTypes:
-            # we expect a byte element with the name "Count"
+            # we expect a byte element with the name "Count" or "count"
             if subType.id.lower() == 'count':
                 count = int(subType.decode(string_bin[index:index+subType.string_len]))
                 result[subType.id]=count 
@@ -373,6 +376,33 @@ class O3EList(udsoncan.DidCodec):
     def __len__(self) -> int:
         return self.string_len
 
+class O3EArray(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, subTypes: list, arraylength: int=0):
+        self.string_len = string_len
+        self.id = idStr
+        self.subTypes = subTypes
+        self.len = arraylength
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        subTypes = self.subTypes
+        idStr = self.id
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {}
+        index = 0
+        count = self.len
+        for subType in subTypes:
+            result[subType.id]=[]
+            for i in range(count):
+                result[subType.id].append((subType.decode(string_bin[index:index+subType.string_len])))
+                index+=subType.string_len
+        return dict(result)
+    
+    def __len__(self) -> int:
+        return self.string_len
 
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
