@@ -1,0 +1,9 @@
+-c
+can0
+-cnfg
+devices.json
+-m
+127.0.0.1:1883:open3e
+-mfstr
+"{ecuAddr:03X}_{didNumber}_{didName}"
+-a
