@@ -216,15 +216,23 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     try:
         value,idstr =  dicEcus[addr].readByDid(did, raw)
         showread(addr, did, value, idstr, json, msglvl)    
-    except (TimeoutError, TimeoutException):
-        return
+    #except TimeoutError:
+    #    return
+    except Exception as exc: #(TimeoutError, TimeoutException):
+        if("timeout" in type(exc).__name__.lower()):
+            return
+
     
 def readpure(addr:int, did:int, json=None, msglvl=0):
     try:
         value,idstr =  dicEcus[addr].readPure(did)
         showread(addr, did, value, idstr, json, msglvl)    
-    except (TimeoutError, TimeoutException):
-        return
+    #except TimeoutError:
+    #    return
+    except Exception as exc: #(TimeoutError, TimeoutException):
+        if("timeout" in type(exc).__name__.lower()):
+            return
+
 
 def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
     def mqttdump(topic, obj):
