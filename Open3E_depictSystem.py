@@ -103,7 +103,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
     # increase timeout
     config = dict(udsoncan.configs.default_client_config)
     #config['request_timeout'] = 3  # default 5
-    config['p2_timeout'] = 3       # default 1
+    config['p2_timeout'] = 2       # default 1
     #config['p2_star_timeout'] = 3  # default 5
 
     with Client(conn, config=config) as client:
