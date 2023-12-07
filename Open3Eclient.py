@@ -218,9 +218,11 @@ def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
         showread(addr, did, value, idstr, json, msglvl)    
     #except TimeoutError:
     #    return
-    except Exception as exc: #(TimeoutError, TimeoutException):
-        if("timeout" in type(exc).__name__.lower()):
+    except Exception as e:
+        if("timeout" in type(e).__name__.lower()):
             return
+        else:
+            raise Exception(e)
 
     
 def readpure(addr:int, did:int, json=None, msglvl=0):
@@ -229,9 +231,11 @@ def readpure(addr:int, did:int, json=None, msglvl=0):
         showread(addr, did, value, idstr, json, msglvl)    
     #except TimeoutError:
     #    return
-    except Exception as exc: #(TimeoutError, TimeoutException):
-        if("timeout" in type(exc).__name__.lower()):
+    except Exception as e:
+        if("timeout" in type(e).__name__.lower()):
             return
+        else:
+            raise Exception(e)
 
 
 def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
