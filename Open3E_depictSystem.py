@@ -84,8 +84,8 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
                     print(f"ECU found: {hex(tx)} : {devprop}")
                     lstfounds.append((tx,devprop))
                     lstskips.append(rx)
-    #            else:
-    #                print(f"{hex(tx)}:nothing")
+                #else:
+                #    print(f"{hex(tx)}:neg.resp. {response.code}")
             except Exception as e:
                 if(type(e) is udsoncan.exceptions.TimeoutException):
                     # regular if ECU not present 
@@ -119,28 +119,36 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
 
     with Client(conn, config=config) as client:
         for did in range(startdid, lastdid+1):
-            try:
-                response = client.send_request(
-                    udsoncan.Request(
-                        service=ReadDataByIdentifier,
-                        data=(did).to_bytes(2, byteorder='big')
+            retry = 0
+            while(retry < 4):
+                try:
+                    response = client.send_request(
+                        udsoncan.Request(
+                            service=ReadDataByIdentifier,
+                            data=(did).to_bytes(2, byteorder='big')
+                        )
                     )
-                )
-                if response.positive:
-                    dlen = len(response) - 3
-                    data = response.data[2:]
-                    dstr = "(unknown)"
-                    if(did in dicDidEnums):
-                        dstr = dicDidEnums[did]
-                    print(f"found {did}:{dlen}:{dstr}")
-                    lstfounds.append((did,dlen,data))
-            except Exception as e:
-                if(type(e) is udsoncan.exceptions.NegativeResponseException):
-                    pass
-                else:
-                    #print(f"# DID {did}: {e}")
-                    #time.sleep(2)  # allow everything calm down
-                    raise Exception(e)  # something went wrong - break 
+                    if response.positive:
+                        dlen = len(response) - 3
+                        data = response.data[2:]
+                        dstr = "(unknown)"
+                        if(did in dicDidEnums):
+                            dstr = dicDidEnums[did]
+                        print(f"found {did}:{dlen}:{dstr}")
+                        lstfounds.append((did,dlen,data))
+                        break
+                except Exception as e:
+                    if(type(e) is udsoncan.exceptions.NegativeResponseException):
+                        break
+                    if(type(e) in [TimeoutError, udsoncan.exceptions.TimeoutException]):
+                        time.sleep(0.1)
+                        retry += 1
+                        if(retry == 4):
+                            print(did, "ERROR max retry")
+                    else:
+                        #print(f"# DID {did}: {e}")
+                        #time.sleep(2)  # allow everything calm down
+                        raise Exception(e)
             # short rest before next did     
             time.sleep(0.05)
     # all dids tried
