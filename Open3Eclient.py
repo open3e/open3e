@@ -163,7 +163,7 @@ def listen(readdids=None, timestep=0):
                     dids = cd['data']
                     ensure_ecu(addr) 
                     for did in dids:
-                        readpure(addr, getint(did), json=(cd['mode']=='read-json'))
+                        readpure(addr, getint(did))
                         time.sleep(0.01)            # 10 ms delay before next request
 
                 elif cd['mode'] == 'read-all':
