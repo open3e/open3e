@@ -87,10 +87,15 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
     #            else:
     #                print(f"{hex(tx)}:nothing")
             except Exception as e:
-                pass
+                if(type(e) is udsoncan.exceptions.TimeoutException):
+                    # regular if ECU not present 
+                    pass
+                else:
+                    raise Exception(e)
+        # client done
         client.close()
         time.sleep(0.1)
-
+    # all addresses done
     print(f"{len(lstfounds)} responding COB-IDs found.")
     return lstfounds
 
@@ -133,9 +138,12 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
                 if(type(e) is udsoncan.exceptions.NegativeResponseException):
                     pass
                 else:
-                    print(f"# DID {did}: {e}")
-                    time.sleep(2)  # allow everything calm down
+                    #print(f"# DID {did}: {e}")
+                    #time.sleep(2)  # allow everything calm down
+                    raise Exception(e)  # something went wrong - break 
+            # short rest before next did     
             time.sleep(0.05)
+    # all dids tried
     client.close()
     print(f"{len(lstfounds)} DIDs found on {shex(ecutx)}.")
     return lstfounds
