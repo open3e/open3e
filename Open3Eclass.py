@@ -124,6 +124,8 @@ class O3Eclass():
                         retry += 1
                         if(retry == 4):
                             print(did, "ERROR max retry")
+                    else:
+                        raise Exception(e)
         else:
             return self.readPure(did)
 
