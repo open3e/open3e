@@ -63,8 +63,14 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
             rx = tx + 0x10
             conn = IsoTPSocketConnection(can, rxid=rx, txid=tx)
             conn.tpsock.set_opts(txpad=0x00)
-        
-        with Client(conn) as client:
+
+        # set default timeout
+        config = dict(udsoncan.configs.default_client_config)
+        #config['request_timeout'] = 3  # default 5
+        #config['p2_timeout'] = 3       # default 1
+        #config['p2_star_timeout'] = 3  # default 5
+       
+        with Client(conn, config=config) as client:
             try:
                 response = client.send_request(
                     udsoncan.Request(
@@ -103,7 +109,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
     # increase timeout
     config = dict(udsoncan.configs.default_client_config)
     #config['request_timeout'] = 3  # default 5
-    config['p2_timeout'] = 2       # default 1
+    config['p2_timeout'] = 3       # default 1
     #config['p2_star_timeout'] = 3  # default 5
 
     with Client(conn, config=config) as client:
