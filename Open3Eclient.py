@@ -293,8 +293,8 @@ parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 
 
-if((args.doip == None) and (args.can == None)):
-    raise Exception("Error: No interface specified. --can or --doip mandatory.")
+if(args.can == None):
+    args.can = 'can0' 
 
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
