@@ -358,9 +358,8 @@ try:
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                #val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1], args.raw)
-                #showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1], msglvl=mlvl)
                 readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                time.sleep(0.02)
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
