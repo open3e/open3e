@@ -145,6 +145,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
                         retry += 1
                         if(retry == 4):
                             print(did, "ERROR max retry")
+                            raise Exception(e)
                     else:
                         #print(f"# DID {did}: {e}")
                         #time.sleep(2)  # allow everything calm down
