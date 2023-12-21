@@ -71,7 +71,7 @@ class O3EInt(udsoncan.DidCodec):
         return float(val) / self.scale
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "signed":self.signed, "offset":self.offset}})
 
     def __len__(self) -> int:
         return self.string_len
