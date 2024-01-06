@@ -1,11 +1,3 @@
-# Branch ioBroker
-
-This branch is not intended for normal use, so **please don't use or work on this branch**.
-
-On this branch a tool shall be developed to export the datapoint lists to json format. The json files will be used by an adapter for ioBroker which is under development. You may have a look [here](https://github.com/MyHomeMyData/ioBroker.e3oncan). Please note, it's an early stage prototype!
-
-Later on this branch will be merged to develop. Functionality of open3e itself will not be touched.
-
 # Open3E interface
 
 * Connects E3 boiler (vcal or vdens) controller through CAN UDS or doip
@@ -149,4 +141,12 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
  
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
-    
+
+# Convert list of datapoints to json format
+Use
+```
+python3 Open3Edids2json.py
+```
+to convert common list of datapoints (Open3Edatapoints.py) to json format.
+A white list of writable datapoints is also created by this tool.
+
