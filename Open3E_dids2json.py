@@ -13,7 +13,7 @@ dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])
 
 didsDict = {}
 didsWritable = {}
-writablesPatterns = ['setpoint','schedule','backupboxconfiguration']
+writablesPatterns = ['setpoint','schedule','backupboxconfiguration','target','minimummaximumset','offset']
 
 def setToWritable(id):
     res = False
