@@ -7,6 +7,6 @@ scan.log
 # user specific files
 config.json
 devices*
-Open3Edatapoints_*
+Open3Edatapoints_6*
 virtdata_*
 .vscode/
