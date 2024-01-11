@@ -46,8 +46,7 @@ def dev_of_addr(addr:int):
     for key, val in dicDevAddrs.items():
         if val == addr:
             return key
-    # If the value is not found, you might want to handle this case accordingly
-    return None
+    return hex(addr)
         
 def get_ecudid(v):
     s = str(v)
@@ -102,9 +101,12 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 
 def ensure_ecu(addr:int):
     if(not (addr in dicEcus)):
+       # make ecu with no name str
         ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
         dicEcus[addr] = ecu
 
+
+# listen events ~~~~~~~~~~~~~~~~~~~~~~~
 def on_connect(client, userdata, flags, rc):
     if args.listen != None:
         client.subscribe(args.listen)
@@ -122,7 +124,8 @@ def on_message(client, userdata, msg):
         except:
             print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
             payload = ''
- 
+
+
 # subs  ~~~~~~~~~~~~~~~~~~~~~~~
 def listen(readdids=None, timestep=0):
     if(args.mqtt == None):
@@ -160,7 +163,7 @@ def listen(readdids=None, timestep=0):
                     dids = cd['data']
                     ensure_ecu(addr) 
                     for did in dids:
-                        readpure(addr, getint(did), json=(cd['mode']=='read-json'))
+                        readpure(addr, getint(did))
                         time.sleep(0.01)            # 10 ms delay before next request
 
                 elif cd['mode'] == 'read-all':
@@ -210,18 +213,14 @@ def listen(readdids=None, timestep=0):
 def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     if(raw == None): 
         raw = args.raw
-    try:
-        value,idstr =  dicEcus[addr].readByDid(did, raw)
-        showread(addr, did, value, idstr, json, msglvl)    
-    except TimeoutError:
-        return
+    value,idstr =  dicEcus[addr].readByDid(did, raw)
+    showread(addr, did, value, idstr, json, msglvl)    
+
     
 def readpure(addr:int, did:int, json=None, msglvl=0):
-    try:
-        value,idstr =  dicEcus[addr].readPure(did)
-        showread(addr, did, value, idstr, json, msglvl)    
-    except TimeoutError:
-        return
+    value,idstr =  dicEcus[addr].readPure(did)
+    showread(addr, did, value, idstr, json, msglvl)    
+
 
 def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
     def mqttdump(topic, obj):
@@ -253,10 +252,10 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             mqttdump(mqttTopic + "/" + publishStr, value)
         
         if(args.verbose == True):
-            print (hex(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, value)
     else:
         if(args.verbose == True):
-            print (hex(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, value)
         else:
             mlst = []
             if((msglvl & 4) != 0):
@@ -294,8 +293,8 @@ parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 
 
-if((args.doip == None) and (args.can == None)):
-    raise Exception("Error: No interface specified. --can or --doip mandatory.")
+if(args.can == None):
+    args.can = 'can0' 
 
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
@@ -346,11 +345,11 @@ if(args.mqtt != None):
     
 # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 try:
-
+   # listener mode
     if(args.listen != None):
         listen(args.read, args.timestep)
 
-    # read cmd line
+    # read cmd line reads
     elif(args.read != None):
         jobs = eval_complex_list(args.read)
         mlvl = 0  # only val 
@@ -359,8 +358,8 @@ try:
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1], args.raw)
-                showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1], msglvl=mlvl)
+                readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                time.sleep(0.02)
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:
@@ -405,6 +404,8 @@ for ecu in dicEcus.values():
     ecu.close()
 
 if(mqtt_client != None):
+    if(args.verbose):
+        print("closing MQTT client")
     mqtt_client.disconnect()
 
     

@@ -36,6 +36,8 @@ In advance of first time starting the client and after every firmware update, ru
 to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
 Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
 
+The depicting scans take several minutes (usually 10..20) - please be patient!
+
 # Usage
     usage: Open3Eclient.py [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
@@ -139,4 +141,12 @@ Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
  
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
-    
+
+# Convert list of datapoints to json format
+Use
+```
+python3 Open3Edids2json.py
+```
+to convert common list of datapoints (Open3Edatapoints.py) to json format.
+A white list of writable datapoints is also created by this tool.
+

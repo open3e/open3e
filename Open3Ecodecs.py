@@ -38,6 +38,9 @@ class RawCodec(udsoncan.DidCodec):
         string_ascii = string_bin.hex()
         return string_ascii
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -67,6 +70,9 @@ class O3EInt(udsoncan.DidCodec):
         val = int.from_bytes(string_bin[self.offset:self.offset + self.byte_width], byteorder="little", signed=self.signed)
         return float(val) / self.scale
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "signed":self.signed, "offset":self.offset}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -81,7 +87,6 @@ class O3EInt16(O3EInt):
 class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
-
 
 class O3EByteVal(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
@@ -99,6 +104,9 @@ class O3EByteVal(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         return int.from_bytes(string_bin[self.offset:self.offset+self.string_len], byteorder="little", signed=False)
+
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -123,6 +131,9 @@ class O3EBool(udsoncan.DidCodec):
         else:
             return "on"
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -143,6 +154,9 @@ class O3EUtf8(udsoncan.DidCodec):
         mystr = string_bin[self.offset:self.offset+self.string_len].decode('utf-8')
         return mystr.replace('\x00', '')
        
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -165,6 +179,9 @@ class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version
             lstv.append(str(int.from_bytes(string_bin[i:i+2], byteorder="little")))
         return ".".join(lstv)
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -185,6 +202,9 @@ class O3EMacAddr(udsoncan.DidCodec):
         for i in range(6):
             lstv.append(string_bin[i:i+1].hex().upper())
         return "-".join(lstv)
+
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -207,6 +227,9 @@ class O3EIp4Addr(udsoncan.DidCodec):  # also working with Ip6
             lstv.append(format(int(string_bin[i]), '03d'))
         return ".".join(lstv)
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -224,6 +247,9 @@ class O3ESdate(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
         return f"{int(string_bin[0]):02d}.{int(string_bin[1]):02d}.{2000+int(string_bin[2])}"
+
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -258,6 +284,9 @@ class O3EDateTime(udsoncan.DidCodec):
                  "Timestamp": int(dt.timestamp()*1000)
                }
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"timeformat":self.timeformat}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -279,6 +308,9 @@ class O3EStime(udsoncan.DidCodec):
             lstv.append(f"{(string_bin[i]):02d}")
         return ":".join(lstv)
 
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
+
     def __len__(self) -> int:
         return self.string_len
 
@@ -298,6 +330,9 @@ class O3EUtc(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         val = datetime.datetime.fromtimestamp(int.from_bytes(string_bin[0:4], byteorder="little", signed=False)).strftime('%Y-%m-%d %H:%M:%S')
         return str(val)
+
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -331,14 +366,18 @@ class O3EEnum(udsoncan.DidCodec):
             return {"ID": val,
                     "Text": "not found in " + self.listStr}
         
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"listStr":self.listStr}})
+
     def __len__(self) -> int:
         return self.string_len
        
 class O3EList(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, subTypes: list):
+    def __init__(self, string_len: int, idStr: str, subTypes: list, arraylength: int=0):
         self.string_len = string_len
         self.id = idStr
         self.subTypes = subTypes
+        self.len = len
 
     def encode(self, string_ascii: Any) -> bytes:        
         raise Exception("not implemented yet")
@@ -350,9 +389,11 @@ class O3EList(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         result = {}
         index = 0
-        count = 0
+        if(self.len == 0): 
+            count = 0
+
         for subType in self.subTypes:
-            # we expect a byte element with the name "Count"
+            # we expect a byte element with the name "Count" or "count"
             if subType.id.lower() == 'count':
                 count = int(subType.decode(string_bin[index:index+subType.string_len]))
                 result[subType.id]=count 
@@ -370,9 +411,48 @@ class O3EList(udsoncan.DidCodec):
 
         return dict(result)
     
+    def getCodecInfo(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecInfo())
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes}})
+
     def __len__(self) -> int:
         return self.string_len
 
+class O3EArray(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, subTypes: list, arraylength: int=0):
+        self.string_len = string_len
+        self.id = idStr
+        self.subTypes = subTypes
+        self.len = arraylength
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        raise Exception("not implemented yet")
+
+    def decode(self, string_bin: bytes) -> Any:
+        subTypes = self.subTypes
+        idStr = self.id
+        if(flag_rawmode == True): 
+            return RawCodec.decode(self, string_bin)
+        result = {}
+        index = 0
+        count = self.len
+        for subType in subTypes:
+            result[subType.id]=[]
+            for i in range(count):
+                result[subType.id].append((subType.decode(string_bin[index:index+subType.string_len])))
+                index+=subType.string_len
+        return dict(result)
+    
+    def getCodecInfo(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecInfo())
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes, "arrayLength":self.len}})
+
+    def __len__(self) -> int:
+        return self.string_len
 
 class O3EComplexType(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, subTypes : list):
@@ -395,48 +475,11 @@ class O3EComplexType(udsoncan.DidCodec):
             index+=subType.string_len
         return dict(result)
     
-    def __len__(self) -> int:
-        return self.string_len
-
-class O3ECompStat(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        return {
-            "starts": int.from_bytes([string_bin[7],string_bin[6]], byteorder="big", signed=False),
-            "hours": int.from_bytes([string_bin[11],string_bin[10]], byteorder="big", signed=False)
-        }
+    def getCodecInfo(self):
+        argsSubTypes = []
+        for subType in self.subTypes:
+            argsSubTypes.append(subType.getCodecInfo())
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"subTypes":argsSubTypes}})
 
     def __len__(self) -> int:
         return self.string_len
-
-class O3EAddElHeaterStat(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str):
-        self.string_len = string_len
-        self.id = idStr
-
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
-            return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
-
-    def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
-            return RawCodec.decode(self, string_bin)
-        return {
-            "starts": int.from_bytes([string_bin[4],string_bin[3]], byteorder="big", signed=False),
-            "hours": int.from_bytes([string_bin[8],string_bin[7]], byteorder="big", signed=False)
-        }
-
-    def __len__(self) -> int:
-        return self.string_len
-

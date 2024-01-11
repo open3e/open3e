@@ -2273,5 +2273,41 @@ E3Enums = {
         0 : "Metric",
         1 : "Imperial",
     },
+# Source: Datenpunktliste Modbus und KNX Betriebsprogramm HK
+    "OpModes" : {
+        0: "Off",
+        1: "Heating",
+        2: "Parallel Operation: Heating HotWater",
+        3: "Parallel Operation: Heating Cooling",
+        4: "TestMode",
+        5: "Cooling",
+        255: "Automatic",
+    },
+
+    "OpStates" : {
+        0: "Current",
+        0: "ShutDown",
+        1: "Reduced",
+        2: "Normal",
+        3: "Comfort",
+        5: "Fixed Value",
+        6: "Antifreeze protection",
+        7: "Energy Save: reduced",
+        8: "Energy Save: normal",
+        9: "Energy Save: comfort",
+        10: "Cooling: normal",
+        11: "Cooling: comfort",
+        12: "No request",
+    },
+
+    "RefrigerationCircuitOperationModes" : {
+        0: "Off",
+        1: "ShutDown",
+        2: "Heating",
+        3: "Cooling",
+        4: "Manual",
+        5: "De-icing",
+        6: "Grid-lock",
+    },
     
 }
