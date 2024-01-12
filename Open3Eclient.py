@@ -213,29 +213,13 @@ def listen(readdids=None, timestep=0):
 def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
     if(raw == None): 
         raw = args.raw
-    try:
-        value,idstr =  dicEcus[addr].readByDid(did, raw)
-        showread(addr, did, value, idstr, json, msglvl)    
-    #except TimeoutError:
-    #    return
-    except Exception as e:
-        if("timeout" in type(e).__name__.lower()):
-            return
-        else:
-            raise Exception(e)
+    value,idstr =  dicEcus[addr].readByDid(did, raw)
+    showread(addr, did, value, idstr, json, msglvl)    
 
     
 def readpure(addr:int, did:int, json=None, msglvl=0):
-    try:
-        value,idstr =  dicEcus[addr].readPure(did)
-        showread(addr, did, value, idstr, json, msglvl)    
-    #except TimeoutError:
-    #    return
-    except Exception as e:
-        if("timeout" in type(e).__name__.lower()):
-            return
-        else:
-            raise Exception(e)
+    value,idstr =  dicEcus[addr].readPure(did)
+    showread(addr, did, value, idstr, json, msglvl)    
 
 
 def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
@@ -309,8 +293,8 @@ parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
 args = parser.parse_args()
 
 
-if((args.doip == None) and (args.can == None)):
-    raise Exception("Error: No interface specified. --can or --doip mandatory.")
+if(args.can == None):
+    args.can = 'can0' 
 
 if(args.ecuaddr != None):
     deftx = getint(args.ecuaddr)
@@ -374,9 +358,8 @@ try:
             for ecudid in jobs:
                 ensure_ecu(ecudid[0])
                 if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                #val,idstr = dicEcus[ecudid[0]].readByDid(ecudid[1], args.raw)
-                #showread(addr=ecudid[0], value=val, idstr=idstr, did=ecudid[1], msglvl=mlvl)
                 readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                time.sleep(0.02)
             if(args.timestep != None):
                 time.sleep(float(eval(args.timestep)))
             else:

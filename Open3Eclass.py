@@ -11,6 +11,7 @@ from typing import Optional, Any
 import logging
 import importlib
 import binascii
+import time
 
 import Open3Edatapoints
 import Open3Ecodecs
@@ -110,10 +111,22 @@ class O3Eclass():
 
     def readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers): 
-            Open3Ecodecs.flag_rawmode = raw
-            response = self.uds_client.read_data_by_identifier([did])
-            # return value and idstr
-            return response.service_data.values[did],self.dataIdentifiers[did].id
+            retry = 0
+            while(True):
+                try:
+                    Open3Ecodecs.flag_rawmode = raw
+                    response = self.uds_client.read_data_by_identifier([did])
+                    # return value and idstr
+                    return response.service_data.values[did],self.dataIdentifiers[did].id
+                except Exception as e:
+                    if(type(e) in [TimeoutError, udsoncan.exceptions.TimeoutException]):
+                        time.sleep(0.1)
+                        retry += 1
+                        if(retry == 4):
+                            print(did, "ERROR max retry")
+                            return None,self.dataIdentifiers[did].id
+                    else:
+                        raise Exception(e)
         else:
             return self.readPure(did)
 
@@ -134,19 +147,28 @@ class O3Eclass():
     # reading without knowing length / codec
     def readPure(self, did:int):
         response = udsoncan.Response()
-        try:
-            response = self.uds_client.send_request(
-                udsoncan.Request(
-                    service=udsoncan.services.ReadDataByIdentifier,
-                    data=(did).to_bytes(2, byteorder='big')
+        retry = 0
+        while(True):
+            try:
+                response = self.uds_client.send_request(
+                    udsoncan.Request(
+                        service=udsoncan.services.ReadDataByIdentifier,
+                        data=(did).to_bytes(2, byteorder='big')
+                    )
                 )
-            )
-            if(response.positive):
-                return binascii.hexlify(response.data[2:]).decode('utf-8'), f"unknown:len={len(response)-3}"
-            else:
-                return f"negative response, {response.code}:{response.invalid_reason}", "unknown"
-        except Exception as ex:
-            return ex.args, "unknown"
+                if(response.positive):
+                    return binascii.hexlify(response.data[2:]).decode('utf-8'),f"unknown:len={len(response)-3}"
+                else:
+                    return f"negative response, {response.code}:{response.invalid_reason}","unknown"
+            except Exception as e:
+                if(type(e) in [TimeoutError, udsoncan.exceptions.TimeoutException]):
+                    time.sleep(0.1)
+                    retry += 1
+                    if(retry == 4):
+                        print(did, "ERROR max retry")
+                        return None, "unknown"
+                else:
+                    return e.args, "unknown"
   
 
     def close(self):
