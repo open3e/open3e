@@ -92,7 +92,7 @@ class O3EByteVal(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=self.signed)
+        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=False)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
@@ -413,7 +413,11 @@ class O3EComplexType(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        else:
+            string_bin = bytes()
+            for subType in self.subTypes:
+                string_bin+=subType.encode(string_ascii[subType.id])
+        return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 

@@ -10,3 +10,4 @@ devices*
 Open3Edatapoints_*
 virtdata_*
 .vscode/
+venv
