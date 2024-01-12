@@ -464,9 +464,12 @@ class O3EComplexType(udsoncan.DidCodec):
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
         else:
-            string_bin = bytes()
-            for subType in self.subTypes:
-                string_bin+=subType.encode(string_ascii[subType.id])
+            try:
+                string_bin = bytes()
+                for subType in self.subTypes:
+                    string_bin+=subType.encode(string_ascii[subType.id])
+            except KeyError as e:
+                raise ValueError(f"Cannot encode value due to missing key: {e}")
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:

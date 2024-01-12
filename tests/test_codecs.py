@@ -1,9 +1,13 @@
 from Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
-    O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr, O3ECompStat, O3EAddElHeaterStat
+    O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr
 import Open3Ecodecs
 
 from Open3Edatapoints import dataIdentifiers
 import random 
+
+import pytest
+
+Open3Ecodecs.flag_rawmode = False
 
 
 def _check_supported_type(codec, unsupported):
@@ -39,6 +43,15 @@ def test_complex_code():
 
     assert raw_input == encoded_output
 
+def test_complex_code_raise_on_missing_key():
+    codec = O3EComplexType(9, "MixerOneCircuitRoomTemperatureSetpoint", [O3EInt16(2, "Comfort", signed=True), O3EInt16(2, "Standard", signed=True), 
+                                                                 O3EInt16(2, "Reduced", signed=True), RawCodec(2, "Unknown2"), O3EByteVal(1, "Unknown1")])
+    
+    decoded_input = {"Comfort": 21.0, "Standard": 20.0, "Reduced": 20.0, "Unknown2": "0000"}
+    with pytest.raises(ValueError) as e_info:
+        encoded_output = codec.encode(decoded_input)
+
+
 
 def test_datapoints_encode_decode():
 
@@ -49,7 +62,7 @@ def test_datapoints_encode_decode():
     for did, codec in dataIdentifiers["dids"].items():
         
         if not _check_supported_type(codec, unsupported=[O3EList, O3EUtf8, O3EDateTime, O3EEnum, O3ESdate, O3EStime, O3EUtc, O3ESoftVers, 
-                                                         O3EMacAddr, O3EIp4Addr, O3ECompStat, O3ECompStat, O3EAddElHeaterStat]) or \
+                                                         O3EMacAddr, O3EIp4Addr]) or \
             (getattr(codec, "offset", 0) > 0) or \
                 did in PROBLEMATIC_DIDS:
             continue 
@@ -73,9 +86,8 @@ def test_datapoints_length():
 
 
 if __name__ == "__main__":
-    Open3Ecodecs.flag_rawmode = False
-
     test_datapoints_length()
     test_complex_code()
     test_datapoints_encode_decode()
+    test_complex_code_raise_on_missing_key()
     
