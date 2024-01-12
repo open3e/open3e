@@ -175,7 +175,6 @@ def listen(readdids=None, timestep=0):
                         showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
 
                 elif cd['mode'] == 'write':
-                    # ToDo: Umrechnung über Codec ergänzen. Wechselwirkung mit flag_rawmode beachten!
                     addr = getaddr(cd)
                     ensure_ecu(addr)
                     for wd in cd['data']:
