@@ -179,7 +179,10 @@ def listen(readdids=None, timestep=0):
                     ensure_ecu(addr)
                     for wd in cd['data']:
                         didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
-                        didVal = json.loads(wd[1])    # value: parse as json
+                        if type(wd[1]) == str:
+                            didVal = json.loads(wd[1])    # value: if string parse as json
+                        else:
+                            didVal = wd[1]  # value: if mqtt payload already parsed
                         dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
                         time.sleep(0.1)
                     
