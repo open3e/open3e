@@ -298,7 +298,10 @@ class O3EStime(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        else:
+            string_bin = bytes()
+            parts = string_ascii.split(":")
+            return(bytes([int(p) for p in parts]))
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
@@ -380,7 +383,29 @@ class O3EList(udsoncan.DidCodec):
         self.len = len
 
     def encode(self, string_ascii: Any) -> bytes:        
-        raise Exception("not implemented yet")
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        else:
+            input_dict = {k.lower():v for k,v in string_ascii.items()}
+            keys = list(input_dict.keys())
+            # expect two keys: count and another one
+            assert len(keys) == 2, "Too many keys in dict for OEList"
+            assert "count" in keys, 'Key "count" missing for OEList'
+            count = input_dict["count"]
+            keys.remove("count")
+            input_list = input_dict[keys[0]]
+            list_type = self.subTypes[1]
+            string_bin = bytes()
+            string_bin+=self.subTypes[0].encode(count)
+            assert count == len(input_list), '"count" and list lenght do not match for OEList'
+            for i in range(count):
+                try:
+                    string_bin+=list_type.encode(input_list[i])
+                except KeyError as e:
+                    raise ValueError(f"Cannot encode value due to missing key: {e}")
+            # zero padding
+            string_bin+=bytes(self.string_len - len(string_bin))
+        return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         subTypes = self.subTypes

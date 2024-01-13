@@ -33,7 +33,7 @@ def _calc_codec_length(codec):
     
     return length
 
-def test_complex_code():
+def test_complex_codec():
     codec = O3EComplexType(9, "MixerOneCircuitRoomTemperatureSetpoint", [O3EInt16(2, "Comfort", signed=True), O3EInt16(2, "Standard", signed=True), 
                                                                  O3EInt16(2, "Reduced", signed=True), RawCodec(2, "Unknown2"), O3EByteVal(1, "Unknown1")])
     
@@ -43,7 +43,7 @@ def test_complex_code():
 
     assert raw_input == encoded_output
 
-def test_complex_code_raise_on_missing_key():
+def test_complex_codec_raise_on_missing_key():
     codec = O3EComplexType(9, "MixerOneCircuitRoomTemperatureSetpoint", [O3EInt16(2, "Comfort", signed=True), O3EInt16(2, "Standard", signed=True), 
                                                                  O3EInt16(2, "Reduced", signed=True), RawCodec(2, "Unknown2"), O3EByteVal(1, "Unknown1")])
     
@@ -51,7 +51,32 @@ def test_complex_code_raise_on_missing_key():
     with pytest.raises(ValueError) as e_info:
         encoded_output = codec.encode(decoded_input)
 
+def test_list_codec():
+    codec = O3EList(57, "MixerOneCircuitTimeScheduleMonday",[O3EByteVal(1, "Count"), 
+                                                             O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])])
+    
+    decoded_input = {'Count': 4, 'Schedules': [{'Start': '09:00', 'Stop': '17:00', 'Unknown': '0000', 'Mode': 3}, 
+                                               {'Start': '17:00', 'Stop': '20:00', 'Unknown': '0000', 'Mode': 4}, 
+                                               {'Start': '20:00', 'Stop': '24:00', 'Unknown': '0000', 'Mode': 3}]}
+    with pytest.raises(AssertionError) as e_info:
+        encoded_output = codec.encode(decoded_input)
 
+def test_list_codec_raise_invalid_count():
+    codec = O3EList(57, "MixerOneCircuitTimeScheduleMonday",[O3EByteVal(1, "Count"), 
+                                                             O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])])
+    
+    raw_input = bytes.fromhex("030900110000000311001400000004140018000000030000000000000000000000000000000000000000000000000000000000000000000000")
+    decoded_input = codec.decode(raw_input)
+    encoded_output = codec.encode(decoded_input)
+
+    assert raw_input == encoded_output
+
+def test_time_codec():
+    codec = O3EStime(2, "Start")
+    decoded_input = "17:00"
+    encoded_output = codec.encode(decoded_input)
+    decoded_output = codec.decode(encoded_output)
+    assert decoded_input == decoded_output
 
 def test_datapoints_encode_decode():
 
@@ -61,7 +86,7 @@ def test_datapoints_encode_decode():
 
     for did, codec in dataIdentifiers["dids"].items():
         
-        if not _check_supported_type(codec, unsupported=[O3EList, O3EUtf8, O3EDateTime, O3EEnum, O3ESdate, O3EStime, O3EUtc, O3ESoftVers, 
+        if not _check_supported_type(codec, unsupported=[O3EList, O3EUtf8, O3EDateTime, O3EEnum, O3ESdate, O3EUtc, O3ESoftVers, 
                                                          O3EMacAddr, O3EIp4Addr]) or \
             (getattr(codec, "offset", 0) > 0) or \
                 did in PROBLEMATIC_DIDS:
@@ -87,7 +112,7 @@ def test_datapoints_length():
 
 if __name__ == "__main__":
     test_datapoints_length()
-    test_complex_code()
+    test_complex_codec()
     test_datapoints_encode_decode()
     test_complex_code_raise_on_missing_key()
-    
+    test_list_code()
