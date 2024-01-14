@@ -350,9 +350,15 @@ class O3EEnum(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        #raise Exception("not implemented yet")
+
+        if type(string_ascii) == dict:
+            input = string_ascii['Text']
+        elif type(string_ascii) == str:
+            input = string_ascii
+        else:
+            raise ValueError("Ivalid input for OEEnum")
         for key, value in Open3Eenums.E3Enums[self.listStr].items():
-            if value.lower() == string_ascii.lower():
+            if value.lower() == input.lower():
                 string_bin = key.to_bytes(length=self.string_len,byteorder="little",signed=False)
                 return string_bin
         raise Exception("not found")

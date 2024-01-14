@@ -1,4 +1,4 @@
-from Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
+from Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt8, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
     O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr
 import Open3Ecodecs
 
@@ -51,7 +51,7 @@ def test_complex_codec_raise_on_missing_key():
     with pytest.raises(ValueError) as e_info:
         encoded_output = codec.encode(decoded_input)
 
-def test_list_codec():
+def test_list_codec_raise_invalid_count():
     codec = O3EList(57, "MixerOneCircuitTimeScheduleMonday",[O3EByteVal(1, "Count"), 
                                                              O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])])
     
@@ -61,7 +61,7 @@ def test_list_codec():
     with pytest.raises(AssertionError) as e_info:
         encoded_output = codec.encode(decoded_input)
 
-def test_list_codec_raise_invalid_count():
+def test_list_codec():
     codec = O3EList(57, "MixerOneCircuitTimeScheduleMonday",[O3EByteVal(1, "Count"), 
                                                              O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])])
     
@@ -70,6 +70,17 @@ def test_list_codec_raise_invalid_count():
     encoded_output = codec.encode(decoded_input)
 
     assert raw_input == encoded_output
+
+def test_list_codec_empty():
+    codec = O3EList(57, "MixerOneCircuitTimeScheduleMonday",[O3EByteVal(1, "Count"), 
+                                                             O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])])
+    
+    decoded_input = {'Count': 0, 'Schedules': []}
+    encoded_output = codec.encode(decoded_input)
+
+    assert encoded_output == bytes(len(codec))
+
+
 
 def test_time_codec():
     codec = O3EStime(2, "Start")
@@ -94,6 +105,30 @@ def test_datapoints_encode_decode():
         
         raw_input = random.randbytes(len(codec))
         decoded_input = codec.decode(raw_input)
+        encoded_output = codec.encode(decoded_input)
+
+        assert raw_input == encoded_output, f"Did {did}: Input {raw_input.hex()} does not match output {encoded_output.hex()}" 
+
+def test_datapoints_encode_decode_list():
+
+    PROBLEMATIC_DIDS = []
+
+    for did, codec in dataIdentifiers["dids"].items():
+
+        if type(codec) != O3EList:
+            continue
+        
+        if not _check_supported_type(codec, unsupported=[O3EUtf8, O3EDateTime, O3EEnum, O3ESdate, O3EUtc, O3ESoftVers, 
+                                                         O3EMacAddr, O3EIp4Addr]) or \
+                did in PROBLEMATIC_DIDS:
+            continue
+
+        subcodec_len_sum = _calc_codec_length(codec)
+        max_list_length = int((len(codec)-1)/(subcodec_len_sum-1))
+        
+        raw_input = codec.subTypes[0].encode(max_list_length)+random.randbytes(len(codec)-1)
+        decoded_input = codec.decode(raw_input)
+        print(did, decoded_input)
         encoded_output = codec.encode(decoded_input)
 
         assert raw_input == encoded_output, f"Did {did}: Input {raw_input.hex()} does not match output {encoded_output.hex()}" 
