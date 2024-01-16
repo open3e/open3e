@@ -1,4 +1,5 @@
 udsoncan
 doipclient
+python-can
 can-isotp
 paho-mqtt
