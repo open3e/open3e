@@ -1,13 +1,13 @@
-from Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt8, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
+from open3e.Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt8, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
     O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr
-import Open3Ecodecs
+import open3e.Open3Ecodecs
 
-from Open3Edatapoints import dataIdentifiers
+from open3e.Open3Edatapoints import dataIdentifiers
 import random 
 
 import pytest
 
-Open3Ecodecs.flag_rawmode = False
+open3e.Open3Ecodecs.flag_rawmode = False
 
 
 def _check_supported_type(codec, unsupported):

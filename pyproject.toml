@@ -22,41 +22,41 @@ where = ["src"]
 # exclude = ["tests"]
 namespaces = true
 
-[tool.setuptools_scm]
-write_to = "src/tinypkg/_version.py"
+# disable automatic versioning
+#[tool.setuptools_scm]
+#write_to = "src/tinypkg/_version.py"
 
 # PEP 621 https://peps.python.org/pep-0621/
 [project]
-name = "tinypkg"
-# version = "0.0.1"
+name = "open3e"
+version = "0.1.0"
 # for automated versioning by pypa/setuptools_scm. see https://peps.python.org/pep-0621/#dynamic
-dynamic = ["version"]
-description = "a tiny package example w/setuptools"
-authors = [{ name = "denkiwakame" }, { email = "denkivvakame@gmail.com" }]
-maintainers = [{ name = "denkiwakame" }, { email = "denkivvakame@gmail.com" }]
+# dynamic = ["version"]
+description = "Connects to E3 (vcal, vdens, vx3...) controllers through CAN UDS or DOIP."
+authors = [{ name = "The open3e authors" }]
 readme = "README.md"
 license = { file = "LICENSE.txt" }
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 classifiers = [
-  "License :: OSI Approved :: MIT License",
-  "Programming Language :: Python",
+  "License :: OSI Approved ::Apache Software License",
+  "Programming Language :: Python"
 ]
-keywords = ["package", "setuptools"]
-dependencies = ["requests"]
+keywords = ["E3", "CAN", "communication"]
+dependencies = [
+  "udsoncan",
+  "doipclient",
+  "python-can",
+  "can-isotp>=2.0.2",
+  "paho-mqtt"
+]
 [project.optional-dependencies]
-dev = ["pytest==5.0.0", "pytest-cov[all]", "mypy==0.910", "black==21.10b0"]
+dev = ["pytest", "pytest-cov", "black==21.10b0"]
 [project.urls]
-Homepage = "https://github.com/denkiwakame/py-tiny-pkg"
-documentation = "https://github.com/denkiwakame/py-tiny-pkg"
-repository = "https://github.com/denkiwakame/py-tiny-pkg"
-changelog = "https://github.com/denkiwakame/py-tiny-pkg/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/open3e/open3e"
+documentation = "https://github.com/open3e/open3e"
+repository = "https://github.com/open3e/open3eg"
 
-[tool.black]
-target-version = ['py39']
-line-length = 120
-
-[tool.mypy]
-python_version = "3.9"
-no_strict_optional = true
-ignore_missing_imports = true
-check_untyped_defs = true
+# diable automatic code style check (for now)
+#[tool.black]
+#target-version = ['py39']
+#line-length = 120
