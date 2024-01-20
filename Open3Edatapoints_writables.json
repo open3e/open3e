@@ -410,5 +410,6 @@
   "3068": "DomesticHotWaterTemperatureSetpointComfort",
   "3070": "BufferTargetOperationMode",
   "3098": "ExternalHeaterTemperatureOffset",
-  "3106": "BufferMinimumMaximumSetTemperature"
+  "3106": "BufferMinimumMaximumSetTemperature",
+  "3134": "DomesticHotWaterCirculationPumpStatistical"
 }

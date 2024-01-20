@@ -120,7 +120,10 @@ class O3EBool(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        if string_ascii == 'on':
+            return bytes([1])
+        else:
+            return bytes([0])
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 

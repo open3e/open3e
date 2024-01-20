@@ -23540,43 +23540,183 @@
     "args": {}
   },
   "2426": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerOneCircuitRoomEcoFunctionSettings",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "OutsideTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unkown",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RoomTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2427": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerTwoCircuitRoomEcoFunctionSettings",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "OutsideTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unkown",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RoomTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2428": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerThreeCircuitRoomEcoFunctionSettings",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "OutsideTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unkown",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RoomTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2429": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerFourCircuitRoomEcoFunctionSettings",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "OutsideTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unkown",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RoomTemperatureLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2442": {

@@ -254,10 +254,10 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             mqttdump(mqttTopic + "/" + publishStr, value)
         
         if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, json.dumps(value))
     else:
         if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, json.dumps(value))
         else:
             mlst = []
             if((msglvl & 4) != 0):
