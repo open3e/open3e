@@ -20,6 +20,7 @@ import time
 import binascii
 import json
 import argparse
+import isotp
 
 import udsoncan
 from udsoncan.connections import IsoTPSocketConnection
@@ -61,7 +62,7 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
             conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
         else:
             rx = tx + 0x10
-            conn = IsoTPSocketConnection(can, rxid=rx, txid=tx)
+            conn = IsoTPSocketConnection(can, isotp.Address(rxid=rx, txid=tx))
             conn.tpsock.set_opts(txpad=0x00)
 
         # set default timeout
@@ -108,7 +109,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
         conn = DoIPClientUDSConnector(DoIPClient(args.doip, ecutx))
     else:
         rx = ecutx + 0x10
-        conn = IsoTPSocketConnection(can, rxid=rx, txid=ecutx)
+        conn = IsoTPSocketConnection(can, isotp.Address(rxid=rx, txid=ecutx))
         conn.tpsock.set_opts(txpad=0x00)
 
     # increase timeout

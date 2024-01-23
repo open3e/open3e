@@ -12,6 +12,7 @@ import logging
 import importlib
 import binascii
 import time
+import isotp
 
 import Open3Edatapoints
 import Open3Ecodecs
@@ -81,7 +82,7 @@ class O3Eclass():
         if(doip != None):
             conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
         else:
-            conn = IsoTPSocketConnection(can, rxid=ecurx, txid=ecutx)
+            conn = IsoTPSocketConnection(can, isotp.Address(rxid=ecurx, txid=ecutx))
             # workaround missing padding for vdens (thanks to Phil, JB and HB!)
             conn.tpsock.set_opts(txpad=0x00)
 
