@@ -18,9 +18,11 @@ Change into the directory
 
     cd open3e
 
-Eventually run:
+To install or update dependent packages run:
 
     pip3 install -r requirements.txt  
+
+It's important to do this also after updating open3e to a newer version.
 
 If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the preveious command.<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  

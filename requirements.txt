@@ -1,4 +1,5 @@
 udsoncan>=1.21.2
 doipclient
+python-can
 can-isotp>=2.0.2
 paho-mqtt

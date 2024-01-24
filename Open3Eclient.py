@@ -175,12 +175,14 @@ def listen(readdids=None, timestep=0):
                         showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
 
                 elif cd['mode'] == 'write':
-                    # ToDo: Umrechnung über Codec ergänzen. Wechselwirkung mit flag_rawmode beachten!
                     addr = getaddr(cd)
                     ensure_ecu(addr)
                     for wd in cd['data']:
                         didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
-                        didVal = getint(wd[1])    # value: dto.
+                        if type(wd[1]) == str:
+                            didVal = json.loads(wd[1])    # value: if string parse as json
+                        else:
+                            didVal = wd[1]  # value: if mqtt payload already parsed
                         dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
                         time.sleep(0.1)
                     
@@ -252,10 +254,10 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
             mqttdump(mqttTopic + "/" + publishStr, value)
         
         if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, json.dumps(value))
     else:
         if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, value)
+            print (dev_of_addr(addr), did, idstr, json.dumps(value))
         else:
             mlst = []
             if((msglvl & 4) != 0):
@@ -367,18 +369,25 @@ try:
 
     # experimental write to did
     elif(args.write != None):
-        if(args.raw != True):
-            raise Exception("Error: write only accepts raw data, use -raw param")
-        jobs = args.write.split(",")
-        for job in jobs:
-            writeArg = job.split("=")
-            ecu,didkey = get_ecudid(writeArg[0])
-            didVal=str(writeArg[1]).replace("0x","")
+        if(args.raw == True):
+            jobs = args.write.split(",")
+            for job in jobs:
+                writeArg = job.split("=")
+                ecu,didkey = get_ecudid(writeArg[0])
+                didVal=str(writeArg[1]).replace("0x","")
+                ensure_ecu(ecu)
+                print(f"write raw: {ecu}.{didkey} = {didVal}")
+                succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
+                print(f"success: {succ}, code: {code}")
+        else:
+            writeArg = args.write.split("=")
+            ecu,didkey = get_ecudid(writeArg[0])           
+            didVal=json.loads(writeArg[1])
             ensure_ecu(ecu)
-            print(f"write {ecu}.{didkey} = {didVal}")
-            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
-            print(f"success: {succ}, code: {code}")
-            time.sleep(0.1)
+            print(f"write: {ecu}.{didkey} = {didVal}")
+            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False)
+            print(f"success: {succ}, code: {code}")                
+        time.sleep(0.1)
 
     # scanall
     elif(args.scanall == True):
