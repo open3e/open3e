@@ -12,7 +12,7 @@ For a fresh Raspberry PI install git, python3 and python-pip first:
 
 Now clone this repository to your system:  
 
-    git clone https://github.com/abnoname/open3e.git  
+    git clone https://github.com/open3e/open3e.git  
 
 Change into the directory
 
