@@ -80,8 +80,6 @@ def test_list_codec_empty():
 
     assert encoded_output == bytes(len(codec))
 
-
-
 def test_time_codec():
     codec = O3EStime(2, "Start")
     decoded_input = "17:00"
@@ -137,11 +135,3 @@ def test_datapoints_length():
         subcodec_len_sum = _calc_codec_length(codec)
 
         assert codec_len == subcodec_len_sum, f"Did {did}: Length {codec_len} does not match sum of subType lenghts {subcodec_len_sum}" 
-
-
-if __name__ == "__main__":
-    test_datapoints_length()
-    test_complex_codec()
-    test_datapoints_encode_decode()
-    test_complex_code_raise_on_missing_key()
-    test_list_code()
