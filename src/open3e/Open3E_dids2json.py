@@ -20,7 +20,8 @@ writablesPatterns = ['setpoint',
                      'offset',
                      'minimummaximumset',
                      'minimummaximumlimit',
-                     'domestichotwatercirculationpump'
+                     'domestichotwatercirculationpump',
+                     'operationstate'
                      ]
 
 def setToWritable(id):
