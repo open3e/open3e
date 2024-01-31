@@ -30,9 +30,9 @@ from udsoncan.services import ReadDataByIdentifier
 from doipclient import DoIPClient
 from doipclient.connectors import DoIPClientUDSConnector
 
-import Open3Edatapoints
-from Open3Edatapoints import *
-import Open3Eenums
+import open3e.Open3Edatapoints
+from open3e.Open3Edatapoints import *
+import open3e.Open3Eenums
 
 
 # cob scan, default 0x680 to 0x6ff  
@@ -213,7 +213,7 @@ def write_devices_json(lstecus:list):
     # reformat list contents
     for cob,prop in lstecus:
         scob = hex(cob)
-        sdplist = "Open3Edatapoints_" + shex(cob) + ".py"
+        sdplist = "open3e.Open3Edatapoints_" + shex(cob) + ".py"
         mylist.append((scob, sdplist, prop))
     # make for dump
     result_dict = {}
@@ -239,11 +239,11 @@ def write_simul_datafile(lstdids:list, cobid:int, devprop:str):
 
 
 def write_datapoints_file(lstdids:list, cobid:int, devprop:str):
-    filename = "Open3Edatapoints_" + shex(cobid) + ".py"
+    filename = "open3e.Open3Edatapoints_" + shex(cobid) + ".py"
     print(f"write datapoints file {filename} ...")
     with open(filename, "w") as file:
-        shead =  'import Open3Ecodecs\n'
-        shead += 'from Open3Ecodecs import *\n\n'
+        shead =  'import open3e.Open3Ecodecs\n'
+        shead += 'from open3e.Open3Ecodecs import *\n\n'
         shead += 'dataIdentifiers = {\n'
         shead += '    \"name\": \"' + str(devprop) + '\",\n'
         shead += '    \"dids\" :\n'
@@ -276,8 +276,8 @@ if(args.can != None):
     can = args.can
 
 # peparations
-dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])
-e3Devices = Open3Eenums.E3Enums['Devices']
+dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
+e3Devices = open3e.Open3Eenums.E3Enums['Devices']
 dicDidEnums = read_didenums("DidEnums.txt")
 
 # scan ECUs/COB-IDs
@@ -301,5 +301,5 @@ with open('devices.json', 'r') as file:
 for line in lines:
     line = line.replace('\n','')
     print(line)
-print("\nrun Open3Eclient with -mqtt and -a to get EVERYTHING on your MQTT app.")
+print("\nrun open3e.Open3Eclient with -mqtt and -a to get EVERYTHING on your MQTT app.")
     

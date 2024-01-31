@@ -44,7 +44,7 @@ args = parser.parse_args()
 
 dev = "vcal"
 devfile = ""
-unifile = "Open3Edatapoints.py"
+unifile = "open3e.Open3Edatapoints.py"
 
 if(args.dev != None):
     dev = args.dev
@@ -52,7 +52,7 @@ if(args.dev != None):
 if('.py' in dev):
     devfile = dev
 else:
-    devfile = "Open3Edatapoints" + dev.capitalize() + ".py"
+    devfile = "open3e.Open3Edatapoints" + dev.capitalize() + ".py"
 
 
 dicuni = readfile(unifile)

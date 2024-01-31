@@ -19,7 +19,7 @@ import time
 import json
 import paho.mqtt.client as paho
 
-import Open3Eclass
+import open3e.Open3Eclass
 
 # default ECU address
 deftx = 0x680
@@ -102,7 +102,7 @@ def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
 def ensure_ecu(addr:int):
     if(not (addr in dicEcus)):
        # make ecu with no name str
-        ecu = Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
+        ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
         dicEcus[addr] = ecu
 
 
@@ -286,7 +286,7 @@ parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
-parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
+parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e.Open3E/cmnd")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
 parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
@@ -314,12 +314,12 @@ if(args.config != None):
         addrtx = getint(config.get("tx"))
         dplist = config.get("dpList")
         # make ecu
-        ecu = Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
+        ecu = open3e.Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
         dicEcus[addrtx] = ecu
         dicDevAddrs[device] = addrtx
 else:
     # only default device
-    ecu = Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
+    ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
     dicEcus[deftx] = ecu
     dicDevAddrs[args.dev] = deftx
     
@@ -327,7 +327,7 @@ else:
 # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 mqtt_client = None
 if(args.mqtt != None):
-    mqtt_client = paho.Client("Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+    mqtt_client = paho.Client("open3e.Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
     if(args.mqttuser != None):
         mlst = args.mqttuser.split(':')
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])

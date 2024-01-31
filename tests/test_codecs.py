@@ -90,20 +90,14 @@ def test_time_codec():
     assert decoded_input == decoded_output
 
 def test_datapoints_encode_decode():
-
-    PROBLEMATIC_DIDS = [405, 406, 407, 408, 417, 476, 874, 950, 1085, 1087, 1190, 1266, 1659, 1826, 1827, 1828, 1829, 1830, 1837, 1838,
-                        2342, 2343, 2351, 2486, 2487, 2488, 2494, 2495, 2496, 2574, 2622, 2623, 2624, 2625, 2626, 2629, 2784, 2791, 
-                        2792, 2793, 2794, 2795]
-
     for did, codec in dataIdentifiers["dids"].items():
         
         if not _check_supported_type(codec, unsupported=[O3EList, O3EUtf8, O3EDateTime, O3EEnum, O3ESdate, O3EUtc, O3ESoftVers, 
                                                          O3EMacAddr, O3EIp4Addr]) or \
-            (getattr(codec, "offset", 0) > 0) or \
-                did in PROBLEMATIC_DIDS:
+            (getattr(codec, "offset", 0) > 0):
             continue 
         
-        raw_input = random.randbytes(len(codec))
+        raw_input = codec.encode(codec.decode(random.randbytes(len(codec))))
         decoded_input = codec.decode(raw_input)
         encoded_output = codec.encode(decoded_input)
 

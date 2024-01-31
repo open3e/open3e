@@ -1,15 +1,15 @@
 #
-# Convert Open3E datapoint list to JSON format, e.g. for use in ioBroker adapter E3onCAN
+# Convert open3e.Open3E datapoint list to JSON format, e.g. for use in ioBroker adapter E3onCAN
 #
 # Create white list of writable datapoints based on filter patterns
 
 import json
 
-import Open3Edatapoints
+import open3e.Open3Edatapoints
 
-from Open3Ecodecs import *
+from open3e.Open3Ecodecs import *
 
-dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])
+dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
 
 didsDict = {}
 didsWritable = {}
@@ -31,7 +31,7 @@ def setToWritable(id):
             return True
     return False
 
-print('Start conversion of datapoints "Open3Edatapoints.py" to json format.')
+print('Start conversion of datapoints "open3e.Open3Edatapoints.py" to json format.')
 print('Create white list for writable datapoints based on filter patterns.\n')
 
 cntDps = 0
@@ -44,12 +44,12 @@ for dp in dataIdentifiers:
         cntWrt += 1
     cntDps += 1
 
-with open('Open3Edatapoints.json', 'w') as json_file:
+with open('open3e.Open3Edatapoints.json', 'w') as json_file:
     json.dump(didsDict, json_file, indent=2)
 
-with open('Open3Edatapoints_writables.json', 'w') as json_file:
+with open('open3e.Open3Edatapoints_writables.json', 'w') as json_file:
     json.dump(didsWritable, json_file, indent=2)
 
-print(str(cntDps)+' dids converted to JSON format. See file "Open3Edatapoints.json"')
-print(str(cntWrt)+' dids identified as writable. See file "Open3Edatapoints_writables.json"')
+print(str(cntDps)+' dids converted to JSON format. See file "open3e.Open3Edatapoints.json"')
+print(str(cntWrt)+' dids identified as writable. See file "open3e.Open3Edatapoints_writables.json"')
 print('Done.')
