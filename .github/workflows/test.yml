@@ -1,0 +1,55 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - develop      
+      - master
+  pull_request:
+    branches:
+      - develop
+      - master      
+
+jobs:
+  install-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.9"]
+      max-parallel: 3
+    name: Python ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup-python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: "x64"
+      - name: confirm pip version
+        run: pip --version
+      - name: installation
+        run: pip install .[dev]
+      - name: test
+        run: python -m pytest --cov
+  editable-install-test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python-version: ["3.9"]
+      max-parallel: 3
+    name: Python ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@v3
+      - name: setup-python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+          architecture: "x64"
+      - name: confirm pip version
+        run: pip --version
+      - name: installation
+        run: pip install -e .[dev]
+      - name: test
+        run: python -m pytest --cov
