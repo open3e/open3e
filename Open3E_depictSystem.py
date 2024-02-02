@@ -58,10 +58,10 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
         if(tx in lstskips):
             continue
 
+        rx = tx + 0x10
         if(args.doip != None):
             conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
         else:
-            rx = tx + 0x10
             conn = IsoTPSocketConnection(can, isotp.Address(rxid=rx, txid=tx))
             conn.tpsock.set_opts(txpad=0x00)
 
