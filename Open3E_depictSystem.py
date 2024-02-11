@@ -15,14 +15,12 @@
 """
 # thanks to Hendrik 'surt91' Schawe
 
-
 import time
 import binascii
 import json
 import argparse
 
 import udsoncan
-#from udsoncan.connections import IsoTPSocketConnection
 from udsoncan.client import Client
 from udsoncan.services import ReadDataByIdentifier
 
@@ -66,16 +64,14 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
         if(args.doip != None):
             conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
         else:
-            #conn = IsoTPSocketConnection(can, isotp.Address(rxid=rx, txid=tx))
-            conn = get_pycan_conn(can, rx, tx)
-            conn.tpsock.set_opts(txpad=0x00)
+            bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=tx)
 
         # set default timeout
         config = dict(udsoncan.configs.default_client_config)
         #config['request_timeout'] = 3  # default 5
         #config['p2_timeout'] = 3       # default 1
         #config['p2_star_timeout'] = 3  # default 5
-       
+
         with Client(conn, config=config) as client:
             try:
                 response = client.send_request(
@@ -98,8 +94,10 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
                     pass
                 else:
                     raise Exception(e)
-        # client done
-        client.close()
+            # client done
+            client.close()
+            if(args.doip == None):
+                bus.shutdown()
         time.sleep(0.1)
     # all addresses done
     print(f"{len(lstfounds)} responding COB-IDs found.")
@@ -114,9 +112,7 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
         conn = DoIPClientUDSConnector(DoIPClient(args.doip, ecutx))
     else:
         rx = ecutx + 0x10
-        #conn = IsoTPSocketConnection(can, isotp.Address(rxid=rx, txid=ecutx))
-        conn = get_pycan_conn(can, rx, ecutx)
-        conn.tpsock.set_opts(txpad=0x00)
+        bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=ecutx)
 
     # increase timeout
     config = dict(udsoncan.configs.default_client_config)
@@ -126,41 +122,35 @@ def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples 
 
     with Client(conn, config=config) as client:
         for did in range(startdid, lastdid+1):
-            retry = 0
-            while(retry < 4):
-                try:
-                    response = client.send_request(
-                        udsoncan.Request(
-                            service=ReadDataByIdentifier,
-                            data=(did).to_bytes(2, byteorder='big')
-                        )
+            try:
+                response = client.send_request(
+                    udsoncan.Request(
+                        service=ReadDataByIdentifier,
+                        data=(did).to_bytes(2, byteorder='big')
                     )
-                    if response.positive:
-                        dlen = len(response) - 3
-                        data = response.data[2:]
-                        dstr = "(unknown)"
-                        if(did in dicDidEnums):
-                            dstr = dicDidEnums[did]
-                        print(f"found {did}:{dlen}:{dstr}")
-                        lstfounds.append((did,dlen,data))
-                        break
-                except Exception as e:
-                    if(type(e) is udsoncan.exceptions.NegativeResponseException):
-                        break
-                    if(type(e) in [TimeoutError, udsoncan.exceptions.TimeoutException]):
-                        time.sleep(0.1)
-                        retry += 1
-                        if(retry == 4):
-                            print(did, "ERROR max retry")
-                            raise Exception(e)
-                    else:
-                        #print(f"# DID {did}: {e}")
-                        #time.sleep(2)  # allow everything calm down
-                        raise Exception(e)
+                )
+                if response.positive:
+                    dlen = len(response) - 3
+                    data = response.data[2:]
+                    dstr = "(unknown)"
+                    if(did in dicDidEnums):
+                        dstr = dicDidEnums[did]
+                    print(f"found {did}:{dlen}:{dstr}")
+                    lstfounds.append((did,dlen,data))
+            except Exception as e:
+                if(type(e) is udsoncan.exceptions.NegativeResponseException):
+                    # regular if DID not present 
+                    pass
+                else:
+                    #print(f"# DID {did}: {e}")
+                    raise Exception(e)
             # short rest before next did     
             time.sleep(0.05)
-    # all dids tried
-    client.close()
+
+        # client done
+        client.close()
+        if(args.doip == None):
+            bus.shutdown()
     print(f"{len(lstfounds)} DIDs found on {shex(ecutx)}.")
     return lstfounds
 
@@ -267,7 +257,8 @@ def write_datapoints_file(lstdids:list, cobid:int, devprop:str):
         file.write('}\n')
     print("done.")
 
-def get_pycan_conn(can, ecurx:int, ecutx:int):
+
+def get_isotp_params():
     # Refer to isotp documentation for full details about parameters
     isotp_params = {
         'stmin': 10,                            # Will request the sender to wait 10ms between consecutive frame. 0-127ms or 100-900ns with values from 0xF1-0xF9
@@ -287,12 +278,18 @@ def get_pycan_conn(can, ecurx:int, ecutx:int):
         'rate_limit_window_size': 0.2,          # Ignored when rate_limit_enable=False. Sets the averaging window size for bitrate calculation when rate_limit_enable=True
         'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
     }
+    return isotp_params
+
+
+def get_pycan_conn(can, ecurx:int, ecutx:int):
     bus = SocketcanBus(channel=can, bitrate=250000)                                     # Link Layer (CAN protocol)
-    tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
+    tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx)       # Network layer addressing scheme
+    isotp_params = get_isotp_params()
     stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
     stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
     conn = PythonIsoTpConnection(stack)                                                 # interface between Application and Transport layer
-    return conn
+    return bus, conn
+
 
 # +++++++++++++++++++++++++++++++++
 # Main
