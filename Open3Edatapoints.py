@@ -641,7 +641,7 @@ dataIdentifiers = {
         1668 : RawCodec(2, "MixerTwoCircuitPumpOscillationTime"),
         1669 : RawCodec(2, "MixerThreeCircuitPumpOscillationTime"),
         1670 : RawCodec(2, "MixerFourCircuitPumpOscillationTime"),
-        1684 : RawCodec(9, "AmbientTemperatureSensor"),
+        1684 : O3EComplexType(9, "AmbientTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         1685 : RawCodec(3, "ElectricalEnergyInverterDCConfiguration"),
         1686 : RawCodec(3, "ElectricalEnergySystemPhotovoltaicLimitation"),
         1687 : O3EInt16(2, "ElectricalEnergySystemPhotovoltaicConfiguration", scale=10),
