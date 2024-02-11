@@ -16,7 +16,6 @@ import logging
 import importlib
 import binascii
 import time
-import isotp
 
 import Open3Edatapoints
 import Open3Ecodecs

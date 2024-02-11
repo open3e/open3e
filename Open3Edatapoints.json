@@ -17628,19 +17628,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17653,19 +17653,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17678,19 +17678,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17703,19 +17703,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17728,19 +17728,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17753,19 +17753,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17778,19 +17778,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -17803,19 +17803,19 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "Mode",
           "args": {
-            "offset": 0
+            "listStr": "OpModes"
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
           "id": "State",
           "args": {
-            "offset": 0
+            "listStr": "OpStates"
           }
         }
       ]
@@ -18577,10 +18577,61 @@
     "args": {}
   },
   "1684": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "AmbientTemperatureSensor",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "1685": {
     "codec": "RawCodec",
@@ -30061,5 +30112,6 @@
     "len": 199,
     "id": "ExtendedEventLoggingHistory",
     "args": {}
-  }
+  },
+  "Version": "20240208"
 }
