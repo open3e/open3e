@@ -527,10 +527,10 @@ dataIdentifiers = {
                                                                       O3EInt32(4, "07_July", scale=10), O3EInt32(4, "08_August", scale=10), O3EInt32(4, "09_September", scale=10), O3EInt32(4, "10_October", scale=10), O3EInt32(4, "11_November", scale=10), O3EInt32(4, "12_December", scale=10)]),
         ]),
         1394 : O3EInt16(2, "SolarChargingDomesticHotWaterSetpoint", signed=True),
-        1395 : O3EInt16(3, "MixerOneCircuitSummerSavingTemperatureThreshold", offset = 1),
-        1396 : O3EInt16(3, "MixerTwoCircuitSummerSavingTemperatureThreshold", offset = 1),
-        1397 : O3EInt16(3, "MixerThreeCircuitSummerSavingTemperatureThreshold", offset = 1),
-        1398 : O3EInt16(3, "MixerFourCircuitSummerSavingTemperatureThreshold", offset = 1),
+        1395 : O3EComplexType(3, "MixerOneCircuitSummerSavingTemperatureThreshold", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        1396 : O3EInt16(3, "MixerTwoCircuitSummerSavingTemperatureThreshold", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        1397 : O3EInt16(3, "MixerThreeCircuitSummerSavingTemperatureThreshold", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        1398 : O3EInt16(3, "MixerFourCircuitSummerSavingTemperatureThreshold", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         1411 : O3EByteVal(1, "ResetServiceInterval"),
         1415 : O3EComplexType(2, "MixerOneCircuitOperationState",[O3EEnum(1,"Mode","OpModes"),O3EEnum(1,"State","OpStates")]),
         1416 : O3EComplexType(2, "MixerTwoCircuitOperationState",[O3EEnum(1,"Mode","OpModes"),O3EEnum(1,"State","OpStates")]),
@@ -1487,10 +1487,10 @@ dataIdentifiers = {
         2851 : O3EInt16(2, "PreStartDuration"),#+++
         2852 : O3EInt8(1, "FanDuctHeater"),#+++
         2853 : RawCodec(2, "ExternalHeaterTimeIntegralThershold"),
-        2855 : O3EInt16(3, "MixerOneCircuitFrostProtectionConfiguration", signed=True, offset = 1),
-        2856 : O3EInt16(3, "MixerTwoCircuitFrostProtectionConfiguration", signed=True, offset = 1),
-        2857 : O3EInt16(3, "MixerThreeCircuitFrostProtectionConfiguration", signed=True, offset = 1),
-        2858 : O3EInt16(3, "MixerFourCircuitFrostProtectionConfiguration", signed=True, offset = 1),
+        2855 : O3EInt16(3, "MixerOneCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        2856 : O3EInt16(3, "MixerTwoCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        2857 : O3EInt16(3, "MixerThreeCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
+        2858 : O3EInt16(3, "MixerFourCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2874 : O3EInt16(2, "PrimarySourceRpsOne"),#+++
         2875 : O3EInt16(2, "PrimarySourceRpsTwo"),#+++
         2876 : O3EInt16(2, "PrimaryPumpCommonSetpoint"),#+++
