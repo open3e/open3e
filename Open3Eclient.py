@@ -107,12 +107,12 @@ def ensure_ecu(addr:int):
 
 
 # listen events ~~~~~~~~~~~~~~~~~~~~~~~
-def on_connect(client, userdata, flags, rc):
+def on_connect(client, userdata, flags, reason_code, properties):
     if args.listen != None:
         client.subscribe(args.listen)
     
-def on_disconnect(client, userdata, rc):
-    if rc != 0:
+def on_disconnect(client, userdata, flags, reason_code, properties):
+    if reason_code != 0:
         print('mqtt broker disconnected. rc = ' + str(rc))
 
 def on_message(client, userdata, msg):
@@ -327,7 +327,7 @@ else:
 # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 mqtt_client = None
 if(args.mqtt != None):
-    mqtt_client = paho.Client("Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+    mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, "Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
     if(args.mqttuser != None):
         mlst = args.mqttuser.split(':')
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])
