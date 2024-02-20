@@ -113,7 +113,7 @@ def on_connect(client, userdata, flags, reason_code, properties):
     
 def on_disconnect(client, userdata, flags, reason_code, properties):
     if reason_code != 0:
-        print('mqtt broker disconnected. rc = ' + str(rc))
+        print('mqtt broker disconnected. reason_code = ' + str(reason_code))
 
 def on_message(client, userdata, msg):
     topic = str(msg.topic)            # Topic in String umwandeln
