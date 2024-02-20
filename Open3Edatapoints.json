@@ -17574,43 +17574,111 @@
     }
   },
   "1395": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerOneCircuitSummerSavingTemperatureThreshold",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1396": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerTwoCircuitSummerSavingTemperatureThreshold",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1397": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerThreeCircuitSummerSavingTemperatureThreshold",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1398": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerFourCircuitSummerSavingTemperatureThreshold",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1411": {
@@ -28719,43 +28787,111 @@
     "args": {}
   },
   "2855": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerOneCircuitFrostProtectionConfiguration",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2856": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerTwoCircuitFrostProtectionConfiguration",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2857": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerThreeCircuitFrostProtectionConfiguration",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2858": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "MixerFourCircuitFrostProtectionConfiguration",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 1
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Temperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2874": {
@@ -30113,5 +30249,5 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240208"
+  "Version": "20240218"
 }
