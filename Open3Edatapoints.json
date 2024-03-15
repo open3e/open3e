@@ -9933,11 +9933,11 @@
     }
   },
   "1190": {
-    "codec": "O3EInt32",
+    "codec": "O3EInt16",
     "len": 4,
     "id": "ThermalPower",
     "args": {
-      "scale": 1.0,
+      "scale": 10.0,
       "signed": false,
       "offset": 0
     }
@@ -32984,5 +32984,5 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240309"
+  "Version": "20240314"
 }

@@ -374,7 +374,7 @@ dataIdentifiers = {
         1177 : O3EByteVal(1, "AcknowledgeServiceAlarmMessage"),
         1178 : O3EByteVal(1, "AcknowledgeErrorAlarmMessage"),
         1181 : O3EInt8(1, "DisplayTestMode"),#+++
-        1190 : O3EInt32(4, "ThermalPower"),
+        1190 : O3EInt16(4, "ThermalPower"),
         1191 : RawCodec(1, "FuelCellStatus"),
         1192 : O3EComplexType(10, "MixerOneCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), RawCodec(6, "Unknown")]),
         1193 : O3EComplexType(10, "MixerTwoCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), RawCodec(6, "Unknown")]),
