@@ -18,3 +18,5 @@ __pycache__/
 .venv/
 dist/*
 build/*
+#testing
+.coverage

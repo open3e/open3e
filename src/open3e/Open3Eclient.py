@@ -107,13 +107,13 @@ def ensure_ecu(addr:int):
 
 
 # listen events ~~~~~~~~~~~~~~~~~~~~~~~
-def on_connect(client, userdata, flags, rc):
+def on_connect(client, userdata, flags, reason_code, properties):
     if args.listen != None:
         client.subscribe(args.listen)
     
-def on_disconnect(client, userdata, rc):
-    if rc != 0:
-        print('mqtt broker disconnected. rc = ' + str(rc))
+def on_disconnect(client, userdata, flags, reason_code, properties):
+    if reason_code != 0:
+        print('mqtt broker disconnected. reason_code = ' + str(reason_code))
 
 def on_message(client, userdata, msg):
     topic = str(msg.topic)            # Topic in String umwandeln
@@ -286,7 +286,7 @@ parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
 parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
 parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
 parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
-parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e.Open3E/cmnd")
+parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
 parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
 parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
 parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
@@ -327,7 +327,7 @@ else:
 # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 mqtt_client = None
 if(args.mqtt != None):
-    mqtt_client = paho.Client("open3e.Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+    mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, "Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
     if(args.mqttuser != None):
         mlst = args.mqttuser.split(':')
         mqtt_client.username_pw_set(mlst[0], password=mlst[1])

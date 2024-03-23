@@ -330,5 +330,5 @@ with open('devices.json', 'r') as file:
 for line in lines:
     line = line.replace('\n','')
     print(line)
-print("\nrun open3e.Open3Eclient with -mqtt and -a to get EVERYTHING on your MQTT app.")
+print("\nrun open3e with -mqtt and -a to get EVERYTHING on your MQTT app.")
     
