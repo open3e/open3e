@@ -274,147 +274,148 @@ def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=
 #~~~~~~~~~~~~~~~~~~~~~~
 # Main
 #~~~~~~~~~~~~~~~~~~~~~~
-
-parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
-parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
-parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
-parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
-parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
-parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
-parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
-parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
-parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
-parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
-parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
-parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
-parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
-parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
-parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
-parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
-args = parser.parse_args()
-
-
-if(args.can == None):
-    args.can = 'can0' 
-
-if(args.ecuaddr != None):
-    deftx = getint(args.ecuaddr)
+def main():
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+    parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
+    parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
+    parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
+    parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
+    parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
+    parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
+    parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
+    parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
+    parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
+    parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
+    parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
+    parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
+    parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
+    parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
+    parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
+    parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
+    args = parser.parse_args()
 
 
-# list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-if(args.config != None):
-    if(args.config == 'dev'):  # short
-        args.config = 'devices.json'
-    # get configuration from file
-    with open(args.config, 'r') as file:
-        devjson = json.load(file)
-    # make ECU list
-    for device, config in devjson.items():
-        addrtx = getint(config.get("tx"))
-        dplist = config.get("dpList")
-        # make ecu
-        ecu = open3e.Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
-        dicEcus[addrtx] = ecu
-        dicDevAddrs[device] = addrtx
-else:
-    # only default device
-    ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
-    dicEcus[deftx] = ecu
-    dicDevAddrs[args.dev] = deftx
-    
+    if(args.can == None):
+        args.can = 'can0' 
 
-# MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-mqtt_client = None
-if(args.mqtt != None):
-    mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, "Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
-    if(args.mqttuser != None):
-        mlst = args.mqttuser.split(':')
-        mqtt_client.username_pw_set(mlst[0], password=mlst[1])
-    mlst = args.mqtt.split(':')
-    mqttTopic = mlst[2] 
-    if(args.mqttformatstring == None):
-        mqttformatstring = "{didName}" # default
+    if(args.ecuaddr != None):
+        deftx = getint(args.ecuaddr)
+
+
+    # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    if(args.config != None):
+        if(args.config == 'dev'):  # short
+            args.config = 'devices.json'
+        # get configuration from file
+        with open(args.config, 'r') as file:
+            devjson = json.load(file)
+        # make ECU list
+        for device, config in devjson.items():
+            addrtx = getint(config.get("tx"))
+            dplist = config.get("dpList")
+            # make ecu
+            ecu = open3e.Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
+            dicEcus[addrtx] = ecu
+            dicDevAddrs[device] = addrtx
     else:
-        mqttformatstring = args.mqttformatstring
-    mqtt_client.on_connect = on_connect
-    mqtt_client.on_disconnect = on_disconnect
-    mqtt_client.on_message = on_message
-    mqtt_client.connect(mlst[0], int(mlst[1]))
-    mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
-    mqtt_client.loop_start()
-    
-    
-# do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-try:
-   # listener mode
-    if(args.listen != None):
-        listen(args.read, args.timestep)
+        # only default device
+        ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
+        dicEcus[deftx] = ecu
+        dicDevAddrs[args.dev] = deftx
+        
 
-    # read cmd line reads
-    elif(args.read != None):
-        jobs = eval_complex_list(args.read)
-        mlvl = 0  # only val 
-        if(len(jobs) > 1): mlvl |= 1  # show did nr
-        while(True):
-            for ecudid in jobs:
-                ensure_ecu(ecudid[0])
-                if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
-                time.sleep(0.02)
-            if(args.timestep != None):
-                time.sleep(float(eval(args.timestep)))
-            else:
-                break
-
-    # experimental write to did
-    elif(args.write != None):
-        if(args.raw == True):
-            jobs = args.write.split(",")
-            for job in jobs:
-                writeArg = job.split("=")
-                ecu,didkey = get_ecudid(writeArg[0])
-                didVal=str(writeArg[1]).replace("0x","")
-                ensure_ecu(ecu)
-                print(f"write raw: {ecu}.{didkey} = {didVal}")
-                succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
-                print(f"success: {succ}, code: {code}")
+    # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    mqtt_client = None
+    if(args.mqtt != None):
+        mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, "Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+        if(args.mqttuser != None):
+            mlst = args.mqttuser.split(':')
+            mqtt_client.username_pw_set(mlst[0], password=mlst[1])
+        mlst = args.mqtt.split(':')
+        mqttTopic = mlst[2] 
+        if(args.mqttformatstring == None):
+            mqttformatstring = "{didName}" # default
         else:
-            writeArg = args.write.split("=")
-            ecu,didkey = get_ecudid(writeArg[0])           
-            didVal=json.loads(writeArg[1])
-            ensure_ecu(ecu)
-            print(f"write: {ecu}.{didkey} = {didVal}")
-            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False)
-            print(f"success: {succ}, code: {code}")                
-        time.sleep(0.1)
+            mqttformatstring = args.mqttformatstring
+        mqtt_client.on_connect = on_connect
+        mqtt_client.on_disconnect = on_disconnect
+        mqtt_client.on_message = on_message
+        mqtt_client.connect(mlst[0], int(mlst[1]))
+        mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
+        mqtt_client.loop_start()
+        
+        
+    # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    try:
+    # listener mode
+        if(args.listen != None):
+            listen(args.read, args.timestep)
 
-    # scanall
-    elif(args.scanall == True):
-        msglvl = 1  # show did nr
-        if(len(dicEcus) > 1):
-            msglvl = 5  # show ECU addr also
-        for addr,ecu in dicEcus.items():
-            #? if(args.verbose == True):
-            print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
-            lst = ecu.readAll(args.raw)
-            for itm in lst:
-                showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
+        # read cmd line reads
+        elif(args.read != None):
+            jobs = eval_complex_list(args.read)
+            mlvl = 0  # only val 
+            if(len(jobs) > 1): mlvl |= 1  # show did nr
+            while(True):
+                for ecudid in jobs:
+                    ensure_ecu(ecudid[0])
+                    if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
+                    readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                    time.sleep(0.02)
+                if(args.timestep != None):
+                    time.sleep(float(eval(args.timestep)))
+                else:
+                    break
 
-except (KeyboardInterrupt, InterruptedError):
-    # <STRG-C> oder SIGINT to stop
-    # Use <kill -s SIGINT pid> to send SIGINT
-    pass
-                
-# close all connections before exit
-for ecu in dicEcus.values():
-    if(args.verbose):
-        print(f"closing {hex(ecu.tx)} - bye!")
-    ecu.close()
+        # experimental write to did
+        elif(args.write != None):
+            if(args.raw == True):
+                jobs = args.write.split(",")
+                for job in jobs:
+                    writeArg = job.split("=")
+                    ecu,didkey = get_ecudid(writeArg[0])
+                    didVal=str(writeArg[1]).replace("0x","")
+                    ensure_ecu(ecu)
+                    print(f"write raw: {ecu}.{didkey} = {didVal}")
+                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
+                    print(f"success: {succ}, code: {code}")
+            else:
+                writeArg = args.write.split("=")
+                ecu,didkey = get_ecudid(writeArg[0])           
+                didVal=json.loads(writeArg[1])
+                ensure_ecu(ecu)
+                print(f"write: {ecu}.{didkey} = {didVal}")
+                succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False)
+                print(f"success: {succ}, code: {code}")                
+            time.sleep(0.1)
 
-if(mqtt_client != None):
-    if(args.verbose):
-        print("closing MQTT client")
-    mqtt_client.disconnect()
+        # scanall
+        elif(args.scanall == True):
+            msglvl = 1  # show did nr
+            if(len(dicEcus) > 1):
+                msglvl = 5  # show ECU addr also
+            for addr,ecu in dicEcus.items():
+                #? if(args.verbose == True):
+                print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
+                lst = ecu.readAll(args.raw)
+                for itm in lst:
+                    showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
 
-    
+    except (KeyboardInterrupt, InterruptedError):
+        # <STRG-C> oder SIGINT to stop
+        # Use <kill -s SIGINT pid> to send SIGINT
+        pass
+                    
+    # close all connections before exit
+    for ecu in dicEcus.values():
+        if(args.verbose):
+            print(f"closing {hex(ecu.tx)} - bye!")
+        ecu.close()
+
+    if(mqtt_client != None):
+        if(args.verbose):
+            print("closing MQTT client")
+        mqtt_client.disconnect()
+
+if __name__ == "__main__":
+    main()

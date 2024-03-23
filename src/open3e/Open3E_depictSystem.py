@@ -294,41 +294,43 @@ def get_pycan_conn(can, ecurx:int, ecutx:int):
 # +++++++++++++++++++++++++++++++++
 # Main
 # +++++++++++++++++++++++++++++++++
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-c", "--can", type=str, help="use CAN device, e.g. can0")
+    parser.add_argument("-d", "--doip", type=str, help="use DoIP access, e.g. 192.168.1.1")
+    parser.add_argument("-s", "--simul", action='store_true', help="write simulation data files")
+    args = parser.parse_args()
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-c", "--can", type=str, help="use CAN device, e.g. can0")
-parser.add_argument("-d", "--doip", type=str, help="use DoIP access, e.g. 192.168.1.1")
-parser.add_argument("-s", "--simul", action='store_true', help="write simulation data files")
-args = parser.parse_args()
+    if(args.can != None):
+        can = args.can
 
-if(args.can != None):
-    can = args.can
+    # peparations
+    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
+    e3Devices = open3e.Open3Eenums.E3Enums['Devices']
+    dicDidEnums = read_didenums("DidEnums.txt")
 
-# peparations
-dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
-e3Devices = open3e.Open3Eenums.E3Enums['Devices']
-dicDidEnums = read_didenums("DidEnums.txt")
+    # scan ECUs/COB-IDs
+    lstEcus = scan_cobs(startcob, lastcob)
 
-# scan ECUs/COB-IDs
-lstEcus = scan_cobs(startcob, lastcob)
+    # generate devices.json
+    write_devices_json(lstEcus)
 
-# generate devices.json
-write_devices_json(lstEcus)
-
-# scan dids of each responding ECU
-for cob,prop in lstEcus:
-    lstdids = scan_dids(cob, startdid, lastdid)
-    # write sumilation data for virtualE3in case
-    if(args.simul):
-        write_simul_datafile(lstdids, cob, prop)
-    # write ECU specific datapoints_cob.py
-    write_datapoints_file(lstdids, cob, prop)
-# report
-print("\nconfiguration:")
-with open('devices.json', 'r') as file:
-    lines = file.readlines()
-for line in lines:
-    line = line.replace('\n','')
-    print(line)
-print("\nrun open3e with -mqtt and -a to get EVERYTHING on your MQTT app.")
+    # scan dids of each responding ECU
+    for cob,prop in lstEcus:
+        lstdids = scan_dids(cob, startdid, lastdid)
+        # write sumilation data for virtualE3in case
+        if(args.simul):
+            write_simul_datafile(lstdids, cob, prop)
+        # write ECU specific datapoints_cob.py
+        write_datapoints_file(lstdids, cob, prop)
+    # report
+    print("\nconfiguration:")
+    with open('devices.json', 'r') as file:
+        lines = file.readlines()
+    for line in lines:
+        line = line.replace('\n','')
+        print(line)
+    print("\nrun open3e with -mqtt and -a to get EVERYTHING on your MQTT app.")
     
+if __name__ == "__main__":
+    main()
