@@ -54,9 +54,15 @@ dev = ["pytest", "pytest-cov", "black==21.10b0"]
 [project.urls]
 Homepage = "https://github.com/open3e/open3e"
 documentation = "https://github.com/open3e/open3e"
-repository = "https://github.com/open3e/open3eg"
+repository = "https://github.com/open3e/open3e"
 
-# diable automatic code style check (for now)
+[project.scripts]
+open3e = "open3e.Open3Eclient"
+open3e_depictSystem = "open3e.Open3E_depictSystem"
+open3e_dids2json = "open3e.Open3Edids2json"
+
+
+# disable automatic code style check (for now)
 #[tool.black]
 #target-version = ['py39']
 #line-length = 120
