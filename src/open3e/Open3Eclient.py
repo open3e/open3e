@@ -21,260 +21,261 @@ import paho.mqtt.client as paho
 
 import open3e.Open3Eclass
 
-# default ECU address
-deftx = 0x680
 
-# ECUs and their addresses
-dicEcus = {}      # addr:ecu
-dicDevAddrs = {}  # devstr:addr
+def main():
+    # default ECU address
+    deftx = 0x680
 
-cmnd_queue = []   # command queue to serialize bus traffic
+    # ECUs and their addresses
+    dicEcus = {}      # addr:ecu
+    dicDevAddrs = {}  # devstr:addr
 
-# utils ~~~~~~~~~~~~~~~~~~~~~~~
-def getint(v) -> int:
-    if type(v) is int:
+    cmnd_queue = []   # command queue to serialize bus traffic
+
+    # utils ~~~~~~~~~~~~~~~~~~~~~~~
+    def getint(v) -> int:
+        if type(v) is int:
+            return v
+        else:
+            return int(eval(str(v)))
+
+    def addr_of_dev(v) -> int: 
+        if(v in dicDevAddrs):
+            return dicDevAddrs[v]
         return v
-    else:
-        return int(eval(str(v)))
 
-def addr_of_dev(v) -> int: 
-    if(v in dicDevAddrs):
-        return dicDevAddrs[v]
-    return v
+    def dev_of_addr(addr:int):
+        for key, val in dicDevAddrs.items():
+            if val == addr:
+                return key
+        return hex(addr)
+            
+    def get_ecudid(v):
+        s = str(v)
+        parts = s.split(".")
+        if(len(parts) > 1):
+            return getint(parts[0]),getint(parts[1])
+        else:
+            return deftx,getint(parts[0])
 
-def dev_of_addr(addr:int):
-    for key, val in dicDevAddrs.items():
-        if val == addr:
-            return key
-    return hex(addr)
-        
-def get_ecudid(v):
-    s = str(v)
-    parts = s.split(".")
-    if(len(parts) > 1):
-        return getint(parts[0]),getint(parts[1])
-    else:
-        return deftx,getint(parts[0])
-
-# complex addressing: 0x680.[257,258,259] or 0x680.256 or 256
-def eval_complex(v) -> list: # returns list of [ecu,did] items
-    s = str(v).replace(' ','')
-    parts = s.split(".")
-    if(len(parts) == 1):
-        # only did
-        return [[deftx,getint(addr_of_dev(parts[0]))]]
-    elif(len(parts) == 2):  # maybe later 3: ecu.did.sub... 
-        ecu = getint(addr_of_dev((parts[0])))
-        parts[1] = parts[1].replace('[','').replace(']','')
-        parts = parts[1].split(",")
+    # complex addressing: 0x680.[257,258,259] or 0x680.256 or 256
+    def eval_complex(v) -> list: # returns list of [ecu,did] items
+        s = str(v).replace(' ','')
+        parts = s.split(".")
         if(len(parts) == 1):
-            # only ecu.did, no did list
-            return [[ecu,getint(parts[0])]]
-        else:
-            # ecu addr and did list
-            lst = []
-            for did in parts:
-                lst.append([ecu,getint(did)])
-            return lst
-
-# enum of complex addressing separated by ','
-def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
-    sl = list(str(v).replace(' ',''))
-    open = 0
-    for i in range(len(sl)):
-        if sl[i] == '[':
-            open += 1
-        elif sl[i] == ']':
-            open -= 1
-        elif open <= 0:
-            if sl[i] == ",":
-                sl[i] = ';'
-    s = ''.join(sl)
-    parts = s.split(';')
-    lst = []
-    for part in parts:
-        plst = eval_complex(part)
-        for itm in plst:
-            lst.append(itm)
-    return lst
-
-
-def ensure_ecu(addr:int):
-    if(not (addr in dicEcus)):
-       # make ecu with no name str
-        ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
-        dicEcus[addr] = ecu
-
-
-# listen events ~~~~~~~~~~~~~~~~~~~~~~~
-def on_connect(client, userdata, flags, reason_code, properties):
-    if args.listen != None:
-        client.subscribe(args.listen)
-    
-def on_disconnect(client, userdata, flags, reason_code, properties):
-    if reason_code != 0:
-        print('mqtt broker disconnected. reason_code = ' + str(reason_code))
-
-def on_message(client, userdata, msg):
-    topic = str(msg.topic)            # Topic in String umwandeln
-    if topic == args.listen:
-        try:
-            payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
-            cmnd_queue.append(payload)
-        except:
-            print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
-            payload = ''
-
-
-# subs  ~~~~~~~~~~~~~~~~~~~~~~~
-def listen(readdids=None, timestep=0):
-    if(args.mqtt == None):
-        raise Exception('mqtt option is mandatory for listener mode')
-
-    def getaddr(cd) -> int:
-        if 'addr' in cd: 
-            return getint(addr_of_dev(cd['addr']))
-        else: 
-            return deftx 
-
-    def cmnd_loop():
-        cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw']
-        if(readdids != None):
-            jobs =  eval_complex_list(readdids)
-            next_read_time = time.time()
-
-        while True:
-            if len(cmnd_queue) > 0:
-                cd = cmnd_queue.pop(0)
-
-                if not cd['mode'] in cmnds:
-                    print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
-
-                elif cd['mode'] in ['read','read-json','read-raw']:
-                    addr = getaddr(cd)
-                    dids = cd['data']
-                    ensure_ecu(addr) 
-                    for did in dids:
-                        readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
-                        time.sleep(0.01)            # 10 ms delay before next request
-
-                elif cd['mode'] == 'read-pure':
-                    addr = getaddr(cd)
-                    dids = cd['data']
-                    ensure_ecu(addr) 
-                    for did in dids:
-                        readpure(addr, getint(did))
-                        time.sleep(0.01)            # 10 ms delay before next request
-
-                elif cd['mode'] == 'read-all':
-                    addr = getaddr(cd)
-                    if(args.verbose == True):
-                        print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
-                    lst = dicEcus[addr].readAll(args.raw)
-                    for itm in lst:
-                        showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
-
-                elif cd['mode'] == 'write':
-                    addr = getaddr(cd)
-                    ensure_ecu(addr)
-                    for wd in cd['data']:
-                        didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
-                        if type(wd[1]) == str:
-                            didVal = json.loads(wd[1])    # value: if string parse as json
-                        else:
-                            didVal = wd[1]  # value: if mqtt payload already parsed
-                        dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
-                        time.sleep(0.1)
-                    
-                elif cd['mode'] == 'write-raw':
-                    addr = getaddr(cd)
-                    ensure_ecu(addr)
-                    for wd in cd['data']:
-                        didKey = getint(wd[0])                  # key is submitted as numeric value
-                        didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                        dicEcus[addr].writeByDid(didKey, didVal, raw=True)
-                        time.sleep(0.1)
+            # only did
+            return [[deftx,getint(addr_of_dev(parts[0]))]]
+        elif(len(parts) == 2):  # maybe later 3: ecu.did.sub... 
+            ecu = getint(addr_of_dev((parts[0])))
+            parts[1] = parts[1].replace('[','').replace(']','')
+            parts = parts[1].split(",")
+            if(len(parts) == 1):
+                # only ecu.did, no did list
+                return [[ecu,getint(parts[0])]]
             else:
-                if (readdids != None):
-                    if (next_read_time > 0) and (time.time() > next_read_time):
-                        # add dids to read to command queue
-                        for ecudid in jobs:
-                            cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
-                        if(timestep != None):
-                            next_read_time = next_read_time + int(timestep)
-                        else:
-                            next_read_time = 0    # Don't do it again
-                    
-            time.sleep(0.01)
+                # ecu addr and did list
+                lst = []
+                for did in parts:
+                    lst.append([ecu,getint(did)])
+                return lst
 
-    print("Enter listener mode, waiting for commands on mqtt...")
-    # and go...
-    cmnd_loop() 
+    # enum of complex addressing separated by ','
+    def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
+        sl = list(str(v).replace(' ',''))
+        open = 0
+        for i in range(len(sl)):
+            if sl[i] == '[':
+                open += 1
+            elif sl[i] == ']':
+                open -= 1
+            elif open <= 0:
+                if sl[i] == ",":
+                    sl[i] = ';'
+        s = ''.join(sl)
+        parts = s.split(';')
+        lst = []
+        for part in parts:
+            plst = eval_complex(part)
+            for itm in plst:
+                lst.append(itm)
+        return lst
 
 
-def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
-    if(raw == None): 
-        raw = args.raw
-    value,idstr =  dicEcus[addr].readByDid(did, raw)
-    showread(addr, did, value, idstr, json, msglvl)    
-
-    
-def readpure(addr:int, did:int, json=None, msglvl=0):
-    value,idstr =  dicEcus[addr].readPure(did)
-    showread(addr, did, value, idstr, json, msglvl)    
+    def ensure_ecu(addr:int):
+        if(not (addr in dicEcus)):
+        # make ecu with no name str
+            ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
+            dicEcus[addr] = ecu
 
 
-def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
-    def mqttdump(topic, obj):
-        if (type(obj)==dict):
-            for k,itm in obj.items():
-                mqttdump(topic+'/'+str(k),itm)
-        elif (type(obj)==list):
-            for k in range(len(obj)):
-                mqttdump(topic+'/'+str(k),obj[k])
-        else:
-            ret = mqtt_client.publish(topic, str(obj))     
-
-    if(fjson == None): 
-        fjson = args.json
-
-    if(mqtt_client != None):
-        publishStr = mqttformatstring.format(
-            ecuAddr = addr,
-            device = dev_of_addr(addr),
-            didName = idstr,
-            didNumber = did
-        )
+    # listen events ~~~~~~~~~~~~~~~~~~~~~~~
+    def on_connect(client, userdata, flags, reason_code, properties):
+        if args.listen != None:
+            client.subscribe(args.listen)
         
-        if(fjson):
-            # Send one JSON message
-            ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
-        else:
-            # Split down to scalar types
-            mqttdump(mqttTopic + "/" + publishStr, value)
+    def on_disconnect(client, userdata, flags, reason_code, properties):
+        if reason_code != 0:
+            print('mqtt broker disconnected. reason_code = ' + str(reason_code))
+
+    def on_message(client, userdata, msg):
+        topic = str(msg.topic)            # Topic in String umwandeln
+        if topic == args.listen:
+            try:
+                payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
+                cmnd_queue.append(payload)
+            except:
+                print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
+                payload = ''
+
+
+    # subs  ~~~~~~~~~~~~~~~~~~~~~~~
+    def listen(readdids=None, timestep=0):
+        if(args.mqtt == None):
+            raise Exception('mqtt option is mandatory for listener mode')
+
+        def getaddr(cd) -> int:
+            if 'addr' in cd: 
+                return getint(addr_of_dev(cd['addr']))
+            else: 
+                return deftx 
+
+        def cmnd_loop():
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw']
+            if(readdids != None):
+                jobs =  eval_complex_list(readdids)
+                next_read_time = time.time()
+
+            while True:
+                if len(cmnd_queue) > 0:
+                    cd = cmnd_queue.pop(0)
+
+                    if not cd['mode'] in cmnds:
+                        print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
+
+                    elif cd['mode'] in ['read','read-json','read-raw']:
+                        addr = getaddr(cd)
+                        dids = cd['data']
+                        ensure_ecu(addr) 
+                        for did in dids:
+                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                            time.sleep(0.01)            # 10 ms delay before next request
+
+                    elif cd['mode'] == 'read-pure':
+                        addr = getaddr(cd)
+                        dids = cd['data']
+                        ensure_ecu(addr) 
+                        for did in dids:
+                            readpure(addr, getint(did))
+                            time.sleep(0.01)            # 10 ms delay before next request
+
+                    elif cd['mode'] == 'read-all':
+                        addr = getaddr(cd)
+                        if(args.verbose == True):
+                            print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
+                        lst = dicEcus[addr].readAll(args.raw)
+                        for itm in lst:
+                            showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
+
+                    elif cd['mode'] == 'write':
+                        addr = getaddr(cd)
+                        ensure_ecu(addr)
+                        for wd in cd['data']:
+                            didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            if type(wd[1]) == str:
+                                didVal = json.loads(wd[1])    # value: if string parse as json
+                            else:
+                                didVal = wd[1]  # value: if mqtt payload already parsed
+                            dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
+                            time.sleep(0.1)
+                        
+                    elif cd['mode'] == 'write-raw':
+                        addr = getaddr(cd)
+                        ensure_ecu(addr)
+                        for wd in cd['data']:
+                            didKey = getint(wd[0])                  # key is submitted as numeric value
+                            didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
+                            dicEcus[addr].writeByDid(didKey, didVal, raw=True)
+                            time.sleep(0.1)
+                else:
+                    if (readdids != None):
+                        if (next_read_time > 0) and (time.time() > next_read_time):
+                            # add dids to read to command queue
+                            for ecudid in jobs:
+                                cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
+                            if(timestep != None):
+                                next_read_time = next_read_time + int(timestep)
+                            else:
+                                next_read_time = 0    # Don't do it again
+                        
+                time.sleep(0.01)
+
+        print("Enter listener mode, waiting for commands on mqtt...")
+        # and go...
+        cmnd_loop() 
+
+
+    def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
+        if(raw == None): 
+            raw = args.raw
+        value,idstr =  dicEcus[addr].readByDid(did, raw)
+        showread(addr, did, value, idstr, json, msglvl)    
+
         
-        if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, json.dumps(value))
-    else:
-        if(args.verbose == True):
-            print (dev_of_addr(addr), did, idstr, json.dumps(value))
+    def readpure(addr:int, did:int, json=None, msglvl=0):
+        value,idstr =  dicEcus[addr].readPure(did)
+        showread(addr, did, value, idstr, json, msglvl)    
+
+
+    def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+        def mqttdump(topic, obj):
+            if (type(obj)==dict):
+                for k,itm in obj.items():
+                    mqttdump(topic+'/'+str(k),itm)
+            elif (type(obj)==list):
+                for k in range(len(obj)):
+                    mqttdump(topic+'/'+str(k),obj[k])
+            else:
+                ret = mqtt_client.publish(topic, str(obj))     
+
+        if(fjson == None): 
+            fjson = args.json
+
+        if(mqtt_client != None):
+            publishStr = mqttformatstring.format(
+                ecuAddr = addr,
+                device = dev_of_addr(addr),
+                didName = idstr,
+                didNumber = did
+            )
+            
+            if(fjson):
+                # Send one JSON message
+                ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
+            else:
+                # Split down to scalar types
+                mqttdump(mqttTopic + "/" + publishStr, value)
+            
+            if(args.verbose == True):
+                print (dev_of_addr(addr), did, idstr, json.dumps(value))
         else:
-            mlst = []
-            if((msglvl & 4) != 0):
-                mlst.append(str(hex(addr)))
-            if((msglvl & 1) != 0):
-                mlst.append(str(did))
-            if((msglvl & 2) != 0):
-                mlst.append(idstr)
-            mlst.append(str(value))
-            msg = " ".join(mlst)
-            print(msg)
+            if(args.verbose == True):
+                print (dev_of_addr(addr), did, idstr, json.dumps(value))
+            else:
+                mlst = []
+                if((msglvl & 4) != 0):
+                    mlst.append(str(hex(addr)))
+                if((msglvl & 1) != 0):
+                    mlst.append(str(did))
+                if((msglvl & 2) != 0):
+                    mlst.append(idstr)
+                mlst.append(str(value))
+                msg = " ".join(mlst)
+                print(msg)
 
 
 #~~~~~~~~~~~~~~~~~~~~~~
 # Main
 #~~~~~~~~~~~~~~~~~~~~~~
-def main():
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
     parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
     parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
@@ -416,6 +417,7 @@ def main():
         if(args.verbose):
             print("closing MQTT client")
         mqtt_client.disconnect()
+
 
 if __name__ == "__main__":
     main()
