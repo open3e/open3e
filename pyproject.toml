@@ -57,9 +57,9 @@ documentation = "https://github.com/open3e/open3e"
 repository = "https://github.com/open3e/open3e"
 
 [project.scripts]
-open3e = "open3e.Open3Eclient"
-open3e_depictSystem = "open3e.Open3E_depictSystem"
-open3e_dids2json = "open3e.Open3Edids2json"
+open3e = "open3e.Open3Eclient:main"
+open3e_depictSystem = "open3e.Open3E_depictSystem:main"
+open3e_dids2json = "open3e.Open3Edids2json:main"
 
 
 # disable automatic code style check (for now)
