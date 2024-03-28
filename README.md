@@ -147,7 +147,7 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
 # Convert list of datapoints to json format
 Use
 ```
-python3 Open3Edids2json.py
+python3 Open3E_dids2json.py
 ```
 to convert common list of datapoints (Open3Edatapoints.py) to json format.
 A white list of writable datapoints is also created by this tool.
