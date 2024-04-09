@@ -18,7 +18,7 @@ import udsoncan
 from typing import Optional, Any
 import datetime
 import json
-import Open3Eenums
+import open3e.Open3Eenums
 
 flag_rawmode = True
 flag_dev = "vcal"
@@ -360,7 +360,7 @@ class O3EEnum(udsoncan.DidCodec):
             input = string_ascii
         else:
             raise ValueError("Ivalid input for OEEnum")
-        for key, value in Open3Eenums.E3Enums[self.listStr].items():
+        for key, value in open3e.Open3Eenums.E3Enums[self.listStr].items():
             if value.lower() == input.lower():
                 string_bin = key.to_bytes(length=self.string_len,byteorder="little",signed=False)
                 return string_bin
@@ -371,7 +371,7 @@ class O3EEnum(udsoncan.DidCodec):
             return RawCodec.decode(self, string_bin)
         try:
             val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
-            txt = Open3Eenums.E3Enums[self.listStr][val]
+            txt = open3e.Open3Eenums.E3Enums[self.listStr][val]
             return {"ID": val,
                     "Text": txt }
         except:

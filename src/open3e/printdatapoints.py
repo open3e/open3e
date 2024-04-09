@@ -37,30 +37,32 @@ def readfile(file):
 # ++++++++++++++++++
 # Main
 # ++++++++++++++++++
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-dev", "--dev", type=str, help="--dev vdens or vcal or vx3 or vair")
+    args = parser.parse_args()
 
-parser = argparse.ArgumentParser()
-parser.add_argument("-dev", "--dev", type=str, help="--dev vdens or vcal or vx3 or vair")
-args = parser.parse_args()
+    dev = "vcal"
+    devfile = ""
+    unifile = "Open3Edatapoints.py"
 
-dev = "vcal"
-devfile = ""
-unifile = "Open3Edatapoints.py"
+    if(args.dev != None):
+        dev = args.dev
 
-if(args.dev != None):
-    dev = args.dev
-
-if('.py' in dev):
-    devfile = dev
-else:
-    devfile = "Open3Edatapoints" + dev.capitalize() + ".py"
+    if('.py' in dev):
+        devfile = dev
+    else:
+        devfile = "Open3Edatapoints" + dev.capitalize() + ".py"
 
 
-dicuni = readfile(unifile)
-dicdev = readfile(devfile)
+    dicuni = readfile(unifile)
+    dicdev = readfile(devfile)
 
-for did in dicdev:
-    if dicdev[did].lower().startswith("none"):
-        if did in dicuni:
-            dicdev[did] = dicuni[did]
-    print(f"{did} : {dicdev[did]}")
+    for did in dicdev:
+        if dicdev[did].lower().startswith("none"):
+            if did in dicuni:
+                dicdev[did] = dicuni[did]
+        print(f"{did} : {dicdev[did]}")
 
+if __name__ == "__main__":
+    main()
