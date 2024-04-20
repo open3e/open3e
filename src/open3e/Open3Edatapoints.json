@@ -21438,66 +21438,6 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "ActivePower String 1",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 1",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "ActivePower String 2",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 2",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "ActivePower String 3",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 3",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
           "id": "ActivePower cumulated",
           "args": {
             "scale": 1.0,
@@ -21509,6 +21449,66 @@
           "codec": "O3EInt16",
           "len": 2,
           "id": "RectivePower cumulated",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String C",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String C",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String B",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String B",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String A",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String A",
           "args": {
             "scale": 1.0,
             "signed": true,
@@ -32984,5 +32984,5 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240314"
+  "Version": "20240420"
 }
