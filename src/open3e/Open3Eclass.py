@@ -17,9 +17,9 @@ import importlib
 import binascii
 import time
 
-import Open3Edatapoints
-import Open3Ecodecs
-from Open3Ecodecs import *
+import open3e.Open3Edatapoints
+import open3e.Open3Ecodecs
+from open3e.Open3Ecodecs import *
 
 
 class O3Eclass():
@@ -37,8 +37,8 @@ class O3Eclass():
         if(ecurx == 0):
             ecurx = ecutx + 0x10
 
-        # load general datapoints table from Open3Edatapoints.py
-        self.dataIdentifiers = dict(Open3Edatapoints.dataIdentifiers["dids"])            
+        # load general datapoints table from open3e.Open3Edatapoints.py
+        self.dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])            
 
         # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
         if(dev != None):  #!?! was kommt aus config.json?!?
@@ -46,7 +46,7 @@ class O3Eclass():
                 if('.py' in dev):
                     module_name = dev.replace('.py', '')
                 else:
-                    module_name = "Open3Edatapoints" + dev.capitalize()
+                    module_name = "open3e.Open3Edatapoints" + dev.capitalize()
 
                 # load datapoints for selected device
                 didmoduledev = importlib.import_module(module_name)
@@ -135,7 +135,7 @@ class O3Eclass():
 
     def readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers): 
-            Open3Ecodecs.flag_rawmode = raw
+            open3e.Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
             # return value and idstr
             return response.service_data.values[did],self.dataIdentifiers[did].id
@@ -143,7 +143,7 @@ class O3Eclass():
             return self.readPure(did)
 
     def writeByDid(self, did:int, val, raw:bool):
-        Open3Ecodecs.flag_rawmode = raw
+        open3e.Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val)
         succ = (response.valid & response.positive)
         return succ, response.code

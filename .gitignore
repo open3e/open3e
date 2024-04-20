@@ -11,3 +11,12 @@ Open3Edatapoints_6*
 virtdata_*
 .vscode/
 venv
+#packaging
+*.egg
+__pycache__/
+*.egg-info/
+.venv/
+dist/*
+build/*
+#testing
+.coverage

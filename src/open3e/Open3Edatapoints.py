@@ -14,8 +14,8 @@
   limitations under the License.
 """
 
-import Open3Ecodecs
-from Open3Ecodecs import *
+import open3e.Open3Ecodecs
+from open3e.Open3Ecodecs import *
 
 # Datapoints sourced from ViGuide Demo Mode:
 # https://viguide.viessmann.com/installations/10000017?gatewaySerial=7736170-gw-serial-17&deviceSerial=7720533-device-serial
