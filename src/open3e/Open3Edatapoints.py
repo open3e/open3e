@@ -1232,7 +1232,7 @@ dataIdentifiers = {
         2380 : RawCodec(17, "EvolvedUniversalTerrestrialRadioAccessServingCellMeasurements"),#+++
         2382 : RawCodec(2, "PaddleSwitch"),
         2403 : O3EInt8(1, "BypassOperationLevel"),
-        2404 : RawCodec(6, "BivalenceControlMode"),
+        2404 : O3EComplexType(6, "BivalenceControlMode", [O3EByteVal(1, "OperationMode"), O3EInt16(2, "BivalenceControlTemperature", scale=10, signed=True), O3EInt16(2, "BivalenceControlAlternativeTemperature", scale=10, signed=True), O3EByteVal(1, "ControlMode")]),
         2405 : RawCodec(6, "MixerOneCircuitConstantFlowSetTemperatureCooling"),
         2406 : RawCodec(6, "MixerTwoCircuitConstantFlowSetTemperatureCooling"),
         2407 : RawCodec(6, "MixerThreeCircuitConstantFlowSetTemperatureCooling"),
@@ -1489,8 +1489,8 @@ dataIdentifiers = {
         2827 : RawCodec(48, "FuelCellNetworkSystemProtectionParameters"),
         2828 : RawCodec(2, "FuelCellSdCardRecording"),
         2829 : RawCodec(20, "ProductIdentification"),
-        2830 : RawCodec(1, "EmergencyMode"),            
-        2831 : RawCodec(2, "BivalenceControlAlternativeTemperature"),
+        2830 : RawCodec(1, "EmergencyMode"),
+        2831 : O3EInt16(2, "BivalenceControlAlternativeTemperature", scale=10, signed=True),
         2832 : RawCodec(4, "BaseHeaterTimer"),#+++
         2833 : O3EInt8(1, "BaseHeaterTimerMode"),#+++
         2834 : O3EInt16(2, "BaseHeaterTimerDuration"),#+++

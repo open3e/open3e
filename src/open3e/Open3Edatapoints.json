@@ -26268,10 +26268,49 @@
     }
   },
   "2404": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "BivalenceControlMode",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "OperationMode",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BivalenceControlTemperature",
+          "args": {
+            "scale": 10,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BivalenceControlAlternativeTemperature",
+          "args": {
+            "scale": 10,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ControlMode",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2405": {
     "codec": "RawCodec",
@@ -31344,10 +31383,14 @@
     "args": {}
   },
   "2831": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "BivalenceControlAlternativeTemperature",
-    "args": {}
+    "args": {
+      "scale": 10,
+      "signed": true,
+      "offset": 0
+    }
   },
   "2832": {
     "codec": "RawCodec",
@@ -32984,5 +33027,5 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240420"
+  "Version": "20240505"
 }
