@@ -1,0 +1,68 @@
+# https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/
+
+[build-system]
+# PEP 518 https://www.python.org/dev/peps/pep-0518/
+# https://discuss.python.org/t/help-testing-experimental-features-in-setuptools/13821
+requires = [
+  "setuptools>=64",
+  "wheel",               # for bdist package distribution
+  "setuptools_scm>=6.4", # for automated versioning
+]
+
+# PEP 517 https://peps.python.org/pep-0517/
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+include-package-data = true
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+# include = []
+# exclude = ["tests"]
+namespaces = true
+
+# disable automatic versioning
+#[tool.setuptools_scm]
+#write_to = "src/tinypkg/_version.py"
+
+# PEP 621 https://peps.python.org/pep-0621/
+[project]
+name = "open3e"
+version = "0.1.0"
+# for automated versioning by pypa/setuptools_scm. see https://peps.python.org/pep-0621/#dynamic
+# dynamic = ["version"]
+description = "Connects to E3 (vcal, vdens, vx3...) controllers through CAN UDS or DOIP."
+authors = [{ name = "The open3e authors" }]
+readme = "README.md"
+license = { file = "LICENSE.txt" }
+requires-python = ">=3.9"
+classifiers = [
+  "License :: OSI Approved ::Apache Software License",
+  "Programming Language :: Python"
+]
+keywords = ["E3", "CAN", "communication"]
+dependencies = [
+  "udsoncan>=1.21.2",
+  "doipclient",
+  "python-can",
+  "can-isotp>=2.0.2",
+  "paho-mqtt>=2.0.0"
+]
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "black==21.10b0"]
+[project.urls]
+Homepage = "https://github.com/open3e/open3e"
+documentation = "https://github.com/open3e/open3e"
+repository = "https://github.com/open3e/open3e"
+
+[project.scripts]
+open3e = "open3e.Open3Eclient:main"
+open3e_depictSystem = "open3e.Open3E_depictSystem:main"
+open3e_dids2json = "open3e.Open3E_dids2json:main"
+
+
+# disable automatic code style check (for now)
+#[tool.black]
+#target-version = ['py39']
+#line-length = 120

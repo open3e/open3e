@@ -14,8 +14,8 @@
   limitations under the License.
 """
 
-import Open3Ecodecs
-from Open3Ecodecs import *
+import open3e.Open3Ecodecs
+from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     # VCU Führungsgerät Externer CAN-BUS: 1

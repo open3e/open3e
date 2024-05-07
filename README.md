@@ -5,24 +5,20 @@
 * Listen to commands on mqtt
 * Experimental (!) write support (untested)
 
-# Requirements
+# Installation
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
     sudo apt install git python3 python3-pip  
 
-Now clone this repository to your system:  
+Now install the latest version of open3e via
 
-    git clone https://github.com/open3e/open3e.git  
+    pip install git+https://github.com/open3e/open3e.git
 
-Change into the directory
+or for the develop branch
 
-    cd open3e
+    pip install git+https://github.com/open3e/open3e.git@develop
 
-To install or update dependent packages run:
-
-    pip3 install -r requirements.txt  
-
-It's important to do this also after updating open3e to a newer version.
+This will install open3e along with all dependencies.
 
 If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the preveious command.<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
@@ -33,15 +29,15 @@ If you get the error "error: externally-managed-environment" you could add *--br
 # Depict System
 In advance of first time starting the client and after every firmware update, run 
     
-    python3 Open3E_depictSystem.py
+    open3e_depictSystem
     
 to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
-Use Open3Eclient with cmd line argument `-cnfg devices.json` afterwards.
+Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.
 
 The depicting scans take several minutes (usually 10..20) - please be patient!
 
 # Usage
-    usage: Open3Eclient.py [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
+    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -70,22 +66,22 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
     @argsfile               use arguments given in a file. Seperate line for each argument.
 
 # Read dids
-    python3 Open3Eclient.py -c can0 -dev vdens -r 268 -v
+    open3e -c can0 -dev vdens -r 268 -v
     268 FlowTempSensor 27.2
 
-    python3 Open3Eclient.py -c can0 -dev vcal -r 318 -v
+    open3e -c can0 -dev vcal -r 318 -v
     318 WaterPressureSensor 1.8
 
-    python3 Open3Eclient.py -c can0 -dev vcal -r 377 -v
+    open3e -c can0 -dev vcal -r 377 -v
     377 IdentNumber 7XXXXXXXXXXXXX
 
-    python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -v
+    open3e -c can0 -dev vcal -r 1043 -v
     1043 FlowMeterSensor 2412.0
 
-    python3 Open3Eclient.py -c can0 -dev vx3 -r 1664 -v
+    open3e -c can0 -dev vx3 -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44
 
-    python3 Open3Eclient.py @myargs
+    open3e @myargs
         with content of file myargs:
         -c
         can0
@@ -96,7 +92,7 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
         -v
 
 # Interval Readout
-    python3 Open3Eclient.py -c can0 -dev vcal -r 1043 -t 1
+    open3e -c can0 -dev vcal -r 1043 -t 1
     2412.0
     2413.0
     2411.0
@@ -104,18 +100,18 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
     ...
 
 # Write did (experimental)
-    python3 Open3Eclient.py -c can0 -dev vdens -raw -w 396=D601
+    open3e -c can0 -dev vdens -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
 
 # Publish datapoints to mqtt
-    python3 Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
+    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan datapoints and publish data to broker 192.168.0.5
 
-    python3 Open3Eclient.py -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
 
 # Listener mode
-    python3 Open3Eclient.py -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
@@ -147,8 +143,15 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
 # Convert list of datapoints to json format
 Use
 ```
-python3 Open3E_dids2json.py
+open3e_dids2json
 ```
 to convert common list of datapoints (Open3Edatapoints.py) to json format.
 A white list of writable datapoints is also created by this tool.
 
+# For developers
+
+If you want to work on the codebase you can clone the repository and work in "editable" mode as follows.
+
+    git clone https://github.com/open3e/open3e.git  
+    cd open3e
+    pip install --editable .[dev]

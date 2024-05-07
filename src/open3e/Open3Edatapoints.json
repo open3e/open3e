@@ -4340,7 +4340,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -4409,7 +4409,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -4478,7 +4478,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -4547,7 +4547,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -4616,7 +4616,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -4685,7 +4685,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -9374,7 +9374,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Minimum",
+          "id": "Temperature",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -9384,7 +9384,7 @@
         {
           "codec": "RawCodec",
           "len": 1,
-          "id": "Unknown",
+          "id": "unknown",
           "args": {}
         }
       ]
@@ -10253,7 +10253,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -16342,40 +16342,2746 @@
     }
   },
   "1340": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 124,
     "id": "FuelCellGeneratedHeatOutputMonthMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "CurrentMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "LastMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1341": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 96,
     "id": "FuelCellGeneratedHeatOutputYearMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 48,
+          "id": "CurrentYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 48,
+          "id": "LastYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt32",
+                "len": 4,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1342": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 124,
     "id": "GasConsumptionCentralHeatingMonthMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "CurrentMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "LastMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1343": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 48,
     "id": "GasConsumptionCentralHeatingYearMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 24,
+          "id": "CurrentYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 24,
+          "id": "LastYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1344": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 124,
     "id": "GasConsumptionDomesticHotWaterMonthMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "CurrentMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 62,
+          "id": "LastMonth",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "13",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "14",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "15",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "16",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "17",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "18",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "19",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "20",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "21",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "22",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "23",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "24",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "25",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "26",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "27",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "28",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "29",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "30",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "31",
+                "args": {
+                  "scale": 10.0,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1345": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 48,
     "id": "GasConsumptionDomesticHotWaterYearMatrix",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EList",
+          "len": 24,
+          "id": "CurrentYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        },
+        {
+          "codec": "O3EList",
+          "len": 24,
+          "id": "LastYear",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "01_January",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "02_February",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "03_March",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "04_April",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "05_May",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "06_June",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "07_July",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "08_August",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "09_September",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "10_October",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "11_November",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              },
+              {
+                "codec": "O3EInt16",
+                "len": 2,
+                "id": "12_December",
+                "args": {
+                  "scale": 10,
+                  "signed": false,
+                  "offset": 0
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
   },
   "1346": {
     "codec": "O3EComplexType",
@@ -16599,7 +19305,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Week",
+          "id": "Past7Days",
           "args": {
             "scale": 10,
             "signed": false,
@@ -18732,66 +21438,6 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "ActivePower String 1",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 1",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "ActivePower String 2",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 2",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "ActivePower String 3",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "RectivePower String 3",
-          "args": {
-            "scale": 1.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
           "id": "ActivePower cumulated",
           "args": {
             "scale": 1.0,
@@ -18803,6 +21449,66 @@
           "codec": "O3EInt16",
           "len": 2,
           "id": "RectivePower cumulated",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String C",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String C",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String B",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String B",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActivePower String A",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "RectivePower String A",
           "args": {
             "scale": 1.0,
             "signed": true,
@@ -23202,22 +25908,22 @@
     "args": {}
   },
   "2342": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "NominalThermalCapacityHeating",
     "args": {
       "scale": 1,
-      "signed": false,
+      "signed": true,
       "offset": 0
     }
   },
   "2343": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "NominalThermalCapacityCooling",
     "args": {
       "scale": 1,
-      "signed": false,
+      "signed": true,
       "offset": 0
     }
   },
@@ -23284,10 +25990,39 @@
     "args": {}
   },
   "2353": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "TargetDemandHeatProducer",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "StateHeating",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FlowTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Modulation",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2355": {
     "codec": "O3EComplexType",
@@ -23533,10 +26268,49 @@
     }
   },
   "2404": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "BivalenceControlMode",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "OperationMode",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BivalenceControlTemperature",
+          "args": {
+            "scale": 10,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BivalenceControlAlternativeTemperature",
+          "args": {
+            "scale": 10,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ControlMode",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2405": {
     "codec": "RawCodec",
@@ -24182,7 +26956,7 @@
     "args": {}
   },
   "2486": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentElectricalPowerConsumptionRefrigerantCircuit",
     "args": {
@@ -24192,7 +26966,7 @@
     }
   },
   "2487": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentElectricalPowerConsumptionElectricHeater",
     "args": {
@@ -24202,7 +26976,7 @@
     }
   },
   "2488": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentElectricalPowerConsumptionSystem",
     "args": {
@@ -24236,7 +27010,7 @@
     "args": {}
   },
   "2494": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentThermalCapacityRefrigerantCircuit",
     "args": {
@@ -24246,7 +27020,7 @@
     }
   },
   "2495": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentThermalCapacityElectricHeater",
     "args": {
@@ -24256,7 +27030,7 @@
     }
   },
   "2496": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "CurrentThermalCapacitySystem",
     "args": {
@@ -28062,7 +30836,7 @@
     }
   },
   "2626": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "MaximumPowerElectricalHeater",
     "args": {
@@ -28082,7 +30856,7 @@
     }
   },
   "2629": {
-    "codec": "O3EInt16",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "DesiredThermalCapacity",
     "args": {
@@ -28609,10 +31383,14 @@
     "args": {}
   },
   "2831": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "BivalenceControlAlternativeTemperature",
-    "args": {}
+    "args": {
+      "scale": 10,
+      "signed": true,
+      "offset": 0
+    }
   },
   "2832": {
     "codec": "RawCodec",
@@ -30249,5 +33027,5 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240303"
+  "Version": "20240505"
 }
