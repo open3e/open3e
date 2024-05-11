@@ -98,7 +98,7 @@ def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tu
             client.close()
             if(args.doip == None):
                 bus.shutdown()
-        time.sleep(0.1)
+            time.sleep(0.1)
     # all addresses done
     print(f"{len(lstfounds)} responding COB-IDs found.")
     return lstfounds
