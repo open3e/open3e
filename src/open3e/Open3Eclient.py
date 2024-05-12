@@ -350,7 +350,7 @@ def main():
     try:
     # listener mode
         if(args.listen != None):
-            listen(args.read, args.timestep)
+            listen(args.listen, args.timestep)
 
         # read cmd line reads
         elif(args.read != None):
