@@ -41,11 +41,11 @@ import open3e.Open3Eenums
 def main():
     # cob scan, default 0x680 to 0x6ff  
     startcob = 0x680
-    lastcob = 0x685
+    lastcob = 0x6ff
 
     # did scan, default 256 to 3500
     startdid = 256
-    lastdid = 500
+    lastdid = 3500
 
     # connection
     can = "can0"
