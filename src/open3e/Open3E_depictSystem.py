@@ -19,6 +19,7 @@ import time
 import binascii
 import json
 import argparse
+import os
 
 import udsoncan
 from udsoncan.client import Client
@@ -40,11 +41,11 @@ import open3e.Open3Eenums
 def main():
     # cob scan, default 0x680 to 0x6ff  
     startcob = 0x680
-    lastcob = 0x6ff
+    lastcob = 0x685
 
     # did scan, default 256 to 3500
     startdid = 256
-    lastdid = 3500
+    lastdid = 500
 
     # connection
     can = "can0"
@@ -210,7 +211,7 @@ def main():
         # reformat list contents
         for cob,prop in lstecus:
             scob = hex(cob)
-            sdplist = "open3e.Open3Edatapoints_" + shex(cob) + ".py"
+            sdplist = "Open3Edatapoints_" + shex(cob) + ".py"
             mylist.append((scob, sdplist, prop))
         # make for dump
         result_dict = {}
@@ -236,7 +237,7 @@ def main():
 
 
     def write_datapoints_file(lstdids:list, cobid:int, devprop:str):
-        filename = "open3e.Open3Edatapoints_" + shex(cobid) + ".py"
+        filename = "Open3Edatapoints_" + shex(cobid) + ".py"
         print(f"write datapoints file {filename} ...")
         with open(filename, "w") as file:
             shead =  'import open3e.Open3Ecodecs\n'
@@ -307,7 +308,9 @@ def main():
     # peparations
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
     e3Devices = open3e.Open3Eenums.E3Enums['Devices']
-    dicDidEnums = read_didenums("DidEnums.txt")
+
+    open3e_path = os.path.split(open3e.Open3Eenums.__file__)[0]
+    dicDidEnums = read_didenums(os.path.join(open3e_path, "DidEnums.txt"))
 
     # scan ECUs/COB-IDs
     lstEcus = scan_cobs(startcob, lastcob)
