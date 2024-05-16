@@ -15,11 +15,25 @@ from typing import Optional, Any
 import logging
 import importlib
 import binascii
+import os
+import sys
 import time
 
 import open3e.Open3Edatapoints
 import open3e.Open3Ecodecs
 from open3e.Open3Ecodecs import *
+
+# import arbitrary python files as modules
+def import_path(path):
+    module_name = os.path.basename(path).replace('-', '_').replace('.py', '')
+    spec = importlib.util.spec_from_loader(
+        module_name,
+        importlib.machinery.SourceFileLoader(module_name, path)
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    sys.modules[module_name] = module
+    return module
 
 
 class O3Eclass():
@@ -44,12 +58,13 @@ class O3Eclass():
         if(dev != None):  #!?! was kommt aus config.json?!?
             if(dev != ''):  #!?! was kommt aus config.json?!?
                 if('.py' in dev):
-                    module_name = dev.replace('.py', '')
+                    didmoduledev = import_path(dev)
                 else:
                     module_name = "open3e.Open3Edatapoints" + dev.capitalize()
+                    didmoduledev = importlib.import_module(module_name)
 
                 # load datapoints for selected device
-                didmoduledev = importlib.import_module(module_name)
+                
                 dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
 
                 # add dids not in general but in device to general
