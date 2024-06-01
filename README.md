@@ -10,6 +10,8 @@ For a fresh Raspberry PI install git, python3 and python-pip first:
 
     sudo apt install git python3 python3-pip  
 
+Optional, but highly recommended is creating a virtual environment before the installation. Basic instructions, see here: https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments
+
 Now install the latest version of open3e via
 
     pip install git+https://github.com/open3e/open3e.git
@@ -153,8 +155,11 @@ A white list of writable datapoints is also created by this tool.
 
 # For developers
 
-If you want to work on the codebase you can clone the repository and work in "editable" mode as follows.
+If you want to work on the codebase you can clone the repository and work in "editable" mode as follows. The editable mode allows you to modify and test changes in the source code without the need of a re-installation.
 
     git clone https://github.com/open3e/open3e.git  
     cd open3e
     pip install --editable .[dev]
+
+Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.
+=======
