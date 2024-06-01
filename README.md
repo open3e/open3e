@@ -39,6 +39,9 @@ Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.
 The depicting scans take several minutes (usually 10..20) - please be patient!
 
 # Usage
+
+For more detailed description of the command line arguments see also the [according section](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments) in the Wiki.
+
     usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
@@ -159,3 +162,4 @@ If you want to work on the codebase you can clone the repository and work in "ed
     pip install --editable .[dev]
 
 Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.
+=======
