@@ -59,47 +59,56 @@ def main():
 
         print(f"scan COB-IDs {hex(startcob)} to {hex(lastcob)} ...") 
         for tx in range(startcob, lastcob + 1):
-            if(tx in lstskips):
-                continue
+            try:
+                if(tx in lstskips):
+                    continue
+                print(hex(tx), end='\r')
+                rx = tx + 0x10
+                if(args.doip != None):
+                    conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
+                else:
+                    bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=tx)
 
-            rx = tx + 0x10
-            if(args.doip != None):
-                conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
-            else:
-                bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=tx)
+                # set default timeout
+                config = dict(udsoncan.configs.default_client_config)
+                #config['request_timeout'] = 3  # default 5
+                #config['p2_timeout'] = 3       # default 1
+                #config['p2_star_timeout'] = 3  # default 5
 
-            # set default timeout
-            config = dict(udsoncan.configs.default_client_config)
-            #config['request_timeout'] = 3  # default 5
-            #config['p2_timeout'] = 3       # default 1
-            #config['p2_star_timeout'] = 3  # default 5
-
-            with Client(conn, config=config) as client:
-                try:
-                    response = client.send_request(
-                        udsoncan.Request(
-                            service=ReadDataByIdentifier,
-                            data=(chkdid).to_bytes(2, byteorder='big')
+                with Client(conn, config=config) as client:
+                    try:
+                        response = client.send_request(
+                            udsoncan.Request(
+                                service=ReadDataByIdentifier,
+                                data=(chkdid).to_bytes(2, byteorder='big')
+                            )
                         )
-                    )
-                    if response.positive:
-                        iprop = response.data[2+2]  # PCI,DL, devprop is 3rd byte of diddata
-                        devprop = prop_str(iprop)
-                        print(f"ECU found: {hex(tx)} : {devprop}")
-                        lstfounds.append((tx,devprop))
-                        lstskips.append(rx)
-                    #else:
-                    #    print(f"{hex(tx)}:neg.resp. {response.code}")
-                except Exception as e:
-                    if(type(e) is udsoncan.exceptions.TimeoutException):
-                        # regular if ECU not present 
-                        pass
-                    else:
-                        raise Exception(e)
-                # client done
-                client.close()
-                if(args.doip == None):
-                    bus.shutdown()
+                        if response.positive:
+                            iprop = response.data[2+2]  # PCI,DL, devprop is 3rd byte of diddata
+                            devprop = prop_str(iprop)
+                            print(f"ECU found: {hex(tx)} : {devprop}")
+                            lstfounds.append((tx,devprop))
+                            lstskips.append(rx)
+                        #else:
+                        #    print(f"{hex(tx)}:neg.resp. {response.code}")
+                    except Exception as e:
+                        if(isinstance(e, udsoncan.exceptions.TimeoutException)):
+                            # regular if ECU not present 
+                            pass
+                        else:
+                            #raise Exception(e)
+                            if isinstance(e0, KeyboardInterrupt):
+                                raise  # KeyboardInterrupt erneut werfen
+                            print(f"# ECU {hex(tx)}: {e}")  # and continue...
+                    # client done
+                    client.close()
+                    if(args.doip == None):
+                        bus.shutdown()
+            except Exception as e0:
+                # allow exit by KeyboardInterrupt 
+                if isinstance(e0, KeyboardInterrupt):
+                    raise  # KeyboardInterrupt erneut werfen
+                print(f"# ECU {hex(tx)}: {e0}")   # and continue...
             time.sleep(0.1)
         # all addresses done
         print(f"{len(lstfounds)} responding COB-IDs found.")
@@ -107,7 +116,7 @@ def main():
 
 
     def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples (did,len,data)
-        print(f"scan {shex(ecutx)} DIDs {startdid} to {lastdid} ...") 
+        print(f"scan {shex(ecutx)} for DIDs {startdid} to {lastdid} ...") 
         lstfounds = []
 
         if(args.doip != None):
@@ -125,6 +134,7 @@ def main():
         with Client(conn, config=config) as client:
             for did in range(startdid, lastdid+1):
                 try:
+                    print(did, end='\r')
                     response = client.send_request(
                         udsoncan.Request(
                             service=ReadDataByIdentifier,
@@ -140,12 +150,15 @@ def main():
                         print(f"found {did}:{dlen}:{dstr}")
                         lstfounds.append((did,dlen,data))
                 except Exception as e:
-                    if(type(e) is udsoncan.exceptions.NegativeResponseException):
+                    if(isinstance(e, udsoncan.exceptions.NegativeResponseException)):
                         # regular if DID not present 
                         pass
                     else:
-                        #print(f"# DID {did}: {e}")
-                        raise Exception(e)
+                        #raise Exception(e)
+                        # allow exit by KeyboardInterrupt 
+                        if isinstance(e, KeyboardInterrupt):
+                            raise  # KeyboardInterrupt erneut werfen
+                        print(f"# DID {did}: {e}")  # and continue...
                 # short rest before next did     
                 time.sleep(0.05)
 
