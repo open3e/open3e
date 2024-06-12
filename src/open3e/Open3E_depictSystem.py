@@ -97,7 +97,7 @@ def main():
                             pass
                         else:
                             #raise Exception(e)
-                            if isinstance(e0, KeyboardInterrupt):
+                            if isinstance(e, KeyboardInterrupt):
                                 raise  # KeyboardInterrupt erneut werfen
                             print(f"# ECU {hex(tx)}: {e}")  # and continue...
                     # client done
