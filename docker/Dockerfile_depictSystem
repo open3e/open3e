@@ -1,0 +1,11 @@
+FROM python:alpine3.19
+
+RUN apk update && apk add --no-cache git
+RUN mkdir -p /open3e
+WORKDIR /open3e
+
+RUN pip install git+https://github.com/open3e/open3e.git
+
+ENV CLI_ARGS=""
+
+CMD open3e_depictSystem ${CLI_ARGS}
