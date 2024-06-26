@@ -161,7 +161,7 @@ dataIdentifiers = {
         537 : O3EComplexType(2, "ExternalMixerOneCircuitTargetOperationMode",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
         538 : O3EComplexType(2, "ExternalDomesticHotWaterTargetOperationMode",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
 #        543 : RawCodec(4, "SmartGridReadyConsolidator"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
-        543 : O3EComplexType(4, "SmartGridReadyConsolidator",[O3EByteVal(1, "unknown"), O3EByteVal(1, "OperatingStatus"), O3EByteVal(1, "unknown"),O3EByteVal(1, "unknown")]),
+        543 : O3EComplexType(4, "SmartGridReadyConsolidator",[O3EByteVal(1, "Unknown"), O3EByteVal(1, "OperatingStatus"), O3EByteVal(1, "Unknown"),O3EByteVal(1, "Unknown")]),
         544 : O3EComplexType(12, "GasConsumptionCentralHeating", [O3EInt16(2, "Today"), O3EInt16(2, "Past7Days"), O3EInt16(2, "CurrentMonth"), O3EInt16(2, "PastMonth"), O3EInt16(2, "CurrentYear"), O3EInt16(2, "PastYear")]),
         545 : O3EComplexType(12, "GasConsumptionDomesticHotWater", [O3EInt16(2, "Today"), O3EInt16(2, "Past7Days"), O3EInt16(2, "CurrentMonth"), O3EInt16(2, "PastMonth"), O3EInt16(2, "CurrentYear"), O3EInt16(2, "PastYear")]),
         548 : O3EComplexType(24, "EnergyConsumptionCentralHeating", [O3EInt32(4, "Today", scale=10), O3EInt32(4, "Past7Days", scale=10), O3EInt32(4, "CurrentMonth", scale=10), O3EInt32(4, "PastMonth", scale=10), O3EInt32(4, "CurrentYear", scale=10), O3EInt32(4, "PastYear", scale=10)]),  
@@ -339,7 +339,7 @@ dataIdentifiers = {
         1040 : O3EComplexType(6, "SupplyAirFan",[RawCodec(3, "Unknown1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "Unknown2")]),
         1041 : O3EComplexType(6, "ExhaustAirFan",[RawCodec(3, "Unknown1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "Unknown2")]),
         1042 : RawCodec(9, "PrimaryHeatExchangerTemperatureSensor"),            
-        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Actual"), O3EInt16(2, "Temperature"), RawCodec(1, "unknown")]),
+        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Actual"), O3EInt16(2, "Temperature"), RawCodec(1, "Unknown")]),
         1044 : RawCodec(2, "SecondaryCentralHeatingPump"),
         1047 : RawCodec(11, "TimeSeriesRecordedFlowTemperatureSensor"),
         1084 : RawCodec(4, "FlowTemperatureMinimumMaximumLimit"),
