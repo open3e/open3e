@@ -35,6 +35,16 @@ In advance of first time starting the client and after every firmware update, ru
     
 to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
 Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.
+Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.
+
+To refer to a specific device, you have to use "complex addressing mode", e.g. to read dids 268 and 269 of device 0x680 use `-cnfg devices.json -r 0x680.268,0x680.269`.
+Do not use option `-dev` in this context.
+
+It's possible to change naming of devices by editing `devices.json`:
+When you change `"0x680": {` to `"vitocal": {` you can use read commands like `-r vitocal.268,vitocal.269`.
+New naming will also be used for paramter `{device}`within MQTT topics (see below).
+
+Further information is available [here](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments).
 
 The depicting scans take several minutes (usually 10..20) - please be patient!
 
