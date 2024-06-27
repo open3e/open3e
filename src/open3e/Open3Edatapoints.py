@@ -1356,7 +1356,7 @@ dataIdentifiers = {
         2541 : O3EComplexType(4, "SupplyAirVolumeFlowConfigurationLimit",[O3EInt16(2, "Minimum", scale=1.0), O3EInt16(2, "Maximum", scale=1.0)]),
         2542 : O3EComplexType(4, "ExhaustAirVolumeFlowConfigurationLimit",[O3EInt16(2, "Minimum", scale=1.0), O3EInt16(2, "Maximum", scale=1.0)]),
 #        2543 : RawCodec(10, "SmartGridTemperatureOffsets"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
-        2543 : O3EComplexType(10, "SmartGridTemperatureOffsets",[RawCodec(2,"Unknown"),O3EInt16(2, "SetTempRoom", scale=10.0), O3EInt16(2, "SetTempDomesticHotWater", scale=10.0),O3EInt16(2, "SetTempBuffer", scale=10.0),RawCodec(2,"Unknown")]),        
+        2543 : O3EComplexType(10, "SmartGridTemperatureOffsets",[RawCodec(2,"Unknown1"),O3EInt16(2, "SetTempRoom", scale=10.0), O3EInt16(2, "SetTempDomesticHotWater", scale=10.0),O3EInt16(2, "SetTempBuffer", scale=10.0),RawCodec(2,"Unknown2")]),        
         2544 : O3EByteVal(1, "EnableElectricalHeaterSmartGridLock"),
         2545 : O3EByteVal(1, "EnableElectricalHeaterSmartGridIncreaseMaxDemand"),
         2546 : O3EComplexType(9, "MixerOneCircuitRoomTemperatureSetpointCooling", [O3EInt16(2, "Comfort", signed=True), O3EInt16(2, "Normal", signed=True), O3EInt16(2, "Reduced", signed=True), O3EInt16(2, "Unknown", signed=True), O3EEnum(1, "State", "OpStates")]),
