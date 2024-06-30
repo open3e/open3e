@@ -1570,7 +1570,8 @@ dataIdentifiers = {
         2938 : RawCodec(4, "CascadeSystemPump"),
         2939 : O3EInt16(2, "PrimaryHeatExchangerLowEvaporatingTemperatureAlarmDelay"),#+++
 #        2940 : RawCodec(3, "ExternalHeaterDelayTimer"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
-        2940 : O3EComplexType(3, "ExternalHeaterDelayTimer",[O3EInt8(1, "SwitchOnDelay", scale=1.0), O3EInt8(1, "MinRunTime", scale=1.0), O3EInt8(1, "SwitchOffDelay", scale=1.0)]),        2942 : RawCodec(137, "ListOfLayerSettingServiceDevices"),
+        2940 : O3EComplexType(3, "ExternalHeaterDelayTimer",[O3EInt8(1, "SwitchOnDelay", scale=1.0), O3EInt8(1, "MinRunTime", scale=1.0), O3EInt8(1, "SwitchOffDelay", scale=1.0)]),        
+        2942 : RawCodec(137, "ListOfLayerSettingServiceDevices"),
         2944 : O3EByteVal(1, "NodeIdOnExternalCan"),
         2945 : RawCodec(1, "PointOfCommonCouplingEnergyMeterConnectedPhases"),
         2946 : RawCodec(24, "EnergyConsumptionElectricalPreHeater"),
@@ -1636,7 +1637,8 @@ dataIdentifiers = {
         3098 : RawCodec(2, "ExternalHeaterTemperatureOffset"),
         3103 : RawCodec(6, "IsCountryModeLoadInformation"),
 #        3106 : RawCodec(4, "BufferMinimumMaximumSetTemperature"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
-        3106 : O3EComplexType(4, "BufferMinimumMaximumSetTemperature",[O3EInt16(2, "BufferMin", scale=10.0, signed=True), O3EInt16(2, "BufferMax", scale=10.0, signed=True)]),        3107 : RawCodec(7, "BatteryModuleExchangeAssistent"),
+        3106 : O3EComplexType(4, "BufferMinimumMaximumSetTemperature",[O3EInt16(2, "BufferMin", scale=10.0, signed=True), O3EInt16(2, "BufferMax", scale=10.0, signed=True)]),        
+        3107 : RawCodec(7, "BatteryModuleExchangeAssistent"),
         3108 : RawCodec(9, "PhotovoltaicsActivePowerLimitationRampRate"),
         3109 : RawCodec(8, "PrimaryHeatExchangerBaseHeaterStatistical"),#+++
         3113 : RawCodec(8, "DeviceDigitalOutputOneValueStatistical"),
