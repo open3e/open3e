@@ -777,7 +777,8 @@ dataIdentifiers = {
         1839 : RawCodec(4, "ElectricalEnergyStorageUsableEnergy"),
         1840 : RawCodec(4, "ElectricalEnergyStorageUsableNominalEnergy"),
         1841 : RawCodec(32, "PointOfCommonCouplingOverview"),
-        1842 : RawCodec(2, "SecondaryCircuitFourThreeWayValve"),
+#        1842 : RawCodec(2, "SecondaryCircuitFourThreeWayValve"),
+        1842 : O3EComplexType(2, "SecondaryCircuitFourThreeWayValve", [O3EInt8(1, "Setpoint", signed=True), O3EInt8(1, "CurrentPosition", signed=True)]), #250-xH Unit: %        
         1843 : RawCodec(2, "MixerOneCircuitHumidityProtection"),
         1844 : RawCodec(2, "MixerTwoCircuitHumidityProtection"),
         1845 : RawCodec(36, "HeatPumpCompressorEnvelope"),#+++
@@ -1634,7 +1635,8 @@ dataIdentifiers = {
         3095 : RawCodec(6, "MacAddressLanTwo"),
         3096 : O3EByteVal(1, "GatewayWifiStationEnable"),
         3097 : O3EByteVal(1, "GatewayInternetAccess"),
-        3098 : RawCodec(2, "ExternalHeaterTemperatureOffset"),
+#        3098 : RawCodec(2, "ExternalHeaterTemperatureOffset"),
+        3098 : O3EInt8(2, "ExternalHeaterTemperatureOffset", scale=10), #250-xH Unit: K
         3103 : RawCodec(6, "IsCountryModeLoadInformation"),
 #        3106 : RawCodec(4, "BufferMinimumMaximumSetTemperature"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
         3106 : O3EComplexType(4, "BufferMinimumMaximumSetTemperature",[O3EInt16(2, "BufferMin", scale=10.0, signed=True), O3EInt16(2, "BufferMax", scale=10.0, signed=True)]),        
@@ -1657,5 +1659,9 @@ dataIdentifiers = {
         3156 : O3EByteVal(1, "DomesticHotWaterShiftLoadPumpType"),
         3190 : O3EByteVal(1, "RefrigerantCircuitFourWayValvePosition"),
         3191 : RawCodec(199, "ExtendedEventLoggingHistory"),
+        3212 : O3EInt8(2, "BivalentMixerDomesticHotWaterTemperatureOffset", scale=10), #250-xH Unit: K
+        3213 : O3EComplexType(9, "ExternalHeaterTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C
+        3215 : O3EComplexType(9, "ExternalHeaterSeparatorTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C
+        3234 : O3EComplexType(9, "DomesticHotWaterBufferTopTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C    
     }
 }
