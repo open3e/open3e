@@ -157,7 +157,7 @@ dataIdentifiers = {
         531 : O3EComplexType(2, "DomesticHotWaterOperationState",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
         533 : O3EComplexType(2, "VentilationTargetOperationLevel",[O3EByteVal(1, "Acutual"), O3EByteVal(1, "Unknown1")]),
         534 : RawCodec(2, "DomesticHotWaterPumpPostRunTime"),
-        535 : RawCodec(12, "ObjectElectricalEnergyStatistical"),
+        535 : O3EComplexType(12, "ObjectElectricalEnergyStatistical", [O3EInt32(4, "GridFeedInEnergy", scale=10),O3EInt32(4, "GridSuppliedEnergy", scale=10),O3EInt32(4, "ProducedEnergy", scale=10)]),
         537 : O3EComplexType(2, "ExternalMixerOneCircuitTargetOperationMode",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
         538 : O3EComplexType(2, "ExternalDomesticHotWaterTargetOperationMode",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
 #        543 : RawCodec(4, "SmartGridReadyConsolidator"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
