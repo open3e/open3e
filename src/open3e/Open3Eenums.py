@@ -2318,7 +2318,7 @@ E3Enums = {
         4: "SafetySystemDiagnosticSession",
         64: "ManufacturerProgramming",
         65: "ManufacturerDiagnostic",
-        96: "System supplier(VEG)Programming",
+        96: "SystemSupplier(VEG)Programming",
         97: "SystemSupplier(VEG)Diagnostic",
     },
 }
