@@ -2320,5 +2320,5 @@ E3Enums = {
         65: "ManufacturerDiagnostic",
         96: "System supplier(VEG)Programming",
         97: "SystemSupplier(VEG)Diagnostic",
-    }
+    },
 }
