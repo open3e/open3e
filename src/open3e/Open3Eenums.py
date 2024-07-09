@@ -2310,4 +2310,15 @@ E3Enums = {
         6: "Grid-lock",
     },
     
+    "DiagnosticSessionLevels" : {
+        0: "NotSet",
+        1: "Default",
+        2: "ProgrammingSession",
+        3: "ExtendedDiagnosticSession",
+        4: "SafetySystemDiagnosticSession",
+        64: "ManufacturerProgramming",
+        65: "ManufacturerDiagnostic",
+        96: "System supplier(VEG)Programming",
+        97: "SystemSupplier(VEG)Diagnostic",
+    }
 }

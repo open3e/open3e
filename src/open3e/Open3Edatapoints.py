@@ -320,7 +320,7 @@ dataIdentifiers = {
         960 : O3EByteVal(1, "ExhaustPipeType"),
         961 : RawCodec(2, "SecurityAlgorithmNumber"),
         962 : O3ESoftVers(8, "BootLoaderVersion"),
-        964 : O3EByteVal(1, "ActiveDiagnosticSession"),
+        964 : O3EEnum(1, "ActiveDiagnosticSession", "DiagnosticSessionLevels"),
         987 : O3EInt16(2, "MixerOneCircuitFlowTemperatureTargetSetpoint", signed=True),
         988 : O3EInt16(2, "MixerTwoCircuitFlowTemperatureTargetSetpoint", signed=True),
         989 : O3EInt16(2, "MixerThreeCircuitFlowTemperatureTargetSetpoint", signed=True),
