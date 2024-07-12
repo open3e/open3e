@@ -320,6 +320,7 @@ dataIdentifiers = {
         960 : O3EByteVal(1, "ExhaustPipeType"),
         961 : RawCodec(2, "SecurityAlgorithmNumber"),
         962 : O3ESoftVers(8, "BootLoaderVersion"),
+        963 : O3EUtf8(16, "SparePartNumber"),
         964 : O3EEnum(1, "ActiveDiagnosticSession", "DiagnosticSessionLevels"),
         987 : O3EInt16(2, "MixerOneCircuitFlowTemperatureTargetSetpoint", signed=True),
         988 : O3EInt16(2, "MixerTwoCircuitFlowTemperatureTargetSetpoint", signed=True),
@@ -1390,6 +1391,7 @@ dataIdentifiers = {
         2577 : RawCodec(6, "FuelCellTestModeTwo"),
         2578 : O3EInt8(1, "RefrigerationCircuitDesiredOperatingMode"),#+++
         2579 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureHeating"),#+++
+        2580 : O3EInt8(2, "CompressorSetpointRps", signed=True), #250xH Unit RpS
         2581 : O3EInt16(2, "CompressorCalculatedSetpointRps"),#+++
         2582 : RawCodec(2, "CompressorOffTimer"),
         2583 : RawCodec(15, "OxygenProbeProcessValuesBurnerOne"),
@@ -1601,6 +1603,7 @@ dataIdentifiers = {
         3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
+        3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # 250xH Unit °C
         3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
