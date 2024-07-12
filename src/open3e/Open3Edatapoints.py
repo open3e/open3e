@@ -1427,9 +1427,12 @@ dataIdentifiers = {
         2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale = 1),
         2627 : O3EInt16(2, "CompressorStartUpTimer"),#+++
         2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1),
-        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
-        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),#+++
-        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),#+++
+#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
+        2630 : O3EComplexType(4, "CompressorMinMaxSpeedHeating", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
+#        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),#+++
+        2631 : O3EComplexType(4, "CompressorMinMaxSpeedCooling", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
+#        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),#+++
+        2632 : O3EComplexType(4, "CompressorMinMaxSpeedDefrost", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max")]), #250SH Unit RpS
         2633 : RawCodec(12, "MaxSpeedNoiseReductionMode"),#+++
         2634 : O3EByteVal(1, "NoiseReductionMode"),
         2635 : RawCodec(8, "BurnerProcessDataFlags"),
