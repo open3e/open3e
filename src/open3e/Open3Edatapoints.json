@@ -3984,7 +3984,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown",
+          "id": "CyclesPerHour",
           "args": {
             "offset": 0
           }
@@ -9485,23 +9485,61 @@
     "args": {}
   },
   "1085": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "DomesticHotWaterHysteresis",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOn",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOff",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1087": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MaximumDomesticHotWaterLoadingTime",
     "args": {
-      "scale": 1.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SetpointMaxOn",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SetpointMinOff",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1088": {
@@ -33548,5 +33586,5 @@
       ]
     }
   },
-  "Version": "20240808"
+  "Version": "20240906"
 }
