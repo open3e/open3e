@@ -6,6 +6,8 @@
 * Experimental (!) write support (untested)
 
 # Installation
+Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
     sudo apt install git python3 python3-pip  
@@ -52,7 +54,7 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
 
 For more detailed description of the command line arguments see also the [according section](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments) in the Wiki.
 
-    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
+    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-mcid mqtt-client-id] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -71,6 +73,8 @@ For more detailed description of the command line arguments see also the [accord
                             mqtt formatstring e.g. {ecuAddr:03X}_{device}_{didNumber:04d}_{didName}
     -muser MQTTUSER:PASSW, --mqttuser MQTTUSER:PASSW
                             mqtt username:password
+    -mcid mqtt-client-id, --mqttclientid mqtt-client-id
+                            set mqtt client id of open3e
     -tx ECUADDR, --ecuaddr ECUADDR
                             sets the default ECU Address different from 0x680
     -cnfg DEVICES.JSON, --config DEVICES.JSON 

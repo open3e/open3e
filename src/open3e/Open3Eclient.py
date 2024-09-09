@@ -291,6 +291,7 @@ def main():
     parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
     parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
     parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
+    parser.add_argument("-mcid", "--mqttclientid", type=str, help="mqtt client id of open3e")
     parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
     parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
     args = parser.parse_args()
@@ -328,7 +329,11 @@ def main():
     # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     mqtt_client = None
     if(args.mqtt != None):
-        mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, "Open3E" + '_' + str(int(time.time()*1000)))  # Unique mqtt id using timestamp
+        if (args.mqttclientid != None):
+            open3e_client_id = args.mqttclientid
+        else:
+            open3e_client_id = "Open3E" + '_' + str(int(time.time()*1000))
+        mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, open3e_client_id)  # Unique mqtt id using timestamp
         if(args.mqttuser != None):
             mlst = args.mqttuser.split(':')
             mqtt_client.username_pw_set(mlst[0], password=mlst[1])

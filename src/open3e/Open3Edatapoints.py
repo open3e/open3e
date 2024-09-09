@@ -127,7 +127,7 @@ dataIdentifiers = {
         477 : RawCodec(2, "MixerThreeCircuitThreeWayValvePositionPercent"),
         478 : RawCodec(2, "MixerFourCircuitThreeWayValvePositionPercent"),
         491 : O3EComplexType(2, "DomesticHotWaterCirculationPump",[O3EByteVal(1,"State"),O3EByteVal(1,"Unknown")]),                
-        497 : O3EComplexType(5, "DomesticHotWaterCirculationPumpMode",[O3EByteVal(1, "Mode"), O3EByteVal(1, "HygenieActive"), O3EByteVal(1, "HeatingActive"), O3EByteVal(1, "Unknown"), O3EByteVal(1, "Cycles")]),
+        497 : O3EComplexType(5, "DomesticHotWaterCirculationPumpMode",[O3EByteVal(1, "Mode"), O3EByteVal(1, "HygenieActive"), O3EByteVal(1, "HeatingActive"), O3EByteVal(1, "CyclesPerHour"), O3EByteVal(1, "Cycles")]),
         500 : RawCodec(2, "CentralHeatDemandExternalAc"),
         503 : RawCodec(2, "ScaldProtection"),
         504 : RawCodec(14, "DomesticHotWaterSetpointMetaData"),
@@ -320,7 +320,8 @@ dataIdentifiers = {
         960 : O3EByteVal(1, "ExhaustPipeType"),
         961 : RawCodec(2, "SecurityAlgorithmNumber"),
         962 : O3ESoftVers(8, "BootLoaderVersion"),
-        964 : O3EByteVal(1, "ActiveDiagnosticSession"),
+        963 : O3EUtf8(16, "SparePartNumber"),
+        964 : O3EEnum(1, "ActiveDiagnosticSession", "DiagnosticSessionLevels"),
         987 : O3EInt16(2, "MixerOneCircuitFlowTemperatureTargetSetpoint", signed=True),
         988 : O3EInt16(2, "MixerTwoCircuitFlowTemperatureTargetSetpoint", signed=True),
         989 : O3EInt16(2, "MixerThreeCircuitFlowTemperatureTargetSetpoint", signed=True),
@@ -343,8 +344,8 @@ dataIdentifiers = {
         1044 : RawCodec(2, "SecondaryCentralHeatingPump"),
         1047 : RawCodec(11, "TimeSeriesRecordedFlowTemperatureSensor"),
         1084 : RawCodec(4, "FlowTemperatureMinimumMaximumLimit"),
-        1085 : O3EInt16(4, "DomesticHotWaterHysteresis"),
-        1087 : O3EInt8(2, "MaximumDomesticHotWaterLoadingTime"),
+        1085 : O3EComplexType(4, "DomesticHotWaterHysteresis", [O3EInt16(2, "SetpointSwitchOn", signed=True), O3EInt16(2, "SetpointSwitchOff", signed=True)]),
+        1087 : O3EComplexType(2, "MaximumDomesticHotWaterLoadingTime", [O3EInt8(1, "SetpointMaxOn", signed=False), O3EInt8(1, "SetpointMinOff", signed=False)]),
         1088 : O3EByteVal(1, "OutsideAirBypass"),
         1089 : O3EByteVal(1, "InsideAirBypass"),
         1090 : RawCodec(9, "EnvironmentAirQuality"),
@@ -777,7 +778,8 @@ dataIdentifiers = {
         1839 : RawCodec(4, "ElectricalEnergyStorageUsableEnergy"),
         1840 : RawCodec(4, "ElectricalEnergyStorageUsableNominalEnergy"),
         1841 : RawCodec(32, "PointOfCommonCouplingOverview"),
-        1842 : RawCodec(2, "SecondaryCircuitFourThreeWayValve"),
+#        1842 : RawCodec(2, "SecondaryCircuitFourThreeWayValve"),
+        1842 : O3EComplexType(2, "SecondaryCircuitFourThreeWayValve", [O3EInt8(1, "Setpoint", signed=True), O3EInt8(1, "CurrentPosition", signed=True)]), #250-xH Unit: %        
         1843 : RawCodec(2, "MixerOneCircuitHumidityProtection"),
         1844 : RawCodec(2, "MixerTwoCircuitHumidityProtection"),
         1845 : RawCodec(36, "HeatPumpCompressorEnvelope"),#+++
@@ -1389,6 +1391,7 @@ dataIdentifiers = {
         2577 : RawCodec(6, "FuelCellTestModeTwo"),
         2578 : O3EInt8(1, "RefrigerationCircuitDesiredOperatingMode"),#+++
         2579 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureHeating"),#+++
+        2580 : O3EInt8(2, "CompressorSetpointRps", signed=True), #250xH Unit RpS
         2581 : O3EInt16(2, "CompressorCalculatedSetpointRps"),#+++
         2582 : RawCodec(2, "CompressorOffTimer"),
         2583 : RawCodec(15, "OxygenProbeProcessValuesBurnerOne"),
@@ -1424,9 +1427,12 @@ dataIdentifiers = {
         2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale = 1),
         2627 : O3EInt16(2, "CompressorStartUpTimer"),#+++
         2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1),
-        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
-        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),#+++
-        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),#+++
+#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
+        2630 : O3EComplexType(4, "CompressorMinMaxSpeedHeating", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
+#        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),#+++
+        2631 : O3EComplexType(4, "CompressorMinMaxSpeedCooling", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
+#        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),#+++
+        2632 : O3EComplexType(4, "CompressorMinMaxSpeedDefrost", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max")]), #250SH Unit RpS
         2633 : RawCodec(12, "MaxSpeedNoiseReductionMode"),#+++
         2634 : O3EByteVal(1, "NoiseReductionMode"),
         2635 : RawCodec(8, "BurnerProcessDataFlags"),
@@ -1600,6 +1606,7 @@ dataIdentifiers = {
         3016 : O3EComplexType(9, "HeatingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
+        3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # 250xH Unit °C
         3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
@@ -1634,7 +1641,8 @@ dataIdentifiers = {
         3095 : RawCodec(6, "MacAddressLanTwo"),
         3096 : O3EByteVal(1, "GatewayWifiStationEnable"),
         3097 : O3EByteVal(1, "GatewayInternetAccess"),
-        3098 : RawCodec(2, "ExternalHeaterTemperatureOffset"),
+#        3098 : RawCodec(2, "ExternalHeaterTemperatureOffset"),
+        3098 : O3EInt8(2, "ExternalHeaterTemperatureOffset", scale=10), #250-xH Unit: K
         3103 : RawCodec(6, "IsCountryModeLoadInformation"),
 #        3106 : RawCodec(4, "BufferMinimumMaximumSetTemperature"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
         3106 : O3EComplexType(4, "BufferMinimumMaximumSetTemperature",[O3EInt16(2, "BufferMin", scale=10.0, signed=True), O3EInt16(2, "BufferMax", scale=10.0, signed=True)]),        
@@ -1657,5 +1665,9 @@ dataIdentifiers = {
         3156 : O3EByteVal(1, "DomesticHotWaterShiftLoadPumpType"),
         3190 : O3EByteVal(1, "RefrigerantCircuitFourWayValvePosition"),
         3191 : RawCodec(199, "ExtendedEventLoggingHistory"),
+        3212 : O3EInt8(2, "BivalentMixerDomesticHotWaterTemperatureOffset", scale=10), #250-xH Unit: K
+        3213 : O3EComplexType(9, "ExternalHeaterTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C
+        3215 : O3EComplexType(9, "ExternalHeaterSeparatorTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C
+        3234 : O3EComplexType(9, "DomesticHotWaterBufferTopTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # Unit °C    
     }
 }

@@ -3984,7 +3984,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown",
+          "id": "CyclesPerHour",
           "args": {
             "offset": 0
           }
@@ -4260,10 +4260,43 @@
     "args": {}
   },
   "535": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 12,
     "id": "ObjectElectricalEnergyStatistical",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "GridFeedInEnergy",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "GridSuppliedEnergy",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ProducedEnergy",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "537": {
     "codec": "O3EComplexType",
@@ -4316,10 +4349,45 @@
     }
   },
   "543": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "SmartGridReadyConsolidator",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown1",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "OperatingStatus",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "544": {
     "codec": "O3EComplexType",
@@ -9171,12 +9239,20 @@
     "id": "BootLoaderVersion",
     "args": {}
   },
+  "963": {
+    "codec": "O3EUtf8",
+    "len": 16,
+    "id": "SparePartNumber",
+    "args": {
+      "offset": 0
+    }
+  },
   "964": {
-    "codec": "O3EByteVal",
+    "codec": "O3EEnum",
     "len": 1,
     "id": "ActiveDiagnosticSession",
     "args": {
-      "offset": 0
+      "listStr": "DiagnosticSessionLevels"
     }
   },
   "987": {
@@ -9384,7 +9460,7 @@
         {
           "codec": "RawCodec",
           "len": 1,
-          "id": "unknown",
+          "id": "Unknown",
           "args": {}
         }
       ]
@@ -9409,23 +9485,61 @@
     "args": {}
   },
   "1085": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "DomesticHotWaterHysteresis",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOn",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOff",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1087": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MaximumDomesticHotWaterLoadingTime",
     "args": {
-      "scale": 1.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SetpointMaxOn",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SetpointMinOff",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "1088": {
@@ -23016,10 +23130,33 @@
     "args": {}
   },
   "1842": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "SecondaryCircuitFourThreeWayValve",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Setpoint",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "CurrentPosition",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "1843": {
     "codec": "RawCodec",
@@ -25659,7 +25796,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown1",
+          "id": "Unknown",
           "args": {
             "scale": 1.0,
             "signed": false,
@@ -25688,7 +25825,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown1",
+          "id": "Unknown",
           "args": {
             "scale": 1.0,
             "signed": false,
@@ -25871,7 +26008,7 @@
         {
           "codec": "RawCodec",
           "len": 5,
-          "id": "Unknown1",
+          "id": "Unknown",
           "args": {}
         }
       ]
@@ -30141,10 +30278,55 @@
     }
   },
   "2543": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 10,
     "id": "SmartGridTemperatureOffsets",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetTempRoom",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetTempDomesticHotWater",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetTempBuffer",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown2",
+          "args": {}
+        }
+      ]
+    }
   },
   "2544": {
     "codec": "O3EByteVal",
@@ -30171,7 +30353,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Actual",
+          "id": "Comfort",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30181,7 +30363,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Minimum",
+          "id": "Normal",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30191,7 +30373,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Maximum",
+          "id": "Reduced",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30201,19 +30383,19 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Average",
-          "args": {
-            "scale": 10.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EByteVal",
-          "len": 1,
           "id": "Unknown",
           "args": {
+            "scale": 10.0,
+            "signed": true,
             "offset": 0
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "listStr": "OpStates"
           }
         }
       ]
@@ -30228,7 +30410,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Actual",
+          "id": "Comfort",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30238,7 +30420,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Minimum",
+          "id": "Normal",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30248,7 +30430,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Maximum",
+          "id": "Reduced",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30258,19 +30440,19 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Average",
-          "args": {
-            "scale": 10.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EByteVal",
-          "len": 1,
           "id": "Unknown",
           "args": {
+            "scale": 10.0,
+            "signed": true,
             "offset": 0
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "listStr": "OpStates"
           }
         }
       ]
@@ -30285,7 +30467,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Actual",
+          "id": "Comfort",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30295,7 +30477,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Minimum",
+          "id": "Normal",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30305,7 +30487,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Maximum",
+          "id": "Reduced",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30315,19 +30497,19 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Average",
-          "args": {
-            "scale": 10.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EByteVal",
-          "len": 1,
           "id": "Unknown",
           "args": {
+            "scale": 10.0,
+            "signed": true,
             "offset": 0
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "listStr": "OpStates"
           }
         }
       ]
@@ -30342,7 +30524,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Actual",
+          "id": "Comfort",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30352,7 +30534,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Minimum",
+          "id": "Normal",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30362,7 +30544,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Maximum",
+          "id": "Reduced",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -30372,19 +30554,19 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Average",
-          "args": {
-            "scale": 10.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "O3EByteVal",
-          "len": 1,
           "id": "Unknown",
           "args": {
+            "scale": 10.0,
+            "signed": true,
             "offset": 0
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "listStr": "OpStates"
           }
         }
       ]
@@ -30585,6 +30767,16 @@
     "len": 4,
     "id": "CompressorMinMaxAllowedPrimaryTemperatureHeating",
     "args": {}
+  },
+  "2580": {
+    "codec": "O3EInt8",
+    "len": 2,
+    "id": "CompressorSetpointRps",
+    "args": {
+      "scale": 1.0,
+      "signed": true,
+      "offset": 0
+    }
   },
   "2581": {
     "codec": "O3EInt16",
@@ -30866,22 +31058,91 @@
     }
   },
   "2630": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "CompressorMinMaxSpeedHeating",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Min",
+          "args": {
+            "scale": 10,
+            "signed": "True",
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Max",
+          "args": {
+            "scale": 10,
+            "signed": "True",
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2631": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "CompressorMinMaxSpeedCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Min",
+          "args": {
+            "scale": 10,
+            "signed": "True",
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Max",
+          "args": {
+            "scale": 10,
+            "signed": "True",
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2632": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "CompressorMinMaxSpeedDefrost",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Min",
+          "args": {
+            "scale": 10,
+            "signed": "True",
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Max",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2633": {
     "codec": "RawCodec",
@@ -32107,10 +32368,43 @@
     }
   },
   "2940": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "ExternalHeaterDelayTimer",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SwitchOnDelay",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinRunTime",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SwitchOffDelay",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2942": {
     "codec": "RawCodec",
@@ -32563,6 +32857,63 @@
       ]
     }
   },
+  "3019": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "CompressorOutletTargetTemperature",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
+  },
   "3029": {
     "codec": "O3EByteVal",
     "len": 1,
@@ -32892,10 +33243,14 @@
     }
   },
   "3098": {
-    "codec": "RawCodec",
+    "codec": "O3EInt8",
     "len": 2,
     "id": "ExternalHeaterTemperatureOffset",
-    "args": {}
+    "args": {
+      "scale": 10,
+      "signed": false,
+      "offset": 0
+    }
   },
   "3103": {
     "codec": "RawCodec",
@@ -32904,10 +33259,33 @@
     "args": {}
   },
   "3106": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "BufferMinimumMaximumSetTemperature",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BufferMin",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BufferMax",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "3107": {
     "codec": "RawCodec",
@@ -33027,5 +33405,186 @@
     "id": "ExtendedEventLoggingHistory",
     "args": {}
   },
-  "Version": "20240505"
+  "3212": {
+    "codec": "O3EInt8",
+    "len": 2,
+    "id": "BivalentMixerDomesticHotWaterTemperatureOffset",
+    "args": {
+      "scale": 10,
+      "signed": false,
+      "offset": 0
+    }
+  },
+  "3213": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "ExternalHeaterTemperatureSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
+  },
+  "3215": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "ExternalHeaterSeparatorTemperatureSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
+  },
+  "3234": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "DomesticHotWaterBufferTopTemperatureSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
+  },
+  "Version": "20240906"
 }
