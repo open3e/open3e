@@ -6,6 +6,8 @@
 * Experimental (!) write support (untested)
 
 # Installation
+Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
     sudo apt install git python3 python3-pip  
