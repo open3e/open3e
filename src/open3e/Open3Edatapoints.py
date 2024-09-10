@@ -351,8 +351,8 @@ dataIdentifiers = {
         1090 : RawCodec(9, "EnvironmentAirQuality"),
         1093 : RawCodec(2, "ExhaustPipeLength"),
         1096 : O3EByteVal(1, "ResetEnergyManagerDataCollector"),
-        1097 : RawCodec(20, "ElectricityPrice"),
-        1098 : RawCodec(20, "GasProperties"),
+        1097 : O3EComplexType(20, "ElectricityPrice", [RawCodec(4, "Unknown1"), RawCodec(4, "Unknown2"), O3EInt32(4, "NormalRate", scale=100), O3EInt32(4, "LowRate", scale = 100), RawCodec(4, "Unknown3")]), # Unit ct
+        1098 : O3EComplexType(20, "GasProperties", [O3EInt32(4, "Rate", scale = 100), RawCodec(4, "Unknown1"), RawCodec(4, "Unknown2"), RawCodec(4, "Unknown3"), RawCodec(4, "Unknown4")]), # Unit ct
         1100 : O3EComplexType(3, "CentralHeatingPumpMinimumMaximumLimit", [O3EInt8(1, "MinSpeed"), O3EInt8(1, "MaxSpeed"), O3EInt8(1, "Setpoint")]),
         1101 : O3EComplexType(3, "DomesticHotWaterPumpMinimumMaximumLimit", [O3EInt8(1, "MinSpeed"), O3EInt8(1, "MaxSpeed"), O3EInt8(1, "Setpoint")]),
         1102 : O3EComplexType(3, "MixerOneCircuitPumpMinimumMaximumLimit", [O3EInt8(1, "MinSpeed"), O3EInt8(1, "MaxSpeed"), O3EInt8(1, "Setpoint")]),
@@ -1587,7 +1587,7 @@ dataIdentifiers = {
         2956 : O3EInt8(1, "DeviceDigitalInputEightValue"),#+++
         2957 : O3EInt8(1, "DeviceDigitalInputNineValue"),#+++
         2969 : O3EByteVal(1, "ElectronicControlUnitSafeStateStatus"),
-        2985 : RawCodec(2, "ExternalHeaterTemperatureSetpoint"),
+        2985 : O3EInt16(2, "ExternalHeaterTemperatureSetpoint", signed=True),
         2986 : O3EByteVal(1, "ExternalHeaterOperationState"),
         2987 : O3EInt8(1, "RefrigerantCycleUnlock"),#+++
         2999 : RawCodec(16, "ElectricalHeatersOperationHours"),
