@@ -130,7 +130,7 @@ dataIdentifiers = {
         497 : O3EComplexType(5, "DomesticHotWaterCirculationPumpMode",[O3EByteVal(1, "Mode"), O3EByteVal(1, "HygenieActive"), O3EByteVal(1, "HeatingActive"), O3EByteVal(1, "CyclesPerHour"), O3EByteVal(1, "Cycles")]),
         500 : RawCodec(2, "CentralHeatDemandExternalAc"),
         503 : RawCodec(2, "ScaldProtection"),
-        504 : RawCodec(14, "DomesticHotWaterSetpointMetaData"),
+        504 : O3EComplexType(14, "DomesticHotWaterSetpointMetaData", [RawCodec(2,"Unknown504.0"), O3EInt16(2, "MinimumBufferTemperatureSetpoint", signed=True), RawCodec(2, "Unknown504.2"),O3EInt16(2, "MaximumBufferTemperatureSetpoint", signed=True),O3EInt16(2, "MaximumDomesticHotWaterTemperature", signed=True), O3EInt16(2, "EfficiencyLowerLimit", signed=True), O3EInt16(2, "EfficiencyUpperLimit",signed=True)]), #250xx Unit °C
         505 : O3ESdate(3, "Date"),
         506 : O3EStime(3, "Time"),
         507 : O3EUtc(4, "UniversalTimeCoordinated"),
