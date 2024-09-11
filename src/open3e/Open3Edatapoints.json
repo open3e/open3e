@@ -4013,10 +4013,75 @@
     "args": {}
   },
   "504": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 14,
     "id": "DomesticHotWaterSetpointMetaData",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown504.0",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumBufferTemperatureSetpoint",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown504.2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumBufferTemperatureSetpoint",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumDomesticHotWaterTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EfficiencyLowerLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EfficiencyUpperLimit",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "505": {
     "codec": "O3ESdate",
@@ -9579,16 +9644,94 @@
     }
   },
   "1097": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 20,
     "id": "ElectricityPrice",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "NormalRate",
+          "args": {
+            "scale": 100,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "LowRate",
+          "args": {
+            "scale": 100,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown3",
+          "args": {}
+        }
+      ]
+    }
   },
   "1098": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 20,
     "id": "GasProperties",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Rate",
+          "args": {
+            "scale": 100,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown1",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown3",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 4,
+          "id": "Unknown4",
+          "args": {}
+        }
+      ]
+    }
   },
   "1100": {
     "codec": "O3EComplexType",
@@ -32479,10 +32622,14 @@
     }
   },
   "2985": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "ExternalHeaterTemperatureSetpoint",
-    "args": {}
+    "args": {
+      "scale": 10.0,
+      "signed": true,
+      "offset": 0
+    }
   },
   "2986": {
     "codec": "O3EByteVal",
@@ -33586,5 +33733,5 @@
       ]
     }
   },
-  "Version": "20240906"
+  "Version": "20240911"
 }
