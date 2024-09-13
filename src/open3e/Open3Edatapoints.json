@@ -2975,83 +2975,427 @@
     }
   },
   "401": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerOneCircuitPump",
     "args": {
-      "scale": 1,
-      "signed": false,
-      "offset": 2
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "402": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerTwoCircuitPump",
     "args": {
-      "scale": 1,
-      "signed": false,
-      "offset": 2
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "403": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerThreeCircuitPump",
     "args": {
-      "scale": 1,
-      "signed": false,
-      "offset": 2
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "404": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerFourCircuitPump",
     "args": {
-      "scale": 1,
-      "signed": false,
-      "offset": 2
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "405": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerFiveCircuitPump",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "406": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerSixCircuitPump",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "407": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerSevenCircuitPump",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "408": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 5,
     "id": "MixerEightCircuitPump",
     "args": {
-      "scale": 10.0,
-      "signed": true,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "TargetPowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "TargetValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualValue",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "417": {
@@ -23288,7 +23632,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Unkown",
+          "id": "Unknown",
           "args": {
             "scale": 1.0,
             "signed": false,
@@ -26334,20 +26678,54 @@
     }
   },
   "2351": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "HeatPumpCompressor",
     "args": {
-      "scale": 1.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2352": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "AdditionalElectricHeater",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "PowerState",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ErrorState",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2353": {
     "codec": "O3EComplexType",
@@ -26819,7 +27197,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unkown",
+          "id": "Unknown",
           "args": {
             "offset": 0
           }
@@ -26864,7 +27242,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unkown",
+          "id": "Unknown",
           "args": {
             "offset": 0
           }
@@ -26909,7 +27287,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unkown",
+          "id": "Unknown",
           "args": {
             "offset": 0
           }
@@ -26954,7 +27332,7 @@
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unkown",
+          "id": "Unknown",
           "args": {
             "offset": 0
           }
