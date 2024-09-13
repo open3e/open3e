@@ -3899,32 +3899,104 @@
     "args": {}
   },
   "475": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MixerOneCircuitThreeWayValvePositionPercent",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Position",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "476": {
-    "codec": "O3EInt8",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MixerTwoCircuitThreeWayValvePositionPercent",
     "args": {
-      "scale": 1.0,
-      "signed": true,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Position",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
     }
   },
   "477": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MixerThreeCircuitThreeWayValvePositionPercent",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Position",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "478": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "MixerFourCircuitThreeWayValvePositionPercent",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Position",
+          "args": {
+            "scale": 1.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "491": {
     "codec": "O3EComplexType",
@@ -4019,31 +4091,9 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
-          "len": 2,
-          "id": "Unknown504.0",
-          "args": {}
-        },
-        {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "MinimumBufferTemperatureSetpoint",
-          "args": {
-            "scale": 10.0,
-            "signed": true,
-            "offset": 0
-          }
-        },
-        {
-          "codec": "RawCodec",
-          "len": 2,
-          "id": "Unknown504.2",
-          "args": {}
-        },
-        {
-          "codec": "O3EInt16",
-          "len": 2,
-          "id": "MaximumBufferTemperatureSetpoint",
+          "id": "LowerBufferLimitTemperature",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -4053,7 +4103,37 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "MaximumDomesticHotWaterTemperature",
+          "id": "MinimumBufferTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "DefaultBufferTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumBufferTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "UpperBufferLimitTemperature",
           "args": {
             "scale": 10.0,
             "signed": true,
@@ -33733,5 +33813,5 @@
       ]
     }
   },
-  "Version": "20240911"
+  "Version": "20240913"
 }
