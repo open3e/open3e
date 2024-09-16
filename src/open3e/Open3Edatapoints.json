@@ -30885,15 +30885,9 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
-          "len": 2,
-          "id": "Unknown1",
-          "args": {}
-        },
-        {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "SetTempRoom",
+          "id": "SetpointIncreaseRoomTemperatureHeating",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -30903,7 +30897,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "SetTempDomesticHotWater",
+          "id": "SetpointDecreaseRoomTemperatureCooling",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -30913,7 +30907,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "SetTempBuffer",
+          "id": "SetpointIncreaseDHWTemperature",
           "args": {
             "scale": 10.0,
             "signed": false,
@@ -30921,10 +30915,24 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "SetpointIncreaseBufferTemperatureHeating",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointDecreaseBufferTemperatureCooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
         }
       ]
     }
@@ -34191,5 +34199,5 @@
       ]
     }
   },
-  "Version": "20240913"
+  "Version": "20240916"
 }
