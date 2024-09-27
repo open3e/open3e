@@ -2,7 +2,8 @@
 import udsoncan
 from doipclient import DoIPClient
 from doipclient.connectors import DoIPClientUDSConnector
-from udsoncan.client import Client
+#from udsoncan.client import Client
+from open3e.Open3EudsClient import Open3EudsClient
 from udsoncan.exceptions import *
 from udsoncan.services import *
 
@@ -139,7 +140,7 @@ class O3Eclass():
         config['p2_star_timeout'] = 20
         
         # run uds client
-        self.uds_client = Client(conn, config=config)
+        self.uds_client = Open3EudsClient(conn, config=config)
         self.uds_client.open()
         self.uds_client.logger.setLevel(loglevel)
 
