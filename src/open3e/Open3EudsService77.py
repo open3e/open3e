@@ -3,15 +3,15 @@ from udsoncan.Request import Request
 from udsoncan.Response import Response
 from udsoncan import DidCodec, check_did_config, make_did_codec_from_definition, fetch_codec_definition_from_config, DIDConfig
 from udsoncan.exceptions import *
-from udsoncan.BaseService import BaseService, BaseResponseData
+from udsoncan.BaseService import BaseResponseData
+from open3e.Open3EudsBaseService77 import Open3EudsBaseService
 from udsoncan.ResponseCode import ResponseCode
 from udsoncan.services.WriteDataByIdentifier import WriteDataByIdentifier
 import udsoncan.tools as tools
 
 from typing import Any, cast
 
-
-class WriteDataByIdentifier77(BaseService):
+class WriteDataByIdentifier77(Open3EudsBaseService):
     _sid = 0x77
     _use_subfunction = False
 
@@ -57,17 +57,25 @@ class WriteDataByIdentifier77(BaseService):
         :raises ConfigError: If ``didlist`` contains a DID not defined in ``didconfig``
         """
 
-        print('WriteDataByIdentifier77.make_request() ...')
         tools.validate_int(did, min=0, max=0xFFFF, name='Data Identifier')
         req = Request(cls)
         didconfig = check_did_config(did, didconfig=didconfig)  # Make sure all DIDs are correctly defined in client config
         codec_definition = fetch_codec_definition_from_config(did, didconfig)
-        req.data = struct.pack('>H', did)  # encode DID number
         codec = make_did_codec_from_definition(codec_definition)
+
         if codec.__class__ == DidCodec and isinstance(value, tuple):
-            req.data += codec.encode(*value)    # Fixes issue #29
+            req.data = codec.encode(*value)    # Fixes issue #29
         else:
-            req.data += codec.encode(value)
+            req.data = codec.encode(value)
+
+        # Assemble prefix data for service 0x77:
+        prefix = struct.pack('>H', did)     # encode DID number
+        len_code = 0xb0+ len(req.data)      # encode length: 0xb0 + data length
+        prefix77 = [prefix[0], prefix[1], 0x43, 0x01, 0x82, prefix[1], prefix[0], len_code];
+                    # Use did as ID code (first two bytes)
+
+        # Assemble req.data:
+        req.data = bytearray(prefix77) + req.data
 
         return req
 

@@ -21,7 +21,6 @@ import paho.mqtt.client as paho
 
 import open3e.Open3Eclass
 
-
 def main():
     # default ECU address
     deftx = 0x680
@@ -31,6 +30,21 @@ def main():
     dicDevAddrs = {}  # devstr:addr
 
     cmnd_queue = []   # command queue to serialize bus traffic
+
+    didsService77 = [497,503,504,873,874,875,876,896,919,933,
+                     1085,1087,1100,1101,
+                     1102,1103,1104,1105,
+                     1192,1193,1194,1195,1196,1197,1198,1199,
+                     1240,1395,1396,1397,1398,
+                     1627,1628,1629,1630,
+                     2257,
+                     2405,2406,2407,2408,
+                     2421,2422,2423,2424,
+                     2452,2453,2454,2455,
+                     2498,
+                     2499,2500,2501,2502,
+                     2626,3029,3066,3068,3069]
+                    # Use Service 0x77 to write these dids
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v) -> int:
@@ -303,7 +317,6 @@ def main():
     if(args.ecuaddr != None):
         deftx = getint(args.ecuaddr)
 
-
     # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if(args.config != None):
         if(args.config == 'dev'):  # short
@@ -381,17 +394,29 @@ def main():
                     writeArg = job.split("=")
                     ecu,didkey = get_ecudid(writeArg[0])
                     didVal=str(writeArg[1]).replace("0x","")
-                    ensure_ecu(ecu)
-                    print(f"write raw: {ecu}.{didkey} = {didVal}")
-                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
+                    if not (didkey in didsService77):
+                        ensure_ecu(ecu)
+                        print(f"write raw: {ecu}.{didkey} = {didVal}")
+                        succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True, useService77=False)
+                    else:
+                        print(f"write raw: {ecu}.{didkey} = {didVal}")
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=deftx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
+                        ecu77.close()
                     print(f"success: {succ}, code: {code}")
             else:
                 writeArg = args.write.split("=")
                 ecu,didkey = get_ecudid(writeArg[0])           
                 didVal=json.loads(writeArg[1])
-                ensure_ecu(ecu)
-                print(f"write: {ecu}.{didkey} = {didVal}")
-                succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False)
+                if not (didkey in didsService77):
+                    ensure_ecu(ecu)
+                    print(f"write: {ecu}.{didkey} = {didVal}")
+                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False, useService77=False)
+                else:
+                    print(f"write: {ecu}.{didkey} = {didVal}")
+                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=deftx+2, doip=args.doip, can=args.can, dev=args.dev)
+                    succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)
+                    ecu77.close()
                 print(f"success: {succ}, code: {code}")                
             time.sleep(0.1)
 

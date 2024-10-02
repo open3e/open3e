@@ -4,6 +4,7 @@
 * Read known datapoints
 * Listen to commands on mqtt
 * Experimental (!) write support (untested)
+* Experimental write support for service 77 (NOT implemented for listener mode yet)
 
 # Installation
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).

@@ -135,9 +135,9 @@ class O3Eclass():
         config = dict(udsoncan.configs.default_client_config)
         config['data_identifiers'] = self.dataIdentifiers
         # increase default timeout
-        config['request_timeout'] = 20
-        config['p2_timeout'] = 20
-        config['p2_star_timeout'] = 20
+        config['request_timeout'] = 2
+        config['p2_timeout'] = 2
+        config['p2_star_timeout'] = 2
         
         # run uds client
         self.uds_client = Open3EudsClient(conn, config=config)
@@ -158,9 +158,9 @@ class O3Eclass():
         else:
             return self.readPure(did)
 
-    def writeByDid(self, did:int, val, raw:bool):
+    def writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
-        response = self.uds_client.write_data_by_identifier(did, val)
+        response = self.uds_client.write_data_by_identifier(did, val, useService77)
         succ = (response.valid & response.positive)
         return succ, response.code
 
