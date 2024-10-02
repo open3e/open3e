@@ -27,10 +27,10 @@ class Open3EudsClient(Client):
 
         """
         if not useService77:
-            print('Use standard writeDataByIdentifier service 2E ...')
+            print('Using standard writeDataByIdentifier service 2E ...')
             return super().write_data_by_identifier(did, value)
         else:
-            print('Use writeDataByIdentifier service 77 ...')
+            print('Using writeDataByIdentifier service 77 ...')
             req = WriteDataByIdentifier77.make_request(did, value, didconfig=self.config['data_identifiers'])
             self.logger.info("%s - Writing data identifier 0x%04x (%s)" %
                             (self.service_log_prefix(services.WriteDataByIdentifier), did, DataIdentifier.name_from_id(did)))
