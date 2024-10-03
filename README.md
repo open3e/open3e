@@ -55,7 +55,7 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
 
 For more detailed description of the command line arguments see also the [according section](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments) in the Wiki.
 
-    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-mcid mqtt-client-id] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
+    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-f77] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-mcid mqtt-client-id] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -67,6 +67,7 @@ For more detailed description of the command line arguments see also the [accord
     -raw, --raw             return raw data for all dids
     -w WRITE, --write WRITE
                             write did, e.g. -w 396=D601 (raw data only!)
+    -f77, --forcesid77      force the use of serive 0x77 for writing of a did
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
@@ -148,6 +149,9 @@ For more detailed description of the command line arguments see also the [accord
     
     to write value of 21.5 to did 395 and value of 45.0 to did 396:
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
+
+    to write value of 45.0 to did 396 using service 0x77 (internal can bus only):
+    {"mode": "write-sid77", "data":[[396,45.0]]}
 
     to set frost protect threshold to -9°C in complex did
     (A6FF lsb..msb -> 0xFFA6 -> -90 -> -9.0°C; Byte 0 unchanged):
