@@ -18,6 +18,7 @@ import argparse
 import time
 import json
 import paho.mqtt.client as paho
+from udsoncan.exceptions import *
 
 import open3e.Open3Eclass
 
@@ -30,23 +31,6 @@ def main():
     dicDevAddrs = {}  # devstr:addr
 
     cmnd_queue = []   # command queue to serialize bus traffic
-
-    didsService77 = [497,503,504,873,874,875,876,896,919,933,
-                     1085,1087,1100,1101,
-                     1102,1103,1104,1105,
-                     1192,1193,1194,1195,1196,1197,1198,1199,
-                     1240,1395,1396,1397,1398,
-                     1627,1628,1629,1630,
-                     1791,
-                     2257,
-                     2404,
-                     2405,2406,2407,2408,
-                     2421,2422,2423,2424,
-                     2452,2453,2454,2455,
-                     2498,
-                     2499,2500,2501,2502,
-                     2626,3029,3066,3068,3069]
-                    # Use Service 0x77 to write these dids
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v) -> int:
@@ -212,6 +196,7 @@ def main():
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             dicEcus[addr].writeByDid(didKey, didVal, raw=True)
                             time.sleep(0.1)
+                            
                     elif cd['mode'] == 'write-sid77':
                         addr = getaddr(cd)
                         ensure_ecu(addr)
@@ -406,7 +391,10 @@ def main():
                 for ecudid in jobs:
                     ensure_ecu(ecudid[0])
                     if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                    readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                    try:
+                        readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                    except NegativeResponseException as e:
+                        print('Device rejected this read access. Probably did '+str(ecudid[1])+' is not available.\nErr: '+str(e))
                     time.sleep(0.02)
                 if(args.timestep != None):
                     time.sleep(float(eval(args.timestep)))
@@ -421,7 +409,7 @@ def main():
                     writeArg = job.split("=")
                     ecu,didkey = get_ecudid(writeArg[0])
                     didVal=str(writeArg[1]).replace("0x","")
-                    if (didkey in didsService77) or args.forcesid77:
+                    if args.forcesid77:
                         print(f"write raw: {ecu}.{didkey} = {didVal}")
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
@@ -435,7 +423,7 @@ def main():
                 writeArg = args.write.split("=")
                 ecu,didkey = get_ecudid(writeArg[0])
                 didVal=json.loads(writeArg[1])
-                if (didkey in didsService77) or args.forcesid77:
+                if args.forcesid77:
                     print(f"write: {ecu}.{didkey} = {didVal}")
                     ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
                     succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)

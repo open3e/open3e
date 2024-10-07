@@ -120,9 +120,21 @@ For more detailed description of the command line arguments see also the [accord
     2412.0
     ...
 
-# Write did (experimental)
+# Write did
+## Using raw data format
     open3e -c can0 -dev vdens -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
+
+## Using json data format
+    open3e -c can0 -dev vdens -w 396='47.5'
+    -> sets domestic hot water setpoint to 47.5degC
+
+    open3e -c can0 -dev vdens -w 538='{"Mode": 1, "State": 0}'
+    -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
+    -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
+
+## Extended writing service (internal can bus only, experimental)
+    In case of a "negative response" code when wrting data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
 # Publish datapoints to mqtt
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
@@ -150,8 +162,11 @@ For more detailed description of the command line arguments see also the [accord
     to write value of 21.5 to did 395 and value of 45.0 to did 396:
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
 
-    to write value of 45.0 to did 396 using service 0x77 (internal can bus only):
+    to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
+
+    to write value of 45.0 to did 396 in raw data format using service 0x77 (internal can bus only, experimental):
+    {"mode": "write-raw-sid77", "data":[[396,"C201"]]}
 
     to set frost protect threshold to -9°C in complex did
     (A6FF lsb..msb -> 0xFFA6 -> -90 -> -9.0°C; Byte 0 unchanged):

@@ -1,5 +1,7 @@
 from udsoncan import  services
 from udsoncan.common.dids import DataIdentifier
+from udsoncan.Response import Response
+from udsoncan.ResponseCode import ResponseCode
 
 from udsoncan.exceptions import *
 from typing import Optional, Any
@@ -27,10 +29,15 @@ class Open3EudsClient(Client):
 
         """
         if not useService77:
-            print('Using standard writeDataByIdentifier service 2E ...')
-            return super().write_data_by_identifier(did, value)
+            #print('Using standard writeDataByIdentifier service 2E ...')
+            try:
+                response = super().write_data_by_identifier(did, value)
+                return response
+            except NegativeResponseException as e:
+                print('Device rejected this write access (negative response). You may try again using the experimental service 77 by adding command line option -f77 (see readme).\nErr: '+str(e))
+                return Response(code=ResponseCode.ConditionsNotCorrect)
         else:
-            print('Using writeDataByIdentifier service 77 ...')
+            print('Using writeDataByIdentifier service 77. Verify the result!')
             req = WriteDataByIdentifier77.make_request(did, value, didconfig=self.config['data_identifiers'])
             self.logger.info("%s - Writing data identifier 0x%04x (%s)" %
                             (self.service_log_prefix(services.WriteDataByIdentifier), did, DataIdentifier.name_from_id(did)))
@@ -38,7 +45,11 @@ class Open3EudsClient(Client):
             response = self.send_request(req)
             if response is None:
                 return None
-            response = WriteDataByIdentifier77.interpret_response(response)
+            try:
+                response = WriteDataByIdentifier77.interpret_response(response)
+            except NegativeResponseException as e:
+                print('Device rejected this write access.\nErr: '+str(e))
+                return Response(code=ResponseCode.ConditionsNotCorrect)
 
             if response.service_data.did_echo != did:
                 raise UnexpectedResponseException(
