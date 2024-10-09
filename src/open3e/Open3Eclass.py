@@ -135,9 +135,9 @@ class O3Eclass():
         config = dict(udsoncan.configs.default_client_config)
         config['data_identifiers'] = self.dataIdentifiers
         # increase default timeout
-        config['request_timeout'] = 2
-        config['p2_timeout'] = 2
-        config['p2_star_timeout'] = 2
+        config['request_timeout'] = 20
+        config['p2_timeout'] = 20
+        config['p2_star_timeout'] = 20
         
         # run uds client
         self.uds_client = Open3EudsClient(conn, config=config)
