@@ -4,6 +4,7 @@
 * Read known data points
 * Listen to commands on mqtt
 * Write data points in raw and json data format
+* Experimental write support for service 77 (NOT implemented for listener mode yet)
 
 # Installation
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
@@ -54,7 +55,7 @@ The depicting scans take several minutes (usually 10..20) - please be patient!
 
 For more detailed description of the command line arguments see also the [according section](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments) in the Wiki.
 
-    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-mcid mqtt-client-id] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
+    usage: open3e [-h] [@argsfile] [-c CAN] [-d DOIP] [-dev DEV] [-a] [-r READ] [-raw] [-w WRITE] [-f77] [-t TIMESTEP] [-m MQTT] [-mfstr MQTTFORMATSTRING] [-muser MQTTUSER:PASSW] [-mcid mqtt-client-id] [-j] [-v] [-l CMND-TOPIC] [-tx ECUADDR] [-cnfg DEVICES.JSON]
 
     options:
     -h, --help              show this help message and exit
@@ -66,6 +67,7 @@ For more detailed description of the command line arguments see also the [accord
     -raw, --raw             return raw data for all dids
     -w WRITE, --write WRITE
                             write did, e.g. -w 396=D601 (raw data only!)
+    -f77, --forcesid77      force the use of serive 0x77 for writing of a did
     -t TIMESTEP, --timestep TIMESTEP
                             read continuous with delay in s
     -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
@@ -131,6 +133,9 @@ For more detailed description of the command line arguments see also the [accord
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
 
+## Extended writing service (internal can bus only, experimental)
+    In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
+
 # Publish data points to mqtt
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan data points and publish data to broker 192.168.0.5
@@ -156,6 +161,12 @@ For more detailed description of the command line arguments see also the [accord
     
     to write value of 21.5 to did 395 and value of 45.0 to did 396:
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
+
+    to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
+    {"mode": "write-sid77", "data":[[396,45.0]]}
+
+    to write value of 45.0 to did 396 in raw data format using service 0x77 (internal can bus only, experimental):
+    {"mode": "write-raw-sid77", "data":[[396,"C201"]]}
 
     to set frost protect threshold to -9°C in complex did
     (A6FF lsb..msb -> 0xFFA6 -> -90 -> -9.0°C; Byte 0 unchanged):
