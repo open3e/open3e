@@ -1,9 +1,9 @@
 # Open3E interface
 
 * Connects E3 boiler (vcal or vdens) controller through CAN UDS or doip
-* Read known datapoints
+* Read known data points
 * Listen to commands on mqtt
-* Experimental (!) write support (untested)
+* Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
 # Installation
@@ -136,9 +136,9 @@ For more detailed description of the command line arguments see also the [accord
 ## Extended writing service (internal can bus only, experimental)
     In case of a "negative response" code when wrting data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
-# Publish datapoints to mqtt
+# Publish data points to mqtt
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
-    -> will periodically scan datapoints and publish data to broker 192.168.0.5
+    -> will periodically scan data points and publish data to broker 192.168.0.5
 
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
@@ -179,13 +179,13 @@ For more detailed description of the command line arguments see also the [accord
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
 
-# Convert list of datapoints to json format
+# Convert list of data points to json format
 Use
 ```
 open3e_dids2json
 ```
-to convert common list of datapoints (Open3Edatapoints.py) to json format.
-A white list of writable datapoints is also created by this tool.
+to convert common list of data points (Open3Edatapoints.py) to json format.
+A white list of writable data points is also created by this tool.
 
 # For developers
 
