@@ -1,9 +1,9 @@
 # Open3E interface
 
 * Connects E3 boiler (vcal or vdens) controller through CAN UDS or doip
-* Read known datapoints
+* Read known data points
 * Listen to commands on mqtt
-* Experimental (!) write support (untested)
+* Write data points in raw and json data format
 
 # Installation
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
@@ -118,13 +118,22 @@ For more detailed description of the command line arguments see also the [accord
     2412.0
     ...
 
-# Write did (experimental)
+# Write did
+## Using raw data format
     open3e -c can0 -dev vdens -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
 
-# Publish datapoints to mqtt
+## Using json data format
+    open3e -c can0 -dev vdens -w 396='47.5'
+    -> sets domestic hot water setpoint to 47.5degC
+
+    open3e -c can0 -dev vdens -w 538='{"Mode": 1, "State": 0}'
+    -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
+    -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
+
+# Publish data points to mqtt
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
-    -> will periodically scan datapoints and publish data to broker 192.168.0.5
+    -> will periodically scan data points and publish data to broker 192.168.0.5
 
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
@@ -159,13 +168,13 @@ For more detailed description of the command line arguments see also the [accord
     Option -m is mandatory for this mode.
     Options -r, -t, -j, -v may be used in parallel.
 
-# Convert list of datapoints to json format
+# Convert list of data points to json format
 Use
 ```
 open3e_dids2json
 ```
-to convert common list of datapoints (Open3Edatapoints.py) to json format.
-A white list of writable datapoints is also created by this tool.
+to convert common list of data points (Open3Edatapoints.py) to json format.
+A white list of writable data points is also created by this tool.
 
 # For developers
 
