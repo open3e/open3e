@@ -2,7 +2,8 @@
 import udsoncan
 from doipclient import DoIPClient
 from doipclient.connectors import DoIPClientUDSConnector
-from udsoncan.client import Client
+#from udsoncan.client import Client
+from open3e.Open3EudsClient import Open3EudsClient
 from udsoncan.exceptions import *
 from udsoncan.services import *
 
@@ -139,7 +140,7 @@ class O3Eclass():
         config['p2_star_timeout'] = 20
         
         # run uds client
-        self.uds_client = Client(conn, config=config)
+        self.uds_client = Open3EudsClient(conn, config=config)
         self.uds_client.open()
         self.uds_client.logger.setLevel(loglevel)
 
@@ -157,9 +158,9 @@ class O3Eclass():
         else:
             return self.readPure(did)
 
-    def writeByDid(self, did:int, val, raw:bool):
+    def writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
-        response = self.uds_client.write_data_by_identifier(did, val)
+        response = self.uds_client.write_data_by_identifier(did, val, useService77)
         succ = (response.valid & response.positive)
         return succ, response.code
 

@@ -18,9 +18,9 @@ import argparse
 import time
 import json
 import paho.mqtt.client as paho
+from udsoncan.exceptions import *
 
 import open3e.Open3Eclass
-
 
 def main():
     # default ECU address
@@ -140,7 +140,7 @@ def main():
                 return deftx 
 
         def cmnd_loop():
-            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw']
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)
                 next_read_time = time.time()
@@ -195,6 +195,31 @@ def main():
                             didKey = getint(wd[0])                  # key is submitted as numeric value
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             dicEcus[addr].writeByDid(didKey, didVal, raw=True)
+                            time.sleep(0.1)
+                            
+                    elif cd['mode'] == 'write-sid77':
+                        addr = getaddr(cd)
+                        ensure_ecu(addr)
+                        for wd in cd['data']:
+                            didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            if type(wd[1]) == str:
+                                didVal = json.loads(wd[1])    # value: if string parse as json
+                            else:
+                                didVal = wd[1]  # value: if mqtt payload already parsed
+                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
+                            ecu77.writeByDid(didKey, didVal, raw=False, useService77=True)
+                            ecu77.close() 
+                            time.sleep(0.1)
+                        
+                    elif cd['mode'] == 'write-raw-sid77':
+                        addr = getaddr(cd)
+                        ensure_ecu(addr)
+                        for wd in cd['data']:
+                            didKey = getint(wd[0])                  # key is submitted as numeric value
+                            didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
+                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
+                            ecu77.writeByDid(didKey, didVal, raw=True, useService77=True)
+                            ecu77.close()
                             time.sleep(0.1)
                 else:
                     if (readdids != None):
@@ -285,6 +310,7 @@ def main():
     parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
     parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
     parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
+    parser.add_argument("-f77", "--forcesid77", action='store_true', help="force the use of serive 0x77 for writing of a did")
     parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
     parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
     parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
@@ -302,7 +328,6 @@ def main():
 
     if(args.ecuaddr != None):
         deftx = getint(args.ecuaddr)
-
 
     # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if(args.config != None):
@@ -366,7 +391,10 @@ def main():
                 for ecudid in jobs:
                     ensure_ecu(ecudid[0])
                     if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                    readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                    try:
+                        readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                    except NegativeResponseException as e:
+                        print('Device rejected this read access. Probably did '+str(ecudid[1])+' is not available.\nErr: '+str(e))
                     time.sleep(0.02)
                 if(args.timestep != None):
                     time.sleep(float(eval(args.timestep)))
@@ -381,17 +409,29 @@ def main():
                     writeArg = job.split("=")
                     ecu,didkey = get_ecudid(writeArg[0])
                     didVal=str(writeArg[1]).replace("0x","")
-                    ensure_ecu(ecu)
-                    print(f"write raw: {ecu}.{didkey} = {didVal}")
-                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True)
+                    if args.forcesid77:
+                        print(f"write raw: {ecu}.{didkey} = {didVal}")
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
+                        ecu77.close()
+                    else:
+                        ensure_ecu(ecu)
+                        print(f"write raw: {ecu}.{didkey} = {didVal}")
+                        succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True, useService77=False)
                     print(f"success: {succ}, code: {code}")
             else:
                 writeArg = args.write.split("=")
-                ecu,didkey = get_ecudid(writeArg[0])           
+                ecu,didkey = get_ecudid(writeArg[0])
                 didVal=json.loads(writeArg[1])
-                ensure_ecu(ecu)
-                print(f"write: {ecu}.{didkey} = {didVal}")
-                succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False)
+                if args.forcesid77:
+                    print(f"write: {ecu}.{didkey} = {didVal}")
+                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                    succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)
+                    ecu77.close()
+                else:
+                    ensure_ecu(ecu)
+                    print(f"write: {ecu}.{didkey} = {didVal}")
+                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False, useService77=False)
                 print(f"success: {succ}, code: {code}")                
             time.sleep(0.1)
 
