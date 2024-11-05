@@ -262,7 +262,7 @@ dataIdentifiers = {
         786 : O3EList(57, "MixerFourCircuitTimeScheduleFriday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
         787 : O3EList(57, "MixerFourCircuitTimeScheduleSaturday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
         788 : O3EList(57, "MixerFourCircuitTimeScheduleSunday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
-        873 : RawCodec(2, "LegionellaProtectionActivation"),
+        873 : O3EComplexType(2, "LegionellaProtectionActivation",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),# Mode: 0 / 1 Legionella Protection deactivated / activated  State: 0 / 1 Legionella Protection not running / running
         874 : O3EInt16(3, "LegionellaProtectionTargetTemperatureSetpoint"),
         875 : O3EStime(2, "LegionellaProtectionStartTime"),
         876 : O3EByteVal(1, "LegionellaProtectionWeekday"),
