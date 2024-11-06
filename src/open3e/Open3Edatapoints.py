@@ -1192,7 +1192,7 @@ dataIdentifiers = {
         2317 : RawCodec(84, "ZigBeeFourtyDeviceProperty"),#+++
         2318 : RawCodec(13, "ZigBeeFourtyDeviceSetpoint"),#+++
         2319 : RawCodec(57, "ZigBeeFourtyDeviceCurrentValues"),#+++
-        2320 : O3EByteVal(1, "DomesticHotWaterStatus"),
+        2320 : O3EByteVal(1, "DomesticHotWaterStatus"),# 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow",[O3EInt16(2, "ActualFlow", scale=1.0), O3EInt16(2, "Unknown", scale=1.0)]),
         2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow",[O3EInt16(2, "TargetFlow", scale=1.0), O3EInt16(2, "Unknown", scale=1.0)]),
@@ -1606,7 +1606,7 @@ dataIdentifiers = {
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # 250xH Unit °C
-        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),
+        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),# 0 = Eco, 1 = N/A, 2 = Comfort
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
         3032 : RawCodec(2, "PrimaryEnergyFactorElectricity"),
