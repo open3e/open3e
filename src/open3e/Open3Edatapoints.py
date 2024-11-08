@@ -1440,7 +1440,7 @@ dataIdentifiers = {
         2638 : RawCodec(4, "SupportedCountryCodes"),
         2643 : RawCodec(2, "MaximumRechargePower"),
         2733 : RawCodec(3, "InstallationConfirmation"),
-        2735 : O3EByteVal(1, "FourThreeWayValveValveCurrentPosition"),
+        2735 : O3EByteVal(1, "FourThreeWayValveValveCurrentPosition"),# 0 = Central Heating / Cooling, 1 = Internal Buffer, 2 = Domestic Hot Water, 3 = Central Heating / Cooling + Internal Buffer, 4 = Domestic Hot Water + Internal Buffer
         2741 : RawCodec(3, "ComfortEnsuringMode"),
         2742 : O3EInt8(1, "DiagnosticHydraulicFilterInterval"),
         2743 : O3EInt8(1, "DiagnosticElectricalHeaterSafetyTemperatureLimiter"),
