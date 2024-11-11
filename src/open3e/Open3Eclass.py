@@ -96,7 +96,6 @@ class O3Eclass():
                 # for info
                 self.numdps = len(self.dataIdentifiers)
 
-            
         # select CAN / DoIP ~~~~~~~~~~~~~~~~~~
         if(doip != None):
             conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
@@ -157,13 +156,24 @@ class O3Eclass():
             return response.service_data.values[did],self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
+        
+    def readByComplexDid(self, did:int, subDid:int, raw:bool):
+        if(did in self.dataIdentifiers):
+            pass
+        else:
+            raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
     def writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val, useService77)
         succ = (response.valid & response.positive)
         return succ, response.code
-
+    
+    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool):
+        if(did in self.dataIdentifiers):
+            pass
+        else:
+            raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
     def readAll(self, raw:bool):
         lst = []
@@ -185,8 +195,5 @@ class O3Eclass():
         else:
             return f"negative response, {response.code}:{response.invalid_reason}","unknown"
   
-
     def close(self):
         self.uds_client.close()
-
-
