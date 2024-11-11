@@ -169,7 +169,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
     
-    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool):
+    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool, useService77=False):
         if(did in self.dataIdentifiers):
             pass
         else:
