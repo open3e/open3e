@@ -1517,7 +1517,7 @@ dataIdentifiers = {
         2850 : RawCodec(3, "CrankCaseHeaterSensorErrorType"),#+++
         2851 : O3EInt16(2, "PreStartDuration"),#+++
         2852 : O3EInt8(1, "FanDuctHeater"),#+++
-        2853 : RawCodec(2, "ExternalHeaterTimeIntegralThershold"),
+        2853 : O3EInt16(2, "ExternalHeaterTimeIntegralThershold", scale=10, signed=False),
         2855 : O3EComplexType(3, "MixerOneCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2856 : O3EComplexType(3, "MixerTwoCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2857 : O3EComplexType(3, "MixerThreeCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),

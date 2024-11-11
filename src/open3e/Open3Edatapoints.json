@@ -8420,10 +8420,29 @@
     }
   },
   "873": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "LegionellaProtectionActivation",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Mode",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "874": {
     "codec": "O3EInt16",
@@ -31575,16 +31594,98 @@
     "args": {}
   },
   "2612": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 7,
     "id": "PrimarySourceCommonSettingsHeating",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Mode",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaxFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "DefaultFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2613": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 7,
     "id": "PrimarySourceCommonSettingsCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Mode",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaxFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "DefaultFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinFanSpeed",
+          "args": {
+            "scale": 10.0,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2621": {
     "codec": "O3EInt16",
@@ -32429,10 +32530,14 @@
     }
   },
   "2853": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "ExternalHeaterTimeIntegralThershold",
-    "args": {}
+    "args": {
+      "scale": 10,
+      "signed": false,
+      "offset": 0
+    }
   },
   "2855": {
     "codec": "O3EComplexType",
@@ -34199,5 +34304,5 @@
       ]
     }
   },
-  "Version": "20241009"
+  "Version": "20241111"
 }
