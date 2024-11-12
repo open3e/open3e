@@ -262,7 +262,7 @@ dataIdentifiers = {
         786 : O3EList(57, "MixerFourCircuitTimeScheduleFriday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
         787 : O3EList(57, "MixerFourCircuitTimeScheduleSaturday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
         788 : O3EList(57, "MixerFourCircuitTimeScheduleSunday",[O3EByteVal(1, "Count"), O3EComplexType(7, "Schedules",[O3EStime(2, "Start"),O3EStime(2, "Stop"), RawCodec(2, "Unknown"), O3EByteVal(1, "Mode")])]),
-        873 : RawCodec(2, "LegionellaProtectionActivation"),
+        873 : O3EComplexType(2, "LegionellaProtectionActivation",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),# Mode: 0 / 1 Legionella Protection deactivated / activated  State: 0 / 1 Legionella Protection not running / running
         874 : O3EInt16(3, "LegionellaProtectionTargetTemperatureSetpoint"),
         875 : O3EStime(2, "LegionellaProtectionStartTime"),
         876 : O3EByteVal(1, "LegionellaProtectionWeekday"),
@@ -1192,7 +1192,7 @@ dataIdentifiers = {
         2317 : RawCodec(84, "ZigBeeFourtyDeviceProperty"),#+++
         2318 : RawCodec(13, "ZigBeeFourtyDeviceSetpoint"),#+++
         2319 : RawCodec(57, "ZigBeeFourtyDeviceCurrentValues"),#+++
-        2320 : O3EByteVal(1, "DomesticHotWaterStatus"),
+        2320 : O3EByteVal(1, "DomesticHotWaterStatus"),# 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow",[O3EInt16(2, "ActualFlow", scale=1.0), O3EInt16(2, "Unknown", scale=1.0)]),
         2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow",[O3EInt16(2, "TargetFlow", scale=1.0), O3EInt16(2, "Unknown", scale=1.0)]),
@@ -1416,8 +1416,8 @@ dataIdentifiers = {
         2609 : RawCodec(6, "CommissioningStatus"),
         2610 : RawCodec(1, "SetDeliveryStateExpert"),
         2611 : RawCodec(4, "NominalThermalCapacityIndoorUnit"),
-        2612 : RawCodec(7, "PrimarySourceCommonSettingsHeating"),#+++
-        2613 : RawCodec(7, "PrimarySourceCommonSettingsCooling"),#+++
+        2612 : O3EComplexType(7, "PrimarySourceCommonSettingsHeating", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
+        2613 : O3EComplexType(7, "PrimarySourceCommonSettingsCooling", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2621 : O3EInt16(2, "MaximumOperatingPressureActualTemperatureSetpoint"),#+++
         2622 : O3EInt16(9, "SeasonalCoefficientOfPerformaceHeating"),
         2623 : O3EInt16(9, "SeasonalEnergyEfficiencyRatioCooling"),
@@ -1440,7 +1440,7 @@ dataIdentifiers = {
         2638 : RawCodec(4, "SupportedCountryCodes"),
         2643 : RawCodec(2, "MaximumRechargePower"),
         2733 : RawCodec(3, "InstallationConfirmation"),
-        2735 : O3EByteVal(1, "FourThreeWayValveValveCurrentPosition"),
+        2735 : O3EByteVal(1, "FourThreeWayValveValveCurrentPosition"),# 0 = Central Heating / Cooling, 1 = Internal Buffer, 2 = Domestic Hot Water, 3 = Central Heating / Cooling + Internal Buffer, 4 = Domestic Hot Water + Internal Buffer
         2741 : RawCodec(3, "ComfortEnsuringMode"),
         2742 : O3EInt8(1, "DiagnosticHydraulicFilterInterval"),
         2743 : O3EInt8(1, "DiagnosticElectricalHeaterSafetyTemperatureLimiter"),
@@ -1517,7 +1517,7 @@ dataIdentifiers = {
         2850 : RawCodec(3, "CrankCaseHeaterSensorErrorType"),#+++
         2851 : O3EInt16(2, "PreStartDuration"),#+++
         2852 : O3EInt8(1, "FanDuctHeater"),#+++
-        2853 : RawCodec(2, "ExternalHeaterTimeIntegralThershold"),
+        2853 : O3EInt16(2, "ExternalHeaterTimeIntegralThershold", scale=10, signed=False),
         2855 : O3EComplexType(3, "MixerOneCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2856 : O3EComplexType(3, "MixerTwoCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2857 : O3EComplexType(3, "MixerThreeCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
@@ -1606,7 +1606,7 @@ dataIdentifiers = {
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]), # 250xH Unit °C
-        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),
+        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode"),# 0 = Eco, 1 = N/A, 2 = Comfort
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability"),
         3031 : RawCodec(2, "ExternalHeater"),
         3032 : RawCodec(2, "PrimaryEnergyFactorElectricity"),
