@@ -157,9 +157,56 @@ class O3Eclass():
         else:
             return self.readPure(did)
         
-    def readByComplexDid(self, did:int, subDid:int, raw:bool):
+    def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
         if(did in self.dataIdentifiers):
-            pass
+            open3e.Open3Ecodecs.flag_rawmode = raw
+            #response = self.uds_client.read_data_by_identifier([did])
+            mockupData = dict()
+            mockupData[424] = ("F0","00","E6","00","1E","00","00","00","00")
+            mockupData[1100] = ("14","64","50")
+            mockupData[1101] = ("1E","64","1E")
+            mockupData[1102] = ("23","64","64")
+
+            selectedDid = self.dataIdentifiers[did]
+            print("DID " + str(did) + " exists in DID list. Let's go!")
+            print(selectedDid.id)
+            
+            if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
+                print("DID " + str(did) + " is complex. Let's go!")
+                numSubDids = len(selectedDid.subTypes)
+                print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                
+                if (subDid > numSubDids-1 or subDid < 0):
+                    raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
+                
+                
+                bytesProcessed = 0
+                
+                for indexSubDid in range(0, numSubDids):
+                    selectedSubDid = selectedDid.subTypes[indexSubDid]
+                    lenSubDid = selectedSubDid.string_len
+                    startIndexSubDid = bytesProcessed
+                    endIndexSubDid = startIndexSubDid + lenSubDid-1
+                    
+                    if indexSubDid == subDid:
+                        print(selectedSubDid.id)
+                        #print(str(indexSubDid))
+                        #print(str(lenSubDid))
+                        #print(startIndexSubDid)
+                        #print(endIndexSubDid)
+                        if did in mockupData:
+                            bytesSubDid = mockupData[did][startIndexSubDid:endIndexSubDid+1]
+                            bytesToDecode = bytearray.fromhex(''.join(bytesSubDid))
+                            print(bytesSubDid)
+                            decodedData = selectedSubDid.decode(bytesToDecode)
+                            print(decodedData)
+                        else:
+                            print("No mockup data for DID " + str(did) + ". Stop!")            
+                    bytesProcessed += lenSubDid  
+                else:
+                    print("DID " + str(did) + " is not complex. Stop!")
+            else:
+                print("DID " + str(did) + " does not exist in DID list. Stop!")      
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
