@@ -160,7 +160,8 @@ class O3Eclass():
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
         if(did in self.dataIdentifiers):
             open3e.Open3Ecodecs.flag_rawmode = raw
-            #response = self.uds_client.read_data_by_identifier([did])
+            completeResponse = self.uds_client.read_data_by_identifier([did])
+            print(completeResponse)
             mockupData = dict()
             mockupData[424] = ("F0","00","E6","00","1E","00","00","00","00")
             mockupData[1100] = ("14","64","50")
@@ -203,10 +204,8 @@ class O3Eclass():
                         else:
                             print("No mockup data for DID " + str(did) + ". Stop!")            
                     bytesProcessed += lenSubDid  
-                else:
-                    print("DID " + str(did) + " is not complex. Stop!")
             else:
-                print("DID " + str(did) + " does not exist in DID list. Stop!")      
+                print("DID " + str(did) + " is not complex. Stop!")   
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
