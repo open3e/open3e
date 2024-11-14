@@ -169,6 +169,8 @@ class O3Eclass():
             mockupData[1100] = ("14","64","50")
             mockupData[1101] = ("1E","64","1E")
             mockupData[1102] = ("23","64","64")
+            mockupData[2612] = ("01","3A","02","3A","02","64","00")
+            mockupData[2613] = ("01","3A","02","3A","02","64","00")
 
             selectedDid = self.dataIdentifiers[did]
             print("DID " + str(did) + " exists in DID list. Let's go!")
