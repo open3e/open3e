@@ -159,10 +159,10 @@ class O3Eclass():
         
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
         if(did in self.dataIdentifiers):
-            open3e.Open3Ecodecs.flag_rawmode = True
             print("Here comes the raw data from the device")
+            open3e.Open3Ecodecs.flag_rawmode = True
             rawResponse = self.uds_client.read_data_by_identifier(did)
-            rawDidData = rawResponse[0]
+            rawDidData = rawResponse.service_data.values[did]
             print(rawDidData)
             print("Here ends the raw data from the device")
 
