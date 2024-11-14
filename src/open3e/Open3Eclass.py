@@ -196,6 +196,10 @@ class O3Eclass():
                     lenSubDid = selectedSubDid.string_len
                     startIndexSubDid = bytesProcessed
                     endIndexSubDid = startIndexSubDid + lenSubDid-1
+
+                    print("Sub DID: " + str(indexSubDid))
+                    print("Start Index: " + str(startIndexSubDid))
+                    print("End Index: " + str(endIndexSubDid))
                     
                     if indexSubDid == subDid:
                         print(selectedSubDid.id)
