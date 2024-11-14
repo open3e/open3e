@@ -201,6 +201,8 @@ class O3Eclass():
                         print(selectedSubDid.id)
                         
                         bytesSubDid = rawDidData[startIndexSubDid:endIndexSubDid+1]
+                        print(type(bytesSubDid))
+                        print(bytesSubDid)
                         bytesToDecode = bytearray.fromhex(bytesSubDid)
                         print(bytesSubDid)
                         decodedData = selectedSubDid.decode(bytesToDecode)
