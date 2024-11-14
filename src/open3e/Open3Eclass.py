@@ -160,10 +160,11 @@ class O3Eclass():
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
         if(did in self.dataIdentifiers):
             open3e.Open3Ecodecs.flag_rawmode = raw
-            print("Here comes the data from the devce")
-            completeResponse = self.uds_client.read_data_by_identifier([did])
-            print(completeResponse)
-            print("Here ends the data from the devce")
+            print("Here comes the raw data from the device")
+            rawResponse = self.uds_client.read_data_by_identifier(did, raw=True)
+            rawDidData = rawResponse[0]
+            print(rawDidData)
+            print("Here ends the raw data from the device")
             mockupData = dict()
             mockupData[424] = ("F0","00","E6","00","1E","00","00","00","00")
             mockupData[1100] = ("14","64","50")
@@ -195,10 +196,6 @@ class O3Eclass():
                     
                     if indexSubDid == subDid:
                         print(selectedSubDid.id)
-                        #print(str(indexSubDid))
-                        #print(str(lenSubDid))
-                        #print(startIndexSubDid)
-                        #print(endIndexSubDid)
                         if did in mockupData:
                             bytesSubDid = mockupData[did][startIndexSubDid:endIndexSubDid+1]
                             bytesToDecode = bytearray.fromhex(''.join(bytesSubDid))
