@@ -159,23 +159,16 @@ class O3Eclass():
         
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
         if(did in self.dataIdentifiers):
-            print("Here comes the raw data from the device")
             open3e.Open3Ecodecs.flag_rawmode = True
             rawResponse = self.uds_client.read_data_by_identifier(did)
             rawDidData = rawResponse.service_data.values[did]
-            print(rawDidData)
-            print("Here ends the raw data from the device")
 
             open3e.Open3Ecodecs.flag_rawmode = raw
 
             selectedDid = self.dataIdentifiers[did]
-            print("DID " + str(did) + " exists in DID list. Let's go!")
-            print(selectedDid.id)
             
             if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
-                print("DID " + str(did) + " is complex. Let's go!")
-                numSubDids = len(selectedDid.subTypes)
-                print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                numSubDids = len(selectedDid.subTypes)              
                 
                 if (subDid > numSubDids-1 or subDid < 0):
                     raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
@@ -192,6 +185,10 @@ class O3Eclass():
                     
                     
                     if indexSubDid == subDid:
+                        print("DID: " + str(did))
+                        print("DID Name: " + str(selectedDid.id))
+                        print("Raw DID Data: " + str(rawDidData))
+                        print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
                         print("Sub DID: " + str(indexSubDid))
                         print("Sub DID Name: " + selectedSubDid.id)
                         print("Start Byte: " + str(startIndexSubDid))
@@ -202,10 +199,11 @@ class O3Eclass():
                         bytesToDecode = bytearray.fromhex(bytesSubDid)
                         decodedData = selectedSubDid.decode(bytesToDecode)
                         print("Sub DID Decoded Data:" + str(decodedData))
+                        return decodedData
                               
                     bytesProcessed += lenSubDid  
             else:
-                print("DID " + str(did) + " is not complex. Stop!")   
+                raise NotImplementedError("DID " + str(did) + " is not complex. Stop!")   
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
