@@ -198,7 +198,7 @@ class O3Eclass():
                         print("Sub DID Data:" + str(bytesSubDid))
                         bytesToDecode = bytearray.fromhex(bytesSubDid)
                         decodedData = selectedSubDid.decode(bytesToDecode)
-                        print("Sub DID Decoded Data:" + str(decodedData))
+                        print("Sub DID Decoded Data: " + str(did) + "." + str(indexSubDid) + ": " + str(decodedData))
                         return decodedData
                               
                     bytesProcessed += lenSubDid  
