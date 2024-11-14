@@ -168,14 +168,6 @@ class O3Eclass():
 
             open3e.Open3Ecodecs.flag_rawmode = raw
 
-            mockupData = dict()
-            mockupData[424] = ("F0","00","E6","00","1E","00","00","00","00")
-            mockupData[1100] = ("14","64","50")
-            mockupData[1101] = ("1E","64","1E")
-            mockupData[1102] = ("23","64","64")
-            mockupData[2612] = ("01","3A","02","3A","02","64","00")
-            mockupData[2613] = ("01","3A","02","3A","02","64","00")
-
             selectedDid = self.dataIdentifiers[did]
             print("DID " + str(did) + " exists in DID list. Let's go!")
             print(selectedDid.id)
@@ -197,20 +189,19 @@ class O3Eclass():
                     startIndexSubDid = bytesProcessed
                     endIndexSubDid = startIndexSubDid + lenSubDid-1
 
-                    print("Sub DID: " + str(indexSubDid))
-                    print("Start Index: " + str(startIndexSubDid))
-                    print("End Index: " + str(endIndexSubDid))
+                    
                     
                     if indexSubDid == subDid:
-                        print(selectedSubDid.id)
+                        print("Sub DID: " + str(indexSubDid))
+                        print("Sub DID Name: " + selectedSubDid.id)
+                        print("Start Byte: " + str(startIndexSubDid))
+                        print("End Byte: " + str(endIndexSubDid))
                         
                         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]
-                        print(type(bytesSubDid))
-                        print(bytesSubDid)
+                        print("Sub DID Data:" + str(bytesSubDid))
                         bytesToDecode = bytearray.fromhex(bytesSubDid)
-                        print(bytesSubDid)
                         decodedData = selectedSubDid.decode(bytesToDecode)
-                        print(decodedData)
+                        print("Sub DID Decoded Data:" + str(decodedData))
                               
                     bytesProcessed += lenSubDid  
             else:
