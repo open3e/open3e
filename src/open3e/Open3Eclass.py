@@ -199,14 +199,13 @@ class O3Eclass():
                     
                     if indexSubDid == subDid:
                         print(selectedSubDid.id)
-                        if did in mockupData:
-                            bytesSubDid = mockupData[did][startIndexSubDid:endIndexSubDid+1]
-                            bytesToDecode = bytearray.fromhex(''.join(bytesSubDid))
-                            print(bytesSubDid)
-                            decodedData = selectedSubDid.decode(bytesToDecode)
-                            print(decodedData)
-                        else:
-                            print("No mockup data for DID " + str(did) + ". Stop!")            
+                        
+                        bytesSubDid = rawDidData[startIndexSubDid:endIndexSubDid+1]
+                        bytesToDecode = bytearray.fromhex(''.join(bytesSubDid))
+                        print(bytesSubDid)
+                        decodedData = selectedSubDid.decode(bytesToDecode)
+                        print(decodedData)
+                              
                     bytesProcessed += lenSubDid  
             else:
                 print("DID " + str(did) + " is not complex. Stop!")   
