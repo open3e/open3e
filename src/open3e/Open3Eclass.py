@@ -250,6 +250,7 @@ class O3Eclass():
                 encodedDataHexString = binascii.hexlify(encodedData)
                 print(encodedData)
                 print(encodedDataHexString)
+                return encodedData
                 if len(bytesSubDid) == len(encodedData):
                     print(encodedDataHexString)
                 else:
