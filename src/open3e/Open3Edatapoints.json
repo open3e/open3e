@@ -22913,10 +22913,14 @@
     "args": {}
   },
   "1799": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "PrimaryCircuitCurrentTemperatureSetpoint",
-    "args": {}
+    "args": {
+      "scale": 10,
+      "signed": true,
+      "offset": 0
+    }
   },
   "1800": {
     "codec": "RawCodec",
@@ -34304,5 +34308,5 @@
       ]
     }
   },
-  "Version": "20241111"
+  "Version": "20241115"
 }
