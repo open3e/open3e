@@ -251,7 +251,7 @@ class O3Eclass():
                 print("New Raw Sub DID Data: " + encodedDataHexString)
                 
                 if len(bytesSubDid) == len(encodedDataHexString):
-                    if subDid == numSubDids-1 #if is last sub DID:
+                    if (subDid == numSubDids-1): #if is last sub DID
                         rawDidDataNew = rawDidData[0:startIndexSubDid] + encodedDataHexString
                     else:
                         awDidDataNew = rawDidData[0:startIndexSubDid] + encodedDataHexString + rawDidData[endIndexSubDid+1:]
