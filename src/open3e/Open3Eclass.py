@@ -232,6 +232,7 @@ class O3Eclass():
                     endIndexSubDid = startIndexSubDid + lenSubDid-1
    
                     if indexSubDid == subDid:
+                        matchingSubDid = selectedSubDid
                         print("DID: " + str(did))
                         print("DID Name: " + str(selectedDid.id))
                         print("Raw DID Data: " + str(rawDidData))
@@ -250,7 +251,7 @@ class O3Eclass():
 
                 # Step 3: Modify bytes in raw complete DID data
                 open3e.Open3Ecodecs.flag_rawmode = False
-                encodedData = selectedSubDid.encode(val)
+                encodedData = matchingSubDid.encode(val)
                 encodedDataHexString = encodedData.hex()
                 print("New Raw Sub DID Data: " + encodedDataHexString)
                 
