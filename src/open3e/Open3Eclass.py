@@ -257,9 +257,9 @@ class O3Eclass():
                     if (subDid == numSubDids-1): #if is last sub DID
                         rawDidDataNew = rawDidData[:startStringIndexSubDid] + encodedDataHexString
                     elif(subDid == 0): # if is first sub DID
-                        rawDidDataNew = encodedDataHexString + rawDidData[endStringIndexSubDid+1:]
+                        rawDidDataNew = encodedDataHexString + rawDidData[endStringIndexSubDid:]
                     else:
-                        rawDidDataNew = rawDidData[0:startStringIndexSubDid] + encodedDataHexString + rawDidData[endStringIndexSubDid+1:]
+                        rawDidDataNew = rawDidData[0:startStringIndexSubDid] + encodedDataHexString + rawDidData[endStringIndexSubDid:]
                     print("New Raw DID Data: " + rawDidDataNew)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
