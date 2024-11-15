@@ -247,12 +247,13 @@ class O3Eclass():
 
                 # Step 3: Modify bytes in raw complete DID data
                 encodedData = selectedSubDid.encode(val)
-                encodedDataHexString = binascii.hexlify(encodedData)
-                print(encodedData)
-                print(encodedDataHexString)
-                return encodedData
+                encodedDataHexString = encodedData.hex()
+                print("New Raw Sub DID Data: " + encodedDataHexString)
+                
                 if len(bytesSubDid) == len(encodedData):
-                    print(encodedDataHexString)
+                    rawDidDataNew = rawDidData
+                    rawDidDataNew[(2*startIndexSubDid):((endIndexSubDid+1)*2)] = encodedDataHexString
+                    print("New Raw DID Data: " + encodedDataHexString)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
 
