@@ -215,6 +215,7 @@ class O3Eclass():
             selectedDid = self.dataIdentifiers[did]
             if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType):
                 # Step 1: Read raw data of complete complex DID
+                numSubDids = len(selectedDid.subTypes)
                 open3e.Open3Ecodecs.flag_rawmode = True
                 rawResponse = self.uds_client.read_data_by_identifier(did)
                 rawDidData = rawResponse.service_data.values[did]
