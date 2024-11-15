@@ -172,8 +172,7 @@ class O3Eclass():
                 
                 if (subDid > numSubDids-1 or subDid < 0):
                     raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
-                
-                
+                 
                 bytesProcessed = 0
                 
                 for indexSubDid in range(0, numSubDids):
@@ -181,9 +180,7 @@ class O3Eclass():
                     lenSubDid = selectedSubDid.string_len
                     startIndexSubDid = bytesProcessed
                     endIndexSubDid = startIndexSubDid + lenSubDid-1
-
-                    
-                    
+   
                     if indexSubDid == subDid:
                         print("DID: " + str(did))
                         print("DID Name: " + str(selectedDid.id))
@@ -201,9 +198,9 @@ class O3Eclass():
                         print("Sub DID Decoded Data: " + str(did) + "." + str(indexSubDid) + ": " + str(decodedData))
                         return decodedData
                               
-                    bytesProcessed += lenSubDid  
+                    bytesProcessed += lenSubDid
             else:
-                raise NotImplementedError("DID " + str(did) + " is not complex. Stop!")   
+                raise NotImplementedError("DID " + str(did) + " is not complex.")   
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
@@ -213,9 +210,52 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
     
-    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool, useService77=False):
+    def writeByComplexDid(self, did:int, subDid:int, val, useService77=False):
         if(did in self.dataIdentifiers):
-            pass
+            selectedDid = self.dataIdentifiers[did]
+            if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType):
+                # Step 1: Read raw data of complete complex DID
+                open3e.Open3Ecodecs.flag_rawmode = True
+                rawResponse = self.uds_client.read_data_by_identifier(did)
+                rawDidData = rawResponse.service_data.values[did]
+                open3e.Open3Ecodecs.flag_rawmode = False
+
+                # Step 2: Find sub-DID bytes that need to be modified in DID
+                bytesProcessed = 0
+                bytesSubDid = ""
+                
+                for indexSubDid in range(0, numSubDids):
+                    selectedSubDid = selectedDid.subTypes[indexSubDid]
+                    lenSubDid = selectedSubDid.string_len
+                    startIndexSubDid = bytesProcessed
+                    endIndexSubDid = startIndexSubDid + lenSubDid-1
+   
+                    if indexSubDid == subDid:
+                        print("DID: " + str(did))
+                        print("DID Name: " + str(selectedDid.id))
+                        print("Raw DID Data: " + str(rawDidData))
+                        print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                        print("Sub DID: " + str(indexSubDid))
+                        print("Sub DID Name: " + selectedSubDid.id)
+                        print("Start Byte: " + str(startIndexSubDid))
+                        print("End Byte: " + str(endIndexSubDid))
+                        
+                        bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]
+                              
+                    bytesProcessed += lenSubDid
+
+                # Step 3: Modify bytes in raw complete DID data
+                encodedData = selectedSubDid.encode(val)
+                print(encodedData)
+                if len(bytesSubDid) == len(encodedData):
+                    print()
+                else:
+                    raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
+
+
+
+            else:
+                raise NotImplementedError("DID " + str(did) + " is not complex.") 
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
