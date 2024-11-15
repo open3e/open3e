@@ -240,8 +240,11 @@ class O3Eclass():
                         print("Sub DID Name: " + selectedSubDid.id)
                         print("Start Byte: " + str(startIndexSubDid))
                         print("End Byte: " + str(endIndexSubDid))
+
+                        startStringIndexSubDid = (2*startIndexSubDid)
+                        endStringIndexSubDid = ((endIndexSubDid+1)*2)
                         
-                        bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]
+                        bytesSubDid = rawDidData[startStringIndexSubDid:endStringIndexSubDid]
                               
                     bytesProcessed += lenSubDid
 
@@ -252,9 +255,11 @@ class O3Eclass():
                 
                 if len(bytesSubDid) == len(encodedDataHexString):
                     if (subDid == numSubDids-1): #if is last sub DID
-                        rawDidDataNew = rawDidData[0:startIndexSubDid*2] + encodedDataHexString
+                        rawDidDataNew = rawDidData[:startStringIndexSubDid] + encodedDataHexString
+                    elif(subDid == 0): # if is first sub DID
+                        rawDidDataNew = encodedDataHexString + rawDidData[endStringIndexSubDid+1:]
                     else:
-                        rawDidDataNew = rawDidData[0:startIndexSubDid*2] + encodedDataHexString + rawDidData[(endIndexSubDid+1)*2:]
+                        rawDidDataNew = rawDidData[0:startStringIndexSubDid] + encodedDataHexString + rawDidData[endStringIndexSubDid+1:]
                     print("New Raw DID Data: " + rawDidDataNew)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
