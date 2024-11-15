@@ -251,8 +251,10 @@ class O3Eclass():
                 print("New Raw Sub DID Data: " + encodedDataHexString)
                 
                 if len(bytesSubDid) == len(encodedDataHexString):
-                    rawDidDataNew = rawDidData
-                    rawDidDataNew[(2*startIndexSubDid):((endIndexSubDid+1)*2)] = encodedDataHexString
+                    if subDid == numSubDids-1 #if is last sub DID:
+                        rawDidDataNew = rawDidData[0:startIndexSubDid] + encodedDataHexString
+                    else:
+                        awDidDataNew = rawDidData[0:startIndexSubDid] + encodedDataHexString + rawDidData[endIndexSubDid+1:]
                     print("New Raw DID Data: " + rawDidDataNew)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
