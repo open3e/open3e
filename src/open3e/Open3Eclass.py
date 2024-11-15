@@ -249,6 +249,7 @@ class O3Eclass():
                     bytesProcessed += lenSubDid
 
                 # Step 3: Modify bytes in raw complete DID data
+                open3e.Open3Ecodecs.flag_rawmode = False
                 encodedData = selectedSubDid.encode(val)
                 encodedDataHexString = encodedData.hex()
                 print("New Raw Sub DID Data: " + encodedDataHexString)
