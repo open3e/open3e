@@ -206,7 +206,7 @@ def main():
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
-                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
+                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=dplist)
                             ecu77.writeByDid(didKey, didVal, raw=False, useService77=True)
                             ecu77.close() 
                             time.sleep(0.1)
@@ -217,7 +217,7 @@ def main():
                         for wd in cd['data']:
                             didKey = getint(wd[0])                  # key is submitted as numeric value
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
+                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=dplist)
                             ecu77.writeByDid(didKey, didVal, raw=True, useService77=True)
                             ecu77.close()
                             time.sleep(0.1)
@@ -304,7 +304,7 @@ def main():
     parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
     parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
     parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
-    parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
+#    parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
     parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
     parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
     parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
@@ -329,6 +329,8 @@ def main():
     if(args.ecuaddr != None):
         deftx = getint(args.ecuaddr)
 
+    dplist = None
+
     # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     if(args.config != None):
         if(args.config == 'dev'):  # short
@@ -346,9 +348,9 @@ def main():
             dicDevAddrs[device] = addrtx
     else:
         # only default device
-        ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
+        ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=dplist)
         dicEcus[deftx] = ecu
-        dicDevAddrs[args.dev] = deftx
+        dicDevAddrs[dplist] = deftx
         
 
     # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -411,7 +413,7 @@ def main():
                     didVal=str(writeArg[1]).replace("0x","")
                     if args.forcesid77:
                         print(f"write raw: {ecu}.{didkey} = {didVal}")
-                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=dplist)
                         succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
                         ecu77.close()
                     else:
@@ -425,7 +427,7 @@ def main():
                 didVal=json.loads(writeArg[1])
                 if args.forcesid77:
                     print(f"write: {ecu}.{didkey} = {didVal}")
-                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=dplist)
                     succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)
                     ecu77.close()
                 else:

@@ -56,45 +56,40 @@ class O3Eclass():
         self.dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])            
 
         # overlay dids if certain device is selected ~~~~~~~~~~~~~~~~~~
-        if(dev != None):  #!?! was kommt aus config.json?!?
-            if(dev != ''):  #!?! was kommt aus config.json?!?
-                if('.py' in dev):
-                    didmoduledev = import_path(dev)
-                else:
-                    module_name = "open3e.Open3Edatapoints" + dev.capitalize()
-                    didmoduledev = importlib.import_module(module_name)
+        if (dev != None) and ('.py' in dev):  #!?! was kommt aus config.json?!?
+            didmoduledev = import_path(dev)
 
                 # load datapoints for selected device
                 
-                dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
+            dataIdentifiersDev = didmoduledev.dataIdentifiers["dids"]
 
-                # add dids not in general but in device to general
-                for key,val in dataIdentifiersDev.items():
-                    if not (key in self.dataIdentifiers):
-                        if(val != None):
-                            self.dataIdentifiers[key] = val
+            # add dids not in general but in device to general
+            for key,val in dataIdentifiersDev.items():
+                if not (key in self.dataIdentifiers):
+                    if(val != None):
+                        self.dataIdentifiers[key] = val
 
-                # overlay device dids over general table 
-                lstpops = []
-                for itm in self.dataIdentifiers:
-                    if not (itm in dataIdentifiersDev):
-                        lstpops.append(itm)
-                    elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
-                        self.dataIdentifiers[itm] = dataIdentifiersDev[itm]
+            # overlay device dids over general table 
+            lstpops = []
+            for itm in self.dataIdentifiers:
+                if not (itm in dataIdentifiersDev):
+                    lstpops.append(itm)
+                elif not (dataIdentifiersDev[itm] is None):  # None means 'no change', nothing special
+                    self.dataIdentifiers[itm] = dataIdentifiersDev[itm]
 
-                # remove dids not existing with the device
-                for itm in lstpops:
-                    self.dataIdentifiers.pop(itm)
+            # remove dids not existing with the device
+            for itm in lstpops:
+                self.dataIdentifiers.pop(itm)
 
-                # debug only - see what we have now with this device
-                #for itm in dataIdentifiers:
-                #    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}, {dataIdentifiers[itm].string_len}")
+            # debug only - see what we have now with this device
+            #for itm in dataIdentifiers:
+            #    print(f"{itm}:{type(dataIdentifiers[itm]).__name__}, {dataIdentifiers[itm].string_len}")
 
-                # probably useless but to indicate that it's not required anymore
-                dataIdentifiersDev = None
-                didmoduledev = None
-                # for info
-                self.numdps = len(self.dataIdentifiers)
+            # probably useless but to indicate that it's not required anymore
+            dataIdentifiersDev = None
+            didmoduledev = None
+            # for info
+            self.numdps = len(self.dataIdentifiers)
 
             
         # select CAN / DoIP ~~~~~~~~~~~~~~~~~~
