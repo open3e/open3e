@@ -157,7 +157,7 @@ class O3Eclass():
         else:
             return self.readPure(did)
         
-    def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False):
+    def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
         if(did in self.dataIdentifiers):
             open3e.Open3Ecodecs.flag_rawmode = True
             rawResponse = self.uds_client.read_data_by_identifier(did)
@@ -210,7 +210,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
     
-    def writeByComplexDid(self, did:int, subDid:int, val, useService77=False):
+    def writeByComplexDid(self, did:int, subDid:int, val, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
             selectedDid = self.dataIdentifiers[did]
             if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType):
@@ -233,14 +233,15 @@ class O3Eclass():
    
                     if indexSubDid == subDid:
                         matchingSubDid = selectedSubDid
-                        print("DID: " + str(did))
-                        print("DID Name: " + str(selectedDid.id))
-                        print("Raw DID Data: " + str(rawDidData))
-                        print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
-                        print("Sub DID: " + str(indexSubDid))
-                        print("Sub DID Name: " + selectedSubDid.id)
-                        print("Start Byte: " + str(startIndexSubDid))
-                        print("End Byte: " + str(endIndexSubDid))
+                        if verbose:
+                            print("DID: " + str(did))
+                            print("DID Name: " + str(selectedDid.id))
+                            print("Raw DID Data: " + str(rawDidData))
+                            print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                            print("Sub DID: " + str(indexSubDid))
+                            print("Sub DID Name: " + selectedSubDid.id)
+                            print("Start Byte: " + str(startIndexSubDid))
+                            print("End Byte: " + str(endIndexSubDid))
 
                         startStringIndexSubDid = (2*startIndexSubDid)
                         endStringIndexSubDid = ((endIndexSubDid+1)*2)
@@ -262,7 +263,9 @@ class O3Eclass():
                         rawDidDataNew = encodedDataHexString + rawDidData[endStringIndexSubDid:]
                     else:
                         rawDidDataNew = rawDidData[0:startStringIndexSubDid] + encodedDataHexString + rawDidData[endStringIndexSubDid:]
-                    print("New Raw DID Data: " + rawDidDataNew)
+                    
+                    if verbose:
+                        print("New Raw DID Data: " + rawDidDataNew)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
 
