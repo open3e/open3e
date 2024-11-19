@@ -713,6 +713,7 @@ dataIdentifiers = {
         1763 : RawCodec(1, "LowGasPressureSignalInput"),
         1764 : RawCodec(1, "HighGasPressureSignalInput"),
         1765 : RawCodec(2, "CombustionAirInterlock"),
+        1766 : RawCodec(141, "ElectricalEnergyStorageModuleOperatingData"),
         1768 : O3EComplexType(9, "ReceiverTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         1769 : O3EComplexType(9, "PrimaryInletTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         1770 : O3EComplexType(9, "SecondaryOutletTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
@@ -1069,6 +1070,7 @@ dataIdentifiers = {
         2182 : RawCodec(15, "SupportedApartmentFeatures"),
         2183 : RawCodec(15, "ActivatedApartmentFeatures"),
         2184 : RawCodec(2, "BackupBoxTest"),
+        2185 : RawCodec(40, "BatteryStateOfChargeHistogram"),
         2188 : RawCodec(6, "PointOfCommonCouplingSetActivePowerTotal"),
         2189 : RawCodec(104, "EebusDeviceListTwo"),
         2190 : RawCodec(104, "EebusDeviceListThree"),
@@ -1202,6 +1204,7 @@ dataIdentifiers = {
         2332 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardFour", "DigitalInputConfigurations"),
         2333 : O3EComplexType(9, "EconomizerLiquidTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         2334 : O3EComplexType(9, "EvaporatorVaporTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
+        2335 : RawCodec(8, "BatteryModuleCoulombCounters"),
         2336 : O3EComplexType(9, "ControllerBoardTemperatureSensor",[O3EInt16(2, "Sensor1", scale=10), O3EInt16(2, "Sensor2", scale=10), RawCodec(5, "Unknown")]),
         2337 : RawCodec(1, "UltraLowNitroOxideStatusActive"),
         2338 : RawCodec(3, "HighLimitTestMode"),
@@ -1256,6 +1259,7 @@ dataIdentifiers = {
         2422 : RawCodec(2, "MixerTwoCircuitTemperatureOffsetCooling"),
         2423 : RawCodec(2, "MixerThreeCircuitTemperatureOffsetCooling"),
         2424 : RawCodec(2, "MixerFourCircuitTemperatureOffsetCooling"),
+        2425 : RawCodec(2, "BatteryModuleTypeId"),
         2426 : O3EComplexType(6, "MixerOneCircuitRoomEcoFunctionSettings",  [O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
         2427 : O3EComplexType(6, "MixerTwoCircuitRoomEcoFunctionSettings",  [O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
         2428 : O3EComplexType(6, "MixerThreeCircuitRoomEcoFunctionSettings",[O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
@@ -1396,6 +1400,9 @@ dataIdentifiers = {
         2583 : RawCodec(15, "OxygenProbeProcessValuesBurnerOne"),
         2584 : RawCodec(15, "OxygenProbeProcessValuesBurnerTwo"),
         2586 : RawCodec(2, "DigitalOutputCooling"),
+        2587 : RawCodec(5, "BatteryModuleWarrantyDataListLastEntry"),
+        2588 : RawCodec(197, "BatteryModuleWarrantyDataListOne"),
+        2589 : RawCodec(197, "BatteryModuleWarrantyDataListTwo"),
         2590 : RawCodec(8, "HeatPumpCommonSettingsHeating"),#+++
         2591 : RawCodec(8, "HeatPumpCommonSettingsCooling"),#+++
         2592 : RawCodec(4, "ExpansionValveTheoreticalSetpoint"),#+++
@@ -1589,6 +1596,9 @@ dataIdentifiers = {
         2985 : O3EInt16(2, "ExternalHeaterTemperatureSetpoint", signed=True),
         2986 : O3EByteVal(1, "ExternalHeaterOperationState"),
         2987 : O3EInt8(1, "RefrigerantCycleUnlock"),#+++
+        2996 : RawCodec(40, "BatteryAmbientTemperatureHistogramTwoPointFour"),
+        2997 : RawCodec(56, "BatteryTemperatureHistogramTwoPointFour"),
+        2998 : RawCodec(8, "HardwareSignalCheckCsc"),
         2999 : RawCodec(16, "ElectricalHeatersOperationHours"),
         3000 : RawCodec(115, "EcuResetInformationList"),
         3001 : RawCodec(196, "LowEvaporatingLowCondensingDriveDuration"),#+++
