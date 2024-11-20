@@ -211,7 +211,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
     
-    def writeByComplexDid(self, did:int, subDid:int, val, useService77=False, verbose=False):
+    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
             selectedDid = self.dataIdentifiers[did]
             if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType):
@@ -252,7 +252,7 @@ class O3Eclass():
                     bytesProcessed += lenSubDid
 
                 # Step 3: Modify bytes in raw complete DID data
-                open3e.Open3Ecodecs.flag_rawmode = False
+                open3e.Open3Ecodecs.flag_rawmode = raw
                 encodedData = matchingSubDid.encode(val)
                 encodedDataHexString = encodedData.hex()
                 
