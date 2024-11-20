@@ -180,22 +180,23 @@ class O3Eclass():
                     lenSubDid = selectedSubDid.string_len
                     startIndexSubDid = bytesProcessed
                     endIndexSubDid = startIndexSubDid + lenSubDid-1
-   
+                    
                     if indexSubDid == subDid:
-                        print("DID: " + str(did))
-                        print("DID Name: " + str(selectedDid.id))
-                        print("Raw DID Data: " + str(rawDidData))
-                        print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
-                        print("Sub DID: " + str(indexSubDid))
-                        print("Sub DID Name: " + selectedSubDid.id)
-                        print("Start Byte: " + str(startIndexSubDid))
-                        print("End Byte: " + str(endIndexSubDid))
-                        
-                        bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]
-                        print("Sub DID Data:" + str(bytesSubDid))
+                        bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
                         bytesToDecode = bytearray.fromhex(bytesSubDid)
                         decodedData = selectedSubDid.decode(bytesToDecode)
-                        print("Sub DID Decoded Data: " + str(did) + "." + str(indexSubDid) + ": " + str(decodedData))
+
+                        if verbose:
+                            print("DID: " + str(did))
+                            print("DID Name: " + str(selectedDid.id))
+                            print("Raw DID Data: " + str(rawDidData))
+                            print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                            print("Sub DID: " + str(indexSubDid))
+                            print("Sub DID Name: " + selectedSubDid.id)
+                            print("Start Byte: " + str(startIndexSubDid))
+                            print("End Byte: " + str(endIndexSubDid))
+                            print("Sub DID Data:" + str(bytesSubDid))
+                            print("Sub DID Decoded Data: " + str(did) + "." + str(indexSubDid) + ": " + str(decodedData))
                         return decodedData
                               
                     bytesProcessed += lenSubDid
@@ -254,7 +255,6 @@ class O3Eclass():
                 open3e.Open3Ecodecs.flag_rawmode = False
                 encodedData = matchingSubDid.encode(val)
                 encodedDataHexString = encodedData.hex()
-                print("New Raw Sub DID Data: " + encodedDataHexString)
                 
                 if len(bytesSubDid) == len(encodedDataHexString):
                     if (subDid == numSubDids-1): #if is last sub DID
@@ -265,6 +265,7 @@ class O3Eclass():
                         rawDidDataNew = rawDidData[0:startStringIndexSubDid] + encodedDataHexString + rawDidData[endStringIndexSubDid:]
                     
                     if verbose:
+                        print("New Raw Sub DID Data: " + encodedDataHexString)
                         print("New Raw DID Data: " + rawDidDataNew)
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
