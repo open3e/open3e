@@ -173,7 +173,7 @@ dataIdentifiers = {
         570 : RawCodec(1, "ResetStatistics"),
         572 : RawCodec(3, "SetDefaultValuesDate"),
         573 : RawCodec(2, "RemoteReset"),
-        575 : O3EByteVal(1, "SetDeliveryStatus"),#+++
+        575 : O3EByteVal(1, "SetDeliveryStatus"),
         576 : O3ESdate(3, "SetDeliveryStatusDate"),
         580 : O3ESoftVers(8, "SoftwareVersion"),
         581 : O3ESoftVers(8, "HardwareVersion"),
@@ -192,7 +192,7 @@ dataIdentifiers = {
         611 : O3EUtf8(40, "ProxyUser"),
         613 : O3EByteVal(1, "ProxyEnabled"),
         616 : O3EByteVal(1, "GatewayRemoteEnable"),
-        617 : O3EUtf8(72, "GatewayRemoteSsid"),#+++
+        617 : O3EUtf8(72, "GatewayRemoteSsid"),
         618 : O3EByteVal(1, "GatewayRemoteIpStatic"),
         619 : RawCodec(2, "GatewayRemoteScanNetwork"),
         620 : O3EByteVal(1, "DiagnosticServiceConnectionStatus"),
@@ -295,7 +295,7 @@ dataIdentifiers = {
         919 : O3EInt16(2, "OutsideTemperatureDampingFactor"),
         920 : RawCodec(36, "ThreeAxisAccelerationSensor"),
         921 : O3EComplexType(2, "ExternalAccessInProgress",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
-        922 : O3EInt16(2, "ProductionTraceabilityByte"),#+++
+        922 : O3EInt16(2, "ProductionTraceabilityByte"),
         923 : RawCodec(8, "RealTimeClockStatus"),
         924 : O3EByteVal(1, "StartUpWizard"),
         925 : RawCodec(5, "FillingVenting"),
@@ -375,7 +375,7 @@ dataIdentifiers = {
         1176 : O3EByteVal(1, "AcknowledgeWarningAlarmMessage"),
         1177 : O3EByteVal(1, "AcknowledgeServiceAlarmMessage"),
         1178 : O3EByteVal(1, "AcknowledgeErrorAlarmMessage"),
-        1181 : O3EInt8(1, "DisplayTestMode"),#+++
+        1181 : O3EInt8(1, "DisplayTestMode"),
         1190 : O3EInt16(4, "ThermalPower"),
         1191 : RawCodec(1, "FuelCellStatus"),
         1192 : O3EComplexType(10, "MixerOneCircuitFlowTemperatureMinimumMaximumLimit", [O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), RawCodec(6, "Unknown")]),
@@ -713,6 +713,7 @@ dataIdentifiers = {
         1763 : RawCodec(1, "LowGasPressureSignalInput"),
         1764 : RawCodec(1, "HighGasPressureSignalInput"),
         1765 : RawCodec(2, "CombustionAirInterlock"),
+        1766 : RawCodec(141, "ElectricalEnergyStorageModuleOperatingData"),
         1768 : O3EComplexType(9, "ReceiverTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         1769 : O3EComplexType(9, "PrimaryInletTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         1770 : O3EComplexType(9, "SecondaryOutletTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
@@ -742,7 +743,7 @@ dataIdentifiers = {
         1796 : RawCodec(2, "DomesticElectricalEnergyConsumption"),
         1797 : RawCodec(2, "PredictionDomesticElectricalEnergyConsumptionNextHour"),
         1798 : RawCodec(1, "FuelCellHoursTillNextStart"),
-        1799 : RawCodec(2, "PrimaryCircuitCurrentTemperatureSetpoint"),
+        1799 : O3EInt16(2, "PrimaryCircuitCurrentTemperatureSetpoint", scale = 10, signed=True),
         1800 : RawCodec(4, "ResetTimeSeriesRecordingGroups"),
         1801 : O3EComplexType(40, "ElectricalEnergyStorageEnergyTransferStatistic", [O3EInt32(4, "BatteryChargeToday", scale=1.0), O3EInt32(4, "BatteryChargeWeek", scale=1.0), O3EInt32(4, "BatteryChargeMonth", scale=1.0), O3EInt32(4, "BatteryChargeYear", scale=1.0), O3EInt32(4, "BatteryChargeTotal", scale=1.0), O3EInt32(4, "BatteryDischargeToday", scale=1.0), O3EInt32(4, "BatteryDischargeWeek", scale=1.0), O3EInt32(4, "BatteryDischargeMonth", scale=1.0), O3EInt32(4, "BatteryDischargeYear", scale=1.0), O3EInt32(4, "BatteryDischargeTotal", scale=1.0)]),
         1802 : O3EComplexType(80, "EnergyProductionPhotovoltaic", [O3EInt32(4, "PhotovoltaicProductionToday"), O3EInt32(4, "PhotovoltaicProductionWeek"), O3EInt32(4, "PhotovoltaicProductionMonth"), O3EInt32(4, "PhotovoltaicProductionYear"), O3EInt32(4, "PhotovoltaicProductionTotal"), O3EInt32(4, "PhotovoltaicProductionToday1"), O3EInt32(4, "PhotovoltaicProductionWeek1"), O3EInt32(4, "PhotovoltaicProductionMonth1"), O3EInt32(4, "PhotovoltaicProductionYear1"), O3EInt32(4, "PhotovoltaicProductionTotal1"), O3EInt32(4, "PhotovoltaicProductionToday2"), O3EInt32(4, "PhotovoltaicProductionWeek2"), O3EInt32(4, "PhotovoltaicProductionMonth2"), O3EInt32(4, "PhotovoltaicProductionYear2"), O3EInt32(4, "PhotovoltaicProductionTotal2"), O3EInt32(4, "PhotovoltaicProductionToday3"), O3EInt32(4, "PhotovoltaicProductionWeek3"), O3EInt32(4, "PhotovoltaicProductionMonth3"), O3EInt32(4, "PhotovoltaicProductionYear3"), O3EInt32(4, "PhotovoltaicProductionTotal3")]),
@@ -752,7 +753,7 @@ dataIdentifiers = {
         1810 : O3EComplexType(4, "ElectricalEnergyInverterPowerAc", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         1811 : RawCodec(1, "ElectricalEnergyStorageModuleSetUpCheck"),
         1812 : RawCodec(2, "PointOfCommonCouplingConfiguredEnergyMeter"),
-        1813 : O3EInt8(1, "EnhancedVapourInjectionValve"),#+++
+        1813 : O3EInt8(1, "EnhancedVapourInjectionValve"),
         1814 : RawCodec(5, "ReceiverLiquidLevelSensor"),
         1815 : O3EInt8(1, "ElectricalHeaterPhaseOne"),
         1816 : O3EInt8(1, "ElectricalHeaterPhaseTwo"),
@@ -782,8 +783,8 @@ dataIdentifiers = {
         1842 : O3EComplexType(2, "SecondaryCircuitFourThreeWayValve", [O3EInt8(1, "Setpoint", signed=True), O3EInt8(1, "CurrentPosition", signed=True)]), #250-xH Unit: %        
         1843 : RawCodec(2, "MixerOneCircuitHumidityProtection"),
         1844 : RawCodec(2, "MixerTwoCircuitHumidityProtection"),
-        1845 : RawCodec(36, "HeatPumpCompressorEnvelope"),#+++
-        1846 : RawCodec(4, "HeatPumpCompressorCurrentOperatingPoint"),#+++
+        1845 : RawCodec(36, "HeatPumpCompressorEnvelope"),
+        1846 : RawCodec(4, "HeatPumpCompressorCurrentOperatingPoint"),
         1847 : RawCodec(81, "CustomerDetailsExtensions"),
         1848 : RawCodec(27, "ApartmentOneProperty"),
         1849 : RawCodec(50, "ApartmentOneSetpoints"),
@@ -794,64 +795,64 @@ dataIdentifiers = {
         1854 : RawCodec(57, "ApartmentOneTimeScheduleFriday"),
         1855 : RawCodec(57, "ApartmentOneTimeScheduleSaturday"),
         1856 : RawCodec(57, "ApartmentOneTimeScheduleSunday"),
-        1884 : RawCodec(84, "RoomOneProperty"),#+++ (str, "name"); (o5cVar, "roomType"); (h5cVar, "lockMode"); (c5cVar, "roomControlAlgorithmType"); (list, "supplyChannel"); (list2, "roomDevices");
+        1884 : RawCodec(84, "RoomOneProperty"), # (str, "name"); (o5cVar, "roomType"); (h5cVar, "lockMode"); (c5cVar, "roomControlAlgorithmType"); (list, "supplyChannel"); (list2, "roomDevices");
         1885 : RawCodec(30, "RoomOneSetpoints"),
         1886 : RawCodec(46, "RoomOneCurrentValues"),
-        1887 : RawCodec(84, "RoomTwoProperty"),#+++
+        1887 : RawCodec(84, "RoomTwoProperty"),
         1888 : RawCodec(30, "RoomTwoSetpoints"),
         1889 : RawCodec(46, "RoomTwoCurrentValues"),
-        1890 : RawCodec(84, "RoomThreeProperty"),#+++
+        1890 : RawCodec(84, "RoomThreeProperty"),
         1891 : RawCodec(30, "RoomThreeSetpoints"),
         1892 : RawCodec(46, "RoomThreeCurrentValues"),
-        1893 : RawCodec(84, "RoomFourProperty"),#+++
+        1893 : RawCodec(84, "RoomFourProperty"),
         1894 : RawCodec(30, "RoomFourSetpoints"),
         1895 : RawCodec(46, "RoomFourCurrentValues"),
-        1896 : RawCodec(84, "RoomFiveProperty"),#+++
+        1896 : RawCodec(84, "RoomFiveProperty"),
         1897 : RawCodec(30, "RoomFiveSetpoints"),
         1898 : RawCodec(46, "RoomFiveCurrentValues"),
-        1899 : RawCodec(84, "RoomSixProperty"),#+++
+        1899 : RawCodec(84, "RoomSixProperty"),
         1900 : RawCodec(30, "RoomSixSetpoints"),
         1901 : RawCodec(46, "RoomSixCurrentValues"),
-        1902 : RawCodec(84, "RoomSevenProperty"),#+++
+        1902 : RawCodec(84, "RoomSevenProperty"),
         1903 : RawCodec(30, "RoomSevenSetpoints"),
         1904 : RawCodec(46, "RoomSevenCurrentValues"),
-        1905 : RawCodec(84, "RoomEightProperty"),#+++
+        1905 : RawCodec(84, "RoomEightProperty"),
         1906 : RawCodec(30, "RoomEightSetpoints"),
         1907 : RawCodec(46, "RoomEightCurrentValues"),
-        1908 : RawCodec(84, "RoomNineProperty"),#+++
+        1908 : RawCodec(84, "RoomNineProperty"),
         1909 : RawCodec(30, "RoomNineSetpoints"),
         1910 : RawCodec(46, "RoomNineCurrentValues"),
-        1911 : RawCodec(84, "RoomTenProperty"),#+++
+        1911 : RawCodec(84, "RoomTenProperty"),
         1912 : RawCodec(30, "RoomTenSetpoints"),
         1913 : RawCodec(46, "RoomTenCurrentValues"),
-        1914 : RawCodec(84, "RoomElevenProperty"),#+++
+        1914 : RawCodec(84, "RoomElevenProperty"),
         1915 : RawCodec(30, "RoomElevenSetpoints"),
         1916 : RawCodec(46, "RoomElevenCurrentValues"),
-        1917 : RawCodec(84, "RoomTwelveProperty"),#+++
+        1917 : RawCodec(84, "RoomTwelveProperty"),
         1918 : RawCodec(30, "RoomTwelveSetpoints"),
         1919 : RawCodec(46, "RoomTwelveCurrentValues"),
-        1920 : RawCodec(84, "RoomThirteenProperty"),#+++
+        1920 : RawCodec(84, "RoomThirteenProperty"),
         1921 : RawCodec(30, "RoomThirteenSetpoints"),
         1922 : RawCodec(46, "RoomThirteenCurrentValues"),
-        1923 : RawCodec(84, "RoomFourteenProperty"),#+++
+        1923 : RawCodec(84, "RoomFourteenProperty"),
         1924 : RawCodec(30, "RoomFourteenSetpoints"),
         1925 : RawCodec(46, "RoomFourteenCurrentValues"),
-        1926 : RawCodec(84, "RoomFifteenProperty"),#+++
+        1926 : RawCodec(84, "RoomFifteenProperty"),
         1927 : RawCodec(30, "RoomFifteenSetpoints"),
         1928 : RawCodec(46, "RoomFifteenCurrentValues"),
-        1929 : RawCodec(84, "RoomSixteenProperty"),#+++
+        1929 : RawCodec(84, "RoomSixteenProperty"),
         1930 : RawCodec(30, "RoomSixteenSetpoints"),
         1931 : RawCodec(46, "RoomSixteenCurrentValues"),
-        1932 : RawCodec(84, "RoomSeventeenProperty"),#+++
+        1932 : RawCodec(84, "RoomSeventeenProperty"),
         1933 : RawCodec(30, "RoomSeventeenSetpoints"),
         1934 : RawCodec(46, "RoomSeventeenCurrentValues"),
-        1935 : RawCodec(84, "RoomEighteenProperty"),#+++
+        1935 : RawCodec(84, "RoomEighteenProperty"),
         1936 : RawCodec(30, "RoomEighteenSetpoints"),
         1937 : RawCodec(46, "RoomEighteenCurrentValues"),
-        1938 : RawCodec(84, "RoomNineteenProperty"),#+++
+        1938 : RawCodec(84, "RoomNineteenProperty"),
         1939 : RawCodec(30, "RoomNineteenSetpoints"),
         1940 : RawCodec(46, "RoomNineteenCurrentValues"),
-        1941 : RawCodec(84, "RoomTwentyProperty"),#+++
+        1941 : RawCodec(84, "RoomTwentyProperty"),
         1942 : RawCodec(30, "RoomTwentySetpoints"),
         1943 : RawCodec(46, "RoomTwentyCurrentValues"),
         1944 : RawCodec(57, "RoomOneTimeScheduleMonday"),
@@ -994,66 +995,66 @@ dataIdentifiers = {
         2081 : RawCodec(57, "RoomTwentyTimeScheduleFriday"),
         2082 : RawCodec(57, "RoomTwentyTimeScheduleSaturday"),
         2083 : RawCodec(57, "RoomTwentyTimeScheduleSunday"),
-        2084 : RawCodec(84, "ZigBeeOneDeviceProperty"),#+++
-        2085 : RawCodec(13, "ZigBeeOneDeviceSetpoint"),#+++
-        2086 : RawCodec(57, "ZigBeeOneDeviceCurrentValues"),#+++
-        2087 : RawCodec(84, "ZigBeeTwoDeviceProperty"),#+++
-        2088 : RawCodec(13, "ZigBeeTwoDeviceSetpoint"),#+++
-        2089 : RawCodec(57, "ZigBeeTwoDeviceCurrentValues"),#+++
-        2090 : RawCodec(84, "ZigBeeThreeDeviceProperty"),#+++
-        2091 : RawCodec(13, "ZigBeeThreeDeviceSetpoint"),#+++
-        2092 : RawCodec(57, "ZigBeeThreeDeviceCurrentValues"),#+++
-        2093 : RawCodec(84, "ZigBeeFourDeviceProperty"),#+++
-        2094 : RawCodec(13, "ZigBeeFourDeviceSetpoint"),#+++
-        2095 : RawCodec(57, "ZigBeeFourDeviceCurrentValues"),#+++
-        2096 : RawCodec(84, "ZigBeeFiveDeviceProperty"),#+++
-        2097 : RawCodec(13, "ZigBeeFiveDeviceSetpoint"),#+++
-        2098 : RawCodec(57, "ZigBeeFiveDeviceCurrentValues"),#+++
-        2099 : RawCodec(84, "ZigBeeSixDeviceProperty"),#+++
-        2100 : RawCodec(13, "ZigBeeSixDeviceSetpoint"),#+++
-        2101 : RawCodec(57, "ZigBeeSixDeviceCurrentValues"),#+++
-        2102 : RawCodec(84, "ZigBeeSevenDeviceProperty"),#+++
-        2103 : RawCodec(13, "ZigBeeSevenDeviceSetpoint"),#+++
-        2104 : RawCodec(57, "ZigBeeSevenDeviceCurrentValues"),#+++
-        2105 : RawCodec(84, "ZigBeeEightDeviceProperty"),#+++
-        2106 : RawCodec(13, "ZigBeeEightDeviceSetpoint"),#+++
-        2107 : RawCodec(57, "ZigBeeEightDeviceCurrentValues"),#+++
-        2108 : RawCodec(84, "ZigBeeNineDeviceProperty"),#+++
-        2109 : RawCodec(13, "ZigBeeNineDeviceSetpoint"),#+++
-        2110 : RawCodec(57, "ZigBeeNineDeviceCurrentValues"),#+++
-        2111 : RawCodec(84, "ZigBeeTenDeviceProperty"),#+++
-        2112 : RawCodec(13, "ZigBeeTenDeviceSetpoint"),#+++
-        2113 : RawCodec(57, "ZigBeeTenDeviceCurrentValues"),#+++
-        2114 : RawCodec(84, "ZigBeeElevenDeviceProperty"),#+++
-        2115 : RawCodec(13, "ZigBeeElevenDeviceSetpoint"),#+++
-        2116 : RawCodec(57, "ZigBeeElevenDeviceCurrentValues"),#+++
-        2117 : RawCodec(84, "ZigBeeTwelveDeviceProperty"),#+++
-        2118 : RawCodec(13, "ZigBeeTwelveDeviceSetpoint"),#+++
-        2119 : RawCodec(57, "ZigBeeTwelveDeviceCurrentValues"),#+++
-        2120 : RawCodec(84, "ZigBeeThirteenDeviceProperty"),#+++
-        2121 : RawCodec(13, "ZigBeeThirteenDeviceSetpoint"),#+++
-        2122 : RawCodec(57, "ZigBeeThirteenDeviceCurrentValues"),#+++
-        2123 : RawCodec(84, "ZigBeeFourteenDeviceProperty"),#+++
-        2124 : RawCodec(13, "ZigBeeFourteenDeviceSetpoint"),#+++
-        2125 : RawCodec(57, "ZigBeeFourteenDeviceCurrentValues"),#+++
-        2126 : RawCodec(84, "ZigBeeFifteenDeviceProperty"),#+++
-        2127 : RawCodec(13, "ZigBeeFifteenDeviceSetpoint"),#+++
-        2128 : RawCodec(57, "ZigBeeFifteenDeviceCurrentValues"),#+++
-        2129 : RawCodec(84, "ZigBeeSixteenDeviceProperty"),#+++
-        2130 : RawCodec(13, "ZigBeeSixteenDeviceSetpoint"),#+++
-        2131 : RawCodec(57, "ZigBeeSixteenDeviceCurrentValues"),#+++
-        2132 : RawCodec(84, "ZigBeeSeventeenDeviceProperty"),#+++
-        2133 : RawCodec(13, "ZigBeeSeventeenDeviceSetpoint"),#+++
-        2134 : RawCodec(57, "ZigBeeSeventeenDeviceCurrentValues"),#+++
-        2135 : RawCodec(84, "ZigBeeEighteenDeviceProperty"),#+++
-        2136 : RawCodec(13, "ZigBeeEighteenDeviceSetpoint"),#+++
-        2137 : RawCodec(57, "ZigBeeEighteenDeviceCurrentValues"),#+++
-        2138 : RawCodec(84, "ZigBeeNineteenDeviceProperty"),#+++
-        2139 : RawCodec(13, "ZigBeeNineteenDeviceSetpoint"),#+++
-        2140 : RawCodec(57, "ZigBeeNineteenDeviceCurrentValues"),#+++
-        2141 : RawCodec(84, "ZigBeeTwentyDeviceProperty"),#+++
-        2142 : RawCodec(13, "ZigBeeTwentyDeviceSetpoint"),#+++
-        2143 : RawCodec(57, "ZigBeeTwentyDeviceCurrentValues"),#+++
+        2084 : RawCodec(84, "ZigBeeOneDeviceProperty"),
+        2085 : RawCodec(13, "ZigBeeOneDeviceSetpoint"),
+        2086 : RawCodec(57, "ZigBeeOneDeviceCurrentValues"),
+        2087 : RawCodec(84, "ZigBeeTwoDeviceProperty"),
+        2088 : RawCodec(13, "ZigBeeTwoDeviceSetpoint"),
+        2089 : RawCodec(57, "ZigBeeTwoDeviceCurrentValues"),
+        2090 : RawCodec(84, "ZigBeeThreeDeviceProperty"),
+        2091 : RawCodec(13, "ZigBeeThreeDeviceSetpoint"),
+        2092 : RawCodec(57, "ZigBeeThreeDeviceCurrentValues"),
+        2093 : RawCodec(84, "ZigBeeFourDeviceProperty"),
+        2094 : RawCodec(13, "ZigBeeFourDeviceSetpoint"),
+        2095 : RawCodec(57, "ZigBeeFourDeviceCurrentValues"),
+        2096 : RawCodec(84, "ZigBeeFiveDeviceProperty"),
+        2097 : RawCodec(13, "ZigBeeFiveDeviceSetpoint"),
+        2098 : RawCodec(57, "ZigBeeFiveDeviceCurrentValues"),
+        2099 : RawCodec(84, "ZigBeeSixDeviceProperty"),
+        2100 : RawCodec(13, "ZigBeeSixDeviceSetpoint"),
+        2101 : RawCodec(57, "ZigBeeSixDeviceCurrentValues"),
+        2102 : RawCodec(84, "ZigBeeSevenDeviceProperty"),
+        2103 : RawCodec(13, "ZigBeeSevenDeviceSetpoint"),
+        2104 : RawCodec(57, "ZigBeeSevenDeviceCurrentValues"),
+        2105 : RawCodec(84, "ZigBeeEightDeviceProperty"),
+        2106 : RawCodec(13, "ZigBeeEightDeviceSetpoint"),
+        2107 : RawCodec(57, "ZigBeeEightDeviceCurrentValues"),
+        2108 : RawCodec(84, "ZigBeeNineDeviceProperty"),
+        2109 : RawCodec(13, "ZigBeeNineDeviceSetpoint"),
+        2110 : RawCodec(57, "ZigBeeNineDeviceCurrentValues"),
+        2111 : RawCodec(84, "ZigBeeTenDeviceProperty"),
+        2112 : RawCodec(13, "ZigBeeTenDeviceSetpoint"),
+        2113 : RawCodec(57, "ZigBeeTenDeviceCurrentValues"),
+        2114 : RawCodec(84, "ZigBeeElevenDeviceProperty"),
+        2115 : RawCodec(13, "ZigBeeElevenDeviceSetpoint"),
+        2116 : RawCodec(57, "ZigBeeElevenDeviceCurrentValues"),
+        2117 : RawCodec(84, "ZigBeeTwelveDeviceProperty"),
+        2118 : RawCodec(13, "ZigBeeTwelveDeviceSetpoint"),
+        2119 : RawCodec(57, "ZigBeeTwelveDeviceCurrentValues"),
+        2120 : RawCodec(84, "ZigBeeThirteenDeviceProperty"),
+        2121 : RawCodec(13, "ZigBeeThirteenDeviceSetpoint"),
+        2122 : RawCodec(57, "ZigBeeThirteenDeviceCurrentValues"),
+        2123 : RawCodec(84, "ZigBeeFourteenDeviceProperty"),
+        2124 : RawCodec(13, "ZigBeeFourteenDeviceSetpoint"),
+        2125 : RawCodec(57, "ZigBeeFourteenDeviceCurrentValues"),
+        2126 : RawCodec(84, "ZigBeeFifteenDeviceProperty"),
+        2127 : RawCodec(13, "ZigBeeFifteenDeviceSetpoint"),
+        2128 : RawCodec(57, "ZigBeeFifteenDeviceCurrentValues"),
+        2129 : RawCodec(84, "ZigBeeSixteenDeviceProperty"),
+        2130 : RawCodec(13, "ZigBeeSixteenDeviceSetpoint"),
+        2131 : RawCodec(57, "ZigBeeSixteenDeviceCurrentValues"),
+        2132 : RawCodec(84, "ZigBeeSeventeenDeviceProperty"),
+        2133 : RawCodec(13, "ZigBeeSeventeenDeviceSetpoint"),
+        2134 : RawCodec(57, "ZigBeeSeventeenDeviceCurrentValues"),
+        2135 : RawCodec(84, "ZigBeeEighteenDeviceProperty"),
+        2136 : RawCodec(13, "ZigBeeEighteenDeviceSetpoint"),
+        2137 : RawCodec(57, "ZigBeeEighteenDeviceCurrentValues"),
+        2138 : RawCodec(84, "ZigBeeNineteenDeviceProperty"),
+        2139 : RawCodec(13, "ZigBeeNineteenDeviceSetpoint"),
+        2140 : RawCodec(57, "ZigBeeNineteenDeviceCurrentValues"),
+        2141 : RawCodec(84, "ZigBeeTwentyDeviceProperty"),
+        2142 : RawCodec(13, "ZigBeeTwentyDeviceSetpoint"),
+        2143 : RawCodec(57, "ZigBeeTwentyDeviceCurrentValues"),
         2144 : RawCodec(16, "PointOfCommonCouplingAcActiveCurrent"),
         2145 : RawCodec(38, "ObjectTopology"),
         2146 : RawCodec(8, "ZigBeeApartmentOneProperty"),
@@ -1061,7 +1062,7 @@ dataIdentifiers = {
         2158 : RawCodec(16, "ActivatedFeatures"),
         2159 : RawCodec(84, "ApartmentOneCurrentValues"),
         2164 : O3EByteVal(1, "DeviceDigitalInputSixValue"),
-        2165 : O3EInt8(1, "DevicePwmOutputThreeValue"),#+++
+        2165 : O3EInt8(1, "DevicePwmOutputThreeValue"),
         2166 : RawCodec(1, "MixerOneCircuitExternalHookupDemandInput"),
         2167 : RawCodec(1, "MixerTwoCircuitExternalHookupDemandInput"),
         2168 : RawCodec(1, "MixerThreeCircuitExternalHookupDemandInput"),
@@ -1069,6 +1070,7 @@ dataIdentifiers = {
         2182 : RawCodec(15, "SupportedApartmentFeatures"),
         2183 : RawCodec(15, "ActivatedApartmentFeatures"),
         2184 : RawCodec(2, "BackupBoxTest"),
+        2185 : RawCodec(40, "BatteryStateOfChargeHistogram"),
         2188 : RawCodec(6, "PointOfCommonCouplingSetActivePowerTotal"),
         2189 : RawCodec(104, "EebusDeviceListTwo"),
         2190 : RawCodec(104, "EebusDeviceListThree"),
@@ -1132,66 +1134,66 @@ dataIdentifiers = {
         2256 : O3EInt16(2, "DesiredThermalEnergyDefrost"),
         2257 : O3EInt16(2, "DomesticHotWaterTemperatureSetpointOffset", signed=True),
         2259 : O3EByteVal(1, "RefrigerationCircuitStatus"),
-        2260 : RawCodec(84, "ZigBeeTwentyOneDeviceProperty"),#+++
-        2261 : RawCodec(13, "ZigBeeTwentyOneDeviceSetpoint"),#+++
-        2262 : RawCodec(57, "ZigBeeTwentyOneDeviceCurrentValues"),#+++
-        2263 : RawCodec(84, "ZigBeeTwentyTwoDeviceProperty"),#+++
-        2264 : RawCodec(13, "ZigBeeTwentyTwoDeviceSetpoint"),#+++
-        2265 : RawCodec(57, "ZigBeeTwentyTwoDeviceCurrentValues"),#+++
-        2266 : RawCodec(84, "ZigBeeTwentyThreeDeviceProperty"),#+++
-        2267 : RawCodec(13, "ZigBeeTwentyThreeDeviceSetpoint"),#+++
-        2268 : RawCodec(57, "ZigBeeTwentyThreeDeviceCurrentValues"),#+++
-        2269 : RawCodec(84, "ZigBeeTwentyFourDeviceProperty"),#+++
-        2270 : RawCodec(13, "ZigBeeTwentyFourDeviceSetpoint"),#+++
-        2271 : RawCodec(57, "ZigBeeTwentyFourDeviceCurrentValues"),#+++
-        2272 : RawCodec(84, "ZigBeeTwentyFiveDeviceProperty"),#+++
-        2273 : RawCodec(13, "ZigBeeTwentyFiveDeviceSetpoint"),#+++
-        2274 : RawCodec(57, "ZigBeeTwentyFiveDeviceCurrentValues"),#+++
-        2275 : RawCodec(84, "ZigBeeTwentySixDeviceProperty"),#+++
-        2276 : RawCodec(13, "ZigBeeTwentySixDeviceSetpoint"),#+++
-        2277 : RawCodec(57, "ZigBeeTwentySixDeviceCurrentValues"),#+++
-        2278 : RawCodec(84, "ZigBeeTwentySevenDeviceProperty"),#+++
-        2279 : RawCodec(13, "ZigBeeTwentySevenDeviceSetpoint"),#+++
-        2280 : RawCodec(57, "ZigBeeTwentySevenDeviceCurrentValues"),#+++
-        2281 : RawCodec(84, "ZigBeeTwentyEightDeviceProperty"),#+++
-        2282 : RawCodec(13, "ZigBeeTwentyEightDeviceSetpoint"),#+++
-        2283 : RawCodec(57, "ZigBeeTwentyEightDeviceCurrentValues"),#+++
-        2284 : RawCodec(84, "ZigBeeTwentyNineDeviceProperty"),#+++
-        2285 : RawCodec(13, "ZigBeeTwentyNineDeviceSetpoint"),#+++
-        2286 : RawCodec(57, "ZigBeeTwentyNineDeviceCurrentValues"),#+++
-        2287 : RawCodec(84, "ZigBeeThirtyDeviceProperty"),#+++
-        2288 : RawCodec(13, "ZigBeeThirtyDeviceSetpoint"),#+++
-        2289 : RawCodec(57, "ZigBeeThirtyDeviceCurrentValues"),#+++
-        2290 : RawCodec(84, "ZigBeeThirtyOneDeviceProperty"),#+++
-        2291 : RawCodec(13, "ZigBeeThirtyOneDeviceSetpoint"),#+++
-        2292 : RawCodec(57, "ZigBeeThirtyOneDeviceCurrentValues"),#+++
-        2293 : RawCodec(84, "ZigBeeThirtyTwoDeviceProperty"),#+++
-        2294 : RawCodec(13, "ZigBeeThirtyTwoDeviceSetpoint"),#+++
-        2295 : RawCodec(57, "ZigBeeThirtyTwoDeviceCurrentValues"),#+++
-        2296 : RawCodec(84, "ZigBeeThirtyThreeDeviceProperty"),#+++
-        2297 : RawCodec(13, "ZigBeeThirtyThreeDeviceSetpoint"),#+++
-        2298 : RawCodec(57, "ZigBeeThirtyThreeDeviceCurrentValues"),#+++
-        2299 : RawCodec(84, "ZigBeeThirtyFourDeviceProperty"),#+++
-        2300 : RawCodec(13, "ZigBeeThirtyFourDeviceSetpoint"),#+++
-        2301 : RawCodec(57, "ZigBeeThirtyFourDeviceCurrentValues"),#+++
-        2302 : RawCodec(84, "ZigBeeThirtyFiveDeviceProperty"),#+++
-        2303 : RawCodec(13, "ZigBeeThirtyFiveDeviceSetpoint"),#+++
-        2304 : RawCodec(57, "ZigBeeThirtyFiveDeviceCurrentValues"),#+++
-        2305 : RawCodec(84, "ZigBeeThirtySixDeviceProperty"),#+++
-        2306 : RawCodec(13, "ZigBeeThirtySixDeviceSetpoint"),#+++
-        2307 : RawCodec(57, "ZigBeeThirtySixDeviceCurrentValues"),#+++
-        2308 : RawCodec(84, "ZigBeeThirtySevenDeviceProperty"),#+++
-        2309 : RawCodec(13, "ZigBeeThirtySevenDeviceSetpoint"),#+++
-        2310 : RawCodec(57, "ZigBeeThirtySevenDeviceCurrentValues"),#+++
-        2311 : RawCodec(84, "ZigBeeThirtyEightDeviceProperty"),#+++
-        2312 : RawCodec(13, "ZigBeeThirtyEightDeviceSetpoint"),#+++
-        2313 : RawCodec(57, "ZigBeeThirtyEightDeviceCurrentValues"),#+++
-        2314 : RawCodec(84, "ZigBeeThirtyNineDeviceProperty"),#+++
-        2315 : RawCodec(13, "ZigBeeThirtyNineDeviceSetpoint"),#+++
-        2316 : RawCodec(57, "ZigBeeThirtyNineDeviceCurrentValues"),#+++
-        2317 : RawCodec(84, "ZigBeeFourtyDeviceProperty"),#+++
-        2318 : RawCodec(13, "ZigBeeFourtyDeviceSetpoint"),#+++
-        2319 : RawCodec(57, "ZigBeeFourtyDeviceCurrentValues"),#+++
+        2260 : RawCodec(84, "ZigBeeTwentyOneDeviceProperty"),
+        2261 : RawCodec(13, "ZigBeeTwentyOneDeviceSetpoint"),
+        2262 : RawCodec(57, "ZigBeeTwentyOneDeviceCurrentValues"),
+        2263 : RawCodec(84, "ZigBeeTwentyTwoDeviceProperty"),
+        2264 : RawCodec(13, "ZigBeeTwentyTwoDeviceSetpoint"),
+        2265 : RawCodec(57, "ZigBeeTwentyTwoDeviceCurrentValues"),
+        2266 : RawCodec(84, "ZigBeeTwentyThreeDeviceProperty"),
+        2267 : RawCodec(13, "ZigBeeTwentyThreeDeviceSetpoint"),
+        2268 : RawCodec(57, "ZigBeeTwentyThreeDeviceCurrentValues"),
+        2269 : RawCodec(84, "ZigBeeTwentyFourDeviceProperty"),
+        2270 : RawCodec(13, "ZigBeeTwentyFourDeviceSetpoint"),
+        2271 : RawCodec(57, "ZigBeeTwentyFourDeviceCurrentValues"),
+        2272 : RawCodec(84, "ZigBeeTwentyFiveDeviceProperty"),
+        2273 : RawCodec(13, "ZigBeeTwentyFiveDeviceSetpoint"),
+        2274 : RawCodec(57, "ZigBeeTwentyFiveDeviceCurrentValues"),
+        2275 : RawCodec(84, "ZigBeeTwentySixDeviceProperty"),
+        2276 : RawCodec(13, "ZigBeeTwentySixDeviceSetpoint"),
+        2277 : RawCodec(57, "ZigBeeTwentySixDeviceCurrentValues"),
+        2278 : RawCodec(84, "ZigBeeTwentySevenDeviceProperty"),
+        2279 : RawCodec(13, "ZigBeeTwentySevenDeviceSetpoint"),
+        2280 : RawCodec(57, "ZigBeeTwentySevenDeviceCurrentValues"),
+        2281 : RawCodec(84, "ZigBeeTwentyEightDeviceProperty"),
+        2282 : RawCodec(13, "ZigBeeTwentyEightDeviceSetpoint"),
+        2283 : RawCodec(57, "ZigBeeTwentyEightDeviceCurrentValues"),
+        2284 : RawCodec(84, "ZigBeeTwentyNineDeviceProperty"),
+        2285 : RawCodec(13, "ZigBeeTwentyNineDeviceSetpoint"),
+        2286 : RawCodec(57, "ZigBeeTwentyNineDeviceCurrentValues"),
+        2287 : RawCodec(84, "ZigBeeThirtyDeviceProperty"),
+        2288 : RawCodec(13, "ZigBeeThirtyDeviceSetpoint"),
+        2289 : RawCodec(57, "ZigBeeThirtyDeviceCurrentValues"),
+        2290 : RawCodec(84, "ZigBeeThirtyOneDeviceProperty"),
+        2291 : RawCodec(13, "ZigBeeThirtyOneDeviceSetpoint"),
+        2292 : RawCodec(57, "ZigBeeThirtyOneDeviceCurrentValues"),
+        2293 : RawCodec(84, "ZigBeeThirtyTwoDeviceProperty"),
+        2294 : RawCodec(13, "ZigBeeThirtyTwoDeviceSetpoint"),
+        2295 : RawCodec(57, "ZigBeeThirtyTwoDeviceCurrentValues"),
+        2296 : RawCodec(84, "ZigBeeThirtyThreeDeviceProperty"),
+        2297 : RawCodec(13, "ZigBeeThirtyThreeDeviceSetpoint"),
+        2298 : RawCodec(57, "ZigBeeThirtyThreeDeviceCurrentValues"),
+        2299 : RawCodec(84, "ZigBeeThirtyFourDeviceProperty"),
+        2300 : RawCodec(13, "ZigBeeThirtyFourDeviceSetpoint"),
+        2301 : RawCodec(57, "ZigBeeThirtyFourDeviceCurrentValues"),
+        2302 : RawCodec(84, "ZigBeeThirtyFiveDeviceProperty"),
+        2303 : RawCodec(13, "ZigBeeThirtyFiveDeviceSetpoint"),
+        2304 : RawCodec(57, "ZigBeeThirtyFiveDeviceCurrentValues"),
+        2305 : RawCodec(84, "ZigBeeThirtySixDeviceProperty"),
+        2306 : RawCodec(13, "ZigBeeThirtySixDeviceSetpoint"),
+        2307 : RawCodec(57, "ZigBeeThirtySixDeviceCurrentValues"),
+        2308 : RawCodec(84, "ZigBeeThirtySevenDeviceProperty"),
+        2309 : RawCodec(13, "ZigBeeThirtySevenDeviceSetpoint"),
+        2310 : RawCodec(57, "ZigBeeThirtySevenDeviceCurrentValues"),
+        2311 : RawCodec(84, "ZigBeeThirtyEightDeviceProperty"),
+        2312 : RawCodec(13, "ZigBeeThirtyEightDeviceSetpoint"),
+        2313 : RawCodec(57, "ZigBeeThirtyEightDeviceCurrentValues"),
+        2314 : RawCodec(84, "ZigBeeThirtyNineDeviceProperty"),
+        2315 : RawCodec(13, "ZigBeeThirtyNineDeviceSetpoint"),
+        2316 : RawCodec(57, "ZigBeeThirtyNineDeviceCurrentValues"),
+        2317 : RawCodec(84, "ZigBeeFourtyDeviceProperty"),
+        2318 : RawCodec(13, "ZigBeeFourtyDeviceSetpoint"),
+        2319 : RawCodec(57, "ZigBeeFourtyDeviceCurrentValues"),
         2320 : O3EByteVal(1, "DomesticHotWaterStatus"),# 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow",[O3EInt16(2, "ActualFlow", scale=1.0), O3EInt16(2, "Unknown", scale=1.0)]),
@@ -1202,6 +1204,7 @@ dataIdentifiers = {
         2332 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardFour", "DigitalInputConfigurations"),
         2333 : O3EComplexType(9, "EconomizerLiquidTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         2334 : O3EComplexType(9, "EvaporatorVaporTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
+        2335 : RawCodec(8, "BatteryModuleCoulombCounters"),
         2336 : O3EComplexType(9, "ControllerBoardTemperatureSensor",[O3EInt16(2, "Sensor1", scale=10), O3EInt16(2, "Sensor2", scale=10), RawCodec(5, "Unknown")]),
         2337 : RawCodec(1, "UltraLowNitroOxideStatusActive"),
         2338 : RawCodec(3, "HighLimitTestMode"),
@@ -1211,7 +1214,7 @@ dataIdentifiers = {
         2342 : O3EInt32(4, "NominalThermalCapacityHeating", scale = 1, signed=True),
         2343 : O3EInt32(4, "NominalThermalCapacityCooling", scale = 1, signed=True),
         2344 : RawCodec(1, "CombustionAirInterlockSettings"),
-        2345 : O3EInt8(1, "CompressorSetpointPercent"),#+++
+        2345 : O3EInt8(1, "CompressorSetpointPercent"),
         2346 : O3EInt8(1, "CompressorSpeedPercent"),
         2348 : RawCodec(8, "PhotovoltaicsActivePowerLimitationEnergyManagementSystem"),
         2349 : RawCodec(8, "PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem"),
@@ -1227,12 +1230,12 @@ dataIdentifiers = {
         2372 : O3EComplexType(2, "VentilationControllerOperationState",[RawCodec(1, "Unknown1"), RawCodec(1, "Unknown2")]),
         2373 : RawCodec(2, "VentilationAirVolumeFlowBalancingOffset"),
         2374 : O3EByteVal(1, "VentilationExternalLockFunctionSetting"),
-        2375 : RawCodec(7, "NarrowBandInternetOfThingsConfiguration"),#+++
-        2376 : RawCodec(132, "NarrowBandInternetOfThingsRadio"),#+++
-        2377 : RawCodec(45, "EvolvedUniversalTerrestrialRadioAccessDataLinkInfo"),#+++
-        2378 : RawCodec(48, "EvolvedUniversalTerrestrialRadioAccessNeighborCells"),#+++
-        2379 : RawCodec(22, "EvolvedUniversalTerrestrialRadioAccessServingCellInfo"),#+++
-        2380 : RawCodec(17, "EvolvedUniversalTerrestrialRadioAccessServingCellMeasurements"),#+++
+        2375 : RawCodec(7, "NarrowBandInternetOfThingsConfiguration"),
+        2376 : RawCodec(132, "NarrowBandInternetOfThingsRadio"),
+        2377 : RawCodec(45, "EvolvedUniversalTerrestrialRadioAccessDataLinkInfo"),
+        2378 : RawCodec(48, "EvolvedUniversalTerrestrialRadioAccessNeighborCells"),
+        2379 : RawCodec(22, "EvolvedUniversalTerrestrialRadioAccessServingCellInfo"),
+        2380 : RawCodec(17, "EvolvedUniversalTerrestrialRadioAccessServingCellMeasurements"),
         2382 : RawCodec(2, "PaddleSwitch"),
         2403 : O3EInt8(1, "BypassOperationLevel"),
         2404 : O3EComplexType(6, "BivalenceControlMode", [O3EByteVal(1, "OperationMode"), O3EInt16(2, "BivalenceControlTemperature", scale=10, signed=True), O3EInt16(2, "BivalenceControlAlternativeTemperature", scale=10, signed=True), O3EByteVal(1, "ControlMode")]),
@@ -1256,11 +1259,12 @@ dataIdentifiers = {
         2422 : RawCodec(2, "MixerTwoCircuitTemperatureOffsetCooling"),
         2423 : RawCodec(2, "MixerThreeCircuitTemperatureOffsetCooling"),
         2424 : RawCodec(2, "MixerFourCircuitTemperatureOffsetCooling"),
+        2425 : RawCodec(2, "BatteryModuleTypeId"),
         2426 : O3EComplexType(6, "MixerOneCircuitRoomEcoFunctionSettings",  [O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
         2427 : O3EComplexType(6, "MixerTwoCircuitRoomEcoFunctionSettings",  [O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
         2428 : O3EComplexType(6, "MixerThreeCircuitRoomEcoFunctionSettings",[O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
         2429 : O3EComplexType(6, "MixerFourCircuitRoomEcoFunctionSettings", [O3EBool(1,"State"), O3EInt16(2, "OutsideTemperatureLimit", scale=10.0, signed=True),O3EByteVal(1,"Unknown"), O3EInt16(2, "RoomTemperatureLimit", scale=10.0, signed=True)]),
-        2442 : O3EInt8(1, "HeatPumpFrostProtection"),#+++
+        2442 : O3EInt8(1, "HeatPumpFrostProtection"),
         2444 : O3EInt8(1, "LogLevelEmbbededApplication"),
         2445 : RawCodec(2, "SupplementalHeatEngineConfiguration"),
         2446 : RawCodec(4, "HmiWakeupTrigger"),
@@ -1348,11 +1352,11 @@ dataIdentifiers = {
         2529 : O3EComplexType(24, "GeneratedCoolingOutput", [O3EInt32(4, "Today", scale=10), O3EInt32(4, "Past7Days", scale=10), O3EInt32(4, "CurrentMonth", scale=10), O3EInt32(4, "PastMonth", scale=10), O3EInt32(4, "CurrentYear", scale=10), O3EInt32(4, "PastYear", scale=10)]), 
         2533 : RawCodec(27, "PowerGridCodeSettingsNormSix"),
         #2534 : O3EList(181, "BusTopologyMatrixSix", [O3EInt8(1, "Count"), O3EComplexType(36, "TopologyElement",[O3EByteVal(1, "NodeID"), O3EEnum(1, "BusType", "BusTypes"), O3EByteVal(1, "DeviceProperty"), O3EByteVal(1, "DeviceFunction"), O3ESoftVers(8, "SW-Version"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")])]),
-        2534 : RawCodec(181, "BusTopologyMatrixSix"),#+++
-        2535 : RawCodec(181, "BusTopologyMatrixSeven"),#+++
-        2536 : RawCodec(181, "BusTopologyMatrixEight"),#+++
-        2537 : RawCodec(181, "BusTopologyMatrixNine"),#+++
-        2538 : RawCodec(181, "BusTopologyMatrixTen"),#+++
+        2534 : RawCodec(181, "BusTopologyMatrixSix"),
+        2535 : RawCodec(181, "BusTopologyMatrixSeven"),
+        2536 : RawCodec(181, "BusTopologyMatrixEight"),
+        2537 : RawCodec(181, "BusTopologyMatrixNine"),
+        2538 : RawCodec(181, "BusTopologyMatrixTen"),
         2539 : RawCodec(40, "AlternatingCurrentEnergyStatistic"),
         2540 : RawCodec(6, "NoiseReductionSettings"),
         2541 : O3EComplexType(4, "SupplyAirVolumeFlowConfigurationLimit",[O3EInt16(2, "Minimum", scale=1.0), O3EInt16(2, "Maximum", scale=1.0)]),
@@ -1367,38 +1371,41 @@ dataIdentifiers = {
         2551 : RawCodec(6, "FlameBurnerTwo"),
         2552 : RawCodec(2, "ModulationCurrentValueBurnerTwo"),
         2553 : RawCodec(12, "HeatEngineStatisticalBurnerTwo"),
-        2554 : RawCodec(62, "CellularModemIdentification"),#+++
+        2554 : RawCodec(62, "CellularModemIdentification"),
         2555 : RawCodec(4, "ElectricalPowerSetPoint"),
         2556 : RawCodec(4, "ElectricalEnergyRemainingCapacity"),
         2557 : O3EByteVal(1, "HeatPumpState"),
         2558 : RawCodec(3, "HeatPumpSupportedStates"),
         2559 : RawCodec(2, "VentilationFanModbusId"),
         2560 : O3EByteVal(1, "SmartGridFeatureSelection"),
-        2563 : RawCodec(91, "ZigBeeDeviceDecoupleList"),#+++
+        2563 : RawCodec(91, "ZigBeeDeviceDecoupleList"),
         2564 : RawCodec(1, "HydraulicFlapState"),
         2566 : O3EInt32(4, "VentilationSupplyFanRuntime", scale=1.0),
         2567 : O3EInt32(4, "VentilationExhaustFanRuntime", scale=1.0),
-        2568 : O3EInt8(1, "RefrigerantType"),#+++
+        2568 : O3EInt8(1, "RefrigerantType"),
         2569 : O3EInt16(2, "CompressorSpeedRps", scale = 10),
-        2570 : O3EInt16(2, "CompressorModulType"),#+++
-        2571 : O3EInt16(2, "CompressorSuctionSuperheat"),#+++
+        2570 : O3EInt16(2, "CompressorModulType"),
+        2571 : O3EInt16(2, "CompressorSuctionSuperheat"),
         2572 : RawCodec(4, "ActualCompressorInletMassflow"),
         2573 : RawCodec(2, "CompressorOnTimer"),
         2574 : O3EInt16(8, "NominalPowerElectricalHeater", scale = 1),
-        2575 : O3EInt16(2, "RefrigerationCycleApplicationState"),#+++
+        2575 : O3EInt16(2, "RefrigerationCycleApplicationState"),
         2576 : RawCodec(2, "FuelCellTestModeOne"),
         2577 : RawCodec(6, "FuelCellTestModeTwo"),
-        2578 : O3EInt8(1, "RefrigerationCircuitDesiredOperatingMode"),#+++
-        2579 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureHeating"),#+++
+        2578 : O3EInt8(1, "RefrigerationCircuitDesiredOperatingMode"),
+        2579 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureHeating"),
         2580 : O3EInt8(2, "CompressorSetpointRps", signed=True), #250xH Unit RpS
-        2581 : O3EInt16(2, "CompressorCalculatedSetpointRps"),#+++
+        2581 : O3EInt16(2, "CompressorCalculatedSetpointRps"),
         2582 : RawCodec(2, "CompressorOffTimer"),
         2583 : RawCodec(15, "OxygenProbeProcessValuesBurnerOne"),
         2584 : RawCodec(15, "OxygenProbeProcessValuesBurnerTwo"),
         2586 : RawCodec(2, "DigitalOutputCooling"),
-        2590 : RawCodec(8, "HeatPumpCommonSettingsHeating"),#+++
-        2591 : RawCodec(8, "HeatPumpCommonSettingsCooling"),#+++
-        2592 : RawCodec(4, "ExpansionValveTheoreticalSetpoint"),#+++
+        2587 : RawCodec(5, "BatteryModuleWarrantyDataListLastEntry"),
+        2588 : RawCodec(197, "BatteryModuleWarrantyDataListOne"),
+        2589 : RawCodec(197, "BatteryModuleWarrantyDataListTwo"),
+        2590 : RawCodec(8, "HeatPumpCommonSettingsHeating"),
+        2591 : RawCodec(8, "HeatPumpCommonSettingsCooling"),
+        2592 : RawCodec(4, "ExpansionValveTheoreticalSetpoint"),
         2593 : RawCodec(181, "ProductMatrix"),
         2594 : RawCodec(124, "ElectricalPreHeaterMonthMatrix"),
         2595 : RawCodec(96, "ElectricalPreHeaterYearMatrix"),
@@ -1406,8 +1413,8 @@ dataIdentifiers = {
         2599 : O3EByteVal(1, "VentilationFanAssignmentSwitch"),
         2600 : RawCodec(2, "ElectricalHeaterActivation"),
         2601 : RawCodec(2, "ElectricalHeaterVentilationConfiguration"),
-        2602 : RawCodec(10, "PrimaryHeatExchangerStatus"),#+++
-        2603 : RawCodec(4, "PrimaryHeatExchangerCommonSettings"),#+++
+        2602 : RawCodec(10, "PrimaryHeatExchangerStatus"),
+        2603 : RawCodec(4, "PrimaryHeatExchangerCommonSettings"),
         2604 : O3EByteVal(1, "LevelSwitchActivation"),
         2605 : O3EComplexType(4, "QuickModeRuntime",[O3EInt16(2, "NoiseReduced", scale=1.0), O3EInt16(2, "Intensive", scale=1.0)]),
         2606 : O3EByteVal(1, "ExternalTriggerActivation"),
@@ -1418,21 +1425,21 @@ dataIdentifiers = {
         2611 : RawCodec(4, "NominalThermalCapacityIndoorUnit"),
         2612 : O3EComplexType(7, "PrimarySourceCommonSettingsHeating", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2613 : O3EComplexType(7, "PrimarySourceCommonSettingsCooling", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
-        2621 : O3EInt16(2, "MaximumOperatingPressureActualTemperatureSetpoint"),#+++
+        2621 : O3EInt16(2, "MaximumOperatingPressureActualTemperatureSetpoint"),
         2622 : O3EInt16(9, "SeasonalCoefficientOfPerformaceHeating"),
         2623 : O3EInt16(9, "SeasonalEnergyEfficiencyRatioCooling"),
         2624 : O3EInt16(9, "SeasonalCoefficientOfPerformaceDomesticHotWater"),
         2625 : O3EInt16(9, "SeasonalCoefficientOfPerformaceHeatingAndDomesticHotWater"),
         2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale = 1),
-        2627 : O3EInt16(2, "CompressorStartUpTimer"),#+++
+        2627 : O3EInt16(2, "CompressorStartUpTimer"),
         2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1),
-#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),#+++
+#        2630 : RawCodec(4, "CompressorMinMaxSpeedHeating"),
         2630 : O3EComplexType(4, "CompressorMinMaxSpeedHeating", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
-#        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),#+++
+#        2631 : RawCodec(4, "CompressorMinMaxSpeedCooling"),
         2631 : O3EComplexType(4, "CompressorMinMaxSpeedCooling", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max", scale =10, signed = "True")]), #250SH Unit RpS
-#        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),#+++
+#        2632 : RawCodec(4, "CompressorMinMaxSpeedDefrost"),
         2632 : O3EComplexType(4, "CompressorMinMaxSpeedDefrost", [O3EInt16(2, "Min", scale =10, signed = "True"), O3EInt16(2, "Max")]), #250SH Unit RpS
-        2633 : RawCodec(12, "MaxSpeedNoiseReductionMode"),#+++
+        2633 : RawCodec(12, "MaxSpeedNoiseReductionMode"),
         2634 : O3EByteVal(1, "NoiseReductionMode"),
         2635 : RawCodec(8, "BurnerProcessDataFlags"),
         2636 : RawCodec(8, "BurnerTwoProcessDataFlags"),
@@ -1447,12 +1454,12 @@ dataIdentifiers = {
         2744 : O3EInt8(1, "DiagnosticSecondaryFourThreeWayValve"),
         2745 : O3EInt8(1, "DiagnosticHydraulicFilterContamination"),
         2746 : O3EInt8(1, "DiagnosticHydraulicSafetyValve"),
-        2748 : O3EInt8(1, "DiagnosticControlledLowPressureShutDown"),#+++
-        2749 : O3EInt8(1, "DiagnosticControlledHighPressureShutDown"),#+++
+        2748 : O3EInt8(1, "DiagnosticControlledLowPressureShutDown"),
+        2749 : O3EInt8(1, "DiagnosticControlledHighPressureShutDown"),
         2750 : O3EInt8(1, "DiagnosticHydraulicTemperatureSensors"),
-        2751 : O3EInt8(1, "DiagnosticElectronicExpansionValve"),#+++
-        2752 : O3EInt8(1, "DiagnosticFanOperation"),#+++
-        2753 : O3EInt8(1, "DiagnosticHeatExchangerConstraints"),#+++
+        2751 : O3EInt8(1, "DiagnosticElectronicExpansionValve"),
+        2752 : O3EInt8(1, "DiagnosticFanOperation"),
+        2753 : O3EInt8(1, "DiagnosticHeatExchangerConstraints"),
         2758 : RawCodec(1, "GasPressureSwitchErrorReaction"),
         2759 : RawCodec(24, "EnergyRecoveredCrossHeatExchanger"),
         2760 : RawCodec(24, "EnergyOwnConsumption"),
@@ -1488,8 +1495,8 @@ dataIdentifiers = {
         2804 : RawCodec(151, "InverterSelfTestResultTwo"),
         2805 : RawCodec(151, "InverterSelfTestResultThree"),
         2806 : O3EComplexType(2, "RefrigerationCircuitOperationMode",[O3EByteVal(1,"Mode"),O3EByteVal(1,"State")]),
-        2807 : RawCodec(9, "InverterHousingTemperature"),#+++
-        2808 : RawCodec(9, "InverterInternalPowerModuleTemperature"),#+++
+        2807 : RawCodec(9, "InverterHousingTemperature"),
+        2808 : RawCodec(9, "InverterInternalPowerModuleTemperature"),
         2809 : RawCodec(1, "PumpMinSpeedConfiguration"),
         2810 : RawCodec(1, "CentralHeatingPumpFeedbackSignalHandlingMode"),
         2826 : RawCodec(40, "FuelCellNetworkSystemProtectionErrorHistory"),
@@ -1498,65 +1505,65 @@ dataIdentifiers = {
         2829 : RawCodec(20, "ProductIdentification"),
         2830 : RawCodec(1, "EmergencyMode"),
         2831 : O3EInt16(2, "BivalenceControlAlternativeTemperature", scale=10, signed=True),
-        2832 : RawCodec(4, "BaseHeaterTimer"),#+++
-        2833 : O3EInt8(1, "BaseHeaterTimerMode"),#+++
-        2834 : O3EInt16(2, "BaseHeaterTimerDuration"),#+++
-        2835 : O3EInt16(2, "BaseHeaterTemperatureThreshold"),#+++
-        2836 : O3EInt16(2, "SecondaryHeatExchangerMinimumVolumeFlowThreshold"),#+++
-        2837 : O3EInt16(2, "SecondaryHeatExchangerOptimumTemperatureSpreadExponent"),#+++
-        2838 : RawCodec(4, "SecondaryHeatExchangerOptimumTemperatureSpreadHeating"),#+++
-        2839 : RawCodec(4, "SecondaryHeatExchangerOptimumTemperatureSpreadCooling"),#+++
-        2840 : O3EInt16(2, "SecondaryHeatExchangerOptimumVolumeFlowDefrost"),#+++
-        2842 : O3EInt16(2, "SecondaryHeatExchangerHxSubcooling"),#+++
-        2843 : O3EInt16(2, "SecondaryHeatExchangerMinimumVolumeFlow"),#+++
-        2844 : O3EInt16(2, "SecondaryHeatExchangerMinimumOutletTemperature"),#+++
-        2845 : O3EInt16(2, "SecondaryHeatExchangerMaximumOutletTemperature"),#+++
-        2847 : RawCodec(8, "CrankCaseHeaterStatistics"),#+++
-        2848 : O3EInt16(2, "CrankCaseHeaterTemperatureStatistics"),#+++
+        2832 : RawCodec(4, "BaseHeaterTimer"),
+        2833 : O3EInt8(1, "BaseHeaterTimerMode"),
+        2834 : O3EInt16(2, "BaseHeaterTimerDuration"),
+        2835 : O3EInt16(2, "BaseHeaterTemperatureThreshold"),
+        2836 : O3EInt16(2, "SecondaryHeatExchangerMinimumVolumeFlowThreshold"),
+        2837 : O3EInt16(2, "SecondaryHeatExchangerOptimumTemperatureSpreadExponent"),
+        2838 : RawCodec(4, "SecondaryHeatExchangerOptimumTemperatureSpreadHeating"),
+        2839 : RawCodec(4, "SecondaryHeatExchangerOptimumTemperatureSpreadCooling"),
+        2840 : O3EInt16(2, "SecondaryHeatExchangerOptimumVolumeFlowDefrost"),
+        2842 : O3EInt16(2, "SecondaryHeatExchangerHxSubcooling"),
+        2843 : O3EInt16(2, "SecondaryHeatExchangerMinimumVolumeFlow"),
+        2844 : O3EInt16(2, "SecondaryHeatExchangerMinimumOutletTemperature"),
+        2845 : O3EInt16(2, "SecondaryHeatExchangerMaximumOutletTemperature"),
+        2847 : RawCodec(8, "CrankCaseHeaterStatistics"),
+        2848 : O3EInt16(2, "CrankCaseHeaterTemperatureStatistics"),
         2849 : RawCodec(27, "CrankCaseHeaterOnTimer"),
-        2850 : RawCodec(3, "CrankCaseHeaterSensorErrorType"),#+++
-        2851 : O3EInt16(2, "PreStartDuration"),#+++
-        2852 : O3EInt8(1, "FanDuctHeater"),#+++
+        2850 : RawCodec(3, "CrankCaseHeaterSensorErrorType"),
+        2851 : O3EInt16(2, "PreStartDuration"),
+        2852 : O3EInt8(1, "FanDuctHeater"),
         2853 : O3EInt16(2, "ExternalHeaterTimeIntegralThershold", scale=10, signed=False),
         2855 : O3EComplexType(3, "MixerOneCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2856 : O3EComplexType(3, "MixerTwoCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2857 : O3EComplexType(3, "MixerThreeCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2858 : O3EComplexType(3, "MixerFourCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
-        2874 : O3EInt16(2, "PrimarySourceRpsOne"),#+++
-        2875 : O3EInt16(2, "PrimarySourceRpsTwo"),#+++
-        2876 : O3EInt16(2, "PrimaryPumpCommonSetpoint"),#+++
-        2877 : O3EInt16(2, "SuctionSuperheatSetpoint"),#+++
-        2878 : O3EInt16(2, "SubcoolingSetpoint"),#+++
+        2874 : O3EInt16(2, "PrimarySourceRpsOne"),
+        2875 : O3EInt16(2, "PrimarySourceRpsTwo"),
+        2876 : O3EInt16(2, "PrimaryPumpCommonSetpoint"),
+        2877 : O3EInt16(2, "SuctionSuperheatSetpoint"),
+        2878 : O3EInt16(2, "SubcoolingSetpoint"),
         2879 : RawCodec(2, "MixerOneCircuitHeatingBlocked"),
         2880 : RawCodec(2, "MixerTwoCircuitHeatingBlocked"),
-        2881 : RawCodec(4, "ExpansionValveOneTimer"),#+++
-        2882 : RawCodec(4, "ExpansionValveTwoTimer"),#+++
-        2883 : O3EInt16(2, "ExpansionValveMaximumOperatingPressureTemperatureSetpoint"),#+++
-        2884 : O3EInt16(2, "ExpansionValveOneStatus"),#+++
-        2885 : O3EInt16(2, "ExpansionValveTwoStatus"),#+++
-        2886 : O3EInt16(2, "RefrigerantCyclePostStopDuration"),#+++
-        2887 : O3EInt16(2, "RefrigerantCycleAlarmPauseDuration"),#+++
-        2888 : O3EInt16(2, "RefrigerantCyclePumpdownStoppingDelay"),#+++
-        2889 : RawCodec(6, "RefrigerantCycleTimers"),#+++
-        2890 : O3EInt16(2, "RefrigerantCyclePumpdownHoldTimer"),#+++
-        2891 : RawCodec(6, "RefrigerantCycleDefrostTimers"),#+++
-        2892 : O3EInt16(2, "RefrigerantCycleTransitionToHeatingTimer"),#+++
-        2893 : O3EInt16(2, "RefrigerantCycleTransitionToCoolingTimer"),#+++
+        2881 : RawCodec(4, "ExpansionValveOneTimer"),
+        2882 : RawCodec(4, "ExpansionValveTwoTimer"),
+        2883 : O3EInt16(2, "ExpansionValveMaximumOperatingPressureTemperatureSetpoint"),
+        2884 : O3EInt16(2, "ExpansionValveOneStatus"),
+        2885 : O3EInt16(2, "ExpansionValveTwoStatus"),
+        2886 : O3EInt16(2, "RefrigerantCyclePostStopDuration"),
+        2887 : O3EInt16(2, "RefrigerantCycleAlarmPauseDuration"),
+        2888 : O3EInt16(2, "RefrigerantCyclePumpdownStoppingDelay"),
+        2889 : RawCodec(6, "RefrigerantCycleTimers"),
+        2890 : O3EInt16(2, "RefrigerantCyclePumpdownHoldTimer"),
+        2891 : RawCodec(6, "RefrigerantCycleDefrostTimers"),
+        2892 : O3EInt16(2, "RefrigerantCycleTransitionToHeatingTimer"),
+        2893 : O3EInt16(2, "RefrigerantCycleTransitionToCoolingTimer"),
         2894 : O3EByteVal(1, "RefrigerantCycleAvailability"),
-        2895 : RawCodec(5, "PrimaryPumpSettings"),#+++
-        2896 : O3EInt8(1, "PrimaryPumpOneStatus"),#+++
-        2897 : O3EInt8(1, "PrimaryPumpTwoStatus"),#+++
-        2908 : O3EInt8(1, "InverterModuleType"),#+++
-        2909 : RawCodec(4, "CompressorMinMaxRequestedSecondaryReturnTemperatureCooling"),#+++
-        2910 : RawCodec(4, "CompressorMinMaxRequestedSecondaryReturnTemperaturePreStartDefrost"),#+++
-        2911 : O3EInt16(2, "CompressorMaximumRequestedSecondaryReturnTempDefrost"),#+++
-        2912 : O3EInt16(2, "CompressorMaximumDischargeTemperature"),#+++
-        2913 : O3EInt16(2, "CompressorMinimumAllowedSecondaryOutletTemperatureHeating"),#+++
-        2914 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureCooling"),#+++
-        2915 : O3EInt16(2, "CompressorMaximumCondensingPressure"),#+++
-        2916 : O3EInt16(2, "CompressorMaximumEvaporatingPressure"),#+++
-        2917 : O3EInt16(2, "CompressorMinimumEvaporatingPressureHeating"),#+++
-        2918 : O3EInt16(2, "CompressorMinimumEvaporatingPressureCooling"),#+++
+        2895 : RawCodec(5, "PrimaryPumpSettings"),
+        2896 : O3EInt8(1, "PrimaryPumpOneStatus"),
+        2897 : O3EInt8(1, "PrimaryPumpTwoStatus"),
+        2908 : O3EInt8(1, "InverterModuleType"),
+        2909 : RawCodec(4, "CompressorMinMaxRequestedSecondaryReturnTemperatureCooling"),
+        2910 : RawCodec(4, "CompressorMinMaxRequestedSecondaryReturnTemperaturePreStartDefrost"),
+        2911 : O3EInt16(2, "CompressorMaximumRequestedSecondaryReturnTempDefrost"),
+        2912 : O3EInt16(2, "CompressorMaximumDischargeTemperature"),
+        2913 : O3EInt16(2, "CompressorMinimumAllowedSecondaryOutletTemperatureHeating"),
+        2914 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureCooling"),
+        2915 : O3EInt16(2, "CompressorMaximumCondensingPressure"),
+        2916 : O3EInt16(2, "CompressorMaximumEvaporatingPressure"),
+        2917 : O3EInt16(2, "CompressorMinimumEvaporatingPressureHeating"),
+        2918 : O3EInt16(2, "CompressorMinimumEvaporatingPressureCooling"),
         2920 : RawCodec(2, "ExternalHeaterSpecification"),
         2921 : RawCodec(2, "DiagnosticHydraulicFilterIntervalSettings"),
         2922 : RawCodec(2, "DiagnosticHydraulicFilterIntervalTemporalSettings"),
@@ -1564,16 +1571,16 @@ dataIdentifiers = {
         2924 : RawCodec(4, "DiagnosticHydraulicFilterContaminationSettings"),
         2925 : RawCodec(2, "DiagnosticMonitoringPressurePeaksSettings"),
         2926 : RawCodec(6, "DiagnosticMonitoringPressureDropSettings"),
-        2927 : O3EInt8(1, "DiagnosticElectronicExpansionValveSettings"),#+++
-        2928 : O3EInt16(2, "DiagnosticHeatExchangerConstraintsSettings"),#+++
-        2929 : O3EInt8(1, "DiagnosticRefrigerantCircuitPressureSensors"),#+++
-        2930 : O3EInt8(1, "DiagnosticRefrigerantCircuitFourTwoWayValve"),#+++
-        2931 : O3EInt8(1, "DiagnosticRefrigerantCircuitTemperatureSensors"),#+++
+        2927 : O3EInt8(1, "DiagnosticElectronicExpansionValveSettings"),
+        2928 : O3EInt16(2, "DiagnosticHeatExchangerConstraintsSettings"),
+        2929 : O3EInt8(1, "DiagnosticRefrigerantCircuitPressureSensors"),
+        2930 : O3EInt8(1, "DiagnosticRefrigerantCircuitFourTwoWayValve"),
+        2931 : O3EInt8(1, "DiagnosticRefrigerantCircuitTemperatureSensors"),
         2932 : RawCodec(4, "TimeCounterSinceLastReset"),
         2936 : RawCodec(3, "ElectricalEnergyStorageSystemState"),
         2937 : RawCodec(2, "SystemPumpConfiguration"),
         2938 : RawCodec(4, "CascadeSystemPump"),
-        2939 : O3EInt16(2, "PrimaryHeatExchangerLowEvaporatingTemperatureAlarmDelay"),#+++
+        2939 : O3EInt16(2, "PrimaryHeatExchangerLowEvaporatingTemperatureAlarmDelay"),
 #        2940 : RawCodec(3, "ExternalHeaterDelayTimer"), # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
         2940 : O3EComplexType(3, "ExternalHeaterDelayTimer",[O3EInt8(1, "SwitchOnDelay", scale=1.0), O3EInt8(1, "MinRunTime", scale=1.0), O3EInt8(1, "SwitchOffDelay", scale=1.0)]),        
         2942 : RawCodec(137, "ListOfLayerSettingServiceDevices"),
@@ -1583,22 +1590,25 @@ dataIdentifiers = {
         2947 : RawCodec(5, "SleepModePrevention"),
         2952 : RawCodec(137, "ListOfLayerSettingServiceDevicesTwo"),
         2953 : RawCodec(10, "CascadeSystemConfigurationArray"),
-        2956 : O3EInt8(1, "DeviceDigitalInputEightValue"),#+++
-        2957 : O3EInt8(1, "DeviceDigitalInputNineValue"),#+++
+        2956 : O3EInt8(1, "DeviceDigitalInputEightValue"),
+        2957 : O3EInt8(1, "DeviceDigitalInputNineValue"),
         2969 : O3EByteVal(1, "ElectronicControlUnitSafeStateStatus"),
         2985 : O3EInt16(2, "ExternalHeaterTemperatureSetpoint", signed=True),
         2986 : O3EByteVal(1, "ExternalHeaterOperationState"),
-        2987 : O3EInt8(1, "RefrigerantCycleUnlock"),#+++
+        2987 : O3EInt8(1, "RefrigerantCycleUnlock"),
+        2996 : RawCodec(40, "BatteryAmbientTemperatureHistogramTwoPointFour"),
+        2997 : RawCodec(56, "BatteryTemperatureHistogramTwoPointFour"),
+        2998 : RawCodec(8, "HardwareSignalCheckCsc"),
         2999 : RawCodec(16, "ElectricalHeatersOperationHours"),
         3000 : RawCodec(115, "EcuResetInformationList"),
-        3001 : RawCodec(196, "LowEvaporatingLowCondensingDriveDuration"),#+++
-        3002 : RawCodec(196, "MidEvaporatingLowCondensingDriveDuration"),#+++
-        3003 : RawCodec(196, "HighEvaporatingLowCondensingDriveDuration"),#+++
-        3004 : RawCodec(196, "LowEvaporatingHighCondensingDriveDuration"),#+++
-        3005 : RawCodec(196, "MidEvaporatingHighCondensingDriveDuration"),#+++
-        3006 : RawCodec(196, "HighEvaporatingHighCondensingDriveDuration"),#+++
-        3008 : O3EInt16(2, "FanDuctHeaterOnDuration"),#+++
-        3009 : RawCodec(4, "FanDuctHeaterOnTimer"),#+++
+        3001 : RawCodec(196, "LowEvaporatingLowCondensingDriveDuration"),
+        3002 : RawCodec(196, "MidEvaporatingLowCondensingDriveDuration"),
+        3003 : RawCodec(196, "HighEvaporatingLowCondensingDriveDuration"),
+        3004 : RawCodec(196, "LowEvaporatingHighCondensingDriveDuration"),
+        3005 : RawCodec(196, "MidEvaporatingHighCondensingDriveDuration"),
+        3006 : RawCodec(196, "HighEvaporatingHighCondensingDriveDuration"),
+        3008 : O3EInt16(2, "FanDuctHeaterOnDuration"),
+        3009 : RawCodec(4, "FanDuctHeaterOnTimer"),
         3013 : RawCodec(2, "MixerHybridThreeWayValvePositionPercent"),
         3014 : O3EComplexType(9, "OutdoorMiddleCoilTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
         3015 : O3EComplexType(9, "HeatSinkTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Unknown")]),
@@ -1620,10 +1630,10 @@ dataIdentifiers = {
         3041 : RawCodec(57, "ElectricityPriceTimeScheduleFriday"),
         3042 : RawCodec(57, "ElectricityPriceTimeScheduleSaturday"),
         3043 : RawCodec(57, "ElectricityPriceTimeScheduleSunday"),
-        3056 : O3EInt8(1, "NarrowBandInternetOfThingsNetworkStatus"),#+++
-        3057 : O3EInt8(1, "NarrowBandInternetOfThingsCloudStatus"),#+++
+        3056 : O3EInt8(1, "NarrowBandInternetOfThingsNetworkStatus"),
+        3057 : O3EInt8(1, "NarrowBandInternetOfThingsCloudStatus"),
         3066 : RawCodec(4, "DomesticHotWaterHighDemandDetection"),
-        3067 : RawCodec(9, "AirVolumeFlowValue"),#+++
+        3067 : RawCodec(9, "AirVolumeFlowValue"),
         3068 : RawCodec(2, "DomesticHotWaterTemperatureSetpointComfort"),
         3069 : O3EByteVal(1, "DomesticHotWaterSensorForDemand"),
         3070 : O3EByteVal(1, "BufferTargetOperationMode"),
@@ -1647,19 +1657,19 @@ dataIdentifiers = {
         3106 : O3EComplexType(4, "BufferMinimumMaximumSetTemperature",[O3EInt16(2, "BufferMin", scale=10.0, signed=True), O3EInt16(2, "BufferMax", scale=10.0, signed=True)]),        
         3107 : RawCodec(7, "BatteryModuleExchangeAssistent"),
         3108 : RawCodec(9, "PhotovoltaicsActivePowerLimitationRampRate"),
-        3109 : RawCodec(8, "PrimaryHeatExchangerBaseHeaterStatistical"),#+++
+        3109 : RawCodec(8, "PrimaryHeatExchangerBaseHeaterStatistical"),
         3113 : RawCodec(8, "DeviceDigitalOutputOneValueStatistical"),
         3114 : RawCodec(8, "DeviceDigitalOutputTwoValueStatistical"),
-        3115 : RawCodec(8, "DeviceDigitalOutputThreeValueStatistical"),#+++
-        3116 : RawCodec(8, "DeviceDigitalOutputFourValueStatistical"),#+++
-        3117 : RawCodec(8, "DeviceDigitalOutputFiveValueStatistical"),#+++
-        3119 : RawCodec(8, "RefrigerantCircuitFourWayValveStatistical"),#+++
-        3120 : RawCodec(8, "CompressorCrankCaseHeaterStatistical"),#+++
-        3129 : RawCodec(8, "FanDuctHeaterStatistical"),#+++
+        3115 : RawCodec(8, "DeviceDigitalOutputThreeValueStatistical"),
+        3116 : RawCodec(8, "DeviceDigitalOutputFourValueStatistical"),
+        3117 : RawCodec(8, "DeviceDigitalOutputFiveValueStatistical"),
+        3119 : RawCodec(8, "RefrigerantCircuitFourWayValveStatistical"),
+        3120 : RawCodec(8, "CompressorCrankCaseHeaterStatistical"),
+        3129 : RawCodec(8, "FanDuctHeaterStatistical"),
         3134 : RawCodec(8, "DomesticHotWaterCirculationPumpStatistical"), 
-        3146 : RawCodec(8, "ElectricalHeaterPhaseOneStatistical"),#+++
-        3147 : RawCodec(8, "ElectricalHeaterPhaseTwoStatistical"),#+++
-        3148 : RawCodec(8, "ElectricalHeaterPhaseThreeStatistical"),#+++
+        3146 : RawCodec(8, "ElectricalHeaterPhaseOneStatistical"),
+        3147 : RawCodec(8, "ElectricalHeaterPhaseTwoStatistical"),
+        3148 : RawCodec(8, "ElectricalHeaterPhaseThreeStatistical"),
         3155 : RawCodec(5, "DomesticHotWaterShiftLoadPumpStatus"),
         3156 : O3EByteVal(1, "DomesticHotWaterShiftLoadPumpType"),
         3190 : O3EByteVal(1, "RefrigerantCircuitFourWayValvePosition"),
