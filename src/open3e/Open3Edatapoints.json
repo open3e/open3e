@@ -22473,6 +22473,12 @@
     "id": "CombustionAirInterlock",
     "args": {}
   },
+  "1766": {
+    "codec": "RawCodec",
+    "len": 141,
+    "id": "ElectricalEnergyStorageModuleOperatingData",
+    "args": {}
+  },
   "1768": {
     "codec": "O3EComplexType",
     "len": 9,
@@ -25488,6 +25494,12 @@
     "id": "BackupBoxTest",
     "args": {}
   },
+  "2185": {
+    "codec": "RawCodec",
+    "len": 40,
+    "id": "BatteryStateOfChargeHistogram",
+    "args": {}
+  },
   "2188": {
     "codec": "RawCodec",
     "len": 6,
@@ -26569,6 +26581,12 @@
       ]
     }
   },
+  "2335": {
+    "codec": "RawCodec",
+    "len": 8,
+    "id": "BatteryModuleCoulombCounters",
+    "args": {}
+  },
   "2336": {
     "codec": "O3EComplexType",
     "len": 9,
@@ -27191,6 +27209,12 @@
     "codec": "RawCodec",
     "len": 2,
     "id": "MixerFourCircuitTemperatureOffsetCooling",
+    "args": {}
+  },
+  "2425": {
+    "codec": "RawCodec",
+    "len": 2,
+    "id": "BatteryModuleTypeId",
     "args": {}
   },
   "2426": {
@@ -31444,6 +31468,24 @@
     "id": "DigitalOutputCooling",
     "args": {}
   },
+  "2587": {
+    "codec": "RawCodec",
+    "len": 5,
+    "id": "BatteryModuleWarrantyDataListLastEntry",
+    "args": {}
+  },
+  "2588": {
+    "codec": "RawCodec",
+    "len": 197,
+    "id": "BatteryModuleWarrantyDataListOne",
+    "args": {}
+  },
+  "2589": {
+    "codec": "RawCodec",
+    "len": 197,
+    "id": "BatteryModuleWarrantyDataListTwo",
+    "args": {}
+  },
   "2590": {
     "codec": "RawCodec",
     "len": 8,
@@ -33224,6 +33266,24 @@
       "offset": 0
     }
   },
+  "2996": {
+    "codec": "RawCodec",
+    "len": 40,
+    "id": "BatteryAmbientTemperatureHistogramTwoPointFour",
+    "args": {}
+  },
+  "2997": {
+    "codec": "RawCodec",
+    "len": 56,
+    "id": "BatteryTemperatureHistogramTwoPointFour",
+    "args": {}
+  },
+  "2998": {
+    "codec": "RawCodec",
+    "len": 8,
+    "id": "HardwareSignalCheckCsc",
+    "args": {}
+  },
   "2999": {
     "codec": "RawCodec",
     "len": 16,
@@ -34308,5 +34368,5 @@
       ]
     }
   },
-  "Version": "20241115"
+  "Version": "20241125"
 }
