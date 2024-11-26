@@ -211,7 +211,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
     
-    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, useService77=False, verbose=False):
+    def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, simulateOnly:bool=True, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
             selectedDid = self.dataIdentifiers[did]
             if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType):
@@ -267,6 +267,10 @@ class O3Eclass():
                     if verbose:
                         print("New Raw Sub DID Data: " + encodedDataHexString)
                         print("New Raw DID Data: " + rawDidDataNew)
+
+                    if not simulateOnly:
+                        self.writeByDid(did,rawDidDataNew,True,useService77)
+
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
 
