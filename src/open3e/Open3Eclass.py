@@ -221,15 +221,15 @@ class O3Eclass():
         if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
             raise NotImplementedError("DID " + str(did) + " is not complex.")   
         
+        if (subDid >= len(selectedDid.subTypes) or subDid < 0):
+            raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
+            
         # open3e.Open3Ecodecs.flag_rawmode = True
         # rawResponse = self.uds_client.read_data_by_identifier(did)
         # rawDidData = rawResponse.service_data.values[did]
         # open3e.Open3Ecodecs.flag_rawmode = raw
         string_ascii_did,_ = self.readByDid(did, raw=True)
 
-        if (subDid >= len(selectedDid.subTypes) or subDid < 0):
-            raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
-            
         # bytesProcessed = 0
         # for indexSubDid in range(0, numSubDids):
         #     selectedSubDid = selectedDid.subTypes[indexSubDid]
