@@ -205,60 +205,68 @@ class O3Eclass():
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
-    def readByComplexDid_p(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
-        if(did in self.dataIdentifiers):
-            selectedDid = self.dataIdentifiers[did]
-            if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
-                # open3e.Open3Ecodecs.flag_rawmode = True
-                # rawResponse = self.uds_client.read_data_by_identifier(did)
-                # rawDidData = rawResponse.service_data.values[did]
-                # open3e.Open3Ecodecs.flag_rawmode = raw
-                string_ascii_did,_ = self.readByDid(did, raw=True)
+    
+    def readByComplexDid_p(self, did:int, subDid:int = 0, raw:bool = False):
+        verbose=True # Temp!!
 
-                if (subDid >= len(selectedDid.subTypes) or subDid < 0):
-                    raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
-                 
-                # bytesProcessed = 0
-                # for indexSubDid in range(0, numSubDids):
-                #     selectedSubDid = selectedDid.subTypes[indexSubDid]
-                #     lenSubDid = selectedSubDid.string_len
-                #     startIndexSubDid = bytesProcessed
-                #     endIndexSubDid = startIndexSubDid + lenSubDid-1
-                    
-                #     if indexSubDid == subDid:
-                #         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
-                #         bytesToDecode = bytearray.fromhex(bytesSubDid)
-                #         decodedData = selectedSubDid.decode(bytesToDecode)
-                selectedSubDid = selectedDid.subTypes[subDid]
+        if(did is None):
+            return self.readByDid(did, raw)
 
-                startIndexSubDid = 0
-                for i in range(subDid):
-                    startIndexSubDid += selectedDid.subTypes[i].string_len
-
-                stopIndexSubDid = startIndexSubDid + selectedSubDid.string_len
-
-                string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
-                string_bin = bytearray.fromhex(string_ascii_sub)
-                decodedData = selectedSubDid.decode(string_bin)
-
-                if verbose:
-                    print("DID: " + str(did))
-                    print("DID Name: " + str(selectedDid.id))
-                    print("Raw DID Data: " + str(string_ascii_sub))
-                    print("DID " + str(did) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
-                    print("Sub DID: " + str(subDid))
-                    print("Sub DID Name: " + selectedSubDid.id)
-                    print("First Byte: " + str(startIndexSubDid))
-                    print("Last Byte: " + str(stopIndexSubDid-1))
-                    print("Sub DID Data:" + str(string_ascii_sub)) 
-                    print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
-                return decodedData,selectedSubDid.id
-                              
-                    #bytesProcessed += lenSubDid
-            else:
-                raise NotImplementedError("DID " + str(did) + " is not complex.")   
-        else:
+        if(did not in self.dataIdentifiers):
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
+        
+        selectedDid = self.dataIdentifiers[did]
+
+        # if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
+        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+            raise NotImplementedError("DID " + str(did) + " is not complex.")   
+        
+        # open3e.Open3Ecodecs.flag_rawmode = True
+        # rawResponse = self.uds_client.read_data_by_identifier(did)
+        # rawDidData = rawResponse.service_data.values[did]
+        # open3e.Open3Ecodecs.flag_rawmode = raw
+        string_ascii_did,_ = self.readByDid(did, raw=True)
+
+        if (subDid >= len(selectedDid.subTypes) or subDid < 0):
+            raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
+            
+        # bytesProcessed = 0
+        # for indexSubDid in range(0, numSubDids):
+        #     selectedSubDid = selectedDid.subTypes[indexSubDid]
+        #     lenSubDid = selectedSubDid.string_len
+        #     startIndexSubDid = bytesProcessed
+        #     endIndexSubDid = startIndexSubDid + lenSubDid-1
+            
+        #     if indexSubDid == subDid:
+        #         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
+        #         bytesToDecode = bytearray.fromhex(bytesSubDid)
+        #         decodedData = selectedSubDid.decode(bytesToDecode)
+        selectedSubDid = selectedDid.subTypes[subDid]
+
+        startIndexSubDid = 0
+        for i in range(subDid):
+            startIndexSubDid += selectedDid.subTypes[i].string_len
+
+        stopIndexSubDid = startIndexSubDid + selectedSubDid.string_len
+
+        string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
+        string_bin = bytearray.fromhex(string_ascii_sub)
+        decodedData = selectedSubDid.decode(string_bin)
+
+        if verbose:
+            print("DID: " + str(did))
+            print("DID Name: " + str(selectedDid.id))
+            print("Raw DID Data: " + str(string_ascii_sub))
+            print("DID " + str(did) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
+            print("Sub DID: " + str(subDid))
+            print("Sub DID Name: " + selectedSubDid.id)
+            print("First Byte: " + str(startIndexSubDid))
+            print("Last Byte: " + str(stopIndexSubDid-1))
+            print("Sub DID Data:" + str(string_ascii_sub)) 
+            print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
+        return decodedData,selectedSubDid.id
+                        
+            #bytesProcessed += lenSubDid
 
 
     def writeByDid(self, did:int, val, raw:bool, useService77=False):
