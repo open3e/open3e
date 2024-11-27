@@ -362,7 +362,24 @@ class O3Eclass():
 
                     out1, out2 = self.readByDid(paramDid,paramRaw)
 
-                    return out1[nameSelectedSubDid], nameSelectedSubDid
+                    if paramRaw: #if raw reading is activated the result is a hex string
+                        lenSubDid = selectedSubDid.string_len
+                        hexSubStringStartIndex = 0
+                        hexSubStringEndIndex = hexSubStringStartIndex + lenSubDid
+
+                        for indexSubDid in range(numSubDids):
+                            if indexSubDid == paramSubDid
+                                break;
+                            else:
+                                lenCurrentSubDid = selectedDid.subTypes[indexSubdid].string_len
+                                hexSubStringStartIndex += lenCurrentSubDid
+                                hexSubStringEndIndex += lenCurrentSubDid
+
+                        hexSubString = out1[hexSubStringStartIndex:hexSubStringEndIndex]
+
+                        return hexSubString, nameSelectedSubDid
+                    else:
+                        return out1[nameSelectedSubDid], nameSelectedSubDid
                     
                 else: #sub-DID index undefined
                     raise NotImplementedError("Sub-DID Index " + str(paramSubDid) + "is not defined.")
