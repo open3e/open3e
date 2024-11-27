@@ -375,8 +375,6 @@ class O3Eclass():
                                 hexSubStringStartIndex += lenCurrentSubDid*2
                                 hexSubStringEndIndex += lenCurrentSubDid*2
 
-                        print("Start Index: " + str(hexSubStringStartIndex) + " End Index: " + str(hexSubStringEndIndex))
-
                         hexSubString = out1[hexSubStringStartIndex:hexSubStringEndIndex]
 
                         return hexSubString, nameSelectedSubDid
