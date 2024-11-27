@@ -205,6 +205,62 @@ class O3Eclass():
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
+    def readByComplexDid_p(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
+        if(did in self.dataIdentifiers):
+            selectedDid = self.dataIdentifiers[did]
+            if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
+                # open3e.Open3Ecodecs.flag_rawmode = True
+                # rawResponse = self.uds_client.read_data_by_identifier(did)
+                # rawDidData = rawResponse.service_data.values[did]
+                # open3e.Open3Ecodecs.flag_rawmode = raw
+                rawDidData,_ = self.readByDid(did, raw=True)
+
+                selectedSubDid = selectedDid.subTypes[subDid]
+
+                numSubDids = len(selectedDid.subTypes)
+                if (subDid >= numSubDids or subDid < 0):
+                    raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
+                 
+                # bytesProcessed = 0
+                # for indexSubDid in range(0, numSubDids):
+                #     selectedSubDid = selectedDid.subTypes[indexSubDid]
+                #     lenSubDid = selectedSubDid.string_len
+                #     startIndexSubDid = bytesProcessed
+                #     endIndexSubDid = startIndexSubDid + lenSubDid-1
+                    
+                #     if indexSubDid == subDid:
+                #         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
+                #         bytesToDecode = bytearray.fromhex(bytesSubDid)
+                #         decodedData = selectedSubDid.decode(bytesToDecode)
+                startIndexSubDid = 0
+                for i in range(subDid):
+                    startIndexSubDid += selectedDid.subTypes[i].string_len
+                stopIndexSubDid = startIndexSubDid + selectedDid.subTypes[subDid].string_len
+
+                string_ascii = rawDidData[(startIndexSubDid*2):(stopIndexSubDid*2)]
+                string_bin = bytearray.fromhex(string_ascii)
+                decodedData = selectedSubDid.decode(string_bin)
+
+                if verbose:
+                    print("DID: " + str(did))
+                    print("DID Name: " + str(selectedDid.id))
+                    print("Raw DID Data: " + str(rawDidData))
+                    print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                    print("Sub DID: " + str(subDid))
+                    print("Sub DID Name: " + selectedSubDid.id)
+                    print("First Byte: " + str(startIndexSubDid))
+                    print("Last Byte: " + str(stopIndexSubDid-1))
+                    print("Sub DID Data:" + str(string_ascii)) 
+                    print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
+                return decodedData
+                              
+                    #bytesProcessed += lenSubDid
+            else:
+                raise NotImplementedError("DID " + str(did) + " is not complex.")   
+        else:
+            raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
+
+
     def writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val, useService77)
@@ -221,6 +277,7 @@ class O3Eclass():
                 rawResponse = self.uds_client.read_data_by_identifier(did)
                 rawDidData = rawResponse.service_data.values[did]
                 open3e.Open3Ecodecs.flag_rawmode = False
+
 
                 # Step 2: Find sub-DID bytes that need to be modified in DID
                 bytesProcessed = 0
@@ -273,9 +330,6 @@ class O3Eclass():
 
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
-
-
-
             else:
                 raise NotImplementedError("DID " + str(did) + " is not complex.") 
         else:
