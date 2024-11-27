@@ -368,8 +368,8 @@ class O3Eclass():
                         hexSubStringEndIndex = hexSubStringStartIndex + lenSubDid
 
                         for indexSubDid in range(numSubDids):
-                            if indexSubDid == paramSubDid
-                                break;
+                            if (indexSubDid == paramSubDid):
+                                break
                             else:
                                 lenCurrentSubDid = selectedDid.subTypes[indexSubdid].string_len
                                 hexSubStringStartIndex += lenCurrentSubDid
