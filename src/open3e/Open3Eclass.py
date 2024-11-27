@@ -371,7 +371,7 @@ class O3Eclass():
                             if (indexSubDid == paramSubDid):
                                 break
                             else:
-                                lenCurrentSubDid = selectedDid.subTypes[indexSubdid].string_len
+                                lenCurrentSubDid = selectedDid.subTypes[indexSubDid].string_len
                                 hexSubStringStartIndex += lenCurrentSubDid*2
                                 hexSubStringEndIndex += lenCurrentSubDid*2
 
