@@ -365,15 +365,15 @@ class O3Eclass():
                     if paramRaw: #if raw reading is activated the result is a hex string
                         lenSubDid = selectedSubDid.string_len
                         hexSubStringStartIndex = 0
-                        hexSubStringEndIndex = hexSubStringStartIndex + lenSubDid
+                        hexSubStringEndIndex = hexSubStringStartIndex + lenSubDid*2
 
                         for indexSubDid in range(numSubDids):
                             if (indexSubDid == paramSubDid):
                                 break
                             else:
                                 lenCurrentSubDid = selectedDid.subTypes[indexSubdid].string_len
-                                hexSubStringStartIndex += lenCurrentSubDid
-                                hexSubStringEndIndex += lenCurrentSubDid
+                                hexSubStringStartIndex += lenCurrentSubDid*2
+                                hexSubStringEndIndex += lenCurrentSubDid*2
 
                         print("Start Index: " + str(hexSubStringStartIndex) + " End Index: " + str(hexSubStringEndIndex))
 
