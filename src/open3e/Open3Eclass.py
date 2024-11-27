@@ -235,7 +235,7 @@ class O3Eclass():
                 for i in range(subDid):
                     startIndexSubDid += selectedDid.subTypes[i].string_len
 
-                stopIndexSubDid = startIndexSubDid + selectedDid.subTypes[subDid].string_len
+                stopIndexSubDid = startIndexSubDid + selectedSubDid.string_len
 
                 string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
                 string_bin = bytearray.fromhex(string_ascii_sub)
@@ -267,7 +267,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
 
-    
+
     def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, simulateOnly:bool=True, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
             selectedDid = self.dataIdentifiers[did]
