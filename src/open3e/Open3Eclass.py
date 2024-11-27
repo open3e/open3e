@@ -206,7 +206,7 @@ class O3Eclass():
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
     
-    def readByComplexDid_p(self, did:int, subDid:int = 0, raw:bool = False):
+    def readByComplexDid_p(self, did:int, subDid:int, raw:bool):
         verbose=True # Temp!!
 
         if(subDid is None):
