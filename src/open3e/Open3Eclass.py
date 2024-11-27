@@ -213,12 +213,9 @@ class O3Eclass():
                 # rawResponse = self.uds_client.read_data_by_identifier(did)
                 # rawDidData = rawResponse.service_data.values[did]
                 # open3e.Open3Ecodecs.flag_rawmode = raw
-                rawDidData,_ = self.readByDid(did, raw=True)
+                string_ascii_did,_ = self.readByDid(did, raw=True)
 
-                selectedSubDid = selectedDid.subTypes[subDid]
-
-                numSubDids = len(selectedDid.subTypes)
-                if (subDid >= numSubDids or subDid < 0):
+                if (subDid >= len(selectedDid.subTypes) or subDid < 0):
                     raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
                  
                 # bytesProcessed = 0
@@ -232,27 +229,30 @@ class O3Eclass():
                 #         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
                 #         bytesToDecode = bytearray.fromhex(bytesSubDid)
                 #         decodedData = selectedSubDid.decode(bytesToDecode)
+                selectedSubDid = selectedDid.subTypes[subDid]
+
                 startIndexSubDid = 0
                 for i in range(subDid):
                     startIndexSubDid += selectedDid.subTypes[i].string_len
+
                 stopIndexSubDid = startIndexSubDid + selectedDid.subTypes[subDid].string_len
 
-                string_ascii = rawDidData[(startIndexSubDid*2):(stopIndexSubDid*2)]
-                string_bin = bytearray.fromhex(string_ascii)
+                string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
+                string_bin = bytearray.fromhex(string_ascii_sub)
                 decodedData = selectedSubDid.decode(string_bin)
 
                 if verbose:
                     print("DID: " + str(did))
                     print("DID Name: " + str(selectedDid.id))
-                    print("Raw DID Data: " + str(rawDidData))
-                    print("DID " + str(did) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                    print("Raw DID Data: " + str(string_ascii_sub))
+                    print("DID " + str(did) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
                     print("Sub DID: " + str(subDid))
                     print("Sub DID Name: " + selectedSubDid.id)
                     print("First Byte: " + str(startIndexSubDid))
                     print("Last Byte: " + str(stopIndexSubDid-1))
-                    print("Sub DID Data:" + str(string_ascii)) 
+                    print("Sub DID Data:" + str(string_ascii_sub)) 
                     print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
-                return decodedData,selectedDid.id
+                return decodedData,selectedSubDid.id
                               
                     #bytesProcessed += lenSubDid
             else:
@@ -266,6 +266,7 @@ class O3Eclass():
         response = self.uds_client.write_data_by_identifier(did, val, useService77)
         succ = (response.valid & response.positive)
         return succ, response.code
+
     
     def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, simulateOnly:bool=True, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
