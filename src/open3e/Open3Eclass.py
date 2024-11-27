@@ -345,6 +345,34 @@ class O3Eclass():
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
+    def readGenericDid(self, paramDid:int, paramSubDid:int=-1, paramRaw:bool=False, paramVerbose:bool=False):
+
+        if(paramDid in self.dataIdentifiers): #DID is in DID list so decoding is known
+            selectedDid = self.dataIdentifiers[paramDid]
+
+            if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType): #DID is complex
+                numSubDids = len(selectedDid.subTypes)
+
+                if paramSubDid == -1: #no sub-DID defined means read whole DID
+                     return self.readByDid(paramDid, paramRaw)
+                
+                elif paramSubDid >= 0 and paramSubDid < numSubDids: #sub-DID index is valid which means read only sub-DID
+                    out1, out2 = self.readByDid(paramDid,paramRaw)
+
+                    return out1[paramSubDid], out2[paramSubDid]
+                    
+                else: #sub-DID index undefined
+                    raise NotImplementedError("Sub-DID Index " + str(paramSubDid) + "is not defined.")
+                
+            else: #DID is not complex
+                return self.readByDid(paramDid, paramRaw)
+            
+        else: #DID is not in DID list so decoding is unknown. Force raw output
+            return self.readPure(paramDid)
+
+    def writeGenericDid(self, paramDid:int, paramValue:any, paramSubDid:int=-1, paramRaw:bool=False, paramService77:bool=False, paramVerbose:bool=False):
+        pass
+
     def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
