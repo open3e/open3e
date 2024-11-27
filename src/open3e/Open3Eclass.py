@@ -197,7 +197,7 @@ class O3Eclass():
                             print("End Byte: " + str(endIndexSubDid))
                             print("Sub DID Data:" + str(bytesSubDid))
                             print("Sub DID Decoded Data: " + str(did) + "." + str(indexSubDid) + ": " + str(decodedData))
-                        return decodedData
+                        return decodedData 
                               
                     bytesProcessed += lenSubDid
             else:
@@ -252,7 +252,7 @@ class O3Eclass():
                     print("Last Byte: " + str(stopIndexSubDid-1))
                     print("Sub DID Data:" + str(string_ascii)) 
                     print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
-                return decodedData
+                return decodedData,selectedDid.id
                               
                     #bytesProcessed += lenSubDid
             else:
