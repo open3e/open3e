@@ -357,9 +357,12 @@ class O3Eclass():
                      return self.readByDid(paramDid, paramRaw)
                 
                 elif paramSubDid >= 0 and paramSubDid < numSubDids: #sub-DID index is valid which means read only sub-DID
+                    selectedSubDid = selectedDid.subTypes[paramSubDid]
+                    nameSelectedSubDid = selectedSubDid.id
+
                     out1, out2 = self.readByDid(paramDid,paramRaw)
 
-                    return out1[paramSubDid], out2[paramSubDid]
+                    return out1[nameSelectedSubDid], nameSelectedSubDid
                     
                 else: #sub-DID index undefined
                     raise NotImplementedError("Sub-DID Index " + str(paramSubDid) + "is not defined.")
