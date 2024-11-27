@@ -209,7 +209,7 @@ class O3Eclass():
     def readByComplexDid_p(self, did:int, subDid:int = 0, raw:bool = False):
         verbose=True # Temp!!
 
-        if(did is None):
+        if(subDid is None):
             return self.readByDid(did, raw)
 
         if(did not in self.dataIdentifiers):
