@@ -224,12 +224,6 @@ class O3Eclass():
         if (subDid >= len(selectedDid.subTypes) or subDid < 0):
             raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
             
-        # open3e.Open3Ecodecs.flag_rawmode = True
-        # rawResponse = self.uds_client.read_data_by_identifier(did)
-        # rawDidData = rawResponse.service_data.values[did]
-        # open3e.Open3Ecodecs.flag_rawmode = raw
-        string_ascii_did,_ = self.readByDid(did, raw=True)
-
         # bytesProcessed = 0
         # for indexSubDid in range(0, numSubDids):
         #     selectedSubDid = selectedDid.subTypes[indexSubDid]
@@ -249,6 +243,12 @@ class O3Eclass():
 
         stopIndexSubDid = startIndexSubDid + selectedSubDid.string_len
 
+        # open3e.Open3Ecodecs.flag_rawmode = True
+        # rawResponse = self.uds_client.read_data_by_identifier(did)
+        # rawDidData = rawResponse.service_data.values[did]
+        # open3e.Open3Ecodecs.flag_rawmode = raw
+        string_ascii_did,_ = self.readByDid(did, raw=True)
+
         string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
         string_bin = bytearray.fromhex(string_ascii_sub)
         decodedData = selectedSubDid.decode(string_bin)
@@ -264,6 +264,7 @@ class O3Eclass():
             print("Last Byte: " + str(stopIndexSubDid-1))
             print("Sub DID Data:" + str(string_ascii_sub)) 
             print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
+        
         return decodedData,selectedSubDid.id
                         
             #bytesProcessed += lenSubDid
