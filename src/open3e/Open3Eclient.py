@@ -58,9 +58,10 @@ def main():
         else:
             return deftx,getint(parts[0])
 
-    # complex addressing: 0x680.[257,258,259] or 0x680.256 or 256
-    # also possibel 0x680.[257.0,258.1,259.2]  or 0x680.256.1 or 256.0
-    # also Vcal.BusIdentification.BusAddress ...
+    # complex addressing: 0x680.[257,258,259] or 0x680.256 or 257,259,261 or 256 ...
+    # also possibel 0x680.[257.0,258.1,259]  or 0x680.256.1 ...
+    # also Vcal.BusIdentification.BusAddress or Vcal.256.BusAddress ...
+    # if sub gets addressed, ecu must be given, otherwiese not clear if ecu.did or did.sub
     def eval_complex(v) -> list: 
         """ 
         this is the 'inner evaluation', called by eval_complex_list() only. 
