@@ -401,8 +401,70 @@ class O3Eclass():
         else: #DID is not in DID list so decoding is unknown. Force raw output
             return self.readPure(paramDid)
 
-    def writeGenericDid(self, paramDid:int, paramValue:any, paramSubDid:int=-1, paramRaw:bool=False, paramService77:bool=False, paramVerbose:bool=False):
-        pass
+    def writeGenericDid(self, paramDid:int, paramValue:any, paramSubDid:int=-1, paramRaw:bool=False, paramService77:bool=False, paramVerbose:bool=False, paramSimulateOnly=False):
+        if(paramDid in self.dataIdentifiers): #DID is in DID list so decoding is known
+            selectedDid = self.dataIdentifiers[paramDid]
+            if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType): #DID is complex
+                # Step 1: Read raw data of complete complex DID as string
+                numSubDids = len(selectedDid.subTypes)
+                rawDidDataString, didName = self.readGenericDid(paramDid=paramDid, paramSubDid=paramSubDid, paramVerbose=paramVerbose, paramRaw=True)
+
+                # Step 2: Find sub-DID bytes that need to be modified in DID
+                bytesProcessed = 0
+                bytesSubDid = ""
+                
+                for indexSubDid in range(0, numSubDids):
+                    selectedSubDid = selectedDid.subTypes[indexSubDid]
+                    lenSubDid = selectedSubDid.string_len
+                    startIndexSubDid = bytesProcessed
+                    endIndexSubDid = startIndexSubDid + lenSubDid-1
+   
+                    if indexSubDid == paramSubDid:
+                        matchingSubDid = selectedSubDid
+                        if paramVerbose:
+                            print("DID: " + str(paramDid))
+                            print("DID Name: " + str(selectedDid.id))
+                            print("Raw DID Data: " + str(rawDidDataString))
+                            print("DID " + str(paramDid) + " consists of " + str(numSubDids) + " Sub-DIDs.")
+                            print("Sub DID: " + str(indexSubDid))
+                            print("Sub DID Name: " + selectedSubDid.id)
+                            print("Start Byte: " + str(startIndexSubDid))
+                            print("End Byte: " + str(endIndexSubDid))
+
+                        startStringIndexSubDid = (2*startIndexSubDid)
+                        endStringIndexSubDid = ((endIndexSubDid+1)*2)
+                        
+                        bytesSubDid = rawDidDataString[startStringIndexSubDid:endStringIndexSubDid]
+                              
+                    bytesProcessed += lenSubDid
+
+                # Step 3: Modify bytes in raw complete DID data
+                open3e.Open3Ecodecs.flag_rawmode = paramRaw
+                encodedData = matchingSubDid.encode(paramValue)
+                encodedDataHexString = encodedData.hex()
+                
+                if len(bytesSubDid) == len(encodedDataHexString):
+                    if (paramSubDid == numSubDids-1): #if is last sub DID
+                        rawDidDataNew = rawDidDataString[:startStringIndexSubDid] + encodedDataHexString
+                    elif(paramSubDid == 0): # if is first sub DID
+                        rawDidDataNew = encodedDataHexString + rawDidDataString[endStringIndexSubDid:]
+                    else:
+                        rawDidDataNew = rawDidDataString[0:startStringIndexSubDid] + encodedDataHexString + rawDidDataString[endStringIndexSubDid:]
+                    
+                    if paramVerbose:
+                        print("New Raw Sub DID Data: " + encodedDataHexString)
+                        print("New Raw DID Data: " + rawDidDataNew)
+
+                    if not paramSimulateOnly:
+                        self.writeByDid(paramDid,rawDidDataNew,True,paramService77)
+
+                else:
+                    raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
+
+            else: #DID is not complex
+                self.writeByDid(paramDid, paramValue, paramRaw, paramService77)
+        else: #DID is not in DID list so decoding is unknown. Force raw writing
+            raise NotImplementedError("Writing to unknown DIDs is currently not supported.")
 
     def readAll(self, raw:bool):
         lst = []
