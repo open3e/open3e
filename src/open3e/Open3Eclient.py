@@ -73,27 +73,31 @@ def main():
         if(len(parts) == 1):
             # only did
             return [[deftx, parts[0], None]]
-        else:
-            # ecu.[...] or ecu.did or ecu.did.sub
-            ecu = getint(addr_of_dev(parts[0]))
-            if("[" in parts[1]):
-                # ecu.[...]
-                parts[1] = parts[1].replace('[','').replace(']','')
-                parts = parts[1].split(",")
-                lst = []
-                for part in parts:
-                    did,sub = get_didsub(part)
-                    lst.append([ecu,did,sub])
-                return lst
-            elif(len(parts) == 2):
-                    # only ecu.did
-                    return [ecu,parts[1],None]
-            else:
-                # ecu.did.sub
-                return [ecu,parts[1],parts[2]]
+        
+        # ecu.[...] or ecu.did or ecu.did.sub
+        ecu = getint(addr_of_dev(parts[0]))
+        
+        if(len(parts) == 2):
+            # only ecu.did
+            return [[ecu,parts[1],None]]
+            
+        if("[" in parts[1]):
+            # ecu.[...]
+            parts.pop(0)
+            s = '.'.join(parts)
+            s = s.replace('[','').replace(']','')
+            parts = s.split(",")
+            lst = []
+            for part in parts:
+                did,sub = get_didsub(part)
+                lst.append([ecu,did,sub])
+            return lst
+
+        # ecu.did.sub
+        return [[ecu,parts[1],parts[2]]]
 
     # enum of complex addressing separated by ','
-    def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
+    def eval_complex_list(v) -> list:  # returns list of (more or less) complex items
         sl = list(str(v).replace(' ',''))
         open = 0
         for i in range(len(sl)):
@@ -112,7 +116,7 @@ def main():
             for itm in plst:
                 lst.append(itm)
         return lst
-    
+
     # gets did and sub from fraction tailing 'ecu.'
     def get_didsub(s):
         parts = s.split(".")
@@ -121,7 +125,7 @@ def main():
             return parts[0], None
         else:
             return parts[0], parts[1]      
-        
+            
 
     def ensure_ecu(addr:int):
         if(not (addr in dicEcus)):
@@ -320,170 +324,170 @@ def main():
                 print(msg)
 
 
-#~~~~~~~~~~~~~~~~~~~~~~
-# Main
-#~~~~~~~~~~~~~~~~~~~~~~
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
-    parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
-    parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
-    parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
-    parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
-    parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
-    parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
-    parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
-    parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
-    parser.add_argument("-f77", "--forcesid77", action='store_true', help="force the use of serive 0x77 for writing of a did")
-    parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
-    parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
-    parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
-    parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
-    parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
-    parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
-    parser.add_argument("-mcid", "--mqttclientid", type=str, help="mqtt client id of open3e")
-    parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
-    parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
-    args = parser.parse_args()
+    #~~~~~~~~~~~~~~~~~~~~~~
+    # Main
+    #~~~~~~~~~~~~~~~~~~~~~~
+        parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+        parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
+        parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
+        parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
+        parser.add_argument("-tx", "--ecuaddr", type=str, help="ECU Address")
+        parser.add_argument("-cnfg", "--config", type=str, help="json configuration file")
+        parser.add_argument("-a", "--scanall", action='store_true', help="dump all dids")
+        parser.add_argument("-r", "--read", type=str, help="read did, e.g. 0x173,0x174")
+        parser.add_argument("-w", "--write", type=str, help="write did, e.g. -w 396=D601 (raw data only!)")
+        parser.add_argument("-f77", "--forcesid77", action='store_true', help="force the use of serive 0x77 for writing of a did")
+        parser.add_argument("-raw", "--raw", action='store_true', help="return raw data for all dids")
+        parser.add_argument("-t", "--timestep", type=str, help="read continuous with delay in s")
+        parser.add_argument("-l", "--listen", type=str, help="mqtt topic to listen for commands, e.g. open3e/cmnd")
+        parser.add_argument("-m", "--mqtt", type=str, help="publish to server, e.g. 192.168.0.1:1883:topicname")
+        parser.add_argument("-mfstr", "--mqttformatstring", type=str, help="mqtt formatstring e.g. {didNumber}_{didName}")
+        parser.add_argument("-muser", "--mqttuser", type=str, help="mqtt username:password")
+        parser.add_argument("-mcid", "--mqttclientid", type=str, help="mqtt client id of open3e")
+        parser.add_argument("-j", "--json", action='store_true', help="send JSON structure")
+        parser.add_argument("-v", "--verbose", action='store_true', help="verbose info")
+        args = parser.parse_args()
 
 
-    if(args.can == None):
-        args.can = 'can0' 
+        if(args.can == None):
+            args.can = 'can0' 
 
-    if(args.ecuaddr != None):
-        deftx = getint(args.ecuaddr)
+        if(args.ecuaddr != None):
+            deftx = getint(args.ecuaddr)
 
-    # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    if(args.config != None):
-        if(args.config == 'dev'):  # short
-            args.config = 'devices.json'
-        # get configuration from file
-        with open(args.config, 'r') as file:
-            devjson = json.load(file)
-        # make ECU list
-        for device, config in devjson.items():
-            addrtx = getint(config.get("tx"))
-            dplist = config.get("dpList")
-            # make ecu
-            ecu = open3e.Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
-            dicEcus[addrtx] = ecu
-            dicDevAddrs[device] = addrtx
-    else:
-        # only default device
-        ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
-        dicEcus[deftx] = ecu
-        dicDevAddrs[args.dev] = deftx
-        
-
-    # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    mqtt_client = None
-    if(args.mqtt != None):
-        if (args.mqttclientid != None):
-            open3e_client_id = args.mqttclientid
+        # list of ECUs ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        if(args.config != None):
+            if(args.config == 'dev'):  # short
+                args.config = 'devices.json'
+            # get configuration from file
+            with open(args.config, 'r') as file:
+                devjson = json.load(file)
+            # make ECU list
+            for device, config in devjson.items():
+                addrtx = getint(config.get("tx"))
+                dplist = config.get("dpList")
+                # make ecu
+                ecu = open3e.Open3Eclass.O3Eclass(ecutx=addrtx, doip=args.doip, can=args.can, dev=dplist)
+                dicEcus[addrtx] = ecu
+                dicDevAddrs[device] = addrtx
         else:
-            open3e_client_id = "Open3E" + '_' + str(int(time.time()*1000))
-        mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, open3e_client_id)  # Unique mqtt id using timestamp
-        if(args.mqttuser != None):
-            mlst = args.mqttuser.split(':')
-            mqtt_client.username_pw_set(mlst[0], password=mlst[1])
-        mlst = args.mqtt.split(':')
-        mqttTopic = mlst[2] 
-        if(args.mqttformatstring == None):
-            mqttformatstring = "{didName}" # default
-        else:
-            mqttformatstring = args.mqttformatstring
-        mqtt_client.on_connect = on_connect
-        mqtt_client.on_disconnect = on_disconnect
-        mqtt_client.on_message = on_message
-        mqtt_client.connect(mlst[0], int(mlst[1]))
-        mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
-        mqtt_client.loop_start()
-        
-        
-    # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    try:
-    # listener mode
-        if(args.listen != None):
-            listen(args.read, args.timestep)
+            # only default device
+            ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
+            dicEcus[deftx] = ecu
+            dicDevAddrs[args.dev] = deftx
+            
 
-        # read cmd line reads
-        elif(args.read != None):
-            jobs = eval_complex_list(args.read)
-            mlvl = 0  # only val 
-            if(len(jobs) > 1): mlvl |= 1  # show did nr
-            while(True):
-                for ecudidsub in jobs:
-                    ensure_ecu(ecudidsub[0])
-                    if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                    try:
-                        readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
-                    except NegativeResponseException as e:
-                        print('Device rejected this read access. Probably did '+str(ecudidsub[1])+' is not available.\nErr: '+str(e))
-                    time.sleep(0.02)
-                if(args.timestep != None):
-                    time.sleep(float(eval(args.timestep)))
+        # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        mqtt_client = None
+        if(args.mqtt != None):
+            if (args.mqttclientid != None):
+                open3e_client_id = args.mqttclientid
+            else:
+                open3e_client_id = "Open3E" + '_' + str(int(time.time()*1000))
+            mqtt_client = paho.Client(paho.CallbackAPIVersion.VERSION2, open3e_client_id)  # Unique mqtt id using timestamp
+            if(args.mqttuser != None):
+                mlst = args.mqttuser.split(':')
+                mqtt_client.username_pw_set(mlst[0], password=mlst[1])
+            mlst = args.mqtt.split(':')
+            mqttTopic = mlst[2] 
+            if(args.mqttformatstring == None):
+                mqttformatstring = "{didName}" # default
+            else:
+                mqttformatstring = args.mqttformatstring
+            mqtt_client.on_connect = on_connect
+            mqtt_client.on_disconnect = on_disconnect
+            mqtt_client.on_message = on_message
+            mqtt_client.connect(mlst[0], int(mlst[1]))
+            mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
+            mqtt_client.loop_start()
+            
+            
+        # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        try:
+        # listener mode
+            if(args.listen != None):
+                listen(args.read, args.timestep)
+
+            # read cmd line reads
+            elif(args.read != None):
+                jobs = eval_complex_list(args.read)
+                mlvl = 0  # only val 
+                if(len(jobs) > 1): mlvl |= 1  # show did nr
+                while(True):
+                    for ecudidsub in jobs:
+                        ensure_ecu(ecudidsub[0])
+                        if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
+                        try:
+                            readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
+                        except NegativeResponseException as e:
+                            print('Device rejected this read access. Probably did '+str(ecudidsub[1])+' is not available.\nErr: '+str(e))
+                        time.sleep(0.02)
+                    if(args.timestep != None):
+                        time.sleep(float(eval(args.timestep)))
+                    else:
+                        break
+
+            # experimental write to did
+            elif(args.write != None):
+                if(args.raw == True):
+                    jobs = args.write.split(",")
+                    for job in jobs:
+                        writeArg = job.split("=")
+                        ecu,didkey = get_ecudid(writeArg[0])
+                        didVal=str(writeArg[1]).replace("0x","")
+                        if args.forcesid77:
+                            print(f"write raw: {ecu}.{didkey} = {didVal}")
+                            ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                            succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
+                            ecu77.close()
+                        else:
+                            ensure_ecu(ecu)
+                            print(f"write raw: {ecu}.{didkey} = {didVal}")
+                            succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True, useService77=False)
+                        print(f"success: {succ}, code: {code}")
                 else:
-                    break
-
-        # experimental write to did
-        elif(args.write != None):
-            if(args.raw == True):
-                jobs = args.write.split(",")
-                for job in jobs:
-                    writeArg = job.split("=")
+                    writeArg = args.write.split("=")
                     ecu,didkey = get_ecudid(writeArg[0])
-                    didVal=str(writeArg[1]).replace("0x","")
+                    didVal=json.loads(writeArg[1])
                     if args.forcesid77:
-                        print(f"write raw: {ecu}.{didkey} = {didVal}")
+                        print(f"write: {ecu}.{didkey} = {didVal}")
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
-                        succ,code = ecu77.writeByDid(didkey, didVal, raw=True, useService77=True)
+                        succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
-                        print(f"write raw: {ecu}.{didkey} = {didVal}")
-                        succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=True, useService77=False)
-                    print(f"success: {succ}, code: {code}")
-            else:
-                writeArg = args.write.split("=")
-                ecu,didkey = get_ecudid(writeArg[0])
-                didVal=json.loads(writeArg[1])
-                if args.forcesid77:
-                    print(f"write: {ecu}.{didkey} = {didVal}")
-                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
-                    succ,code = ecu77.writeByDid(didkey, didVal, raw=False, useService77=True)
-                    ecu77.close()
-                else:
-                    ensure_ecu(ecu)
-                    print(f"write: {ecu}.{didkey} = {didVal}")
-                    succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False, useService77=False)
-                print(f"success: {succ}, code: {code}")                
-            time.sleep(0.1)
+                        print(f"write: {ecu}.{didkey} = {didVal}")
+                        succ,code = dicEcus[ecu].writeByDid(didkey, didVal, raw=False, useService77=False)
+                    print(f"success: {succ}, code: {code}")                
+                time.sleep(0.1)
 
-        # scanall
-        elif(args.scanall == True):
-            msglvl = 1  # show did nr
-            if(len(dicEcus) > 1):
-                msglvl = 5  # show ECU addr also
-            for addr,ecu in dicEcus.items():
-                #? if(args.verbose == True):
-                print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
-                lst = ecu.readAll(args.raw)
-                for itm in lst:
-                    showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
+            # scanall
+            elif(args.scanall == True):
+                msglvl = 1  # show did nr
+                if(len(dicEcus) > 1):
+                    msglvl = 5  # show ECU addr also
+                for addr,ecu in dicEcus.items():
+                    #? if(args.verbose == True):
+                    print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
+                    lst = ecu.readAll(args.raw)
+                    for itm in lst:
+                        showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
 
-    except (KeyboardInterrupt, InterruptedError):
-        # <STRG-C> oder SIGINT to stop
-        # Use <kill -s SIGINT pid> to send SIGINT
-        pass
-                    
-    # close all connections before exit
-    for ecu in dicEcus.values():
-        if(args.verbose):
-            print(f"closing {hex(ecu.tx)} - bye!")
-        ecu.close()
+        except (KeyboardInterrupt, InterruptedError):
+            # <STRG-C> oder SIGINT to stop
+            # Use <kill -s SIGINT pid> to send SIGINT
+            pass
+                        
+        # close all connections before exit
+        for ecu in dicEcus.values():
+            if(args.verbose):
+                print(f"closing {hex(ecu.tx)} - bye!")
+            ecu.close()
 
-    if(mqtt_client != None):
-        if(args.verbose):
-            print("closing MQTT client")
-        mqtt_client.disconnect()
+        if(mqtt_client != None):
+            if(args.verbose):
+                print("closing MQTT client")
+            mqtt_client.disconnect()
 
 
 if __name__ == "__main__":
