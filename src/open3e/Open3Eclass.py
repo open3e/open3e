@@ -144,11 +144,85 @@ class O3Eclass():
         self.uds_client.logger.setLevel(loglevel)
 
 
+    # utils -----------------------
+    def get_did_as_int(self, v):
+        try:
+            did = int(eval(str(v)))
+            return did
+        except:
+            for did,cdc in self.dataIdentifiers.items():
+                if(cdc.id.lower() == str(v).lower()):
+                    return did
+            raise ValueError(f"No DID found according to {v}")
+
+
+    def get_sub_as_int(self, did:int, v):
+        try:
+            sub = int(eval(str(v)))
+            return sub
+        except:
+            for i in range(len(self.dataIdentifiers[did].subtypes)):
+                if(self.dataIdentifiers[did].subtypes[i].id.lower() == str(v).lower()):
+                    return i
+            raise ValueError(f"No Sub found according to {v} with DID {did}")
+
+
     #++++++++++++++++++++++++++++++
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
-    def readByDid(self, did:int, raw:bool):
+    def readByDid(self, did:any, raw:bool, sub=None):
+        verbose=True # Temp!!
+
+        idid = self.get_did_as_int(did)
+
+        if(sub is None):
+            return self._readByDid(idid, raw)
+
+        if(idid not in self.dataIdentifiers):
+            raise NotImplementedError(f"No Codec specified for DID {idid} in Datapoints.py")
+        
+        selectedDid = self.dataIdentifiers[idid]
+
+        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+            raise NotImplementedError(f"DID {did} is not complex.")   
+        
+        isub = self.get_sub_as_int(sub)
+
+        if (isub >= len(selectedDid.subTypes) or isub < 0):
+            raise NotImplementedError(f"Sub-DID with Index {sub} does not exist in DID {did}")
+            
+        selectedSub = selectedDid.subTypes[isub]
+
+        startIndexSub = 0
+        for i in range(isub):
+            startIndexSub += selectedDid.subTypes[i].string_len
+
+        stopIndexSub = startIndexSub + selectedSub.string_len
+
+        string_ascii_did,_ = self._readByDid(idid, raw=True)
+
+        string_ascii_sub = string_ascii_did[(startIndexSub*2):(stopIndexSub*2)]
+        string_bin = bytearray.fromhex(string_ascii_sub)
+        decodedData = selectedSub.decode(string_bin)
+
+        if verbose:
+            print("DID: " + str(idid))
+            print("DID Name: " + str(selectedDid.id))
+            print("Raw DID Data: " + str(string_ascii_sub))
+            print("DID " + str(idid) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
+            print("Sub DID: " + str(sub))
+            print("Sub DID Name: " + selectedSub.id)
+            print("First Byte: " + str(startIndexSub))
+            print("Last Byte: " + str(stopIndexSub-1))
+            print("Sub DID Data:" + str(string_ascii_sub)) 
+            print("Sub DID Decoded Data: " + str(idid) + "." + str(sub) + ": " + str(decodedData))
+        
+        return decodedData,selectedSub.id
+                        
+
+    # not global anymore... ;-)
+    def _readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers): 
             open3e.Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
@@ -156,7 +230,7 @@ class O3Eclass():
             return response.service_data.values[did],self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
-        
+
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
         if(did in self.dataIdentifiers):
             open3e.Open3Ecodecs.flag_rawmode = True
@@ -206,70 +280,6 @@ class O3Eclass():
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
     
-    def readByComplexDid_p(self, did:int, subDid:int, raw:bool):
-        verbose=True # Temp!!
-
-        if(subDid is None):
-            return self.readByDid(did, raw)
-
-        if(did not in self.dataIdentifiers):
-            raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
-        
-        selectedDid = self.dataIdentifiers[did]
-
-        # if type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType:
-        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError("DID " + str(did) + " is not complex.")   
-        
-        if (subDid >= len(selectedDid.subTypes) or subDid < 0):
-            raise NotImplementedError("Sub-DID with Index " + str(subDid) +" does not exist in DID " + str(did))
-            
-        # bytesProcessed = 0
-        # for indexSubDid in range(0, numSubDids):
-        #     selectedSubDid = selectedDid.subTypes[indexSubDid]
-        #     lenSubDid = selectedSubDid.string_len
-        #     startIndexSubDid = bytesProcessed
-        #     endIndexSubDid = startIndexSubDid + lenSubDid-1
-            
-        #     if indexSubDid == subDid:
-        #         bytesSubDid = rawDidData[(2*startIndexSubDid):((endIndexSubDid+1)*2)]   
-        #         bytesToDecode = bytearray.fromhex(bytesSubDid)
-        #         decodedData = selectedSubDid.decode(bytesToDecode)
-        selectedSubDid = selectedDid.subTypes[subDid]
-
-        startIndexSubDid = 0
-        for i in range(subDid):
-            startIndexSubDid += selectedDid.subTypes[i].string_len
-
-        stopIndexSubDid = startIndexSubDid + selectedSubDid.string_len
-
-        # open3e.Open3Ecodecs.flag_rawmode = True
-        # rawResponse = self.uds_client.read_data_by_identifier(did)
-        # rawDidData = rawResponse.service_data.values[did]
-        # open3e.Open3Ecodecs.flag_rawmode = raw
-        string_ascii_did,_ = self.readByDid(did, raw=True)
-
-        string_ascii_sub = string_ascii_did[(startIndexSubDid*2):(stopIndexSubDid*2)]
-        string_bin = bytearray.fromhex(string_ascii_sub)
-        decodedData = selectedSubDid.decode(string_bin)
-
-        if verbose:
-            print("DID: " + str(did))
-            print("DID Name: " + str(selectedDid.id))
-            print("Raw DID Data: " + str(string_ascii_sub))
-            print("DID " + str(did) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
-            print("Sub DID: " + str(subDid))
-            print("Sub DID Name: " + selectedSubDid.id)
-            print("First Byte: " + str(startIndexSubDid))
-            print("Last Byte: " + str(stopIndexSubDid-1))
-            print("Sub DID Data:" + str(string_ascii_sub)) 
-            print("Sub DID Decoded Data: " + str(did) + "." + str(subDid) + ": " + str(decodedData))
-        
-        return decodedData,selectedSubDid.id
-                        
-            #bytesProcessed += lenSubDid
-
-
     def writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val, useService77)
@@ -354,13 +364,13 @@ class O3Eclass():
                 numSubDids = len(selectedDid.subTypes)
 
                 if paramSubDid == -1: #no sub-DID defined means read whole DID
-                     return self.readByDid(paramDid, paramRaw)
+                     return self._readByDid(paramDid, paramRaw)
                 
                 elif paramSubDid >= 0 and paramSubDid < numSubDids: #sub-DID index is valid which means read only sub-DID
                     selectedSubDid = selectedDid.subTypes[paramSubDid]
                     nameSelectedSubDid = selectedSubDid.id
 
-                    out1, out2 = self.readByDid(paramDid,paramRaw)
+                    out1, out2 = self._readByDid(paramDid,paramRaw)
 
                     if paramRaw: #if raw reading is activated the result is a hex string
                         lenSubDid = selectedSubDid.string_len
@@ -385,7 +395,7 @@ class O3Eclass():
                     raise NotImplementedError("Sub-DID Index " + str(paramSubDid) + "is not defined.")
                 
             else: #DID is not complex
-                return self.readByDid(paramDid, paramRaw)
+                return self._readByDid(paramDid, paramRaw)
             
         else: #DID is not in DID list so decoding is unknown. Force raw output
             return self.readPure(paramDid)
@@ -396,7 +406,7 @@ class O3Eclass():
     def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
-            value,idstr = self.readByDid(int(did), raw=raw)
+            value,idstr = self._readByDid(int(did), raw=raw)
             lst.append([did, value, idstr])
         return lst 
 

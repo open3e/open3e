@@ -260,10 +260,10 @@ def main():
         cmnd_loop() 
 
 
-    def readbydid(addr:int, did:int, json=None, raw=None, msglvl=0):
+    def readbydid(addr:int, did:any, json=None, raw=None, msglvl=0, sub=None):
         if(raw == None): 
             raw = args.raw
-        value,idstr =  dicEcus[addr].readByDid(did, raw)
+        value,idstr =  dicEcus[addr].readByDid(did, raw, sub)
         showread(addr, did, value, idstr, json, msglvl)    
 
         
@@ -409,13 +409,13 @@ def main():
             mlvl = 0  # only val 
             if(len(jobs) > 1): mlvl |= 1  # show did nr
             while(True):
-                for ecudid in jobs:
-                    ensure_ecu(ecudid[0])
+                for ecudidsub in jobs:
+                    ensure_ecu(ecudidsub[0])
                     if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
                     try:
-                        readbydid(addr=ecudid[0], did=ecudid[1], raw=args.raw, msglvl=mlvl)
+                        readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
                     except NegativeResponseException as e:
-                        print('Device rejected this read access. Probably did '+str(ecudid[1])+' is not available.\nErr: '+str(e))
+                        print('Device rejected this read access. Probably did '+str(ecudidsub[1])+' is not available.\nErr: '+str(e))
                     time.sleep(0.02)
                 if(args.timestep != None):
                     time.sleep(float(eval(args.timestep)))
