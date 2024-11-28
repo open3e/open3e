@@ -30,7 +30,7 @@ def main():
     dicEcus = {}      # addr:ecu
     dicDevAddrs = {}  # devstr:addr
 
-    cmnd_queue = []   # command queue to serialize bus traffic
+    cmnd_queue = []   # command queue to serialize MQTT requests
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v) -> int:
@@ -59,25 +59,37 @@ def main():
             return deftx,getint(parts[0])
 
     # complex addressing: 0x680.[257,258,259] or 0x680.256 or 256
-    def eval_complex(v) -> list: # returns list of [ecu,did] items
+    # also possibel 0x680.[257.0,258.1,259.2]  or 0x680.256.1 or 256.0
+    # also Vcal.BusIdentification.BusAddress ...
+    def eval_complex(v) -> list: 
+        """ 
+        this is the 'inner evaluation', called by eval_complex_list() only. 
+        returns list of [ecu,did,sub] items (i.a. sub=None). 
+        did and sub may be string now!! to be evaluated in class!
+        """
         s = str(v).replace(' ','')
         parts = s.split(".")
         if(len(parts) == 1):
             # only did
-            return [[deftx,getint(addr_of_dev(parts[0]))]]
-        elif(len(parts) == 2):  # maybe later 3: ecu.did.sub... 
-            ecu = getint(addr_of_dev((parts[0])))
-            parts[1] = parts[1].replace('[','').replace(']','')
-            parts = parts[1].split(",")
-            if(len(parts) == 1):
-                # only ecu.did, no did list
-                return [[ecu,getint(parts[0])]]
-            else:
-                # ecu addr and did list
+            return [[deftx, parts[0], None]]
+        else:
+            # ecu.[...] or ecu.did or ecu.did.sub
+            ecu = getint(addr_of_dev(parts[0]))
+            if("[" in parts[1]):
+                # ecu.[...]
+                parts[1] = parts[1].replace('[','').replace(']','')
+                parts = parts[1].split(",")
                 lst = []
-                for did in parts:
-                    lst.append([ecu,getint(did)])
+                for part in parts:
+                    did,sub = get_didsub(part)
+                    lst.append([ecu,did,sub])
                 return lst
+            elif(len(parts) == 2):
+                    # only ecu.did
+                    return [ecu,parts[1],None]
+            else:
+                # ecu.did.sub
+                return [ecu,parts[1],parts[2]]
 
     # enum of complex addressing separated by ','
     def eval_complex_list(v) -> list:  # returns list of [ecu,did] items
@@ -85,7 +97,7 @@ def main():
         open = 0
         for i in range(len(sl)):
             if sl[i] == '[':
-                open += 1
+                open += 1   # max 1, no nested brackets
             elif sl[i] == ']':
                 open -= 1
             elif open <= 0:
@@ -99,11 +111,20 @@ def main():
             for itm in plst:
                 lst.append(itm)
         return lst
-
+    
+    # gets did and sub from fraction tailing 'ecu.'
+    def get_didsub(s):
+        parts = s.split(".")
+        if(len(parts) == 1):
+            # only did
+            return parts[0], None
+        else:
+            return parts[0], parts[1]      
+        
 
     def ensure_ecu(addr:int):
         if(not (addr in dicEcus)):
-        # make ecu with no name str
+            # make ecu with no name str
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
             dicEcus[addr] = ecu
 
