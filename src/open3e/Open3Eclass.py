@@ -407,7 +407,7 @@ class O3Eclass():
             if (type(selectedDid) == open3e.Open3Ecodecs.O3EComplexType): #DID is complex
                 # Step 1: Read raw data of complete complex DID as string
                 numSubDids = len(selectedDid.subTypes)
-                rawDidDataString, didName = self.readGenericDid(paramDid=paramDid, paramSubDid=paramSubDid, paramVerbose=paramVerbose, paramRaw=True)
+                rawDidDataString, didName = self.readGenericDid(paramDid=paramDid, paramVerbose=paramVerbose, paramRaw=True)
 
                 # Step 2: Find sub-DID bytes that need to be modified in DID
                 bytesProcessed = 0
