@@ -185,12 +185,12 @@ class O3Eclass():
         selectedDid = self.dataIdentifiers[idid]
 
         if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError(f"DID {did} is not complex.")   
+            raise NotImplementedError(f"DID {idid} is not complex.")   
         
-        isub = self.get_sub_as_int(sub)
+        isub = self.get_sub_as_int(idid, sub)
 
         if (isub >= len(selectedDid.subTypes) or isub < 0):
-            raise NotImplementedError(f"Sub-DID with Index {sub} does not exist in DID {did}")
+            raise NotImplementedError(f"Sub-DID with Index {isub} does not exist in DID {idid}")
             
         selectedSub = selectedDid.subTypes[isub]
 
@@ -230,6 +230,7 @@ class O3Eclass():
             return response.service_data.values[did],self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
+
 
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
         if(did in self.dataIdentifiers):

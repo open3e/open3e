@@ -404,7 +404,7 @@ def main():
         
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
-    # listener mode
+        # listener mode
         if(args.listen != None):
             listen(args.read, args.timestep)
 
