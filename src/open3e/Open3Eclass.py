@@ -161,9 +161,9 @@ class O3Eclass():
             sub = int(eval(str(v)))
             return sub
         except:
-            for i in range(len(self.dataIdentifiers[did].subtypes)):
-                if(self.dataIdentifiers[did].subtypes[i].id.lower() == str(v).lower()):
-                    return i
+            for sub in range(len(self.dataIdentifiers[did].subTypes)):
+                if(self.dataIdentifiers[did].subTypes[sub].id.lower() == str(v).lower()):
+                    return sub
             raise ValueError(f"No Sub found according to {v} with DID {did}")
 
 
@@ -172,7 +172,7 @@ class O3Eclass():
     #++++++++++++++++++++++++++++++
 
     def readByDid(self, did:any, raw:bool, sub=None):
-        verbose=True # Temp!!
+        verbose=False # Temp!!
 
         idid = self.get_did_as_int(did)
 
@@ -204,6 +204,8 @@ class O3Eclass():
 
         string_ascii_sub = string_ascii_did[(startIndexSub*2):(stopIndexSub*2)]
         string_bin = bytearray.fromhex(string_ascii_sub)
+
+        open3e.Open3Ecodecs.flag_rawmode = raw
         decodedData = selectedSub.decode(string_bin)
 
         if verbose:
@@ -474,7 +476,7 @@ class O3Eclass():
         return lst 
 
     # reading without knowing length / codec
-    def readPure(self, did:int):
+    def readPure(self, did:int, binary:bool=False):
         response = self.uds_client.send_request(
             udsoncan.Request(
                 service=udsoncan.services.ReadDataByIdentifier,
@@ -482,7 +484,10 @@ class O3Eclass():
             )
         )
         if(response.positive):
-            return binascii.hexlify(response.data[2:]).decode('utf-8'),f"unknown:len={len(response)-3}"
+            if(binary):
+                return response.data[2:],str(did)
+            else:
+                return binascii.hexlify(response.data[2:]).decode('utf-8'),f"unknown:len={len(response)-3}"
         else:
             return f"negative response, {response.code}:{response.invalid_reason}","unknown"
   
