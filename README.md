@@ -134,7 +134,7 @@ For more detailed description of the command line arguments see also the [accord
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
 
 ## Extended writing service (internal can bus only, experimental)
-    In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
+In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
 # Publish data points to mqtt
     open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
