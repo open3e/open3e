@@ -21,7 +21,7 @@ import json
 import open3e.Open3Eenums
 
 flag_rawmode = True
-flag_dev = "vcal"
+flag_binary = False
 
 class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
@@ -29,13 +29,19 @@ class RawCodec(udsoncan.DidCodec):
         self.id = idStr
 
     def encode(self, string_ascii: Any) -> bytes:
-        string_bin = bytes.fromhex(string_ascii)
+        if(flag_binary):
+            string_bin = string_ascii
+        else:    
+            string_bin = bytes.fromhex(string_ascii)
         if len(string_bin) != self.string_len:
             raise ValueError('String must be %d long' % self.string_len)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
-        string_ascii = string_bin.hex()
+        if(flag_binary):
+            string_ascii = string_bin
+        else:
+            string_ascii = string_bin.hex()
         return string_ascii
 
     def getCodecInfo(self):

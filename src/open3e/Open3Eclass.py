@@ -98,7 +98,7 @@ class O3Eclass():
 
         # select CAN / DoIP ~~~~~~~~~~~~~~~~~~
         if(doip != None):
-            conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
+            self.conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
         else:
             # Refer to isotp documentation for full details about parameters
             isotp_params = {
@@ -123,12 +123,12 @@ class O3Eclass():
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
             stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
-            conn = PythonIsoTpConnection(stack)                                                 # interface between Application and Transport layer
+            self.conn = PythonIsoTpConnection(stack)                                                 # interface between Application and Transport layer
 
         # UDS setup ~~~~~~~~~~~~~~~~~~
         udsoncan.setup_logging()
         loglevel = logging.ERROR
-        conn.logger.setLevel(loglevel)  #?? hier? s.u.
+        self.conn.logger.setLevel(loglevel)  #?? hier? s.u.
 
         # configuration for udsoncan client
         config = dict(udsoncan.configs.default_client_config)
@@ -139,7 +139,7 @@ class O3Eclass():
         config['p2_star_timeout'] = 20
         
         # run uds client
-        self.uds_client = Open3EudsClient(conn, config=config)
+        self.uds_client = Open3EudsClient(self.conn, config=config)
         self.uds_client.open()
         self.uds_client.logger.setLevel(loglevel)
 
@@ -171,8 +171,7 @@ class O3Eclass():
     # 'global' methods
     #++++++++++++++++++++++++++++++
 
-    def readByDid(self, did:any, raw:bool, sub=None):
-        verbose=False # Temp!!
+    def readByDid(self, did, raw:bool, sub=None):
 
         idid = self.get_did_as_int(did)
 
@@ -180,12 +179,12 @@ class O3Eclass():
             return self._readByDid(idid, raw)
 
         if(idid not in self.dataIdentifiers):
-            raise NotImplementedError(f"No Codec specified for DID {idid} in Datapoints.py")
+            raise NotImplementedError(f"No Codec specified for DID {idid}")
         
         selectedDid = self.dataIdentifiers[idid]
 
         if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError(f"DID {idid} is not complex.")   
+            raise NotImplementedError(f"DID {idid} is not complex")   
         
         isub = self.get_sub_as_int(idid, sub)
 
@@ -197,29 +196,15 @@ class O3Eclass():
         startIndexSub = 0
         for i in range(isub):
             startIndexSub += selectedDid.subTypes[i].string_len
-
         stopIndexSub = startIndexSub + selectedSub.string_len
 
-        string_ascii_did,_ = self._readByDid(idid, raw=True)
-
-        string_ascii_sub = string_ascii_did[(startIndexSub*2):(stopIndexSub*2)]
-        string_bin = bytearray.fromhex(string_ascii_sub)
+        # receive bin data directly, no codec, no conversion
+        string_bin,_ = self.readPure(idid, binary=True)
+        string_bin_sub = string_bin[startIndexSub:stopIndexSub]
 
         open3e.Open3Ecodecs.flag_rawmode = raw
-        decodedData = selectedSub.decode(string_bin)
+        decodedData = selectedSub.decode(string_bin_sub)
 
-        if verbose:
-            print("DID: " + str(idid))
-            print("DID Name: " + str(selectedDid.id))
-            print("Raw DID Data: " + str(string_ascii_sub))
-            print("DID " + str(idid) + " consists of " + str(len(selectedDid.subTypes)) + " Sub-DIDs.")
-            print("Sub DID: " + str(sub))
-            print("Sub DID Name: " + selectedSub.id)
-            print("First Byte: " + str(startIndexSub))
-            print("Last Byte: " + str(stopIndexSub-1))
-            print("Sub DID Data:" + str(string_ascii_sub)) 
-            print("Sub DID Decoded Data: " + str(idid) + "." + str(sub) + ": " + str(decodedData))
-        
         return decodedData,selectedSub.id
                         
 
@@ -283,11 +268,65 @@ class O3Eclass():
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
 
     
-    def writeByDid(self, did:int, val, raw:bool, useService77=False):
+    def _writeByDid(self, did:int, val, raw:bool, useService77=False):
         open3e.Open3Ecodecs.flag_rawmode = raw
         response = self.uds_client.write_data_by_identifier(did, val, useService77)
         succ = (response.valid & response.positive)
         return succ, response.code
+
+
+    def writeByDid(self, did, val, raw:bool, useService77=False, sub=None):
+        #print( did, val, raw, useService77, sub)
+
+        idid = self.get_did_as_int(did)
+
+        if(sub is None):
+            return self._writeByDid(idid, val, raw, useService77)
+
+        if(idid not in self.dataIdentifiers):
+            raise NotImplementedError(f"No Codec specified for DID {idid}")
+        
+        selectedDid = self.dataIdentifiers[idid]
+
+        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+            raise NotImplementedError(f"DID {idid} is not complex")   
+        
+        isub = self.get_sub_as_int(idid, sub)
+
+        if (isub >= len(selectedDid.subTypes) or isub < 0):
+            raise NotImplementedError(f"Sub Index {isub} does not exist in DID {idid}")
+        
+        selectedSub = selectedDid.subTypes[isub]
+
+        startIndexSub = 0
+        for i in range(isub):
+            startIndexSub += selectedDid.subTypes[i].string_len
+        stopIndexSub = startIndexSub + selectedSub.string_len
+
+        # receive bin data directly, no codec, no conversion
+        string_bin,_ = self.readPure(idid, binary=True)
+
+        # encode value to bytes
+        string_bin_sub = selectedSub.encode(val)
+
+        # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
+
+        # print(type(string_bin), type(string_bin_sub))
+        # print(string_bin, string_bin_sub)
+        string_bin_sub = bytes(string_bin_sub)
+        # print(type(string_bin_sub), string_bin_sub)
+
+        string_bin = string_bin[:startIndexSub] + string_bin_sub + string_bin[stopIndexSub:]
+
+        # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
+        open3e.Open3Ecodecs.flag_rawmode = True
+        open3e.Open3Ecodecs.flag_binary = True
+
+        ret1,ret2 = self._writeByDid(idid, string_bin, raw, useService77)        
+
+        open3e.Open3Ecodecs.flag_binary = False
+
+        return ret1,ret2
 
 
     def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, simulateOnly:bool=True, useService77=False, verbose=False):
@@ -349,7 +388,7 @@ class O3Eclass():
                         print("New Raw DID Data: " + rawDidDataNew)
 
                     if not simulateOnly:
-                        self.writeByDid(did,rawDidDataNew,True,useService77)
+                        self._writeByDid(did,rawDidDataNew,True,useService77)
 
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
@@ -357,6 +396,7 @@ class O3Eclass():
                 raise NotImplementedError("DID " + str(did) + " is not complex.") 
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
+
 
     def readGenericDid(self, paramDid:int, paramSubDid:int=-1, paramRaw:bool=False, paramVerbose:bool=False):
 
@@ -458,13 +498,13 @@ class O3Eclass():
                         print("New Raw DID Data: " + rawDidDataNew)
 
                     if not paramSimulateOnly:
-                        self.writeByDid(paramDid,rawDidDataNew,True,paramService77)
+                        self._writeByDid(paramDid,rawDidDataNew,True,paramService77)
 
                 else:
                     raise NotImplementedError("Encoded Sub-DID length does not match the length in complex DID")   
 
             else: #DID is not complex
-                self.writeByDid(paramDid, paramValue, paramRaw, paramService77)
+                self._writeByDid(paramDid, paramValue, paramRaw, paramService77)
         else: #DID is not in DID list so decoding is unknown. Force raw writing
             raise NotImplementedError("Writing to unknown DIDs is currently not supported.")
 
@@ -477,19 +517,53 @@ class O3Eclass():
 
     # reading without knowing length / codec
     def readPure(self, did:int, binary:bool=False):
+        # ref https://github.com/pylessard/python-udsoncan/issues/188#issuecomment-1913654033
+        response = self.uds_client.test_data_identifier([did])
+        if(response.positive):
+            diddata = response.data[2:]
+            if(binary):
+                return diddata,f"DID_{did}"
+            else:
+                return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}"
+        else:
+            return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}"
+
+    def readPure_a(self, did:int, binary:bool=False):
+        # orignal version but concerns by pylessard, ref https://github.com/pylessard/python-udsoncan/issues/188#issuecomment-1828949128
         response = self.uds_client.send_request(
             udsoncan.Request(
                 service=udsoncan.services.ReadDataByIdentifier,
                 data=(did).to_bytes(2, byteorder='big')
-            )
+            ), 
+            timeout = 5 
         )
+
         if(response.positive):
+            diddata = response.data[2:]
             if(binary):
-                return response.data[2:],str(did)
+                return diddata,f"DID_{did}"
             else:
-                return binascii.hexlify(response.data[2:]).decode('utf-8'),f"unknown:len={len(response)-3}"
+                return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}"
         else:
-            return f"negative response, {response.code}:{response.invalid_reason}","unknown"
-  
+            return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}"
+
+    def readPure_b(self, did:int, binary:bool=False):
+        # ref https://github.com/pylessard/python-udsoncan/issues/188#issuecomment-1830065527
+        dummy_did_config = {
+            did:'h'   # Dummy codec.  No decode/encode actually happens while crafting the request.
+        }
+
+        req = udsoncan.services.ReadDataByIdentifier.make_request(did, dummy_did_config)
+        self.conn.send(req)
+        data = self.conn.wait_frame(timeout=5)
+        response = udsoncan.Response.from_payload(data)
+        # No call to ReadDataByIdentifier.interpret_response().  No decoding of the did happens, so we're good.
+        if response.positive:
+            print(f"did exist")
+            print(binascii.hexlify(data).decode('utf-8'))
+            print(f"  {binascii.hexlify(response.data).decode('utf-8')}")
+            print(f"      {binascii.hexlify(response.data[2:]).decode('utf-8')}")
+
+
     def close(self):
         self.uds_client.close()
