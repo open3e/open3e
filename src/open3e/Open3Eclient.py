@@ -166,12 +166,24 @@ def main():
             if 'addr' in cd: 
                 return getint(addr_of_dev(cd['addr']))
             else: 
-                return deftx 
+                return deftx
+        
+        def getdidsub(v) -> tuple: # [did,sub=none]
+            """
+            :param v: something representing did or did.sub
+            :return: tuple of did,sub where sub=None if not given 
+            """
+            if(v.isinstance(str)):
+                parts = str(v).split('.')
+                if (len(parts) > 1):
+                    return [parts[0],parts[1]]
+            return[v,None]
+        
 
         def cmnd_loop():
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
             if(readdids != None):
-                jobs =  eval_complex_list(readdids)
+                jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()
 
             while True:
@@ -186,7 +198,9 @@ def main():
                         dids = cd['data']
                         ensure_ecu(addr) 
                         for did in dids:
-                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                            didsub = get_didsub(did)
+                            #readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                            readbydid(addr, didsub[0], json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=didsub[1])
                             time.sleep(0.01)            # 10 ms delay before next request
 
                     elif cd['mode'] == 'read-pure':
@@ -209,34 +223,39 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            #didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
-                            dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
+                            #dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
+                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
                             time.sleep(0.1)
                         
                     elif cd['mode'] == 'write-raw':
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = getint(wd[0])                  # key is submitted as numeric value
+                            #didKey = getint(wd[0])                  # key is submitted as numeric value
+                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                            dicEcus[addr].writeByDid(didKey, didVal, raw=True)
+                            #dicEcus[addr].writeByDid(didKey, didVal, raw=True)
+                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
                             time.sleep(0.1)
                             
                     elif cd['mode'] == 'write-sid77':
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            #didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
+                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey, didVal, raw=False, useService77=True)
+                            ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1])
                             ecu77.close() 
                             time.sleep(0.1)
                         
@@ -244,18 +263,23 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = getint(wd[0])                  # key is submitted as numeric value
+                            #didKey = getint(wd[0])                  # key is submitted as numeric value
+                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey, didVal, raw=True, useService77=True)
+                            #ecu77.writeByDid(didKey, didVal, raw=True, useService77=True)
+                            ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1])
                             ecu77.close()
                             time.sleep(0.1)
                 else:
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
                             # add dids to read to command queue
-                            for ecudid in jobs:
-                                cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
+                            for ecudidsub in jobs:
+                                did = ecudidsub[1]
+                                if(ecudidsub[2] is not None):
+                                    did = f"{ecudidsub[1]}.{ecudidsub[2]}"
+                                cmnd_queue.append({'mode':'read', 'addr': ecudidsub[0], 'data': [did]})
                             if(timestep != None):
                                 next_read_time = next_read_time + int(timestep)
                             else:
