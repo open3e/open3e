@@ -126,7 +126,7 @@ def main():
         :param v: something representing did or did.sub
         :return: tuple of did,sub where sub=None if not given 
         """
-        if(v.isinstance(str)):
+        if(isinstance(v, str)):
             parts = str(v).split('.')
             if (len(parts) > 1):
                 return [parts[0],parts[1]]
