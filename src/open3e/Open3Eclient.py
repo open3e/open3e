@@ -164,14 +164,14 @@ def main():
 
         def getaddr(cd) -> int:
             if 'addr' in cd: 
-                return addr_of_dev(cd['addr'])
+                return getint(addr_of_dev(cd['addr']))
             else: 
                 return deftx 
 
         def cmnd_loop():
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
             if(readdids != None):
-                jobs = eval_complex_list(readdids)  # did list already evaluated, only one did per job: [ecu,did,sub]
+                jobs =  eval_complex_list(readdids)
                 next_read_time = time.time()
 
             while True:
@@ -184,12 +184,9 @@ def main():
                     elif cd['mode'] in ['read','read-json','read-raw']:
                         addr = getaddr(cd)
                         dids = cd['data']
-                        sub = None
-                        if('sub' in cd):
-                            sub = cd['sub']
                         ensure_ecu(addr) 
                         for did in dids:
-                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=sub)
+                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
                             time.sleep(0.01)            # 10 ms delay before next request
 
                     elif cd['mode'] == 'read-pure':
@@ -257,8 +254,8 @@ def main():
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
                             # add dids to read to command queue
-                            for ecudidsub in jobs:
-                                cmnd_queue.append({'mode':'read', 'addr': ecudidsub[0], 'data': [ecudidsub[1]], 'sub': ecudidsub[2]})
+                            for ecudid in jobs:
+                                cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
                             if(timestep != None):
                                 next_read_time = next_read_time + int(timestep)
                             else:
