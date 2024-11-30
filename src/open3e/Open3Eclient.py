@@ -121,13 +121,16 @@ def main():
         return lst
 
     # gets did and sub from fraction tailing 'ecu.'
-    def get_didsub(s):
-        parts = s.split(".")
-        if(len(parts) == 1):
-            # only did
-            return parts[0], None
-        else:
-            return parts[0], parts[1]      
+    def get_didsub(v) -> tuple: # [did,sub=none]
+        """
+        :param v: something representing did or did.sub
+        :return: tuple of did,sub where sub=None if not given 
+        """
+        if(v.isinstance(str)):
+            parts = str(v).split('.')
+            if (len(parts) > 1):
+                return [parts[0],parts[1]]
+        return [v,None]
           
 
     def ensure_ecu(addr:int):
@@ -166,19 +169,7 @@ def main():
             if 'addr' in cd: 
                 return getint(addr_of_dev(cd['addr']))
             else: 
-                return deftx
-        
-        def getdidsub(v) -> tuple: # [did,sub=none]
-            """
-            :param v: something representing did or did.sub
-            :return: tuple of did,sub where sub=None if not given 
-            """
-            if(v.isinstance(str)):
-                parts = str(v).split('.')
-                if (len(parts) > 1):
-                    return [parts[0],parts[1]]
-            return[v,None]
-        
+                return deftx        
 
         def cmnd_loop():
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
