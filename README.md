@@ -86,7 +86,7 @@ For more detailed description of the command line arguments see also the [accord
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
     @argsfile               use arguments given in a file. Seperate line for each argument.
 
-Attention: The option `-dev DEV, --dev DEV` is deprecated and will be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead!
+**Attention!:** The option `-dev DEV, --dev DEV` is deprecated and will be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead!
 
 # Read dids
     open3e -c can0 -dev vdens -r 268 -v
