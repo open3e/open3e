@@ -30,7 +30,7 @@ class RawCodec(udsoncan.DidCodec):
 
     def encode(self, string_ascii: Any) -> bytes:
         if(flag_binary):
-            string_bin = string_ascii
+            string_bin = bytes(string_ascii)
         else:    
             string_bin = bytes.fromhex(string_ascii)
         if len(string_bin) != self.string_len:
@@ -507,7 +507,7 @@ class O3EComplexType(udsoncan.DidCodec):
             try:
                 string_bin = bytes()
                 for subType in self.subTypes:
-                    string_bin+=subType.encode(string_ascii[subType.id])
+                    string_bin += subType.encode(string_ascii[subType.id])
             except KeyError as e:
                 raise ValueError(f"Cannot encode value due to missing key: {e}")
         return string_bin

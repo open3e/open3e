@@ -450,7 +450,7 @@ def main():
                         print(f"write raw: {ecu}.{did}.{sub} = {val}")
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
                     print(f"success: {succ}, code: {code}")
-            else:
+            elif(args.json == True):
                 writeArg = args.write.split("=")
                 #ecu,didkey = get_ecudid(writeArg[0])
                 lsteds = eval_complex(writeArg[0])
@@ -467,7 +467,27 @@ def main():
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
                     succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False)
-                print(f"success: {succ}, code: {code}")                
+                print(f"success: {succ}, code: {code}")  
+            else:
+                jobs = args.write.split(",")
+                for job in jobs:
+                    writeArg = job.split("=")
+                    #ecu,didkey = get_ecudid(writeArg[0])
+                    lsteds = eval_complex(writeArg[0])
+                    ecu = lsteds[0][0]  # int
+                    did = lsteds[0][1]  # may be string
+                    sub = lsteds[0][2]  # may be None or string
+                    val = writeArg[1]   # must be decoded form
+                    if args.forcesid77:
+                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub)
+                        ecu77.close()
+                    else:
+                        ensure_ecu(ecu)
+                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
+                    print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
 
         # scanall

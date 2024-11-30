@@ -155,7 +155,6 @@ class O3Eclass():
                     return did
             raise ValueError(f"No DID found according to {v}")
 
-
     def get_sub_as_int(self, did:int, v):
         try:
             sub = int(eval(str(v)))
@@ -207,7 +206,6 @@ class O3Eclass():
 
         return decodedData,selectedSub.id
                         
-
     # not global anymore... ;-)
     def _readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers): 
@@ -217,6 +215,58 @@ class O3Eclass():
             return response.service_data.values[did],self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
+
+
+    def writeByDid(self, did, val, raw:bool, useService77=False, sub=None):
+        #print( did, val, raw, useService77, sub)
+
+        idid = self.get_did_as_int(did)
+
+        if(sub is None):
+            return self._writeByDid(idid, val, raw, useService77)
+
+        if(idid not in self.dataIdentifiers):
+            raise NotImplementedError(f"No Codec specified for DID {idid}")
+        
+        selectedDid = self.dataIdentifiers[idid]
+
+        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+            raise NotImplementedError(f"DID {idid} is not complex")   
+        
+        isub = self.get_sub_as_int(idid, sub)
+
+        if (isub >= len(selectedDid.subTypes) or isub < 0):
+            raise NotImplementedError(f"Sub Index {isub} does not exist in DID {idid}")
+        
+        selectedSub = selectedDid.subTypes[isub]
+
+        startIndexSub = 0
+        for i in range(isub):
+            startIndexSub += selectedDid.subTypes[i].string_len
+        stopIndexSub = startIndexSub + selectedSub.string_len
+
+        # receive bin data directly, no codec, no conversion
+        string_bin,_ = self.readPure(idid, binary=True)
+
+        # encode value to bytes
+        open3e.Open3Ecodecs.flag_rawmode = raw 
+        string_bin_sub = selectedSub.encode(val)
+
+        # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
+        string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
+
+        # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
+        open3e.Open3Ecodecs.flag_binary = True
+        ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)        
+        open3e.Open3Ecodecs.flag_binary = False   
+        return ret1,ret2
+
+    # not global anymore... ;-)
+    def _writeByDid(self, did:int, val, raw:bool, useService77=False):
+        open3e.Open3Ecodecs.flag_rawmode = raw
+        response = self.uds_client.write_data_by_identifier(did, val, useService77)
+        succ = (response.valid & response.positive)
+        return succ, response.code
 
 
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
@@ -266,69 +316,7 @@ class O3Eclass():
                 raise NotImplementedError("DID " + str(did) + " is not complex.")   
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
-
     
-    def _writeByDid(self, did:int, val, raw:bool, useService77=False):
-        open3e.Open3Ecodecs.flag_rawmode = raw
-        response = self.uds_client.write_data_by_identifier(did, val, useService77)
-        succ = (response.valid & response.positive)
-        return succ, response.code
-
-
-    def writeByDid(self, did, val, raw:bool, useService77=False, sub=None):
-        #print( did, val, raw, useService77, sub)
-
-        idid = self.get_did_as_int(did)
-
-        if(sub is None):
-            return self._writeByDid(idid, val, raw, useService77)
-
-        if(idid not in self.dataIdentifiers):
-            raise NotImplementedError(f"No Codec specified for DID {idid}")
-        
-        selectedDid = self.dataIdentifiers[idid]
-
-        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError(f"DID {idid} is not complex")   
-        
-        isub = self.get_sub_as_int(idid, sub)
-
-        if (isub >= len(selectedDid.subTypes) or isub < 0):
-            raise NotImplementedError(f"Sub Index {isub} does not exist in DID {idid}")
-        
-        selectedSub = selectedDid.subTypes[isub]
-
-        startIndexSub = 0
-        for i in range(isub):
-            startIndexSub += selectedDid.subTypes[i].string_len
-        stopIndexSub = startIndexSub + selectedSub.string_len
-
-        # receive bin data directly, no codec, no conversion
-        string_bin,_ = self.readPure(idid, binary=True)
-
-        # encode value to bytes
-        string_bin_sub = selectedSub.encode(val)
-
-        # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
-
-        # print(type(string_bin), type(string_bin_sub))
-        # print(string_bin, string_bin_sub)
-        string_bin_sub = bytes(string_bin_sub)
-        # print(type(string_bin_sub), string_bin_sub)
-
-        string_bin = string_bin[:startIndexSub] + string_bin_sub + string_bin[stopIndexSub:]
-
-        # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
-        open3e.Open3Ecodecs.flag_rawmode = True
-        open3e.Open3Ecodecs.flag_binary = True
-
-        ret1,ret2 = self._writeByDid(idid, string_bin, raw, useService77)        
-
-        open3e.Open3Ecodecs.flag_binary = False
-
-        return ret1,ret2
-
-
     def writeByComplexDid(self, did:int, subDid:int, val, raw:bool=False, simulateOnly:bool=True, useService77=False, verbose=False):
         if(did in self.dataIdentifiers):
             selectedDid = self.dataIdentifiers[did]
@@ -396,7 +384,6 @@ class O3Eclass():
                 raise NotImplementedError("DID " + str(did) + " is not complex.") 
         else:
             raise NotImplementedError("No Codec specified for DID " + str(did) + " in Datapoints.py.")
-
 
     def readGenericDid(self, paramDid:int, paramSubDid:int=-1, paramRaw:bool=False, paramVerbose:bool=False):
 
@@ -508,12 +495,14 @@ class O3Eclass():
         else: #DID is not in DID list so decoding is unknown. Force raw writing
             raise NotImplementedError("Writing to unknown DIDs is currently not supported.")
 
+
     def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
             value,idstr = self._readByDid(int(did), raw=raw)
             lst.append([did, value, idstr])
         return lst 
+
 
     # reading without knowing length / codec
     def readPure(self, did:int, binary:bool=False):
@@ -563,6 +552,26 @@ class O3Eclass():
             print(binascii.hexlify(data).decode('utf-8'))
             print(f"  {binascii.hexlify(response.data).decode('utf-8')}")
             print(f"      {binascii.hexlify(response.data[2:]).decode('utf-8')}")
+
+
+    def writePure(self, did:int, val, binary:bool=False):
+        dummy_did_config = {
+            did:'h'   # Dummy codec.  No decode/encode actually happens while crafting the request.
+        }
+
+        # if(binary):
+        #     value = bytes(val)
+        # else:
+        #     # then hex str
+        #     value = bytes.fromhex(val)
+
+        req = udsoncan.services.WriteDataByIdentifier.make_request(did, val, dummy_did_config)
+        self.conn.send(req)
+        data = self.conn.wait_frame(timeout=5)
+        response = udsoncan.Response.from_payload(data)
+        succ = (response.valid & response.positive)
+        return succ, response.code
+        
 
 
     def close(self):
