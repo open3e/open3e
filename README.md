@@ -61,7 +61,6 @@ For more detailed description of the command line arguments see also the [accord
     -h, --help              show this help message and exit
     -c CAN, --can CAN       use can device, e.g. can0
     -d DOIP, --doip DOIP    use doip access, e.g. 192.168.1.1
-    -dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair
     -a, --scanall           dump all dids
     -r READ, --read READ    read did, e.g. 0x173,0x174
     -raw, --raw             return raw data for all dids
@@ -86,17 +85,20 @@ For more detailed description of the command line arguments see also the [accord
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
     @argsfile               use arguments given in a file. Seperate line for each argument.
 
+Attention: Option `-dev DEV, --dev DEV` is deprecated and will be removed in future versions. Use `-cnfg DEVICES.JSON` instead! 
+
+
 # Read dids
-    open3e -c can0 -dev vdens -r 268 -v
+    open3e -c can0 -cnfg devices.json -r 268 -v
     268 FlowTempSensor 27.2
 
-    open3e -c can0 -dev vcal -r 318 -v
+    open3e -c can0 -cnfg devices.json -r 318 -v
     318 WaterPressureSensor 1.8
 
-    open3e -c can0 -dev vcal -r 377 -v
+    open3e -c can0 -cnfg devices.json -r 377 -v
     377 IdentNumber 7XXXXXXXXXXXXX
 
-    open3e -c can0 -dev vcal -r 1043 -v
+    open3e -c can0 -cnfg devices.json -r 1043 -v
     1043 FlowMeterSensor 2412.0
 
     open3e -c can0 -dev vx3 -r 1664 -v
@@ -113,7 +115,7 @@ For more detailed description of the command line arguments see also the [accord
         -v
 
 # Interval Readout
-    open3e -c can0 -dev vcal -r 1043 -t 1
+    open3e -c can0 -cnfg devices.json -r 1043 -t 1
     2412.0
     2413.0
     2411.0
@@ -122,14 +124,14 @@ For more detailed description of the command line arguments see also the [accord
 
 # Write did
 ## Using raw data format
-    open3e -c can0 -dev vdens -raw -w 396=D601
+    open3e -c can0 -cnfg devices.json -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
 
 ## Using json data format
-    open3e -c can0 -dev vdens -w 396='47.5'
+    open3e -c can0 -cnfg devices.json -j -w 396='47.5'
     -> sets domestic hot water setpoint to 47.5degC
 
-    open3e -c can0 -dev vdens -w 538='{"Mode": 1, "State": 0}'
+    open3e -c can0 -cnfg devices.json -j -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
 
@@ -137,14 +139,14 @@ For more detailed description of the command line arguments see also the [accord
 In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
 # Publish data points to mqtt
-    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
+    open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan data points and publish data to broker 192.168.0.5
 
-    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
 
 # Listener mode
-    open3e -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -c can0 -cnfg devices.json -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
