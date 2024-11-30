@@ -121,16 +121,15 @@ def main():
         return lst
 
     # gets did and sub from fraction tailing 'ecu.'
-    def get_didsub(v) -> tuple: # [did,sub=none]
+    def get_didsub(s) -> tuple: # [did,sub=none]
         """
-        :param v: something representing did or did.sub
+        :param s: string representing did or did.sub
         :return: tuple of did,sub where sub=None if not given 
         """
-        if(isinstance(v, str)):
-            parts = str(v).split('.')
-            if (len(parts) > 1):
-                return [parts[0],parts[1]]
-        return [v,None]
+        parts = str(s).replace(' ','').split('.')
+        if (len(parts) > 1):
+            return [parts[0],parts[1]]
+        return [s,None]
           
 
     def ensure_ecu(addr:int):
@@ -190,6 +189,7 @@ def main():
                         ensure_ecu(addr) 
                         for did in dids:
                             didsub = get_didsub(did)
+                            print(type(did),did,didsub)
                             #readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
                             readbydid(addr, didsub[0], json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=didsub[1])
                             time.sleep(0.01)            # 10 ms delay before next request
@@ -228,11 +228,11 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            #didKey = getint(wd[0])                  # key is submitted as numeric value
-                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
+                            #didKey = getint(wd[0])    # key is submitted as numeric value
+                            didKey = get_didsub(wd[0])    # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             #dicEcus[addr].writeByDid(didKey, didVal, raw=True)
-                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
+                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=True, sub=didKey[1]) 
                             time.sleep(0.1)
                             
                     elif cd['mode'] == 'write-sid77':
@@ -246,6 +246,7 @@ def main():
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
+                            #ecu77.writeByDid(didKey, didVal, raw=False, useService77=True)
                             ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1])
                             ecu77.close() 
                             time.sleep(0.1)
