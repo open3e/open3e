@@ -96,8 +96,11 @@ def main():
         # ecu.did.sub
         return [[ecu,parts[1],parts[2]]]
 
-    # enum of complex addressing separated by ','
-    def eval_complex_list(v) -> list:  # returns list of (more or less) complex items
+    def eval_complex_list(v) -> list:  
+        """
+        :param v: enum of complex addressing separated by ','
+        :return: list of items [ecu,did,sub]
+        """
         sl = list(str(v).replace(' ',''))
         open = 0
         for i in range(len(sl)):
@@ -168,7 +171,7 @@ def main():
         def cmnd_loop():
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
             if(readdids != None):
-                jobs =  eval_complex_list(readdids)
+                jobs = eval_complex_list(readdids)  # did list already evaluated, only one did per job: [ecu,did,sub]
                 next_read_time = time.time()
 
             while True:
@@ -181,9 +184,12 @@ def main():
                     elif cd['mode'] in ['read','read-json','read-raw']:
                         addr = getaddr(cd)
                         dids = cd['data']
+                        sub = None
+                        if('sub' in cd):
+                            sub = cd['sub']
                         ensure_ecu(addr) 
                         for did in dids:
-                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
+                            readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=sub)
                             time.sleep(0.01)            # 10 ms delay before next request
 
                     elif cd['mode'] == 'read-pure':
@@ -251,8 +257,8 @@ def main():
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
                             # add dids to read to command queue
-                            for ecudid in jobs:
-                                cmnd_queue.append({'mode':'read', 'addr': ecudid[0], 'data': [ecudid[1]]})
+                            for ecudidsub in jobs:
+                                cmnd_queue.append({'mode':'read', 'addr': ecudidsub[0], 'data': [ecudidsub[1]], 'sub': ecudidsub[2]})
                             if(timestep != None):
                                 next_read_time = next_read_time + int(timestep)
                             else:
