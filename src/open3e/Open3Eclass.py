@@ -268,7 +268,7 @@ class O3Eclass():
         succ = (response.valid & response.positive)
         return succ, response.code
 
-
+    """ Vorlagen von Philip Wiege
     def readByComplexDid(self, did:int, subDid:int = 0, raw:bool = False, verbose=False):
         if(did in self.dataIdentifiers):
             open3e.Open3Ecodecs.flag_rawmode = True
@@ -494,7 +494,7 @@ class O3Eclass():
                 self._writeByDid(paramDid, paramValue, paramRaw, paramService77)
         else: #DID is not in DID list so decoding is unknown. Force raw writing
             raise NotImplementedError("Writing to unknown DIDs is currently not supported.")
-
+    """
 
     def readAll(self, raw:bool):
         lst = []
@@ -516,7 +516,8 @@ class O3Eclass():
                 return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}"
         else:
             return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}"
-
+    
+    """ org. Version, Testkram
     def readPure_a(self, did:int, binary:bool=False):
         # orignal version but concerns by pylessard, ref https://github.com/pylessard/python-udsoncan/issues/188#issuecomment-1828949128
         response = self.uds_client.send_request(
@@ -571,7 +572,7 @@ class O3Eclass():
         response = udsoncan.Response.from_payload(data)
         succ = (response.valid & response.positive)
         return succ, response.code
-        
+    """
 
 
     def close(self):
