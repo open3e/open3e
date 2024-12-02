@@ -25,7 +25,7 @@ or for the develop branch
 
 This will install open3e along with all dependencies.
 
-If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the preveious command.<br>
+If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the previous command, but better install using a virtual environment - venv<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
 
 # Setup CAN Bus
@@ -84,11 +84,11 @@ For more detailed description of the command line arguments see also the [accord
     -j, --json              send JSON structure via MQTT
     -v, --verbose           verbose info
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
-    @argsfile               use arguments given in a file. Seperate line for each argument.
+    @argsfile               use arguments given in a file. Seperate line for each argument. No linebreak after final entry. 
 
 (*) **Attention!:** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead!
 
-**_regarding the following examples: Please be aware of that not all datapoints exist on every device._**
+**_regarding the following examples: Please be aware of that not all datapoints exist with every device._**
 
 # Read dids
 
@@ -104,7 +104,7 @@ For more detailed description of the command line arguments see also the [accord
     open3e -c can0 -cnfg devices.json -r 1043 -v
     1043 FlowMeterSensor 2412.0 
 
-    open3e -c can0 -dev vx3 -r 1664 -v
+    open3e -c can0 -cnfg devices.json -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44 
 
     open3e @myargs
@@ -202,5 +202,5 @@ If you want to work on the codebase you can clone the repository and work in "ed
     cd open3e
     pip install --editable .[dev]
 
-Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.
-=======
+**Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
+
