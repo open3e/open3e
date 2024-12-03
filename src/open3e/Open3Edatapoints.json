@@ -31744,43 +31744,159 @@
     }
   },
   "2622": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 9,
-    "id": "SeasonalCoefficientOfPerformaceHeating",
+    "id": "SeasonalCoefficientOfPerformanceHeating",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyThermal",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyElectric",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2623": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "SeasonalEnergyEfficiencyRatioCooling",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyThermal",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyElectric",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2624": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 9,
-    "id": "SeasonalCoefficientOfPerformaceDomesticHotWater",
+    "id": "SeasonalCoefficientOfPerformanceDomesticHotWater",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyThermal",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyElectric",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2625": {
-    "codec": "O3EInt16",
+    "codec": "O3EComplexType",
     "len": 9,
-    "id": "SeasonalCoefficientOfPerformaceHeatingAndDomesticHotWater",
+    "id": "SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater",
     "args": {
-      "scale": 10.0,
-      "signed": false,
-      "offset": 0
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyThermal",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "EnergyElectric",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "offset": 0
+          }
+        }
+      ]
     }
   },
   "2626": {
@@ -34368,5 +34484,5 @@
       ]
     }
   },
-  "Version": "20241125"
+  "Version": "20241203"
 }
