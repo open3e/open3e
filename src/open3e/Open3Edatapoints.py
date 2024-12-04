@@ -1426,10 +1426,10 @@ dataIdentifiers = {
         2612 : O3EComplexType(7, "PrimarySourceCommonSettingsHeating", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2613 : O3EComplexType(7, "PrimarySourceCommonSettingsCooling", [O3EByteVal(1, "Mode"), O3EInt16(2, "MaxFanSpeed"), O3EInt16(2, "DefaultFanSpeed"), O3EInt16(2, "MinFanSpeed")]),# ODU-FanSpeed --> Mode: Fixed/Variable, Unit: %
         2621 : O3EInt16(2, "MaximumOperatingPressureActualTemperatureSetpoint"),
-        2622 : O3EInt16(9, "SeasonalCoefficientOfPerformaceHeating"),
-        2623 : O3EInt16(9, "SeasonalEnergyEfficiencyRatioCooling"),
-        2624 : O3EInt16(9, "SeasonalCoefficientOfPerformaceDomesticHotWater"),
-        2625 : O3EInt16(9, "SeasonalCoefficientOfPerformaceHeatingAndDomesticHotWater"),
+        2622 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceHeating", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
+        2623 : O3EComplexType(9, "SeasonalEnergyEfficiencyRatioCooling", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
+        2624 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
+        2625 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)]), #250-xH
         2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale = 1),
         2627 : O3EInt16(2, "CompressorStartUpTimer"),
         2629 : O3EInt32(4, "DesiredThermalCapacity", scale = 1),

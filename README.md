@@ -1,6 +1,6 @@
 # Open3E interface
 
-* Connects E3 boiler (vcal or vdens) controller through CAN UDS or doip
+* Connects E3 'OneBase' device through CAN UDS or doip
 * Read known data points
 * Listen to commands on mqtt
 * Write data points in raw and json data format
@@ -25,7 +25,7 @@ or for the develop branch
 
 This will install open3e along with all dependencies.
 
-If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the preveious command.<br>
+If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the previous command, but better install using a virtual environment - venv<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
 
 # Setup CAN Bus
@@ -61,7 +61,7 @@ For more detailed description of the command line arguments see also the [accord
     -h, --help              show this help message and exit
     -c CAN, --can CAN       use can device, e.g. can0
     -d DOIP, --doip DOIP    use doip access, e.g. 192.168.1.1
-    -dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair
+    (*)-dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair(*)
     -a, --scanall           dump all dids
     -r READ, --read READ    read did, e.g. 0x173,0x174
     -raw, --raw             return raw data for all dids
@@ -84,67 +84,76 @@ For more detailed description of the command line arguments see also the [accord
     -j, --json              send JSON structure via MQTT
     -v, --verbose           verbose info
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
-    @argsfile               use arguments given in a file. Seperate line for each argument.
+    @argsfile               use arguments given in a file. Seperate line for each argument. No linebreak after final entry. 
+
+(*) **Attention!** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead! You may also use `-cnfg dev` which is equal to `-cnfg devices.json` 
+
+<br>
+
+**_regarding the following examples: Please be aware of that not all datapoints exist with every device._**
 
 # Read dids
-    open3e -c can0 -dev vdens -r 268 -v
+
+    open3e -c can0 -cnfg devices.json -r 268 -v
     268 FlowTempSensor 27.2
 
-    open3e -c can0 -dev vcal -r 318 -v
-    318 WaterPressureSensor 1.8
+    open3e -c can0 -cnfg dev -r 318 -v
+    318 WaterPressureSensor 1.8 
 
-    open3e -c can0 -dev vcal -r 377 -v
-    377 IdentNumber 7XXXXXXXXXXXXX
+    open3e -c can0 -cnfg dev -r 377 -v
+    377 IdentNumber 7XXXXXXXXXXXXX 
 
-    open3e -c can0 -dev vcal -r 1043 -v
-    1043 FlowMeterSensor 2412.0
+    open3e -c can0 -cnfg dev -r 1043 -v
+    1043 FlowMeterSensor 2412.0 
 
-    open3e -c can0 -dev vx3 -r 1664 -v
-    1664 ElectricalEnergyStorageStateOfCharge 44
+    open3e -c can0 -cnfg dev -r 1664 -v
+    1664 ElectricalEnergyStorageStateOfCharge 44 
 
     open3e @myargs
         with content of file myargs:
         -c
         can0
-        -dev
-        vx3
+        -cnfg
+        devices.jsom
         -r
         1664
         -v
 
 # Interval Readout
-    open3e -c can0 -dev vcal -r 1043 -t 1
+    open3e -c can0 -cnfg devices.json -r 1043 -t 1
     2412.0
     2413.0
     2411.0
     2412.0
     ...
+  
 
 # Write did
 ## Using raw data format
-    open3e -c can0 -dev vdens -raw -w 396=D601
+    open3e -c can0 -cnfg devices.json -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
 
 ## Using json data format
-    open3e -c can0 -dev vdens -w 396='47.5'
+    open3e -c can0 -cnfg devices.json -w 396='47.5'
     -> sets domestic hot water setpoint to 47.5degC
 
-    open3e -c can0 -dev vdens -w 538='{"Mode": 1, "State": 0}'
+    open3e -c can0 -cnfg dev -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
+ 
 
 ## Extended writing service (internal can bus only, experimental)
-    In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
+In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
 # Publish data points to mqtt
-    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
-    -> will periodically scan data points and publish data to broker 192.168.0.5
+    open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
+    -> will periodically scan data points and publish data to broker 192.168.0.5 
 
-    open3e -c can0 -dev vcal -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
-    -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor
+    open3e -c can0 -cnfg dev -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor 
 
 # Listener mode
-    open3e -c can0 -dev vcal -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -c can0 -cnfg devices.json -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
@@ -195,5 +204,5 @@ If you want to work on the codebase you can clone the repository and work in "ed
     cd open3e
     pip install --editable .[dev]
 
-Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.
-=======
+**Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
+
