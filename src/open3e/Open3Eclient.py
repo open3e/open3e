@@ -142,6 +142,8 @@ def main():
             # make ecu with no name str
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
             dicEcus[addr] = ecu
+            dicDevAddrs[f"0x{addr:03x}"] = addr
+            # print("h", dicDevAddrs)
 
 
     # listen events ~~~~~~~~~~~~~~~~~~~~~~~
@@ -397,7 +399,8 @@ def main():
         # only default device
         ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
         dicEcus[deftx] = ecu
-        dicDevAddrs[args.dev] = deftx
+        name = f"0x{deftx:03x}" if (args.dev is None) else args.dev
+        dicDevAddrs[name] = deftx
         
 
     # MQTT setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -424,7 +427,7 @@ def main():
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
         mqtt_client.loop_start()
         
-    print("hallo!")
+    print("hallo! 149")
 
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
