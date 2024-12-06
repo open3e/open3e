@@ -121,7 +121,7 @@ def main():
         return lst
 
     # gets did and sub from fraction tailing 'ecu.'
-    def _get_didsub(v) -> tuple: # [did,sub=none]
+    def get_didsub(v) -> tuple: # [did,sub=none]
         """
         :param v: something representing did or did.sub
         :return: tuple of did,sub where sub=None if not given 
@@ -131,10 +131,10 @@ def main():
             return [parts[0],parts[1]]
         return [v,None]
           
-    def get_didsub(v) -> tuple:
-        r1,r2=_get_didsub(v)
-        print(type(v),r1,r2)
-        return r1,r2
+    # def get_didsub(v) -> tuple:
+    #     r1,r2=_get_didsub(v)
+    #     print(type(v),r1,r2)
+    #     return r1,r2
     
 
     def ensure_ecu(addr:int):
@@ -296,6 +296,7 @@ def main():
         value,idstr =  dicEcus[addr].readByDid(did, raw, sub)
         showread(addr, did, value, idstr, json, msglvl)    
 
+
         
     def readpure(addr:int, did:int, json=None, msglvl=0):
         value,idstr =  dicEcus[addr].readPure(did)
@@ -448,10 +449,13 @@ def main():
                 for ecudidsub in jobs:
                     ensure_ecu(ecudidsub[0])
                     #if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                    try:
-                        readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
-                    except NegativeResponseException as e:
-                        print(f'Device rejected this read access. Probably DID {ecudidsub[1]} is not available.\nErr: {e}')
+                    # try:
+                    #     readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
+                    # except NegativeResponseException as e:
+                    #     print(f'Device rejected this read access. Probably DID {ecudidsub[1]} is not available.\nErr: {e}')
+                    # except Exception as e:
+                    #     print(type(e).__name__, e)
+                    readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
                     time.sleep(0.02)
                 if(args.timestep != None):
                     time.sleep(float(eval(args.timestep)))

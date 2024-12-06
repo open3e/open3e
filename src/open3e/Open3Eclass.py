@@ -18,7 +18,7 @@ import importlib
 import binascii
 import os
 import sys
-import time
+#import time
 
 import open3e.Open3Edatapoints
 import open3e.Open3Ecodecs
@@ -153,7 +153,7 @@ class O3Eclass():
             for did,cdc in self.dataIdentifiers.items():
                 if(cdc.id.lower() == str(v).lower()):
                     return did
-            raise ValueError(f"No DID found according to {v} on ECU {hex(self.tx)}")
+            raise ValueError(f"No DID found according to \"{v}\" on ECU {hex(self.tx)}")
 
     def get_sub_as_int(self, did:int, v):
         try:
@@ -163,7 +163,7 @@ class O3Eclass():
             for sub in range(len(self.dataIdentifiers[did].subTypes)):
                 if(self.dataIdentifiers[did].subTypes[sub].id.lower() == str(v).lower()):
                     return sub
-            raise ValueError(f"No Sub found according to {v} with DID {did}")
+            raise ValueError(f"No Sub found according to \"{v}\" with DID {did}")
 
 
     #++++++++++++++++++++++++++++++
@@ -205,6 +205,8 @@ class O3Eclass():
             decodedData = selectedSub.decode(string_bin_sub)
 
             return decodedData,selectedSub.id
+        except NegativeResponseException as e:
+            return f'Device rejected this read access. Probably DID {idid} is not available.', {e}
         except Exception as e:
             return str(e),type(e).__name__
         
@@ -264,8 +266,10 @@ class O3Eclass():
             ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)        
             open3e.Open3Ecodecs.flag_binary = False   
             return ret1,ret2
+        except NegativeResponseException as e:
+            return f'Device rejected this read access. Probably DID {idid} is not available.', {e}
         except Exception as e:
-            return str(e),''
+            return str(e),type(e).__name__
 
     # not global anymore... ;-)
     def _writeByDid(self, did:int, val, raw:bool, useService77=False):
