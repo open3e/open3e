@@ -67,7 +67,7 @@ For more detailed description of the command line arguments see also the [accord
     -d DOIP, --doip DOIP    use doip access, e.g. 192.168.1.1
     (*)-dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair(*)
     -a, --scanall           dump all dids
-    -r READ, --read READ    read did, e.g. 0x173,0x174
+    -r READ, --read READ    read did, e.g. 257,258
     -raw, --raw             return raw data for all dids
     -w WRITE, --write WRITE
                             write did, e.g. -w 396=D601 (raw data only!)

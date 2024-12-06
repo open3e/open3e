@@ -304,7 +304,7 @@ def main():
 
     def showread(addr, did, value, idstr, fjson=None, msglvl=0):   
         """
-        :param msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+        :param msglvl: bcd: 1=didnr, 2=didname, 4=ecuaddr
         """
         def mqttdump(topic, obj):
             if (type(obj)==dict):

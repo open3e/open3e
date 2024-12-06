@@ -206,7 +206,7 @@ class O3Eclass():
 
             return decodedData,selectedSub.id
         except Exception as e:
-            return str(e),''  #str(e.__class__)
+            return str(e),type(e).__name__
         
                         
     # not global anymore... ;-)
