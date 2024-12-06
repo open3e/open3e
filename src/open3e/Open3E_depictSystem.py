@@ -141,8 +141,6 @@ def main():
                             data=(did).to_bytes(2, byteorder='big')
                         )
                     )
-                    #response = client.test_data_identifier([did])
-
                     if response.positive:
                         dlen = len(response) - 3
                         data = response.data[2:]

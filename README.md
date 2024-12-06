@@ -1,3 +1,7 @@
+**_New: Explicit writing of sub-items of a DID, specifying DIDs and Subs by name instead of number posible._**
+
+<BR>
+
 # Open3E interface
 
 * Connects E3 'OneBase' device through CAN UDS or doip
@@ -86,7 +90,9 @@ For more detailed description of the command line arguments see also the [accord
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
     @argsfile               use arguments given in a file. Seperate line for each argument. No linebreak after final entry. 
 
-(*) **Attention!:** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead!
+(*) **Attention!** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead! You may also use `-cnfg dev` which is equal to `-cnfg devices.json` 
+
+<br>
 
 **_regarding the following examples: Please be aware of that not all datapoints exist with every device._**
 
@@ -95,24 +101,24 @@ For more detailed description of the command line arguments see also the [accord
     open3e -c can0 -cnfg devices.json -r 268 -v
     268 FlowTempSensor 27.2
 
-    open3e -c can0 -cnfg devices.json -r 318 -v
+    open3e -c can0 -cnfg dev -r 318 -v
     318 WaterPressureSensor 1.8 
 
-    open3e -c can0 -cnfg devices.json -r 377 -v
+    open3e -c can0 -cnfg dev -r 377 -v
     377 IdentNumber 7XXXXXXXXXXXXX 
 
-    open3e -c can0 -cnfg devices.json -r 1043 -v
+    open3e -c can0 -cnfg dev -r 1043 -v
     1043 FlowMeterSensor 2412.0 
 
-    open3e -c can0 -cnfg devices.json -r 1664 -v
+    open3e -c can0 -cnfg dev -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44 
 
     open3e @myargs
         with content of file myargs:
         -c
         can0
-        -dev
-        vx3
+        -cnfg
+        devices.jsom
         -r
         1664
         -v
@@ -135,7 +141,7 @@ For more detailed description of the command line arguments see also the [accord
     open3e -c can0 -cnfg devices.json -w 396='47.5'
     -> sets domestic hot water setpoint to 47.5degC
 
-    open3e -c can0 -cnfg devices.json -w 538='{"Mode": 1, "State": 0}'
+    open3e -c can0 -cnfg dev -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
  
@@ -147,7 +153,7 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan data points and publish data to broker 192.168.0.5 
 
-    open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    open3e -c can0 -cnfg dev -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor 
 
 # Listener mode

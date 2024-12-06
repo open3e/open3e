@@ -134,9 +134,9 @@ class O3Eclass():
         config = dict(udsoncan.configs.default_client_config)
         config['data_identifiers'] = self.dataIdentifiers
         # increase default timeout
-        config['request_timeout'] = 20
-        config['p2_timeout'] = 20
-        config['p2_star_timeout'] = 20
+        config['request_timeout'] = 3  # default 5, never appeared
+        config['p2_timeout'] = 3       # default 1
+        config['p2_star_timeout'] = 3  # default 5, never appeared
         
         # run uds client
         self.uds_client = Open3EudsClient(self.conn, config=config)
@@ -153,7 +153,7 @@ class O3Eclass():
             for did,cdc in self.dataIdentifiers.items():
                 if(cdc.id.lower() == str(v).lower()):
                     return did
-            raise ValueError(f"No DID found according to {v}")
+            raise ValueError(f"No DID found according to {v} on ECU {hex(self.tx)}")
 
     def get_sub_as_int(self, did:int, v):
         try:
@@ -171,40 +171,43 @@ class O3Eclass():
     #++++++++++++++++++++++++++++++
 
     def readByDid(self, did, raw:bool, sub=None):
+        try:
+            idid = self.get_did_as_int(did)
 
-        idid = self.get_did_as_int(did)
+            if(sub is None):
+                return self._readByDid(idid, raw)
 
-        if(sub is None):
-            return self._readByDid(idid, raw)
-
-        if(idid not in self.dataIdentifiers):
-            raise NotImplementedError(f"No Codec specified for DID {idid}")
-        
-        selectedDid = self.dataIdentifiers[idid]
-
-        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError(f"DID {idid} is not complex")   
-        
-        isub = self.get_sub_as_int(idid, sub)
-
-        if (isub >= len(selectedDid.subTypes) or isub < 0):
-            raise NotImplementedError(f"Sub-DID with Index {isub} does not exist in DID {idid}")
+            if(idid not in self.dataIdentifiers):
+                raise ValueError(f"No Codec specified for DID {idid}")
             
-        selectedSub = selectedDid.subTypes[isub]
+            selectedDid = self.dataIdentifiers[idid]
 
-        startIndexSub = 0
-        for i in range(isub):
-            startIndexSub += selectedDid.subTypes[i].string_len
-        stopIndexSub = startIndexSub + selectedSub.string_len
+            if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+                raise TypeError(f"DID {idid} is not complex")   
+            
+            isub = self.get_sub_as_int(idid, sub)
 
-        # receive bin data directly, no codec, no conversion
-        string_bin,_ = self.readPure(idid, binary=True)
-        string_bin_sub = string_bin[startIndexSub:stopIndexSub]
+            if (isub >= len(selectedDid.subTypes) or isub < 0):
+                raise IndexError(f"Sub-Item with Index {isub} does not exist with DID {idid}")
+                
+            selectedSub = selectedDid.subTypes[isub]
 
-        open3e.Open3Ecodecs.flag_rawmode = raw
-        decodedData = selectedSub.decode(string_bin_sub)
+            startIndexSub = 0
+            for i in range(isub):
+                startIndexSub += selectedDid.subTypes[i].string_len
+            stopIndexSub = startIndexSub + selectedSub.string_len
 
-        return decodedData,selectedSub.id
+            # receive bin data directly, no codec, no conversion
+            string_bin,_ = self.readPure(idid, binary=True)
+            string_bin_sub = string_bin[startIndexSub:stopIndexSub]
+
+            open3e.Open3Ecodecs.flag_rawmode = raw
+            decodedData = selectedSub.decode(string_bin_sub)
+
+            return decodedData,selectedSub.id
+        except Exception as e:
+            return str(e),''  #str(e.__class__)
+        
                         
     # not global anymore... ;-)
     def _readByDid(self, did:int, raw:bool):
@@ -220,46 +223,49 @@ class O3Eclass():
     def writeByDid(self, did, val, raw:bool, useService77=False, sub=None):
         #print( did, val, raw, useService77, sub)
 
-        idid = self.get_did_as_int(did)
+        try:
+            idid = self.get_did_as_int(did)
 
-        if(sub is None):
-            return self._writeByDid(idid, val, raw, useService77)
+            if(sub is None):
+                return self._writeByDid(idid, val, raw, useService77)
 
-        if(idid not in self.dataIdentifiers):
-            raise NotImplementedError(f"No Codec specified for DID {idid}")
-        
-        selectedDid = self.dataIdentifiers[idid]
+            if(idid not in self.dataIdentifiers):
+                raise ValueError(f"No Codec specified for DID {idid}")
+            
+            selectedDid = self.dataIdentifiers[idid]
 
-        if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
-            raise NotImplementedError(f"DID {idid} is not complex")   
-        
-        isub = self.get_sub_as_int(idid, sub)
+            if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
+                raise TypeError(f"DID {idid} is not complex")   
+            
+            isub = self.get_sub_as_int(idid, sub)
 
-        if (isub >= len(selectedDid.subTypes) or isub < 0):
-            raise NotImplementedError(f"Sub Index {isub} does not exist in DID {idid}")
-        
-        selectedSub = selectedDid.subTypes[isub]
+            if (isub >= len(selectedDid.subTypes) or isub < 0):
+                raise IndexError(f"Sub Index {isub} does not exist in DID {idid}")
+            
+            selectedSub = selectedDid.subTypes[isub]
 
-        startIndexSub = 0
-        for i in range(isub):
-            startIndexSub += selectedDid.subTypes[i].string_len
-        stopIndexSub = startIndexSub + selectedSub.string_len
+            startIndexSub = 0
+            for i in range(isub):
+                startIndexSub += selectedDid.subTypes[i].string_len
+            stopIndexSub = startIndexSub + selectedSub.string_len
 
-        # receive bin data directly, no codec, no conversion
-        string_bin,_ = self.readPure(idid, binary=True)
+            # receive bin data directly, no codec, no conversion
+            string_bin,_ = self.readPure(idid, binary=True)
 
-        # encode value to bytes
-        open3e.Open3Ecodecs.flag_rawmode = raw 
-        string_bin_sub = selectedSub.encode(val)
+            # encode value to bytes
+            open3e.Open3Ecodecs.flag_rawmode = raw 
+            string_bin_sub = selectedSub.encode(val)
 
-        # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
-        string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
+            # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
+            string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
 
-        # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
-        open3e.Open3Ecodecs.flag_binary = True
-        ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)        
-        open3e.Open3Ecodecs.flag_binary = False   
-        return ret1,ret2
+            # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
+            open3e.Open3Ecodecs.flag_binary = True
+            ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)        
+            open3e.Open3Ecodecs.flag_binary = False   
+            return ret1,ret2
+        except Exception as e:
+            return str(e),''
 
     # not global anymore... ;-)
     def _writeByDid(self, did:int, val, raw:bool, useService77=False):

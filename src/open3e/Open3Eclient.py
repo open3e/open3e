@@ -302,7 +302,10 @@ def main():
         showread(addr, did, value, idstr, json, msglvl)    
 
 
-    def showread(addr, did, value, idstr, fjson=None, msglvl=0):   # msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+    def showread(addr, did, value, idstr, fjson=None, msglvl=0):   
+        """
+        :param msglvl: bcd, 1=didnr, 2=didname, 4=ecuaddr
+        """
         def mqttdump(topic, obj):
             if (type(obj)==dict):
                 for k,itm in obj.items():
@@ -311,7 +314,7 @@ def main():
                 for k in range(len(obj)):
                     mqttdump(topic+'/'+str(k),obj[k])
             else:
-                ret = mqtt_client.publish(topic, str(obj))     
+                ret = mqtt_client.publish(topic, str(obj))
 
         if(fjson == None): 
             fjson = args.json
@@ -338,11 +341,11 @@ def main():
                 print (dev_of_addr(addr), did, idstr, json.dumps(value))
             else:
                 mlst = []
-                if((msglvl & 4) != 0):
+                if((msglvl & 4) != 0):  # ecuaddr
                     mlst.append(str(hex(addr)))
-                if((msglvl & 1) != 0):
+                if((msglvl & 1) != 0):  # didnr
                     mlst.append(str(did))
-                if((msglvl & 2) != 0):
+                if((msglvl & 2) != 0):  # didname
                     mlst.append(idstr)
                 mlst.append(str(value))
                 msg = " ".join(mlst)
@@ -438,12 +441,13 @@ def main():
         # read cmd line reads
         elif(args.read != None):
             jobs = eval_complex_list(args.read)
-            mlvl = 0  # only val 
+            #mlvl = 0  # only val 
+            mlvl = 5 if(args.verbose) else 0
             if(len(jobs) > 1): mlvl |= 1  # show did nr
             while(True):
                 for ecudidsub in jobs:
                     ensure_ecu(ecudidsub[0])
-                    if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
+                    #if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
                     try:
                         readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
                     except NegativeResponseException as e:
