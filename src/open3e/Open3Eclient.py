@@ -488,7 +488,7 @@ def main():
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
-                    print(f"success: {succ}, code: {code}")
+                    print(f"return: {succ}, code: {code}")
             elif(args.json == True):
                 writeArg = args.write.split("=")
                 #ecu,didkey = get_ecudid(writeArg[0])
@@ -506,7 +506,7 @@ def main():
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
                     succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False)
-                print(f"success: {succ}, code: {code}")  
+                print(f"return: {succ}, code: {code}")  
             else:
                 jobs = args.write.split(",")
                 for job in jobs:
@@ -526,7 +526,7 @@ def main():
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
-                    print(f"success: {succ}, code: {code}")
+                    print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
 
         # scanall
@@ -545,7 +545,9 @@ def main():
         # <STRG-C> oder SIGINT to stop
         # Use <kill -s SIGINT pid> to send SIGINT
         pass
-                    
+    # except Exception as e:
+    #     print(type(e).__name__, e)
+
     # close all connections before exit
     for ecu in dicEcus.values():
         if(args.verbose):

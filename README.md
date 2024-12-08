@@ -5,7 +5,7 @@
 # Open3E interface
 
 * Connects E3 'OneBase' device through CAN UDS or doip
-* Read known data points
+* Read data points
 * Listen to commands on mqtt
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
@@ -94,13 +94,16 @@ For more detailed description of the command line arguments see also the [accord
 
 <br>
 
-**for details regarding the different ways of addressing datapoints (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
+**IMPORTANT: When addressing sub-items of datapoints, ALWAYS use `ecu.did.sub` format (including ecu!)**
+otherwise intended `did.sub` will get interpreted as `ecu.did` and cause unintended access!
+
+**For details regarding the different ways of addressing data points (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
 
 
 
-**_regarding the following examples: Please be aware of that not all datapoints exist with every device._**
+**_regarding the following examples: Please be aware of that not all data points exist with every device._**
 
-# Read dids
+# Read DIDs
 
     open3e -c can0 -cnfg devices.json -r 268 -v
     268 FlowTempSensor 27.2
@@ -127,7 +130,7 @@ For more detailed description of the command line arguments see also the [accord
         1664
         -v
     
-    open3e -cnfg dev -r 424 -v
+    open3e -c can0 -cnfg dev -r 424 -v
     0x680 424 MixerOneCircuitRoomTemperatureSetpoint {"Comfort": 22.0, "Standard": 20.0, "Reduced": 18.0, "Unknown2": "0000", "Unknown1": 0}
 
     open3e -cnfg dev -r MixerOneCircuitRoomTemperatureSetpoint
@@ -146,7 +149,7 @@ For more detailed description of the command line arguments see also the [accord
     ...
   
 
-# Write did
+# Write DID
 (more details [on Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#lesen--schreiben-per-kommandozeile))
 ## Using raw data format
     open3e -c can0 -cnfg devices.json -raw -w 396=D601
@@ -156,9 +159,11 @@ For more detailed description of the command line arguments see also the [accord
     
     open3e -c can0 -cnfg devices.json -w 396=47.5
 
+    open3e -cnfg dev -w TimeSettingSource=NetworkTimeProtocol
+
     open3e -c can0 -cnfg dev -w 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort=23
 
-    open3e -cnfg dev -w TimeSettingSource=NetworkTimeProtocol
+    open3e -cnfg dev -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
     open3e -c can0 -cnfg devices.json -w 396='47.5'
