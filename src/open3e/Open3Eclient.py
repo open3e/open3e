@@ -352,7 +352,12 @@ def main():
                 msg = " ".join(mlst)
                 print(msg)
 
-
+    def print_writeraw(ecu, did, sub, val):
+        if(sub is None):
+            print(f"write raw: {ecu}.{did} = {val}")
+        else:
+            print(f"write raw: {ecu}.{did}.{sub} = {val}")
+        
     #~~~~~~~~~~~~~~~~~~~~~~
     # Main
     #~~~~~~~~~~~~~~~~~~~~~~
@@ -475,13 +480,13 @@ def main():
                     sub = lsteds[0][2]  # may be None or string
                     val=str(writeArg[1]).replace("0x","")     #!?!?!?
                     if args.forcesid77:
-                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        print_writeraw(ecu, did, sub, val)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub)
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
-                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        print_writeraw(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
                     print(f"success: {succ}, code: {code}")
             elif(args.json == True):
@@ -513,13 +518,13 @@ def main():
                     sub = lsteds[0][2]  # may be None or string
                     val = writeArg[1]   # must be decoded form
                     if args.forcesid77:
-                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        print_writeraw(ecu, did, sub, val)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub)
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
-                        print(f"write raw: {ecu}.{did}.{sub} = {val}")
+                        print_writeraw(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
                     print(f"success: {succ}, code: {code}")
             time.sleep(0.1)
