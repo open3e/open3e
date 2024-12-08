@@ -94,7 +94,7 @@ For more detailed description of the command line arguments see also the [accord
 
 <br>
 
-**IMPORTANT: When addressing sub-items of datapoints, ALWAYS use `ecu.did.sub` format (including ecu!)**
+**IMPORTANT: When addressing sub-items of data points, ALWAYS use `ecu.did.sub` format (including ecu!)**
 otherwise intended `did.sub` will get interpreted as `ecu.did` and cause unintended access!
 
 **For details regarding the different ways of addressing data points (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
@@ -159,9 +159,9 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     
     open3e -c can0 -cnfg devices.json -w 396=47.5
 
-    open3e -cnfg dev -w TimeSettingSource=NetworkTimeProtocol
+    open3e -c can0 -cnfg dev -w TimeSettingSource=NetworkTimeProtocol
 
-    open3e -c can0 -cnfg dev -w 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort=23
+    open3e -cnfg dev -w 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort=23
 
     open3e -cnfg dev -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
