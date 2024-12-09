@@ -19,6 +19,7 @@ import time
 import json
 import paho.mqtt.client as paho
 from udsoncan.exceptions import *
+from os import path
 
 import open3e.Open3Eclass
 
@@ -196,7 +197,6 @@ def main():
                         ensure_ecu(addr) 
                         for did in dids:
                             didsub = get_didsub(did)
-                            #readbydid(addr, getint(did), json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'))
                             readbydid(addr, didsub[0], json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=didsub[1])
                             time.sleep(0.01)            # 10 ms delay before next request
 
@@ -220,13 +220,11 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            #didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
                             didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
-                            #dicEcus[addr].writeByDid(didKey, didVal, raw=False) 
                             dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
                             time.sleep(0.1)
                         
@@ -234,10 +232,8 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            #didKey = getint(wd[0])    # key is submitted as numeric value
                             didKey = get_didsub(wd[0])    # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                            #dicEcus[addr].writeByDid(didKey, didVal, raw=True)
                             dicEcus[addr].writeByDid(didKey[0], didVal, raw=True, sub=didKey[1]) 
                             time.sleep(0.1)
                             
@@ -245,14 +241,12 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            #didKey = getint(wd[0])    # key: convert numeric or string parameter to numeric value
                             didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            #ecu77.writeByDid(didKey, didVal, raw=False, useService77=True)
                             ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1])
                             ecu77.close() 
                             time.sleep(0.1)
@@ -261,11 +255,9 @@ def main():
                         addr = getaddr(cd)
                         ensure_ecu(addr)
                         for wd in cd['data']:
-                            #didKey = getint(wd[0])                  # key is submitted as numeric value
                             didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            #ecu77.writeByDid(didKey, didVal, raw=True, useService77=True)
                             ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1])
                             ecu77.close()
                             time.sleep(0.1)
@@ -393,6 +385,11 @@ def main():
     if(args.config != None):
         if(args.config == 'dev'):  # short
             args.config = 'devices.json'
+    else:
+        # default since V0.4.0
+        args.config = 'devices.json'
+
+    if(path.isfile(args.config)):
         # get configuration from file
         with open(args.config, 'r') as file:
             devjson = json.load(file)
@@ -405,10 +402,11 @@ def main():
             dicEcus[addrtx] = ecu
             dicDevAddrs[device] = addrtx
     else:
+        print(f"Configuration file {args.config} not found, continuing with generic DID list, ECU {hex(deftx)}")
         # only default device
         ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
         dicEcus[deftx] = ecu
-        name = f"0x{deftx:03x}" if (args.dev is None) else args.dev
+        name = hex(deftx) if (args.dev is None) else args.dev  #TODO args.dev may be s/t like 'OpenE3datapoints_680.py'...
         dicDevAddrs[name] = deftx
         
 
@@ -453,13 +451,6 @@ def main():
             while(True):
                 for ecudidsub in jobs:
                     ensure_ecu(ecudidsub[0])
-                    #if(len(dicEcus) > 1): mlvl |= 4  # show ecu addr
-                    # try:
-                    #     readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
-                    # except NegativeResponseException as e:
-                    #     print(f'Device rejected this read access. Probably DID {ecudidsub[1]} is not available.\nErr: {e}')
-                    # except Exception as e:
-                    #     print(type(e).__name__, e)
                     readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
                     time.sleep(0.02)
                 if(args.timestep != None):
@@ -467,13 +458,12 @@ def main():
                 else:
                     break
 
-        # experimental write to did
+        # write to did
         elif(args.write != None):
             if(args.raw == True):
                 jobs = args.write.split(",")
                 for job in jobs:
                     writeArg = job.split("=")
-                    #ecu,didkey = get_ecudid(writeArg[0])
                     lsteds = eval_complex(writeArg[0])
                     ecu = lsteds[0][0]  # int
                     did = lsteds[0][1]  # may be string
@@ -491,7 +481,6 @@ def main():
                     print(f"return: {succ}, code: {code}")
             elif(args.json == True):
                 writeArg = args.write.split("=")
-                #ecu,didkey = get_ecudid(writeArg[0])
                 lsteds = eval_complex(writeArg[0])
                 ecu = lsteds[0][0]
                 did = lsteds[0][1]
@@ -511,7 +500,6 @@ def main():
                 jobs = args.write.split(",")
                 for job in jobs:
                     writeArg = job.split("=")
-                    #ecu,didkey = get_ecudid(writeArg[0])
                     lsteds = eval_complex(writeArg[0])
                     ecu = lsteds[0][0]  # int
                     did = lsteds[0][1]  # may be string

@@ -63,39 +63,41 @@ For more detailed description of the command line arguments see also the [accord
 
     options:
     -h, --help              show this help message and exit
-    -c CAN, --can CAN       use can device, e.g. can0 (can0 is default, can be omitted)
+    -c CAN, --can CAN       use can device, e.g. can0. `-c can0` is default, can be omitted.
     -d DOIP, --doip DOIP    use doip access, e.g. 192.168.1.1
     (*)-dev DEV, --dev DEV     boiler type --dev vdens or --dev vcal || pv/battery --dev vx3, --dev vair(*)
     -a, --scanall           dump all dids
     -r READ, --read READ    read did, e.g. 257,258
     -raw, --raw             return raw data for all dids
     -w WRITE, --write WRITE
-                            write did, e.g. -w 396=D601 (raw data only!)
+                            write did, e.g. `-w 396=D601 -raw` 
     -f77, --forcesid77      force the use of serive 0x77 for writing of a did
-    -t TIMESTEP, --timestep TIMESTEP
+    -t TIMESTEP, --timestep TIMESTEP (seconds)
                             read continuous with delay in s
-    -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:topicname
+    -m MQTT, --mqtt MQTT  publish to server, e.g. 192.168.0.1:1883:TOPICNAME
     -mfstr MQTTFORMATSTRING, --mqttformatstring MQTTFORMATSTRING
                             mqtt formatstring e.g. {ecuAddr:03X}_{device}_{didNumber:04d}_{didName}
     -muser MQTTUSER:PASSW, --mqttuser MQTTUSER:PASSW
                             mqtt username:password
-    -mcid mqtt-client-id, --mqttclientid mqtt-client-id
+    -mcid MQTT-CLENT-ID, --mqttclientid MQTT-CLENT-ID
                             set mqtt client id of open3e
     -tx ECUADDR, --ecuaddr ECUADDR
                             sets the default ECU Address different from 0x680
     -cnfg DEVICES.JSON, --config DEVICES.JSON 
-                            use multi-ECU configuration file, e.g. `devices.json` created by Open3E_depictSystem
+                            use multi-ECU configuration file. `-cnfg devices.json` created by Open3E_depictSystem is default, can be omitted.
     -j, --json              send JSON structure via MQTT
     -v, --verbose           verbose info
     -l, --listen            mqtt topic to listen for commands, e.g. `open3e/cmnd`
     @argsfile               use arguments given in a file. Seperate line for each argument. No linebreak after final entry. 
 
-(*) **Attention!** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. Make use of `-cnfg DEVICES.JSON` instead! You may also use `-cnfg dev` which is equal to `-cnfg devices.json` 
+(*) **Attention!** The option `-dev DEV, --dev DEV` is deprecated and may be removed in future versions. 
+
+Since V0.4.0 `-cnfg devices.json` is default and does not need to get specified.
 
 <br>
 
 **IMPORTANT: When addressing sub-items of data points, ALWAYS use `ecu.did.sub` format (including ecu!)**
-otherwise intended `did.sub` will get interpreted as `ecu.did` and cause unintended access!
+otherwise intended `did.sub` will get interpreted as `ecu.did` and cause unintended access or failure!
 
 **For details regarding the different ways of addressing data points (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
 
@@ -111,13 +113,13 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     open3e -c can0 -cnfg dev -r 318 -v
     318 WaterPressureSensor 1.8 
 
-    open3e -c can0 -cnfg dev -r 377 -v
+    open3e -c can0 -r 377 -v
     377 IdentNumber 7XXXXXXXXXXXXX 
 
-    open3e -c can0 -cnfg dev -r 1043 -v
+    open3e -r 1043 -v
     1043 FlowMeterSensor 2412.0 
 
-    open3e -c can0 -cnfg dev -r 1664 -v
+    open3e -r 1664 -v
     1664 ElectricalEnergyStorageStateOfCharge 44 
 
     open3e @myargs
@@ -130,18 +132,18 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
         1664
         -v
     
-    open3e -c can0 -cnfg dev -r 424 -v
+    open3e -r 424 -v
     0x680 424 MixerOneCircuitRoomTemperatureSetpoint {"Comfort": 22.0, "Standard": 20.0, "Reduced": 18.0, "Unknown2": "0000", "Unknown1": 0}
 
-    open3e -cnfg dev -r MixerOneCircuitRoomTemperatureSetpoint
+    open3e -r MixerOneCircuitRoomTemperatureSetpoint
     {'Comfort': 22.0, 'Standard': 20.0, 'Reduced': 18.0, 'Unknown2': '0000', 'Unknown1': 0}
 
-    open3e -cnfg dev -r 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort
+    open3e -r 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort
     22.0
 
 
 # Interval Readout
-    open3e -c can0 -cnfg devices.json -r 1043 -t 1
+    open3e -r 1043 -t 1
     2412.0
     2413.0
     2411.0
@@ -152,24 +154,23 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
 # Write DID
 (more details [on Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#lesen--schreiben-per-kommandozeile))
 ## Using raw data format
-    open3e -c can0 -cnfg devices.json -raw -w 396=D601
+    open3e -raw -w 396=D601
     -> sets domestic hot water setpoint to 47degC
 
-## Using encoder data format 
-    
-    open3e -c can0 -cnfg devices.json -w 396=47.5
+## Using encoder data format     
+    open3e -w 396=47.5
 
-    open3e -c can0 -cnfg dev -w TimeSettingSource=NetworkTimeProtocol
+    open3e -w TimeSettingSource=NetworkTimeProtocol
 
-    open3e -cnfg dev -w 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort=23
+    open3e -w 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort=23
 
-    open3e -cnfg dev -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
+    open3e -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
-    open3e -c can0 -cnfg devices.json -w 396='47.5'
+    open3e -w 396='47.5'
     -> sets domestic hot water setpoint to 47.5degC
 
-    open3e -c can0 -cnfg dev -w 538='{"Mode": 1, "State": 0}'
+    open3e -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
  
@@ -178,14 +179,14 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
 In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
 
 # Publish data points to mqtt
-    open3e -c can0 -cnfg devices.json -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
+    open3e -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1
     -> will periodically scan data points and publish data to broker 192.168.0.5 
 
-    open3e -c can0 -cnfg dev -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
+    open3e -r 268,269,271,274,318,1043 -m 192.168.0.5:1883:open3e -t 1 -mfstr "{didNumber}_{didName}"
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor 
 
 # Listener mode
-    open3e -c can0 -cnfg devices.json -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
