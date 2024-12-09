@@ -385,11 +385,11 @@ def main():
     if(args.config != None):
         if(args.config == 'dev'):  # short
             args.config = 'devices.json'
-    else:
+    elif(args.dev is None):
         # default since V0.4.0
         args.config = 'devices.json'
 
-    if(path.isfile(args.config)):
+    if((args.config is not None) and path.isfile(args.config)):
         # get configuration from file
         with open(args.config, 'r') as file:
             devjson = json.load(file)
@@ -402,7 +402,8 @@ def main():
             dicEcus[addrtx] = ecu
             dicDevAddrs[device] = addrtx
     else:
-        print(f"Configuration file {args.config} not found, continuing with generic DID list, ECU {hex(deftx)}")
+        if(args.config is not None):
+            print(f"Configuration file {args.config} not found, continuing with generic DID list, ECU {hex(deftx)}")
         # only default device
         ecu = open3e.Open3Eclass.O3Eclass(ecutx=deftx, doip=args.doip, can=args.can, dev=args.dev)
         dicEcus[deftx] = ecu
