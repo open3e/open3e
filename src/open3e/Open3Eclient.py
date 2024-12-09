@@ -389,7 +389,7 @@ def main():
         # default since V0.4.0
         args.config = 'devices.json'
 
-    if((args.config is not None) and path.isfile(args.config)):
+    if((args.config != None) and path.isfile(args.config)):
         # get configuration from file
         with open(args.config, 'r') as file:
             devjson = json.load(file)
