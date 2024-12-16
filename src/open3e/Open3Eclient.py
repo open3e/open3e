@@ -225,7 +225,7 @@ def main():
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
-                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1], readecu=dicEcus[addr]) 
+                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
                             time.sleep(0.1)
                         
                     elif cd['mode'] == 'write-raw':
@@ -234,7 +234,7 @@ def main():
                         for wd in cd['data']:
                             didKey = get_didsub(wd[0])    # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=True, sub=didKey[1], readecu=dicEcus[addr]) 
+                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=True, sub=didKey[1]) 
                             time.sleep(0.1)
                             
                     elif cd['mode'] == 'write-sid77':
@@ -479,7 +479,7 @@ def main():
                     else:
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
-                        succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub, readecu=dicEcus[ecu])
+                        succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
                     print(f"return: {succ}, code: {code}")
             elif(args.json == True):
                 writeArg = args.write.split("=")
@@ -492,12 +492,12 @@ def main():
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
                     ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
-                    succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, readecu=dicEcus[ecu])
+                    succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                     ecu77.close()
                 else:
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
-                    succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, readecu=dicEcus[ecu])
+                    succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
                 print(f"return: {succ}, code: {code}")  
             else:
                 jobs = args.write.split(",")
@@ -517,7 +517,7 @@ def main():
                     else:
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
-                        succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub, readecu=dicEcus[ecu])
+                        succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
                     print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
 
