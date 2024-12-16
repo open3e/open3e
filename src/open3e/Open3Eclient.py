@@ -344,11 +344,16 @@ def main():
                 msg = " ".join(mlst)
                 print(msg)
 
-    def print_writeraw(ecu, did, sub, val, f77=False):
+    def print_write(ecu, did, sub, val, raw=False, f77=False):
+        s = "write"
+        if(raw):
+            s += " raw"
+        if(f77):
+            s += " f77"
         if(sub is None):
-            print(f"write raw{' f77' if f77 else ''}: {ecu}.{did} = {val}")
+            print(f"{s}: {ecu}.{did} = {val}")
         else:
-            print(f"write raw{' f77' if f77 else ''}: {ecu}.{did}.{sub} = {val}")
+            print(f"{s}: {ecu}.{did}.{sub} = {val}")
         
     #~~~~~~~~~~~~~~~~~~~~~~
     # Main
@@ -472,13 +477,13 @@ def main():
                     val=str(writeArg[1]).replace("0x","")     #!?!?!?
                     if args.forcesid77:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val, f77=True)
+                        print_write(ecu, did, sub, val, raw=True, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val)
+                        print_write(ecu, did, sub, val, raw=True)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
                     print(f"return: {succ}, code: {code}")
             elif(args.json == True):
@@ -490,13 +495,13 @@ def main():
                 val = json.loads(writeArg[1])
                 if args.forcesid77:
                     ensure_ecu(ecu)
-                    print(f"write: {ecu}.{did}.{sub} = {val}")
+                    print_write(ecu, did, sub, val, f77=True)
                     ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                     succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                     ecu77.close()
                 else:
                     ensure_ecu(ecu)
-                    print(f"write: {ecu}.{did}.{sub} = {val}")
+                    print_write(ecu, did, sub, val)
                     succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
                 print(f"return: {succ}, code: {code}")  
             else:
@@ -510,13 +515,13 @@ def main():
                     val = writeArg[1]   # must be decoded form
                     if args.forcesid77:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val, f77=True)
+                        print_write(ecu, did, sub, val, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val)
+                        print_write(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
                     print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
