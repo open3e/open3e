@@ -252,7 +252,8 @@ class O3Eclass():
             stopIndexSub = startIndexSub + selectedSub.string_len
 
             # receive bin data directly, no codec, no conversion
-            if(useService77):
+            string_bin = None  # noetig?
+            if(readecu is not None):
                 string_bin,_ = readecu.readPure(idid, binary=True)
             else:
                 string_bin,_ = self.readPure(idid, binary=True)
