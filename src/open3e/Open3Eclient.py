@@ -344,11 +344,11 @@ def main():
                 msg = " ".join(mlst)
                 print(msg)
 
-    def print_writeraw(ecu, did, sub, val):
+    def print_writeraw(ecu, did, sub, val, f77=False):
         if(sub is None):
-            print(f"write raw: {ecu}.{did} = {val}")
+            print(f"write raw{' f77' if f77 else ''}: {ecu}.{did} = {val}")
         else:
-            print(f"write raw: {ecu}.{did}.{sub} = {val}")
+            print(f"write raw{' f77' if f77 else ''}: {ecu}.{did}.{sub} = {val}")
         
     #~~~~~~~~~~~~~~~~~~~~~~
     # Main
@@ -472,7 +472,7 @@ def main():
                     val=str(writeArg[1]).replace("0x","")     #!?!?!?
                     if args.forcesid77:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val)
+                        print_writeraw(ecu, did, sub, val, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub)
                         ecu77.close()
@@ -510,7 +510,7 @@ def main():
                     val = writeArg[1]   # must be decoded form
                     if args.forcesid77:
                         ensure_ecu(ecu)
-                        print_writeraw(ecu, did, sub, val)
+                        print_writeraw(ecu, did, sub, val, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub)
                         ecu77.close()
