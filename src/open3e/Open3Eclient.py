@@ -473,7 +473,7 @@ def main():
                     if args.forcesid77:
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
-                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub)
                         ecu77.close()
                     else:
@@ -491,7 +491,7 @@ def main():
                 if args.forcesid77:
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
-                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                    ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                     succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True)
                     ecu77.close()
                 else:
@@ -511,7 +511,7 @@ def main():
                     if args.forcesid77:
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val)
-                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
+                        ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
                         succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub)
                         ecu77.close()
                     else:
