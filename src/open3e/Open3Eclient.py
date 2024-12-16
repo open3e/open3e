@@ -247,7 +247,7 @@ def main():
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1])
+                            ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
                             ecu77.close() 
                             time.sleep(0.1)
                         
@@ -258,7 +258,7 @@ def main():
                             didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1])
+                            ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
                             ecu77.close()
                             time.sleep(0.1)
                 else:
@@ -474,7 +474,7 @@ def main():
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
-                        succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub)
+                        succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)
@@ -492,7 +492,7 @@ def main():
                     ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
                     ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
-                    succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True)
+                    succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, readecu=dicEcus[ecu])
                     ecu77.close()
                 else:
                     ensure_ecu(ecu)
@@ -512,7 +512,7 @@ def main():
                         ensure_ecu(ecu)
                         print_writeraw(ecu, did, sub, val, f77=True)
                         ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, dev=args.dev)
-                        succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub)
+                        succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         ecu77.close()
                     else:
                         ensure_ecu(ecu)

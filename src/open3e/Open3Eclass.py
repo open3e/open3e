@@ -222,7 +222,7 @@ class O3Eclass():
             return self.readPure(did)
 
 
-    def writeByDid(self, did, val, raw:bool, useService77=False, sub=None):
+    def writeByDid(self, did, val, raw:bool, useService77=False, sub=None, readecu=None):
         #print( did, val, raw, useService77, sub)
 
         try:
@@ -252,7 +252,10 @@ class O3Eclass():
             stopIndexSub = startIndexSub + selectedSub.string_len
 
             # receive bin data directly, no codec, no conversion
-            string_bin,_ = self.readPure(idid, binary=True)
+            if(useService77):
+                readecu.readPure(idid, binary=True)
+            else:
+                string_bin,_ = self.readPure(idid, binary=True)
 
             # encode value to bytes
             open3e.Open3Ecodecs.flag_rawmode = raw 
