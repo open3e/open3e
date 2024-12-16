@@ -489,6 +489,7 @@ def main():
                 sub = lsteds[0][2]
                 val = json.loads(writeArg[1])
                 if args.forcesid77:
+                    ensure_ecu(ecu)
                     print(f"write: {ecu}.{did}.{sub} = {val}")
                     ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=dicEcus[ecu].tx+2, doip=args.doip, can=args.can, dev=args.dev)
                     succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True)
