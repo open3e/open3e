@@ -208,13 +208,13 @@ def main():
                             readpure(addr, getint(did))
                             time.sleep(0.01)            # 10 ms delay before next request
 
-                    elif cd['mode'] == 'read-all':
+                    elif cd['mode'] in ['read-all','read-all-json']:
                         addr = getaddr(cd)
                         if(args.verbose == True):
                             print(f"reading {hex(addr)}, {dicEcus[addr].numdps} datapoints, please be patient...")
                         lst = dicEcus[addr].readAll(args.raw)
                         for itm in lst:
-                            showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2])
+                            showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], fjson=(cd['mode']=='read-all-json'))
 
                     elif cd['mode'] == 'write':
                         addr = getaddr(cd)
@@ -265,11 +265,15 @@ def main():
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
                             # add dids to read to command queue
+                            if(args.json == True):
+                                read_mode = 'read-json'
+                            else:
+                                read_mode = 'read'
                             for ecudidsub in jobs:
                                 did = ecudidsub[1]
                                 if(ecudidsub[2] is not None):
                                     did = f"{ecudidsub[1]}.{ecudidsub[2]}"
-                                cmnd_queue.append({'mode':'read', 'addr': ecudidsub[0], 'data': [did]})
+                                cmnd_queue.append({'mode':read_mode,'addr': ecudidsub[0],'data': [did]})
                             if(timestep != None):
                                 next_read_time = next_read_time + int(timestep)
                             else:
