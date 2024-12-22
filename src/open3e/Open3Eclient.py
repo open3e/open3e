@@ -164,6 +164,7 @@ def main():
                 cmnd_queue.append(payload)
             except:
                 print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
+                mqtt_client.publish(mqttTopic + "/ERR", 'bad payload: ' + str(msg.payload))
                 payload = ''
 
 
