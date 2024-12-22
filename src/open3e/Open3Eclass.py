@@ -206,9 +206,9 @@ class O3Eclass():
 
             return decodedData,selectedSub.id
         except NegativeResponseException as e:
-            return f'Device rejected this read access. Probably DID {idid} is not available.', str(e)
+            return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}'
         except Exception as e:
-            return type(e).__name__, str(e)
+            return str(e), f'ERR/{hex(self.tx)}.{did}'
         
                         
     # not global anymore... ;-)
@@ -271,9 +271,9 @@ class O3Eclass():
             open3e.Open3Ecodecs.flag_binary = False   
             return ret1,ret2
         except NegativeResponseException as e:
-            return f'Device rejected this read access. Probably DID {idid} is not available.', str(e)
+            return f'Device rejected this write access. {e}', f'ERR/{hex(self.tx)}.{idid}'
         except Exception as e:
-            return type(e).__name__, str(e)
+            return str(e), f'ERR/{hex(self.tx)}.{did}'
 
     # not global anymore... ;-)
     def _writeByDid(self, did:int, val, raw:bool, useService77=False):
