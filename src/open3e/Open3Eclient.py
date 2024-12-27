@@ -151,10 +151,12 @@ def main():
     def on_connect(client, userdata, flags, reason_code, properties):
         if args.listen != None:
             client.subscribe(args.listen)
+        mqtt_client.publish(mqttTopic + "/LWT" , "online", qos=0,  retain=True)
         
     def on_disconnect(client, userdata, flags, reason_code, properties):
         if reason_code != 0:
             print('mqtt broker disconnected. reason_code = ' + str(reason_code))
+        mqtt_client.publish(mqttTopic + "/LWT" , "offline", qos=0,  retain=True)
 
     def on_message(client, userdata, msg):
         topic = str(msg.topic)            # Topic in String umwandeln
@@ -440,6 +442,7 @@ def main():
             mqttformatstring = args.mqttformatstring
         mqtt_client.on_connect = on_connect
         mqtt_client.on_disconnect = on_disconnect
+        mqtt_client.will_set(mqttTopic + "/LWT", "offline", qos=0,  retain=True)
         mqtt_client.on_message = on_message
         mqtt_client.connect(mlst[0], int(mlst[1]))
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
@@ -559,6 +562,7 @@ def main():
     if(mqtt_client != None):
         if(args.verbose):
             print("closing MQTT client")
+        mqtt_client.publish(mqttTopic + "/LWT" , "offline", qos=0,  retain=True)  #TODO clean way?
         mqtt_client.disconnect()
 
 
