@@ -21,7 +21,7 @@ import json
 import open3e.Open3Eenums
 
 flag_rawmode = True
-flag_dev = "vcal"
+flag_binary = False
 
 class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
@@ -29,13 +29,19 @@ class RawCodec(udsoncan.DidCodec):
         self.id = idStr
 
     def encode(self, string_ascii: Any) -> bytes:
-        string_bin = bytes.fromhex(string_ascii)
+        if(flag_binary):
+            string_bin = bytes(string_ascii)
+        else:    
+            string_bin = bytes.fromhex(string_ascii)
         if len(string_bin) != self.string_len:
             raise ValueError('String must be %d long' % self.string_len)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
-        string_ascii = string_bin.hex()
+        if(flag_binary):
+            string_ascii = string_bin
+        else:
+            string_ascii = string_bin.hex()
         return string_ascii
 
     def getCodecInfo(self):
@@ -61,7 +67,7 @@ class O3EInt(udsoncan.DidCodec):
             if (self.offset != 0):
                 raise("O3EInt.encode(): offset!=0 not implemented yet") 
             val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
-            string_bin = val.to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
+            string_bin = int(val).to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
             return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
@@ -97,7 +103,7 @@ class O3EByteVal(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=False)
+        string_bin = int(string_ascii).to_bytes(length=self.string_len,byteorder="little",signed=False)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
@@ -501,7 +507,7 @@ class O3EComplexType(udsoncan.DidCodec):
             try:
                 string_bin = bytes()
                 for subType in self.subTypes:
-                    string_bin+=subType.encode(string_ascii[subType.id])
+                    string_bin += subType.encode(string_ascii[subType.id])
             except KeyError as e:
                 raise ValueError(f"Cannot encode value due to missing key: {e}")
         return string_bin
