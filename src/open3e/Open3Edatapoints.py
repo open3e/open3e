@@ -1485,7 +1485,7 @@ dataIdentifiers = {
         2793 : O3EInt8(5, "MixerTwoCircuitPumpStatus"),
         2794 : O3EInt8(5, "MixerThreeCircuitPumpStatus"),
         2795 : O3EInt8(5, "MixerFourCircuitPumpStatus"),
-        2796 : RawCodec(2, "ExternalHeaterConfiguration"),
+        2796 : O3EComplexType(2, "ExternalHeaterConfiguration",  [O3EBool(1,"StateRoomHeating"),O3EBool(1,"StateDHWHeating")]),
         2797 : O3EByteVal(1, "VentilationBypassFlapAvailableCount"),
         2798 : O3EByteVal(1, "RelativeHumiditySensorSelection"),
         2799 : O3EByteVal(1, "ElectricalHeatersShutdownDelay"),
