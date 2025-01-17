@@ -47,7 +47,8 @@ dependencies = [
   "doipclient",
   "python-can",
   "can-isotp>=2.0.2",
-  "paho-mqtt>=2.0.0"
+  "paho-mqtt>=2.0.0",
+  "pyserial>=3.5"
 ]
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "black==21.10b0"]
