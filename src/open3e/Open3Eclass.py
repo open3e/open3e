@@ -120,7 +120,7 @@ class O3Eclass():
                 'rate_limit_window_size': 0.2,          # Ignored when rate_limit_enable=False. Sets the averaging window size for bitrate calculation when rate_limit_enable=True
                 'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
             }
-            bus = slcanBus(channel=paramConnectionInterface, tty_baudrate=115200, bitrate=250000)
+            bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
             stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
