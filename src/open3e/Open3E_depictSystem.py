@@ -28,6 +28,7 @@ from udsoncan.services import ReadDataByIdentifier
 from can.interface import Bus
 from udsoncan.connections import PythonIsoTpConnection
 from can.interfaces.socketcan import SocketcanBus
+from can.interfaces.slcan import slcanBus
 import isotp
 
 from doipclient import DoIPClient
@@ -67,7 +68,7 @@ def main():
                 if(args.doip != None):
                     conn = DoIPClientUDSConnector(DoIPClient(args.doip, tx))
                 else:
-                    bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=tx)
+                    bus, conn = get_pycan_conn(can=can, slcan=args.slcan, ecurx=rx, ecutx=tx)
 
                 # set default timeout
                 config = dict(udsoncan.configs.default_client_config)
@@ -296,8 +297,11 @@ def main():
         return isotp_params
 
 
-    def get_pycan_conn(can, ecurx:int, ecutx:int):
-        bus = SocketcanBus(channel=can, bitrate=250000)                                     # Link Layer (CAN protocol)
+    def get_pycan_conn(can, slcan, ecurx:int, ecutx:int):
+        if slcan != None:
+            bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
+        else:
+            bus = SocketcanBus(channel=can, bitrate=250000)                              # Link Layer (CAN protocol)
         tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx)       # Network layer addressing scheme
         isotp_params = get_isotp_params()
         stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
@@ -311,6 +315,7 @@ def main():
 # +++++++++++++++++++++++++++++++++
     parser = argparse.ArgumentParser()
     parser.add_argument("-c", "--can", type=str, help="use CAN device, e.g. can0")
+    parser.add_argument("-sl", "--slcan", type=str, help="use slcan device, e.g. COM1")
     parser.add_argument("-d", "--doip", type=str, help="use DoIP access, e.g. 192.168.1.1")
     parser.add_argument("-s", "--simul", action='store_true', help="write simulation data files")
     args = parser.parse_args()
