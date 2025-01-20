@@ -124,7 +124,7 @@ def main():
             conn = DoIPClientUDSConnector(DoIPClient(args.doip, ecutx))
         else:
             rx = ecutx + 0x10
-            bus, conn = get_pycan_conn(can=can, ecurx=rx, ecutx=ecutx)
+            bus, conn = get_pycan_conn(can=args.can, slcan=args.slcan, ecurx=rx, ecutx=ecutx)
 
         # increase timeout
         config = dict(udsoncan.configs.default_client_config)
