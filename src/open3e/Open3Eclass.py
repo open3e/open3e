@@ -49,6 +49,7 @@ class O3Eclass():
         self.tx = ecutx 
         self.dev = dev  # not necessary
         self.numdps = 0
+        self.slcan = slcan
 
         # ECU addresses ~~~~~~~~~~~~~~~~~~
         if(ecurx == 0):
@@ -149,7 +150,7 @@ class O3Eclass():
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
             stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
-            self.conn = PythonIsoTpConnection(stack)                                                 # interface between Application and Transport layer
+            self.conn = PythonIsoTpConnection(stack)                                            # interface between Application and Transport layer
 
         # UDS setup ~~~~~~~~~~~~~~~~~~
         udsoncan.setup_logging()
@@ -168,6 +169,7 @@ class O3Eclass():
         self.uds_client = Open3EudsClient(self.conn, config=config)
         self.uds_client.open()
         self.uds_client.logger.setLevel(loglevel)
+        self.bus = bus
 
 
     # utils -----------------------
@@ -333,3 +335,5 @@ class O3Eclass():
 
     def close(self):
         self.uds_client.close()
+        if (self.slcan != None):
+            self.bus.shutdown()
