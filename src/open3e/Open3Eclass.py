@@ -39,6 +39,9 @@ def import_path(path):
 
 
 class O3Eclass():
+
+    SLCANBUS = None
+
     def __init__(self, ecutx:int=0x680, ecurx:int=0,
                  doip:str=None, # doip mode if not empty  
                  can:str='can0',
@@ -121,7 +124,12 @@ class O3Eclass():
                 'rate_limit_window_size': 0.2,          # Ignored when rate_limit_enable=False. Sets the averaging window size for bitrate calculation when rate_limit_enable=True
                 'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
             }
-            bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
+            # Reuse global slcanbus instance for all instances of O3Eclass because COM port can not be bound multiple times
+            if O3Eclass.SLCANBUS == None: # If 
+                bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
+            else:
+                bus =  O3Eclass.SLCANBUS
+
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
             stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
@@ -335,5 +343,3 @@ class O3Eclass():
 
     def close(self):
         self.uds_client.close()
-        if (self.slcan != None):
-            self.bus.shutdown()
