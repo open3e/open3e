@@ -127,6 +127,7 @@ class O3Eclass():
             # Reuse global slcanbus instance for all instances of O3Eclass because COM port can not be bound multiple times
             if O3Eclass.SLCANBUS == None: # If 
                 bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
+                O3Eclass.SLCANBUS = bus
             else:
                 bus =  O3Eclass.SLCANBUS
 

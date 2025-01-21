@@ -29,7 +29,7 @@ namespaces = true
 # PEP 621 https://peps.python.org/pep-0621/
 [project]
 name = "open3e"
-version = "0.4.11"
+version = "0.4.12"
 # for automated versioning by pypa/setuptools_scm. see https://peps.python.org/pep-0621/#dynamic
 # dynamic = ["version"]
 description = "Connects to E3 (vcal, vdens, vx3...) controllers through CAN UDS or DOIP."
