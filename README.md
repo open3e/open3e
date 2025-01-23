@@ -38,11 +38,12 @@ If you get the error "error: externally-managed-environment" you could add *--br
 # Depict System
 In advance of first time starting the client and after every firmware update, run 
     
-    open3e_depictSystem
+    open3e_depictSystem [-s]
     
-to scan the system and generate devices.json and Open3Edatapoints_678.py files. 
-Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.
-Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.
+to scan the system and generate devices.json and Open3Edatapoints_678.py files.<br>
+Use `open3e` with cmd line argument `-cnfg devices.json` afterwards.<br>
+Pls. make sure to use same working directory for `open3e` as used for running `open3e_depictSystem`.<br>
+By using the optional switch `-s` data files for simulation get created. 
 
 To refer to a specific device, you have to use "complex addressing mode", e.g. to read dids 268 and 269 of device 0x680 use `-cnfg devices.json -r 0x680.268,0x680.269`.
 Do not use option `-dev` in this context.
