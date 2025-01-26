@@ -52,9 +52,9 @@ class RawCodec(udsoncan.DidCodec):
 
 
 class O3EInt(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, byte_width: int, scale: float = 1.0, offset: int = 0, signed=False):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         self.string_len = string_len
-        self.byte_width = byte_width
+        self.byte_width = string_len
         self.id = idStr
         self.scale = scale
         self.offset = offset
@@ -85,17 +85,17 @@ class O3EInt(udsoncan.DidCodec):
 class O3EInt8(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         assert string_len == 1
-        O3EInt.__init__(self, string_len, idStr, byte_width=1, scale=scale, offset=offset, signed=signed)
+        O3EInt.__init__(self, string_len, idStr, scale=scale, offset=offset, signed=signed)
 
 class O3EInt16(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
         assert string_len == 2
-        O3EInt.__init__(self, string_len, idStr, byte_width=2, scale=scale, offset=offset, signed=signed)
+        O3EInt.__init__(self, string_len, idStr, scale=scale, offset=offset, signed=signed)
 
 class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
         assert string_len == 4
-        O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
+        O3EInt.__init__(self, string_len, idStr, scale=scale, offset=offset, signed=signed)
 
 class O3EByteVal(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
