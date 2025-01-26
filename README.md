@@ -95,6 +95,8 @@ For more detailed description of the command line arguments see also the [accord
 
 Since V0.4.0 `-cnfg devices.json` is default and does not need to get specified.
 
+Since V0.5.0 all data point definitions are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+
 <br>
 
 **IMPORTANT: When addressing sub-items of data points, ALWAYS use `ecu.did.sub` format (including ecu!)**

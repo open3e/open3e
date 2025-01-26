@@ -84,14 +84,17 @@ class O3EInt(udsoncan.DidCodec):
 
 class O3EInt8(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        assert string_len == 1
         O3EInt.__init__(self, string_len, idStr, byte_width=1, scale=scale, offset=offset, signed=signed)
 
 class O3EInt16(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
+        assert string_len == 2
         O3EInt.__init__(self, string_len, idStr, byte_width=2, scale=scale, offset=offset, signed=signed)
 
 class O3EInt32(O3EInt):
     def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
+        assert string_len == 4
         O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
 
 class O3EByteVal(udsoncan.DidCodec):
@@ -119,6 +122,7 @@ class O3EByteVal(udsoncan.DidCodec):
 
 class O3EBool(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, offset: int = 0):
+        assert string_len == 1
         self.string_len = string_len
         self.id = idStr
         self.offset = offset
@@ -196,6 +200,7 @@ class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version
 
 class O3EMacAddr(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str): #string_bin = bytes.fromhex(string_ascii)
+        assert string_len == 6
         self.string_len = string_len
         self.id = idStr
 
