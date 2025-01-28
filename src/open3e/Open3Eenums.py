@@ -2328,4 +2328,59 @@ E3Enums = {
         2: "Installed",
         3: "Factory Installed",
     },
+
+#### NEW NEW NEW
+    #erledigt
+    "Roomtype" : {
+        2: "Bathroom", #Badezimmer
+        3: "Bedroom", #Schlafzimmer
+        4: "Hallway", #Diele/Flur
+        5: "Living Room", #Wohnzimmer
+        6: "Childrens Room", #Kinderzimmer
+        7: "Kitchen", #Küche
+        8: "Office", #Büro
+        9: "Guest Toilet", #WCToilette
+        b: "Others" #Andere
+
+    },
+    
+    #erledigt
+    "TemperatureControl" : {
+        1: "Maximum Eco",
+        2: "More Eco",
+        3: "Eco",
+        4: "Komfort (Default)",
+        5: "More Comfort",
+        6: "Maximum Comfort"
+    },
+
+    #erledigt
+    "WindowDetection" : {
+        0: "Not Active",
+        1: "Active",
+    },
+
+    #erledigt
+    "ValveType" : {
+        4: "powerless closed",
+        5: "powerless opened",
+    },
+
+    #TODO cooling missing
+    "CurrentWorkingMode" : {
+        0: "StandBy",
+        64: "Heating"        
+    },
+
+    #erledigt
+    "ViCareThermostaticRadiatorValveDisplayMode" : {
+        0: "Standard",
+        1: "Turned",
+    },
+
+    #erledigt
+    "ViCareThermostaticRadiatorValveChildLock" : {
+        0: "Not Active",
+        1: "Active"
+    },
 }
