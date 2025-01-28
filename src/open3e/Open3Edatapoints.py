@@ -996,7 +996,7 @@ dataIdentifiers = {
         2082 : RawCodec(57, "RoomTwentyTimeScheduleSaturday"),
         2083 : RawCodec(57, "RoomTwentyTimeScheduleSunday"),
         2084 : O3EComplexType(84, "ZigBeeOneDeviceProperty",  [RawCodec(8, "Serialnumber"), RawCodec(1, "SerialnumberPostfix"), O3EUtf8(39, "Devicename"), RawCodec(36, "Unknown1")]),
-        2085 : O3EComplexType(13, "ZigBeeOneDeviceSetpoint"),
+        2085 : RawCodec(13, "ZigBeeOneDeviceSetpoint"),
         2086 : O3EComplexType(68, "ZigBeeOneDeviceCurrentValues", [RawCodec(2, "Unknown1"), O3EInt8(1, "BatteryLevel"), RawCodec(38, "Unknown2"), O3EEnum(1, "ValveType"), O3EInt8(1, "Temperature", scale = 10),O3EEnum(1, "CurrentWorkingMode"), RawCodec(4, "Unknown3"),O3EEnum(1,"ViCareThermostaticRadiatorValveDisplayMode"),RawCodec(5, "Unknown4"),O3EEnum(1,"ViCareThermostaticRadiatorValveChildLock"),O3EInt8(1, "ViCareThermostaticRadiatorValveTemperatureByHand"),RawCodec(12, "Unknown5")]),
         2087 : O3EComplexType(84, "ZigBeeTwoDeviceProperty",  [RawCodec(8, "Serialnumber"), RawCodec(1, "SerialnumberPostfix"), O3EUtf8(39, "Devicename"), RawCodec(36, "Unknown1")]),
         2088 : RawCodec(13, "ZigBeeTwoDeviceSetpoint"),
