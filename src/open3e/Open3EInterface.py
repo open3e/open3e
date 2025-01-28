@@ -18,6 +18,7 @@ from open3e.Open3EudsClient import Open3EudsClient
 SLCANBUS = None
 
 def create_o3eclass_instance(ecutx:int, doip, can, slcan, dev) -> open3e.Open3Eclass.O3Eclass:
+    global SLCANBUS
     conn = None
     ecurx = ecutx + 0x10
 
@@ -26,7 +27,7 @@ def create_o3eclass_instance(ecutx:int, doip, can, slcan, dev) -> open3e.Open3Ec
         conn = DoIPClientUDSConnector(DoIPClient(doip, ecutx))
     elif(slcan != None): #SLCAN Serial CAN Interface either locally via USB or remote via Telnet
         # Reuse global slcanbus instance for all instances of O3Eclass because COM port can not be bound multiple times
-        if SLCANBUS == None:
+        if(SLCANBUS is None):
             print("Creating new SLCANBUS Instance for ECU: " + str(ecutx))
             bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
             SLCANBUS = bus
@@ -72,6 +73,7 @@ def isotp_params():
     }
 
 def close():
+    global SLCANBUS
     if(SLCANBUS is not None):
         SLCANBUS.shutdown()
     # ggf anderes schliessen?!
