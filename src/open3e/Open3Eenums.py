@@ -2340,8 +2340,7 @@ E3Enums = {
         7: "Kitchen", #Küche
         8: "Office", #Büro
         9: "Guest Toilet", #WCToilette
-        b: "Others" #Andere
-
+        11: "Others" #Andere
     },
     
     #erledigt
