@@ -568,6 +568,7 @@ def main():
         if(args.verbose):
             print(f"closing {hex(ecu.tx)} - bye!")
         ecu.close()
+    open3e.Open3EInterface.close()
 
     if(mqtt_client != None):
         if(args.verbose):

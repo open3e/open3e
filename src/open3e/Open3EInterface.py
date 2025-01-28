@@ -32,7 +32,7 @@ def create_o3eclass_instance(ecutx:int, doip, can, slcan, dev) -> open3e.Open3Ec
             SLCANBUS = bus
         else:
             print("Reusing SLCANBUS Instance for ECU: " + str(ecutx))
-            bus =  SLCANBUS
+            bus = SLCANBUS
 
         tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
         stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params())               # Network/Transport layer (IsoTP protocol)
@@ -70,5 +70,10 @@ def isotp_params():
         'rate_limit_window_size': 0.2,          # Ignored when rate_limit_enable=False. Sets the averaging window size for bitrate calculation when rate_limit_enable=True
         'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
     }
+
+def close():
+    if(SLCANBUS is not None):
+        SLCANBUS.shutdown()
+    # ggf anderes schliessen?!
 
 
