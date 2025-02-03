@@ -11,8 +11,16 @@ from can.interfaces.socketcan import SocketcanBus
 from can.interfaces.slcan import slcanBus
 import isotp
 
+from isotp.protocol.transceiver import NotifierBasedCanStack
+from isotp.notifier import Notifier, Listener
+
 import open3e.Open3Eclass
 from open3e.Open3EudsClient import Open3EudsClient
+
+# Erstelle einen einfachen Listener
+class MyListener(Listener):
+    def on_message_received(self, frame):
+        print(f"Frame received: {frame}")
 
 
 SLCANBUS = None
@@ -28,17 +36,31 @@ def create_o3eclass_instance(ecutx:int, doip, can, slcan, dev) -> open3e.Open3Ec
     elif(slcan != None): #SLCAN Serial CAN Interface either locally via USB or remote via Telnet
         # Reuse global slcanbus instance for all instances of O3Eclass because COM port can not be bound multiple times
         if(SLCANBUS is None):
-            print("Creating new SLCANBUS Instance for ECU: " + str(ecutx))
+            print(f"Creating new SLCANBUS Instance for ECU: {ecutx:03x}")
             bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
             SLCANBUS = bus
         else:
-            print("Reusing SLCANBUS Instance for ECU: " + str(ecutx))
+            print(f"Reusing SLCANBUS Instance for ECU: {ecutx:03x}" )
             bus = SLCANBUS
 
         tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
         stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params())               # Network/Transport layer (IsoTP protocol)
         stack.set_sleep_timing(0.01, 0.01)                                                  # Balancing speed and load
         conn = PythonIsoTpConnection(stack)   
+
+        # # mit NotifierBasedCanStack
+        # tp_addr = isotp.Address(addressing_mode=isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx)
+        # # Erstelle den Listener
+        # my_listener = MyListener()
+        # # Erstelle den Notifier mit dem Listener
+        # notifier = Notifier(bus, [my_listener])        
+        # # Erstelle den Notifier-basierten IsoTP-Stack
+        # stack = NotifierBasedCanStack(bus=bus, notifier=notifier, address=tp_addr, params=isotp_params())
+        # # Füge den Stack als Listener hinzu
+        # notifier.add_listener(stack)
+        # stack.set_sleep_timing(0.01, 0.01)
+        # conn = PythonIsoTpConnection(stack)
+
     else:
         bus = SocketcanBus(channel=can, bitrate=250000)                                     # Link Layer (CAN protocol)
         tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
