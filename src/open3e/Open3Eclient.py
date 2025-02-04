@@ -448,7 +448,7 @@ def main():
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
         mqtt_client.loop_start()
         
-    print("hallo! 149")
+    #print("hallo! 149")
 
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
