@@ -551,9 +551,9 @@ class O3EBitMask(udsoncan.DidCodec):
             result = dict()
 
             if self.reverseByteOrder:
-                binaryData = bin(int.from_bytes(string_bin, byteorder="big")).lstrip('0b')
+                binaryData = bin(int.from_bytes(string_bin, byteorder="big")).lstrip('0b').zfill(self.string_len*8)
             else:
-                binaryData = bin(int.from_bytes(string_bin, byteorder="little")).lstrip('0b')
+                binaryData = bin(int.from_bytes(string_bin, byteorder="little")).lstrip('0b').zfill(self.string_len*8)
 
             print("String Bin: "+str(string_bin))
             print("Binary Data"+str(binaryData))
