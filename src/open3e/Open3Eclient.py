@@ -142,7 +142,7 @@ def main():
     def ensure_ecu(addr:int):
         #if(slcan): ...  #TODO nur bei sl
         for tx,ecu in dicEcus:
-            if(tx != addr):
+            if(getint(tx) != addr):
                 ecu.close()
                 dicEcus.pop(tx)
         if(not (addr in dicEcus)):
