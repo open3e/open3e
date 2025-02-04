@@ -530,3 +530,41 @@ class O3EComplexType(udsoncan.DidCodec):
 
     def __len__(self) -> int:
         return self.string_len
+    
+class O3EBitMask(udsoncan.DidCodec):
+    def __init__(self, string_len: int, idStr: str, listBits : list, reverseByteOrder = False):
+        self.string_len = string_len
+        self.id = idStr
+        self.listBits = listBits
+        self.reverseByteOrder = reverseByteOrder
+
+    def encode(self, string_ascii: Any) -> bytes:        
+        if(flag_rawmode == True): 
+            return RawCodec.encode(self, string_ascii)
+        else:
+            pass
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True):
+            return RawCodec.decode(self, string_bin)
+        else:
+            result = dict()
+
+            if self.reverseByteOrder:
+                binaryData = bin(int.from_bytes(string_bin, byteorder="big")).lstrip('0b')
+            else:
+                binaryData = bin(int.from_bytes(string_bin, byteorder="little")).lstrip('0b')
+
+            for numCurrentBit in range(self.string_len*8): #iterate through all bits
+                if binaryData[numCurrentBit] == 1:
+                    result[self.listBits[numCurrentBit]] = "true"
+                else:
+                    result[self.listBits[numCurrentBit]] = "false"
+
+            return result
+    
+    def getCodecInfo(self):
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"listBits":self.listBits}})
+
+    def __len__(self) -> int:
+        return self.string_len
