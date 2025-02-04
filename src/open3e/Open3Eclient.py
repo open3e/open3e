@@ -22,7 +22,6 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
-import open3e.Open3EInterface
 
 def main():
     # default ECU address
@@ -141,10 +140,14 @@ def main():
 
     def ensure_ecu(addr:int):
         #if(slcan): ...  #TODO nur bei sl
-        for tx,ecu in dicEcus:
+        print(dicEcus)
+        lstpops = []
+        for tx,ecu in dicEcus.items():
             if(getint(tx) != addr):
                 ecu.close()
-                dicEcus.pop(tx)
+                lstpops.append(tx)
+        for tx in lstpops:
+            dicEcus.pop(tx)
         if(not (addr in dicEcus)):
             # make ecu with no name str
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, slcan=args.slcan, dev=None) 
@@ -565,7 +568,6 @@ def main():
         if(args.verbose):
             print(f"closing {hex(ecu.tx)} - bye!")
         ecu.close()
-    open3e.Open3EInterface.close()
 
     if(mqtt_client != None):
         if(args.verbose):
