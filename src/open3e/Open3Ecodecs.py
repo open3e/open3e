@@ -555,6 +555,8 @@ class O3EBitMask(udsoncan.DidCodec):
             else:
                 binaryData = bin(int.from_bytes(string_bin, byteorder="little")).lstrip('0b').zfill(self.string_len*8)
 
+            binaryData = binaryData[::-1] #flip data so byte number zero is at index 0
+
             print("String Bin: "+str(string_bin))
             print("Binary Data"+str(binaryData))
 
