@@ -555,7 +555,11 @@ class O3EBitMask(udsoncan.DidCodec):
             else:
                 binaryData = bin(int.from_bytes(string_bin, byteorder="little")).lstrip('0b')
 
+            print("String Bin: "+str(string_bin))
+            print("Binary Data"+str(binaryData))
+
             for numCurrentBit in range(self.string_len*8): #iterate through all bits
+                print(numCurrentBit)
                 if binaryData[numCurrentBit] == 1:
                     result[self.listBits[numCurrentBit]] = "true"
                 else:
