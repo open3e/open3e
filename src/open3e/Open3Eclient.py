@@ -140,6 +140,9 @@ def main():
     
 
     def ensure_ecu(addr:int):
+        #if(slcan): ...  #TODO nur bei sl
+        for ecu in dicEcus:
+            ecu.close()
         if(not (addr in dicEcus)):
             # make ecu with no name str
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, slcan=args.slcan, dev=None) 
