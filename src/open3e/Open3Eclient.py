@@ -144,6 +144,7 @@ def main():
         for tx,ecu in dicEcus:
             if(tx != addr):
                 ecu.close()
+                dicEcus.pop(tx)
         if(not (addr in dicEcus)):
             # make ecu with no name str
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, slcan=args.slcan, dev=None) 
