@@ -1209,7 +1209,7 @@ dataIdentifiers = {
         2337 : RawCodec(1, "UltraLowNitroOxideStatusActive"),
         2338 : RawCodec(3, "HighLimitTestMode"),
         2339 : RawCodec(2, "SafetyLimiterThresholdTemperature"),
-        2340 : RawCodec(2, "ElectricalHeaterConfiguration"),
+        2340 : O3EBitMask(2, "ElectricalHeaterConfiguration", ["Enabled","DomesticHotWater","CentralHeating","FrostProtection","LimpHomeCentralHeating","LimpHomeDomesticHotWater","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A","N/A"]),
         2341 : RawCodec(4, "CoefficientOfPerformanceConfiguration"),
         2342 : O3EInt32(4, "NominalThermalCapacityHeating", scale = 1, signed=True),# Unit: Watts
         2343 : O3EInt32(4, "NominalThermalCapacityCooling", scale = 1, signed=True),# Unit: Watts
