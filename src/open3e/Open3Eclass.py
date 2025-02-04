@@ -122,7 +122,7 @@ class O3Eclass():
                 'listen_mode': False                    # Does not use the listen_mode which prevent transmission.
             }
             # Reuse global slcanbus instance for all instances of O3Eclass because COM port can not be bound multiple times
-            if O3Eclass.SLCANBUS == None:
+            if self.SLCANBUS == None:
                 print("Creating new SLCANBUS Instance for ECU: " + str(ecutx))
                 bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
                 self.SLCANBUS = bus
