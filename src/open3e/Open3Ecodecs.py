@@ -560,7 +560,7 @@ class O3EBitMask(udsoncan.DidCodec):
 
             for numCurrentBit in range(self.string_len*8): #iterate through all bits
                 print(numCurrentBit)
-                if binaryData[numCurrentBit] == 1:
+                if binaryData[numCurrentBit] == "1":
                     result[self.listBits[numCurrentBit]] = "true"
                 else:
                     result[self.listBits[numCurrentBit]] = "false"
