@@ -38,9 +38,6 @@ def import_path(path):
 
 
 class O3Eclass():
-
-    SLCANBUS = None
-
     def __init__(self, ecutx:int=0x680, ecurx:int=0,
                  doip:str=None, # doip mode if not empty  
                  can:str='can0',
@@ -52,6 +49,7 @@ class O3Eclass():
         self.dev = dev  # not necessary
         self.numdps = 0
         self.slcan = slcan
+        self.SLCANBUS = None
 
         # ECU addresses ~~~~~~~~~~~~~~~~~~
         if(ecurx == 0):
@@ -127,10 +125,10 @@ class O3Eclass():
             if O3Eclass.SLCANBUS == None:
                 print("Creating new SLCANBUS Instance for ECU: " + str(ecutx))
                 bus = slcanBus(channel=slcan, tty_baudrate=115200, bitrate=250000)
-                O3Eclass.SLCANBUS = bus
+                self.SLCANBUS = bus
             else:
                 print("Reusing SLCANBUS Instance for ECU: " + str(ecutx))
-                bus =  O3Eclass.SLCANBUS
+                bus =  self.SLCANBUS
 
             tp_addr = isotp.Address(isotp.AddressingMode.Normal_11bits, txid=ecutx, rxid=ecurx) # Network layer addressing scheme
             stack = isotp.CanStack(bus=bus, address=tp_addr, params=isotp_params)               # Network/Transport layer (IsoTP protocol)
@@ -344,4 +342,7 @@ class O3Eclass():
     
 
     def close(self):
+        print(f"closing {hex(self.tx)}")
         self.uds_client.close()
+        if(self.SLCANBUS is not None):
+            self.SLCANBUS.shutdown()
