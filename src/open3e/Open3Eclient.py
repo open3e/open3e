@@ -141,7 +141,7 @@ def main():
 
     def ensure_ecu(addr:int):
         #if(slcan): ...  #TODO nur bei sl
-        for ecu in dicEcus:
+        for addr,ecu in dicEcus:
             ecu.close()
         if(not (addr in dicEcus)):
             # make ecu with no name str
