@@ -10,6 +10,15 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
+## What's new with version 0.5.x:
+* Reading and writing of subs and using plain text implemented:<br>
+`open3e -r 0x680.256.2` returns `{'ID': 31, 'Text': 'HPMUMASTER'}`<br>
+`open3e -r 0x680.BusIdentification.DeviceProperty` returns the same result,<br>
+`open3e -r Vical.BusIdentification.DeviceProperty` also the same if you named your 0x680 ECU to 'Vical' in devices.json.<br>
+Same way working with writing values. Text and numeric form can get mixed. Case not sensitive. Can be used with 'complete' datapoints as well.
+* Defaults `-c can0` and `-cnfg devices.json` implemented so no need to specify 'usually' (except you use different settings). If devices.json not found arg default will be ignored.
+* All data point codecs defined are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+
 # Installation
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
 
@@ -95,7 +104,7 @@ For more detailed description of the command line arguments see also the [accord
 
 Since V0.4.0 `-cnfg devices.json` is default and does not need to get specified.
 
-Since V0.5.0 all data point definitions are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+Since V0.5.0 all data point codecs definitions are checked for correct length values. If you get an assert error please check you customer specific data point codec definitions!
 
 <br>
 
