@@ -83,7 +83,7 @@ dataIdentifiers = {
         378 : O3EComplexType(4, "PointOfCommonCouplingPhaseOne", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         379 : O3EComplexType(4, "PointOfCommonCouplingPhaseTwo", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         380 : O3EComplexType(4, "PointOfCommonCouplingPhaseThree", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
-        381 : O3EComplexType(4, "CentralHeatingPump", [O3EInt8(1, "Minimum"), O3EInt8(1, "Actual"), O3EInt8(1, "Maximum")]),
+        381 : O3EComplexType(4, "CentralHeatingPump", [O3EInt8(1, "Minimum"), O3EInt8(1, "Actual"), O3EInt8(1, "Maximum"), RawCodec(1, "Unknown")]),
         382 : O3EComplexType(5, "UnitsAndFormats", [O3EEnum(1, "Units", "Units"), O3EEnum(1, "DateFormat", "DateFormats"), O3EEnum(1, "TimeFormat", "TimeFormats"), O3EByteVal(1, "TimeZone"), O3EByteVal(1, "Unknown")]),
         386 : O3EByteVal(1, "DiverterValveTargetPosition"),
         388 : O3EInt8(1, "ElectronicExpansionValveOneTargetPositionPercent"),
