@@ -200,7 +200,7 @@ def main():
         def cmnd_loop():
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
             if(readdids != None):
-                jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
+                cmdln_jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()
 
             while True:
@@ -290,7 +290,7 @@ def main():
                                 read_mode = 'read-json'
                             else:
                                 read_mode = 'read'
-                            for ecudidsub in jobs:
+                            for ecudidsub in cmdln_jobs:
                                 did = ecudidsub[1]
                                 if(ecudidsub[2] is not None):
                                     did = f"{ecudidsub[1]}.{ecudidsub[2]}"

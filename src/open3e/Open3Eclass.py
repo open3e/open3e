@@ -18,7 +18,7 @@ import importlib
 import binascii
 import os
 import sys
-#import time
+import time
 
 import open3e.Open3Edatapoints
 import open3e.Open3Ecodecs
@@ -44,7 +44,7 @@ class O3Eclass():
                  slcan:str=None,
                  dev=None
                 ):
-
+        starttime = time.time()
         self.tx = ecutx 
         self.dev = dev  # not necessary
         self.numdps = 0
@@ -155,7 +155,7 @@ class O3Eclass():
         self.uds_client.open()
         self.uds_client.logger.setLevel(loglevel)
         self.bus = bus
-
+        print("dura", (time.time() - starttime)*1000)
 
     # utils -----------------------
     def get_did_as_int(self, v):
