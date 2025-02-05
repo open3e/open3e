@@ -21,7 +21,7 @@ import json
 import open3e.Open3Eenums
 
 flag_rawmode = True
-flag_dev = "vcal"
+flag_binary = False
 
 class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
@@ -29,13 +29,19 @@ class RawCodec(udsoncan.DidCodec):
         self.id = idStr
 
     def encode(self, string_ascii: Any) -> bytes:
-        string_bin = bytes.fromhex(string_ascii)
+        if(flag_binary):
+            string_bin = bytes(string_ascii)
+        else:    
+            string_bin = bytes.fromhex(string_ascii)
         if len(string_bin) != self.string_len:
             raise ValueError('String must be %d long' % self.string_len)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
-        string_ascii = string_bin.hex()
+        if(flag_binary):
+            string_ascii = string_bin
+        else:
+            string_ascii = string_bin.hex()
         return string_ascii
 
     def getCodecInfo(self):
@@ -46,76 +52,75 @@ class RawCodec(udsoncan.DidCodec):
 
 
 class O3EInt(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, byte_width: int, scale: float = 1.0, offset: int = 0, signed=False):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, signed=False):
         self.string_len = string_len
-        self.byte_width = byte_width
+        self.byte_width = string_len
         self.id = idStr
         self.scale = scale
-        self.offset = offset
         self.signed = signed
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
         else:
-            if (self.offset != 0):
-                raise("O3EInt.encode(): offset!=0 not implemented yet") 
             val = round(eval(str(string_ascii))*self.scale)    # convert submitted data to numeric value and apply scaling factor
-            string_bin = val.to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
+            string_bin = int(val).to_bytes(length=self.byte_width,byteorder="little",signed=self.signed)
             return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int.from_bytes(string_bin[self.offset:self.offset + self.byte_width], byteorder="little", signed=self.signed)
+        val = int.from_bytes(string_bin[0:self.byte_width], byteorder="little", signed=self.signed)
         return float(val) / self.scale
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "signed":self.signed, "offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"scale":self.scale, "signed":self.signed}})
 
     def __len__(self) -> int:
         return self.string_len
 
 class O3EInt8(O3EInt):
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
-        O3EInt.__init__(self, string_len, idStr, byte_width=1, scale=scale, offset=offset, signed=signed)
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, signed=False):
+        assert string_len == 1
+        O3EInt.__init__(self, string_len, idStr, scale=scale, signed=signed)
 
 class O3EInt16(O3EInt):
-    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, offset: int = 0, signed=False):
-        O3EInt.__init__(self, string_len, idStr, byte_width=2, scale=scale, offset=offset, signed=signed)
+    def __init__(self, string_len: int, idStr: str, scale: float = 10.0, signed=False):
+        assert string_len == 2
+        O3EInt.__init__(self, string_len, idStr, scale=scale, signed=signed)
 
 class O3EInt32(O3EInt):
-    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, offset: int = 0, signed=False):
-        O3EInt.__init__(self, string_len, idStr, byte_width=4, scale=scale, offset=offset, signed=signed)
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, signed=False):
+        assert string_len == 4
+        O3EInt.__init__(self, string_len, idStr, scale=scale, signed=signed)
 
 class O3EByteVal(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
-        self.offset = offset
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
             return RawCodec.encode(self, string_ascii)
-        string_bin = string_ascii.to_bytes(length=self.string_len,byteorder="little",signed=False)
+        string_bin = int(string_ascii).to_bytes(length=self.string_len,byteorder="little",signed=False)
         return string_bin
 
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        return int.from_bytes(string_bin[self.offset:self.offset+self.string_len], byteorder="little", signed=False)
+        return int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
 
 class O3EBool(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str):
+        assert string_len == 1
         self.string_len = string_len
         self.id = idStr
-        self.offset = offset
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
@@ -128,23 +133,22 @@ class O3EBool(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        val = int(string_bin[self.offset])
+        val = int(string_bin[0])
         if(val==0):
             return "off"
         else:
             return "on"
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
 
 class O3EUtf8(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
-        self.offset = offset
 
     def encode(self, string_ascii: Any) -> bytes:        
         if(flag_rawmode == True): 
@@ -154,11 +158,11 @@ class O3EUtf8(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        mystr = string_bin[self.offset:self.offset+self.string_len].decode('utf-8')
+        mystr = string_bin[0:self.string_len].decode('utf-8')
         return mystr.replace('\x00', '')
        
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -190,6 +194,7 @@ class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version
 
 class O3EMacAddr(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str): #string_bin = bytes.fromhex(string_ascii)
+        assert string_len == 6
         self.string_len = string_len
         self.id = idStr
 
@@ -321,10 +326,9 @@ class O3EStime(udsoncan.DidCodec):
         return self.string_len
 
 class O3EUtc(udsoncan.DidCodec):
-    def __init__(self, string_len: int, idStr: str, offset: int = 0):
+    def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
         self.id = idStr
-        self.offset = offset
 
     def encode(self, string_ascii: Any) -> bytes: 
         if(flag_rawmode == True): 
@@ -338,7 +342,7 @@ class O3EUtc(udsoncan.DidCodec):
         return str(val)
 
     def getCodecInfo(self):
-        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"offset":self.offset}})
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {}})
 
     def __len__(self) -> int:
         return self.string_len
@@ -501,7 +505,7 @@ class O3EComplexType(udsoncan.DidCodec):
             try:
                 string_bin = bytes()
                 for subType in self.subTypes:
-                    string_bin+=subType.encode(string_ascii[subType.id])
+                    string_bin += subType.encode(string_ascii[subType.id])
             except KeyError as e:
                 raise ValueError(f"Cannot encode value due to missing key: {e}")
         return string_bin

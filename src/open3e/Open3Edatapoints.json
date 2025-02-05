@@ -27800,7 +27800,7 @@
     "id": "CurrentThermalCapacityRefrigerantCircuit",
     "args": {
       "scale": 1,
-      "signed": false,
+      "signed": true,
       "offset": 0
     }
   },
@@ -31634,10 +31634,14 @@
     "args": {}
   },
   "2611": {
-    "codec": "RawCodec",
+    "codec": "O3EInt32",
     "len": 4,
     "id": "NominalThermalCapacityIndoorUnit",
-    "args": {}
+    "args": {
+      "scale": 1,
+      "signed": false,
+      "offset": 0
+    }
   },
   "2612": {
     "codec": "O3EComplexType",
@@ -31925,7 +31929,7 @@
     "id": "DesiredThermalCapacity",
     "args": {
       "scale": 1,
-      "signed": false,
+      "signed": true,
       "offset": 0
     }
   },
@@ -32373,10 +32377,29 @@
     }
   },
   "2796": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "ExternalHeaterConfiguration",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "StateRoomHeating",
+          "args": {
+            "offset": 0
+          }
+        },
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "StateDHWHeating",
+          "args": {
+            "offset": 0
+          }
+        }
+      ]
+    }
   },
   "2797": {
     "codec": "O3EByteVal",
@@ -34484,5 +34507,5 @@
       ]
     }
   },
-  "Version": "20241203"
+  "Version": "20250114"
 }
