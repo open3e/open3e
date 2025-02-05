@@ -139,28 +139,40 @@ def main():
     #     return r1,r2
     
 
-    def ensure_ecu(addr:int,f77:bool=False):
-        #if(slcan): ...  #TODO nur bei sl
-        lstpops = []
-        for tx,ecu in dicEcus.items():
-            if(tx != addr):
-                ecu.close()
-                lstpops.append(tx)
-        for tx in lstpops:
-            dicEcus.pop(tx)
+    def ensure_ecu(addr:int, f77:bool=False):
+        fsl = (args.slcan is not None)
+        # get some things straigt
+        ovrlay = args.dev
+        devstr = f"0x{addr:03x}"
+        if(addr in dicDevjson):
+            ovrlay = dicDevjson[addr][0]
+            devstr = dicDevjson[addr][1]
+        if(f77):            
+            addr += 2
+        if(fsl):
+            # close all except the one to get ensured
+            lstpops = []
+            for tx,ecu in dicEcus.items():
+                if(tx != addr):
+                    ecu.close()
+                    lstpops.append(tx)
+            for tx in lstpops:
+                dicEcus.pop(tx)
+        # now ensure ecu
         if(not (addr in dicEcus)):
-            ovrlay = args.dev
-            devstr = f"0x{addr:03x}"
-            if(addr in dicDevjson):
-                ovrlay = dicDevjson[addr][0]
-                devstr = dicDevjson[addr][1]
             # make ecu
-            if(f77): addr += 2
             print(f"make ECU {addr} {ovrlay} {devstr}")
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, slcan=args.slcan, dev=ovrlay) 
             dicEcus[addr] = ecu
             dicDevAddrs[devstr] = addr
             # print("h", dicDevAddrs)
+        if(f77):
+            # for 77 readecu argument
+            if(fsl):
+                dicEcus[addr-2] = None  
+            else:
+                ensure_ecu(addr-2)
+
 
 
     # listen events ~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,7 +279,7 @@ def main():
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             # ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, slcan=args.slcan, dev=args.dev)
                             # ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
-                            dicEcus[addr+2].writeByDid(didsub[0], didVal, raw=False, useService77=True, sub=didsub[1]) #, readecu=dicEcus[addr])
+                            dicEcus[addr+2].writeByDid(didsub[0], didVal, raw=False, useService77=True, sub=didsub[1], readecu=dicEcus[addr])
                             # ecu77.close() 
                             time.sleep(0.1)
                         
@@ -279,7 +291,7 @@ def main():
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             # ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, slcan=args.slcan, dev=args.dev)
                             # ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
-                            dicEcus[addr+2].writeByDid(didsub[0], didVal, raw=True, useService77=True, sub=didsub[1]) #, readecu=dicEcus[addr])
+                            dicEcus[addr+2].writeByDid(didsub[0], didVal, raw=True, useService77=True, sub=didsub[1], readecu=dicEcus[addr])
                             # ecu77.close()
                             time.sleep(0.1)
                 else:
@@ -517,7 +529,7 @@ def main():
                         print_write(ecu, did, sub, val, raw=True, f77=True)
                         # ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, slcan=args.slcan, dev=args.dev)
                         # succ,code = ecu77.writeByDid(did, val, raw=True, useService77=True, sub=sub, readecu=dicEcus[ecu])
-                        succ,code = dicEcus[ecu+2].writeByDid(did, val, raw=True, useService77=True, sub=sub) #, readecu=dicEcus[ecu])
+                        succ,code = dicEcus[ecu+2].writeByDid(did, val, raw=True, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         # ecu77.close()
                     else:
                         ensure_ecu(ecu)
@@ -536,7 +548,7 @@ def main():
                     print_write(ecu, did, sub, val, f77=True)
                     # ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, slcan=args.slcan, dev=args.dev)
                     # succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
-                    succ,code = dicEcus[ecu+2].writeByDid(did, val, raw=False, useService77=True, sub=sub) #, readecu=dicEcus[ecu])
+                    succ,code = dicEcus[ecu+2].writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                     # ecu77.close()
                 else:
                     ensure_ecu(ecu)
@@ -557,7 +569,7 @@ def main():
                         print_write(ecu, did, sub, val, f77=True)
                         # ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=ecu+2, doip=args.doip, can=args.can, slcan=args.slcan, dev=args.dev)
                         # succ,code = ecu77.writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
-                        succ,code = dicEcus[addr+2].writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
+                        succ,code = dicEcus[ecu+2].writeByDid(did, val, raw=False, useService77=True, sub=sub, readecu=dicEcus[ecu])
                         # ecu77.close()
                     else:
                         ensure_ecu(ecu)
