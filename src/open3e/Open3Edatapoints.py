@@ -1583,6 +1583,7 @@ dataIdentifiers = {
         2930 : O3EInt8(1, "DiagnosticRefrigerantCircuitFourTwoWayValve"),
         2931 : O3EInt8(1, "DiagnosticRefrigerantCircuitTemperatureSensors"),
         2932 : RawCodec(4, "TimeCounterSinceLastReset"),
+        2934 : O3EInt32(4, "CurrentElectricalSystemPowerSetpoint", scale = 1), #wangnick Vitocal 250-A SW 2440
         2936 : RawCodec(3, "ElectricalEnergyStorageSystemState"),
         2937 : RawCodec(2, "SystemPumpConfiguration"),
         2938 : RawCodec(4, "CascadeSystemPump"),
