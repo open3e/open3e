@@ -122,10 +122,14 @@ dataIdentifiers = {
         439 : O3EByteVal(1, "BypassAvailableModes"),
         449 : RawCodec(141, "ElectricalEnergyMatrix"),
         451 : RawCodec(4, "ExternalAlternatingCurrentPowerSetpoint"),
-        475 : O3EComplexType(2, "MixerOneCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
-        476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
-        477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
-        478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
+        # 475 : O3EComplexType(2, "MixerOneCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
+        # 476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
+        # 477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
+        # 478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
+        475 : O3EComplexType(2, "MixerOneCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
         491 : O3EComplexType(2, "DomesticHotWaterCirculationPump",[O3EByteVal(1,"State"),O3EByteVal(1,"Unknown")]),                
         497 : O3EComplexType(5, "DomesticHotWaterCirculationPumpMode",[O3EByteVal(1, "Mode"), O3EByteVal(1, "HygenieActive"), O3EByteVal(1, "HeatingActive"), O3EByteVal(1, "CyclesPerHour"), O3EByteVal(1, "Cycles")]),
         500 : RawCodec(2, "CentralHeatDemandExternalAc"),
@@ -1394,7 +1398,8 @@ dataIdentifiers = {
         2577 : RawCodec(6, "FuelCellTestModeTwo"),
         2578 : O3EInt8(1, "RefrigerationCircuitDesiredOperatingMode"),
         2579 : RawCodec(4, "CompressorMinMaxAllowedPrimaryTemperatureHeating"),
-        2580 : O3EComplexType(2, "CompressorSetpointRps", [O3EInt8(1, "Setpoint", signed=True), RawCodec(1, "Unknown")]), #250xH Unit RpS
+        # 2580 : O3EComplexType(2, "CompressorSetpointRps", [O3EInt8(1, "Setpoint", signed=True), RawCodec(1, "Unknown")]), #250xH Unit RpS
+        2580 : O3EInt16(2, "CompressorSetpointRps", scale = 10), #250xH Unit RpS #wangnick Vitocal 250-A SW 2440, Issue #189
         2581 : O3EInt16(2, "CompressorCalculatedSetpointRps"),
         2582 : RawCodec(2, "CompressorOffTimer"),
         2583 : RawCodec(15, "OxygenProbeProcessValuesBurnerOne"),
@@ -1523,7 +1528,8 @@ dataIdentifiers = {
         2849 : RawCodec(27, "CrankCaseHeaterOnTimer"),
         2850 : O3EComplexType(3, "InstalledHeater", [O3EEnum(1, "FanDuctHeater","HeatingElementConfiguration"), O3EEnum(1, "CrankCaseHeater","HeatingElementConfiguration"), O3EEnum(1, "BaseHeater","HeatingElementConfiguration")]),
         2851 : O3EInt16(2, "PreStartDuration"),
-        2852 : O3EInt8(1, "FanDuctHeater"),
+        # 2852 : O3EInt8(1, "FanDuctHeater"),
+        2852 : O3EByteVal(1, "FanDuctHeater"), #wangnick Vitocal 250-A SW 2440, Issue #190
         2853 : O3EInt16(2, "ExternalHeaterTimeIntegralThershold", scale=10, signed=False),
         2855 : O3EComplexType(3, "MixerOneCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
         2856 : O3EComplexType(3, "MixerTwoCircuitFrostProtectionConfiguration", [O3EByteVal(1, "State"), O3EInt16(2, "Temperature", signed=True)]),
