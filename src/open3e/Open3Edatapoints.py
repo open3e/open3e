@@ -126,10 +126,10 @@ dataIdentifiers = {
         # 476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
         # 477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
         # 478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Position", signed=True), RawCodec(1,"Unknown")]),
-        475 : O3EComplexType(2, "MixerOneCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
-        476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
-        477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
-        478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual")]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        475 : O3EComplexType(2, "MixerOneCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual", signed=True)]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        476 : O3EComplexType(2, "MixerTwoCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual", signed=True)]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        477 : O3EComplexType(2, "MixerThreeCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual", signed=True)]), #wangnick Vitocal 250-A SW 2440, Issue #191
+        478 : O3EComplexType(2, "MixerFourCircuitThreeWayValvePositionPercent", [O3EInt8(1,"Setpoint", signed=True), O3EInt8(1,"Actual", signed=True)]), #wangnick Vitocal 250-A SW 2440, Issue #191
         491 : O3EComplexType(2, "DomesticHotWaterCirculationPump",[O3EByteVal(1,"State"),O3EByteVal(1,"Unknown")]),                
         497 : O3EComplexType(5, "DomesticHotWaterCirculationPumpMode",[O3EByteVal(1, "Mode"), O3EByteVal(1, "HygenieActive"), O3EByteVal(1, "HeatingActive"), O3EByteVal(1, "CyclesPerHour"), O3EByteVal(1, "Cycles")]),
         500 : RawCodec(2, "CentralHeatDemandExternalAc"),
