@@ -36,13 +36,10 @@ def main():
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v):
-        try:
-            if type(v) is int:
-                return v
-            else:
-                return int(eval(str(v)))
-        except:
-            return None
+        if type(v) is int:
+            return v
+        else:
+            return int(eval(str(v)))
     
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
@@ -296,8 +293,8 @@ def main():
     def readbydid(addr:int, did:any, json=None, raw=None, msglvl=0, sub=None):
         if(raw == None): 
             raw = args.raw
-        value,idstr =  dicEcus[addr].readByDid(did, raw, sub)
-        showread(addr, did, value, idstr, json, msglvl)    
+        value,idstr,idid =  dicEcus[addr].readByDid(did, raw, sub)
+        showread(addr, idid, value, idstr, json, msglvl)    
 
 
         
@@ -324,19 +321,11 @@ def main():
             fjson = args.json
 
         if(mqtt_client != None):
-            if((idid := getint(did)) is None):
-                # if did not is integer then remove the format specifier
-                formatstring = re.sub(r"didNumber:[^}]*", "didNumber", mqttformatstring)
-                mydid = did
-            else:
-                formatstring = mqttformatstring
-                mydid = idid
-            
-            publishStr = formatstring.format(
+            publishStr = mqttformatstring.format(
                 ecuAddr = addr,
                 device = dev_of_addr(addr),
                 didName = idstr,
-                didNumber = mydid
+                didNumber = did
             )
             
             if(fjson):
@@ -546,7 +535,7 @@ def main():
                     #print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
 
-        # scanall
+        # read all
         elif(args.scanall == True):
             msglvl = 1  # show did nr
             if(len(dicEcus) > 1):

@@ -198,17 +198,17 @@ class O3Eclass():
             stopIndexSub = startIndexSub + selectedSub.string_len
 
             # receive bin data directly, no codec, no conversion
-            string_bin,_ = self.readPure(idid, binary=True)
+            string_bin,_,_ = self.readPure(idid, binary=True)
             string_bin_sub = string_bin[startIndexSub:stopIndexSub]
 
             open3e.Open3Ecodecs.flag_rawmode = raw
             decodedData = selectedSub.decode(string_bin_sub)
 
-            return decodedData,selectedSub.id
+            return decodedData, selectedSub.id, idid
         except NegativeResponseException as e:
             return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}'
         except Exception as e:
-            return str(e), f'ERR/{hex(self.tx)}.{did}'
+            return str(e), f'ERR/{hex(self.tx)}.{did}', 0  # idid not sure
         
                         
     # not global anymore... ;-)
@@ -217,7 +217,7 @@ class O3Eclass():
             open3e.Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
             # return value and idstr
-            return response.service_data.values[did],self.dataIdentifiers[did].id
+            return response.service_data.values[did],self.dataIdentifiers[did].id,did
         else:
             return self.readPure(did)
 
@@ -254,9 +254,9 @@ class O3Eclass():
             # receive bin data directly, no codec, no conversion
             string_bin = None  # noetig?
             if(readecu is not None):
-                string_bin,_ = readecu.readPure(idid, binary=True)
+                string_bin,_,_ = readecu.readPure(idid, binary=True)
             else:
-                string_bin,_ = self.readPure(idid, binary=True)
+                string_bin,_,_ = self.readPure(idid, binary=True)
 
             # encode value to bytes
             open3e.Open3Ecodecs.flag_rawmode = raw 
@@ -298,11 +298,11 @@ class O3Eclass():
         if(response.positive):
             diddata = response.data[2:]
             if(binary):
-                return diddata,f"DID_{did}"
+                return diddata,f"DID_{did}",did
             else:
-                return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}"
+                return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}",did
         else:
-            return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}"
+            return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}",did
     
 
     def close(self):
