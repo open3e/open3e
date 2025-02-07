@@ -17,6 +17,7 @@
 import argparse
 import time
 import json
+import re
 import paho.mqtt.client as paho
 from udsoncan.exceptions import *
 from os import path
@@ -34,12 +35,15 @@ def main():
     cmnd_queue = []   # command queue to serialize MQTT requests
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
-    def getint(v) -> int:
-        if type(v) is int:
-            return v
-        else:
-            return int(eval(str(v)))
-
+    def getint(v):
+        try:
+            if type(v) is int:
+                return v
+            else:
+                return int(eval(str(v)))
+        except:
+            return None
+    
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
             return int(dicDevAddrs[v])
@@ -320,11 +324,19 @@ def main():
             fjson = args.json
 
         if(mqtt_client != None):
-            publishStr = mqttformatstring.format(
+            if((idid := getint(did)) is None):
+                # if did not is integer then remove the format specifier
+                formatstring = re.sub(r"didNumber:[^}]*", "didNumber", mqttformatstring)
+                mydid = did
+            else:
+                formatstring = mqttformatstring
+                mydid = idid
+            
+            publishStr = formatstring.format(
                 ecuAddr = addr,
                 device = dev_of_addr(addr),
                 didName = idstr,
-                didNumber = did
+                didNumber = mydid
             )
             
             if(fjson):
