@@ -356,7 +356,7 @@ class O3Eclass():
             else:
                 return binascii.hexlify(diddata).decode('utf-8'), f"DID_{did}:len={len(response)-3}"
         else:
-            return f"negative response, {response.code}:{response.invalid_reason}", "DID_{did}"
+            return f"negative response, {response.code}:{response.invalid_reason}", f"DID_{did}"
     
 
     def close(self):
