@@ -171,11 +171,65 @@ class O3Eclass():
     #++++++++++++++++++++++++++++++
 
     def readByDid(self, did, raw:bool, sub=None):
+        """
+        Reads a value from a Data Identifier (DID). 
+        
+        Depending on the provided parameters, this method retrieves the raw or decoded value of a DID. 
+        If a sub-identifier (sub) is specified, the method extracts and decodes the corresponding 
+        subfield from a complex DID structure.
+
+        Parameters:
+        ----------
+        did : int or str
+            The Data Identifier (DID) to read. Can be provided as an integer or string (idstr, .id in codec).
+        raw : bool
+            If True, the method operates in raw mode, returning binary data without decoding.
+        sub : int or None, optional
+            The index of the sub-item within a complex DID structure. If None, the entire DID is read.
+
+        Returns:
+        -------
+        tuple
+            - If successful:
+                - decodedData : Any
+                    The decoded value of the DID or subfield.
+                - idstr : str
+                    Identifier string for logging or error handling.
+                - idid : int
+                    The integer representation of the DID.
+            - If an error occurs:
+                - error_message : str
+                    A descriptive error message.
+                - error_code : str
+                    A formatted error string containing the transaction ID and DID.
+                - idid : int
+                    The DID as an integer (0 if an error prevents resolution).
+
+        Raises:
+        ------
+        ValueError
+            If the specified DID does not have a corresponding codec.
+        TypeError
+            If the DID is not a complex type when a subfield is requested.
+        IndexError
+            If the specified sub-index is out of range.
+        NegativeResponseException
+            If the device rejects the read access due to unavailability.
+
+        Example:
+        --------
+        >>> obj.readByDid(0x1234, raw=False)
+        ('decoded_value', '0x1234', 4660)
+
+        >>> obj.readByDid(0x5678, raw=True, sub=2)
+        ('subfield_value', '0x5678.2', 22136)
+        """
         try:
             idid = self.get_did_as_int(did)
 
             if(sub is None):
-                return self._readByDid(idid, raw)
+                val, idstr = self._readByDid(idid, raw) 
+                return val, idstr, idid
 
             if(idid not in self.dataIdentifiers):
                 raise ValueError(f"No Codec specified for DID {idid}")
@@ -198,7 +252,7 @@ class O3Eclass():
             stopIndexSub = startIndexSub + selectedSub.string_len
 
             # receive bin data directly, no codec, no conversion
-            string_bin,_,_ = self.readPure(idid, binary=True)
+            string_bin,_ = self.readPure(idid, binary=True)
             string_bin_sub = string_bin[startIndexSub:stopIndexSub]
 
             open3e.Open3Ecodecs.flag_rawmode = raw
@@ -206,7 +260,7 @@ class O3Eclass():
 
             return decodedData, selectedSub.id, idid
         except NegativeResponseException as e:
-            return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}'
+            return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}', idid
         except Exception as e:
             return str(e), f'ERR/{hex(self.tx)}.{did}', 0  # idid not sure
         
@@ -217,7 +271,7 @@ class O3Eclass():
             open3e.Open3Ecodecs.flag_rawmode = raw
             response = self.uds_client.read_data_by_identifier([did])
             # return value and idstr
-            return response.service_data.values[did],self.dataIdentifiers[did].id,did
+            return response.service_data.values[did], self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
 
@@ -254,9 +308,9 @@ class O3Eclass():
             # receive bin data directly, no codec, no conversion
             string_bin = None  # noetig?
             if(readecu is not None):
-                string_bin,_,_ = readecu.readPure(idid, binary=True)
+                string_bin,_ = readecu.readPure(idid, binary=True)
             else:
-                string_bin,_,_ = self.readPure(idid, binary=True)
+                string_bin,_ = self.readPure(idid, binary=True)
 
             # encode value to bytes
             open3e.Open3Ecodecs.flag_rawmode = raw 
@@ -298,11 +352,11 @@ class O3Eclass():
         if(response.positive):
             diddata = response.data[2:]
             if(binary):
-                return diddata,f"DID_{did}",did
+                return diddata, f"DID_{did}"
             else:
-                return binascii.hexlify(diddata).decode('utf-8'),f"DID_{did}:len={len(response)-3}",did
+                return binascii.hexlify(diddata).decode('utf-8'), f"DID_{did}:len={len(response)-3}"
         else:
-            return f"negative response, {response.code}:{response.invalid_reason}","DID_{did}",did
+            return f"negative response, {response.code}:{response.invalid_reason}", "DID_{did}"
     
 
     def close(self):
