@@ -22,6 +22,8 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
+from config.Config import *
+
 
 def main():
     # default ECU address
@@ -182,7 +184,7 @@ def main():
                 return deftx        
 
         def cmnd_loop():
-            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'config']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()
@@ -264,6 +266,15 @@ def main():
                             ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
                             ecu77.close()
                             time.sleep(0.1)
+
+                    elif cd['mode'] == 'config':
+                        Config.send_config(
+                            mqtt_client=mqtt_client,
+                            mqtt_topic=mqttTopic,
+                            ecus=dicEcus,
+                            get_mqtt_topic_callback=get_mqtt_topic
+                        )
+                        time.sleep(0.1)
                 else:
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
@@ -320,20 +331,13 @@ def main():
             fjson = args.json
 
         if(mqtt_client != None):
-            publishStr = mqttformatstring.format(
-                ecuAddr = addr,
-                device = dev_of_addr(addr),
-                didName = idstr,
-                didNumber = did
-            )
-            
             if(fjson):
                 # Send one JSON message
-                ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
+                ret = mqtt_client.publish(get_mqtt_topic(addr, did, idstr), json.dumps(value))
             else:
                 # Split down to scalar types
-                mqttdump(mqttTopic + "/" + publishStr, value)
-            
+                mqttdump(get_mqtt_topic(addr, did, idstr), value)
+
             if(args.verbose == True):
                 print (dev_of_addr(addr), did, idstr, json.dumps(value))
         else:
@@ -350,6 +354,14 @@ def main():
                 mlst.append(str(value))
                 msg = " ".join(mlst)
                 print(msg)
+
+    def get_mqtt_topic(addr, did, idstr):
+        return f"{mqttTopic}/{mqttformatstring.format(
+            ecuAddr=addr,
+            device=dev_of_addr(addr),
+            didName=idstr,
+            didNumber=did
+        )}"
 
     def print_write(ecu, did, sub, val, raw=False, f77=False):
         s = "write"
