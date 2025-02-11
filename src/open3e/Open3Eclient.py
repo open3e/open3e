@@ -17,6 +17,7 @@
 import argparse
 import time
 import json
+import re
 import paho.mqtt.client as paho
 from udsoncan.exceptions import *
 from os import path
@@ -36,12 +37,12 @@ def main():
     cmnd_queue = []   # command queue to serialize MQTT requests
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
-    def getint(v) -> int:
+    def getint(v):
         if type(v) is int:
             return v
         else:
             return int(eval(str(v)))
-
+    
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
             return int(dicDevAddrs[v])
@@ -303,8 +304,8 @@ def main():
     def readbydid(addr:int, did:any, json=None, raw=None, msglvl=0, sub=None):
         if(raw == None): 
             raw = args.raw
-        value,idstr =  dicEcus[addr].readByDid(did, raw, sub)
-        showread(addr, did, value, idstr, json, msglvl)    
+        value,idstr,idid =  dicEcus[addr].readByDid(did, raw, sub)
+        showread(addr, idid, value, idstr, json, msglvl)    
 
 
         
@@ -460,7 +461,7 @@ def main():
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
         mqtt_client.loop_start()
         
-    print("hallo! 149")
+    #print("hallo! 149")
 
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
@@ -505,7 +506,7 @@ def main():
                         ensure_ecu(ecu)
                         print_write(ecu, did, sub, val, raw=True)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
-                    print(f"return: {succ}, code: {code}")
+                    #print(f"return: {succ}, code: {code}")
             elif(args.json == True):
                 writeArg = args.write.split("=")
                 lsteds = eval_complex(writeArg[0])
@@ -523,7 +524,7 @@ def main():
                     ensure_ecu(ecu)
                     print_write(ecu, did, sub, val)
                     succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
-                print(f"return: {succ}, code: {code}")  
+                #print(f"return: {succ}, code: {code}")  
             else:
                 jobs = args.write.split(",")
                 for job in jobs:
@@ -543,10 +544,10 @@ def main():
                         ensure_ecu(ecu)
                         print_write(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
-                    print(f"return: {succ}, code: {code}")
+                    #print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
 
-        # scanall
+        # read all
         elif(args.scanall == True):
             msglvl = 1  # show did nr
             if(len(dicEcus) > 1):

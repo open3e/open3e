@@ -39,7 +39,6 @@ class Open3EudsClient(Client):
         else:
             print('Using writeDataByIdentifier service 77. Verify the result!')
             req = WriteDataByIdentifier77.make_request(did, value, didconfig=self.config['data_identifiers'])
-            print(req)
             self.logger.info("%s - Writing data identifier 0x%04x (%s)" %
                             (self.service_log_prefix(services.WriteDataByIdentifier), did, DataIdentifier.name_from_id(did)))
 

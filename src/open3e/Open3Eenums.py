@@ -2321,4 +2321,11 @@ E3Enums = {
         96: "SystemSupplier(VEG)Programming",
         97: "SystemSupplier(VEG)Diagnostic",
     },
+
+    "HeatingElementConfiguration" : {
+        0: "Not Available",
+        1: "Not Installed",
+        2: "Installed",
+        3: "Factory Installed",
+    },
 }
