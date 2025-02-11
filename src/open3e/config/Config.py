@@ -39,26 +39,14 @@ class Config:
         config = Config()
 
         for did, ecu in ecus.items():
-            name = None
-            serial_number = None
-            software_version = None
-            hardware_version = None
             if 256 in ecu.dataIdentifiers.keys():
                 bus_identification = ecu.readByDid(256, False)
-                print(bus_identification)
-                name = bus_identification["DeviceProperty"]["Text"]
-                serial_number = bus_identification["VIN"]
-                software_version = bus_identification["SW-Version"]
-                hardware_version = bus_identification["HW-Version"]
+                name = bus_identification[0]["DeviceProperty"]["Text"]
+                serial_number = bus_identification[0]["VIN"]
+                software_version = bus_identification[0]["SW-Version"]
+                hardware_version = bus_identification[0]["HW-Version"]
             else:
                 continue
-
-            # if 377 in ecu.dataIdentifiers.keys():
-            #     serial_number, _ = ecu.readByDid(377, False)
-            # if 580 in ecu.dataIdentifiers.keys():
-            #     software_version, _ = ecu.readByDid(580, False)
-            # if 581 in ecu.dataIdentifiers.keys():
-            #     hardware_version, _ = ecu.readByDid(581, False)
 
             features: list[DeviceFeature] = []
             for k, v in ecu.dataIdentifiers.items():
@@ -80,10 +68,7 @@ class Config:
                 )
             )
 
-        print("sending config")
         json_config = json.dumps(config, default=lambda config: config.__dict__)
-        print(json_config)
-
         mqtt_client.publish(
             topic=f"{mqtt_topic}/config",
             payload=json_config
