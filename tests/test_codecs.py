@@ -1,4 +1,3 @@
-"""
 from open3e.Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt8, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
     O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr
 import open3e.Open3Ecodecs
@@ -136,16 +135,3 @@ def test_datapoints_length():
         subcodec_len_sum = _calc_codec_length(codec)
 
         assert codec_len == subcodec_len_sum, f"Did {did}: Length {codec_len} does not match sum of subType lenghts {subcodec_len_sum}" 
-"""
-
-def getint(v):
-    if type(v) is int:
-        return v
-    else:
-        # DANGER! getint("__import__('os').system('rm -rf /')")
-        #return int(eval(str(v)))
-        return int(v, 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
-
-myval = 0x680
-res = getint(myval)
-print(res)
