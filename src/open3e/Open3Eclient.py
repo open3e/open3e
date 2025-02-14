@@ -41,7 +41,9 @@ def main():
         if type(v) is int:
             return v
         else:
-            return int(eval(str(v)))
+            # DANGER! getint("__import__('os').system('rm -rf /')")
+            #return int(eval(str(v)))
+            return int(v, 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
     
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
@@ -54,13 +56,13 @@ def main():
                 return key
         return hex(addr)
             
-    def get_ecudid(v):
-        s = str(v)
-        parts = s.split(".")
-        if(len(parts) > 1):
-            return getint(parts[0]),getint(parts[1])
-        else:
-            return deftx,getint(parts[0])
+    # def get_ecudid(v):
+    #     s = str(v)
+    #     parts = s.split(".")
+    #     if(len(parts) > 1):
+    #         return getint(parts[0]),getint(parts[1])
+    #     else:
+    #         return deftx,getint(parts[0])
 
     # complex addressing: 0x680.[257,258,259] or 0x680.256 or 257,259,261 or 256 ...
     # also possibel 0x680.[257.0,258.1,259]  or 0x680.256.1 ...
