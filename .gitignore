@@ -18,6 +18,7 @@ __pycache__/
 .venv/
 dist/*
 build/*
+_scm_version.py
 #testing
 .coverage
 .DS_Store
