@@ -23,20 +23,21 @@ from open3e.system.Device import Device
 from open3e.system.DeviceFeature import DeviceFeature
 
 
-class System:
+class SystemInformation:
     devices: list[Device]
 
     def __init__(self):
         self.devices = []
 
     @staticmethod
-    def send_config(
+    def publish(
             mqtt_client: paho.Client,
             mqtt_topic: str,
             ecus: dict[str, O3Eclass],
             get_mqtt_topic_callback: Callable[[int, str, str], str],
+            verbose: bool
     ):
-        system = System()
+        system = SystemInformation()
 
         for did, ecu in ecus.items():
             if 256 in ecu.dataIdentifiers.keys():
@@ -68,8 +69,12 @@ class System:
                 )
             )
 
-        json_config = json.dumps(system, default=lambda config: config.__dict__)
+        json_system = json.dumps(system, default=lambda config: config.__dict__)
+
+        if verbose:
+            print(f"System information was requested\n{json_system}")
+
         mqtt_client.publish(
             topic=f"{mqtt_topic}/system",
-            payload=json_config
+            payload=json_system
         )

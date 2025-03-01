@@ -23,7 +23,7 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
-from system.System import *
+from system.SystemInformation import *
 
 
 def main():
@@ -271,11 +271,12 @@ def main():
                             time.sleep(0.1)
 
                     elif cd['mode'] == 'system':
-                        System.send_config(
+                        SystemInformation.publish(
                             mqtt_client=mqtt_client,
                             mqtt_topic=mqttTopic,
                             ecus=dicEcus,
-                            get_mqtt_topic_callback=get_mqtt_topic
+                            get_mqtt_topic_callback=get_mqtt_topic,
+                            verbose=args.verbose
                         )
                         time.sleep(0.1)
                 else:
