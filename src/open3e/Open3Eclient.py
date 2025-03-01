@@ -43,7 +43,7 @@ def main():
         else:
             # DANGER! getint("__import__('os').system('rm -rf /')")
             #return int(eval(str(v)))
-            return int(v, 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
+            return int(str(v), 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
     
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
