@@ -23,7 +23,7 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
-from config.Config import *
+from system.System import *
 
 
 def main():
@@ -187,7 +187,7 @@ def main():
                 return deftx        
 
         def cmnd_loop():
-            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'config']
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'system']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()
@@ -270,8 +270,8 @@ def main():
                             ecu77.close()
                             time.sleep(0.1)
 
-                    elif cd['mode'] == 'config':
-                        Config.send_config(
+                    elif cd['mode'] == 'system':
+                        System.send_config(
                             mqtt_client=mqtt_client,
                             mqtt_topic=mqttTopic,
                             ecus=dicEcus,

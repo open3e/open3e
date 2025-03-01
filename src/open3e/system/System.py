@@ -19,11 +19,11 @@ from typing import Callable
 import paho.mqtt.client as paho
 
 from open3e.Open3Eclass import O3Eclass
-from open3e.config.Device import Device
-from open3e.config.DeviceFeature import DeviceFeature
+from open3e.system.Device import Device
+from open3e.system.DeviceFeature import DeviceFeature
 
 
-class Config:
+class System:
     devices: list[Device]
 
     def __init__(self):
@@ -36,7 +36,7 @@ class Config:
             ecus: dict[str, O3Eclass],
             get_mqtt_topic_callback: Callable[[int, str, str], str],
     ):
-        config = Config()
+        system = System()
 
         for did, ecu in ecus.items():
             if 256 in ecu.dataIdentifiers.keys():
@@ -57,7 +57,7 @@ class Config:
                     )
                 )
 
-            config.devices.append(
+            system.devices.append(
                 Device(
                     name=name,
                     id=ecu.tx,
@@ -68,7 +68,7 @@ class Config:
                 )
             )
 
-        json_config = json.dumps(config, default=lambda config: config.__dict__)
+        json_config = json.dumps(system, default=lambda config: config.__dict__)
         mqtt_client.publish(
             topic=f"{mqtt_topic}/config",
             payload=json_config
