@@ -70,6 +70,6 @@ class System:
 
         json_config = json.dumps(system, default=lambda config: config.__dict__)
         mqtt_client.publish(
-            topic=f"{mqtt_topic}/config",
+            topic=f"{mqtt_topic}/system",
             payload=json_config
         )
