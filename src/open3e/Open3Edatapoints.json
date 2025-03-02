@@ -2587,9 +2587,15 @@
     "args": {
       "subTypes": [
         {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {}
+        },
+        {
           "codec": "O3EInt8",
           "len": 1,
-          "id": "Minimum",
+          "id": "TargetValue",
           "args": {
             "scale": 1.0,
             "signed": false
@@ -2599,15 +2605,6 @@
           "codec": "O3EInt8",
           "len": 1,
           "id": "Actual",
-          "args": {
-            "scale": 1.0,
-            "signed": false
-          }
-        },
-        {
-          "codec": "O3EInt8",
-          "len": 1,
-          "id": "Maximum",
           "args": {
             "scale": 1.0,
             "signed": false
@@ -32004,5 +32001,5 @@
       ]
     }
   },
-  "Version": "20250217"
+  "Version": "20250302"
 }
