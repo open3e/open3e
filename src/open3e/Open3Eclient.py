@@ -23,7 +23,7 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
-from system.SystemInformation import *
+from open3e.system.SystemInformation import *
 
 
 def main():
