@@ -364,11 +364,30 @@ def main():
             print(f"{s}: {ecu}.{did} = {val}")
         else:
             print(f"{s}: {ecu}.{did}.{sub} = {val}")
-        
+
+    def get_package_version_string():
+        package_name = "open3e"
+
+        try:
+            from importlib.metadata import version
+            package_version = version(package_name)
+        except ImportError:
+            package_version = "unknown"
+
+        try:
+            from open3e import _scm_version as scm_version
+            git_ref = scm_version.git_ref
+        except ImportError:
+            git_ref = "unknown"
+
+        return f'{package_version} ({git_ref})'
+
     #~~~~~~~~~~~~~~~~~~~~~~
     # Main
     #~~~~~~~~~~~~~~~~~~~~~~
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+    help_version_string = get_package_version_string()
+
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e {help_version_string}')
     parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
     parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
     parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
