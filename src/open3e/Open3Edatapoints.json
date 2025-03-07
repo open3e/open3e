@@ -8907,16 +8907,58 @@
     }
   },
   "1006": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "TargetQuickMode",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "OpMode",
+          "args": {}
+        },
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "Required",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "1007": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "CurrentQuickMode",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "OpMode",
+          "args": {}
+        },
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "Required",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "1008": {
     "codec": "RawCodec",
@@ -32001,5 +32043,5 @@
       ]
     }
   },
-  "Version": "20250302"
+  "Version": "20250307"
 }

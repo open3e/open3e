@@ -332,8 +332,8 @@ dataIdentifiers = {
         989 : O3EInt16(2, "MixerThreeCircuitFlowTemperatureTargetSetpoint", signed=True),
         990 : O3EInt16(2, "MixerFourCircuitFlowTemperatureTargetSetpoint", signed=True),
         1004 : O3EEnum(1, "CentralHeatingRegulationMode", "RegulationTypes"),
-        1006 : RawCodec(4, "TargetQuickMode"),
-        1007 : RawCodec(4, "CurrentQuickMode"),
+        1006 : O3EComplexType(4, "TargetQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. https://community.viessmann.de/viessmann/attachments/viessmann/customers-heatpump-hybrid/74546/1/6196307%20Kundendatenpunktliste%20Vitocal%20(1).pdf
+        1007 : O3EComplexType(4, "CurrentQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. did 1006
         1008 : RawCodec(4, "MixerOneCircuitTargetQuickMode"),
         1009 : RawCodec(4, "MixerTwoCircuitTargetQuickMode"),
         1010 : RawCodec(4, "MixerThreeCircuitTargetQuickMode"),
