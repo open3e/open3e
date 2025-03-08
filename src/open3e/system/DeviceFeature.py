@@ -13,12 +13,10 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 """
+from dataclasses import dataclass
 
 
+@dataclass
 class DeviceFeature:
     id: int
     topic: str
-
-    def __init__(self, id: int, topic: str):
-        self.id = id
-        self.topic = topic

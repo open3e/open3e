@@ -14,6 +14,7 @@
   limitations under the License.
 """
 import json
+from dataclasses import dataclass
 from typing import Callable
 
 import paho.mqtt.client as paho
@@ -23,11 +24,9 @@ from open3e.system.Device import Device
 from open3e.system.DeviceFeature import DeviceFeature
 
 
+@dataclass
 class SystemInformation:
     devices: list[Device]
-
-    def __init__(self):
-        self.devices = []
 
     @staticmethod
     def publish(
@@ -37,7 +36,7 @@ class SystemInformation:
             get_mqtt_topic_callback: Callable[[int, str, str], str],
             verbose: bool
     ):
-        system = SystemInformation()
+        devices: list[Device] = []
 
         for did, ecu in ecus.items():
             if 256 in ecu.dataIdentifiers.keys():
@@ -58,7 +57,7 @@ class SystemInformation:
                     )
                 )
 
-            system.devices.append(
+            devices.append(
                 Device(
                     name=name,
                     id=ecu.tx,
@@ -68,6 +67,10 @@ class SystemInformation:
                     features=features
                 )
             )
+
+        system = SystemInformation(
+            devices=devices
+        )
 
         json_system = json.dumps(system, default=lambda config: config.__dict__)
 
