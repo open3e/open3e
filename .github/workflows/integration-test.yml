@@ -1,0 +1,46 @@
+name: Integration test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  integration-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: |
+          sudo apt update
+          # vcan kernel module
+          sudo apt install -y linux-modules-extra-$(uname -r)
+
+      - name: Setup virtual CAN interface
+        run: |
+          sudo modprobe vcan
+          sudo ip link add dev vcan0 type vcan
+          sudo ip link set up vcan0
+
+          echo "can interface stats"
+          ip -details -statistics link show vcan0
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run docker compose test environment
+        uses: hoverkraft-tech/compose-action@v2
+        with:
+          compose-file: "./tests/integration/compose.yml"
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Install open3e
+        run: pip install .[dev]
+
+      - name: Run integration tests
+        run: |
+          pytest --cov=open3e tests/integration
+
+          echo "can interface stats"
+          ip -details -statistics link show vcan0
