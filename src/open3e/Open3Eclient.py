@@ -360,12 +360,12 @@ def main():
                 print(msg)
 
     def get_mqtt_topic(addr, did, idstr):
-        return f"{mqttTopic}/{mqttformatstring.format(
+        return f"""{mqttTopic}/{mqttformatstring.format(
             ecuAddr=addr,
             device=dev_of_addr(addr),
             didName=idstr,
             didNumber=did
-        )}"
+        )}"""
 
     def print_write(ecu, did, sub, val, raw=False, f77=False):
         s = "write"

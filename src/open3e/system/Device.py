@@ -15,6 +15,8 @@
 """
 from dataclasses import dataclass
 
+from typing_extensions import Optional
+
 from open3e.system.DeviceFeature import DeviceFeature
 
 
@@ -22,7 +24,7 @@ from open3e.system.DeviceFeature import DeviceFeature
 class Device:
     name: str
     id: int
-    serial_number: str | None
-    software_version: str | None
-    hardware_version: str | None
+    serial_number: Optional[str]
+    software_version: Optional[str]
+    hardware_version: Optional[str]
     features: list[DeviceFeature]
