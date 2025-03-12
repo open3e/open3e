@@ -1310,7 +1310,7 @@ dataIdentifiers = {
         2484 : RawCodec(8, "ElectricalPowerRangeMetaData"),
         2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale = 1),
         2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale = 1),
-        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale = 1),
+        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale = 1, signed = True),
         2489 : RawCodec(3, "FrostProtectionStatus"),
         2490 : RawCodec(1, "StartUpWizardState"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput"),
