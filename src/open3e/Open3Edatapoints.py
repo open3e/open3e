@@ -1308,16 +1308,16 @@ dataIdentifiers = {
         2481 : RawCodec(5, "MixerThreeCircuitRoomAirHumiditySensor"),
         2482 : RawCodec(5, "MixerFourCircuitRoomAirHumiditySensor"),
         2484 : RawCodec(8, "ElectricalPowerRangeMetaData"),
-        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale = 1),
-        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale = 1),
+        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale = 1, signed = True),
+        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale = 1, signed = True),
         2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale = 1, signed = True),
         2489 : RawCodec(3, "FrostProtectionStatus"),
         2490 : RawCodec(1, "StartUpWizardState"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput"),
         2493 : RawCodec(2, "VentilationBypassPosition"),
         2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale = 1, signed = True),# Unit: Watts
-        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1),# Unit: Watts
-        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1),# Unit: Watts
+        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1, signed = True),# Unit: Watts
+        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1, signed = True),# Unit: Watts
         2497 : RawCodec(3, "ResetStatisticalValuesDate"),
         2498 : O3EByteVal(1, "CentralHeatingPumpType"),
         2499 : O3EByteVal(1, "MixerOneCircuitPumpType"),
