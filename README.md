@@ -18,6 +18,7 @@
 Same way working with writing values. Text and numeric form can get mixed. Case not sensitive. Can be used with 'complete' datapoints as well.
 * Defaults `-c can0` and `-cnfg devices.json` implemented so no need to specify 'usually' (except you use different settings). If devices.json not found arg default will be ignored.
 * All data point codecs defined are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+* System information, specifically connected devices and their features, is now published when requesting it via the command `{"mode": "system"}`.
 
 # Installation
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
@@ -201,7 +202,7 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
     
     to read dids 271 and 274:
@@ -228,6 +229,9 @@ In case of a "negative response" code when writing data, you may try to use the 
 
     to set frost protect threshold and eco function threshold to -9°C (complex dids):
     {"mode": "write-raw", "data":[[2855,"01A6FF"],[2426,"01A6FF000A00"]]}
+
+    to request system information which is then published on the system topic, e.g. open3e/system, as json:
+    {"mode": "system"}
 
  
     Option -m is mandatory for this mode.
