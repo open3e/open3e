@@ -83,7 +83,8 @@ dataIdentifiers = {
         378 : O3EComplexType(4, "PointOfCommonCouplingPhaseOne", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         379 : O3EComplexType(4, "PointOfCommonCouplingPhaseTwo", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         380 : O3EComplexType(4, "PointOfCommonCouplingPhaseThree", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
-        381 : O3EComplexType(4, "CentralHeatingPump", [O3EInt8(1, "Minimum"), O3EInt8(1, "Actual"), O3EInt8(1, "Maximum"), RawCodec(1, "Unknown")]),
+        #381 : O3EComplexType(4, "CentralHeatingPump", [O3EInt8(1, "Minimum"), O3EInt8(1, "Actual"), O3EInt8(1, "Maximum"), RawCodec(1, "Unknown")]),
+        381 : O3EComplexType(4, "CentralHeatingPump", [O3EByteVal(1, "State"), O3EInt8(1, "TargetValue"), O3EInt8(1, "Actual"), RawCodec(1, "Unknown")]), # Unit %, MyHomeMyData, see discussion #212
         382 : O3EComplexType(5, "UnitsAndFormats", [O3EEnum(1, "Units", "Units"), O3EEnum(1, "DateFormat", "DateFormats"), O3EEnum(1, "TimeFormat", "TimeFormats"), O3EByteVal(1, "TimeZone"), O3EByteVal(1, "Unknown")]),
         386 : O3EByteVal(1, "DiverterValveTargetPosition"),
         388 : O3EInt8(1, "ElectronicExpansionValveOneTargetPositionPercent"),
@@ -331,8 +332,8 @@ dataIdentifiers = {
         989 : O3EInt16(2, "MixerThreeCircuitFlowTemperatureTargetSetpoint", signed=True),
         990 : O3EInt16(2, "MixerFourCircuitFlowTemperatureTargetSetpoint", signed=True),
         1004 : O3EEnum(1, "CentralHeatingRegulationMode", "RegulationTypes"),
-        1006 : RawCodec(4, "TargetQuickMode"),
-        1007 : RawCodec(4, "CurrentQuickMode"),
+        1006 : O3EComplexType(4, "TargetQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. https://community.viessmann.de/viessmann/attachments/viessmann/customers-heatpump-hybrid/74546/1/6196307%20Kundendatenpunktliste%20Vitocal%20(1).pdf
+        1007 : O3EComplexType(4, "CurrentQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. did 1006
         1008 : RawCodec(4, "MixerOneCircuitTargetQuickMode"),
         1009 : RawCodec(4, "MixerTwoCircuitTargetQuickMode"),
         1010 : RawCodec(4, "MixerThreeCircuitTargetQuickMode"),
@@ -1307,16 +1308,16 @@ dataIdentifiers = {
         2481 : RawCodec(5, "MixerThreeCircuitRoomAirHumiditySensor"),
         2482 : RawCodec(5, "MixerFourCircuitRoomAirHumiditySensor"),
         2484 : RawCodec(8, "ElectricalPowerRangeMetaData"),
-        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale = 1),
-        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale = 1),
-        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale = 1),
+        2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale = 1, signed = True),
+        2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale = 1, signed = True),
+        2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale = 1, signed = True),
         2489 : RawCodec(3, "FrostProtectionStatus"),
         2490 : RawCodec(1, "StartUpWizardState"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput"),
         2493 : RawCodec(2, "VentilationBypassPosition"),
         2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale = 1, signed = True),# Unit: Watts
-        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1),# Unit: Watts
-        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1),# Unit: Watts
+        2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale = 1, signed = True),# Unit: Watts
+        2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale = 1, signed = True),# Unit: Watts
         2497 : RawCodec(3, "ResetStatisticalValuesDate"),
         2498 : O3EByteVal(1, "CentralHeatingPumpType"),
         2499 : O3EByteVal(1, "MixerOneCircuitPumpType"),
