@@ -17,7 +17,6 @@
 import argparse
 import time
 import json
-import re
 import paho.mqtt.client as paho
 from udsoncan.exceptions import *
 from os import path
@@ -55,14 +54,7 @@ def main():
             if val == addr:
                 return key
         return hex(addr)
-            
-    # def get_ecudid(v):
-    #     s = str(v)
-    #     parts = s.split(".")
-    #     if(len(parts) > 1):
-    #         return getint(parts[0]),getint(parts[1])
-    #     else:
-    #         return deftx,getint(parts[0])
+
 
     # complex addressing: 0x680.[257,258,259] or 0x680.256 or 257,259,261 or 256 ...
     # also possibel 0x680.[257.0,258.1,259]  or 0x680.256.1 ...
@@ -137,11 +129,6 @@ def main():
             return [parts[0],parts[1]]
         return [v,None]
           
-    # def get_didsub(v) -> tuple:
-    #     r1,r2=_get_didsub(v)
-    #     print(type(v),r1,r2)
-    #     return r1,r2
-    
 
     def ensure_ecu(addr:int):
         if(not (addr in dicEcus)):
@@ -149,7 +136,6 @@ def main():
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
             dicEcus[addr] = ecu
             dicDevAddrs[f"0x{addr:03x}"] = addr
-            # print("h", dicDevAddrs)
 
 
     # listen events ~~~~~~~~~~~~~~~~~~~~~~~
@@ -483,7 +469,6 @@ def main():
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
         mqtt_client.loop_start()
         
-    #print("hallo! 149")
 
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
