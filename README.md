@@ -182,7 +182,7 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     open3e -w 396='47.5'
     -> sets domestic hot water setpoint to 47.5degC
 
-    open3e -w 538='{"Mode": 1, "State": 0}'
+    open3e -j -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
  
