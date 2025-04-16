@@ -1,0 +1,10 @@
+{
+    "0x684": {
+        "256": {"BusAddress": 59, "BusType": {"ID": 2, "Text": "CanInternal"}, "DeviceProperty": {"ID": 6, "Text": "HMI"}, "DeviceFunction": {"ID": 0, "Text": "NOTHING"}, "SW-Version": "71.509.2243.1", "HW-Version": "3.505.304.2", "VIN": "0000000000000815"},
+        "575": 1
+    },
+    "0x68c": {
+        "256": {"BusAddress": 54, "BusType": {"ID": 2, "Text": "CanInternal"}, "DeviceProperty": {"ID": 33, "Text": "VCMU"}, "DeviceFunction": {"ID": 0, "Text": "NOTHING"}, "SW-Version": "21.509.2241.126", "HW-Version": "21.502.502.0", "VIN": "0000000000000815"},
+        "354": 0
+    }
+}

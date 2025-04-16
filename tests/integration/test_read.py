@@ -1,3 +1,5 @@
+import json
+import os
 import time
 import uuid
 
@@ -6,6 +8,7 @@ import pytest
 import paho.mqtt.client as paho
 
 import tests.util.open3e_cmd_wrapper as open3e_process
+from tests.util.json_device_dataset_loader import device_dataset
 from tests.util.wait import wait_for
 
 
@@ -13,14 +16,14 @@ from tests.util.wait import wait_for
 def mqtt():
   received_messages = []
   def on_message(client, userdata, msg):
-    received_messages.append(msg.payload.decode())
+    received_messages.append(msg)
 
   client = paho.Client(
     callback_api_version=paho.CallbackAPIVersion.VERSION2,
     client_id=f'IntegrationTest_{str(uuid.uuid4())}'
   )
   client.on_message = on_message
-  client.connect("127.0.0.1")
+  client.connect(open3e_process.MQTT_BROKER_ADDRESS, open3e_process.MQT_BROKER_PORT)
   client.loop_start()
 
   yield client, received_messages
@@ -29,34 +32,43 @@ def mqtt():
   client.disconnect()
 
 
-def test_read_cmd():
-  stdout, stderr = open3e_process.read("0x684.256")
+READ_DATASET_FILE = os.path.join(os.path.dirname(__file__), "test_data/read.json")
+
+
+@pytest.mark.parametrize("ecu, did, expected", device_dataset(READ_DATASET_FILE))
+def test_read_cmd_json(ecu, did, expected):
+  stdout, stderr = open3e_process.read(f"{ecu}.{did}")
 
   assert '' == stderr
-  assert "{'BusAddress': 59," in stdout
-  # TODO: valid json output?
-  # result = json.loads(stdout)
-  # assert result.get("BusAddress") == "59"
-  # assert result.get('VIN') == "0000000000000815"
+  assert expected == stdout.strip()
 
 
-def test_read_listen(mqtt):
-  with open3e_process.listen() as process:
+@pytest.mark.parametrize("ecu, did, expected", device_dataset(READ_DATASET_FILE))
+def test_read_listen_json(mqtt, ecu, did, expected):
+  with open3e_process.listen() as _:
     # wait for open3e to connect to mqtt
     # TODO: subscribe to LWT instead?
     time.sleep(1)
 
     client, received_messages = mqtt
 
-    # subscribe on topic with expected read result
-    client.subscribe("open3e/684_0256/BusAddress")
+    # subscribe on expected topic
+    expected_did_topic = open3e_process.MQTT_FORMAT_STRING.format(
+      ecuAddr=int(ecu,16),
+      didNumber=did
+    )
+    client.subscribe(f"{open3e_process.MQTT_BASE_TOPIC}/{expected_did_topic}")
 
     # publish read command
-    client.publish("open3e/cmnd", '{"mode":"read","addr":"0x684","data":[256]}')
+    read_payload = {
+      "mode": "read-json",
+      "addr": ecu,
+      "data": [did]
+    }
+    client.publish("open3e/cmnd", json.dumps(read_payload))
 
-    # wait for message on read result topic
+    # wait for message on expected result topic
     wait_for(lambda: len(received_messages) > 0)
 
     # assert message content
-    assert len(received_messages) == 1
-    assert received_messages[0] == '59'
+    assert expected == received_messages[0].payload.decode()

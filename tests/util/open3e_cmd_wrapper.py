@@ -7,7 +7,8 @@ from tests.util.wait import wait_for
 OPEN3E_PROCESS_CMD = [sys.executable, "-m", "open3e.Open3Eclient"]
 OPEN3E_DEFAULT_ARGUMENTS = ["-c", "vcan0"]
 
-MQTT_BROKER_ADDRESS="127.0.0.1:1883"
+MQTT_BROKER_ADDRESS="127.0.0.1"
+MQT_BROKER_PORT=1883
 MQTT_BASE_TOPIC="open3e"
 MQTT_LISTEN_CMD_TOPIC=f"{MQTT_BASE_TOPIC}/cmnd"
 MQTT_FORMAT_STRING="{ecuAddr:03X}_{didNumber:04d}"
@@ -27,7 +28,7 @@ def listen():
   try:
     process = _start_open3e_process_detached([
         "-l", MQTT_LISTEN_CMD_TOPIC,
-        "-m", f"{MQTT_BROKER_ADDRESS}:{MQTT_BASE_TOPIC}",
+        "-m", f"{MQTT_BROKER_ADDRESS}:{MQT_BROKER_PORT}:{MQTT_BASE_TOPIC}",
         "-mfstr", f"{MQTT_FORMAT_STRING}"
       ]
     )
