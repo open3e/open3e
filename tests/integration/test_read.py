@@ -1,35 +1,12 @@
 import json
 import os
 import time
-import uuid
 
 import pytest
-
-import paho.mqtt.client as paho
 
 import tests.util.open3e_cmd_wrapper as open3e_process
 from tests.util.json_device_dataset_loader import device_dataset
 from tests.util.wait import wait_for
-
-
-@pytest.fixture
-def mqtt():
-  received_messages = []
-  def on_message(client, userdata, msg):
-    received_messages.append(msg)
-
-  client = paho.Client(
-    callback_api_version=paho.CallbackAPIVersion.VERSION2,
-    client_id=f'IntegrationTest_{str(uuid.uuid4())}'
-  )
-  client.on_message = on_message
-  client.connect(open3e_process.MQTT_BROKER_ADDRESS, open3e_process.MQT_BROKER_PORT)
-  client.loop_start()
-
-  yield client, received_messages
-
-  client.loop_stop()
-  client.disconnect()
 
 
 READ_DATASET_FILE = os.path.join(os.path.dirname(__file__), "test_data/read.json")
