@@ -21,31 +21,13 @@ def test_read_cmd_json(ecu, did, expected):
 
 
 @pytest.mark.parametrize("ecu, did, expected", device_dataset(READ_DATASET_FILE))
-def test_read_listen_json(mqtt, ecu, did, expected):
+def test_read_listen_json(open3e_mqtt_client, ecu, did, expected):
   with open3e_process.listen() as _:
-    # wait for open3e to connect to mqtt
-    # TODO: subscribe to LWT instead?
-    time.sleep(1)
+    wait_for(lambda: open3e_mqtt_client.is_open3e_online())
 
-    client, received_messages = mqtt
+    open3e_mqtt_client.subscribe(ecu, did)
+    open3e_mqtt_client.publish_cmd("read-json", ecu, [did])
 
-    # subscribe on expected topic
-    expected_did_topic = open3e_process.MQTT_FORMAT_STRING.format(
-      ecuAddr=int(ecu,16),
-      didNumber=did
-    )
-    client.subscribe(f"{open3e_process.MQTT_BASE_TOPIC}/{expected_did_topic}")
+    wait_for(lambda: open3e_mqtt_client.received_messages_count() == 1)
 
-    # publish read command
-    read_payload = {
-      "mode": "read-json",
-      "addr": ecu,
-      "data": [did]
-    }
-    client.publish("open3e/cmnd", json.dumps(read_payload))
-
-    # wait for message on expected result topic
-    wait_for(lambda: len(received_messages) > 0)
-
-    # assert message content
-    assert expected == received_messages[0].payload.decode()
+    assert expected == open3e_mqtt_client.received_message_payload(ecu, did)
