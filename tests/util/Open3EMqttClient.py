@@ -32,9 +32,9 @@ class Open3EMqttClient:
     return self.online_flag.online
 
 
-  def subscribe(self, ecu, did):
-    expected_did_topic = self.__topic_name(ecu, did)
-    self.mqtt_client.subscribe(expected_did_topic)
+  def subscribe(self, ecu, did, did_topic_subpath=""):
+    did_topic = self.__topic_name(ecu, did, did_topic_subpath)
+    self.mqtt_client.subscribe(did_topic)
 
 
   def publish_cmd(self, mode, addr, data):
@@ -50,14 +50,14 @@ class Open3EMqttClient:
     return len(self.received_messages)
 
 
-  def received_message_payload(self, ecu, did):
-    did_topic = self.__topic_name(ecu, did)
+  def received_message_payload(self, ecu, did, did_topic_subpath=""):
+    did_topic = self.__topic_name(ecu, did, did_topic_subpath)
     return self.received_messages.get(did_topic, None)
 
 
-  def __topic_name(self, ecu, did):
-    expected_did_topic = open3e_process.MQTT_FORMAT_STRING.format(
+  def __topic_name(self, ecu, did, topic_subpath):
+    did_topic = open3e_process.MQTT_FORMAT_STRING.format(
       ecuAddr=int(ecu,16),
       didNumber=did
     )
-    return f"{open3e_process.MQTT_BASE_TOPIC}/{expected_did_topic}"
+    return f"{open3e_process.MQTT_BASE_TOPIC}/{did_topic}{topic_subpath}"

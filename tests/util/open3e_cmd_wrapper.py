@@ -13,9 +13,19 @@ MQTT_BASE_TOPIC="open3e"
 MQTT_LISTEN_CMD_TOPIC=f"{MQTT_BASE_TOPIC}/cmnd"
 MQTT_FORMAT_STRING="{ecuAddr:03X}_{didNumber:04d}"
 
-def read(did):
-  result = _run_open3e_process(["-r", did])
+
+def read_with_did_string(full_qualified_read_argument, additional_arguments=[]):
+  result = _run_open3e_process(["-r", full_qualified_read_argument] + additional_arguments)
   return result.stdout, result.stderr
+
+
+def read(ecu, dids, additional_arguments=[]):
+  read_argument = ",".join([f"{ecu}.{did}" for did in dids])
+  return read_with_did_string(read_argument, additional_arguments)
+
+
+def read_raw(ecu, dids):
+  return read(ecu, dids, ["--raw"])
 
 
 def write(did, value):
