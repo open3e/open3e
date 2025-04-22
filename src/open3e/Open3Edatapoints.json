@@ -2440,18 +2440,30 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EInt8",
+          "codec": "O3EByteVal",
           "len": 1,
-          "id": "Flame",
+          "id": "State",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "IonizationCurrent",
           "args": {
-            "scale": 1.0,
+            "scale": 100,
             "signed": false
           }
         },
         {
-          "codec": "RawCodec",
-          "len": 5,
-          "id": "Unknown",
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
           "args": {}
         }
       ]
@@ -2472,7 +2484,7 @@
         {
           "codec": "O3EInt16",
           "len": 2,
-          "id": "Flame",
+          "id": "BurnerStarts",
           "args": {
             "scale": 1,
             "signed": false
@@ -2488,10 +2500,13 @@
     }
   },
   "373": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "FanTargetSpeed",
-    "args": {}
+    "args": {
+      "scale": 1,
+      "signed": false
+    }
   },
   "377": {
     "codec": "O3EUtf8",
@@ -3304,15 +3319,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3352,15 +3370,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3400,15 +3421,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3454,15 +3478,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3553,15 +3580,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3652,15 +3682,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3745,15 +3778,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -3814,15 +3850,18 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown2",
-          "args": {}
+          "id": "Increased",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
         },
         {
           "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown1",
+          "id": "Duration",
           "args": {}
         }
       ]
@@ -4882,19 +4921,16 @@
     "args": {}
   },
   "596": {
-    "codec": "RawCodec",
+    "codec": "O3EByteVal",
     "len": 1,
     "id": "CentralHeatingPartLoadPercent",
     "args": {}
   },
   "597": {
-    "codec": "O3EInt8",
+    "codec": "O3EByteVal",
     "len": 1,
     "id": "DomesticHotWaterPartLoadPercent",
-    "args": {
-      "scale": 1,
-      "signed": false
-    }
+    "args": {}
   },
   "600": {
     "codec": "RawCodec",
@@ -9271,27 +9307,27 @@
         },
         {
           "codec": "RawCodec",
-          "len": 4,
-          "id": "Unknown1",
+          "len": 10,
+          "id": "Unknown",
           "args": {}
         },
         {
-          "codec": "RawCodec",
-          "len": 4,
-          "id": "Unknown2",
-          "args": {}
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VolumeCorrectionFactor",
+          "args": {
+            "scale": 10000,
+            "signed": false
+          }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt32",
           "len": 4,
-          "id": "Unknown3",
-          "args": {}
-        },
-        {
-          "codec": "RawCodec",
-          "len": 4,
-          "id": "Unknown4",
-          "args": {}
+          "id": "CalorificValue",
+          "args": {
+            "scale": 10000,
+            "signed": false
+          }
         }
       ]
     }
@@ -9636,10 +9672,37 @@
     "args": {}
   },
   "1139": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 7,
     "id": "CentralHeatingCurveAdaptionParameter",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TemperatureHigh",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TemperatureLow",
+          "args": {
+            "scale": 10.0,
+            "signed": true
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 3,
+          "id": "Unknown",
+          "args": {}
+        }
+      ]
+    }
   },
   "1165": {
     "codec": "O3EByteVal",
@@ -18045,7 +18108,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Betriebsstunden",
+          "id": "OperatingHours",
           "args": {
             "scale": 1,
             "signed": false
@@ -18054,7 +18117,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Brennerstunden",
+          "id": "BurnerHours",
           "args": {
             "scale": 1,
             "signed": false
@@ -18063,7 +18126,7 @@
         {
           "codec": "O3EInt32",
           "len": 4,
-          "id": "Brennerstarts",
+          "id": "BurnerStarts",
           "args": {
             "scale": 1,
             "signed": false
@@ -19443,10 +19506,31 @@
     "args": {}
   },
   "1432": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "CentralHeatingPumpPerformance",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "ResidualHead",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "DifferentialPressure",
+          "args": {}
+        }
+      ]
+    }
   },
   "1434": {
     "codec": "RawCodec",
@@ -19919,10 +20003,52 @@
     }
   },
   "1606": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "IntervalStrategyProperties",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "State",
+          "args": {}
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "unknown",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BurnerOffMinTime",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "BurnerOffMaxTime",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "IntegralValue",
+          "args": {
+            "scale": 1,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "1607": {
     "codec": "O3EByteVal",
@@ -25699,7 +25825,7 @@
     "id": "CurrentElectricalPowerConsumptionRefrigerantCircuit",
     "args": {
       "scale": 1,
-      "signed": false
+      "signed": true
     }
   },
   "2487": {
@@ -25708,7 +25834,7 @@
     "id": "CurrentElectricalPowerConsumptionElectricHeater",
     "args": {
       "scale": 1,
-      "signed": false
+      "signed": true
     }
   },
   "2488": {
@@ -25717,7 +25843,7 @@
     "id": "CurrentElectricalPowerConsumptionSystem",
     "args": {
       "scale": 1,
-      "signed": false
+      "signed": true
     }
   },
   "2489": {
@@ -25759,7 +25885,7 @@
     "id": "CurrentThermalCapacityElectricHeater",
     "args": {
       "scale": 1,
-      "signed": false
+      "signed": true
     }
   },
   "2496": {
@@ -25768,7 +25894,7 @@
     "id": "CurrentThermalCapacitySystem",
     "args": {
       "scale": 1,
-      "signed": false
+      "signed": true
     }
   },
   "2497": {
@@ -32043,5 +32169,5 @@
       ]
     }
   },
-  "Version": "20250307"
+  "Version": "20250422"
 }

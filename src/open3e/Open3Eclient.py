@@ -13,7 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 """
-
+import signal
 import argparse
 import time
 import json
@@ -24,8 +24,15 @@ from os import path
 import open3e.Open3Eclass
 from open3e.system.SystemInformation import *
 
+def handle_exit(sig, frame):
+    raise(SystemExit)
 
 def main():
+
+    # Add signals here to trigger normal exit of program:
+    signal.signal(signal.SIGTERM, handle_exit)  # exit program on TERM signal
+    signal.signal(signal.SIGINT, handle_exit)   # exit program on INT signal
+
     # default ECU address
     deftx = 0x680
 
@@ -341,7 +348,7 @@ def main():
                     mlst.append(str(did))
                 if((msglvl & 2) != 0):  # didname
                     mlst.append(idstr)
-                mlst.append(str(value))
+                mlst.append(json.dumps(value))      # v0.5.5: Use json formatted output instead of plain string
                 msg = " ".join(mlst)
                 print(msg)
 
@@ -566,12 +573,11 @@ def main():
                 for itm in lst:
                     showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
 
-    except (KeyboardInterrupt, InterruptedError):
-        # <STRG-C> oder SIGINT to stop
+    except (KeyboardInterrupt, SystemExit):
+        # <CTRL>-C, SIGINT or SIGTERM to stop
         # Use <kill -s SIGINT pid> to send SIGINT
+        # Use <kill -s SIGTERM pid> to send SIGTERM
         pass
-    # except Exception as e:
-    #     print(type(e).__name__, e)
 
     # close all connections before exit
     for ecu in dicEcus.values():
