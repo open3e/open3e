@@ -44,9 +44,7 @@ def listen():
     )
     yield process
   finally:
-    # process.terminate()
-    # TODO: workaround until SIGTERM handling in o3e is implemented
-    process.send_signal(2)
+    process.terminate()
     _wait_for_process_to_complete(process)
 
 
