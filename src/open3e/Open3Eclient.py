@@ -367,9 +367,9 @@ def main():
         if(f77):
             s += " f77"
         if(sub is None):
-            print(f"{s}: {ecu}.{did} = {val}")
+            print(f"{s}: {ecu}.{did} = {json.dumps(val)}")          # v0.5.5: Use json formatted output instead of plain string
         else:
-            print(f"{s}: {ecu}.{did}.{sub} = {val}")
+            print(f"{s}: {ecu}.{did}.{sub} = {json.dumps(val)}")    # v0.5.5: Use json formatted output instead of plain string
 
     def get_package_version_string():
         package_name = "open3e"

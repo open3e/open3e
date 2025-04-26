@@ -10,6 +10,9 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
+## What's new with version 0.5.5:
+* Output on command line always uses json data format
+
 ## What's new with version 0.5.x:
 * Reading and writing of subs and using plain text implemented:<br>
 `open3e -r 0x680.256.2` returns `{'ID': 31, 'Text': 'HPMUMASTER'}`<br>
@@ -180,7 +183,7 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     open3e -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
-    open3e -w 396='47.5'
+    open3e -j -w 396=47.5
     -> sets domestic hot water setpoint to 47.5degC
 
     open3e -j -w 538='{"Mode": 1, "State": 0}'
