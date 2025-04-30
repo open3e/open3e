@@ -24,7 +24,11 @@ Same way working with writing values. Text and numeric form can get mixed. Case 
 * System information, specifically connected devices and their features, is now published when requesting it via the command `{"mode": "system"}`.
 
 # Installation
+There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
+
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+
+<br>
 
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
