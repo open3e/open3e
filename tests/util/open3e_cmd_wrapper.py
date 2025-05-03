@@ -5,7 +5,8 @@ from contextlib import contextmanager
 from tests.util.wait import wait_for
 
 OPEN3E_PROCESS_CMD = [sys.executable, "-m", "open3e.Open3Eclient"]
-OPEN3E_DEFAULT_ARGUMENTS = ["-c", "vcan0"]
+# TODO: config file loading / working directory
+OPEN3E_DEFAULT_ARGUMENTS = ["-c", "vcan0", "-cnfg", "tests/integration/test_data/open3e_device_config/devices.json"]
 
 MQTT_BROKER_ADDRESS="127.0.0.1"
 MQT_BROKER_PORT=1883
@@ -28,8 +29,9 @@ def read_raw(ecu, dids):
   return read(ecu, dids, ["--raw"])
 
 
-def write(did, value):
-  result = _run_open3e_process(["-w", f"${did}=${value}"])
+def write(ecu, did, value):
+  # TODO: ecu in did is not supported? only -tx works?
+  result = _run_open3e_process(["-tx", ecu, "-w", f"{did}={value}", "-j"])
   return result.stdout, result.stderr
 
 

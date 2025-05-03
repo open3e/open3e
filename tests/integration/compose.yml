@@ -11,7 +11,7 @@ services:
 
   virtuale3:
     container_name: virtuale3
-    image: ghcr.io/lgraf/vituale3:sha-ddba7f5
+    image: ghcr.io/lgraf/vituale3:sha-314fed0
     network_mode: host
     command: ["-c", "vcan0", "-cnfg", "devices.json"]
     restart: unless-stopped
