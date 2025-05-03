@@ -1,9 +1,14 @@
+import os
 import paho.mqtt.client as paho
 import pytest
 import uuid
 
 import tests.util.open3e_cmd_wrapper as open3e_process
 from tests.util.Open3EMqttClient import Open3EMqttClient
+
+# set timezone for tests (date depened tests fail with other tz)
+# TODO: check O3EDateTime for open3e tz handling
+os.environ["TZ"] = "Europe/Berlin"
 
 @pytest.fixture
 def open3e_mqtt_client():
