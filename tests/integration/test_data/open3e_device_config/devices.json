@@ -1,0 +1,12 @@
+{
+  "0x680": {
+    "tx": "0x680",
+    "dpList": "tests/integration/test_data/open3e_device_config/Open3Edatapoints_680.py",
+    "prop": "HPMUMASTER"
+  },
+  "0x6a1": {
+    "tx": "0x6a1",
+    "dpList": "tests/integration/test_data/open3e_device_config/Open3Edatapoints_6a1.py",
+    "prop": "EMCUMASTER"
+  }
+}
