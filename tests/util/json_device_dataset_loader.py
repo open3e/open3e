@@ -5,7 +5,7 @@ def load_test_data_file(file_path):
     return json.load(file)
 
 
-def device_dataset(file_path):
+def read_dataset(file_path):
   data = load_test_data_file(file_path)
 
   datasets = []
@@ -15,8 +15,8 @@ def device_dataset(file_path):
   return datasets
 
 
-def device_dataset_dict(file_path):
-  data_set_list = device_dataset(file_path)
+def read_dataset_dict(file_path):
+  data_set_list = read_dataset(file_path)
 
   result = {}
   for ecu, did_key, did_value in data_set_list:
@@ -24,6 +24,16 @@ def device_dataset_dict(file_path):
       result[ecu] = {}
     result[ecu][did_key] = did_value
   return result
+
+
+def write_dataset(file_path):
+  data = load_test_data_file(file_path)
+
+  datasets = []
+  for ecu, datapoint_description in data.items():
+    for did_key, did_values in datapoint_description.items():
+      datasets.append((ecu, int(did_key), __did_value_as_str(did_values["initial"]), __did_value_as_str(did_values["to_write"])))
+  return datasets
 
 
 def __did_value_as_str(expected_value):

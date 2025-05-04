@@ -3,14 +3,14 @@ import os
 import pytest
 
 import tests.util.open3e_cmd_wrapper as open3e_process
-from tests.util.json_device_dataset_loader import device_dataset, device_dataset_dict
+from tests.util.json_device_dataset_loader import read_dataset, read_dataset_dict
 from tests.util.wait import wait_for
 
 
 READ_DATASET_FILE = os.path.join(os.path.dirname(__file__), "test_data/read.json")
 
 
-@pytest.mark.parametrize("ecu, did, expected", device_dataset(READ_DATASET_FILE))
+@pytest.mark.parametrize("ecu, did, expected", read_dataset(READ_DATASET_FILE))
 def test_read_cmd_json(ecu, did, expected):
   stdout, stderr = open3e_process.read(ecu, [did])
 
@@ -25,7 +25,7 @@ def test_read_cmd_json_multiple_dids():
   stdout, stderr = open3e_process.read(ecu, dids)
 
   assert '' == stderr
-  read_dataset = device_dataset_dict(READ_DATASET_FILE)
+  read_dataset = read_dataset_dict(READ_DATASET_FILE)
   assert f"{dids[0]} {read_dataset[ecu][dids[0]]}" == stdout.splitlines()[0]
   assert f"{dids[1]} {read_dataset[ecu][dids[1]]}" == stdout.splitlines()[1]
 
@@ -49,7 +49,7 @@ def test_read_cmd_raw():
   assert "\"01021f091400fd010109c000020064026500040031323334353637383031323334353637\"" == stdout.strip()
 
 
-@pytest.mark.parametrize("ecu, did, expected", device_dataset(READ_DATASET_FILE))
+@pytest.mark.parametrize("ecu, did, expected", read_dataset(READ_DATASET_FILE))
 def test_read_listen_json(open3e_mqtt_client, ecu, did, expected):
   with open3e_process.listen() as _:
     wait_for(lambda: open3e_mqtt_client.is_open3e_online())
@@ -76,7 +76,7 @@ def test_read_listen_json_multiple_dids(open3e_mqtt_client):
 
     wait_for(lambda: open3e_mqtt_client.received_messages_count() == 2)
 
-    read_dataset = device_dataset_dict(READ_DATASET_FILE)
+    read_dataset = read_dataset_dict(READ_DATASET_FILE)
     assert read_dataset[ecu][dids[0]] == open3e_mqtt_client.received_message_payload(ecu, dids[0])
     assert read_dataset[ecu][dids[1]] == open3e_mqtt_client.received_message_payload(ecu, dids[1])
 

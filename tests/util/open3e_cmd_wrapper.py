@@ -15,8 +15,8 @@ MQTT_LISTEN_CMD_TOPIC=f"{MQTT_BASE_TOPIC}/cmnd"
 MQTT_FORMAT_STRING="{ecuAddr:03X}_{didNumber:04d}"
 
 
-def read_with_did_string(full_qualified_read_argument, additional_arguments=[]):
-  result = _run_open3e_process(["-r", full_qualified_read_argument] + additional_arguments)
+def read_with_did_string(full_qualified_did_string, additional_arguments=[]):
+  result = _run_open3e_process(["-r", full_qualified_did_string] + additional_arguments)
   return result.stdout, result.stderr
 
 
@@ -29,10 +29,17 @@ def read_raw(ecu, dids):
   return read(ecu, dids, ["--raw"])
 
 
-def write(ecu, did, value):
-  # TODO: ecu in did is not supported? only -tx works?
-  result = _run_open3e_process(["-tx", ecu, "-w", f"{did}={value}", "-j"])
+def write_with_did_string(full_qualified_did_string, value, additional_arguments=["-j"]):
+  result = _run_open3e_process(["-w", f"{full_qualified_did_string}={value}"] + additional_arguments)
   return result.stdout, result.stderr
+
+
+def write(ecu, did, value, additional_arguments=["-j"]):
+  return write_with_did_string(f"{ecu}.{did}", value, additional_arguments)
+
+
+def write_raw(ecu, did, value):
+  return write(ecu, did, value, ["--raw"])
 
 
 @contextmanager
