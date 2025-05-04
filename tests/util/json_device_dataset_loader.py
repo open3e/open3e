@@ -36,6 +36,22 @@ def write_dataset(file_path):
   return datasets
 
 
+def write_dataset_dict(file_path):
+  data_set_list = write_dataset(file_path)
+
+  result = {}
+  for ecu, did_key, did_value_initial, did_value_to_write in data_set_list:
+    if ecu not in result:
+      result[ecu] = {}
+
+    if did_key not in result[ecu]:
+      result[ecu][did_key] = {}
+
+    result[ecu][did_key]["initial"] = did_value_initial
+    result[ecu][did_key]["to_write"] = did_value_to_write
+  return result
+
+
 def __did_value_as_str(expected_value):
   if isinstance(expected_value, dict):
     return json.dumps(expected_value)
