@@ -1,30 +1,12 @@
 {
     "0x680": {
-        "382": {
-            "initial":  {"Units": {"ID": 0, "Text": "Metric"}, "DateFormat": {"ID": 0, "Text": "DayMonthYear"}, "TimeFormat": {"ID": 0, "Text": "TwentyFourHours"}, "TimeZone": 1, "Unknown": 0},
-            "to_write": {"Units": {"ID": 1, "Text": "Imperial"}, "DateFormat": {"ID": 0, "Text": "DayMonthYear"}, "TimeFormat": {"ID": 0, "Text": "TwentyFourHours"}, "TimeZone": 2, "Unknown": 0}
-        },
-        "396": {
-            "initial":  45.0,
-            "to_write": 30.0
-        },
-        "692": {
-            "initial":  {"Count": 1, "Schedules": [{"Start": "09:00", "Stop": "20:00", "Unknown": "0000", "Mode": 3}]},
-            "to_write": {"Count": 1, "Schedules": [{"Start": "07:00", "Stop": "22:00", "Unknown": "0000", "Mode": 4}]}
-        },
-        "1007": {
-            "initial":  {"OpMode": 2, "Required": "off", "Unknown": "0000"},
-            "to_write": {"OpMode": 3, "Required": "on", "Unknown": "0000"}
-        },
-        "1097": {
-            "initial":  {"Unknown1": "00000000", "Unknown2": "00000000", "NormalRate": 0.0, "LowRate": 0.0, "Unknown3": "00000000"},
-            "to_write": {"Unknown1": "00000000", "Unknown2": "00000000", "NormalRate": 0.2, "LowRate": 0.1, "Unknown3": "00000000"}
-        }
+        "382": {"Units": {"ID": 1, "Text": "Imperial"}, "DateFormat": {"ID": 0, "Text": "DayMonthYear"}, "TimeFormat": {"ID": 0, "Text": "TwentyFourHours"}, "TimeZone": 2, "Unknown": 0},
+        "396": 30.0,
+        "692": {"Count": 1, "Schedules": [{"Start": "07:00", "Stop": "22:00", "Unknown": "0000", "Mode": 4}]},
+        "1007": {"OpMode": 3, "Required": "on", "Unknown": "0000"},
+        "1097": {"Unknown1": "00000000", "Unknown2": "00000000", "NormalRate": 0.2, "LowRate": 0.1, "Unknown3": "00000000"}
     },
     "0x6a1": {
-        "2214": {
-            "initial":  {"DischargeLimit": 15.0, "Unknown": 0.0},
-            "to_write": {"DischargeLimit": 25.0, "Unknown": 0.0}
-        }
+        "2214": {"DischargeLimit": 25.0, "Unknown": 0.0}
     }
 }
