@@ -3,23 +3,24 @@ import paho.mqtt.client as paho
 import pytest
 import uuid
 
-import tests.util.open3e_cmd_wrapper as open3e_process
-from tests.util.Open3EMqttClient import Open3EMqttClient
+import tests.util.open3e_cmd as open3e
+from tests.util.open3e_mqtt import Open3EMqttClient
 
 # set timezone for tests (date depened tests fail with other tz)
 # TODO: check O3EDateTime for open3e tz handling
 os.environ["TZ"] = "Europe/Berlin"
 
+
 @pytest.fixture
 def open3e_mqtt_client():
-  client = paho.Client(
-    callback_api_version=paho.CallbackAPIVersion.VERSION2,
-    client_id=f'IntegrationTest_{str(uuid.uuid4())}'
-  )
-  client.connect(open3e_process.MQTT_BROKER_ADDRESS, open3e_process.MQT_BROKER_PORT)
-  client.loop_start()
+    client = paho.Client(
+        callback_api_version=paho.CallbackAPIVersion.VERSION2,
+        client_id=f"IntegrationTest_{str(uuid.uuid4())}",
+    )
+    client.connect(open3e.MQTT_BROKER_ADDRESS, open3e.MQTT_BROKER_PORT)
+    client.loop_start()
 
-  yield Open3EMqttClient(client)
+    yield Open3EMqttClient(client)
 
-  client.loop_stop()
-  client.disconnect()
+    client.loop_stop()
+    client.disconnect()

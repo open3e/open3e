@@ -10,7 +10,11 @@ Tests an open3e process against an instance of [virtualE3](https://github.com/ph
 
 ### Create vcan interface
 
-The integration test use a virtual can interface for communitcation between a open3e and virtualE3.
+To create a virtual can interface for communitcation between a open3e and virtualE3.
+
+```
+modprobe vcan
+```
 
 ```
 ip link add dev vcan0 type vcan
