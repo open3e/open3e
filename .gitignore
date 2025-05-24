@@ -12,7 +12,9 @@ virtdata_*
 # allow device config for integration tests
 !tests/integration/test_data/open3e_device_config/devices*
 !tests/integration/test_data/open3e_device_config/Open3Edatapoints_6*
-!tests/integration/test_data/open3e_device_config/virtdata_*
+!tests/integration/localdocker/virtuale3/devices*
+!tests/integration/localdocker/virtuale3/Open3Edatapoints_6*
+!tests/integration/localdocker/virtuale3/virtdata_*
 .vscode/
 venv
 #packaging

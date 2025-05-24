@@ -28,7 +28,8 @@ jobs:
       - name: Run docker compose test environment
         uses: hoverkraft-tech/compose-action@v2
         with:
-          compose-file: "./tests/integration/compose.yml"
+          cwd: ${{ github.workspace }}/tests/integration
+          compose-file: "compose.yml"
 
       - name: Setup Python
         uses: actions/setup-python@v5
