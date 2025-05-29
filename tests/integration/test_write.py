@@ -3,18 +3,19 @@ import os
 import pytest
 
 import tests.util.open3e_cmd as open3e
-from tests.util.dataset import dataset, dataset_dict
+from tests.util.dataset import dataset
 from tests.util.wait import wait_for
 
 
 WRITE_DATASET_FILE = os.path.join(os.path.dirname(__file__), "test_data/write.json")
 
 
-@pytest.mark.parametrize("ecu, did, value_to_write", dataset(WRITE_DATASET_FILE))
+@pytest.mark.parametrize("ecu, did, value_to_write", dataset(WRITE_DATASET_FILE).fixtures())
 def test_write_json_cmd(ecu, did, value_to_write):
     # store initial value
     stdout, _ = open3e.read(ecu, [did])
     initial_value = stdout.strip()
+    value_to_write = str(value_to_write)
 
     try:
         # write new value
@@ -33,9 +34,12 @@ def test_write_json_cmd(ecu, did, value_to_write):
 
 def test_write_json_cmd_sub_did():
     ecu = "0x680"
-    sub_did = "1007.Required"
-    fq_did = f"{ecu}.{sub_did}"
-    value_to_write = '"on"'
+    did = 1007
+    sub_did = "Required"
+    fq_did = f"{ecu}.{did}.{sub_did}"
+
+    write_dataset = dataset(WRITE_DATASET_FILE)
+    value_to_write = f'"{str(write_dataset.ecu(ecu).did(did).sub_did(sub_did))}"'
 
     # store initial value
     stdout, _ = open3e.read_with_did_string(fq_did)
@@ -45,11 +49,11 @@ def test_write_json_cmd_sub_did():
         # write new value
         stdout, stderr = open3e.write_with_did_string(fq_did, value_to_write)
         assert "" == stderr
-        assert f"write: {int(ecu, 16)}.{sub_did} = {value_to_write}" == stdout.strip()
+        assert f"write: {int(ecu, 16)}.{did}.{sub_did} = {value_to_write}" == stdout.strip()
 
         # verify write of new value
         stdout, _ = open3e.read_with_did_string(fq_did)
-        assert '"on"' == stdout.strip()
+        assert value_to_write == stdout.strip()
     finally:
         # write initial value, to keep test data as expected
         open3e.write_with_did_string(fq_did, initial_value)
@@ -78,12 +82,13 @@ def test_write_raw_cmd():
         open3e.write(ecu, did, initial_value)
 
 
-@pytest.mark.parametrize("ecu, did, value_to_write", dataset(WRITE_DATASET_FILE))
+@pytest.mark.parametrize("ecu, did, value_to_write", dataset(WRITE_DATASET_FILE).fixtures())
 def test_write_listen(open3e_mqtt_client, ecu, did, value_to_write):
     # store initial value
     stdout, _ = open3e.read(ecu, [did])
     initial_value = stdout.strip()
 
+    value_to_write = str(value_to_write)
     try:
         # start open3e process in listen mode
         with open3e.listen() as _:
@@ -106,7 +111,7 @@ def test_write_listen(open3e_mqtt_client, ecu, did, value_to_write):
 def test_write_listen_multiple_dids(open3e_mqtt_client):
     ecu = "0x680"
     dids = [396, 1007]
-    write_dataset = dataset_dict(WRITE_DATASET_FILE)
+    write_dataset = dataset(WRITE_DATASET_FILE)
 
     # store initial values
     initial_values = {}
@@ -122,7 +127,7 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             write_data = []
             for did in dids:
                 open3e_mqtt_client.subscribe(ecu, did)
-                write_data.append([did, write_dataset[ecu][did]])
+                write_data.append([did, str(write_dataset.ecu(ecu).did(did))])
 
             # write new value
             open3e_mqtt_client.publish_cmd("write", ecu, write_data)
@@ -130,8 +135,8 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             # verify write of new value
             open3e_mqtt_client.publish_cmd("read-json", ecu, dids)
             wait_for(lambda: open3e_mqtt_client.received_messages_count() == 2)
-            assert write_dataset[ecu][dids[0]] == open3e_mqtt_client.received_message_payload(ecu, dids[0])
-            assert write_dataset[ecu][dids[1]] == open3e_mqtt_client.received_message_payload(ecu, dids[1])
+            assert str(write_dataset.ecu(ecu).did(dids[0])) == open3e_mqtt_client.received_message_payload(ecu, dids[0])
+            assert str(write_dataset.ecu(ecu).did(dids[1])) == open3e_mqtt_client.received_message_payload(ecu, dids[1])
     finally:
         # write initial value, to keep test data as expected
         for did in dids:

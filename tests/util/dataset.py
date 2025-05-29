@@ -1,34 +1,72 @@
 import json
 
 
-def dataset(file_path):
-    data = _load_test_data_file(file_path)
-
-    datasets = []
-    for ecu, datapoint_description in data.items():
-        for did_key, did_value in datapoint_description.items():
-            datasets.append((ecu, int(did_key), _did_value_as_str(did_value)))
-    return datasets
-
-
-def dataset_dict(file_path):
-    data_set_list = dataset(file_path)
-
-    result = {}
-    for ecu, did_key, did_value in data_set_list:
-        if ecu not in result:
-            result[ecu] = {}
-        result[ecu][did_key] = did_value
-    return result
-
-
 def _load_test_data_file(file_path):
     with open(file_path, "r") as file:
         return json.load(file)
 
 
-def _did_value_as_str(expected_value):
-    if isinstance(expected_value, dict):
-        return json.dumps(expected_value)
-    else:
-        return str(expected_value)
+def dataset(file_path):
+    dataset_dict = _load_test_data_file(file_path)
+    return DeviceDataset(dataset_dict)
+
+
+class DeviceDataset:
+    def __init__(self, devices):
+        self.devices = devices
+
+    def ecus(self):
+        return self.devices.keys()
+
+    def ecu(self, ecu):
+        ecu_data = self.devices.get(ecu, None)
+        if ecu_data is None:
+            raise KeyError(f"ecu {ecu} not found in dataset.")
+        return DeviceEntry(ecu, ecu_data)
+
+    def fixtures(self):
+        fixtures = []
+        for ecu in self.ecus():
+            device_entry = self.ecu(ecu)
+            for did in device_entry.dids():
+                did_entry = device_entry.did(did)
+                fixtures.append((did_entry.ecu, int(did_entry.did), did_entry))
+        return fixtures
+
+
+class DeviceEntry:
+    def __init__(self, ecu, device_data):
+        self.ecu = ecu
+        self.device_data = device_data
+
+    def dids(self):
+        return self.device_data.keys()
+
+    def did(self, did):
+        did_data = self.device_data.get(str(did), None)
+        if did_data is None:
+            raise KeyError(f"did {did} not found in device data (ecu: {self.ecu}).")
+        return DidEntry(self.ecu, did, did_data)
+
+
+class DidEntry:
+    def __init__(self, ecu, did, did_data):
+        self.ecu = ecu
+        self.did = did
+        self.did_data = did_data
+
+    def sub_did(self, sub_did):
+        if not isinstance(self.did_data, dict):
+            raise KeyError(f"sub-did {sub_did} not found in did data (ecu: {self.ecu}, did: {self.did}, value: {self.did_data}).")
+
+        complex_sub_did_value = self.did_data.get(sub_did, None)
+        if complex_sub_did_value is None:
+            raise KeyError(f"sub-did {sub_did} not found in did data (ecu: {self.ecu}, did: {self.did}, value: {self.did_data}).")
+
+        return DidEntry(self.ecu, sub_did, complex_sub_did_value)
+
+    def __str__(self):
+        if not isinstance(self.did_data, dict):
+            return str(self.did_data)
+        else:
+            return json.dumps(self.did_data)
