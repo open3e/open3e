@@ -94,6 +94,11 @@ class O3EInt32(O3EInt):
         assert string_len == 4
         O3EInt.__init__(self, string_len, idStr, scale=scale, signed=signed)
 
+class O3EInt64(O3EInt):
+    def __init__(self, string_len: int, idStr: str, scale: float = 1.0, signed=False):
+        assert string_len == 8
+        O3EInt.__init__(self, string_len, idStr, scale=scale, signed=signed)
+
 class O3EByteVal(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str):
         self.string_len = string_len
