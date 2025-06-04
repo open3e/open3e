@@ -32118,6 +32118,666 @@
       ]
     }
   },
+  "3228": {
+    "codec": "O3EComplexType",
+    "len": 73,
+    "id": "EnergyMeterOne",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyImport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyExport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "Unknown1",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PowerFactor",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 3,
+          "id": "Unknown3",
+          "args": {}
+        }
+      ]
+    }
+  },
+  "3229": {
+    "codec": "O3EComplexType",
+    "len": 73,
+    "id": "EnergyMeterTwo",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyImport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyExport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "Unknown1",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PowerFactor",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 3,
+          "id": "Unknown3",
+          "args": {}
+        }
+      ]
+    }
+  },
+  "3230": {
+    "codec": "O3EComplexType",
+    "len": 73,
+    "id": "EnergyMeterThree",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyImport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyExport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "Unknown1",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PowerFactor",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 3,
+          "id": "Unknown3",
+          "args": {}
+        }
+      ]
+    }
+  },
+  "3231": {
+    "codec": "O3EComplexType",
+    "len": 73,
+    "id": "EnergyMeterFour",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL1",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL2",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "ReactivePowerL3",
+          "args": {
+            "scale": 1,
+            "signed": true
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyImport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "EnergyExport",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt64",
+          "len": 8,
+          "id": "Unknown1",
+          "args": {
+            "scale": 100,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 8,
+          "id": "Unknown2",
+          "args": {}
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "VoltageL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL1",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL2",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "CurrentL3",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "PowerFactor",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 3,
+          "id": "Unknown3",
+          "args": {}
+        }
+      ]
+    }
+  },
   "3234": {
     "codec": "O3EComplexType",
     "len": 9,
@@ -32169,5 +32829,5 @@
       ]
     }
   },
-  "Version": "20250422"
+  "Version": "20250604"
 }
