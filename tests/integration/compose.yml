@@ -11,13 +11,13 @@ services:
 
   virtuale3:
     container_name: virtuale3
-    image: ghcr.io/lgraf/vituale3:sha-948dbb4
+    image: ghcr.io/lgraf/vituale3:sha-9bfe61b
     network_mode: host
     command: ["-c", "vcan0", "-cnfg", "devices.json"]
     volumes:
-      - "./localdocker/virtuale3/devices.json:/devices.json"
-      - "./localdocker/virtuale3/Open3Edatapoints_6a1.py:/Open3Edatapoints_6a1.py"
-      - "./localdocker/virtuale3/Open3Edatapoints_680.py:/Open3Edatapoints_680.py"
-      - "./localdocker/virtuale3/virtdata_6a1.txt:/virtdata_6a1.txt"
-      - "./localdocker/virtuale3/virtdata_680.txt:/virtdata_680.txt"
+      - "./test_data/device_config/devices.json:/tests/integration/test_data/device_config/devices.json"
+      - "./test_data/device_config/Open3Edatapoints_6a1.py:/tests/integration/test_data/device_config/Open3Edatapoints_6a1.py"
+      - "./test_data/device_config/Open3Edatapoints_680.py:/tests/integration/test_data/device_config/Open3Edatapoints_680.py"
+      - "./test_data/device_config/virtdata_6a1.txt:/tests/integration/test_data/device_config/virtdata_6a1.txt"
+      - "./test_data/device_config/virtdata_680.txt:/tests/integration/test_data/device_config/virtdata_680.txt"
     restart: unless-stopped

@@ -7,7 +7,7 @@ from tests.util.wait import wait_for
 OPEN3E_PROCESS_CMD = [sys.executable, "-m", "open3e.Open3Eclient"]
 OPEN3E_DEFAULT_ARGUMENTS = [
     "-c", "vcan0",
-    "-cnfg", "tests/integration/test_data/open3e_device_config/devices.json",
+    "-cnfg", "tests/integration/test_data/device_config/devices.json",
 ]
 
 MQTT_BROKER_ADDRESS = "127.0.0.1"
