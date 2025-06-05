@@ -3,14 +3,16 @@ Tests an open3e process against an instance of [virtualE3](https://github.com/ph
 
 
 
-## How to tests run localy (linux)
+## How to run tests localy (linux)
 ### Prerequisities
-* Linux host with [Docker Compose](https://docs.docker.com/compose/) installed (optional if you like to manage an mqtt broker and virtualE3 instance by your own).
-* Loaded vcan kernel module (may be already installed/loaded depending on the used linux distribution).
+* Linux host with loaded [vcan kernel module](https://netmodule-linux.readthedocs.io/en/latest/howto/can.html#virtual-can-interface-vcan) (may be already installed/loaded depending on the used linux distribution).
+* A running instance of [virtualE3](https://github.com/philippoo66/vitualE3) that uses the provided [test data](tests/integration/test_data).
+* A running mqtt broker that listens on `127.0.0.1:1883` and allows anonymous authentication. See open3e mqtt [test configuration](../util/open3e_cmd.py) for details.
+* Alternatively the [Docker Compose](https://docs.docker.com/compose/) test environment can be used, that will start a preconfigured [virtualE3](https://github.com/philippoo66/vitualE3) and mqtt broker instance. See below for details how to interact with the compose environment.
 
 ### Create vcan interface
 
-To create a virtual can interface for communitcation between a open3e and virtualE3.
+Create a virtual can interface for communitcation between a open3e and virtualE3.
 
 ```
 modprobe vcan
@@ -26,7 +28,7 @@ See also: [virtual-can-interface](https://netmodule-linux.readthedocs.io/en/late
 
 ### Start docker compose environment
 
-The compose file manages a mqtt broker ([mosquitto](https://mosquitto.org/)) and an instance of [virtualE3](https://github.com/philippoo66/vitualE3).
+The compose file manages a preconfigured mqtt broker ([mosquitto](https://mosquitto.org/)) and [virtualE3](https://github.com/philippoo66/vitualE3) instance.
 
 ```
 cd /open3e/tests/integration
