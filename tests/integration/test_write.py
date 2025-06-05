@@ -39,7 +39,7 @@ def test_write_json_cmd_sub_did():
     fq_did = f"{ecu}.{did}.{sub_did}"
 
     write_dataset = dataset(WRITE_DATASET_FILE)
-    value_to_write = f'"{str(write_dataset.ecu(ecu).did(did).sub_did(sub_did))}"'
+    value_to_write = f'"{str(write_dataset.get(ecu, did, sub_did))}"'
 
     # store initial value
     stdout, _ = open3e.read_with_did_string(fq_did)
@@ -127,7 +127,7 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             write_data = []
             for did in dids:
                 open3e_mqtt_client.subscribe(ecu, did)
-                write_data.append([did, str(write_dataset.ecu(ecu).did(did))])
+                write_data.append([did, str(write_dataset.get(ecu, did))])
 
             # write new value
             open3e_mqtt_client.publish_cmd("write", ecu, write_data)
@@ -135,8 +135,8 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             # verify write of new value
             open3e_mqtt_client.publish_cmd("read-json", ecu, dids)
             wait_for(lambda: open3e_mqtt_client.received_messages_count() == 2)
-            assert str(write_dataset.ecu(ecu).did(dids[0])) == open3e_mqtt_client.received_message_payload(ecu, dids[0])
-            assert str(write_dataset.ecu(ecu).did(dids[1])) == open3e_mqtt_client.received_message_payload(ecu, dids[1])
+            assert str(write_dataset.get(ecu, dids[0])) == open3e_mqtt_client.received_message_payload(ecu, dids[0])
+            assert str(write_dataset.get(ecu, dids[1])) == open3e_mqtt_client.received_message_payload(ecu, dids[1])
     finally:
         # write initial value, to keep test data as expected
         for did in dids:

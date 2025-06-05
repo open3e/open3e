@@ -26,8 +26,8 @@ def test_read_cmd_json_multiple_dids():
 
     assert "" == stderr
     read_dataset = dataset(READ_DATASET_FILE)
-    assert f"{dids[0]} {read_dataset.ecu(ecu).did(dids[0])}" == stdout.splitlines()[0]
-    assert f"{dids[1]} {read_dataset.ecu(ecu).did(dids[1])}" == stdout.splitlines()[1]
+    assert f"{dids[0]} {read_dataset.get(ecu, dids[0])}" == stdout.splitlines()[0]
+    assert f"{dids[1]} {read_dataset.get(ecu, dids[1])}" == stdout.splitlines()[1]
 
 
 def test_read_cmd_json_sub_did():
@@ -40,7 +40,7 @@ def test_read_cmd_json_sub_did():
 
     assert "" == stderr
     read_dataset = dataset(READ_DATASET_FILE)
-    assert str(read_dataset.ecu(ecu).did(did).sub_did(sub_did)) == stdout.strip()
+    assert str(read_dataset.get(ecu, did, sub_did)) == stdout.strip()
 
 
 def test_read_cmd_raw():
@@ -81,8 +81,8 @@ def test_read_listen_json_multiple_dids(open3e_mqtt_client):
         wait_for(lambda: open3e_mqtt_client.received_messages_count() == 2)
 
         read_dataset = dataset(READ_DATASET_FILE)
-        assert str(read_dataset.ecu(ecu).did(dids[0])) == open3e_mqtt_client.received_message_payload(ecu, dids[0])
-        assert str(read_dataset.ecu(ecu).did(dids[1])) == open3e_mqtt_client.received_message_payload(ecu, dids[1])
+        assert str(read_dataset.get(ecu, dids[0])) == open3e_mqtt_client.received_message_payload(ecu, dids[0])
+        assert str(read_dataset.get(ecu, dids[1])) == open3e_mqtt_client.received_message_payload(ecu, dids[1])
 
 
 def test_read_listen_json_sub_did(open3e_mqtt_client):
@@ -101,7 +101,7 @@ def test_read_listen_json_sub_did(open3e_mqtt_client):
         wait_for(lambda: open3e_mqtt_client.received_messages_count() == 1)
 
         read_dataset = dataset(READ_DATASET_FILE)
-        assert str(read_dataset.ecu(ecu).did(did).sub_did(sub_did)) == open3e_mqtt_client.received_message_payload(ecu, did)
+        assert str(read_dataset.get(ecu, did, sub_did)) == open3e_mqtt_client.received_message_payload(ecu, did)
 
 
 def test_read_listen_raw(open3e_mqtt_client):

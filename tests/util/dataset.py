@@ -24,6 +24,12 @@ class DeviceDataset:
             raise KeyError(f"ecu {ecu} not found in dataset.")
         return DeviceEntry(ecu, ecu_data)
 
+    def get(self, ecu, did, sub_did=None):
+        did_entry = self.ecu(ecu).did(did)
+        if sub_did is None:
+            return did_entry
+        return did_entry.sub_did(sub_did)
+
     def fixtures(self):
         fixtures = []
         for ecu in self.ecus():
