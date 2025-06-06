@@ -63,6 +63,8 @@ open3e = "open3e.Open3Eclient:main"
 open3e_depictSystem = "open3e.Open3E_depictSystem:main"
 open3e_dids2json = "open3e.Open3E_dids2json:main"
 
+[tool.pytest.ini_options]
+pythonpath = "."
 
 # disable automatic code style check (for now)
 #[tool.black]

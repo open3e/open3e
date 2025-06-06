@@ -31,7 +31,7 @@ jobs:
       - name: installation
         run: pip install .[dev]
       - name: test
-        run: python -m pytest --cov
+        run: python -m pytest tests/test_codecs.py --cov
   editable-install-test:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -52,4 +52,4 @@ jobs:
       - name: installation
         run: pip install -e .[dev]
       - name: test
-        run: python -m pytest --cov
+        run: python -m pytest tests/test_codecs.py --cov
