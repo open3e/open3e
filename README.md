@@ -10,8 +10,11 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
+## What's new with version 0.5.7:
+* Added support for data points 2413-2416 & 2452-2455
+
 ## What's new with version 0.5.6:
-* Added support for data points of energy meeters, DIDs 3228 to 3231
+* Added support for data points of energy meters, DIDs 3228 to 3231
 
 ## What's new with version 0.5.5:
 * Output on command line always uses json data format
