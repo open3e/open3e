@@ -10,6 +10,15 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
+## What's new with version 0.5.7:
+* Added support for data points 2413-2416 & 2452-2455
+
+## What's new with version 0.5.6:
+* Added support for data points of energy meters, DIDs 3228 to 3231
+
+## What's new with version 0.5.5:
+* Output on command line always uses json data format
+
 ## What's new with version 0.5.x:
 * Reading and writing of subs and using plain text implemented:<br>
 `open3e -r 0x680.256.2` returns `{'ID': 31, 'Text': 'HPMUMASTER'}`<br>
@@ -18,9 +27,14 @@
 Same way working with writing values. Text and numeric form can get mixed. Case not sensitive. Can be used with 'complete' datapoints as well.
 * Defaults `-c can0` and `-cnfg devices.json` implemented so no need to specify 'usually' (except you use different settings). If devices.json not found arg default will be ignored.
 * All data point codecs defined are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+* System information, specifically connected devices and their features, is now published when requesting it via the command `{"mode": "system"}`.
 
 # Installation
+There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
+
 Hint: An installation guide is available also in [German language](https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E).
+
+<br>
 
 For a fresh Raspberry PI install git, python3 and python-pip first:
 
@@ -145,10 +159,10 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
         -v
     
     open3e -r 424 -v
-    0x680 424 MixerOneCircuitRoomTemperatureSetpoint {"Comfort": 22.0, "Standard": 20.0, "Reduced": 18.0, "Unknown2": "0000", "Unknown1": 0}
-
+    0x680 424 MixerOneCircuitRoomTemperatureSetpoint {"Comfort": 23.0, "Standard": 21.0, "Reduced": 15.0, "Increased": 0.0, "Duration": 0}
+    
     open3e -r MixerOneCircuitRoomTemperatureSetpoint
-    {'Comfort': 22.0, 'Standard': 20.0, 'Reduced': 18.0, 'Unknown2': '0000', 'Unknown1': 0}
+    {"Comfort": 23.0, "Standard": 21.0, "Reduced": 15.0, "Increased": 0.0, "Duration": 0}
 
     open3e -r 0x680.MixerOneCircuitRoomTemperatureSetpoint.Comfort
     22.0
@@ -179,13 +193,20 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     open3e -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
-    open3e -w 396='47.5'
+    open3e -j -w 396=47.5
     -> sets domestic hot water setpoint to 47.5degC
 
     open3e -j -w 538='{"Mode": 1, "State": 0}'
     -> sets ExternalDomesticHotWaterTargetOperationMode.Mode to 1 and .State to 0
     -> Use -j -r to read data point in json format as template for writing. Always provide valid and complete json data for writing, enclosed in single quotes.
  
+    open3e -j -w 0x6a1.2214='{"DischargeLimit": 20.0, "Unknown": 0.0}'
+    -> sets BackupBoxConfiguration.DischargeLimit to 20% on VX3 on ECU-address 0x6a1
+
+## Using complex addressing
+
+    open3e -w 0x6a1.BackupBoxConfiguration.DischargeLimit=20.0
+    -> sets BackupBoxConfiguration.DischargeLimit to 20% on VX3 on ECU-address 0x6a1
 
 ## Extended writing service (internal can bus only, experimental)
 In case of a "negative response" code when writing data, you may try to use the command line option -f77. However, this is experimental. Always verify the result!
@@ -201,7 +222,7 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw", "data":[list of data], "addr":"ECU_addr"}
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
     
     to read dids 271 and 274:
@@ -216,6 +237,9 @@ In case of a "negative response" code when writing data, you may try to use the 
     to write value of 21.5 to did 395 and value of 45.0 to did 396:
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
 
+    to write a discharge limit of 20% to did 2214 (BackupBoxConfiguration) to VX3 on ECU address 0x6a1 as json object:
+    {"mode":"write", "data":[[2214,{"DischargeLimit": 20.0, "Unknown": 0.0}]], "addr":"0x6a1"}
+
     to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
 
@@ -228,6 +252,9 @@ In case of a "negative response" code when writing data, you may try to use the 
 
     to set frost protect threshold and eco function threshold to -9°C (complex dids):
     {"mode": "write-raw", "data":[[2855,"01A6FF"],[2426,"01A6FF000A00"]]}
+
+    to request system information which is then published on the system topic, e.g. open3e/system, as json:
+    {"mode": "system"}
 
  
     Option -m is mandatory for this mode.

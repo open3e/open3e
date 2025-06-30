@@ -1,0 +1,23 @@
+services:
+  mosquitto:
+    container_name: mosquitto
+    image: eclipse-mosquitto:2.0
+    volumes:
+      - "./localdocker/mosquitto:/mosquitto"
+    ports:
+      - "1883:1883"
+    command: "mosquitto -v -c /mosquitto/mosquitto.conf"
+    restart: unless-stopped
+
+  virtuale3:
+    container_name: virtuale3
+    image: ghcr.io/lgraf/vituale3:sha-9bfe61b
+    network_mode: host
+    command: ["-c", "vcan0", "-cnfg", "devices.json"]
+    volumes:
+      - "./test_data/device_config/devices.json:/tests/integration/test_data/device_config/devices.json"
+      - "./test_data/device_config/Open3Edatapoints_6a1.py:/tests/integration/test_data/device_config/Open3Edatapoints_6a1.py"
+      - "./test_data/device_config/Open3Edatapoints_680.py:/tests/integration/test_data/device_config/Open3Edatapoints_680.py"
+      - "./test_data/device_config/virtdata_6a1.txt:/tests/integration/test_data/device_config/virtdata_6a1.txt"
+      - "./test_data/device_config/virtdata_680.txt:/tests/integration/test_data/device_config/virtdata_680.txt"
+    restart: unless-stopped

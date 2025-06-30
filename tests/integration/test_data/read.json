@@ -1,0 +1,24 @@
+{
+    "0x680": {
+        "256": {"BusAddress": 1, "BusType": {"ID": 2, "Text": "CanInternal"}, "DeviceProperty": {"ID": 31, "Text": "HPMUMASTER"}, "DeviceFunction": {"ID": 9, "Text": "ADIO"}, "SW-Version": "20.509.2305.192", "HW-Version": "2.612.101.4", "VIN": "1234567801234567"},
+        "262": {"Count": 1, "ListEntries": [{"Service": {"ID": 37, "Text": "LagDeviceDtcReported"}, "DateTime": {"DateTime": "2023-11-03 15:36:17", "Timestamp": 1699022177000}, "Unknown": 839}]},
+        "268": {"Actual": 39.6, "Minimum": 19.3, "Maximum": 63.4, "Average": 38.2, "Unknown": 0},
+        "381": {"State": 1, "TargetValue": 95.0, "Actual": 100.0, "Unknown": "00"},
+        "505": "\"18.11.2023\"",
+        "507": "\"2023-11-18 18:05:45\"",
+        "548": {"Today": 8.8, "Past7Days": 69.1, "CurrentMonth": 207.8, "PastMonth": 15.7, "CurrentYear": 1587.5, "PastYear": 920.4},
+        "592": "\"00-00-00-00-00-00\"",
+        "604": {"SSID_AccessPoint": "VIESSMANN-0815", "Password_AccessPoint": "12345678", "IP-Address_AccessPoint": "010.083.083.001"},
+        "691": {"Count": 1, "Schedules": [{"Start": "09:00", "Stop": "20:00", "Unknown": "0000", "Mode": 3}]},
+        "1006": {"OpMode": 2, "Required": "off", "Unknown": "0000"}
+    },
+    "0x6a1": {
+        "256": {"BusAddress": 1, "BusType": {"ID": 2, "Text": "CanInternal"}, "DeviceProperty": {"ID": 28, "Text": "EMCUMASTER"}, "DeviceFunction": {"ID": 0, "Text": "NOTHING"}, "SW-Version": "24.502.2207.188", "HW-Version": "24.603.101.1", "VIN": "1234567801234567"},
+        "262": {"Count": 9, "ListEntries": [{"Service": {"ID": 33, "Text": "BatteryDeviceTurnedOff"}, "DateTime": {"DateTime": "2023-11-03 15:35:35", "Timestamp": 1699022135000}, "Unknown": 1}, {"Service": {"ID": 33, "Text": "BatteryDeviceTurnedOff"}, "DateTime": {"DateTime": "2023-09-28 09:35:13", "Timestamp": 1695886513000}, "Unknown": 1}, {"Service": {"ID": 33, "Text": "BatteryDeviceTurnedOff"}, "DateTime": {"DateTime": "2023-06-18 08:53:45", "Timestamp": 1687071225000}, "Unknown": 1}, {"Service": {"ID": 32, "Text": "BatteryLow"}, "DateTime": {"DateTime": "2023-04-29 08:04:37", "Timestamp": 1682748277000}, "Unknown": 1}, {"Service": {"ID": 31, "Text": "BackupPowerFunctionActive"}, "DateTime": {"DateTime": "2023-04-29 08:04:26", "Timestamp": 1682748266000}, "Unknown": 1}, {"Service": {"ID": 32, "Text": "BatteryLow"}, "DateTime": {"DateTime": "2023-04-29 01:53:23", "Timestamp": 1682726003000}, "Unknown": 1}, {"Service": {"ID": 31, "Text": "BackupPowerFunctionActive"}, "DateTime": {"DateTime": "2023-04-28 20:42:11", "Timestamp": 1682707331000}, "Unknown": 1}, {"Service": {"ID": 32, "Text": "BatteryLow"}, "DateTime": {"DateTime": "2023-04-04 17:09:10", "Timestamp": 1680620950000}, "Unknown": 1}, {"Service": {"ID": 31, "Text": "BackupPowerFunctionActive"}, "DateTime": {"DateTime": "2023-04-04 17:09:00", "Timestamp": 1680620940000}, "Unknown": 1}]},
+        "382": {"Units": {"ID": 0, "Text": "Metric"}, "DateFormat": {"ID": 0, "Text": "DayMonthYear"}, "TimeFormat": {"ID": 0, "Text": "TwentyFourHours"}, "TimeZone": 135, "Unknown": 0},
+        "505": "\"18.11.2023\"",
+        "507": "\"2000-01-16 03:34:02\"",
+        "592": "\"00-00-00-00-00-00\"",
+        "604": {"SSID_AccessPoint": "VIESSMANN-0815", "Password_AccessPoint": "12345678", "IP-Address_AccessPoint": "010.083.083.001"}
+    }
+}

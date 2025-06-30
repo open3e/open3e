@@ -13,7 +13,7 @@
    See the License for the specific language governing permissions and
    limitations under the License.
 """
-
+import signal
 import argparse
 import time
 import json
@@ -22,8 +22,17 @@ from udsoncan.exceptions import *
 from os import path
 
 import open3e.Open3Eclass
+from open3e.system.SystemInformation import *
+
+def handle_exit(sig, frame):
+    raise(SystemExit)
 
 def main():
+
+    # Add signals here to trigger normal exit of program:
+    signal.signal(signal.SIGTERM, handle_exit)  # exit program on TERM signal
+    signal.signal(signal.SIGINT, handle_exit)   # exit program on INT signal
+
     # default ECU address
     deftx = 0x680
 
@@ -34,12 +43,14 @@ def main():
     cmnd_queue = []   # command queue to serialize MQTT requests
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
-    def getint(v) -> int:
+    def getint(v):
         if type(v) is int:
             return v
         else:
-            return int(eval(str(v)))
-
+            # DANGER! getint("__import__('os').system('rm -rf /')")
+            #return int(eval(str(v)))
+            return int(str(v), 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
+    
     def addr_of_dev(v) -> int: 
         if(v in dicDevAddrs):
             return int(dicDevAddrs[v])
@@ -50,14 +61,7 @@ def main():
             if val == addr:
                 return key
         return hex(addr)
-            
-    def get_ecudid(v):
-        s = str(v)
-        parts = s.split(".")
-        if(len(parts) > 1):
-            return getint(parts[0]),getint(parts[1])
-        else:
-            return deftx,getint(parts[0])
+
 
     # complex addressing: 0x680.[257,258,259] or 0x680.256 or 257,259,261 or 256 ...
     # also possibel 0x680.[257.0,258.1,259]  or 0x680.256.1 ...
@@ -132,11 +136,6 @@ def main():
             return [parts[0],parts[1]]
         return [v,None]
           
-    # def get_didsub(v) -> tuple:
-    #     r1,r2=_get_didsub(v)
-    #     print(type(v),r1,r2)
-    #     return r1,r2
-    
 
     def ensure_ecu(addr:int):
         if(not (addr in dicEcus)):
@@ -144,7 +143,6 @@ def main():
             ecu = open3e.Open3Eclass.O3Eclass(ecutx=addr, doip=args.doip, can=args.can, dev=None) 
             dicEcus[addr] = ecu
             dicDevAddrs[f"0x{addr:03x}"] = addr
-            # print("h", dicDevAddrs)
 
 
     # listen events ~~~~~~~~~~~~~~~~~~~~~~~
@@ -182,7 +180,7 @@ def main():
                 return deftx        
 
         def cmnd_loop():
-            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77']
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'system']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()
@@ -264,6 +262,16 @@ def main():
                             ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
                             ecu77.close()
                             time.sleep(0.1)
+
+                    elif cd['mode'] == 'system':
+                        SystemInformation.publish(
+                            mqtt_client=mqtt_client,
+                            mqtt_topic=mqttTopic,
+                            ecus=dicEcus,
+                            get_mqtt_topic_callback=get_mqtt_topic,
+                            verbose=args.verbose
+                        )
+                        time.sleep(0.1)
                 else:
                     if (readdids != None):
                         if (next_read_time > 0) and (time.time() > next_read_time):
@@ -292,8 +300,8 @@ def main():
     def readbydid(addr:int, did:any, json=None, raw=None, msglvl=0, sub=None):
         if(raw == None): 
             raw = args.raw
-        value,idstr =  dicEcus[addr].readByDid(did, raw, sub)
-        showread(addr, did, value, idstr, json, msglvl)    
+        value,idstr,idid =  dicEcus[addr].readByDid(did, raw, sub)
+        showread(addr, idid, value, idstr, json, msglvl)    
 
 
         
@@ -320,20 +328,13 @@ def main():
             fjson = args.json
 
         if(mqtt_client != None):
-            publishStr = mqttformatstring.format(
-                ecuAddr = addr,
-                device = dev_of_addr(addr),
-                didName = idstr,
-                didNumber = did
-            )
-            
             if(fjson):
                 # Send one JSON message
-                ret = mqtt_client.publish(mqttTopic + "/" + publishStr, json.dumps(value))    
+                ret = mqtt_client.publish(get_mqtt_topic(addr, did, idstr), json.dumps(value))
             else:
                 # Split down to scalar types
-                mqttdump(mqttTopic + "/" + publishStr, value)
-            
+                mqttdump(get_mqtt_topic(addr, did, idstr), value)
+
             if(args.verbose == True):
                 print (dev_of_addr(addr), did, idstr, json.dumps(value))
         else:
@@ -347,9 +348,17 @@ def main():
                     mlst.append(str(did))
                 if((msglvl & 2) != 0):  # didname
                     mlst.append(idstr)
-                mlst.append(str(value))
+                mlst.append(json.dumps(value))      # v0.5.5: Use json formatted output instead of plain string
                 msg = " ".join(mlst)
                 print(msg)
+
+    def get_mqtt_topic(addr, did, idstr):
+        return f"""{mqttTopic}/{mqttformatstring.format(
+            ecuAddr=addr,
+            device=dev_of_addr(addr),
+            didName=idstr,
+            didNumber=did
+        )}"""
 
     def print_write(ecu, did, sub, val, raw=False, f77=False):
         s = "write"
@@ -358,14 +367,33 @@ def main():
         if(f77):
             s += " f77"
         if(sub is None):
-            print(f"{s}: {ecu}.{did} = {val}")
+            print(f"{s}: {ecu}.{did} = {json.dumps(val)}")          # v0.5.5: Use json formatted output instead of plain string
         else:
-            print(f"{s}: {ecu}.{did}.{sub} = {val}")
-        
+            print(f"{s}: {ecu}.{did}.{sub} = {json.dumps(val)}")    # v0.5.5: Use json formatted output instead of plain string
+
+    def get_package_version_string():
+        package_name = "open3e"
+
+        try:
+            from importlib.metadata import version
+            package_version = version(package_name)
+        except ImportError:
+            package_version = "unknown"
+
+        try:
+            from open3e import _scm_version as scm_version
+            git_ref = scm_version.git_ref
+        except ImportError:
+            git_ref = "unknown"
+
+        return f'{package_version} ({git_ref})'
+
     #~~~~~~~~~~~~~~~~~~~~~~
     # Main
     #~~~~~~~~~~~~~~~~~~~~~~
-    parser = argparse.ArgumentParser(fromfile_prefix_chars='@')
+    help_version_string = get_package_version_string()
+
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e {help_version_string}')
     parser.add_argument("-c", "--can", type=str, help="use can device, e.g. can0")
     parser.add_argument("-d", "--doip", type=str, help="use doip access, e.g. 192.168.1.1")
     parser.add_argument("-dev", "--dev", type=str, help="boiler type --dev vdens or --dev vcal || pv/battery --dev vx3")
@@ -448,7 +476,6 @@ def main():
         mqtt_client.reconnect_delay_set(min_delay=1, max_delay=30)
         mqtt_client.loop_start()
         
-    #print("hallo! 149")
 
     # do what has to be done  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     try:
@@ -534,7 +561,7 @@ def main():
                     #print(f"return: {succ}, code: {code}")
             time.sleep(0.1)
 
-        # scanall
+        # read all
         elif(args.scanall == True):
             msglvl = 1  # show did nr
             if(len(dicEcus) > 1):
@@ -546,12 +573,11 @@ def main():
                 for itm in lst:
                     showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], msglvl=msglvl)
 
-    except (KeyboardInterrupt, InterruptedError):
-        # <STRG-C> oder SIGINT to stop
+    except (KeyboardInterrupt, SystemExit):
+        # <CTRL>-C, SIGINT or SIGTERM to stop
         # Use <kill -s SIGINT pid> to send SIGINT
+        # Use <kill -s SIGTERM pid> to send SIGTERM
         pass
-    # except Exception as e:
-    #     print(type(e).__name__, e)
 
     # close all connections before exit
     for ecu in dicEcus.values():
