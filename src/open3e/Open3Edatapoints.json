@@ -25208,28 +25208,148 @@
     }
   },
   "2405": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerOneCircuitConstantFlowSetTemperatureCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EffectiveSetTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedUnderfloorHeating",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedFanConvector",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "2406": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerTwoCircuitConstantFlowSetTemperatureCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EffectiveSetTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedUnderfloorHeating",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedFanConvector",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "2407": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerThreeCircuitConstantFlowSetTemperatureCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EffectiveSetTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedUnderfloorHeating",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedFanConvector",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "2408": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 6,
     "id": "MixerFourCircuitConstantFlowSetTemperatureCooling",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "EffectiveSetTemperature",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedUnderfloorHeating",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "FactorySelectedFanConvector",
+          "args": {
+            "scale": 10,
+            "signed": false
+          }
+        }
+      ]
+    }
   },
   "2409": {
     "codec": "RawCodec",
@@ -32997,5 +33117,5 @@
       ]
     }
   },
-  "Version": "20250615"
+  "Version": "20250708"
 }
