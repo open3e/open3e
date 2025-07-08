@@ -232,7 +232,7 @@ class O3Eclass():
                 return val, idstr, idid
 
             if(idid not in self.dataIdentifiers):
-                raise ValueError(f"No Codec specified for DID {idid}")
+                raise KeyError(f"No Codec specified for DID {idid}")
             
             selectedDid = self.dataIdentifiers[idid]
 
@@ -282,12 +282,12 @@ class O3Eclass():
         try:
             idid = self.get_did_as_int(did)
 
+            if(idid not in self.dataIdentifiers):
+                raise KeyError(f"No Codec specified for DID {idid}")
+            
             if(sub is None):
                 return self._writeByDid(idid, val, raw, useService77)
 
-            if(idid not in self.dataIdentifiers):
-                raise ValueError(f"No Codec specified for DID {idid}")
-            
             selectedDid = self.dataIdentifiers[idid]
 
             if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
