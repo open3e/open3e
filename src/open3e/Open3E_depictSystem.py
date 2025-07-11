@@ -253,8 +253,7 @@ def main():
         filename = "Open3Edatapoints_" + shex(cobid) + ".py"
         print(f"write datapoints file {filename} ...")
         with open(filename, "w") as file:
-            shead =  'import open3e.Open3Ecodecs\n'
-            shead += 'from open3e.Open3Ecodecs import *\n\n'
+            shead = 'from open3e.Open3Ecodecs import *\n\n'
             shead += 'dataIdentifiers = {\n'
             shead += '    \"name\": \"' + str(devprop) + '\",\n'
             shead += '    \"dids\" :\n'
