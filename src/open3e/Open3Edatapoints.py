@@ -74,7 +74,7 @@ dataIdentifiers = {
         354 : O3EByteVal(1, "PrimaryHeatExchangerBaseHeater"),
         355 : O3EComplexType(9, "SecondaryHeatExchangerLiquidTemperatureSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
         360 : O3EComplexType(9, "DomesticHotWaterOutletSensor",[O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")]),
-        364 : O3EComplexType(6, "Flame", [O3EByteVal(1, "State"), RawCodec(2, "Unknown"), O3EInt16(2, "IonizationCurrent", scale = 100), O3EByteVal(1,"State")]),
+        364 : O3EComplexType(6, "Flame", [O3EByteVal(1, "State"), RawCodec(2, "Unknown"), O3EInt16(2, "IonizationCurrent", scale = 100), RawCodec(1,"Unknown2")]),
         365 : O3EComplexType(42, "FlameStatistical", [RawCodec(38, "Unknown1"), O3EInt16(2, "BurnerStarts", scale = 1), RawCodec(2, "Unknown2")]),
         373 : O3EInt16(2, "FanTargetSpeed", scale=1),
         377 : O3EUtf8(16, "ViessmannIdentificationNumber"),
