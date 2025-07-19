@@ -340,7 +340,7 @@ class O3Eclass():
     def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
-            value,idstr = self._readByDid(int(did), raw=raw)
+            value,idstr,_ = self.readByDid(int(did), raw=raw)
             lst.append([did, value, idstr])
         return lst 
 
