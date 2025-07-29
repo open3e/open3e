@@ -2461,9 +2461,9 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
-          "id": "State",
+          "id": "Unknown2",
           "args": {}
         }
       ]
@@ -33117,5 +33117,185 @@
       ]
     }
   },
-  "Version": "20250708"
+  "3335": {
+    "codec": "O3EComplexType",
+    "len": 8,
+    "id": "HeatingCoolingHysteresisHeatingCircuitOne",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "3336": {
+    "codec": "O3EComplexType",
+    "len": 8,
+    "id": "HeatingCoolingHysteresisHeatingCircuitTwo",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "3337": {
+    "codec": "O3EComplexType",
+    "len": 8,
+    "id": "HeatingCoolingHysteresisHeatingCircuitThree",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "3338": {
+    "codec": "O3EComplexType",
+    "len": 8,
+    "id": "HeatingCoolingHysteresisHeatingCircuitFour",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Heating",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOnHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "TurnOffHysteresis_Cooling",
+          "args": {
+            "scale": 10.0,
+            "signed": false
+          }
+        }
+      ]
+    }
+  },
+  "Version": "20250729"
 }
