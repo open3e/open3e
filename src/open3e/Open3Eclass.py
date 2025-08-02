@@ -224,6 +224,7 @@ class O3Eclass():
         >>> obj.readByDid(0x5678, raw=True, sub=2)
         ('subfield_value', '0x5678.2', 22136)
         """
+        idid = 0
         try:
             idid = self.get_did_as_int(did)
 
@@ -262,7 +263,7 @@ class O3Eclass():
         except NegativeResponseException as e:
             return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}', idid
         except Exception as e:
-            return str(e), f'ERR/{hex(self.tx)}.{did}', 0  # idid not sure
+            return str(e), f'ERR/{hex(self.tx)}.{did}', idid  # idid not sure
         
                         
     # not global anymore... ;-)
