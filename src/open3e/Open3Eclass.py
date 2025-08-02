@@ -279,7 +279,7 @@ class O3Eclass():
 
     def writeByDid(self, did, val, raw:bool, useService77=False, sub=None, readecu=None):
         #print( did, val, raw, useService77, sub)
-
+        idid = 0
         try:
             idid = self.get_did_as_int(did)
 
