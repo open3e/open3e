@@ -245,6 +245,9 @@ In case of a "negative response" code when writing data, you may try to use the 
     to write a discharge limit of 20% to did 2214 (BackupBoxConfiguration) to VX3 on ECU address 0x6a1 as json object:
     {"mode":"write", "data":[[2214,{"DischargeLimit": 20.0, "Unknown": 0.0}]], "addr":"0x6a1"}
 
+    doing the same thing using Sub-DID addressing:
+    {"mode":"write", "data":[["2214.DischargeLimit",20.0]], "addr":"0x6a1"}
+
     to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
 
