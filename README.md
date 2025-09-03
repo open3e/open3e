@@ -10,6 +10,11 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
+## What's new with version 0.5.8:
+* Added support for data points 2405-2408, 2643, 3335-3338
+* Improved support for sub-dids
+* Improved handling for undefined codecs
+
 ## What's new with version 0.5.7:
 * Added support for data points 2413-2416 & 2452-2455
 

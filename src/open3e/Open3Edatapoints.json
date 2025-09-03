@@ -30058,10 +30058,13 @@
     "args": {}
   },
   "2643": {
-    "codec": "RawCodec",
+    "codec": "O3EInt16",
     "len": 2,
     "id": "MaximumRechargePower",
-    "args": {}
+    "args": {
+      "scale": 1,
+      "signed": false
+    }
   },
   "2733": {
     "codec": "RawCodec",
@@ -33297,5 +33300,5 @@
       ]
     }
   },
-  "Version": "20250729"
+  "Version": "20250903"
 }
