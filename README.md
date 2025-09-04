@@ -132,7 +132,8 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
 
 **For details regarding the different ways of addressing data points (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
 
-
+**Remark: Do not start more than one instance of open3e!** Doing so, could lead to conflicts on CAN bus causing open3e to stop with errors.
+If you want to read several lists of data points with diffetent time schedules or you want to read and write data points in parallel, pls. use listener mode of open3e (see below). It's possible to add a read command when starting the listener mode.
 
 **_regarding the following examples: Please be aware of that not all data points exist with every device._**
 
@@ -224,12 +225,18 @@ In case of a "negative response" code when writing data, you may try to use the 
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor 
 
 # Listener mode
-    open3e -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
     
+    open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd -r 0x6a1.1603,0x6a1.1831 -t 15 -m localhost:1883:open3e
+
+    will listen for commands on topic open3e/cmnd and read & publish dids 1603 and 1831 of device 0x6a1 every 15 seconds
+
+    Examples for commands sent via mqtt:
+
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
     
@@ -239,7 +246,7 @@ In case of a "negative response" code when writing data, you may try to use the 
     to read dids 265 and 266 as raw data (even w/o option -raw):
     {"mode": "read-raw", "data":[265,266]}
     
-    to write value of 21.5 to did 395 and value of 45.0 to did 396:
+    to write value of 21.5 to did 395 and value of 45.0 to did 396 (Use a list of tuples to write data):
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
 
     to write a discharge limit of 20% to did 2214 (BackupBoxConfiguration) to VX3 on ECU address 0x6a1 as json object:
