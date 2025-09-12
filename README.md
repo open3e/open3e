@@ -199,6 +199,8 @@ If you want to read several lists of data points with diffetent time schedules o
     open3e -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
+**Remark on using JSON data format:** In open3e the order of the data elements is relevant. E.g. passing `{"Mode": 1, "State": 0}` will work for DID 538, passing `{"State": 0, "Mode": 1}` will not. We recommend first reading a data point in JSON format and then using the result as a template to create the write access command.
+
     open3e -j -w 396=47.5
     -> sets domestic hot water setpoint to 47.5degC
 
