@@ -44,11 +44,9 @@ def main():
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v):
-        if type(v) is int:
+        if isinstance(v, int):
             return v
         else:
-            # DANGER! getint("__import__('os').system('rm -rf /')")
-            #return int(eval(str(v)))
             return int(str(v), 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
     
     def addr_of_dev(v) -> int: 
@@ -100,6 +98,7 @@ def main():
             
         # ecu.did.sub
         return [[ecu,parts[1],parts[2]]]
+
 
     def eval_complex_list(v) -> list:  
         """
