@@ -82,10 +82,6 @@ def main():
         # ecu.[...] or ecu.did or ecu.did.sub
         ecu = addr_of_dev(parts[0])
         
-        if(len(parts) == 2):
-            # only ecu.did
-            return [[ecu,parts[1],None]]
-            
         if("[" in parts[1]):
             # ecu.[...]
             parts.pop(0)
@@ -98,6 +94,10 @@ def main():
                 lst.append([ecu,did,sub])
             return lst
 
+        if(len(parts) == 2):
+            # only ecu.did
+            return [[ecu,parts[1],None]]
+            
         # ecu.did.sub
         return [[ecu,parts[1],parts[2]]]
 
