@@ -30,6 +30,19 @@ def test_read_cmd_json_with_default_ecu():
     assert f"{read_dataset.get(DEFAULT_ECU, did)}" == stdout.splitlines()[0]
 
 
+def test_read_cmd_json_with_named_ecu():
+    ecu = "0x680"
+    ecu_name = "vitocal"
+    did = 256
+    did_string = f"{ecu_name}.{did}"
+
+    stdout, stderr = open3e.read_with_did_string(did_string)
+
+    assert "" == stderr
+    read_dataset = dataset(READ_DATASET_FILE)
+    assert f"{read_dataset.get(ecu, did)}" == stdout.splitlines()[0]
+
+
 def test_read_cmd_json_multiple_dids_csv_format():
     ecu = "0x680"
     dids = [256, 505]
@@ -68,18 +81,27 @@ def test_read_cmd_json_multiple_dids_list_format():
 
 
 def test_read_cmd_json_multiple_mixed_formats():
-    ecu = "0x680"
-    dids = [256, 262, 268, 505]
-    did_string = f"{dids[0]},{ecu}.{dids[1]},{ecu}.[{dids[2]},{dids[3]}]"
+    hpmu_ecu = "0x680"
+    hpmu_ecu_name = "vitocal"
+    hpmu_dids = [256, 262, 268, 381, 505]
+
+    emcu_ecu = "0x6a1"
+    emcu_ecu_name = "vitocharge"
+    emcu_dids = [592, 604]
+    did_string = f"{hpmu_dids[0]},{hpmu_ecu}.{hpmu_dids[1]},{hpmu_ecu}.[{hpmu_dids[2]},{hpmu_dids[3]}],{hpmu_ecu_name}.{hpmu_dids[4]},{emcu_ecu}.{emcu_dids[0]},{emcu_ecu_name}.{emcu_dids[1]}"
 
     stdout, stderr = open3e.read_with_did_string(did_string)
 
     assert "" == stderr
     read_dataset = dataset(READ_DATASET_FILE)
-    assert f"{dids[0]} {read_dataset.get(ecu, dids[0])}" == stdout.splitlines()[0]
-    assert f"{dids[1]} {read_dataset.get(ecu, dids[1])}" == stdout.splitlines()[1]
-    assert f"{dids[2]} {read_dataset.get(ecu, dids[2])}" == stdout.splitlines()[2]
-    assert f"{dids[3]} {read_dataset.get(ecu, dids[3])}" == stdout.splitlines()[3]
+    assert f"{hpmu_dids[0]} {read_dataset.get(hpmu_ecu, hpmu_dids[0])}" == stdout.splitlines()[0]
+    assert f"{hpmu_dids[1]} {read_dataset.get(hpmu_ecu, hpmu_dids[1])}" == stdout.splitlines()[1]
+    assert f"{hpmu_dids[2]} {read_dataset.get(hpmu_ecu, hpmu_dids[2])}" == stdout.splitlines()[2]
+    assert f"{hpmu_dids[3]} {read_dataset.get(hpmu_ecu, hpmu_dids[3])}" == stdout.splitlines()[3]
+    assert f"{hpmu_dids[4]} {read_dataset.get(hpmu_ecu, hpmu_dids[4])}" == stdout.splitlines()[4]
+
+    assert f"{emcu_dids[0]} {read_dataset.get(emcu_ecu, emcu_dids[0])}" == stdout.splitlines()[5]
+    assert f"{emcu_dids[1]} {read_dataset.get(emcu_ecu, emcu_dids[1])}" == stdout.splitlines()[6]
 
 
 def test_read_cmd_json_sub_did():
