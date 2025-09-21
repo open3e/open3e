@@ -7,6 +7,7 @@ from tests.util.dataset import dataset
 from tests.util.wait import wait_for
 
 
+DEFAULT_ECU = "0x680"
 READ_DATASET_FILE = os.path.join(os.path.dirname(__file__), "test_data/read.json")
 
 
@@ -18,7 +19,18 @@ def test_read_cmd_json(ecu, did, expected):
     assert str(expected) == stdout.strip()
 
 
-def test_read_cmd_json_multiple_dids():
+def test_read_cmd_json_with_default_ecu():
+    did = 256
+    did_string = f"{did}"
+
+    stdout, stderr = open3e.read_with_did_string(did_string)
+
+    assert "" == stderr
+    read_dataset = dataset(READ_DATASET_FILE)
+    assert f"{read_dataset.get(DEFAULT_ECU, did)}" == stdout.splitlines()[0]
+
+
+def test_read_cmd_json_multiple_dids_csv_format():
     ecu = "0x680"
     dids = [256, 505]
 
@@ -28,6 +40,46 @@ def test_read_cmd_json_multiple_dids():
     read_dataset = dataset(READ_DATASET_FILE)
     assert f"{dids[0]} {read_dataset.get(ecu, dids[0])}" == stdout.splitlines()[0]
     assert f"{dids[1]} {read_dataset.get(ecu, dids[1])}" == stdout.splitlines()[1]
+
+
+def test_read_cmd_json_multiple_dids_csv_format_with_default_ecu():
+    dids = [256, 505]
+    did_string = f"{dids[0]},{dids[1]}"
+
+    stdout, stderr = open3e.read_with_did_string(did_string)
+
+    assert "" == stderr
+    read_dataset = dataset(READ_DATASET_FILE)
+    assert f"{dids[0]} {read_dataset.get(DEFAULT_ECU, dids[0])}" == stdout.splitlines()[0]
+    assert f"{dids[1]} {read_dataset.get(DEFAULT_ECU, dids[1])}" == stdout.splitlines()[1]
+
+
+def test_read_cmd_json_multiple_dids_list_format():
+    ecu = "0x680"
+    dids = [256, 505]
+    did_string = f"{ecu}.[{dids[0]},{dids[1]}]"
+
+    stdout, stderr = open3e.read_with_did_string(did_string)
+
+    assert "" == stderr
+    read_dataset = dataset(READ_DATASET_FILE)
+    assert f"{dids[0]} {read_dataset.get(ecu, dids[0])}" == stdout.splitlines()[0]
+    assert f"{dids[1]} {read_dataset.get(ecu, dids[1])}" == stdout.splitlines()[1]
+
+
+def test_read_cmd_json_multiple_mixed_formats():
+    ecu = "0x680"
+    dids = [256, 262, 268, 505]
+    did_string = f"{dids[0]},{ecu}.{dids[1]},{ecu}.[{dids[2]},{dids[3]}]"
+
+    stdout, stderr = open3e.read_with_did_string(did_string)
+
+    assert "" == stderr
+    read_dataset = dataset(READ_DATASET_FILE)
+    assert f"{dids[0]} {read_dataset.get(ecu, dids[0])}" == stdout.splitlines()[0]
+    assert f"{dids[1]} {read_dataset.get(ecu, dids[1])}" == stdout.splitlines()[1]
+    assert f"{dids[2]} {read_dataset.get(ecu, dids[2])}" == stdout.splitlines()[2]
+    assert f"{dids[3]} {read_dataset.get(ecu, dids[3])}" == stdout.splitlines()[3]
 
 
 def test_read_cmd_json_sub_did():
