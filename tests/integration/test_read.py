@@ -32,7 +32,7 @@ def test_read_cmd_json_with_default_ecu():
 
 def test_read_cmd_json_with_named_ecu():
     ecu = "0x680"
-    ecu_name = "vitocal"
+    ecu_name = "0x680"
     did = 256
     did_string = f"{ecu_name}.{did}"
 
@@ -82,7 +82,7 @@ def test_read_cmd_json_multiple_dids_list_format():
 
 def test_read_cmd_json_multiple_mixed_formats():
     hpmu_ecu = "0x680"
-    hpmu_ecu_name = "vitocal"
+    hpmu_ecu_name = "0x680"
     hpmu_dids = [256, 262, 268, 381, 505]
 
     emcu_ecu = "0x6a1"
