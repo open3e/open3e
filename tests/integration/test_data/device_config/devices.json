@@ -1,5 +1,5 @@
 {
-  "vitocal": {
+  "0x680": {
     "tx": "0x680",
     "dpList": "tests/integration/test_data/device_config/Open3Edatapoints_680.py",
     "prop": "HPMUMASTER"
