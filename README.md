@@ -60,6 +60,10 @@ This will install open3e along with all dependencies.
 If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the previous command, but better install using a virtual environment - venv<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
 
+## Update/upgrade to latest Version (later)
+Please see Wiki
+https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E#open3e-aktualisieren 
+
 # Setup CAN Bus
     sudo ip link set can0 up type can bitrate 250000
 
