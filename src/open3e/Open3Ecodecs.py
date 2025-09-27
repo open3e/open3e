@@ -521,7 +521,10 @@ class O3EComplexType(udsoncan.DidCodec):
         result = dict()
         index = 0
         for subType in self.subTypes:
-            result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
+            try:
+                result[subType.id] = subType.decode(string_bin[index:index+subType.string_len])
+            except Exception as e:
+                result[subType.id] = str(e)
             index+=subType.string_len
         return dict(result)
     

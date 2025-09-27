@@ -10,25 +10,6 @@
 * Write data points in raw and json data format
 * Experimental write support for service 77 (NOT implemented for listener mode yet)
 
-## What's new with version 0.5.7:
-* Added support for data points 2413-2416 & 2452-2455
-
-## What's new with version 0.5.6:
-* Added support for data points of energy meters, DIDs 3228 to 3231
-
-## What's new with version 0.5.5:
-* Output on command line always uses json data format
-
-## What's new with version 0.5.x:
-* Reading and writing of subs and using plain text implemented:<br>
-`open3e -r 0x680.256.2` returns `{'ID': 31, 'Text': 'HPMUMASTER'}`<br>
-`open3e -r 0x680.BusIdentification.DeviceProperty` returns the same result,<br>
-`open3e -r Vical.BusIdentification.DeviceProperty` also the same if you named your 0x680 ECU to 'Vical' in devices.json.<br>
-Same way working with writing values. Text and numeric form can get mixed. Case not sensitive. Can be used with 'complete' datapoints as well.
-* Defaults `-c can0` and `-cnfg devices.json` implemented so no need to specify 'usually' (except you use different settings). If devices.json not found arg default will be ignored.
-* All data point codecs defined are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
-* System information, specifically connected devices and their features, is now published when requesting it via the command `{"mode": "system"}`.
-
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
 
@@ -54,6 +35,10 @@ This will install open3e along with all dependencies.
 
 If you get the error "error: externally-managed-environment" you could add *--break-system-packages* to the previous command, but better install using a virtual environment - venv<br>
 (please see: https://stackoverflow.com/questions/75608323/how-do-i-solve-error-externally-managed-environment-every-time-i-use-pip-3)  
+
+## Update/upgrade to latest Version (later)
+Please see Wiki
+https://github.com/open3e/open3e/wiki/030-Installation-und-Inbetriebnahme-von-open3E#open3e-aktualisieren 
 
 # Setup CAN Bus
     sudo ip link set can0 up type can bitrate 250000
@@ -127,7 +112,8 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
 
 **For details regarding the different ways of addressing data points (complex, named) [refer to the Wiki](https://github.com/open3e/open3e/wiki/032-Command-Line-Arguments#komplexe-adressierung)**
 
-
+**Remark: Do not start more than one instance of open3e!** Doing so, could lead to conflicts on CAN bus causing open3e to stop with errors.
+If you want to read several lists of data points with diffetent time schedules or you want to read and write data points in parallel, pls. use listener mode of open3e (see below). It's possible to add a read command when starting the listener mode.
 
 **_regarding the following examples: Please be aware of that not all data points exist with every device._**
 
@@ -193,6 +179,8 @@ otherwise intended `did.sub` will get interpreted as `ecu.did` and cause uninten
     open3e -w 0x680.ExternalDomesticHotWaterTargetOperationMode.Mode=1
 
 ## Using json data format
+**Remark on using JSON data format:** In open3e the order of the data elements is relevant. E.g. passing `{"Mode": 1, "State": 0}` will work for DID 538, passing `{"State": 0, "Mode": 1}` will not. We recommend first reading a data point in JSON format and then using the result as a template to create the write access command.
+
     open3e -j -w 396=47.5
     -> sets domestic hot water setpoint to 47.5degC
 
@@ -219,12 +207,18 @@ In case of a "negative response" code when writing data, you may try to use the 
     -> will publish with custom identifier format: e.g. open3e/268_FlowTemperatureSensor 
 
 # Listener mode
-    open3e -m 192.168.0.5:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
+    open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
     {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise defaut ECU address used
     
+    open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd -r 0x6a1.1603,0x6a1.1831 -t 15 -m localhost:1883:open3e
+
+    will listen for commands on topic open3e/cmnd and read & publish dids 1603 and 1831 of device 0x6a1 every 15 seconds
+
+    Examples for commands sent via mqtt:
+
     to read dids 271 and 274:
     {"mode": "read", "data":[271,274]}
     
@@ -234,11 +228,14 @@ In case of a "negative response" code when writing data, you may try to use the 
     to read dids 265 and 266 as raw data (even w/o option -raw):
     {"mode": "read-raw", "data":[265,266]}
     
-    to write value of 21.5 to did 395 and value of 45.0 to did 396:
+    to write value of 21.5 to did 395 and value of 45.0 to did 396 (Use a list of tuples to write data):
     {"mode": "write", "data":[[395,21.5],[396,45.0]]}
 
     to write a discharge limit of 20% to did 2214 (BackupBoxConfiguration) to VX3 on ECU address 0x6a1 as json object:
     {"mode":"write", "data":[[2214,{"DischargeLimit": 20.0, "Unknown": 0.0}]], "addr":"0x6a1"}
+
+    doing the same thing using Sub-DID addressing:
+    {"mode":"write", "data":[["2214.DischargeLimit",20.0]], "addr":"0x6a1"}
 
     to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
@@ -278,3 +275,31 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
+# Changelog
+
+### 0.5.9 (2025-09-19)
+* Fixed issue #274 (addressing mode `0x068c.[505,506]`)
+
+### 0.5.8 (2025-07-08)
+* Added support for data points 2405-2408, 2643, 3335-3338
+* Improved support for sub-dids
+* Improved handling for undefined codecs
+
+### 0.5.7 (2025-06-15)
+* Added support for data points 2413-2416 & 2452-2455
+
+### 0.5.6 (2025-06-04)
+* Added support for data points of energy meters, DIDs 3228 to 3231
+
+### 0.5.5 (2025-04-22)
+* Output on command line always uses json data format
+
+### 0.5.x (2025-03-14)
+* Reading and writing of subs and using plain text implemented:<br>
+`open3e -r 0x680.256.2` returns `{'ID': 31, 'Text': 'HPMUMASTER'}`<br>
+`open3e -r 0x680.BusIdentification.DeviceProperty` returns the same result,<br>
+`open3e -r Vical.BusIdentification.DeviceProperty` also the same if you named your 0x680 ECU to 'Vical' in devices.json.<br>
+Same way working with writing values. Text and numeric form can get mixed. Case not sensitive. Can be used with 'complete' datapoints as well.
+* Defaults `-c can0` and `-cnfg devices.json` implemented so no need to specify 'usually' (except you use different settings). If devices.json not found arg default will be ignored.
+* All data point codecs defined are checked for correct length values. If you get an assert error please check you customer specific data point definitions!
+* System information, specifically connected devices and their features, is now published when requesting it via the command `{"mode": "system"}`.

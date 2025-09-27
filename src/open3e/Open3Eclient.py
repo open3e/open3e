@@ -44,11 +44,9 @@ def main():
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v):
-        if type(v) is int:
+        if isinstance(v, int):
             return v
         else:
-            # DANGER! getint("__import__('os').system('rm -rf /')")
-            #return int(eval(str(v)))
             return int(str(v), 0)  # Automatische Erkennung von Dezimal-, Hex-, Oktal- und Binärzahlen
     
     def addr_of_dev(v) -> int: 
@@ -82,10 +80,6 @@ def main():
         # ecu.[...] or ecu.did or ecu.did.sub
         ecu = addr_of_dev(parts[0])
         
-        if(len(parts) == 2):
-            # only ecu.did
-            return [[ecu,parts[1],None]]
-            
         if("[" in parts[1]):
             # ecu.[...]
             parts.pop(0)
@@ -98,8 +92,13 @@ def main():
                 lst.append([ecu,did,sub])
             return lst
 
+        if(len(parts) == 2):
+            # only ecu.did
+            return [[ecu,parts[1],None]]
+            
         # ecu.did.sub
         return [[ecu,parts[1],parts[2]]]
+
 
     def eval_complex_list(v) -> list:  
         """

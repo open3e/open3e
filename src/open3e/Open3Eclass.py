@@ -224,6 +224,7 @@ class O3Eclass():
         >>> obj.readByDid(0x5678, raw=True, sub=2)
         ('subfield_value', '0x5678.2', 22136)
         """
+        idid = 0
         try:
             idid = self.get_did_as_int(did)
 
@@ -232,7 +233,7 @@ class O3Eclass():
                 return val, idstr, idid
 
             if(idid not in self.dataIdentifiers):
-                raise ValueError(f"No Codec specified for DID {idid}")
+                raise KeyError(f"No Codec specified for DID {idid}")
             
             selectedDid = self.dataIdentifiers[idid]
 
@@ -262,7 +263,7 @@ class O3Eclass():
         except NegativeResponseException as e:
             return f'Device rejected this read access. Probably DID {idid} is not available. {e}', f'ERR/{hex(self.tx)}.{idid}', idid
         except Exception as e:
-            return str(e), f'ERR/{hex(self.tx)}.{did}', 0  # idid not sure
+            return str(e), f'ERR/{hex(self.tx)}.{did}', idid  # idid not sure
         
                         
     # not global anymore... ;-)
@@ -278,16 +279,16 @@ class O3Eclass():
 
     def writeByDid(self, did, val, raw:bool, useService77=False, sub=None, readecu=None):
         #print( did, val, raw, useService77, sub)
-
+        idid = 0
         try:
             idid = self.get_did_as_int(did)
 
+            if(idid not in self.dataIdentifiers):
+                raise KeyError(f"No Codec specified for DID {idid}")
+            
             if(sub is None):
                 return self._writeByDid(idid, val, raw, useService77)
 
-            if(idid not in self.dataIdentifiers):
-                raise ValueError(f"No Codec specified for DID {idid}")
-            
             selectedDid = self.dataIdentifiers[idid]
 
             if(not isinstance(selectedDid, open3e.Open3Ecodecs.O3EComplexType)):
@@ -340,7 +341,7 @@ class O3Eclass():
     def readAll(self, raw:bool):
         lst = []
         for did,cdc in self.dataIdentifiers.items():
-            value,idstr = self._readByDid(int(did), raw=raw)
+            value,idstr,_ = self.readByDid(int(did), raw=raw)
             lst.append([did, value, idstr])
         return lst 
 
