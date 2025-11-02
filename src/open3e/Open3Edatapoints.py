@@ -139,16 +139,16 @@ dataIdentifiers = {
         507 : O3EUtc(4, "UniversalTimeCoordinated"),
         508 : O3EByteVal(1, "UniversalTimeCoordinatedOffset"),
         510 : O3EByteVal(1, "Language"),
-        511 : RawCodec(8, "HolidayPhase"),
-        512 : RawCodec(8, "HolidayAtHomePhase"),
-        513 : RawCodec(8, "HolidayPhaseCircuitOne"),
-        514 : RawCodec(8, "HolidayAtHomePhaseCircuitOne"),
-        515 : RawCodec(8, "HolidayPhaseCircuitTwo"),
-        516 : RawCodec(8, "HolidayAtHomePhaseCircuitTwo"),
-        517 : RawCodec(8, "HolidayPhaseCircuitThree"),
-        518 : RawCodec(8, "HolidayAtHomePhaseCircuitThree"),
-        519 : RawCodec(8, "HolidayPhaseCircuitFour"),
-        520 : RawCodec(8, "HolidayAtHomePhaseCircuitFour"),
+        511 : O3EComplexType(8, "HolidayPhase", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        512 : O3EComplexType(8, "HolidayAtHomePhase", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        513 : O3EComplexType(8, "HolidayPhaseCircuitOne", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        514 : O3EComplexType(8, "HolidayAtHomePhaseCircuitOne", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        515 : O3EComplexType(8, "HolidayPhaseCircuitTwo", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        516 : O3EComplexType(8, "HolidayAtHomePhaseCircuitTwo", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        517 : O3EComplexType(8, "HolidayPhaseCircuitThree", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        518 : O3EComplexType(8, "HolidayAtHomePhaseCircuitThree", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        519 : O3EComplexType(8, "HolidayPhaseCircuitFour", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
+        520 : O3EComplexType(8, "HolidayAtHomePhaseCircuitFour", [O3ESdate(3,"PhaseBegin"), O3ESdate(3, "PhaseEnd"), O3EByteVal(1, "Planned"), O3EByteVal(1, "Active")]), #NoMercyMike, MyHomeMYData 2025-11-02 Vitodens 200-W (B2HF-19)
         521 : O3EInt16(2, "OperatingHoursTillService", scale=1.0),
         522 : O3EComplexType(4, "ServiceDateNext",[O3ESdate(3, "Date"), O3EByteVal(1, "Status")]),
         523 : O3ESdate(3, "ServiceDateLast"),

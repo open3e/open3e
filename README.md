@@ -277,6 +277,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### Work in progress
+* Added support for data points 511-520
+
 ### 0.5.9 (2025-09-19)
 * Fixed issue #274 (addressing mode `0x068c.[505,506]`)
 
