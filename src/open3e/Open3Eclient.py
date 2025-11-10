@@ -179,6 +179,31 @@ def main():
                 return deftx        
 
         def cmnd_loop():
+            def get_dids(cd):
+                # returns list of sub-dids: [[address, did, sub], ...]
+                didstr = ''
+                addr = getaddr(cd)
+                for did in cd['data']:
+                    if len(didstr) > 0:
+                        didstr += ','
+                    if type(did) == str and str(did).count('.[') > 0:
+                        # Complex addressing mode
+                        didstr += str(did)
+                    elif type(did) == str and str(did).count('.') > 0:
+                        # Some other kind of sub addressing mode
+                        elems = str(did).split('.')
+                        try:
+                            did_int = int(elems[1])
+                            # 2nd parameter is an integer => addressing mode addr.did.sub
+                            didstr += str(did)
+                        except:
+                            # 2nd parameter is NOT an integer => addressing mode did.sub
+                            didstr += str(addr)+'.'+str(did)
+                    else:
+                        # no sub addressing mode
+                        didstr += str(addr)+'.'+str(did)
+                return eval_complex_list(didstr)
+
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'system']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
@@ -192,11 +217,11 @@ def main():
                         print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
 
                     elif cd['mode'] in ['read','read-json','read-raw']:
-                        addr = getaddr(cd)
-                        dids = cd['data']
-                        ensure_ecu(addr) 
+                        dids = get_dids(cd)
                         for did in dids:
-                            didsub = get_didsub(did)
+                            addr = did[0]
+                            ensure_ecu(addr) 
+                            didsub = did[1:]
                             readbydid(addr, didsub[0], json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=didsub[1])
                             time.sleep(0.01)            # 10 ms delay before next request
 

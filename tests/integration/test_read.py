@@ -178,6 +178,51 @@ def test_read_listen_json_sub_did(open3e_mqtt_client):
         assert str(read_dataset.get(ecu, did, sub_did)) == open3e_mqtt_client.received_message_payload(ecu, did)
 
 
+def test_read_listen_json_cplx_did(open3e_mqtt_client):
+    ecu = "0x6a1"
+    did = 256
+    sub_did = "BusType"
+    sub_did_fqn = f"{ecu}.{did}.{sub_did}"
+
+    with open3e.listen() as _:
+        wait_for(lambda: open3e_mqtt_client.is_open3e_online())
+
+        # TODO: read sub did will be published under did root topic?
+        open3e_mqtt_client.subscribe(ecu, did)
+        open3e_mqtt_client.publish_cmd("read-json", "0x0", [sub_did_fqn])   # Provide invalid paramter "addr" to prove usage of address given within did
+
+        wait_for(lambda: open3e_mqtt_client.received_messages_count() == 1)
+
+        read_dataset = dataset(READ_DATASET_FILE)
+        assert str(read_dataset.get(ecu, did, sub_did)) == open3e_mqtt_client.received_message_payload(ecu, did)
+
+
+def test_read_listen_json_multiple_mixed_dids(open3e_mqtt_client):
+    ecus = ["0x680","0x680","0x6a1","0x6a1","0x6a1"]
+    dids = ["256.BusType", 507, "0x6a1.[256.BusType,262,507]"]
+    dids_expect = [256, 507, 256, 262, 507]
+    sub_dids_expect = ["BusType", None, "BusType", None, None]
+
+    with open3e.listen() as _:
+        wait_for(lambda: open3e_mqtt_client.is_open3e_online())
+
+        i = 0
+        for did in dids_expect:
+            open3e_mqtt_client.subscribe(ecus[i], did)
+            i += 1
+
+        open3e_mqtt_client.publish_cmd("read-json", "0x680", dids)
+
+        wait_for(lambda: open3e_mqtt_client.received_messages_count() == len(dids_expect))
+
+        read_dataset = dataset(READ_DATASET_FILE)
+        assert str(read_dataset.get(ecus[0], dids_expect[0], sub_dids_expect[0])) == open3e_mqtt_client.received_message_payload(ecus[0], dids_expect[0])
+        assert str(read_dataset.get(ecus[1], dids_expect[1], sub_dids_expect[1])) == open3e_mqtt_client.received_message_payload(ecus[1], dids_expect[1])
+        assert str(read_dataset.get(ecus[2], dids_expect[2], sub_dids_expect[2])) == open3e_mqtt_client.received_message_payload(ecus[2], dids_expect[2])
+        assert str(read_dataset.get(ecus[3], dids_expect[3], sub_dids_expect[3])) == open3e_mqtt_client.received_message_payload(ecus[3], dids_expect[3])
+        assert str(read_dataset.get(ecus[4], dids_expect[4], sub_dids_expect[4])) == open3e_mqtt_client.received_message_payload(ecus[4], dids_expect[4])
+
+
 def test_read_listen_raw(open3e_mqtt_client):
     ecu = "0x680"
     did = 256

@@ -41,6 +41,13 @@ To start/stop the services without recreating the containers use `docker compose
 
 To cleanup your docker containers/network use `docker compose down`.
 
+If an mqtt broker is already running on localhost, use compose file `compose_ve3.yml` to start virtualE3:
+
+```
+cd /open3e/tests/integration
+docker compose -f compose_ve3.yml up -d
+```
+
 ### Execute the tests
 
 ```
