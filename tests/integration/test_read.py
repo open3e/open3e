@@ -198,10 +198,10 @@ def test_read_listen_json_cplx_did(open3e_mqtt_client):
 
 
 def test_read_listen_json_multiple_mixed_dids(open3e_mqtt_client):
-    ecus = ["0x680","0x680","0x6a1","0x6a1","0x6a1"]
-    dids = ["256.BusType", 507, "0x6a1.[256.BusType,262,507]"]
-    dids_expect = [256, 507, 256, 262, 507]
-    sub_dids_expect = ["BusType", None, "BusType", None, None]
+    ecus = ["0x680","0x680","0x680","0x6a1","0x6a1","0x6a1"]
+    dids = ["256.BusType","268.3",507,"0x6a1.[256.BusType,262,507]"]
+    dids_expect = [256,268,507,256,262,507]
+    sub_dids_expect = ["BusType","Average",None,"BusType",None,None]
 
     with open3e.listen() as _:
         wait_for(lambda: open3e_mqtt_client.is_open3e_online())
@@ -221,6 +221,7 @@ def test_read_listen_json_multiple_mixed_dids(open3e_mqtt_client):
         assert str(read_dataset.get(ecus[2], dids_expect[2], sub_dids_expect[2])) == open3e_mqtt_client.received_message_payload(ecus[2], dids_expect[2])
         assert str(read_dataset.get(ecus[3], dids_expect[3], sub_dids_expect[3])) == open3e_mqtt_client.received_message_payload(ecus[3], dids_expect[3])
         assert str(read_dataset.get(ecus[4], dids_expect[4], sub_dids_expect[4])) == open3e_mqtt_client.received_message_payload(ecus[4], dids_expect[4])
+        assert str(read_dataset.get(ecus[5], dids_expect[5], sub_dids_expect[5])) == open3e_mqtt_client.received_message_payload(ecus[5], dids_expect[5])
 
 
 def test_read_listen_raw(open3e_mqtt_client):
