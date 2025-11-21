@@ -210,7 +210,7 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"write-sid77"|"write-raw-sid77"|"system", "data":[list of data], "addr":"ECU_addr"}
     rem: "addr" is optional, otherwise default ECU address used
     
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd -r 0x6a1.1603,0x6a1.1831 -t 15 -m localhost:1883:open3e

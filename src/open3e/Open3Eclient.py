@@ -265,7 +265,7 @@ def main():
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
-                            addr = getaddr(didKey[0])
+                            addr = didKey[0]
                             ensure_ecu(addr)
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
                             ecu77.writeByDid(didKey[1], didVal, raw=False, useService77=True, sub=didKey[2], readecu=dicEcus[addr])
@@ -273,12 +273,10 @@ def main():
                             time.sleep(0.1)
                         
                     elif cd['mode'] == 'write-raw-sid77':
-                        addr = getaddr(cd)
-                        ensure_ecu(addr)
                         for wd in cd['data']:
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
                             didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
-                            addr = getaddr(didKey[0])
+                            addr = didKey[0]
                             ensure_ecu(addr)
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
                             ecu77.writeByDid(didKey[1], didVal, raw=True, useService77=True, sub=didKey[2], readecu=dicEcus[addr])
