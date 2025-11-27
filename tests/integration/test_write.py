@@ -110,9 +110,9 @@ def test_write_listen(open3e_mqtt_client, ecu, did, value_to_write):
 
 def test_write_listen_multiple_dids(open3e_mqtt_client):
     ecus = ["0x680","0x680","0x6a1","0x680"]
-    dids = [396, "1007.0", "0x6a1.2214", "0x680.382.Units.ID"]
+    dids = [396, "1007.0", "0x6a1.2214", "0x680.382.Units"]
     dids_expect = [396, 1007, 2214, 382]
-    sub_dids_expect = [None,"OpMode",None,"Units.ID"]
+    sub_dids_expect = [None,"OpMode",None,"Units"]
 
     write_dataset = dataset(WRITE_DATASET_FILE)
 
@@ -133,7 +133,7 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             i = 0
             for did in dids_expect:
                 open3e_mqtt_client.subscribe(ecus[i], did)
-                write_data.append([did, str(write_dataset.get(ecus[i], did))])
+                write_data.append([dids[i], str(write_dataset.get(ecus[i], did, sub_dids_expect[i]))])
                 i += 1
 
             # write new value
@@ -145,6 +145,7 @@ def test_write_listen_multiple_dids(open3e_mqtt_client):
             assert str(write_dataset.get(ecus[0], dids_expect[0], sub_dids_expect[0])) == open3e_mqtt_client.received_message_payload(ecus[0], dids_expect[0])
             assert str(write_dataset.get(ecus[1], dids_expect[1], sub_dids_expect[1])) == open3e_mqtt_client.received_message_payload(ecus[1], dids_expect[1])
             assert str(write_dataset.get(ecus[2], dids_expect[2], sub_dids_expect[2])) == open3e_mqtt_client.received_message_payload(ecus[2], dids_expect[2])
+            assert str(write_dataset.get(ecus[3], dids_expect[3], sub_dids_expect[3])) == open3e_mqtt_client.received_message_payload(ecus[3], dids_expect[3])
     finally:
         # write initial value, to keep test data as expected
         i = 0
