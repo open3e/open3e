@@ -191,7 +191,7 @@ def main():
                         didstr += str(did)
                     elif type(did) == str and str(did).count('.') > 0:
                         # Some other kind of sub addressing mode
-                        if did[0:2].lower() == '0x':
+                        if did.strip()[0:2].lower() == '0x':
                             # 1st Parameter starts with '0x' => ECU hex address => addressing mode addr.did.sub
                             didstr += str(did)
                         else:

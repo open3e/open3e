@@ -110,7 +110,7 @@ def test_write_listen(open3e_mqtt_client, ecu, did, value_to_write):
 
 def test_write_listen_multiple_dids(open3e_mqtt_client):
     ecus = ["0x680","0x680","0x6a1","0x680"]
-    dids = [396, "1007.0", "0x6a1.2214", "0x680.382.Units"]
+    dids = [396, "1007.0", "0x6a1.2214", " 0x680.382.Units"]
     dids_expect = [396, 1007, 2214, 382]
     sub_dids_expect = [None,"OpMode",None,"Units"]
 

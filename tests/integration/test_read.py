@@ -182,7 +182,7 @@ def test_read_listen_json_cplx_did(open3e_mqtt_client):
     ecu = "0x6a1"
     did = 256
     sub_did = "BusType"
-    sub_did_fqn = f"{ecu}.{did}.{sub_did}"
+    sub_did_fqn = f" {ecu}.{did}.{sub_did}"     # Add leading space
 
     with open3e.listen() as _:
         wait_for(lambda: open3e_mqtt_client.is_open3e_online())
@@ -199,7 +199,7 @@ def test_read_listen_json_cplx_did(open3e_mqtt_client):
 
 def test_read_listen_json_multiple_mixed_dids(open3e_mqtt_client):
     ecus = ["0x680","0x680","0x680","0x6a1","0x6a1","0x6a1"]
-    dids = ["256.BusType","268.3",507,"0x6a1.[256.BusType,262,507]"]
+    dids = ["256.BusType","268.3 ",' 0x1fb ',"0x6a1.[256.BusType, 0x106,507]"]
     dids_expect = [256,268,507,256,262,507]
     sub_dids_expect = ["BusType","Average",None,"BusType",None,None]
 
