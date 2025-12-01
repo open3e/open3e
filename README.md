@@ -284,7 +284,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### Work in progress
+### 0.5.10 (2025-12-01)
 * Added support for data points 511-520
 * Added support for complex addressing mode for listener mode
 
