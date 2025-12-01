@@ -210,8 +210,8 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
-    rem: "addr" is optional, otherwise defaut ECU address used
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"write-sid77"|"write-raw-sid77"|"system", "data":[list of data], "addr":"ECU_addr"}
+    rem: "addr" is optional, otherwise default ECU address used
     
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd -r 0x6a1.1603,0x6a1.1831 -t 15 -m localhost:1883:open3e
 
@@ -225,6 +225,10 @@ In case of a "negative response" code when writing data, you may try to use the 
     to read dids 265 and 266 as JSON-objects (even w/o option -json):
     {"mode": "read-json", "data":[265,266]}
     
+    it's possible to use complex addressing mode:
+    {"mode": "read-json", "data":[256,257,396,"0x6a1.[257,259,261]","0x6a1.256.BusType"]}
+    IMPORTANT REMARK: Quotes must be used for complex addressing. The ECU-address must be specified in Python hex format (leading 0x), e.g. 0x680
+
     to read dids 265 and 266 as raw data (even w/o option -raw):
     {"mode": "read-raw", "data":[265,266]}
     
@@ -236,6 +240,9 @@ In case of a "negative response" code when writing data, you may try to use the 
 
     doing the same thing using Sub-DID addressing:
     {"mode":"write", "data":[["2214.DischargeLimit",20.0]], "addr":"0x6a1"}
+
+    doing the same thing again using complex addressing:
+    {"mode":"write", "data":[["0x6a1.2214.DischargeLimit",20.0]]}
 
     to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
@@ -279,6 +286,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 ### Work in progress
 * Added support for data points 511-520
+* Added support for complex addressing mode for listener mode
 
 ### 0.5.9 (2025-09-19)
 * Fixed issue #274 (addressing mode `0x068c.[505,506]`)

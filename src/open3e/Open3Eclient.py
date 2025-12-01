@@ -179,6 +179,29 @@ def main():
                 return deftx        
 
         def cmnd_loop():
+            def get_dids(cd):
+                # returns list of sub-dids: [[address, did, sub], ...]
+                didstr = ''
+                addr = getaddr(cd)
+                for did in cd['data']:
+                    if len(didstr) > 0:
+                        didstr += ','
+                    if type(did) == str and str(did).count('.[') > 0:
+                        # Complex addressing mode using list of dids
+                        didstr += str(did)
+                    elif type(did) == str and str(did).count('.') > 0:
+                        # Some other kind of sub addressing mode
+                        if did.strip()[0:2].lower() == '0x':
+                            # 1st Parameter starts with '0x' => ECU hex address => addressing mode addr.did.sub
+                            didstr += str(did)
+                        else:
+                            # 1st Parameter is not an ECU address => addressing mode did.sub
+                            didstr += str(addr)+'.'+str(did)
+                    else:
+                        # no sub addressing mode
+                        didstr += str(addr)+'.'+str(did)
+                return eval_complex_list(didstr)
+
             cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'system']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
@@ -192,20 +215,20 @@ def main():
                         print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
 
                     elif cd['mode'] in ['read','read-json','read-raw']:
-                        addr = getaddr(cd)
-                        dids = cd['data']
-                        ensure_ecu(addr) 
+                        dids = get_dids(cd)
                         for did in dids:
-                            didsub = get_didsub(did)
+                            addr = did[0]
+                            ensure_ecu(addr) 
+                            didsub = did[1:]
                             readbydid(addr, didsub[0], json=(cd['mode']=='read-json'), raw=(cd['mode']=='read-raw'), sub=didsub[1])
                             time.sleep(0.01)            # 10 ms delay before next request
 
                     elif cd['mode'] == 'read-pure':
-                        addr = getaddr(cd)
-                        dids = cd['data']
-                        ensure_ecu(addr) 
+                        dids = get_dids(cd)
                         for did in dids:
-                            readpure(addr, getint(did))
+                            addr = did[0]
+                            ensure_ecu(addr) 
+                            readpure(addr, getint(did[1]))
                             time.sleep(0.01)            # 10 ms delay before next request
 
                     elif cd['mode'] in ['read-all','read-all-json']:
@@ -217,48 +240,46 @@ def main():
                             showread(addr=addr, did=itm[0], value=itm[1], idstr=itm[2], fjson=(cd['mode']=='read-all-json'))
 
                     elif cd['mode'] == 'write':
-                        addr = getaddr(cd)
-                        ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
-                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=False, sub=didKey[1]) 
+                            didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
+                            ensure_ecu(didKey[0])
+                            dicEcus[didKey[0]].writeByDid(didKey[1], didVal, raw=False, sub=didKey[2]) 
                             time.sleep(0.1)
                         
                     elif cd['mode'] == 'write-raw':
-                        addr = getaddr(cd)
-                        ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = get_didsub(wd[0])    # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
-                            dicEcus[addr].writeByDid(didKey[0], didVal, raw=True, sub=didKey[1]) 
+                            didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
+                            ensure_ecu(didKey[0])
+                            dicEcus[didKey[0]].writeByDid(didKey[1], didVal, raw=True, sub=didKey[2]) 
                             time.sleep(0.1)
                             
                     elif cd['mode'] == 'write-sid77':
-                        addr = getaddr(cd)
-                        ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             if type(wd[1]) == str:
                                 didVal = json.loads(wd[1])    # value: if string parse as json
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
+                            didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
+                            addr = didKey[0]
+                            ensure_ecu(addr)
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey[0], didVal, raw=False, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
+                            ecu77.writeByDid(didKey[1], didVal, raw=False, useService77=True, sub=didKey[2], readecu=dicEcus[addr])
                             ecu77.close() 
                             time.sleep(0.1)
                         
                     elif cd['mode'] == 'write-raw-sid77':
-                        addr = getaddr(cd)
-                        ensure_ecu(addr)
                         for wd in cd['data']:
-                            didKey = get_didsub(wd[0])   # convert to did (number or name) and sub (probably None)
                             didVal = str(wd[1]).replace('0x','')    # val is submitted as hex string
+                            didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
+                            addr = didKey[0]
+                            ensure_ecu(addr)
                             ecu77 = open3e.Open3Eclass.O3Eclass(ecutx=addr+2, doip=args.doip, can=args.can, dev=args.dev)
-                            ecu77.writeByDid(didKey[0], didVal, raw=True, useService77=True, sub=didKey[1], readecu=dicEcus[addr])
+                            ecu77.writeByDid(didKey[1], didVal, raw=True, useService77=True, sub=didKey[2], readecu=dicEcus[addr])
                             ecu77.close()
                             time.sleep(0.1)
 
