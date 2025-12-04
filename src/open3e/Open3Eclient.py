@@ -242,7 +242,10 @@ def main():
                     elif cd['mode'] == 'write':
                         for wd in cd['data']:
                             if type(wd[1]) == str:
-                                didVal = json.loads(wd[1])    # value: if string parse as json
+                                try:
+                                    didVal = json.loads(wd[1])    # value: if string try to parse as json
+                                except:
+                                    didVal = wd[1]  # value could not be parsed as json, keep string value. This is the case for e.g. time values as "11:30"
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
@@ -261,7 +264,10 @@ def main():
                     elif cd['mode'] == 'write-sid77':
                         for wd in cd['data']:
                             if type(wd[1]) == str:
-                                didVal = json.loads(wd[1])    # value: if string parse as json
+                                try:
+                                    didVal = json.loads(wd[1])    # value: if string try to parse as json
+                                except:
+                                    didVal = wd[1]  # value could not be parsed as json, keep string value. This is the case for e.g. time values as "11:30"
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
                             didKey = get_dids({"data":[wd[0]],"addr":getaddr(cd)})[0]  # Get [addr, did, sub]
