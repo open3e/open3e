@@ -288,6 +288,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * Added support for data points 511-520
 * Added support for complex addressing mode for listener mode
 * Bugfix: Writing of time value (e.g. "11:30") via MQTT did not work
+* Added test case for writing a time value via MQTT (did 875)
 
 ### 0.5.9 (2025-09-19)
 * Fixed issue #274 (addressing mode `0x068c.[505,506]`)
