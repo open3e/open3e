@@ -3,7 +3,7 @@
         "382": {"Units": {"ID": 1, "Text": "Imperial"}, "DateFormat": {"ID": 0, "Text": "DayMonthYear"}, "TimeFormat": {"ID": 0, "Text": "TwentyFourHours"}, "TimeZone": 2, "Unknown": 0},
         "396": 30.0,
         "692": {"Count": 1, "Schedules": [{"Start": "07:00", "Stop": "22:00", "Unknown": "0000", "Mode": 4}]},
-        "875": "14:15",
+        "875": "\"14:15\"",
         "1007": {"OpMode": 3, "Required": "on", "Unknown": "0000"},
         "1097": {"Unknown1": "00000000", "Unknown2": "00000000", "NormalRate": 0.2, "LowRate": 0.1, "Unknown3": "00000000"}
     },

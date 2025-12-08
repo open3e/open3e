@@ -1,7 +1,7 @@
 services:
   virtuale3:
     container_name: virtuale3
-    image: ghcr.io/lgraf/vituale3:sha-9bfe61b
+    image: ghcr.io/myhomemydata/vituale3:sha-0a51d08
     network_mode: host
     command: ["-c", "vcan0", "-cnfg", "devices.json"]
     volumes:
