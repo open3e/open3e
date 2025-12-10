@@ -8,6 +8,7 @@ dataIdentifiers = {
         507: None,
         592: None,
         604: None,
+        1603: None,
         2214: None,
     },
 }
