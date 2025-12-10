@@ -4168,64 +4168,334 @@
     "args": {}
   },
   "511": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayPhase",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "512": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayAtHomePhase",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "513": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayPhaseCircuitOne",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "514": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayAtHomePhaseCircuitOne",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "515": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayPhaseCircuitTwo",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "516": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayAtHomePhaseCircuitTwo",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "517": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayPhaseCircuitThree",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "518": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayAtHomePhaseCircuitThree",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "519": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayPhaseCircuitFour",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "520": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "HolidayAtHomePhaseCircuitFour",
-    "args": {}
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseBegin",
+          "args": {}
+        },
+        {
+          "codec": "O3ESdate",
+          "len": 3,
+          "id": "PhaseEnd",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Planned",
+          "args": {}
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Active",
+          "args": {}
+        }
+      ]
+    }
   },
   "521": {
     "codec": "O3EInt16",
@@ -33300,5 +33570,5 @@
       ]
     }
   },
-  "Version": "20250903"
+  "Version": "20251102"
 }

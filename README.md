@@ -1,4 +1,4 @@
-**_New: Explicit writing of sub-items of a DID, specifying DIDs and Subs by name instead of number posible._**
+**_New: Complex addressing mode available for MQTT commands (listener mode)_**
 
 <BR>
 
@@ -8,7 +8,17 @@
 * Read data points
 * Listen to commands on mqtt
 * Write data points in raw and json data format
-* Experimental write support for service 77 (NOT implemented for listener mode yet)
+* Experimental write support for service 77
+
+# Smart Home Integrations and Add Ons
+
+The following integrations and add ons are available to use open3e functionality within smart home applications:
+* **HomeAssistant Integration**: Automatically connects to the Open3e server and handles automatic device/integration/entity setup based on configuration sent by Open3e. Data is then automatically refreshed. Refer to https://github.com/MojoOli/open3e-ha and https://github.com/open3e/open3e/wiki/090-Homeassistant
+* **Adapter for ioBroker**: Adapter ioBroker.e3oncan is based on open3e and completely replaces open3e. Thus, no installation of open3e is needed when using the adapter. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan and https://github.com/open3e/open3e/wiki/095-ioBroker-Adapter
+* Open3E is also available for **docker** environment. Refer to https://hub.docker.com/u/fleckem
+* Using **Smart Grid Ready Function** of Vitocal 250: Refer to https://github.com/open3e/open3e/wiki/099-%C3%9Cber-openE3-hinaus-%E2%80%90-Smart-Grid-Ready
+
+You created your own extension based on open3e? Great! Please let us know! Just add a new [discission topic](https://github.com/open3e/open3e/discussions).
 
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
@@ -210,8 +220,8 @@ In case of a "negative response" code when writing data, you may try to use the 
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd
     
     will listen for commands on topic open3e/cmnd with payload in json format:
-    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"system", "data":[list of data], "addr":"ECU_addr"}
-    rem: "addr" is optional, otherwise defaut ECU address used
+    {"mode":"read"|"read-raw"|"read-pure"|"read-all"|"write"|"write-raw"|"write-sid77"|"write-raw-sid77"|"system", "data":[list of data], "addr":"ECU_addr"}
+    rem: "addr" is optional, otherwise default ECU address used
     
     open3e -m localhost:1883:open3e -mfstr "{didNumber}_{didName}" -l open3e/cmnd -r 0x6a1.1603,0x6a1.1831 -t 15 -m localhost:1883:open3e
 
@@ -225,6 +235,10 @@ In case of a "negative response" code when writing data, you may try to use the 
     to read dids 265 and 266 as JSON-objects (even w/o option -json):
     {"mode": "read-json", "data":[265,266]}
     
+    it's possible to use complex addressing mode:
+    {"mode": "read-json", "data":[256,257,396,"0x6a1.[257,259,261]","0x6a1.256.BusType"]}
+    IMPORTANT REMARK: Quotes must be used for complex addressing. The ECU-address must be specified in Python hex format (leading 0x), e.g. 0x680
+
     to read dids 265 and 266 as raw data (even w/o option -raw):
     {"mode": "read-raw", "data":[265,266]}
     
@@ -236,6 +250,9 @@ In case of a "negative response" code when writing data, you may try to use the 
 
     doing the same thing using Sub-DID addressing:
     {"mode":"write", "data":[["2214.DischargeLimit",20.0]], "addr":"0x6a1"}
+
+    doing the same thing again using complex addressing:
+    {"mode":"write", "data":[["0x6a1.2214.DischargeLimit",20.0]]}
 
     to write value of 45.0 to did 396 using service 0x77 (internal can bus only, experimental):
     {"mode": "write-sid77", "data":[[396,45.0]]}
@@ -276,6 +293,12 @@ If you want to work on the codebase you can clone the repository and work in "ed
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.5.10 (2025-12-10)
+* Added support for data points 511-520
+* Added support for complex addressing mode for listener mode
+* Bugfix: Writing of time value (e.g. "11:30") via MQTT did not work
+* Added infos about Smart Home integrations to Readme
 
 ### 0.5.9 (2025-09-19)
 * Fixed issue #274 (addressing mode `0x068c.[505,506]`)
