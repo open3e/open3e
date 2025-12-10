@@ -15,6 +15,7 @@
 The following integrations and add ons are available to use open3e functionality within smart home applications:
 * **HomeAssistant Integration**: Automatically connects to the Open3e server and handles automatic device/integration/entity setup based on configuration sent by Open3e. Data is then automatically refreshed. Refer to https://github.com/MojoOli/open3e-ha and https://github.com/open3e/open3e/wiki/090-Homeassistant
 * **Adapter for ioBroker**: Adapter ioBroker.e3oncan is based on open3e and completely replaces open3e. Thus, no installation of open3e is needed when using the adapter. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan and https://github.com/open3e/open3e/wiki/095-ioBroker-Adapter
+* Open3E is also available for **docker** environment. Refer to https://hub.docker.com/u/fleckem
 * Using **Smart Grid Ready Function** of Vitocal 250: Refer to https://github.com/open3e/open3e/wiki/099-%C3%9Cber-openE3-hinaus-%E2%80%90-Smart-Grid-Ready
 
 You created your own extension based on open3e? Great! Please let us know! Just add a new [discission topic](https://github.com/open3e/open3e/discussions).
