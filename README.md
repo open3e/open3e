@@ -17,6 +17,8 @@ The following integrations and add ons are available to use open3e functionality
 * **Adapter for ioBroker**: Adapter ioBroker.e3oncan is based on open3e and completely replaces open3e. Thus, no installation of open3e is needed when using the adapter. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan and https://github.com/open3e/open3e/wiki/095-ioBroker-Adapter
 * Using **Smart Grid Ready Function** of Vitocal 250: Refer to https://github.com/open3e/open3e/wiki/099-%C3%9Cber-openE3-hinaus-%E2%80%90-Smart-Grid-Ready
 
+You created your own extension based on open3e? Great! Please let us know! Just add a new [discission topic](https://github.com/open3e/open3e/discussions).
+
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
 
