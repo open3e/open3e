@@ -1,4 +1,4 @@
-**_New: Explicit writing of sub-items of a DID, specifying DIDs and Subs by name instead of number posible._**
+**_New: Complex addressing mode available for MQTT commands (listener mode)_**
 
 <BR>
 
@@ -8,7 +8,14 @@
 * Read data points
 * Listen to commands on mqtt
 * Write data points in raw and json data format
-* Experimental write support for service 77 (NOT implemented for listener mode yet)
+* Experimental write support for service 77
+
+# Smart Home Integrations and Add Ons
+
+The following integrations and add ons are available to use open3e functionality within smart home applications:
+* **HomeAssistant Integration**: Automatically connects to the Open3e server and handles automatic device/integration/entity setup based on configuration sent by Open3e. Data is then automatically refreshed. Refer to https://github.com/MojoOli/open3e-ha and https://github.com/open3e/open3e/wiki/090-Homeassistant
+* **Adapter for ioBroker**: Adapter ioBroker.e3oncan is based on open3e and completely replaces open3e. Thus, no installation of open3e is needed when using the adapter. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan and https://github.com/open3e/open3e/wiki/095-ioBroker-Adapter
+* Using **Smart Grid Ready Function** of Vitocal 250: Refer to https://github.com/open3e/open3e/wiki/099-%C3%9Cber-openE3-hinaus-%E2%80%90-Smart-Grid-Ready
 
 # Installation
 There is a [Video Tutorial](https://youtu.be/u_fkwtIARug) (German languge) available from CRYDTEAM - thank you very much for it! Find the according web site [here](https://crydteam.de/2025/04/27/viessmann-vx3-in-homeassistant/). The final 1/3 is related to Home Assistant, but the first part shows the complete installation process of open3e and hardware very vividly.
@@ -284,10 +291,11 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.5.10 (2025-12-04)
+### 0.5.10 (2025-12-10)
 * Added support for data points 511-520
 * Added support for complex addressing mode for listener mode
 * Bugfix: Writing of time value (e.g. "11:30") via MQTT did not work
+* Added infos about Smart Home integrations to Readme
 
 ### 0.5.9 (2025-09-19)
 * Fixed issue #274 (addressing mode `0x068c.[505,506]`)
