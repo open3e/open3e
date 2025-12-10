@@ -41,7 +41,7 @@ dataIdentifiers = {
         1006 : O3EComplexType(4, "TargetQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. https://community.viessmann.de/viessmann/attachments/viessmann/customers-heatpump-hybrid/74546/1/6196307%20Kundendatenpunktliste%20Vitocal%20(1).pdf
         1007 : O3EComplexType(4, "CurrentQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), RawCodec(2, "Unknown")]), # MyHomeMyData, ref. did 1006
         1097 : O3EComplexType(20, "ElectricityPrice", [RawCodec(4, "Unknown1"), RawCodec(4, "Unknown2"), O3EInt32(4, "NormalRate", scale=100), O3EInt32(4, "LowRate", scale = 100), RawCodec(4, "Unknown3")]), # Unit ct
-        1603 : O3EComplexType(4, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),,
+        1603 : O3EComplexType(4, "PointOfCommonCouplingPower", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)]),
         2214 : O3EComplexType(2, "BackupBoxConfiguration", [O3EInt8(1, "DischargeLimit", scale=1, signed=False),O3EInt8(1, "Unknown", scale=1, signed=False)]),
     }
 }
