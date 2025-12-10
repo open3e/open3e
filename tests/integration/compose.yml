@@ -11,7 +11,7 @@ services:
 
   virtuale3:
     container_name: virtuale3
-    image: ghcr.io/myhomemydata/vituale3:sha-0a51d08
+    image: ghcr.io/myhomemydata/vituale3:sha-d7aacf9
     network_mode: host
     command: ["-c", "vcan0", "-cnfg", "/tests/integration/test_data/device_config/devices_virtualE3.json"]
     volumes:
