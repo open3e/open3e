@@ -14,6 +14,7 @@
 
 The following integrations and add ons are available to use open3e functionality within smart home applications:
 * **HomeAssistant Integration**: Automatically connects to the Open3e server and handles automatic device/integration/entity setup based on configuration sent by Open3e. Data is then automatically refreshed. Refer to https://github.com/MojoOli/open3e-ha and https://github.com/open3e/open3e/wiki/090-Homeassistant
+* **HomeAssistant Add-On**: If you have your CAN Adapter attached to the device which is running HomeAssistant you can run this Add-on to read the data from CAN. It is working good together with the HomeAssistant Integration mentioned above. Refer to https://github.com/flecke-m/ha-addons/tree/main/open3e Please note the HomeAssistant dependency that the Add-On only works with HAOS and Supervised installations see: https://www.home-assistant.io/installation/
 * **Adapter for ioBroker**: Adapter ioBroker.e3oncan is based on open3e and completely replaces open3e. Thus, no installation of open3e is needed when using the adapter. Refer to https://github.com/MyHomeMyData/ioBroker.e3oncan and https://github.com/open3e/open3e/wiki/095-ioBroker-Adapter
 * Open3E is also available for **docker** environment. Refer to https://hub.docker.com/u/fleckem
 * Using **Smart Grid Ready Function** of Vitocal 250: Refer to https://github.com/open3e/open3e/wiki/099-%C3%9Cber-openE3-hinaus-%E2%80%90-Smart-Grid-Ready
