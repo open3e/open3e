@@ -1,3 +1,5 @@
+from Open3Ecodecs import *
+
 dataIdentifiers = {
     "name": "HPMUMASTER",
     "dids": {
@@ -14,7 +16,7 @@ dataIdentifiers = {
         604: None,
         691: None,
         692: None,
-        875: None,
+        875: O3EStime(2, "LegionellaProtectionStartTime"),
         1006: None,
         1007: None,
         1097: None,
