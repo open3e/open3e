@@ -10,6 +10,7 @@
         "592": "\"00-00-00-00-00-00\"",
         "604": {"SSID_AccessPoint": "VIESSMANN-0815", "Password_AccessPoint": "12345678", "IP-Address_AccessPoint": "010.083.083.001"},
         "691": {"Count": 1, "Schedules": [{"Start": "09:00", "Stop": "20:00", "Unknown": "0000", "Mode": 3}]},
+        "875": "\"11:30\"",
         "1006": {"OpMode": 2, "Required": "off", "Unknown": "0000"}
     },
     "0x6a1": {
