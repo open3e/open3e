@@ -1,4 +1,4 @@
-**_New: Complex addressing mode available for MQTT commands (listener mode)_**
+**_New: Handling of data points with length different from common data point via open3e_depictSystem_**
 
 <BR>
 
@@ -280,8 +280,8 @@ Use
 ```
 open3e_dids2json
 ```
-to convert common list of data points (Open3Edatapoints.py) to json format.
-A white list of writable data points is also created by this tool.
+to convert common list of data points (Open3Edatapoints.py, Open3EdatapointsVariants.py) to json format.
+This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.
 
 # For developers
 
@@ -294,6 +294,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.6.0 (2026-mm-dd)
+* Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.
 
 ### 0.5.10 (2025-12-10)
 * Added support for data points 511-520
