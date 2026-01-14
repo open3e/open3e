@@ -1,0 +1,1368 @@
+{
+  "1603": {
+    "12": {
+      "codec": "O3EComplexType",
+      "len": 12,
+      "id": "PointOfCommonCouplingPower",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "ActivePower",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "ReactivePower",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "ActivePowerDup",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "PadZeros",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "ReactivePowerDup",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "PadOnes",
+            "args": {
+              "scale": 1.0,
+              "signed": true
+            }
+          }
+        ]
+      }
+    }
+  },
+  "1884": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomOneProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1887": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomTwoProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1890": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomThreeProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1893": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomFourProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1896": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomFiveProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1899": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomSixProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1902": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomSevenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1905": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomEightProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1908": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomNineProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1911": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomTenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1014": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomElevenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1017": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomTwelveProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1920": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomThirteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1923": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomFourteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1926": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomFifteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1929": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomSixteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1932": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomSeventeenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1935": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomEightteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1938": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomNineteenProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "1941": {
+    "85": {
+      "codec": "O3EComplexType",
+      "len": 85,
+      "id": "RoomTwentyProperty",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EUtf8",
+            "len": 39,
+            "id": "Roomname",
+            "args": {}
+          },
+          {
+            "codec": "RawCodec",
+            "len": 4,
+            "id": "Unknown1",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "Roomtype",
+            "args": {
+              "listStr": "Roomtypes"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 1,
+            "id": "Unknown2",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "TemperatureControl",
+            "args": {
+              "listStr": "TemperatureControlLevels"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 29,
+            "id": "Unknown3",
+            "args": {}
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "WindowDetection",
+            "args": {
+              "listStr": "WindowDetectionState"
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 9,
+            "id": "Unknown4",
+            "args": {}
+          }
+        ]
+      }
+    }
+  },
+  "Version": "20260114"
+}
