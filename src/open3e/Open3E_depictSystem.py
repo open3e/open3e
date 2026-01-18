@@ -40,8 +40,6 @@ import open3e.Open3Eenums
 #import open3e.Open3EdatapointsVariants
 from pathlib import Path
 import importlib.util
-import re
-
 
 
 
@@ -271,10 +269,10 @@ def main():
                 genlen,idstr = did_info(did)
                 if(dlen == genlen):
                     sline += 'None,'
-                elif(codec_def := dicvariants[did][dlen]):
-                    sline += codec_def
+                elif(varitem := dicvariants.get(did, {}).get(dlen)):
+                    sline += varitem.getCodecString() + ','
                 else:
-                    sline += 'RawCodec(' + str(dlen) + ', \"' + idstr + '\"),'
+                    sline += 'RawCodec(' + str(dlen) + ', \"' + idstr + '\"),'                    
                 file.write(sline + '\n')
             file.write('    }\n')
             file.write('}\n')
@@ -314,52 +312,19 @@ def main():
         return bus, conn
 
 
-    def get_variants_dict(target_path) -> dict:
+    def get_variants_dict(o3e_path) -> dict:
+        module_name = "Open3EdatapointsVariants"
         # check for variants file
-        source = Path(target_path, "Open3EdatapointsVariants.py")
+        source = Path(o3e_path, f"{module_name}.py")
         if not source.is_file():
+            print(f"Info: no codec variants - {module_name}.py not found")
             return {}
         
         try:
             # -------------------------------
-            # 1. Datei einlesen
-            # -------------------------------
-            text = source.read_text(encoding="utf-8")
-
-            # -------------------------------
-            # 2. Alle ' → " ersetzen
-            # -------------------------------
-            text = text.replace("'", '"')
-
-            # -------------------------------
-            # 3. Alle DID/LEN-Ausdrücke in '...' einfassen
-            #    Match: <did> : { <len> : ... }
-            # -------------------------------
-            pattern = re.compile(
-                r'(\d+\s*:\s*\{\s*\d+\s*:\s*)(.+?)(\s*\})',
-                re.DOTALL
-            )
-
-            def repl(match):
-                prefix = match.group(1)
-                content = match.group(2).strip().rstrip(",")
-                suffix = match.group(3)
-                return f"{prefix}'{content}'{suffix}"
-
-            text = pattern.sub(repl, text)
-
-            # -------------------------------
-            # 4. Datei schreiben
-            # -------------------------------
-            module_name = ".variants_temp"
-            target = Path(target_path, f"{module_name}.py")
-            target.write_text(text, encoding="utf-8")
-            print(f"Geschrieben: {target}")  #TEMP!
-
-            # -------------------------------
             # 5. Modul dynamisch laden
             # -------------------------------
-            spec = importlib.util.spec_from_file_location(module_name, target)
+            spec = importlib.util.spec_from_file_location(module_name, source)
             variants_temp = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(variants_temp)
 
@@ -371,6 +336,65 @@ def main():
         except Exception as e:
             print(f"ERROR getting DID variants:\n  {e}")
             return {}
+
+
+    # def get_variants_dict(target_path) -> dict:
+    #     # check for variants file
+    #     source = Path(target_path, "Open3EdatapointsVariants.py")
+    #     if not source.is_file():
+    #         return {}
+        
+    #     try:
+    #         # -------------------------------
+    #         # 1. Datei einlesen
+    #         # -------------------------------
+    #         text = source.read_text(encoding="utf-8")
+
+    #         # -------------------------------
+    #         # 2. Alle ' → " ersetzen
+    #         # -------------------------------
+    #         text = text.replace("'", '"')
+
+    #         # -------------------------------
+    #         # 3. Alle DID/LEN-Ausdrücke in '...' einfassen
+    #         #    Match: <did> : { <len> : ... }
+    #         # -------------------------------
+    #         pattern = re.compile(
+    #             r'(\d+\s*:\s*\{\s*\d+\s*:\s*)(.+?)(\s*\})',
+    #             re.DOTALL
+    #         )
+
+    #         def repl(match):
+    #             prefix = match.group(1)
+    #             content = match.group(2).strip().rstrip(",")
+    #             suffix = match.group(3)
+    #             return f"{prefix}'{content}'{suffix}"
+
+    #         text = pattern.sub(repl, text)
+
+    #         # -------------------------------
+    #         # 4. Datei schreiben
+    #         # -------------------------------
+    #         module_name = ".variants_temp"
+    #         target = Path(target_path, f"{module_name}.py")
+    #         target.write_text(text, encoding="utf-8")
+    #         print(f"Geschrieben: {target}")  #TEMP!
+
+    #         # -------------------------------
+    #         # 5. Modul dynamisch laden
+    #         # -------------------------------
+    #         spec = importlib.util.spec_from_file_location(module_name, target)
+    #         variants_temp = importlib.util.module_from_spec(spec)
+    #         spec.loader.exec_module(variants_temp)
+
+    #         # -------------------------------
+    #         # 6. Zugriff auf dataIdentifiers
+    #         # -------------------------------
+    #         return variants_temp.dataIdentifiers["dids"]
+
+    #     except Exception as e:
+    #         print(f"ERROR getting DID variants:\n  {e}")
+    #         return {}
 
 
 # +++++++++++++++++++++++++++++++++
