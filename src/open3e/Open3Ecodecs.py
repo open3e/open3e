@@ -17,7 +17,6 @@
 import udsoncan 
 from typing import Optional, Any
 import datetime
-import json
 import open3e.Open3Eenums
 
 flag_rawmode = True

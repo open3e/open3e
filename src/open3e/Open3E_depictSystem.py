@@ -37,7 +37,6 @@ import open3e.Open3Edatapoints
 from open3e.Open3Edatapoints import *
 import open3e.Open3Eenums
 
-#import open3e.Open3EdatapointsVariants
 from pathlib import Path
 import importlib.util
 
@@ -48,7 +47,7 @@ def main():
     startcob = 0x680
     lastcob = 0x6ff
 
-    # did scan, default 256 to 3500
+    # did scan, default 256 to 4000
     startdid = 256
     lastdid = 4000
 
