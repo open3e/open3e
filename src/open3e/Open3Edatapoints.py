@@ -1471,7 +1471,7 @@ dataIdentifiers = {
         2753 : O3EInt8(1, "DiagnosticHeatExchangerConstraints"),
         2758 : RawCodec(1, "GasPressureSwitchErrorReaction"),
         2759 : RawCodec(24, "EnergyRecoveredCrossHeatExchanger"),
-        2760 : RawCodec(24, "EnergyOwnConsumption"),
+        2760 : O3EComplexType(24, "EnergyOwnConsumption", [O3EInt32(4, "Today", scale=10), O3EInt32(4, "Past7Days", scale=10), O3EInt32(4, "CurrentMonth", scale=10), O3EInt32(4, "PastMonth", scale=10), O3EInt32(4, "CurrentYear", scale=10), O3EInt32(4, "PastYear", scale=10)]),
         2767 : O3EInt8(1, "DiagnosticMonitoringPressureDrop"),
         2768 : O3EInt8(1, "DiagnosticMonitoringPressurePeaks"),
         2772 : RawCodec(124, "EnergyRecoveredCrossHeatExchangerMonthMatrix"),
