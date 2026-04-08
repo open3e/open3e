@@ -312,7 +312,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.6.1 (2026-02-24)
+### 0.6.1 (2026-04-08)
 * Introduced list of data points in markdown format.
 * Added meta data to several data points, e.g. description, unit, link to further info
 * Added tool to create user defined list of data points in markdown format
