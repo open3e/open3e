@@ -14,7 +14,6 @@
   limitations under the License.
 """
 
-import open3e.Open3Ecodecs
 from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
@@ -61,15 +60,15 @@ dataIdentifiers = {
         365 : None,
         373 : None,
         377 : None,
-        381 : O3EInt8(4, "CentralHeatingPump"),
+        381 : O3EComplexType(4, "CentralHeatingPump", [O3EInt8(1, "Minimum"), O3EInt8(1, "Actual"), O3EInt8(1, "Maximum"), RawCodec(1, "Unknown")]),
         382 : None,
         386 : None,
         392 : None,
         396 : None,
-        401 : O3EInt16(5, "MixerOneCircuitPump", signed=True),
-        402 : O3EInt16(5, "MixerTwoCircuitPump", signed=True),
-        403 : O3EInt16(5, "MixerThreeCircuitPump", signed=True),
-        404 : O3EInt16(5, "MixerFourCircuitPump", signed=True),
+        401 : None,
+        402 : None,
+        403 : None,
+        404 : None,
         405 : None,
         406 : None,
         407 : None,

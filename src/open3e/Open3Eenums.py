@@ -15,6 +15,8 @@
 """
 
 E3Enums = {
+    "name": "Open3E Enumerations",
+    "Version": "20260207",
     "Errors" : {
         0:"NoErrorAvailable",
         1:"InterruptionFlowTemperatureSensor",
@@ -2368,13 +2370,55 @@ E3Enums = {
         64: "Heating",
     },
 
-    "ViCareThermostaticRadiatorValveDisplayModeStates": {
+    "DeviceDisplayModeStates": {
         0: "Standard",
         1: "Turned",
     },
 
-    "ViCareThermostaticRadiatorValveChildLockStates": {
+    "DeviceChildLockStates": {
         0: "Not Active",
         1: "Active",
+    },
+
+    # see https://github.com/open3e/open3e/issues/259
+    "SensorStates": {
+        0: "no_error",
+        1: "interruption",
+        2: "short_circuit",
+        3: "electrical_fault",
+        4: "not_available",
+        5: "invalidates",
+    },
+
+    "DomesticHotWaterPreparationStates": {
+        0: "Idle",
+        1: "Active",
+        2: "Postrun",
+    },
+
+    "DomesticHotWaterOperationStates": {
+        0: "Off",
+        1: "Hot water",
+        2: "Parallel operation",
+        3: "Chimney sweep",
+        4: "Test mode",
+        5: "External temperature setpoint",
+        6: "External modulation setpoint",
+        7: "Hygiene function",
+        8: "Automatic",
+    },
+
+    "PowerStates": {
+        0: "Off",
+        1: "On",
+        2: "Out of range",
+    },
+
+    "FourThreeWayValveModes": {
+        0: "Heating/Cooling",
+        1: "Internal Buffer",
+        2: "Domestic Hot Water",
+        3: "Heating/Cooling and Internal Buffer",
+        4: "Domestic Hot Water and Internal Buffer",
     },
 }

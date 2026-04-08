@@ -202,7 +202,7 @@ def main():
                         didstr += str(addr)+'.'+str(did)
                 return eval_complex_list(didstr)
 
-            cmnds = ['read','read-json','read-raw','read-pure','read-all','write','write-raw','write-sid77','write-raw-sid77', 'system']
+            cmnds = ['read','read-json','read-raw','read-pure','read-all','read-all-json','write','write-raw','write-sid77','write-raw-sid77', 'system']
             if(readdids != None):
                 jobs =  eval_complex_list(readdids)  # hier kommt schon [ecu,did,sub] 
                 next_read_time = time.time()

@@ -35,17 +35,17 @@ cd /open3e/tests/integration
 docker compose up -d
 ```
 
-This starts the services detached. To inspect logs from the services use `docker compose logs -f`.
+This starts all services detached. To inspect logs from the services use `docker compose logs -f`.
 
 To start/stop the services without recreating the containers use `docker compose st(art|op)`.
 
 To cleanup your docker containers/network use `docker compose down`.
 
-If an mqtt broker is already running on localhost, use compose file `compose_ve3.yml` to start virtualE3:
+If an mqtt broker is already running on localhost start only the virtualE3 service.
 
 ```
 cd /open3e/tests/integration
-docker compose -f compose_ve3.yml up -d
+docker compose up virtuale3 -d
 ```
 
 ### Execute the tests

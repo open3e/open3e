@@ -14,7 +14,6 @@
   limitations under the License.
 """
 
-import open3e.Open3Ecodecs
 from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
