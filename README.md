@@ -4,6 +4,8 @@
 
 **_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
 
+**_New: We changed the structure of a lot of data points. Data pints `2320_DomesticHotWaterStatus` and `2735_FourThreeWayValveValveCurrentPosition` previously returned a byte value, they now return a named enum value. Almost all sensors now return a named enum value for the sensor status value._**
+
 <BR>
 
 # Open3E interface
@@ -315,6 +317,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * Added meta data to several data points, e.g. description, unit, link to further info
 * Added tool to create user defined list of data points in markdown format
 * Added meta data to json formated data points as well
+* Changed the structure of a lot of data points. Data points 2320 and 2735 previously returned a byte value, they now return a named enum value. Almost all sensors now return a named enum value for the sensor status value.
 
 ### 0.6.0 (2026-02-07)
 * Introduced list of data points (Open3EdatapointsVariants.py) with lengths different from common data points. Via open3e_depictSystem open3e can handle those device specific data points.
