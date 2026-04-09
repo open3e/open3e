@@ -1,0 +1,106 @@
+/* open3e web UI — custom styles on top of Bootstrap 5.3 dark theme */
+
+:root {
+    --sidebar-width: 240px;
+    --status-bar-height: 48px;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    padding: 1rem;
+    background-color: var(--bs-dark);
+    border-right: 1px solid var(--bs-border-color);
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar .nav-link {
+    color: var(--bs-gray-400);
+    border-radius: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.125rem;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--bs-white);
+    background-color: var(--bs-gray-800);
+}
+
+.sidebar .nav-link.active {
+    color: var(--bs-white);
+    background-color: var(--bs-primary);
+}
+
+/* Main content area */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding: 1rem 1.5rem;
+    min-height: 100vh;
+}
+
+/* Status bar in sidebar footer */
+.status-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    padding: 0.5rem 1rem;
+    background-color: var(--bs-dark);
+    border-top: 1px solid var(--bs-border-color);
+    border-right: 1px solid var(--bs-border-color);
+    font-size: 0.75rem;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+
+.status-dot.green { background-color: var(--bs-success); }
+.status-dot.red { background-color: var(--bs-danger); }
+.status-dot.amber { background-color: var(--bs-warning); }
+.status-dot.gray { background-color: var(--bs-gray-600); }
+
+/* Toast container */
+.toast-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2000;
+}
+
+/* Settings tabs */
+.settings-content .tab-pane {
+    padding-top: 1.5rem;
+}
+
+/* Responsive: collapse sidebar on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 1px solid var(--bs-border-color);
+    }
+    .main-content {
+        margin-left: 0;
+    }
+    .status-bar {
+        width: 100%;
+        position: relative;
+        border-right: none;
+    }
+}

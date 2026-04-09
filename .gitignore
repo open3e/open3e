@@ -26,3 +26,17 @@ _scm_version.py
 #testing
 .coverage*
 .DS_Store
+# internal design/planning docs (not for upstream)
+docs/specs/
+docs/plans/
+# open3e-web runtime files
+open3e_web.db
+open3e_web.db-shm
+open3e_web.db-wal
+open3e-web.log
+backups/
+open3e_backups/
+# session/hook artifacts
+.remember/
+.superpowers/
+.claude/

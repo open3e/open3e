@@ -1,0 +1,375 @@
+{% extends "base.html" %}
+
+{% block title %}Write Values — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <h2 class="mb-4">Write Values</h2>
+
+    {% if not writables %}
+    <div class="alert alert-info">
+        <i class="bi bi-info-circle me-1"></i>
+        No writable datapoints found. Run <a href="/depict">System Depiction</a> first.
+    </div>
+    {% else %}
+
+    <!-- Quick Actions -->
+    <div class="card mb-3 border-primary">
+        <div class="card-header py-2 bg-primary bg-opacity-10">
+            <strong><i class="bi bi-lightning-fill me-1"></i>Quick Actions</strong>
+        </div>
+        <div class="card-body d-flex flex-wrap gap-2">
+            <button class="btn btn-warning" id="btn-dhw-once" onclick="triggerDhwOnce()">
+                <i class="bi bi-droplet-fill me-1"></i>One-Time DHW Heating
+            </button>
+            <button class="btn btn-outline-secondary" id="btn-dhw-cancel" onclick="cancelDhwOnce()">
+                <i class="bi bi-x-circle me-1"></i>Cancel DHW Request
+            </button>
+            <span id="quick-action-status" class="align-self-center ms-2 small"></span>
+        </div>
+        <div class="card-footer small text-muted py-1">
+            One-Time DHW Heating triggers a single hot water cycle via DID 1006 (TargetQuickMode).
+        </div>
+    </div>
+
+    {% for cat_key, cat in categories.items() %}
+    <div class="card mb-3">
+        <div class="card-header py-2 d-flex justify-content-between align-items-center"
+             style="cursor:pointer"
+             data-bs-toggle="collapse" data-bs-target="#cat-{{ cat_key }}"
+             aria-expanded="{{ 'true' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else 'false' }}">
+            <strong>{{ cat.label }}</strong>
+            <span class="badge bg-secondary">{{ cat.dps | length }}</span>
+        </div>
+        <div class="collapse {{ 'show' if cat_key in ('temperature_setpoint','operation_mode','quick_mode') else '' }}"
+             id="cat-{{ cat_key }}">
+            <div class="card-body p-0">
+                <table class="table table-sm table-hover mb-0" style="table-layout:fixed;width:100%">
+                    <thead>
+                        <tr>
+                            <th style="width:55px">ECU</th>
+                            <th style="width:40px">DID</th>
+                            <th style="width:30%">Name</th>
+                            <th>Current Value</th>
+                            <th style="width:30%">Set Value</th>
+                            <th style="width:80px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for dp in cat.dps %}
+                    <tr>
+                        <td><code class="small text-muted">{{ '%03x' % dp.ecu_address }}</code></td>
+                        <td><code class="small">{{ dp.did }}</code></td>
+                        <td class="text-truncate" title="{{ dp.name }}">{{ dp.name }}</td>
+                        <td class="text-truncate font-monospace small"
+                            id="wval-{{ dp.ecu_address }}_{{ dp.did }}" title="">--</td>
+                        <td>
+                            {% if dp.meta.codec_type in ('O3EInt16', 'O3EInt8', 'O3EInt32', 'O3EByteVal') %}
+                                {# Simple numeric input #}
+                                <input type="number" step="0.1" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="number">
+
+                            {% elif dp.meta.codec_type == 'O3EComplexType' and dp.meta.sub_fields | length > 0 %}
+                                {# Sub-field inputs #}
+                                {% for sub in dp.meta.sub_fields %}
+                                    {% if sub.name != 'Unknown' %}
+                                    <div class="input-group input-group-sm mb-1">
+                                        <span class="input-group-text" style="font-size:0.7rem;min-width:80px">{{ sub.name }}</span>
+                                        {% if sub.get('options') %}
+                                            <select class="form-select form-select-sm"
+                                                    id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
+                                                <option value="">--</option>
+                                                {% for k, v in sub.get('options', {}).items() %}
+                                                <option value="{{ v }}">{{ v }} ({{ k }})</option>
+                                                {% endfor %}
+                                            </select>
+                                        {% elif sub.type == 'O3EBool' %}
+                                            <select class="form-select form-select-sm"
+                                                    id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}">
+                                                <option value="">--</option>
+                                                <option value="on">on</option>
+                                                <option value="off">off</option>
+                                            </select>
+                                        {% elif sub.type in ('O3EInt16', 'O3EInt8', 'O3EByteVal') %}
+                                            <input type="number" step="0.1" class="form-control form-control-sm"
+                                                   id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}"
+                                                   placeholder="number">
+                                        {% else %}
+                                            <input type="text" class="form-control form-control-sm"
+                                                   id="wsub-{{ dp.ecu_address }}_{{ dp.did }}_{{ sub.name }}"
+                                                   placeholder="{{ sub.type }}">
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+
+                            {% elif dp.meta.codec_type == 'RawCodec' %}
+                                <input type="text" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="hex (e.g. D601)">
+                                <small class="text-muted">Raw hex</small>
+
+                            {% else %}
+                                <input type="text" class="form-control form-control-sm"
+                                       id="winput-{{ dp.ecu_address }}_{{ dp.did }}"
+                                       placeholder="value">
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-warning"
+                                    data-write-ecu="{{ dp.ecu_address }}"
+                                    data-write-did="{{ dp.did }}"
+                                    data-write-name="{{ dp.name }}"
+                                    data-write-codec="{{ dp.meta.codec_type }}"
+                                    data-write-subs='{{ dp.meta.sub_fields | tojson }}'
+                                    onclick="doWrite(this)">
+                                <i class="bi bi-pencil-fill"></i> Write
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var ws = openWebSocket();
+    if (ws.socket.readyState === WebSocket.OPEN) {
+        ws.subscribe("*");
+    } else {
+        ws.socket.addEventListener("open", function () { ws.subscribe("*"); });
+    }
+
+    ws.onDidValue = function (msg) {
+        var cell = document.getElementById("wval-" + msg.ecu + "_" + msg.did);
+        if (!cell) return;
+        var val = msg.value;
+        var display;
+        if (val === null || val === undefined) {
+            display = "--";
+        } else if (typeof val === "object") {
+            // Show sub-fields compactly
+            var parts = [];
+            for (var k in val) {
+                var sv = val[k];
+                if (sv === null) continue;
+                if (typeof sv === "object" && sv.Text !== undefined) {
+                    parts.push(k + ":" + sv.Text);
+                } else if (typeof sv !== "object") {
+                    parts.push(k + ":" + sv);
+                }
+            }
+            display = parts.join(" | ");
+
+            // Pre-fill sub-field inputs if they exist
+            for (var k in val) {
+                var subInput = document.getElementById("wsub-" + msg.ecu + "_" + msg.did + "_" + k);
+                var sv = val[k];
+                if (subInput && sv !== null) {
+                    // Match by Text for enum dicts {ID: x, Text: y}, or by raw value
+                    var matchVal = (typeof sv === "object" && sv.Text !== undefined) ? sv.Text
+                                 : (typeof sv === "object" && sv.ID !== undefined) ? String(sv.ID)
+                                 : String(sv);
+                    if (subInput.tagName === "SELECT") {
+                        for (var i = 0; i < subInput.options.length; i++) {
+                            if (subInput.options[i].value == matchVal) {
+                                subInput.selectedIndex = i;
+                                break;
+                            }
+                        }
+                    } else if (subInput.value === "") {
+                        subInput.placeholder = matchVal;
+                    }
+                }
+            }
+        } else {
+            display = String(val);
+            // Pre-fill simple input placeholder
+            var simpleInput = document.getElementById("winput-" + msg.ecu + "_" + msg.did);
+            if (simpleInput && simpleInput.placeholder === "number") {
+                simpleInput.placeholder = String(val);
+            }
+        }
+        cell.textContent = display;
+        cell.title = typeof val === "object" ? JSON.stringify(val, null, 2) : display;
+    };
+
+    // --- Quick Actions ---
+
+    window.triggerDhwOnce = async function () {
+        if (!confirm("Trigger one-time domestic hot water heating?\n\nThis writes DID 1006 (TargetQuickMode) with OpMode=2 (Heating+HotWater).")) return;
+        var statusEl = document.getElementById("quick-action-status");
+        var btn = document.getElementById("btn-dhw-once");
+        btn.disabled = true;
+        statusEl.textContent = "Sending...";
+        statusEl.className = "align-self-center ms-2 small text-warning";
+        try {
+            // Write TargetQuickMode: OpMode=2 (Parallel: Heating+HotWater), Required=on
+            var result = await apiCall("/api/write", "POST", {
+                ecu: 1664, did: 1006, value: {"OpMode": 2, "Required": "on", "Unknown": "0000"}
+            });
+            if (result.success) {
+                statusEl.textContent = "DHW heating requested";
+                statusEl.className = "align-self-center ms-2 small text-success";
+                showToast("One-time DHW heating triggered", "success");
+            } else {
+                statusEl.textContent = "Failed: " + (result.error || "unknown");
+                statusEl.className = "align-self-center ms-2 small text-danger";
+                showToast("DHW request failed: " + (result.error || "unknown"), "danger");
+            }
+        } catch (e) {}
+        btn.disabled = false;
+    };
+
+    window.cancelDhwOnce = async function () {
+        var statusEl = document.getElementById("quick-action-status");
+        var btn = document.getElementById("btn-dhw-cancel");
+        btn.disabled = true;
+        statusEl.textContent = "Cancelling...";
+        try {
+            var result = await apiCall("/api/write", "POST", {
+                ecu: 1664, did: 1006, value: {"OpMode": 0, "Required": "off", "Unknown": "0000"}
+            });
+            if (result.success) {
+                statusEl.textContent = "DHW request cancelled";
+                statusEl.className = "align-self-center ms-2 small text-muted";
+                showToast("DHW request cancelled", "info");
+            } else {
+                statusEl.textContent = "Cancel failed";
+                statusEl.className = "align-self-center ms-2 small text-danger";
+            }
+        } catch (e) {}
+        btn.disabled = false;
+    };
+
+    // --- Per-DID Write ---
+
+    window.doWrite = async function (btn) {
+        var ecu = parseInt(btn.dataset.writeEcu, 10);
+        var did = parseInt(btn.dataset.writeDid, 10);
+        var name = btn.dataset.writeName;
+        var codec = btn.dataset.writeCodec;
+        var subs = [];
+        try { subs = JSON.parse(btn.dataset.writeSubs); } catch(e) {}
+
+        var writeVal = null;
+        var writeSub = null;
+        var raw = false;
+
+        if (codec === "RawCodec") {
+            // Raw hex write
+            var hexInput = document.getElementById("winput-" + ecu + "_" + did);
+            if (!hexInput || !hexInput.value.trim()) {
+                showToast("Enter a hex value.", "warning");
+                return;
+            }
+            writeVal = hexInput.value.trim();
+            raw = true;
+
+        } else if (subs.length > 0 && codec === "O3EComplexType") {
+            // ComplexType — collect sub-field values
+            var filledSubs = {};
+            var filledCount = 0;
+            for (var i = 0; i < subs.length; i++) {
+                var s = subs[i];
+                if (s.name === "Unknown") continue;
+                var el = document.getElementById("wsub-" + ecu + "_" + did + "_" + s.name);
+                if (el && el.value !== "" && el.value !== "--") {
+                    var v = el.value;
+                    // Parse numbers
+                    if (s.type !== "O3EBool" && s.type !== "O3EEnum" && !isNaN(Number(v))) {
+                        v = Number(v);
+                    }
+                    filledSubs[s.name] = v;
+                    filledCount++;
+                }
+            }
+
+            if (filledCount === 0) {
+                showToast("Fill in at least one sub-field.", "warning");
+                return;
+            }
+
+            // If only one sub-field filled, write as sub-field
+            if (filledCount === 1) {
+                var subName = Object.keys(filledSubs)[0];
+                writeVal = filledSubs[subName];
+                writeSub = subName;
+            } else {
+                // Multiple sub-fields — write as full JSON
+                // Need to include current values for unfilled fields
+                writeVal = filledSubs;
+            }
+
+        } else {
+            // Simple numeric input
+            var input = document.getElementById("winput-" + ecu + "_" + did);
+            if (!input || !input.value.trim()) {
+                showToast("Enter a value.", "warning");
+                return;
+            }
+            var v = input.value.trim();
+            try { writeVal = JSON.parse(v); }
+            catch(e) {
+                var n = Number(v);
+                writeVal = isNaN(n) ? v : n;
+            }
+        }
+
+        // Confirm
+        var desc = writeSub
+            ? name + "." + writeSub + " = " + JSON.stringify(writeVal)
+            : name + " = " + JSON.stringify(writeVal);
+        if (!confirm("Write " + desc + "?\n\nIncorrect values can affect your heating system.")) {
+            return;
+        }
+
+        // Spinner
+        btn.disabled = true;
+        btn.textContent = "Writing...";
+
+        try {
+            var payload = {ecu: ecu, did: did, value: writeVal};
+            if (writeSub) payload.sub = writeSub;
+            if (raw) payload.raw = true;
+
+            var result = await apiCall("/api/write", "POST", payload);
+
+            if (result.success) {
+                var newVal = result.new_value;
+                var display = (newVal !== null && newVal !== undefined)
+                    ? (typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal))
+                    : "OK";
+                showToast("Write successful. New value: " + display, "success");
+                var cell = document.getElementById("wval-" + ecu + "_" + did);
+                if (cell && newVal !== null && newVal !== undefined) {
+                    cell.textContent = typeof newVal === "object" ? JSON.stringify(newVal) : String(newVal);
+                }
+            } else {
+                showToast("Write failed: " + (result.error || "unknown"), "danger");
+            }
+        } catch (e) {
+            // apiCall shows error toast
+        }
+
+        // Restore button
+        btn.disabled = false;
+        btn.textContent = "";
+        var icon = document.createElement("i");
+        icon.className = "bi bi-pencil-fill";
+        btn.appendChild(icon);
+        btn.appendChild(document.createTextNode(" Write"));
+    };
+})();
+</script>
+{% endblock %}

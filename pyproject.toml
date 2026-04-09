@@ -53,6 +53,13 @@ dependencies = [
 ]
 [project.optional-dependencies]
 dev = ["pytest", "pytest-cov", "black==21.10b0"]
+web = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "jinja2>=3.1",
+    "aiosqlite>=0.20",
+    "python-multipart>=0.0.9",
+]
 [project.urls]
 Homepage = "https://github.com/open3e/open3e"
 documentation = "https://github.com/open3e/open3e"
@@ -63,6 +70,7 @@ open3e = "open3e.Open3Eclient:main"
 open3e_depictSystem = "open3e.Open3E_depictSystem:main"
 open3e_dids2json = "open3e.Open3E_dids2json:main"
 open3e_dids2md = "open3e.Open3E_dids2md:main"
+open3e-web = "open3e.web.launcher:main"
 
 [tool.pytest.ini_options]
 pythonpath = "."

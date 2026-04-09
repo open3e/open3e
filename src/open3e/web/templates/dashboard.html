@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard — open3e{% endblock %}
+
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.iife.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uplot@1.6.30/dist/uPlot.min.css">
+<style>
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 6px;
+    }
+    .dashboard-card {
+        cursor: pointer;
+        transition: border-color 0.15s ease-in-out;
+        overflow: hidden;
+        min-width: 0;
+    }
+    .dashboard-card:hover {
+        border-color: #4dabf7 !important;
+    }
+    .dashboard-card .card-body {
+        padding: 0.35rem 0.5rem;
+        overflow: hidden;
+    }
+    .card-label {
+        font-size: 0.65rem;
+        color: #adb5bd;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.2;
+    }
+    .card-sublabel {
+        font-size: 0.55rem;
+        color: #6c757d;
+        line-height: 1.2;
+    }
+    .card-value {
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 1.3;
+    }
+    .card-ts {
+        font-size: 0.5rem;
+        color: #6c757d;
+        line-height: 1.2;
+    }
+    .chart-container {
+        display: none;
+        grid-column: 1 / -1;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <div class="d-flex align-items-center mb-4 gap-3">
+        <h2 class="mb-0">Dashboard</h2>
+        <span id="engine-state-badge" class="badge bg-secondary">loading...</span>
+    </div>
+
+    {% if not ecus %}
+    <div class="alert alert-warning" role="alert">
+        <i class="bi bi-exclamation-triangle"></i>
+        <strong>No ECUs detected.</strong>
+        Please run <a href="/depict" class="alert-link">System Depiction</a> to discover your heat pump.
+    </div>
+    {% elif not pinned %}
+    <div class="alert alert-info" role="alert">
+        <i class="bi bi-info-circle"></i>
+        <strong>No pinned datapoints.</strong>
+        Go to <a href="/datapoints" class="alert-link">Datapoints</a> and set the priority to <strong>3 (pinned)</strong> for the values you want to monitor here.
+    </div>
+    {% else %}
+    <div class="dashboard-grid">
+        {% for dp in pinned %}
+        <div>
+            <div
+                id="card-{{ dp.ecu_address }}_{{ dp.did }}"
+                class="card dashboard-card border"
+                onclick="toggleChart({{ dp.ecu_address }}, {{ dp.did }}, {{ dp.name | tojson }})"
+                title="Click to toggle chart"
+            >
+                <div class="card-body">
+                    <div class="card-label" title="{{ dp.name }}">{{ dp.name }}</div>
+                    <div class="card-sublabel">{{ '%03x' % dp.ecu_address }}.{{ dp.did }}</div>
+                    <div class="card-value">--</div>
+                    <div class="card-ts">&nbsp;</div>
+                </div>
+            </div>
+            <div id="chart-{{ dp.ecu_address }}_{{ dp.did }}" class="chart-container mt-1"></div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/dashboard.js?v=2"></script>
+<script>
+// Debug: log first few WebSocket messages to console
+(function() {
+    var origHandler = window.handleDidValue;
+    var count = 0;
+    if (typeof wsApi !== 'undefined' && wsApi) {
+        console.log("wsApi exists, onDidValue:", typeof wsApi.onDidValue);
+    }
+})();
+</script>
+{% endblock %}

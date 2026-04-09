@@ -4,6 +4,8 @@
 
 **_New: All info about data points available as json files for [general dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3Edatapoints.md) and [variant dids](https://github.com/open3e/open3e/blob/dids_to_markdown/src/open3e/Open3EdatapointsVariants.md)_**
 
+**_New: Web UI for browser-based configuration and monitoring_**
+
 <BR>
 
 # Open3E interface
@@ -13,6 +15,115 @@
 * Listen to commands on mqtt
 * Write data points in raw and json data format
 * Experimental write support for service 77
+* **Web UI** for configuration, live monitoring, and Home Assistant integration
+
+# Web UI
+
+open3e includes a browser-based management interface for configuring and monitoring Viessmann heat pumps. All configuration (CAN interface, MQTT broker, Home Assistant discovery, datapoint polling) is done through the web UI — no CLI arguments needed.
+
+## Features
+
+* **Dashboard** with live data cards and time-series charts (uPlot)
+* **Datapoints browser** with search, filter by ECU/priority, bulk enable/disable
+* **Priority-based polling** — High (every cycle), Medium (every 4th), Low (every 12th), Off
+* **Write values** with categorized DIDs, enum dropdowns, sub-field support
+* **MQTT publishing** with JSON or split mode, retained state messages, change detection
+* **Home Assistant MQTT auto-discovery** with 100+ typed entity inference rules
+* **Per-sub-field HA entities** for ComplexType DIDs (e.g., PowerState/ErrorState separately)
+* **50+ writable HA entities** — number sliders, select dropdowns, switches, buttons
+* **Operation Mode control** — set mixer circuits and DHW to Off/Heating/Cooling from HA
+* **System depiction** (ECU/DID scan) with live progress bar and console output
+* **CAN interface discovery** and configuration (simple + advanced parameters)
+* **Database backup/restore/download** via web interface
+* **Optional password authentication**
+* **System status** with CAN bus counters, engine state, MQTT connection info
+
+## Installation
+
+### Prerequisites
+
+* Linux host with SocketCAN (Raspberry Pi, any Linux with CAN adapter)
+* Python 3.9+
+* CAN interface connected to the Viessmann heat pump's internal bus
+
+### Option 1: pip install (recommended)
+
+Create a virtual environment and install with web dependencies:
+
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install git+https://github.com/open3e/open3e.git[web]
+
+### Option 2: From source (for development)
+
+    git clone https://github.com/open3e/open3e.git
+    cd open3e
+    python3 -m venv .venv
+    source .venv/bin/activate
+    pip install --editable ".[dev,web]"
+
+### Option 3: Docker Compose
+
+    git clone https://github.com/open3e/open3e.git
+    cd open3e/docker
+    docker compose up -d
+
+Uses host networking for SocketCAN access. See `docker/docker-compose.yml` for details.
+
+## Starting the Web UI
+
+    source .venv/bin/activate
+    open3e-web
+
+The server starts on port 8080. Open `http://<your-ip>:8080` in your browser.
+
+## Auto-start with systemd
+
+Create `/etc/systemd/system/open3e-web.service`:
+
+```ini
+[Unit]
+Description=open3e Web UI
+After=network-online.target
+
+[Service]
+Type=simple
+User=<your-user>
+WorkingDirectory=/home/<your-user>/open3e
+ExecStart=/home/<your-user>/open3e/.venv/bin/open3e-web
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Replace `<your-user>` with your Linux username, then:
+
+    sudo systemctl daemon-reload
+    sudo systemctl enable open3e-web
+    sudo systemctl start open3e-web
+
+## First-Run Setup
+
+1. **CAN interface** — Settings > CAN tab: select interface (e.g., `can0`), set bitrate (250000), apply
+2. **System Depiction** — scan for ECUs and datapoints (takes 10-20 minutes)
+3. **Datapoints** — enable polling for the values you need, set priorities (High/Medium/Low)
+4. **MQTT** (optional) — Settings > MQTT tab: configure broker host/port/credentials, test, save
+5. **Home Assistant** (optional) — Settings > HA tab: apply suggested defaults, publish discovery
+
+After first run, all settings are persisted in `open3e_web.db` and auto-restored on next launch.
+
+## Home Assistant Integration
+
+The web UI publishes MQTT auto-discovery messages that Home Assistant picks up automatically. Entities include:
+
+* **Sensors** — temperatures, pressures, energy, power, flow rates, compressor stats
+* **Number sliders** — temperature setpoints (Comfort/Standard/Reduced), pump limits
+* **Select dropdowns** — operation modes (Off/Heating/Cooling) for each mixer circuit and DHW
+* **Switches** — one-time DHW heating, external control enable
+
+All entity types, units, and icons are inferred from the datapoint names using 100+ pattern-matching rules. ComplexType DIDs get separate entities for each sub-field (e.g., `HeatPumpCompressor` splits into `PowerState` and `ErrorState`).
 
 # Smart Home Integrations and Add Ons
 
@@ -304,11 +415,28 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
     git clone https://github.com/open3e/open3e.git  
     cd open3e
-    pip install --editable .[dev]
+    pip install --editable ".[dev,web]"
 
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.7.0 (2026-04-07)
+* **New: Web UI** — browser-based management interface (`open3e-web`)
+* Dashboard with live data cards and uPlot time-series charts
+* Datapoints browser with search, filter, priority control, bulk actions
+* Priority-based CAN polling: High (every cycle), Medium (every 4th), Low (every 12th), Off
+* MQTT publishing with change detection, retained state messages, JSON/split mode
+* Home Assistant MQTT auto-discovery with smart type inference (100+ rules)
+* Per-sub-field HA entities for ComplexType DIDs
+* 50+ writable HA entities (number, select, switch, button)
+* CAN interface auto-discovery and configuration via web
+* System depiction with live progress bar, cancel, and auto-load results
+* Write values from the web UI with confirmation dialog
+* Database backup/restore/download
+* Optional password authentication
+* Docker Compose deployment with host networking for SocketCAN
+* Systemd service support for auto-start on boot
 
 ### 0.6.1 (2026-02-24)
 * Introduced list of data points in markdown format.

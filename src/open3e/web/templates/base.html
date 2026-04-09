@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}open3e{% endblock %}</title>
+
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <!-- Bootstrap Icons 1.11.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/static/css/app.css">
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <div class="d-flex">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar bg-dark border-end">
+            <!-- Header -->
+            <div class="sidebar-header p-3 border-bottom">
+                <h5 class="mb-1">
+                    <i class="bi bi-thermometer-half"></i> open3e
+                </h5>
+                <small class="text-muted">Web Interface</small>
+            </div>
+
+            <!-- Nav Links -->
+            <ul class="nav flex-column p-3">
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'dashboard' %}active{% endif %}" href="/">
+                        <i class="bi bi-speedometer2"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'datapoints' %}active{% endif %}" href="/datapoints">
+                        <i class="bi bi-graph-up"></i> Datapoints
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'write' %}active{% endif %}" href="/write">
+                        <i class="bi bi-pencil"></i> Write Values
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'depict' %}active{% endif %}" href="/depict">
+                        <i class="bi bi-diagram-3"></i> System Depiction
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'settings' %}active{% endif %}" href="/settings">
+                        <i class="bi bi-gear"></i> Settings
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {% if active_page == 'system' %}active{% endif %}" href="/system">
+                        <i class="bi bi-info-circle"></i> System Status
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Status Bar -->
+            <div class="sidebar-footer p-3 border-top mt-auto">
+                <div class="mb-2">
+                    <small class="text-muted">Status</small>
+                </div>
+                <div class="status-item mb-2">
+                    <span class="status-dot gray" id="status-can"></span>
+                    <small>CAN: <span id="status-can-text" class="text-danger">not connected</span></small>
+                </div>
+                <div class="status-item mb-2">
+                    <span class="status-dot gray" id="status-mqtt"></span>
+                    <small>MQTT: <span id="status-mqtt-text" class="text-danger">not connected</span></small>
+                </div>
+                <div class="status-item">
+                    <span class="status-dot gray" id="status-engine"></span>
+                    <small>Engine: <span id="status-engine-text" class="text-danger">not running</span></small>
+                </div>
+                <hr class="my-2 border-secondary">
+                <a href="/logout" id="logout-link" class="text-muted small text-decoration-none" style="display:none">
+                    <i class="bi bi-box-arrow-left me-1"></i>Logout
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content flex-grow-1">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3"></div>
+
+    <!-- Bootstrap 5.3.3 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+
+    <!-- App JS -->
+    <script src="/static/js/app.js?v=5"></script>
+
+    <!-- Initial status check on every page -->
+    <script>
+    (function() {
+        fetch("/api/live-status").then(function(r) { return r.json(); }).then(function(data) {
+            // CAN
+            if (data.can && data.can.available && data.can.state === "up") {
+                updateCanIndicator({state: "up"});
+            }
+            // MQTT
+            updateMqttIndicator(data.mqtt_connected);
+            // Engine
+            updateStatusIndicators({state: data.engine_state});
+            // Logout button
+            var logoutLink = document.getElementById("logout-link");
+            if (logoutLink) { logoutLink.style.display = data.auth_active ? "" : "none"; }
+        }).catch(function() {});
+    })();
+    </script>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>

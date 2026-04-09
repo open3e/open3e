@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+
+{% block title %}System Status — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <h2 class="mb-4">System Status</h2>
+
+    <div class="row g-4">
+        <!-- Software card -->
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <i class="bi bi-box"></i> Software
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <tbody>
+                            <tr>
+                                <th class="ps-3">open3e version</th>
+                                <td class="pe-3">{{ status.open3e_version }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">Python version</th>
+                                <td class="pe-3">{{ status.python_version }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- CAN Bus card -->
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <i class="bi bi-hdd-network"></i> CAN Bus
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <tbody>
+                            <tr>
+                                <th class="ps-3">Interface</th>
+                                <td class="pe-3">{{ can_status.interface or "—" }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">State</th>
+                                <td class="pe-3">
+                                    {% if can_status.available and can_status.get("state", "") == "up" %}
+                                        <span class="badge bg-success">up</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">{{ can_status.get("state", "unavailable") }}</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">RX packets</th>
+                                <td class="pe-3" id="can-rx-packets">{{ can_status.get("rx_packets", "—") }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">TX packets</th>
+                                <td class="pe-3" id="can-tx-packets">{{ can_status.get("tx_packets", "—") }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">RX errors</th>
+                                <td class="pe-3" id="can-rx-errors">{{ can_status.get("rx_errors", "—") }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">TX errors</th>
+                                <td class="pe-3" id="can-tx-errors">{{ can_status.get("tx_errors", "—") }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engine card -->
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <i class="bi bi-cpu"></i> Engine
+                </div>
+                <div class="card-body p-0">
+                    <table class="table table-sm mb-0">
+                        <tbody>
+                            <tr>
+                                <th class="ps-3">State</th>
+                                <td class="pe-3" id="sys-engine-state">{{ engine_status.state }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">Cycle</th>
+                                <td class="pe-3" id="sys-engine-cycle">{{ engine_status.cycle }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">ECUs connected</th>
+                                <td class="pe-3">{{ engine_status.ecus_connected }}</td>
+                            </tr>
+                            <tr>
+                                <th class="ps-3">Datapoints configured</th>
+                                <td class="pe-3">{{ engine_status.datapoints_configured }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discovered ECUs card -->
+        <div class="col-12 col-md-6">
+            <div class="card h-100">
+                <div class="card-header">
+                    <i class="bi bi-diagram-3"></i> Discovered ECUs
+                </div>
+                <div class="card-body p-0">
+                    {% if ecus %}
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th class="ps-3">Address</th>
+                                <th>Name</th>
+                                <th class="pe-3">Device</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ecu-table-body">
+                            {% for ecu in ecus %}
+                            <tr>
+                                <td class="ps-3">0x{{ "%02X" | format(ecu.address) }}</td>
+                                <td>{{ ecu.name or "—" }}</td>
+                                <td class="pe-3">{{ ecu.device_prop or "—" }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <div class="p-3 text-muted">No ECUs discovered yet.</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var ws = openWebSocket();
+
+    ws.onEngineState = function (msg) {
+        var stateEl = document.getElementById("sys-engine-state");
+        var cycleEl = document.getElementById("sys-engine-cycle");
+        if (stateEl && msg.state !== undefined) stateEl.textContent = msg.state;
+        if (cycleEl && msg.cycle !== undefined) cycleEl.textContent = msg.cycle;
+    };
+
+    // Periodic refresh of CAN counters and ECU list
+    function refreshStatus() {
+        fetch("/api/can/status").then(function(r) { return r.json(); }).then(function(data) {
+            var el;
+            el = document.getElementById("can-rx-packets");
+            if (el && data.rx_packets !== undefined) el.textContent = data.rx_packets;
+            el = document.getElementById("can-tx-packets");
+            if (el && data.tx_packets !== undefined) el.textContent = data.tx_packets;
+            el = document.getElementById("can-rx-errors");
+            if (el && data.rx_errors !== undefined) el.textContent = data.rx_errors;
+            el = document.getElementById("can-tx-errors");
+            if (el && data.tx_errors !== undefined) el.textContent = data.tx_errors;
+        }).catch(function() {});
+
+        fetch("/api/ecus").then(function(r) { return r.json(); }).then(function(ecus) {
+            var tbody = document.getElementById("ecu-table-body");
+            if (!tbody) return;
+            if (ecus.length === 0) {
+                tbody.parentElement.parentElement.querySelector(".text-muted") ||
+                    (tbody.textContent = "");
+                return;
+            }
+            var html = "";
+            for (var i = 0; i < ecus.length; i++) {
+                var e = ecus[i];
+                var addr = "0x" + (e.address !== undefined ? e.address.toString(16).toUpperCase().padStart(2, "0") : "??");
+                html += "<tr><td class='ps-3'>" + addr + "</td><td>" + (e.name || "—") + "</td><td class='pe-3'>" + (e.device_prop || "—") + "</td></tr>";
+            }
+            tbody.textContent = "";
+            tbody.insertAdjacentHTML("beforeend", html);
+        }).catch(function() {});
+    }
+
+    // Refresh every 5 seconds
+    setInterval(refreshStatus, 5000);
+    // Initial refresh
+    refreshStatus();
+})();
+</script>
+{% endblock %}
