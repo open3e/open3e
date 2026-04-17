@@ -477,7 +477,7 @@ class O3EList(udsoncan.DidCodec):
         self.string_len = string_len
         self.id = idStr
         self.subTypes = subTypes
-        self.len = len
+        self.len = arraylength
         self.desc = desc
         self.info = info
         self.acc = acc
@@ -522,7 +522,7 @@ class O3EList(udsoncan.DidCodec):
             if subType.id.lower() == 'count':
                 count = int(subType.decode(string_bin[index:index+subType.string_len]))
                 result[subType.id]=count 
-                index =+ subType.string_len 
+                index += subType.string_len
 
             elif type(subType) is O3EComplexType:
                 result[subType.id] = []
