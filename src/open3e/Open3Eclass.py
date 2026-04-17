@@ -164,7 +164,7 @@ class O3Eclass():
         try:
             did = int(eval(str(v)))
             return did
-        except:
+        except Exception:
             for did,cdc in self.dataIdentifiers.items():
                 if(cdc.id.lower() == str(v).lower()):
                     return did
@@ -174,7 +174,7 @@ class O3Eclass():
         try:
             sub = int(eval(str(v)))
             return sub
-        except:
+        except Exception:
             for sub in range(len(self.dataIdentifiers[did].subTypes)):
                 if(self.dataIdentifiers[did].subTypes[sub].id.lower() == str(v).lower()):
                     return sub
@@ -271,8 +271,9 @@ class O3Eclass():
             string_bin,_ = self.readPure(idid, binary=True)
             string_bin_sub = string_bin[startIndexSub:stopIndexSub]
 
-            open3e.Open3Ecodecs.flag_rawmode = raw
-            decodedData = selectedSub.decode(string_bin_sub)
+            with open3e.Open3Ecodecs.codec_lock:
+                open3e.Open3Ecodecs.flag_rawmode = raw
+                decodedData = selectedSub.decode(string_bin_sub)
 
             return decodedData, selectedSub.id, idid
         except NegativeResponseException as e:
@@ -283,9 +284,10 @@ class O3Eclass():
                         
     # not global anymore... ;-)
     def _readByDid(self, did:int, raw:bool):
-        if(did in self.dataIdentifiers): 
-            open3e.Open3Ecodecs.flag_rawmode = raw
-            response = self.uds_client.read_data_by_identifier([did])
+        if(did in self.dataIdentifiers):
+            with open3e.Open3Ecodecs.codec_lock:
+                open3e.Open3Ecodecs.flag_rawmode = raw
+                response = self.uds_client.read_data_by_identifier([did])
             # return value and idstr
             return response.service_data.values[did], self.dataIdentifiers[did].id
         else:
@@ -302,7 +304,8 @@ class O3Eclass():
                 raise KeyError(f"No Codec specified for DID {idid}")
             
             if(sub is None):
-                return self._writeByDid(idid, val, raw, useService77)
+                with open3e.Open3Ecodecs.codec_lock:
+                    return self._writeByDid(idid, val, raw, useService77)
 
             selectedDid = self.dataIdentifiers[idid]
 
@@ -328,17 +331,18 @@ class O3Eclass():
             else:
                 string_bin,_ = self.readPure(idid, binary=True)
 
-            # encode value to bytes
-            open3e.Open3Ecodecs.flag_rawmode = raw 
-            string_bin_sub = selectedSub.encode(val)
+            with open3e.Open3Ecodecs.codec_lock:
+                # encode value to bytes
+                open3e.Open3Ecodecs.flag_rawmode = raw
+                string_bin_sub = selectedSub.encode(val)
 
-            # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
-            string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
+                # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
+                string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
 
-            # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
-            open3e.Open3Ecodecs.flag_binary = True
-            ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)        
-            open3e.Open3Ecodecs.flag_binary = False   
+                # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
+                open3e.Open3Ecodecs.flag_binary = True
+                ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)
+                open3e.Open3Ecodecs.flag_binary = False
             return ret1,ret2
         except NegativeResponseException as e:
             return f'Device rejected this write access. {e}', f'ERR/{hex(self.tx)}.{idid}'
