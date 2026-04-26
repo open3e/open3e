@@ -14,13 +14,15 @@
    limitations under the License.
 """
 
-import udsoncan 
+import udsoncan
 from typing import Optional, Any
 import datetime
+import threading
 import open3e.Open3Eenums
 
 flag_rawmode = True
 flag_binary = False
+codec_lock = threading.Lock()
 
 class RawCodec(udsoncan.DidCodec):
     def __init__(self, string_len: int, idStr: str, desc:str='', info:str='', acc:str=''):
@@ -454,12 +456,13 @@ class O3EEnum(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> str:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
+        val = None
         try:
             val = int.from_bytes(string_bin[0:self.string_len], byteorder="little", signed=False)
             txt = open3e.Open3Eenums.E3Enums[self.listStr][val]
             return {"ID": val,
                     "Text": txt }
-        except:
+        except Exception:
             return {"ID": val,
                     "Text": "not found in " + self.listStr}
         
@@ -477,7 +480,7 @@ class O3EList(udsoncan.DidCodec):
         self.string_len = string_len
         self.id = idStr
         self.subTypes = subTypes
-        self.len = len
+        self.len = arraylength
         self.desc = desc
         self.info = info
         self.acc = acc
@@ -522,7 +525,7 @@ class O3EList(udsoncan.DidCodec):
             if subType.id.lower() == 'count':
                 count = int(subType.decode(string_bin[index:index+subType.string_len]))
                 result[subType.id]=count 
-                index =+ subType.string_len 
+                index += subType.string_len
 
             elif type(subType) is O3EComplexType:
                 result[subType.id] = []
