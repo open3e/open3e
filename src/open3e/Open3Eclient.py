@@ -17,6 +17,7 @@ import signal
 import argparse
 import time
 import json
+import queue
 import paho.mqtt.client as paho
 from udsoncan.exceptions import *
 from os import path
@@ -40,7 +41,7 @@ def main():
     dicEcus = {}      # addr:ecu
     dicDevAddrs = {}  # devstr:addr
 
-    cmnd_queue = []   # command queue to serialize MQTT requests
+    cmnd_queue = queue.Queue()   # command queue to serialize MQTT requests
 
     # utils ~~~~~~~~~~~~~~~~~~~~~~~
     def getint(v):
@@ -160,8 +161,8 @@ def main():
         if topic == args.listen:
             try:
                 payload = json.loads(msg.payload.decode())  # Payload in Dict umwandeln
-                cmnd_queue.append(payload)
-            except:
+                cmnd_queue.put(payload)
+            except Exception:
                 print('bad payload: ' + str(msg.payload)+'; topic: ' + str(msg.topic))
                 mqtt_client.publish(mqttTopic + "/ERR", 'bad payload: ' + str(msg.payload))
                 payload = ''
@@ -208,8 +209,11 @@ def main():
                 next_read_time = time.time()
 
             while True:
-                if len(cmnd_queue) > 0:
-                    cd = cmnd_queue.pop(0)
+                try:
+                    cd = cmnd_queue.get_nowait()
+                except queue.Empty:
+                    cd = None
+                if cd is not None:
 
                     if not cd['mode'] in cmnds:
                         print('bad mode value = ' + str(cd['mode']) + '\nSupported commands are: ' + json.dumps(cmnds)[1:-1])
@@ -244,7 +248,7 @@ def main():
                             if type(wd[1]) == str:
                                 try:
                                     didVal = json.loads(wd[1])    # value: if string try to parse as json
-                                except:
+                                except Exception:
                                     didVal = wd[1]  # value could not be parsed as json, keep string value. This is the case for e.g. time values as "11:30"
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
@@ -266,7 +270,7 @@ def main():
                             if type(wd[1]) == str:
                                 try:
                                     didVal = json.loads(wd[1])    # value: if string try to parse as json
-                                except:
+                                except Exception:
                                     didVal = wd[1]  # value could not be parsed as json, keep string value. This is the case for e.g. time values as "11:30"
                             else:
                                 didVal = wd[1]  # value: if mqtt payload already parsed
@@ -310,7 +314,7 @@ def main():
                                 did = ecudidsub[1]
                                 if(ecudidsub[2] is not None):
                                     did = f"{ecudidsub[1]}.{ecudidsub[2]}"
-                                cmnd_queue.append({'mode':read_mode,'addr': ecudidsub[0],'data': [did]})
+                                cmnd_queue.put({'mode':read_mode,'addr': ecudidsub[0],'data': [did]})
                             if(timestep != None):
                                 next_read_time = next_read_time + int(timestep)
                             else:
@@ -521,7 +525,7 @@ def main():
                     readbydid(addr=ecudidsub[0], did=ecudidsub[1], raw=args.raw, msglvl=mlvl, sub=ecudidsub[2])
                     time.sleep(0.02)
                 if(args.timestep != None):
-                    time.sleep(float(eval(args.timestep)))
+                    time.sleep(float(args.timestep))
                 else:
                     break
 

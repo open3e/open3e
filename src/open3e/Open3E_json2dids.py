@@ -34,7 +34,7 @@ from open3e.Open3Ecodecs import *
 try:
     with open('Open3Edatapoints_writables.json', 'r') as file:
         dids_writable = json.load(file)
-except:
+except Exception:
     dids_writable = {}
 
 def collectComments(fn):
@@ -49,7 +49,7 @@ def collectComments(fn):
                 p = line.find('#',14)
                 if p>0:
                     comments[did] = line[p:-1]  # remove \n
-            except:
+            except Exception:
                 pass
     return comments
 
