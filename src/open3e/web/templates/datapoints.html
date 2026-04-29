@@ -1,0 +1,186 @@
+{% extends "base.html" %}
+
+{% block title %}Datapoints — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <!-- Header -->
+    <div class="d-flex align-items-center justify-content-between mb-3">
+        <h4 class="mb-0">
+            <i class="bi bi-graph-up"></i> Datapoints
+            <span class="badge bg-secondary ms-2">{{ datapoints | length }}</span>
+        </h4>
+        <div>
+            <button class="btn btn-sm btn-outline-secondary" onclick="expandAll()">
+                <i class="bi bi-arrows-expand"></i> Expand All
+            </button>
+            <button class="btn btn-sm btn-outline-secondary" onclick="collapseAll()">
+                <i class="bi bi-arrows-collapse"></i> Collapse All
+            </button>
+        </div>
+    </div>
+
+    <!-- Filters + Bulk Actions -->
+    <div class="row g-2 mb-3 align-items-end">
+        <div class="col-md-4">
+            <div class="input-group input-group-sm">
+                <span class="input-group-text"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control" id="dp-search"
+                       placeholder="Search by name or DID..."
+                       oninput="filterTable()">
+            </div>
+        </div>
+        <div class="col-md-2">
+            <select class="form-select form-select-sm" id="dp-prio-filter" onchange="filterTable()">
+                <option value="">All Priorities</option>
+                <option value="0">0 — Off</option>
+                <option value="1">1 — Low</option>
+                <option value="2">2 — Medium</option>
+                <option value="3">3 — High</option>
+            </select>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group input-group-sm">
+                <select class="form-select" id="bulk-priority-select">
+                    <option value="">Set priority...</option>
+                    <option value="0">0-Off</option>
+                    <option value="1">1-Low</option>
+                    <option value="2">2-Med</option>
+                    <option value="3">3-High</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button" onclick="bulkSetPriority()">Apply</button>
+                <button class="btn btn-outline-success" type="button" onclick="bulkSetPoll(true)">Poll On</button>
+                <button class="btn btn-outline-danger" type="button" onclick="bulkSetPoll(false)">Poll Off</button>
+            </div>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary btn-sm w-100" id="btn-save-apply" onclick="saveAndApply()">
+                <i class="bi bi-check-lg"></i> Save &amp; Apply
+            </button>
+        </div>
+    </div>
+    <div class="mb-3"><span id="save-status" class="small"></span></div>
+
+    <!-- Grouped by ECU -->
+    {% if grouped %}
+        {% for group in grouped %}
+        <div class="card mb-2 ecu-group" data-ecu="{{ group.ecu.address }}">
+            <div class="card-header py-2 d-flex justify-content-between align-items-center"
+                 style="cursor:pointer"
+                 data-bs-toggle="collapse" data-bs-target="#ecu-{{ group.ecu.address }}"
+                 aria-expanded="true">
+                <div>
+                    <strong>{{ group.ecu.name or 'ECU' }}</strong>
+                    <code class="text-muted ms-2">0x{{ '%03X' % group.ecu.address }}</code>
+                    <span class="badge bg-secondary ms-2">{{ group.datapoints | length }} DIDs</span>
+                    {% set enabled = group.datapoints | selectattr('poll_enabled') | list | length %}
+                    {% if enabled > 0 %}
+                    <span class="badge bg-success ms-1">{{ enabled }} polling</span>
+                    {% endif %}
+                </div>
+                <div>
+                    <input class="form-check-input me-2" type="checkbox"
+                           title="Select all in this ECU"
+                           onchange="toggleSelectEcu(this, {{ group.ecu.address }})">
+                    <i class="bi bi-chevron-down"></i>
+                </div>
+            </div>
+            <div class="collapse show" id="ecu-{{ group.ecu.address }}">
+                <div class="table-responsive">
+                    <table class="table table-sm table-hover align-middle mb-0"
+                           style="table-layout:fixed;width:100%">
+                        <thead>
+                            <tr>
+                                <th style="width:30px"></th>
+                                <th style="width:50px">DID</th>
+                                <th style="width:40%">Name</th>
+                                <th>Value</th>
+                                <th style="width:80px">Prio</th>
+                                <th style="width:42px">Poll</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for dp in group.datapoints %}
+                            <tr data-dp-id="{{ dp.id }}"
+                                data-name="{{ (dp.name or '') | lower }}"
+                                data-did="{{ dp.did }}"
+                                data-ecu="{{ dp.ecu_address }}"
+                                data-priority="{{ dp.poll_priority }}">
+                                <td><input class="form-check-input dp-check" type="checkbox" value="{{ dp.id }}"></td>
+                                <td><code class="small">{{ dp.did }}</code></td>
+                                <td class="text-truncate" title="{{ dp.name }}">{{ dp.name or '—' }}</td>
+                                <td class="text-truncate"><span id="val-{{ dp.ecu_address }}_{{ dp.did }}" class="font-monospace small" title="">--</span></td>
+                                <td>
+                                    <select class="form-select form-select-sm py-0" style="font-size:0.75rem"
+                                            id="prio-sel-{{ dp.id }}"
+                                            onchange="setPriority({{ dp.id }}, this.value)">
+                                        <option value="0" {% if dp.poll_priority == 0 %}selected{% endif %}>0-Off</option>
+                                        <option value="1" {% if dp.poll_priority == 1 %}selected{% endif %}>1-Low</option>
+                                        <option value="2" {% if dp.poll_priority == 2 %}selected{% endif %}>2-Med</option>
+                                        <option value="3" {% if dp.poll_priority == 3 %}selected{% endif %}>3-Hi</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch mb-0">
+                                        <input class="form-check-input" type="checkbox"
+                                               id="poll-{{ dp.id }}"
+                                               {% if dp.poll_enabled %}checked{% endif %}
+                                               onchange="togglePolling({{ dp.id }}, this.checked)">
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-info">
+            No datapoints discovered yet. Run <a href="/depict">System Depiction</a> to scan the CAN bus.
+        </div>
+    {% endif %}
+</div>
+
+<style>
+@keyframes flash-green {
+    0%   { background-color: rgba(25, 135, 84, 0.5); }
+    100% { background-color: transparent; }
+}
+.flash-green {
+    animation: flash-green 0.8s ease-out;
+}
+.ecu-group .card-header .bi-chevron-down {
+    transition: transform 0.2s;
+}
+.ecu-group .card-header[aria-expanded="false"] .bi-chevron-down {
+    transform: rotate(-90deg);
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/datapoints.js?v=2"></script>
+<script>
+function expandAll() {
+    document.querySelectorAll('.ecu-group .collapse').forEach(function(el) {
+        if (!el.classList.contains('show')) {
+            new bootstrap.Collapse(el, {toggle: true});
+        }
+    });
+}
+function collapseAll() {
+    document.querySelectorAll('.ecu-group .collapse.show').forEach(function(el) {
+        new bootstrap.Collapse(el, {toggle: true});
+    });
+}
+function toggleSelectEcu(master, ecuAddr) {
+    document.querySelectorAll('#ecu-' + ecuAddr + ' .dp-check').forEach(function(cb) {
+        var row = cb.closest('tr');
+        if (!row || row.style.display === 'none') return;
+        cb.checked = master.checked;
+    });
+}
+</script>
+{% endblock %}

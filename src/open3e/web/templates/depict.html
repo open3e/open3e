@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+
+{% block title %}System Depiction — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <h4 class="mb-4"><i class="bi bi-diagram-3"></i> System Depiction</h4>
+
+    <!-- Description card -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Scan the CAN bus for connected ECUs</h5>
+            <p class="card-text text-muted mb-3">
+                System depiction scans the CAN bus to discover all connected Viessmann ECUs and
+                their supported datapoints. The scan typically takes <strong>10-20 minutes</strong>
+                to complete. During the scan the CAN engine will be paused and no live polling
+                will occur.
+            </p>
+
+            <div class="row g-3 align-items-end" style="max-width: 520px;">
+                <div class="col">
+                    <label for="can-interface-input" class="form-label">CAN Interface</label>
+                    <input type="text" class="form-control" id="can-interface-input"
+                           value="{{ can_interface or '' }}"
+                           placeholder="e.g. can0">
+                    <div class="form-text">The CAN interface to use for the scan.</div>
+                </div>
+                <div class="col-auto">
+                    <button class="btn btn-primary" id="btn-start-scan" onclick="startScan()">
+                        <i class="bi bi-play-fill"></i> Start Scan
+                    </button>
+                    <button class="btn btn-danger d-none" id="btn-cancel-scan" onclick="cancelScan()">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-3">
+                <span id="scan-status" class="text-muted small"></span>
+            </div>
+
+            <!-- Progress section (hidden until scan starts) -->
+            <div id="progress-section" class="mt-3" style="display:none;">
+                <div class="d-flex justify-content-between mb-1">
+                    <small id="progress-detail" class="text-muted">Starting...</small>
+                    <small id="progress-percent" class="text-muted">0%</small>
+                </div>
+                <div class="progress" style="height:20px;">
+                    <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar" style="width:0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+            <!-- File checklist (hidden until files are being written) -->
+            <div id="checklist-section" class="mt-3" style="display:none;">
+                <small class="text-muted d-block mb-2">Generated files:</small>
+                <div id="checklist-items"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Console output card -->
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span><i class="bi bi-terminal"></i> Scan Output</span>
+            <div>
+                <button class="btn btn-sm btn-outline-info d-none" id="btn-autoscroll" onclick="enableAutoScroll()">
+                    <i class="bi bi-arrow-down-circle"></i> Auto-scroll
+                </button>
+                <button class="btn btn-sm btn-outline-secondary ms-1" onclick="clearConsole()">
+                    <i class="bi bi-trash"></i> Clear
+                </button>
+            </div>
+        </div>
+        <div class="card-body p-0">
+            <pre id="depict-console"
+                 style="background:#1a1a1a;color:#d4d4d4;height:400px;overflow-y:auto;
+                        margin:0;padding:1rem;font-family:monospace;font-size:0.85rem;
+                        border-radius:0 0 var(--bs-card-border-radius) var(--bs-card-border-radius);
+                        white-space:pre-wrap;word-break:break-all;"></pre>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+    var autoScroll = true;
+
+    // --- Progress & checklist functions (defined first for restore) ---
+
+    function updateProgress(progress) {
+        var section = document.getElementById('progress-section');
+        var bar = document.getElementById('progress-bar');
+        var detail = document.getElementById('progress-detail');
+        var pct = document.getElementById('progress-percent');
+        section.style.display = 'block';
+        var p = Math.max(0, Math.min(100, progress.percent));
+        bar.style.width = p + '%';
+        bar.setAttribute('aria-valuenow', p);
+        pct.textContent = p + '%';
+        if (progress.detail) {
+            detail.textContent = progress.detail;
+        }
+        if (p >= 100) {
+            bar.classList.remove('progress-bar-animated');
+            bar.classList.add('bg-success');
+        }
+        // Update checklist
+        if (progress.checklist && progress.checklist.length > 0) {
+            updateChecklist(progress.checklist);
+        }
+    }
+
+    function updateChecklist(items) {
+        var section = document.getElementById('checklist-section');
+        var container = document.getElementById('checklist-items');
+        if (items.length === 0) return;
+        section.style.display = 'block';
+        container.textContent = '';
+        for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var div = document.createElement('div');
+            div.className = 'mb-1';
+            var icon = document.createElement('i');
+            if (item.done) {
+                icon.className = 'bi bi-check-circle-fill text-success me-2';
+            } else {
+                icon.className = 'bi bi-circle text-muted me-2';
+            }
+            div.appendChild(icon);
+            var span = document.createElement('span');
+            span.className = item.done ? 'text-success' : 'text-muted';
+            span.textContent = item.file;
+            div.appendChild(span);
+            container.appendChild(div);
+        }
+    }
+
+    // --- Restore state from server on page load ---
+
+    var serverState = {{ depict_state | tojson }};
+    if (serverState.log && serverState.log.length > 0) {
+        var pre = document.getElementById('depict-console');
+        pre.textContent = serverState.log.join('\n') + '\n';
+        pre.scrollTop = pre.scrollHeight;
+    }
+    if (serverState.running) {
+        var btnStart = document.getElementById('btn-start-scan');
+        var btnCancel = document.getElementById('btn-cancel-scan');
+        var statusEl = document.getElementById('scan-status');
+        btnStart.classList.add('d-none');
+        btnCancel.classList.remove('d-none');
+        statusEl.textContent = 'Scan in progress...';
+        statusEl.className = 'text-warning small';
+        if (serverState.progress) {
+            updateProgress(serverState.progress);
+        }
+    } else if (serverState.returncode !== null) {
+        var statusEl = document.getElementById('scan-status');
+        if (serverState.returncode === 0) {
+            statusEl.textContent = 'Scan completed successfully.';
+            statusEl.className = 'text-success small';
+        } else {
+            statusEl.textContent = 'Scan finished (exit code ' + serverState.returncode + ')';
+            statusEl.className = 'text-danger small';
+        }
+        if (serverState.progress) {
+            updateProgress(serverState.progress);
+        }
+    }
+
+    // --- WebSocket ---
+
+    var ws = openWebSocket();
+
+    ws.onDepictProgress = function (msg) {
+        appendConsole(msg.line || '');
+        if (msg.progress) {
+            updateProgress(msg.progress);
+        }
+    };
+
+    ws.onDepictComplete = function (msg) {
+        var success = msg.returncode === 0;
+        var statusEl = document.getElementById('scan-status');
+        var btnStart = document.getElementById('btn-start-scan');
+        var btnCancel = document.getElementById('btn-cancel-scan');
+
+        // Force progress bar to 100%
+        updateProgress({percent: 100, detail: success ? 'Scan complete' : 'Scan finished', checklist: []});
+
+        statusEl.textContent = success
+            ? 'Scan completed successfully.'
+            : 'Scan finished (exit code ' + (msg.returncode || '?') + ')';
+        statusEl.className = success ? 'text-success small' : 'text-danger small';
+
+        btnStart.classList.remove('d-none');
+        btnStart.disabled = false;
+        btnStart.textContent = '';
+        var icon = document.createElement('i');
+        icon.className = 'bi bi-play-fill';
+        btnStart.appendChild(icon);
+        btnStart.appendChild(document.createTextNode(' Start Scan'));
+        btnCancel.classList.add('d-none');
+
+        if (success) {
+            appendConsole('\nLoading scan results into database...');
+            loadResults().then(function() {
+                appendConsole('Results loaded. Go to Datapoints to see discovered data.');
+            });
+        }
+    };
+
+    // --- Actions ---
+
+    window.startScan = async function () {
+        var iface = document.getElementById('can-interface-input').value.trim();
+        if (!iface) {
+            showToast('Please enter a CAN interface name.', 'warning');
+            return;
+        }
+
+        var btnStart = document.getElementById('btn-start-scan');
+        var btnCancel = document.getElementById('btn-cancel-scan');
+        var statusEl = document.getElementById('scan-status');
+
+        btnStart.classList.add('d-none');
+        btnCancel.classList.remove('d-none');
+
+        statusEl.textContent = 'Scan in progress...';
+        statusEl.className = 'text-warning small';
+
+        clearConsole();
+        document.getElementById('progress-section').style.display = 'block';
+        document.getElementById('progress-bar').style.width = '0%';
+        document.getElementById('progress-bar').className = 'progress-bar progress-bar-striped progress-bar-animated';
+        document.getElementById('progress-detail').textContent = 'Starting...';
+        document.getElementById('progress-percent').textContent = '0%';
+        document.getElementById('checklist-section').style.display = 'none';
+        document.getElementById('checklist-items').textContent = '';
+        autoScroll = true;
+        document.getElementById('btn-autoscroll').classList.add('d-none');
+
+        try {
+            await apiCall('/api/depict/start', 'POST', { can_interface: iface });
+        } catch (e) {
+            btnStart.classList.remove('d-none');
+            btnCancel.classList.add('d-none');
+            btnStart.disabled = false;
+            statusEl.textContent = 'Failed to start scan.';
+            statusEl.className = 'text-danger small';
+        }
+    };
+
+    window.cancelScan = async function () {
+        try {
+            await apiCall('/api/depict/cancel', 'POST');
+            showToast('Scan cancellation requested.', 'warning');
+        } catch (e) {
+            // error toast shown by apiCall
+        }
+    };
+
+    window.loadResults = async function () {
+        try {
+            var data = await apiCall('/api/depict/load', 'POST');
+            showToast('Loaded ' + data.devices_loaded + ' device(s) from scan results.', 'success');
+        } catch (e) {
+            // error toast already shown by apiCall
+        }
+    };
+
+    // --- Console with smart auto-scroll ---
+
+    var consolePre = document.getElementById('depict-console');
+
+    consolePre.addEventListener('scroll', function () {
+        // If user scrolled up, pause auto-scroll
+        var atBottom = (consolePre.scrollTop + consolePre.clientHeight >= consolePre.scrollHeight - 30);
+        if (!atBottom && autoScroll) {
+            autoScroll = false;
+            document.getElementById('btn-autoscroll').classList.remove('d-none');
+        }
+    });
+
+    window.enableAutoScroll = function () {
+        autoScroll = true;
+        document.getElementById('btn-autoscroll').classList.add('d-none');
+        consolePre.scrollTop = consolePre.scrollHeight;
+    };
+
+    window.appendConsole = function (text) {
+        consolePre.textContent += text + '\n';
+        if (autoScroll) {
+            consolePre.scrollTop = consolePre.scrollHeight;
+        }
+    };
+
+    window.clearConsole = function () {
+        consolePre.textContent = '';
+    };
+}());
+</script>
+{% endblock %}

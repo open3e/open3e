@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  open3e-web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: open3e-web
+    restart: unless-stopped
+    network_mode: host          # Required for SocketCAN access (can0 etc.)
+    privileged: true            # Required for ip link set can0 up
+    volumes:
+      - open3e-data:/data       # Persistent: SQLite DB, backups, devices.json, datapoint files
+    environment:
+      - TZ=${TZ:-Europe/Berlin}
+    # Port 8080 exposed via host networking
+    # Access at http://<host-ip>:8080
+
+volumes:
+  open3e-data:
+    driver: local
