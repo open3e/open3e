@@ -71,6 +71,7 @@ open3e_depictSystem = "open3e.Open3E_depictSystem:main"
 open3e_dids2json = "open3e.Open3E_dids2json:main"
 open3e_dids2md = "open3e.Open3E_dids2md:main"
 open3e-web = "open3e.web.launcher:main"
+open3e_topology = "open3e.Open3Etopology:main"
 
 [tool.pytest.ini_options]
 pythonpath = "."
