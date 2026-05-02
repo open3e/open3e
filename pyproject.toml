@@ -31,7 +31,7 @@ version_file_template = 'git_ref = "{scm_version.node}"'
 # PEP 621 https://peps.python.org/pep-0621/
 [project]
 name = "open3e"
-version = "0.6.2"
+version = "0.6.3"
 # for automated versioning by pypa/setuptools_scm. see https://peps.python.org/pep-0621/#dynamic
 # dynamic = ["version"]
 description = "Connects to E3 (vcal, vdens, vx3...) controllers via CAN or DOIP (UDS)."
@@ -71,7 +71,7 @@ open3e_depictSystem = "open3e.Open3E_depictSystem:main"
 open3e_dids2json = "open3e.Open3E_dids2json:main"
 open3e_dids2md = "open3e.Open3E_dids2md:main"
 open3e-web = "open3e.web.launcher:main"
-open3e_topology = "open3e.Open3Etopology:main"
+open3e_topology = "open3e.Open3E_topology:main"
 
 [tool.pytest.ini_options]
 pythonpath = "."
