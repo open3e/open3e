@@ -111,9 +111,9 @@ def _collect_topology_elements(topology_data: dict, dev_prop_names: dict) -> lis
 
 def _uds_keys(uds_devices: list) -> set:
     return {
-        f"{d['vin']}_{d['dev_prop_id']}"
+        f"{d['vin']}_{d['devPropId']}"
         for d in uds_devices
-        if d.get('vin') and d['vin'] != '0000000000000000' and d.get('dev_prop_id') is not None
+        if d.get('vin') and d['vin'] != '0000000000000000' and d.get('devPropId') is not None
     }
 
 
