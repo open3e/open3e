@@ -221,10 +221,13 @@ def _build_html(result: dict) -> str:
                         (8, 'ModBus'), (14, 'ServiceBus')]
     )
 
+    scan_dt   = datetime.fromisoformat(result['scanTime'].replace('Z', '+00:00'))
+    scan_info = scan_dt.astimezone().strftime('%c')
+
     div = (
         f'<div style="font-family:sans-serif;font-size:13px;padding:8px">\n'
         f'<h3 style="margin:0 0 4px 0">E3 CAN Bus Topology</h3>\n'
-        f'<p style="margin:0 0 12px 0;color:#666;font-size:11px">Scan: {result["scanTime"]}'
+        f'<p style="margin:0 0 12px 0;color:#666;font-size:11px">Scan: {scan_info}'
         f' &nbsp;|&nbsp; UDS devices: {len(result["udsDevices"])}'
         f' &nbsp;|&nbsp; Topology elements: {len(result["topologyElements"])}</p>\n'
         f'<h4 style="margin:0 0 4px 0">UDS-Accessible Devices</h4>\n'
