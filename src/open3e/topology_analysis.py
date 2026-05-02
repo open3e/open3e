@@ -9,6 +9,7 @@ proper (non-Raw) codec. Extend this set when additional DIDs gain a real codec.
 """
 
 from datetime import datetime, timezone
+import locale
 
 TOPOLOGY_DIDS = frozenset({954, 1286, 1287, 1288, 1289})
 
@@ -221,8 +222,13 @@ def _build_html(result: dict) -> str:
                         (8, 'ModBus'), (14, 'ServiceBus')]
     )
 
-    scan_dt   = datetime.fromisoformat(result['scanTime'].replace('Z', '+00:00'))
-    scan_info = scan_dt.astimezone().strftime('%c')
+    scan_dt = datetime.fromisoformat(result['scanTime'].replace('Z', '+00:00')).astimezone()
+    saved = locale.setlocale(locale.LC_TIME)
+    try:
+        locale.setlocale(locale.LC_TIME, '')
+        scan_info = scan_dt.strftime('%c')
+    finally:
+        locale.setlocale(locale.LC_TIME, saved)
 
     div = (
         f'<div style="font-family:sans-serif;font-size:13px;padding:8px">\n'
