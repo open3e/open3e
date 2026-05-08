@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import asyncio
 import importlib.metadata
 import json
 import os
@@ -9,6 +10,7 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
+from types import SimpleNamespace
 from typing import Optional
 
 from fastapi import FastAPI, File, HTTPException, Request, UploadFile, WebSocket, WebSocketDisconnect
@@ -1055,5 +1057,66 @@ def create_app(store: ConfigStore) -> FastAPI:
                 logging.getLogger(__name__).warning("Auto-start engine failed: %s", e)
 
         return {"status": "ok", "devices_loaded": len(devices), "datapoints_loaded": total_dps}
+
+    # -----------------------------------------------------------------------
+    # Page: Bus Topology
+    # -----------------------------------------------------------------------
+
+    @app.get("/topology", response_class=HTMLResponse)
+    async def topology_page(request: Request):
+        cache = getattr(app.state, "topology_cache", None)
+        return templates.TemplateResponse(
+            request, "topology.html",
+            {"active_page": "topology", "topology_cache": cache},
+        )
+
+    # -----------------------------------------------------------------------
+    # API: Topology scan
+    # -----------------------------------------------------------------------
+
+    @app.post("/api/topology")
+    async def api_topology():
+        if getattr(app.state, "topology_running", False):
+            raise HTTPException(status_code=409, detail="Topology scan already running")
+
+        devices_path = "devices.json"
+        if not os.path.isfile(devices_path):
+            raise HTTPException(
+                status_code=404,
+                detail="devices.json not found — run System Depiction first",
+            )
+
+        can_iface = await store.get_setting("can_interface")
+        if not can_iface:
+            raise HTTPException(status_code=503, detail="No CAN interface configured")
+
+        try:
+            with open(devices_path) as f:
+                devices = json.load(f)
+        except Exception as e:
+            raise HTTPException(status_code=500, detail=f"Cannot read devices.json: {e}")
+
+        devices_dir = os.path.dirname(os.path.abspath(devices_path))
+
+        app.state.topology_cache = None
+        app.state.topology_running = True
+        try:
+            from open3e.Open3E_topology import _collect
+            from open3e.topology_analysis import build_topology_summary
+
+            args = SimpleNamespace(can=can_iface, doip=None)
+            topology_data = await asyncio.to_thread(
+                _collect, devices, devices_dir, args, False
+            )
+
+            if not topology_data:
+                raise HTTPException(status_code=503, detail="No devices responded")
+
+            result = build_topology_summary(topology_data)
+            app.state.topology_cache = {"html": result["html"], "json": result["json"]}
+            return {"html": result["html"], "json": result["json"]}
+
+        finally:
+            app.state.topology_running = False
 
     return app

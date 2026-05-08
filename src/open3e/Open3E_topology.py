@@ -102,23 +102,29 @@ def _collect(devices: dict, devices_dir: str, args: argparse.Namespace, verbose:
                 print(f"connection failed: {e}")
             continue
 
-        # DID 256 – BusIdentification (always has a real codec in global datapoints)
-        bus_id = None
         try:
-            bus_id, _ = ecu._readByDid(_BUS_ID_DID, raw=False)
-        except Exception:
-            pass
-
-        # Topology matrix DIDs – only those with a proper (non-Raw) codec
-        matrices = []
-        for did in sorted(TOPOLOGY_DIDS):
-            codec = ecu.dataIdentifiers.get(did)
-            if codec is None or isinstance(codec, RawCodec):
-                continue
+            # DID 256 – BusIdentification (always has a real codec in global datapoints)
+            bus_id = None
             try:
-                val, _ = ecu._readByDid(did, raw=False)
-                if isinstance(val, dict) and val.get('Count', 0) > 0:
-                    matrices.append(val)
+                bus_id, _ = ecu._readByDid(_BUS_ID_DID, raw=False)
+            except Exception:
+                pass
+
+            # Topology matrix DIDs – only those with a proper (non-Raw) codec
+            matrices = []
+            for did in sorted(TOPOLOGY_DIDS):
+                codec = ecu.dataIdentifiers.get(did)
+                if codec is None or isinstance(codec, RawCodec):
+                    continue
+                try:
+                    val, _ = ecu._readByDid(did, raw=False)
+                    if isinstance(val, dict) and val.get('Count', 0) > 0:
+                        matrices.append(val)
+                except Exception:
+                    pass
+        finally:
+            try:
+                ecu.close()
             except Exception:
                 pass
 

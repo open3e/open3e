@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Bus Topology — open3e{% endblock %}
+
+{% block content %}
+<div class="p-4">
+    <h2 class="mb-1">Bus Topology</h2>
+    <p class="text-muted mb-4">
+        Reads DID 256 (BusIdentification) and topology matrix DIDs from all devices in
+        <code>devices.json</code>. The CAN engine is stopped during the scan and restarted
+        automatically when done.
+    </p>
+
+    <div class="mb-4 d-flex align-items-center gap-3">
+        <button class="btn btn-primary" id="btn-scan" onclick="runScan()">
+            <i class="bi bi-diagram-3 me-1"></i>Scan Topology
+        </button>
+        <div id="scan-spinner" class="spinner-border spinner-border-sm text-primary"
+             style="display:none" role="status">
+            <span class="visually-hidden">Scanning…</span>
+        </div>
+        <span id="scan-status" class="text-muted small"></span>
+    </div>
+
+    <div id="topology-result" style="display:none">
+        <iframe id="topology-frame"
+                style="width:100%;border:1px solid #dee2e6;border-radius:4px;min-height:300px"
+                frameborder="0"></iframe>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function() {
+    {% if topology_cache %}
+    var frame  = document.getElementById('topology-frame');
+    var result = document.getElementById('topology-result');
+    frame.srcdoc = {{ topology_cache.html | tojson }};
+    frame.onload = function() {
+        try { frame.style.height = (frame.contentDocument.body.scrollHeight + 24) + 'px'; } catch(e) {}
+    };
+    result.style.display = '';
+    {% endif %}
+})();
+
+async function runScan() {
+    var btn    = document.getElementById('btn-scan');
+    var spin   = document.getElementById('scan-spinner');
+    var status = document.getElementById('scan-status');
+    var result = document.getElementById('topology-result');
+    var frame  = document.getElementById('topology-frame');
+
+    btn.disabled        = true;
+    spin.style.display  = '';
+    status.textContent  = 'Scanning devices…';
+    result.style.display = 'none';
+
+    try {
+        var resp = await fetch('/api/topology', {method: 'POST'});
+        if (!resp.ok) {
+            var err = await resp.json().catch(function() { return {detail: resp.statusText}; });
+            throw new Error(err.detail || resp.statusText);
+        }
+        var data = await resp.json();
+
+        frame.srcdoc = data.html;
+        frame.onload = function() {
+            try {
+                frame.style.height =
+                    (frame.contentDocument.body.scrollHeight + 24) + 'px';
+            } catch(e) {}
+        };
+        result.style.display = '';
+        status.textContent   = '';
+    } catch(e) {
+        showToast('Topology scan failed: ' + e.message, 'danger');
+        status.textContent = '';
+    } finally {
+        btn.disabled       = false;
+        spin.style.display = 'none';
+    }
+}
+</script>
+{% endblock %}
