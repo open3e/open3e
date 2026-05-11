@@ -1564,7 +1564,7 @@ dataIdentifiers = {
         3148 : RawCodec(8, "ElectricalHeaterPhaseThreeStatistical", acc="ro"),
         3155 : RawCodec(5, "DomesticHotWaterShiftLoadPumpStatus", acc="ro"),
         3156 : O3EByteVal(1, "DomesticHotWaterShiftLoadPumpType", acc="ro"),
-        3170 : O3EComplexType(9, "DomesticHotWaterTankAnodeSensor", [O3EInt16(2, "Actual", scale=1000, unit="mA"), O3EInt16(2, "Min", scale=1000, unit="mA"), O3EInt16(2, "Max", scale=1000, unit="mA"), O3EInt16(2, "Average", scale=1000, unit="mA"), O3EByteVal(1, "Status")], desc="Anode current of the DHW tank", acc="ro"),
+        3170 : O3EComplexType(9, "DomesticHotWaterTankAnodeSensor", [O3EInt16(2, "Actual", scale=1000, unit="mA"), O3EInt16(2, "Min", scale=1000, unit="mA"), O3EInt16(2, "Max", scale=1000, unit="mA"), O3EInt16(2, "Average", scale=1000, unit="mA"), O3EEnum(1, "SensorStatus", "SensorStates")], desc="Anode current of the DHW tank", acc="ro"),
         3190 : O3EByteVal(1, "RefrigerantCircuitFourWayValvePosition", acc="ro"),
         3191 : RawCodec(199, "ExtendedEventLoggingHistory", acc="ro"),
         3212 : O3EComplexType(2, "BivalentMixerDomesticHotWaterTemperatureOffset", [O3EInt8(1, "Offset", scale=10), RawCodec(1, "Unknown")], acc="rw"),    #250-xH Unit: K
