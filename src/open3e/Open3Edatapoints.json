@@ -54337,6 +54337,81 @@
       "acc": "ro"
     }
   },
+  "3170": {
+    "codec": "O3EComplexType",
+    "len": 9,
+    "id": "DomesticHotWaterTankAnodeSensor",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 1000,
+            "signed": false,
+            "unit": "mA",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Min",
+          "args": {
+            "scale": 1000,
+            "signed": false,
+            "unit": "mA",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Max",
+          "args": {
+            "scale": 1000,
+            "signed": false,
+            "unit": "mA",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 1000,
+            "signed": false,
+            "unit": "mA",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Status",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Anode current of the DHW tank",
+      "info": "",
+      "acc": "ro"
+    }
+  },
   "3190": {
     "codec": "O3EByteVal",
     "len": 1,
