@@ -6198,6 +6198,12 @@
 |**3148**|**ElectricalHeaterPhaseThreeStatistical**|RawCodec|8||ro||
 |**3155**|**DomesticHotWaterShiftLoadPumpStatus**|RawCodec|5||ro||
 |**3156**|**DomesticHotWaterShiftLoadPumpType**|O3EByteVal|1||ro||
+|**3170**|[**DomesticHotWaterTankAnodeSensor**](## "Anode current of the DHW tank")|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|mA|||
+| |- Min|O3EInt16|2|mA|||
+| |- Max|O3EInt16|2|mA|||
+| |- Average|O3EInt16|2|mA|||
+| |- Status|O3EByteVal|1||||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
@@ -7958,6 +7964,7 @@
 |**3148**|**ElectricalHeaterPhaseThreeStatistical**|RawCodec|8||ro||
 |**3155**|**DomesticHotWaterShiftLoadPumpStatus**|RawCodec|5||ro||
 |**3156**|**DomesticHotWaterShiftLoadPumpType**|O3EByteVal|1||ro||
+|**3170**|[**DomesticHotWaterTankAnodeSensor**](## "Anode current of the DHW tank")|*O3EComplexType*|9||ro||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
