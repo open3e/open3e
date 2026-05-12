@@ -24,7 +24,9 @@
 # 14.01.2026: Deactivated generation of list of writables. Now based on vddList
 # 14.01.2026: Added creation of list of variant dids.
 
+import argparse
 import json
+import os
 from datetime import date
 
 import open3e.Open3Edatapoints
@@ -32,16 +34,45 @@ import open3e.Open3EdatapointsVariants
 
 from open3e.Open3Ecodecs import *
 
+tool_version_string = '1.0.0'
+
+def get_package_version_string():
+    package_name = "open3e"
+
+    try:
+        from importlib.metadata import version
+        package_version = version(package_name)
+    except ImportError:
+        package_version = "unknown"
+
+    try:
+        from open3e import _scm_version as scm_version
+        git_ref = scm_version.git_ref
+    except ImportError:
+        git_ref = "unknown"
+
+    return f'{tool_version_string} based on open3e {package_version} ({git_ref})'
 
 def main():
+    help_version_string = get_package_version_string()
+
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e_dids2json {help_version_string}')
+    parser.add_argument("-p", "--path", type=str, help="optional path to store output files")
+    args = parser.parse_args()
+
     dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
     variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
 
     didsDict = {}
     didsDictVars = {}
 
+    if args.path != None:
+        fpath = os.path.join(args.path, '')
+    else:
+        fpath = ''
+
     print('This tool converts data points for use in the ioBroker adapter ioBroker.e3oncan. It is not used by open3e.')
-    print('Start conversion of data points "open3e.Open3Edatapoints.py" and "open3e.Open3EdatapointsVariants.py" to json format.')
+    print('Start conversion of data points to json format.')
 
     cntDps = 0
     cntVars = 0
@@ -53,7 +84,7 @@ def main():
 
     didsDict['Version'] = dataIdentifiers['Version']
 
-    with open('Open3Edatapoints.json', 'w') as json_file:
+    with open(fpath+'Open3Edatapoints.json', 'w') as json_file:
         json.dump(didsDict, json_file, indent=2)
 
     for dp in variants["dids"]:
@@ -64,12 +95,11 @@ def main():
 
     didsDictVars['Version'] = variants["Version"]
 
-    with open('Open3EdatapointsVariants.json', 'w') as json_file:
+    with open(fpath+'Open3EdatapointsVariants.json', 'w') as json_file:
         json.dump(didsDictVars, json_file, indent=2)
 
-    print(str(cntDps)+' dids converted to JSON format. See file "Open3Edatapoints.json"')
-    print(str(cntVars)+' variant dids converted to JSON format. See file "Open3EdatapointsVariants.json"')
-    print('Done.')
+    print(f'{str(cntDps)} dids converted to JSON format. See file "{fpath}Open3Edatapoints.json"')
+    print(f'{str(cntVars)} variant dids converted to JSON format. See file "{fpath}Open3EdatapointsVariants.json"')
 
 if __name__ == "__main__":
     main()
