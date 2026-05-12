@@ -6203,7 +6203,7 @@
 | |- Min|O3EInt16|2|mA|||
 | |- Max|O3EInt16|2|mA|||
 | |- Average|O3EInt16|2|mA|||
-| |- Status|O3EByteVal|1||||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||

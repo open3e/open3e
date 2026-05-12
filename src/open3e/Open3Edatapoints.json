@@ -54396,11 +54396,11 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Status",
+          "id": "SensorStatus",
           "args": {
-            "unit": "",
+            "listStr": "SensorStates",
             "desc": "",
             "info": "",
             "acc": ""
