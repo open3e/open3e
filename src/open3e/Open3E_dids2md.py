@@ -1,6 +1,6 @@
 """
   Copyright 2026 MyHomeMyData
-  
+
   Licensed under the Apache License, Version 2.0 (the "License");
   you 05_may not use this file except in compliance with the License.
   You 05_may obtain a copy of the License at
@@ -113,7 +113,7 @@ def getInfoStr(codecs):
         return codecs['args']['info']
     else:
         return ''
-    
+
 def getAccesStr(codecs):
     if 'args' in codecs and 'acc' in codecs['args']:
         if codecs['args']['acc'] == 'rw':
@@ -173,138 +173,145 @@ def get_package_version_string():
 # Main
 #~~~~~~~~~~~~~~~~~~~~~~
 
-help_version_string = get_package_version_string()
+def main():
+    global args
 
-parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e_dids2md {help_version_string}')
-parser.add_argument("-d", "--dids", type=str, help="list specified dids only, e.g. 256,268,269")
-parser.add_argument("-f", "--filename", type=str, help="send result to file instead of stdout")
-parser.add_argument("-c", "--compact", action='store_true', help="list main data points only, don't list subs")
-parser.add_argument("-s", "--showdesc", action='store_true', help="list description as an extra column")
-args = parser.parse_args()
+    help_version_string = get_package_version_string()
 
-# # Print list of default DoI:
-# import sys
-# printListOfDoI(DoI_default)
-# sys.exit(0)
+    parser = argparse.ArgumentParser(fromfile_prefix_chars='@', epilog=f'open3e_dids2md {help_version_string}')
+    parser.add_argument("-d", "--dids", type=str, help="list specified dids only, e.g. 256,268,269")
+    parser.add_argument("-f", "--filename", type=str, help="send result to file instead of stdout")
+    parser.add_argument("-c", "--compact", action='store_true', help="list main data points only, don't list subs")
+    parser.add_argument("-s", "--showdesc", action='store_true', help="list description as an extra column")
+    args = parser.parse_args()
 
-dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
-variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
+    # # Print list of default DoI:
+    # import sys
+    # printListOfDoI(DoI_default)
+    # sys.exit(0)
 
-didsDict = {}
-didsDictVars = {}
+    dataIdentifiers = dict(open3e.Open3Edatapoints.dataIdentifiers)
+    variants = dict(open3e.Open3EdatapointsVariants.dataIdentifiers)
 
-cntDps = 0
-cntVars = 0
-cntWrt = 0
+    didsDict = {}
+    didsDictVars = {}
 
-table_header =  f'|  Did | ID   | Codec | Length | Unit  | {getDescTableHeader(True)}  Access | Further info |\n'
-table_header += f'| ---: | :--- | :---  | ---:   | :---: | {getDescTableHeader(False)} :---:  | :---         |\n'
+    cntDps = 0
+    cntVars = 0
+    cntWrt = 0
 
-# Convert list of general datapoints to json
+    table_header =  f'|  Did | ID   | Codec | Length | Unit  | {getDescTableHeader(True)}  Access | Further info |\n'
+    table_header += f'| ---: | :--- | :---  | ---:   | :---: | {getDescTableHeader(False)} :---:  | :---         |\n'
 
-for dp in dataIdentifiers["dids"]:
-    didsDict[dp] = dataIdentifiers["dids"][dp].getCodecInfo()
-    cntDps += 1
+    # Convert list of general datapoints to json
 
-didsDict['Version'] = dataIdentifiers['Version']
+    for dp in dataIdentifiers["dids"]:
+        didsDict[dp] = dataIdentifiers["dids"][dp].getCodecInfo()
+        cntDps += 1
 
-# Convert list of variant datapoints to json
+    didsDict['Version'] = dataIdentifiers['Version']
 
-for dp in variants["dids"]:
-    didsDictVars[dp] = {}
-    for v in variants["dids"][dp]:
-        didsDictVars[dp][v] = variants["dids"][dp][v].getCodecInfo()
-    cntVars += 1
+    # Convert list of variant datapoints to json
 
-didsDictVars['Version'] = variants["Version"]
+    for dp in variants["dids"]:
+        didsDictVars[dp] = {}
+        for v in variants["dids"][dp]:
+            didsDictVars[dp][v] = variants["dids"][dp][v].getCodecInfo()
+        cntVars += 1
 
-# Create markdonw formatted version of data points
+    didsDictVars['Version'] = variants["Version"]
 
-md = ''
-md += '# Open3E - List of data points\n'
-md += '- Version of general data points: ' + didsDict['Version'] + '\n'
-md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
+    # Create markdonw formatted version of data points
 
-md += '### Remarks\n'
-md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
-md += '  * ro => data point is read only\n'
-md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n\n'
+    md = ''
+    md += '# Open3E - List of data points\n'
+    md += '- Version of general data points: ' + didsDict['Version'] + '\n'
+    md += '- Version of variant data points: ' + didsDictVars['Version'] + '\n\n'
 
-if args.dids == None:
-    md += '### Table of contents\n'
-    md += '[Frequently used data points including subs](#frequently-used-data-points-including-subs)\n\n'
-    md += '[Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)\n\n'
-    md += '[All presently known data points including subs](#all-presently-known-data-points-including-subs)\n\n'
-    md += '[All presently known data points as compact list](#all-presently-known-data-points-in-compact-format)\n\n'
-    md += '## Frequently used data points including subs\n'
-else:
-    md += '## User defined list of data points\n'
+    md += '### Remarks\n'
+    md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
+    md += '  * ro => data point is read only\n'
+    md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n\n'
 
-md += table_header
+    if args.dids == None:
+        md += '### Table of contents\n'
+        md += '[Frequently used data points including subs](#frequently-used-data-points-including-subs)\n\n'
+        md += '[Frequently used data points as compact list](#frequently-used-data-points-in-compact-format)\n\n'
+        md += '[All presently known data points including subs](#all-presently-known-data-points-including-subs)\n\n'
+        md += '[All presently known data points as compact list](#all-presently-known-data-points-in-compact-format)\n\n'
+        md += '## Frequently used data points including subs\n'
+    else:
+        md += '## User defined list of data points\n'
 
-if args.dids != None:
-    dids = list(args.dids.replace(' ','').split(','))
-else:
-    dids = DoI_default
+    md += table_header
 
-dids.sort()     # Sort data points in ascending order
+    if args.dids != None:
+        dids = list(args.dids.replace(' ','').split(','))
+    else:
+        dids = DoI_default
 
-for did in dids:
-    if int(did) in didsDict:
-        md += did2md(int(did), didsDict[int(did)])
-    if int(did) in didsDictVars:
-        for variant in didsDictVars[int(did)]:
-            md += did2md(int(did), didsDictVars[int(did)][variant])
+    dids.sort()     # Sort data points in ascending order
 
-if args.dids != None:
-    # User specified list of dids. Just print the list and exit:
+    for did in dids:
+        if int(did) in didsDict:
+            md += did2md(int(did), didsDict[int(did)])
+        if int(did) in didsDictVars:
+            for variant in didsDictVars[int(did)]:
+                md += did2md(int(did), didsDictVars[int(did)][variant])
+
+    if args.dids != None:
+        # User specified list of dids. Just print the list and exit:
+        if args.filename != None:
+            with open(args.filename, 'w') as txt_file:
+                print(md, file=txt_file)
+        else:
+            print(md)
+        import sys
+        sys.exit(0)
+
+    args.compact = True
+    md += '## Frequently used data points in compact format\n\n'
+    md += '[Back to table of contents](#table-of-contents)\n\n'
+    md += table_header
+    for did in dids:
+        if int(did) in didsDict:
+            md += did2md(int(did), didsDict[int(did)])
+        if int(did) in didsDictVars:
+            for variant in didsDictVars[int(did)]:
+                md += did2md(int(did), didsDictVars[int(did)][variant])
+
+    args.compact = False
+    md += '## All presently known data points including subs\n\n'
+    md += '[Back to table of contents](#table-of-contents)\n\n'
+    md += table_header
+
+    for key in didsDict:
+        if key != 'Version':
+            did = int(key)
+            md += did2md(did, didsDict[did])
+            if did in didsDictVars:
+                for variant in didsDictVars[did]:
+                    md += did2md(did, didsDictVars[did][variant])
+
+    args.compact = True
+    md += '## All presently known data points in compact format\n\n'
+    md += '[Back to table of contents](#table-of-contents)\n\n'
+    md += table_header
+
+    for key in didsDict:
+        if key != 'Version':
+            did = int(key)
+            md += did2md(did, didsDict[did])
+            if did in didsDictVars:
+                for variant in didsDictVars[did]:
+                    md += did2md(did, didsDictVars[did][variant])
+
     if args.filename != None:
         with open(args.filename, 'w') as txt_file:
             print(md, file=txt_file)
     else:
         print(md)
-    import sys
-    sys.exit(0)
 
-args.compact = True
-md += '## Frequently used data points in compact format\n\n'
-md += '[Back to table of contents](#table-of-contents)\n\n'
-md += table_header
-for did in dids:
-    if int(did) in didsDict:
-        md += did2md(int(did), didsDict[int(did)])
-    if int(did) in didsDictVars:
-        for variant in didsDictVars[int(did)]:
-            md += did2md(int(did), didsDictVars[int(did)][variant])
 
-args.compact = False
-md += '## All presently known data points including subs\n\n'
-md += '[Back to table of contents](#table-of-contents)\n\n'
-md += table_header
-
-for key in didsDict:
-    if key != 'Version':
-        did = int(key)
-        md += did2md(did, didsDict[did])
-        if did in didsDictVars:
-            for variant in didsDictVars[did]:
-                md += did2md(did, didsDictVars[did][variant])
-
-args.compact = True
-md += '## All presently known data points in compact format\n\n'
-md += '[Back to table of contents](#table-of-contents)\n\n'
-md += table_header
-
-for key in didsDict:
-    if key != 'Version':
-        did = int(key)
-        md += did2md(did, didsDict[did])
-        if did in didsDictVars:
-            for variant in didsDictVars[did]:
-                md += did2md(did, didsDictVars[did][variant])
-
-if args.filename != None:
-    with open(args.filename, 'w') as txt_file:
-        print(md, file=txt_file)
-else:
-    print(md)
+if __name__ == "__main__":
+    main()
