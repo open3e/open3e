@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260512
+- Version of general data points: 20260521
 - Version of variant data points: 20260217
 
 ### Remarks
@@ -3168,31 +3168,657 @@
 | |- PastMonth|O3EInt16|2||||
 | |- CurrentYear|O3EInt16|2||||
 | |- PastYear|O3EInt16|2||||
-|**1349**|**FuelCellGasConsumptionMonthMatrix**|RawCodec|124||ro||
-|**1350**|**FuelCellGasConsumptionYearMatrix**|RawCodec|48||ro||
+|**1349**|[**FuelCellGasConsumptionMonthMatrix**](## "Fuel Cell Gas Consumption Per Month")|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1350**|[**FuelCellGasConsumptionYearMatrix**](## "Fuel Cell Gas Consumption Per Year")|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1351**|**FeedInEnergy**|RawCodec|24||ro||
-|**1352**|**FeedInEnergyMonthMatrix**|RawCodec|124||ro||
-|**1353**|**FeedInEnergyYearMatrix**|RawCodec|96||ro||
+|**1352**|**FeedInEnergyMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1353**|**FeedInEnergyYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1356**|**ProductionCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EList*|62||ro||
+| |- 01|O3EInt16|2||||
+| |- 02|O3EInt16|2||||
+| |- 03|O3EInt16|2||||
+| |- 04|O3EInt16|2||||
+| |- 05|O3EInt16|2||||
+| |- 06|O3EInt16|2||||
+| |- 07|O3EInt16|2||||
+| |- 08|O3EInt16|2||||
+| |- 09|O3EInt16|2||||
+| |- 10|O3EInt16|2||||
+| |- 11|O3EInt16|2||||
+| |- 12|O3EInt16|2||||
+| |- 13|O3EInt16|2||||
+| |- 14|O3EInt16|2||||
+| |- 15|O3EInt16|2||||
+| |- 16|O3EInt16|2||||
+| |- 17|O3EInt16|2||||
+| |- 18|O3EInt16|2||||
+| |- 19|O3EInt16|2||||
+| |- 20|O3EInt16|2||||
+| |- 21|O3EInt16|2||||
+| |- 22|O3EInt16|2||||
+| |- 23|O3EInt16|2||||
+| |- 24|O3EInt16|2||||
+| |- 25|O3EInt16|2||||
+| |- 26|O3EInt16|2||||
+| |- 27|O3EInt16|2||||
+| |- 28|O3EInt16|2||||
+| |- 29|O3EInt16|2||||
+| |- 30|O3EInt16|2||||
+| |- 31|O3EInt16|2||||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EList*|24||ro||
+| |- 01_January|O3EInt16|2||||
+| |- 02_February|O3EInt16|2||||
+| |- 03_March|O3EInt16|2||||
+| |- 04_April|O3EInt16|2||||
+| |- 05_May|O3EInt16|2||||
+| |- 06_June|O3EInt16|2||||
+| |- 07_July|O3EInt16|2||||
+| |- 08_August|O3EInt16|2||||
+| |- 09_September|O3EInt16|2||||
+| |- 10_October|O3EInt16|2||||
+| |- 11_November|O3EInt16|2||||
+| |- 12_December|O3EInt16|2||||
 |**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
-|**1358**|**FuelCellOperationTimeMonthMatrix**|RawCodec|124||ro||
-|**1359**|**FuelCellOperationTimeYearMatrix**|RawCodec|48||ro||
+|**1358**|**FuelCellOperationTimeMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1359**|**FuelCellOperationTimeYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1360**|**FuelCellRunTime**|RawCodec|11||ro||
-|**1361**|**FuelCellRunTimeMonthMatrix**|RawCodec|124||ro||
-|**1362**|**FuelCellRunTimeYearMatrix**|RawCodec|48||ro||
+|**1361**|**FuelCellRunTimeMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1362**|**FuelCellRunTimeYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1363**|**FuelCellTargetOperationMode**|RawCodec|1||**rw**||
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1373**|**DemandCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EList*|62||ro||
+| |- 01|O3EInt16|2||||
+| |- 02|O3EInt16|2||||
+| |- 03|O3EInt16|2||||
+| |- 04|O3EInt16|2||||
+| |- 05|O3EInt16|2||||
+| |- 06|O3EInt16|2||||
+| |- 07|O3EInt16|2||||
+| |- 08|O3EInt16|2||||
+| |- 09|O3EInt16|2||||
+| |- 10|O3EInt16|2||||
+| |- 11|O3EInt16|2||||
+| |- 12|O3EInt16|2||||
+| |- 13|O3EInt16|2||||
+| |- 14|O3EInt16|2||||
+| |- 15|O3EInt16|2||||
+| |- 16|O3EInt16|2||||
+| |- 17|O3EInt16|2||||
+| |- 18|O3EInt16|2||||
+| |- 19|O3EInt16|2||||
+| |- 20|O3EInt16|2||||
+| |- 21|O3EInt16|2||||
+| |- 22|O3EInt16|2||||
+| |- 23|O3EInt16|2||||
+| |- 24|O3EInt16|2||||
+| |- 25|O3EInt16|2||||
+| |- 26|O3EInt16|2||||
+| |- 27|O3EInt16|2||||
+| |- 28|O3EInt16|2||||
+| |- 29|O3EInt16|2||||
+| |- 30|O3EInt16|2||||
+| |- 31|O3EInt16|2||||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EList*|24||ro||
+| |- 01_January|O3EInt16|2||||
+| |- 02_February|O3EInt16|2||||
+| |- 03_March|O3EInt16|2||||
+| |- 04_April|O3EInt16|2||||
+| |- 05_May|O3EInt16|2||||
+| |- 06_June|O3EInt16|2||||
+| |- 07_July|O3EInt16|2||||
+| |- 08_August|O3EInt16|2||||
+| |- 09_September|O3EInt16|2||||
+| |- 10_October|O3EInt16|2||||
+| |- 11_November|O3EInt16|2||||
+| |- 12_December|O3EInt16|2||||
 |**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
-|**1384**|**FuelCellBreakdownRateMonthMatrix**|RawCodec|124||ro||
-|**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
-|**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
-|**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
+|**1384**|**FuelCellBreakdownRateMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1385**|**FuelCellBreakdownRateYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+|**1389**|**CoTwoSavingsMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1390**|**CoTwoSavingsYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
 | |- Today|O3EInt32|4|kWh|||
 | |- Past7Days|O3EInt32|4|kWh|||
@@ -5741,11 +6367,56 @@
 | |- CurrentYear|O3EInt32|4||||
 | |- PastYear|O3EInt32|4||||
 |**2533**|**PowerGridCodeSettingsNormSix**|RawCodec|27||ro||
-|**2534**|**BusTopologyMatrixSix**|RawCodec|181||ro||
-|**2535**|**BusTopologyMatrixSeven**|RawCodec|181||ro||
-|**2536**|**BusTopologyMatrixEight**|RawCodec|181||ro||
-|**2537**|**BusTopologyMatrixNine**|RawCodec|181||ro||
-|**2538**|**BusTopologyMatrixTen**|RawCodec|181||ro||
+|**2534**|**BusTopologyMatrixSix**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2535**|**BusTopologyMatrixSeven**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2536**|**BusTopologyMatrixEight**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2537**|**BusTopologyMatrixNine**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2538**|**BusTopologyMatrixTen**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
 |**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
 |**2540**|**NoiseReductionSettings**|RawCodec|6||ro||
 |**2541**|**SupplyAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
@@ -5830,8 +6501,98 @@
 | |- Count|O3EInt8|1||||
 | |- - Unknown|RawCodec|2||||
 | |- - VIN|O3EUtf8|16||||
-|**2594**|**ElectricalPreHeaterMonthMatrix**|RawCodec|124||ro||
-|**2595**|**ElectricalPreHeaterYearMatrix**|RawCodec|96||ro||
+|**2594**|**ElectricalPreHeaterMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2595**|**ElectricalPreHeaterYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**2598**|**VentilationFanAssignmentAvailable**|O3EByteVal|1||ro||
 |**2599**|**VentilationFanAssignmentSwitch**|O3EByteVal|1||ro||
 |**2600**|**ElectricalHeaterActivation**|RawCodec|2||ro||
@@ -5919,11 +6680,194 @@
 | |- PastYear|O3EInt32|4|kWh|||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
-|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
-|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|RawCodec|96||ro||
-|**2774**|**EnergyOwnConsumptionMonthMatrix**|RawCodec|124||ro||
-|**2775**|**EnergyOwnConsumptionYearMatrix**|RawCodec|96||ro||
-|**2776**|**ProductMatrixTwo**|RawCodec|181||ro||
+|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+|**2774**|**EnergyOwnConsumptionMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2775**|**EnergyOwnConsumptionYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+|**2776**|**ProductMatrixTwo**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- - Unknown|RawCodec|2||||
+| |- - VIN|O3EUtf8|16||||
 |**2777**|**PrimaryBootLoaderVersion**|RawCodec|8||ro||
 |**2778**|**ErrorMessageInputSelection**|RawCodec|2||ro||
 |**2779**|**DeltaTemperaturePumpControlSetpoint**|RawCodec|2||**rw**||
@@ -6791,31 +7735,31 @@
 |**1346**|**HeatEngineStatistical**|*O3EComplexType*|12||ro||
 |**1347**|**ObjectElectricalEnergyStatus**|RawCodec|10||ro||
 |**1348**|**FuelCellGasConsumption**|*O3EComplexType*|12||ro||
-|**1349**|**FuelCellGasConsumptionMonthMatrix**|RawCodec|124||ro||
-|**1350**|**FuelCellGasConsumptionYearMatrix**|RawCodec|48||ro||
+|**1349**|[**FuelCellGasConsumptionMonthMatrix**](## "Fuel Cell Gas Consumption Per Month")|*O3EComplexType*|124||ro||
+|**1350**|[**FuelCellGasConsumptionYearMatrix**](## "Fuel Cell Gas Consumption Per Year")|*O3EComplexType*|48||ro||
 |**1351**|**FeedInEnergy**|RawCodec|24||ro||
-|**1352**|**FeedInEnergyMonthMatrix**|RawCodec|124||ro||
-|**1353**|**FeedInEnergyYearMatrix**|RawCodec|96||ro||
+|**1352**|**FeedInEnergyMonthMatrix**|*O3EComplexType*|124||ro||
+|**1353**|**FeedInEnergyYearMatrix**|*O3EComplexType*|96||ro||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1356**|**ProductionCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EList*|62||ro||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EList*|24||ro||
 |**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
-|**1358**|**FuelCellOperationTimeMonthMatrix**|RawCodec|124||ro||
-|**1359**|**FuelCellOperationTimeYearMatrix**|RawCodec|48||ro||
+|**1358**|**FuelCellOperationTimeMonthMatrix**|*O3EComplexType*|124||ro||
+|**1359**|**FuelCellOperationTimeYearMatrix**|*O3EComplexType*|48||ro||
 |**1360**|**FuelCellRunTime**|RawCodec|11||ro||
-|**1361**|**FuelCellRunTimeMonthMatrix**|RawCodec|124||ro||
-|**1362**|**FuelCellRunTimeYearMatrix**|RawCodec|48||ro||
+|**1361**|**FuelCellRunTimeMonthMatrix**|*O3EComplexType*|124||ro||
+|**1362**|**FuelCellRunTimeYearMatrix**|*O3EComplexType*|48||ro||
 |**1363**|**FuelCellTargetOperationMode**|RawCodec|1||**rw**||
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1373**|**DemandCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EList*|62||ro||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EList*|24||ro||
 |**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
-|**1384**|**FuelCellBreakdownRateMonthMatrix**|RawCodec|124||ro||
-|**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
-|**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
-|**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
+|**1384**|**FuelCellBreakdownRateMonthMatrix**|*O3EComplexType*|124||ro||
+|**1385**|**FuelCellBreakdownRateYearMatrix**|*O3EComplexType*|48||ro||
+|**1389**|**CoTwoSavingsMonthMatrix**|*O3EComplexType*|124||ro||
+|**1390**|**CoTwoSavingsYearMatrix**|*O3EComplexType*|96||ro||
 |**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
 |**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
 |**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
@@ -7649,11 +8593,11 @@
 |**2528**|**GeneratedCoolingOutputYearMatrix**|*O3EComplexType*|96||ro||
 |**2529**|**GeneratedCoolingOutput**|*O3EComplexType*|24||ro||
 |**2533**|**PowerGridCodeSettingsNormSix**|RawCodec|27||ro||
-|**2534**|**BusTopologyMatrixSix**|RawCodec|181||ro||
-|**2535**|**BusTopologyMatrixSeven**|RawCodec|181||ro||
-|**2536**|**BusTopologyMatrixEight**|RawCodec|181||ro||
-|**2537**|**BusTopologyMatrixNine**|RawCodec|181||ro||
-|**2538**|**BusTopologyMatrixTen**|RawCodec|181||ro||
+|**2534**|**BusTopologyMatrixSix**|*O3EList*|181||ro||
+|**2535**|**BusTopologyMatrixSeven**|*O3EList*|181||ro||
+|**2536**|**BusTopologyMatrixEight**|*O3EList*|181||ro||
+|**2537**|**BusTopologyMatrixNine**|*O3EList*|181||ro||
+|**2538**|**BusTopologyMatrixTen**|*O3EList*|181||ro||
 |**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
 |**2540**|**NoiseReductionSettings**|RawCodec|6||ro||
 |**2541**|**SupplyAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
@@ -7704,8 +8648,8 @@
 |**2591**|**HeatPumpCommonSettingsCooling**|RawCodec|8||ro||
 |**2592**|**ExpansionValveTheoreticalSetpoint**|RawCodec|4||**rw**||
 |**2593**|**ProductMatrix**|*O3EList*|181||ro||
-|**2594**|**ElectricalPreHeaterMonthMatrix**|RawCodec|124||ro||
-|**2595**|**ElectricalPreHeaterYearMatrix**|RawCodec|96||ro||
+|**2594**|**ElectricalPreHeaterMonthMatrix**|*O3EComplexType*|124||ro||
+|**2595**|**ElectricalPreHeaterYearMatrix**|*O3EComplexType*|96||ro||
 |**2598**|**VentilationFanAssignmentAvailable**|O3EByteVal|1||ro||
 |**2599**|**VentilationFanAssignmentSwitch**|O3EByteVal|1||ro||
 |**2600**|**ElectricalHeaterActivation**|RawCodec|2||ro||
@@ -7759,11 +8703,11 @@
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
-|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
-|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|RawCodec|96||ro||
-|**2774**|**EnergyOwnConsumptionMonthMatrix**|RawCodec|124||ro||
-|**2775**|**EnergyOwnConsumptionYearMatrix**|RawCodec|96||ro||
-|**2776**|**ProductMatrixTwo**|RawCodec|181||ro||
+|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|*O3EComplexType*|124||ro||
+|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|*O3EComplexType*|96||ro||
+|**2774**|**EnergyOwnConsumptionMonthMatrix**|*O3EComplexType*|124||ro||
+|**2775**|**EnergyOwnConsumptionYearMatrix**|*O3EComplexType*|96||ro||
+|**2776**|**ProductMatrixTwo**|*O3EList*|181||ro||
 |**2777**|**PrimaryBootLoaderVersion**|RawCodec|8||ro||
 |**2778**|**ErrorMessageInputSelection**|RawCodec|2||ro||
 |**2779**|**DeltaTemperaturePumpControlSetpoint**|RawCodec|2||**rw**||
