@@ -2571,7 +2571,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -2582,11 +2582,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "ValveType",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -2606,9 +2617,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -2620,7 +2642,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -2722,7 +2744,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -2733,11 +2755,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -2757,9 +2790,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -2771,7 +2815,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -2873,7 +2917,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -2884,11 +2928,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -2908,9 +2963,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -2922,7 +2988,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3024,7 +3090,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3035,11 +3101,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3059,9 +3136,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3073,7 +3161,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3175,7 +3263,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3186,11 +3274,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3210,9 +3309,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3224,7 +3334,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3326,7 +3436,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3337,11 +3447,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3361,9 +3482,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3375,7 +3507,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3477,7 +3609,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3488,11 +3620,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3512,9 +3655,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3526,7 +3680,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3628,7 +3782,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3639,11 +3793,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3663,9 +3828,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3677,7 +3853,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3779,7 +3955,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3790,11 +3966,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3814,9 +4001,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3828,7 +4026,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3930,7 +4128,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -3941,11 +4139,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3965,9 +4174,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -3979,7 +4199,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4081,7 +4301,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4092,11 +4312,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4116,9 +4347,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4130,7 +4372,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4232,7 +4474,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4243,11 +4485,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4267,9 +4520,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4281,7 +4545,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4383,7 +4647,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4394,11 +4658,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4418,9 +4693,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4432,7 +4718,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4534,7 +4820,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4545,11 +4831,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4569,9 +4866,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4583,7 +4891,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4685,7 +4993,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4696,11 +5004,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4720,9 +5039,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4734,7 +5064,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4836,7 +5166,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4847,11 +5177,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4871,9 +5212,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -4885,7 +5237,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4987,7 +5339,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -4998,11 +5350,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5022,9 +5385,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5036,7 +5410,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5138,7 +5512,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5149,11 +5523,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5173,9 +5558,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5187,7 +5583,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5289,7 +5685,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5300,11 +5696,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5324,9 +5731,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5338,7 +5756,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5440,7 +5858,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5451,11 +5869,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5475,9 +5904,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5489,7 +5929,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5591,7 +6031,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5602,11 +6042,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5626,9 +6077,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5640,7 +6102,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5742,7 +6204,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5753,11 +6215,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5777,9 +6250,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5791,7 +6275,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5893,7 +6377,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -5904,11 +6388,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5928,9 +6423,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -5942,7 +6448,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6044,7 +6550,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6055,11 +6561,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6079,9 +6596,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6093,7 +6621,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6195,7 +6723,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6206,11 +6734,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6230,9 +6769,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6244,7 +6794,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6346,7 +6896,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6357,11 +6907,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6381,9 +6942,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6395,7 +6967,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6497,7 +7069,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6508,11 +7080,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6532,9 +7115,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6546,7 +7140,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6648,7 +7242,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6659,11 +7253,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6683,9 +7288,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6697,7 +7313,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6799,7 +7415,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6810,11 +7426,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6834,9 +7461,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6848,7 +7486,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6950,7 +7588,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -6961,11 +7599,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6985,9 +7634,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -6999,7 +7659,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7101,7 +7761,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7112,11 +7772,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7136,9 +7807,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7150,7 +7832,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7252,7 +7934,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7263,11 +7945,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7287,9 +7980,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7301,7 +8005,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7403,7 +8107,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7414,11 +8118,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7438,9 +8153,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7452,7 +8178,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7554,7 +8280,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7565,11 +8291,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7589,9 +8326,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7603,7 +8351,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7705,7 +8453,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7716,11 +8464,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7740,9 +8499,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7754,7 +8524,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7856,7 +8626,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -7867,11 +8637,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7891,9 +8672,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -7905,7 +8697,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8007,7 +8799,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -8018,11 +8810,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8042,9 +8845,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -8056,7 +8870,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8158,7 +8972,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -8169,11 +8983,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8193,9 +9018,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -8207,7 +9043,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8309,7 +9145,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -8320,11 +9156,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8344,9 +9191,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -8358,7 +9216,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8460,7 +9318,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 38,
+            "len": 37,
             "id": "Unknown2",
             "args": {
               "desc": "",
@@ -8471,11 +9329,22 @@
           {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "Valve Type",
+            "id": "SignalLevel",
             "args": {
-              "scale": 1.0,
+              "scale": 2.55,
               "signed": false,
               "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ViCareDevice",
+            "args": {
+              "listStr": "ViCareDeviceTypes",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8495,9 +9364,20 @@
             }
           },
           {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "CurrentWorkingMode",
+            "args": {
+              "listStr": "CurrentWorkingModeLevels",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
             "codec": "O3EInt8",
             "len": 1,
-            "id": "OperatingStatus",
+            "id": "Humidity",
             "args": {
               "scale": 1.0,
               "signed": false,
@@ -8509,7 +9389,7 @@
           },
           {
             "codec": "RawCodec",
-            "len": 4,
+            "len": 3,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8579,5 +9459,5 @@
       }
     }
   },
-  "Version": "20260217"
+  "Version": "20260526"
 }

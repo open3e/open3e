@@ -1,6 +1,6 @@
 # Open3E - List of data points
 - Version of general data points: 20260521
-- Version of variant data points: 20260217
+- Version of variant data points: 20260526
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -4734,11 +4734,13 @@
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- ValveType|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4760,11 +4762,13 @@
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4786,11 +4790,13 @@
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4812,11 +4818,13 @@
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4838,11 +4846,13 @@
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4864,11 +4874,13 @@
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4890,11 +4902,13 @@
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4916,11 +4930,13 @@
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4942,11 +4958,13 @@
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4968,11 +4986,13 @@
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4994,11 +5014,13 @@
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5020,11 +5042,13 @@
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5046,11 +5070,13 @@
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5072,11 +5098,13 @@
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5098,11 +5126,13 @@
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5124,11 +5154,13 @@
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5150,11 +5182,13 @@
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5176,11 +5210,13 @@
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5202,11 +5238,13 @@
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5228,11 +5266,13 @@
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5343,11 +5383,13 @@
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5369,11 +5411,13 @@
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5395,11 +5439,13 @@
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5421,11 +5467,13 @@
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5447,11 +5495,13 @@
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5473,11 +5523,13 @@
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5499,11 +5551,13 @@
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5525,11 +5579,13 @@
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5551,11 +5607,13 @@
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5577,11 +5635,13 @@
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5603,11 +5663,13 @@
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5629,11 +5691,13 @@
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5655,11 +5719,13 @@
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5681,11 +5747,13 @@
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5707,11 +5775,13 @@
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5733,11 +5803,13 @@
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5759,11 +5831,13 @@
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5785,11 +5859,13 @@
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5811,11 +5887,13 @@
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5837,11 +5915,13 @@
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Unknown}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
