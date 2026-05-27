@@ -4356,227 +4356,426 @@
 |**1854**|**ApartmentOneTimeScheduleFriday**|RawCodec|57||**rw**||
 |**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
 |**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
-|**1884**|**RoomOneProperty**|RawCodec|84||ro||
-|**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|8||||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
 |**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
-|**1887**|**RoomTwoProperty**|RawCodec|84||ro||
+|**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
-|**1890**|**RoomThreeProperty**|RawCodec|84||ro||
+|**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
-|**1893**|**RoomFourProperty**|RawCodec|84||ro||
+|**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
-|**1896**|**RoomFiveProperty**|RawCodec|84||ro||
+|**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
-|**1899**|**RoomSixProperty**|RawCodec|84||ro||
+|**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
-|**1902**|**RoomSevenProperty**|RawCodec|84||ro||
+|**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
-|**1905**|**RoomEightProperty**|RawCodec|84||ro||
+|**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
-|**1908**|**RoomNineProperty**|RawCodec|84||ro||
+|**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
-|**1911**|**RoomTenProperty**|RawCodec|84||ro||
+|**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
-|**1914**|**RoomElevenProperty**|RawCodec|84||ro||
-|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
-|**1917**|**RoomTwelveProperty**|RawCodec|84||ro||
-|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
-|**1920**|**RoomThirteenProperty**|RawCodec|84||ro||
+|**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
-|**1923**|**RoomFourteenProperty**|RawCodec|84||ro||
+|**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
-|**1926**|**RoomFifteenProperty**|RawCodec|84||ro||
+|**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
-|**1929**|**RoomSixteenProperty**|RawCodec|84||ro||
+|**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
-|**1932**|**RoomSeventeenProperty**|RawCodec|84||ro||
+|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
-|**1935**|**RoomEighteenProperty**|RawCodec|84||ro||
+|**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
-|**1938**|**RoomNineteenProperty**|RawCodec|84||ro||
+|**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|9||||
 |**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
-|**1941**|**RoomTwentyProperty**|RawCodec|84||ro||
-|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
-|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+| |- Unknown5|RawCodec|8||||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
@@ -8481,83 +8680,66 @@
 |**1854**|**ApartmentOneTimeScheduleFriday**|RawCodec|57||**rw**||
 |**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
 |**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
-|**1884**|**RoomOneProperty**|RawCodec|84||ro||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
 |**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
-|**1887**|**RoomTwoProperty**|RawCodec|84||ro||
+|**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
-|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
 |**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
-|**1890**|**RoomThreeProperty**|RawCodec|84||ro||
+|**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
-|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
 |**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
-|**1893**|**RoomFourProperty**|RawCodec|84||ro||
+|**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
-|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
 |**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
-|**1896**|**RoomFiveProperty**|RawCodec|84||ro||
+|**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
-|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
 |**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
-|**1899**|**RoomSixProperty**|RawCodec|84||ro||
+|**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
-|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
 |**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
-|**1902**|**RoomSevenProperty**|RawCodec|84||ro||
+|**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
-|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
 |**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
-|**1905**|**RoomEightProperty**|RawCodec|84||ro||
+|**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
-|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
 |**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
-|**1908**|**RoomNineProperty**|RawCodec|84||ro||
+|**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
-|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
 |**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
-|**1911**|**RoomTenProperty**|RawCodec|84||ro||
+|**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
-|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
 |**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
-|**1914**|**RoomElevenProperty**|RawCodec|84||ro||
-|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
 |**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
-|**1917**|**RoomTwelveProperty**|RawCodec|84||ro||
-|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
 |**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
-|**1920**|**RoomThirteenProperty**|RawCodec|84||ro||
+|**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
-|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
 |**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
-|**1923**|**RoomFourteenProperty**|RawCodec|84||ro||
+|**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
-|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
 |**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
-|**1926**|**RoomFifteenProperty**|RawCodec|84||ro||
+|**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
-|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
 |**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
-|**1929**|**RoomSixteenProperty**|RawCodec|84||ro||
+|**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
-|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
 |**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
-|**1932**|**RoomSeventeenProperty**|RawCodec|84||ro||
+|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
-|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
 |**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
-|**1935**|**RoomEighteenProperty**|RawCodec|84||ro||
+|**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 |**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
-|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
 |**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
-|**1938**|**RoomNineteenProperty**|RawCodec|84||ro||
+|**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
-|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
 |**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
-|**1941**|**RoomTwentyProperty**|RawCodec|84||ro||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
-|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
 |**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
