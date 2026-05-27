@@ -7,7 +7,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "variants", 
-    "Version": "20260526",
+    "Version": "20260527",
     "dids" : 
     {
          627 : { 12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro")},
