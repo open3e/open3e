@@ -44369,7 +44369,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -44387,8 +44387,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -44447,10 +44467,105 @@
     }
   },
   "2086": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeOneDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44507,7 +44622,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -44525,8 +44640,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -44585,10 +44720,105 @@
     }
   },
   "2089": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwoDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44645,7 +44875,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -44663,8 +44893,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -44723,10 +44973,105 @@
     }
   },
   "2092": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThreeDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44783,7 +45128,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -44801,8 +45146,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -44861,10 +45226,105 @@
     }
   },
   "2095": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeFourDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44921,7 +45381,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -44939,8 +45399,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -44999,10 +45479,105 @@
     }
   },
   "2098": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeFiveDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45059,7 +45634,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45077,8 +45652,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45137,10 +45732,105 @@
     }
   },
   "2101": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeSixDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45197,7 +45887,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45215,8 +45905,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45275,10 +45985,105 @@
     }
   },
   "2104": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeSevenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45335,7 +46140,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45353,8 +46158,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45413,10 +46238,105 @@
     }
   },
   "2107": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeEightDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45473,7 +46393,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45491,8 +46411,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45551,10 +46491,105 @@
     }
   },
   "2110": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeNineDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45611,7 +46646,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45629,8 +46664,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45689,10 +46744,105 @@
     }
   },
   "2113": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45749,7 +46899,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45767,8 +46917,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45827,10 +46997,105 @@
     }
   },
   "2116": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeElevenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -45887,7 +47152,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -45905,8 +47170,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -45965,10 +47250,105 @@
     }
   },
   "2119": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwelveDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46025,7 +47405,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46043,8 +47423,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46103,10 +47503,105 @@
     }
   },
   "2122": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46163,7 +47658,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46181,8 +47676,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46241,10 +47756,105 @@
     }
   },
   "2125": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeFourteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46301,7 +47911,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46319,8 +47929,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46379,10 +48009,105 @@
     }
   },
   "2128": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeFifteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46439,7 +48164,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46457,8 +48182,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46517,10 +48262,105 @@
     }
   },
   "2131": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeSixteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46577,7 +48417,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46595,8 +48435,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46655,10 +48515,105 @@
     }
   },
   "2134": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeSeventeenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46715,7 +48670,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46733,8 +48688,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46793,10 +48768,105 @@
     }
   },
   "2137": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeEighteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46853,7 +48923,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -46871,8 +48941,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -46931,10 +49021,105 @@
     }
   },
   "2140": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeNineteenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -46991,7 +49176,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -47009,8 +49194,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -47069,10 +49274,105 @@
     }
   },
   "2143": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48070,7 +50370,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48088,8 +50388,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48148,10 +50468,105 @@
     }
   },
   "2262": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyOneDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48208,7 +50623,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48226,8 +50641,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48286,10 +50721,105 @@
     }
   },
   "2265": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyTwoDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48346,7 +50876,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48364,8 +50894,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48424,10 +50974,105 @@
     }
   },
   "2268": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyThreeDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48484,7 +51129,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48502,8 +51147,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48562,10 +51227,105 @@
     }
   },
   "2271": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyFourDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48622,7 +51382,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48640,8 +51400,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48700,10 +51480,105 @@
     }
   },
   "2274": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyFiveDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48760,7 +51635,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48778,8 +51653,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48838,10 +51733,105 @@
     }
   },
   "2277": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentySixDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -48898,7 +51888,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -48916,8 +51906,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -48976,10 +51986,105 @@
     }
   },
   "2280": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentySevenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49036,7 +52141,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49054,8 +52159,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49114,10 +52239,105 @@
     }
   },
   "2283": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyEightDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49174,7 +52394,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49192,8 +52412,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49252,10 +52492,105 @@
     }
   },
   "2286": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeTwentyNineDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49312,7 +52647,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49330,8 +52665,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49390,10 +52745,105 @@
     }
   },
   "2289": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49450,7 +52900,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49468,8 +52918,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49528,10 +52998,105 @@
     }
   },
   "2292": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyOneDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49588,7 +53153,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49606,8 +53171,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49666,10 +53251,105 @@
     }
   },
   "2295": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyTwoDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49726,7 +53406,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49744,8 +53424,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49804,10 +53504,105 @@
     }
   },
   "2298": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyThreeDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -49864,7 +53659,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -49882,8 +53677,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -49942,10 +53757,105 @@
     }
   },
   "2301": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyFourDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50002,7 +53912,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50020,8 +53930,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50080,10 +54010,105 @@
     }
   },
   "2304": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyFiveDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50140,7 +54165,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50158,8 +54183,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50218,10 +54263,105 @@
     }
   },
   "2307": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtySixDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50278,7 +54418,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50296,8 +54436,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50356,10 +54516,105 @@
     }
   },
   "2310": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtySevenDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50416,7 +54671,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50434,8 +54689,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50494,10 +54769,105 @@
     }
   },
   "2313": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyEightDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50554,7 +54924,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50572,8 +54942,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50632,10 +55022,105 @@
     }
   },
   "2316": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeThirtyNineDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -50692,7 +55177,7 @@
           "len": 1,
           "id": "ViCareDevice",
           "args": {
-            "listStr": "ViCareDeviceType",
+            "listStr": "ViCareDeviceTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -50710,8 +55195,28 @@
         },
         {
           "codec": "RawCodec",
-          "len": 26,
+          "len": 8,
           "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 16,
+          "id": "ArticleNumber",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown3",
           "args": {
             "desc": "",
             "info": "",
@@ -50770,10 +55275,105 @@
     }
   },
   "2319": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 57,
     "id": "ZigBeeFourtyDeviceCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BatteryLevel",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 37,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "SignalLevel",
+          "args": {
+            "scale": 2.55,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "ViCareDevice",
+          "args": {
+            "listStr": "ViCareDeviceTypes",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemperature",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Humidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 12,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -68395,5 +72995,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260521"
+  "Version": "20260527"
 }
