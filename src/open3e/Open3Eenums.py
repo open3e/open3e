@@ -2369,7 +2369,7 @@ E3Enums = {
         0: "StandBy",
         1: "Unknown",   # value confirmed in enums.js, meaning TBD
         64: "Heating",
-        100: "Unknown", # value confirmed in enums.js, meaning TBD
+        100: "Cooling", # confirmed by Backes89 in discussion #235
     },
 
     "DeviceDisplayModeStates": {
