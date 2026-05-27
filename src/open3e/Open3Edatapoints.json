@@ -131,11 +131,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -199,11 +198,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -267,11 +265,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -335,11 +332,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -403,11 +399,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -471,11 +466,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -539,11 +533,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -618,11 +611,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -686,11 +678,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -765,11 +756,10 @@
                 }
               },
               {
-                "codec": "O3EByteVal",
+                "codec": "RawCodec",
                 "len": 2,
                 "id": "Unknown",
                 "args": {
-                  "unit": "",
                   "desc": "",
                   "info": "",
                   "acc": ""
@@ -2581,11 +2571,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2731,11 +2720,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -4042,11 +4030,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -5795,11 +5782,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown1",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -6087,11 +6073,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7058,11 +7043,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown1",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7210,11 +7194,10 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown1",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7232,22 +7215,20 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown2",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown3",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -42021,13 +42002,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 1.0,
-            "signed": false,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -42434,10 +42412,140 @@
     }
   },
   "1886": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomOneCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -42548,11 +42656,151 @@
       "acc": "ro"
     }
   },
-  "1889": {
+  "1888": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomTwoSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1889": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomTwoCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -42663,11 +42911,151 @@
       "acc": "ro"
     }
   },
-  "1892": {
+  "1891": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomThreeSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1892": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomThreeCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -42778,11 +43166,151 @@
       "acc": "ro"
     }
   },
-  "1895": {
+  "1894": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomFourSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1895": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomFourCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -42893,11 +43421,151 @@
       "acc": "ro"
     }
   },
-  "1898": {
+  "1897": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomFiveSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1898": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomFiveCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43008,11 +43676,151 @@
       "acc": "ro"
     }
   },
-  "1901": {
+  "1900": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomSixSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1901": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomSixCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43123,11 +43931,151 @@
       "acc": "ro"
     }
   },
-  "1904": {
+  "1903": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomSevenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1904": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomSevenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43238,11 +44186,151 @@
       "acc": "ro"
     }
   },
-  "1907": {
+  "1906": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomEightSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1907": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomEightCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43353,11 +44441,151 @@
       "acc": "ro"
     }
   },
-  "1910": {
+  "1909": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomNineSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1910": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomNineCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43468,11 +44696,151 @@
       "acc": "ro"
     }
   },
-  "1913": {
+  "1912": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomTenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1913": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomTenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43583,11 +44951,151 @@
       "acc": "ro"
     }
   },
-  "1916": {
+  "1915": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomElevenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1916": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomElevenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43698,11 +45206,151 @@
       "acc": "ro"
     }
   },
-  "1919": {
+  "1918": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomTwelveSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1919": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomTwelveCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43813,11 +45461,151 @@
       "acc": "ro"
     }
   },
-  "1922": {
+  "1921": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomThirteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1922": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomThirteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -43928,11 +45716,151 @@
       "acc": "ro"
     }
   },
-  "1925": {
+  "1924": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomFourteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1925": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomFourteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44043,11 +45971,151 @@
       "acc": "ro"
     }
   },
-  "1928": {
+  "1927": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomFifteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1928": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomFifteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44158,11 +46226,151 @@
       "acc": "ro"
     }
   },
-  "1931": {
+  "1930": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomSixteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1931": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomSixteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44273,11 +46481,151 @@
       "acc": "ro"
     }
   },
-  "1934": {
+  "1933": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomSeventeenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1934": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomSeventeenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44388,11 +46736,151 @@
       "acc": "ro"
     }
   },
-  "1937": {
+  "1936": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomEighteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1937": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomEighteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44503,11 +46991,151 @@
       "acc": "ro"
     }
   },
-  "1940": {
+  "1939": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomNineteenSetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1940": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomNineteenCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -44618,11 +47246,151 @@
       "acc": "ro"
     }
   },
-  "1943": {
+  "1942": {
     "codec": "RawCodec",
+    "len": 30,
+    "id": "RoomTwentySetpoints",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "rw"
+    }
+  },
+  "1943": {
+    "codec": "O3EComplexType",
     "len": 46,
     "id": "RoomTwentyCurrentValues",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ActualTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MinimumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "MaximumTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "ActualHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MinimumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "MaximumHumidity",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown3",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown4",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 32,
+          "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -51532,13 +54300,10 @@
           }
         },
         {
-          "codec": "O3EInt8",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "scale": 1,
-            "signed": false,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -57130,13 +59895,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 1.0,
-            "signed": false,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -57168,13 +59930,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 1.0,
-            "signed": false,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -58627,11 +61386,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -58686,11 +61444,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -58745,11 +61502,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -58804,11 +61560,10 @@
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "RawCodec",
           "len": 1,
           "id": "Unknown",
           "args": {
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -64294,13 +67049,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 10.0,
-            "signed": true,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -64369,13 +67121,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 10.0,
-            "signed": true,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -64444,13 +67193,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 10.0,
-            "signed": true,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -64519,13 +67265,10 @@
           }
         },
         {
-          "codec": "O3EInt16",
+          "codec": "RawCodec",
           "len": 2,
           "id": "Unknown",
           "args": {
-            "scale": 10.0,
-            "signed": true,
-            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""

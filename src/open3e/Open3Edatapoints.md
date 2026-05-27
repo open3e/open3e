@@ -31,54 +31,54 @@
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -138,7 +138,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -150,7 +150,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|hPa|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -167,7 +167,7 @@
 |**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 | |- Mode|O3EByteVal|1||||
 | |- HygenieActive|O3EByteVal|1||||
@@ -673,14 +673,14 @@
 | |- String3|O3EInt32|4|V|||
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 | |- StateOfEnergy|O3EInt16|2|Wh|||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
 | |- Setpoint|O3EInt8|1|%|||
 | |- CurrentPosition|O3EInt8|1|%|||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 | |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
-| |- Unknown|O3EInt8|1||||
+| |- Unknown|RawCodec|1||||
 |**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
@@ -844,54 +844,54 @@
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1036,7 +1036,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1048,7 +1048,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|hPa|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
 | |- Minimum|O3EInt16|2||||
@@ -1155,7 +1155,7 @@
 | |- [DateFormat](## "{0: DayMonthYear, 1: MonthDayYear, 2: YearMonthDay}")|O3EEnum|1||||
 | |- [TimeFormat](## "{0: TwentyFourHours, 1: TwelveHours}")|O3EEnum|1||||
 | |- TimeZone|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**386**|**DiverterValveTargetPosition**|O3EByteVal|1||**rw**||
 |**388**|[**ElectronicExpansionValveOneTargetPositionPercent**](## "Target position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|**rw**||
 |**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
@@ -1301,7 +1301,7 @@
 | |- Duration|O3EByteVal|1||||
 |**437**|**BypassOperationState**|*O3EComplexType*|2||**rw**||
 | |- BypassStatus|O3EByteVal|1||||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 |**438**|**MixerEightCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Standard|O3EInt16|2||||
@@ -1325,7 +1325,7 @@
 | |- Actual|O3EInt8|1||||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 | |- Mode|O3EByteVal|1||||
 | |- HygenieActive|O3EByteVal|1||||
@@ -1412,7 +1412,7 @@
 | |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
 |**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
 | |- Acutual|O3EByteVal|1||||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 |**534**|**DomesticHotWaterPumpPostRunTime**|RawCodec|2||ro||
 |**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- GridFeedInEnergy|O3EInt32|4|kWh|||
@@ -1425,10 +1425,10 @@
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 |**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 | |- OperatingStatus|O3EByteVal|1||||
-| |- Unknown2|O3EByteVal|1||||
-| |- Unknown3|O3EByteVal|1||||
+| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 |**544**|**GasConsumptionCentralHeating**|*O3EComplexType*|12||ro||
 | |- Today|O3EInt16|2||||
 | |- Past7Days|O3EInt16|2||||
@@ -4329,7 +4329,7 @@
 | |- String3|O3EInt32|4|V|||
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 | |- StateOfEnergy|O3EInt16|2|Wh|||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**1835**|**ManufacturerProperties**|RawCodec|20||ro||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1837**|**ElectricalEnergyStorageCurrent**|*O3EComplexType*|4||ro||
@@ -4377,7 +4377,18 @@
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
-|**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
+|**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4398,7 +4409,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
+|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+|**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4419,7 +4442,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
+|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+|**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4440,7 +4475,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
+|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+|**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4461,7 +4508,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
+|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+|**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4482,7 +4541,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
+|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+|**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4503,7 +4574,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
+|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+|**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4524,7 +4607,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
+|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+|**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4545,7 +4640,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
+|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+|**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4566,7 +4673,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
+|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+|**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4587,7 +4706,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
+|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4608,7 +4739,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
+|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4629,7 +4772,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
+|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+|**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4650,7 +4805,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
+|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+|**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4671,7 +4838,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
+|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+|**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4692,7 +4871,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
+|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+|**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4713,7 +4904,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
+|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+|**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4734,7 +4937,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
+|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+|**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4755,7 +4970,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
+|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+|**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4776,7 +5003,19 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
-|**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
+|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+|**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
 |**1946**|**RoomOneTimeScheduleWednesday**|RawCodec|57||**rw**||
@@ -5721,7 +5960,7 @@
 |**2213**|**ApartmentOneSupplyChannelFourTimeScheduleSunday**|RawCodec|57||**rw**||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 | |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
-| |- Unknown|O3EInt8|1||||
+| |- Unknown|RawCodec|1||||
 |**2217**|**InputDemandSideManagementlReceiver**|RawCodec|1||ro||
 |**2218**|**RemoteLimitValueDemandSideManagement**|RawCodec|4||ro||
 |**2219**|**BatteryCalibration**|RawCodec|1||ro||
@@ -6530,10 +6769,10 @@
 |**2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
 |**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
 | |- ActualFlow|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
 | |- TargetFlow|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
 |**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
@@ -6659,22 +6898,22 @@
 |**2426**|**MixerOneCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2427**|**MixerTwoCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2428**|**MixerThreeCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2429**|**MixerFourCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2442**|**HeatPumpFrostProtection**|O3EInt8|1||ro||
 |**2444**|**LogLevelEmbbededApplication**|O3EInt8|1||ro||
@@ -7116,25 +7355,25 @@
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2547**|**MixerTwoCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2548**|**MixerThreeCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2549**|**MixerFourCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2551**|**FlameBurnerTwo**|RawCodec|6||ro||
 |**2552**|**ModulationCurrentValueBurnerTwo**|RawCodec|2||ro||
@@ -8683,64 +8922,83 @@
 |**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
-|**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
+|**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
-|**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
+|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+|**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
-|**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
+|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+|**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
-|**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
+|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+|**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
-|**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
+|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+|**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
-|**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
+|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+|**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
-|**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
+|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+|**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
-|**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
+|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+|**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
-|**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
+|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+|**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
-|**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
+|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+|**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
-|**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
+|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
-|**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
+|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
-|**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
+|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+|**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
-|**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
+|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+|**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
-|**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
+|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+|**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
-|**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
+|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+|**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
-|**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
+|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+|**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
 |**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 |**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
-|**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
+|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+|**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
-|**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
+|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+|**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
-|**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
+|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+|**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
 |**1946**|**RoomOneTimeScheduleWednesday**|RawCodec|57||**rw**||
