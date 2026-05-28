@@ -3354,7 +3354,7 @@
 | |- - 11_November|O3EInt32|4||||
 | |- - 12_December|O3EInt32|4||||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EList*|62||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
 | |- 01|O3EInt16|2||||
 | |- 02|O3EInt16|2||||
 | |- 03|O3EInt16|2||||
@@ -3386,7 +3386,7 @@
 | |- 29|O3EInt16|2||||
 | |- 30|O3EInt16|2||||
 | |- 31|O3EInt16|2||||
-|**1356**|**ProductionCoverageRateYearMatrix**|*O3EList*|24||ro||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 | |- 01_January|O3EInt16|2||||
 | |- 02_February|O3EInt16|2||||
 | |- 03_March|O3EInt16|2||||
@@ -3589,7 +3589,7 @@
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|*O3EList*|62||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
 | |- 01|O3EInt16|2||||
 | |- 02|O3EInt16|2||||
 | |- 03|O3EInt16|2||||
@@ -3621,7 +3621,7 @@
 | |- 29|O3EInt16|2||||
 | |- 30|O3EInt16|2||||
 | |- 31|O3EInt16|2||||
-|**1373**|**DemandCoverageRateYearMatrix**|*O3EList*|24||ro||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 | |- 01_January|O3EInt16|2||||
 | |- 02_February|O3EInt16|2||||
 | |- 03_March|O3EInt16|2||||
@@ -8659,8 +8659,8 @@
 |**1352**|**FeedInEnergyMonthMatrix**|*O3EComplexType*|124||ro||
 |**1353**|**FeedInEnergyYearMatrix**|*O3EComplexType*|96||ro||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EList*|62||ro||
-|**1356**|**ProductionCoverageRateYearMatrix**|*O3EList*|24||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 |**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
 |**1358**|**FuelCellOperationTimeMonthMatrix**|*O3EComplexType*|124||ro||
 |**1359**|**FuelCellOperationTimeYearMatrix**|*O3EComplexType*|48||ro||
@@ -8671,8 +8671,8 @@
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|*O3EList*|62||ro||
-|**1373**|**DemandCoverageRateYearMatrix**|*O3EList*|24||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 |**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
 |**1384**|**FuelCellBreakdownRateMonthMatrix**|*O3EComplexType*|124||ro||
 |**1385**|**FuelCellBreakdownRateYearMatrix**|*O3EComplexType*|48||ro||
