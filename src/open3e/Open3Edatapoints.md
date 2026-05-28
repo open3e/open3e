@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260527
+- Version of general data points: 20260528
 - Version of variant data points: 20260527
 
 ### Remarks
