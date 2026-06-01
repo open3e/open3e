@@ -1,0 +1,1631 @@
+Found 709 unique features with properties
+
+device.connection:
+  status: string
+device.errors.active:
+  entries: ErrorListChanges
+device.firmware.version:
+  build: number
+  family: number
+  revision: number
+  version: number
+device.identification:
+  triggered: boolean
+device.lock.external:
+  active: boolean
+device.lock.malfunction:
+  active: boolean
+device.messages.errors.raw:
+  entries: array
+device.messages.info.active:
+  entries: ErrorListChanges
+device.messages.info.raw:
+  entries: array
+device.messages.service.active:
+  entries: ErrorListChanges
+device.messages.service.raw:
+  entries: array
+device.messages.status.active:
+  entries: ErrorListChanges
+device.messages.status.raw:
+  entries: array
+device.messages.warnings.active:
+  entries: ErrorListChanges
+device.messages.warnings.raw:
+  entries: array
+device.power.battery:
+  level: number
+device.sensors.humidity:
+  status: string
+device.sensors.temperature:
+  status: string
+device.serial.internalComponents:
+  vinList: array
+device.status:
+  status: string
+device.timeseries.monitoringIonization:
+  countFive: number
+  countFour: number
+  countOne: number
+  countSeven: number
+  countSix: number
+  countThree: number
+  countTwo: number
+  timestampFive: string
+  timestampFour: string
+  timestampOne: string
+  timestampSeven: string
+  timestampSix: string
+  timestampThree: string
+  timestampTwo: string
+device.timeseries.water.pressure.peaks:
+  countFour: number
+  countOne: number
+  countThree: number
+  countTwo: number
+  timestampFour: string
+  timestampOne: string
+  timestampThree: string
+  timestampTwo: string
+device.zigbee.active:
+  active: boolean
+device.zigbee.lqi:
+  strength: number
+device.zigbee.status:
+  status: string
+ems.hoca.features:
+  activated: array
+  supported: array
+ems.hoca.features.forecastBasedBatteryOperation:
+  active: boolean
+ems.hoca.features.onlineSolarIrradianceForecast:
+  active: boolean
+ems.hoca.features.photovoltaicExcessToHeat:
+  active: boolean
+ems.kpi:
+  autarky: number
+  calculationStatus: string
+  selfConsumption: number
+ems.power.balance:
+  calculationStatus: string
+  delivered: Photovoltaic
+  received: Heatpump
+  totalConsumption: number
+  totalProduction: number
+ems.power.flows:
+  gridToConsumption: number
+  gridToStorage: number
+  productionToConsumption: number
+  productionToGrid: number
+  productionToStorage: number
+  status: string
+  storageToConsumption: number
+  storageToGrid: number
+  storageToStorage: number
+ems.power.instantaneous:
+  calculationStatus: string
+ess.battery:
+  enabled: array
+ess.battery.0:
+  active: boolean
+ess.battery.0.version.firmware:
+  build: number
+  family: number
+  revision: number
+  version: number
+ess.battery.0.version.hardware:
+  assemblyVariant: number
+  family: number
+  revision: number
+  version: number
+ess.battery.1:
+  active: boolean
+ess.battery.1.version.firmware:
+  build: number
+  family: number
+  revision: number
+  version: number
+ess.battery.1.version.hardware:
+  assemblyVariant: number
+  family: number
+  revision: number
+  version: number
+ess.battery.2:
+  active: boolean
+ess.battery.2.version.firmware:
+  build: number
+  family: number
+  revision: number
+  version: number
+ess.battery.2.version.hardware:
+  assemblyVariant: number
+  family: number
+  revision: number
+  version: number
+ess.battery.3:
+  active: boolean
+ess.battery.3.version.firmware:
+  build: number
+  family: number
+  revision: number
+  version: number
+ess.battery.3.version.hardware:
+  assemblyVariant: number
+  family: number
+  revision: number
+  version: number
+ess.battery.4:
+  active: boolean
+ess.battery.5:
+  active: boolean
+ess.inverter.ac.power:
+  activePower: number
+  reactivePower: number
+ess.meter.0:
+  active: boolean
+ess.sensors.temperature.ambient:
+  status: string
+ess.transfer.charge.cumulated:
+  currentDay: number
+  currentMonth: number
+  currentWeek: number
+  currentYear: number
+  lifeCycle: number
+ess.transfer.discharge.cumulated:
+  currentDay: number
+  currentMonth: number
+  currentWeek: number
+  currentYear: number
+  lifeCycle: number
+ess.version.hardware:
+  assemblyVariant: number
+  family: number
+  revision: number
+  version: number
+fht.operating.modes.cooling:
+  active: boolean
+fht.operating.modes.heating:
+  active: boolean
+fht.operating.modes.standby:
+  active: boolean
+fht.sensors.temperature.supply:
+  status: string
+fht.valve.burnInMode:
+  active: boolean
+fht.valve.state:
+  status: string
+gateway.bmuconnection:
+  status: string
+gateway.devices:
+  devices: vitoconnect
+gateway.firmware:
+  updateStatus: string
+  version: string
+gateway.mode:
+  mode: string
+gateway.remoteDiagnostics:
+  status: string
+  webSocketUrl: string
+gateway.status:
+  online: boolean
+gateway.wifi:
+  channel: number
+  strength: number
+heating.boiler.pumps.circuit:
+  status: string
+heating.boiler.pumps.internal:
+  status: string
+heating.boiler.sensors.temperature.commonSupply:
+  status: string
+heating.boiler.sensors.temperature.main:
+  status: string
+heating.buffer.sensors.temperature.stratification:
+  status: array
+heating.burners:
+  enabled: array
+heating.burners.0:
+  active: boolean
+heating.burners.0.automatic:
+  errorCode: number
+  status: string
+heating.burners.0.manualActivation:
+  active: boolean
+heating.burners.0.statistics:
+  hours: number
+  starts: number
+heating.circuits:
+  enabled: array
+heating.circuits.0:
+  active: boolean
+  name: string
+heating.circuits.0.circulation.pump:
+  status: string
+heating.circuits.0.circulation.schedule:
+  active: boolean
+heating.circuits.0.configuration.summerEco.absolute:
+  active: boolean
+  threshold: number
+heating.circuits.0.frostprotection:
+  status: string
+heating.circuits.0.heating.curve:
+  shift: number
+  slope: number
+heating.circuits.0.name:
+  active: boolean
+  status: string
+heating.circuits.0.operating.modes.cooling:
+  active: boolean
+heating.circuits.0.operating.modes.dhw:
+  active: boolean
+heating.circuits.0.operating.modes.dhwAndHeating:
+  active: boolean
+heating.circuits.0.operating.modes.dhwAndHeatingCooling:
+  active: boolean
+heating.circuits.0.operating.modes.dhwAndTestMode:
+  active: boolean
+heating.circuits.0.operating.modes.forcedNormal:
+  active: boolean
+heating.circuits.0.operating.modes.forcedReduced:
+  active: boolean
+heating.circuits.0.operating.modes.heating:
+  active: boolean
+heating.circuits.0.operating.modes.normalStandby:
+  active: boolean
+heating.circuits.0.operating.modes.standby:
+  active: boolean
+heating.circuits.0.operating.modes.testMode:
+  active: boolean
+heating.circuits.0.operating.programs.comfort:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.comfortCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.dhwPrecedence:
+  active: boolean
+heating.circuits.0.operating.programs.eco:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.external:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.fixed:
+  active: boolean
+heating.circuits.0.operating.programs.forcedLastFromSchedule:
+  active: boolean
+heating.circuits.0.operating.programs.frostprotection:
+  active: boolean
+heating.circuits.0.operating.programs.heatDissipation:
+  active: boolean
+heating.circuits.0.operating.programs.holiday:
+  active: boolean
+  end: string
+  start: string
+heating.circuits.0.operating.programs.holidayAtHome:
+  active: boolean
+  end: string
+  start: string
+heating.circuits.0.operating.programs.manual:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.mixerSaving:
+  active: boolean
+heating.circuits.0.operating.programs.normal:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.normalCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.reduced:
+  active: boolean
+  temperature: number
+heating.circuits.0.operating.programs.reducedCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.0.operating.programs.screedDrying:
+  active: boolean
+  profile: string
+heating.circuits.0.operating.programs.standby:
+  active: boolean
+heating.circuits.0.operating.programs.summerEco:
+  active: boolean
+heating.circuits.0.operating.programs.summerSaving:
+  active: boolean
+heating.circuits.0.regulation:
+  mode: string
+heating.circuits.0.sensors.temperature.room:
+  status: string
+heating.circuits.0.sensors.temperature.supply:
+  status: string
+heating.circuits.0.zone.mode:
+  active: boolean
+heating.circuits.1:
+  active: boolean
+  name: string
+heating.circuits.1.circulation.pump:
+  status: string
+heating.circuits.1.configuration.summerEco.absolute:
+  active: boolean
+  threshold: number
+heating.circuits.1.cooling.hysteresis:
+  activationThreshold: number
+  deactivationThreshold: number
+heating.circuits.1.frostprotection:
+  status: string
+heating.circuits.1.geofencing:
+  name: string
+heating.circuits.1.heating.curve:
+  shift: number
+  slope: number
+heating.circuits.1.heating.schedule:
+  active: boolean
+heating.circuits.1.name:
+  name: string
+heating.circuits.1.operating.modes.auto:
+  active: boolean
+heating.circuits.1.operating.modes.cooling:
+  active: boolean
+heating.circuits.1.operating.modes.dhw:
+  active: boolean
+heating.circuits.1.operating.modes.dhwAndAuto:
+  active: boolean
+heating.circuits.1.operating.modes.dhwAndCooling:
+  active: boolean
+heating.circuits.1.operating.modes.dhwAndHeating:
+  active: boolean
+heating.circuits.1.operating.modes.dhwAndHeatingCooling:
+  active: boolean
+heating.circuits.1.operating.modes.dhwAndTestMode:
+  active: boolean
+heating.circuits.1.operating.modes.forcedNormal:
+  active: boolean
+heating.circuits.1.operating.modes.forcedReduced:
+  active: boolean
+heating.circuits.1.operating.modes.heating:
+  active: boolean
+heating.circuits.1.operating.modes.heatingCooling:
+  active: boolean
+heating.circuits.1.operating.modes.standby:
+  active: boolean
+heating.circuits.1.operating.modes.testMode:
+  active: boolean
+heating.circuits.1.operating.programs.comfort:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.1.operating.programs.comfortCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.dhwPrecedence:
+  active: boolean
+heating.circuits.1.operating.programs.eco:
+  active: boolean
+  temperature: number
+heating.circuits.1.operating.programs.external:
+  active: boolean
+  temperature: number
+heating.circuits.1.operating.programs.fixed:
+  active: boolean
+heating.circuits.1.operating.programs.forcedLastFromSchedule:
+  active: boolean
+heating.circuits.1.operating.programs.frostprotection:
+  active: boolean
+heating.circuits.1.operating.programs.heatDissipation:
+  active: boolean
+heating.circuits.1.operating.programs.holiday:
+  active: boolean
+  end: string
+  start: string
+heating.circuits.1.operating.programs.holidayAtHome:
+  active: boolean
+  end: string
+  start: string
+heating.circuits.1.operating.programs.mixerSaving:
+  active: boolean
+heating.circuits.1.operating.programs.normal:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.1.operating.programs.normalCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.reduced:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.1.operating.programs.reducedCoolingEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.1.operating.programs.screedDrying:
+  active: boolean
+  profile: string
+heating.circuits.1.operating.programs.standby:
+  active: boolean
+heating.circuits.1.operating.programs.summerEco:
+  active: boolean
+heating.circuits.1.operating.programs.summerSaving:
+  active: boolean
+heating.circuits.1.regulation:
+  mode: string
+heating.circuits.1.sensors.humidity.dewpoint:
+  status: string
+heating.circuits.1.sensors.temperature.room:
+  status: string
+heating.circuits.1.sensors.temperature.supply:
+  status: string
+heating.circuits.1.zone.mode:
+  active: boolean
+heating.circuits.2:
+  active: boolean
+  name: string
+heating.circuits.2.circulation.pump:
+  status: string
+heating.circuits.2.frostprotection:
+  status: string
+heating.circuits.2.geofencing:
+  active: boolean
+  status: string
+heating.circuits.2.heating.curve:
+  shift: number
+  slope: number
+heating.circuits.2.name:
+  name: string
+heating.circuits.2.operating.modes.heating:
+  active: boolean
+heating.circuits.2.operating.modes.standby:
+  active: boolean
+heating.circuits.2.operating.programs.comfort:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.2.operating.programs.dhwPrecedence:
+  active: boolean
+heating.circuits.2.operating.programs.eco:
+  active: boolean
+  temperature: number
+heating.circuits.2.operating.programs.frostprotection:
+  active: boolean
+heating.circuits.2.operating.programs.heatDissipation:
+  active: boolean
+heating.circuits.2.operating.programs.mixerSaving:
+  active: boolean
+heating.circuits.2.operating.programs.normal:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.2.operating.programs.reduced:
+  active: boolean
+  demand: string
+  temperature: number
+heating.circuits.2.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.2.operating.programs.screedDrying:
+  active: boolean
+  profile: string
+heating.circuits.2.operating.programs.standby:
+  active: boolean
+heating.circuits.2.operating.programs.summerEco:
+  active: boolean
+heating.circuits.2.operating.programs.summerSaving:
+  active: boolean
+heating.circuits.2.regulation:
+  mode: string
+heating.circuits.2.sensors.temperature.supply:
+  status: string
+heating.circuits.2.zone.mode:
+  active: boolean
+heating.circuits.3.geofencing:
+  active: boolean
+  status: string
+heating.circuits.3.heating.curve:
+  shift: number
+  slope: number
+heating.circuits.3.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+heating.circuits.3.operating.programs.summerEco:
+  active: boolean
+heating.circuits.3.regulation:
+  mode: string
+heating.circuits.3.zone.mode:
+  active: boolean
+heating.compressors:
+  enabled: array
+heating.compressors.0:
+  active: boolean
+heating.compressors.0.heat.production.current:
+  status: string
+heating.compressors.0.heater.crankcase:
+  active: boolean
+heating.compressors.0.power.consumption.cooling:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.compressors.0.power.consumption.current:
+  status: string
+heating.compressors.0.power.consumption.dhw:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.compressors.0.power.consumption.heating:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.compressors.0.power.consumption.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.compressors.0.sensors.power:
+  status: string
+heating.compressors.0.sensors.pressure.inlet:
+  status: string
+heating.compressors.0.sensors.pressure.outlet:
+  status: string
+heating.compressors.0.sensors.temperature.inlet:
+  status: string
+heating.compressors.0.sensors.temperature.motorChamber:
+  status: string
+heating.compressors.0.sensors.temperature.oil:
+  status: string
+heating.compressors.0.sensors.temperature.outlet:
+  status: string
+heating.compressors.0.statistics:
+  hours: number
+  starts: number
+heating.compressors.0.statistics.load:
+  hoursLoadClassFive: number
+  hoursLoadClassFour: number
+  hoursLoadClassOne: number
+  hoursLoadClassThree: number
+  hoursLoadClassTwo: number
+heating.compressors.1:
+  active: boolean
+  phase: string
+heating.compressors.1.sensors.power:
+  status: string
+heating.compressors.1.statistics:
+  hours: number
+  hoursLoadClassFive: number
+  hoursLoadClassFour: number
+  hoursLoadClassOne: number
+  hoursLoadClassThree: number
+  hoursLoadClassTwo: number
+  starts: number
+heating.condensors.0.sensors.temperature.liquid:
+  status: string
+heating.configuration.cooling:
+  mode: string
+heating.configuration.heatingRod.dhw:
+  useApproved: boolean
+heating.configuration.heatingRod.general:
+  useApproved: boolean
+heating.configuration.heatingRod.heating:
+  useApproved: boolean
+heating.configuration.houseLocation:
+  altitude: number
+  latitude: number
+  longitude: number
+heating.configuration.houseOrientation:
+  horizontal: number
+  vertical: number
+heating.configuration.multiFamilyHouse:
+  active: boolean
+heating.configuration.pressure.total:
+  defaultPressure: number
+  errorThreshold: number
+  maximumPressure: number
+  normalPressureDelta: number
+heating.configuration.regulation:
+  mode: string
+heating.device.comfortEnsuring:
+  activated: boolean
+  useApproved: boolean
+heating.device.initialSetup:
+  date: string
+  dateFormat: string
+heating.device.mainECU:
+  runtime: number
+  runtimeUnit: string
+heating.device.smartGrid:
+  actualState: string
+  requestedState: string
+heating.dhw:
+  active: boolean
+heating.dhw.charging:
+  active: boolean
+heating.dhw.charging.level:
+  bottom: number
+  middle: number
+  top: number
+heating.dhw.hygiene:
+  enabled: boolean
+heating.dhw.oneTimeCharge:
+  active: boolean
+heating.dhw.operating.modes.balanced:
+  active: boolean
+heating.dhw.operating.modes.comfort:
+  active: boolean
+heating.dhw.operating.modes.eco:
+  active: boolean
+heating.dhw.operating.modes.off:
+  active: boolean
+heating.dhw.pumps.circulation:
+  status: string
+heating.dhw.pumps.primary:
+  status: string
+heating.dhw.sensors.temperature.dhwCylinder:
+  status: string
+heating.dhw.sensors.temperature.dhwCylinder.bottom:
+  status: string
+heating.dhw.sensors.temperature.dhwCylinder.midBottom:
+  status: string
+heating.dhw.sensors.temperature.dhwCylinder.middle:
+  status: string
+heating.dhw.sensors.temperature.dhwCylinder.top:
+  status: string
+heating.dhw.sensors.temperature.hotWaterStorage:
+  status: string
+heating.dhw.sensors.temperature.hotWaterStorage.bottom:
+  status: string
+heating.dhw.sensors.temperature.hotWaterStorage.top:
+  status: string
+heating.dhw.sensors.temperature.outlet:
+  status: string
+heating.dhw.temperature.levels:
+  default: number
+heating.economizers.0.sensors.temperature.liquid:
+  status: string
+heating.errors.active:
+  entries: ErrorListChanges
+heating.errors.history:
+  entries: ErrorListChanges
+heating.evaporators.0.heater.base:
+  active: boolean
+heating.evaporators.0.sensors.temperature.liquid:
+  status: string
+heating.evaporators.0.sensors.temperature.overheat:
+  status: string
+heating.flue.sensors.o2.lambda:
+  status: string
+heating.flue.sensors.temperature.main:
+  status: string
+heating.fuelCell.operating.modes.ecological:
+  active: boolean
+heating.fuelCell.operating.modes.economical:
+  active: boolean
+heating.fuelCell.operating.modes.heatControlled:
+  active: boolean
+heating.fuelCell.operating.modes.maintenance:
+  active: boolean
+heating.fuelCell.operating.modes.standby:
+  active: boolean
+heating.fuelCell.power.production:
+  day: array
+  month: array
+  week: array
+  year: array
+heating.fuelCell.sensors.temperature.return:
+  status: string
+heating.fuelCell.sensors.temperature.supply:
+  status: string
+heating.fuelCell.statistics:
+  availabilityRate: number
+  insertions: number
+  operationHours: number
+  productionHours: number
+  productionStarts: number
+heating.gas.consumption.dhw:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.gas.consumption.fuelCell:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.gas.consumption.heating:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.gas.consumption.summary.dhw:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastSevenDays: number
+heating.gas.consumption.summary.heating:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastSevenDays: number
+heating.gas.consumption.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heat.production:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heat.production.cooling:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heat.production.current:
+  status: string
+heating.heat.production.dhw:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heat.production.heating:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heat.production.summary.cooling:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.heat.production.summary.dhw:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.heat.production.summary.heating:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.heat.production.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heatingRod.heat.production.current:
+  status: string
+heating.heatingRod.power.consumption.current:
+  status: string
+heating.heatingRod.power.consumption.dhw:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heatingRod.power.consumption.heating:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heatingRod.power.consumption.summary.dhw:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.heatingRod.power.consumption.summary.heating:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.heatingRod.power.consumption.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.heatingRod.statistics:
+  hours: number
+  starts: number
+heating.heatingRod.status:
+  level1: boolean
+  level2: boolean
+  level3: boolean
+  overall: boolean
+heating.noise.reduction:
+  active: boolean
+  changeableByEndCustomer: boolean
+heating.operating.programs.holiday:
+  active: boolean
+  end: string
+  start: string
+heating.operating.programs.holidayAtHome:
+  active: boolean
+  end: string
+  start: string
+heating.outdoor.defrosting:
+  active: boolean
+heating.power.consumption.cooling:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.power.consumption.current:
+  status: string
+heating.power.consumption.dhw:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.power.consumption.heating:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.power.consumption.summary.cooling:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.power.consumption.summary.dhw:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.power.consumption.summary.heating:
+  currentDay: number
+  currentMonth: number
+  currentYear: number
+  lastMonth: number
+  lastSevenDays: number
+  lastYear: number
+heating.power.consumption.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.power.production:
+  day: array
+  month: array
+  week: array
+  year: array
+heating.power.production.current:
+  status: string
+heating.power.production.demandCoverage.total:
+  day: array
+  month: array
+  week: array
+  year: array
+heating.primaryCircuit.fans:
+  enabled: array
+heating.primaryCircuit.sensors.temperature.return:
+  status: string
+heating.primaryCircuit.sensors.temperature.supply:
+  status: string
+heating.primaryCircuit.valves.fourWay:
+  active: boolean
+heating.secondaryCircuit.operation.state:
+  currentValue: string
+  targetValue: string
+heating.secondaryCircuit.sensors.temperature.supply:
+  status: string
+heating.secondaryCircuit.valves.fourWay:
+  current: number
+  target: number
+heating.sensors.pressure.supply:
+  status: string
+heating.sensors.temperature.allengra:
+  status: string
+heating.sensors.temperature.hydraulicSeparator:
+  status: string
+heating.sensors.temperature.outside:
+  status: string
+heating.sensors.temperature.return:
+  status: string
+heating.sensors.valve.0.expansion:
+  status: string
+heating.sensors.valve.1.expansion:
+  status: string
+heating.sensors.volumetricFlow.allengra:
+  status: string
+heating.service.burnerBased:
+  activeBurnerHoursSinceLastService: number
+  lastService: string
+  serviceDue: boolean
+  serviceIntervalBurnerHours: number
+heating.service.timeBased:
+  activeMonthSinceLastService: number
+  lastService: string
+  nextService: string
+  serviceDue: boolean
+  serviceIntervalMonths: number
+heating.solar:
+  active: boolean
+heating.solar.forecast.surfaceNetIrradiance:
+  forecastBeginning: string
+heating.solar.power.production:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+heating.solar.pumps.circuit:
+  status: string
+heating.solar.rechargeSuppression:
+  status: string
+heating.solar.sensors.temperature.collector:
+  status: string
+heating.solar.sensors.temperature.dhw:
+  status: string
+heating.solar.statistics:
+  hours: number
+heating.valves.diverter.heatDhw:
+  position: string
+pcc.ac.active.current:
+  phaseOne: number
+  phaseThree: number
+  phaseTwo: number
+  total: number
+pcc.ac.active.power:
+  phaseOne: number
+  phaseThree: number
+  phaseTwo: number
+pcc.ac.reactive.power:
+  phaseOne: number
+  phaseThree: number
+  phaseTwo: number
+pcc.power.feedInLimitation:
+  limit: number
+  limitType: string
+  mode: string
+photovoltaic.overview:
+  power: number
+  state: string
+photovoltaic.production.cumulated:
+  currentDay: number
+  currentMonth: number
+  currentWeek: number
+  currentYear: number
+  lifeCycle: number
+photovoltaic.status:
+  status: string
+photovoltaic.string.current:
+  stringOne: number
+  stringThree: number
+  stringTwo: number
+photovoltaic.string.voltage:
+  stringOne: number
+  stringThree: number
+  stringTwo: number
+rooms:
+  enabled: array
+rooms.0.childLock:
+  status: string
+rooms.0.co2:
+  concentration: number
+rooms.0.configuration.window.openState:
+  active: boolean
+rooms.0.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.0.operating.programs.comfortHeating:
+  active: boolean
+  temperature: number
+rooms.0.operating.programs.manualTillNextScheduleEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.0.operating.programs.manualTillNextScheduleHeating:
+  active: boolean
+rooms.0.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.0.operating.programs.normalHeating:
+  active: boolean
+  temperature: number
+rooms.0.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.0.operating.programs.reducedHeating:
+  active: boolean
+  temperature: number
+rooms.0.operating.programs.standby:
+  active: boolean
+rooms.0.operating.state:
+  demand: string
+  level: string
+  reason: string
+rooms.0.quickmodes.manualTillNextSchedule:
+  active: boolean
+rooms.0.sensors.co2:
+  status: string
+rooms.0.sensors.humidity:
+  status: string
+rooms.0.sensors.temperature:
+  status: string
+rooms.0.temperature.levels.comfort.heating:
+  temperature: number
+rooms.0.temperature.levels.comfort.perceived:
+  temperature: number
+rooms.0.temperature.levels.normal.heating:
+  temperature: number
+rooms.0.temperature.levels.normal.perceived:
+  temperature: number
+rooms.0.temperature.levels.reduced.heating:
+  temperature: number
+rooms.0.temperature.levels.reduced.perceived:
+  temperature: number
+rooms.2.aggregatedStatus:
+  status: string
+rooms.2.childLock:
+  status: string
+rooms.2.co2:
+  concentration: number
+rooms.2.configuration.window.openState:
+  active: boolean
+rooms.2.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.2.operating.programs.comfortHeating:
+  active: boolean
+  temperature: number
+rooms.2.operating.programs.manualTillNextScheduleEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.2.operating.programs.manualTillNextScheduleHeating:
+  active: boolean
+rooms.2.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.2.operating.programs.normalHeating:
+  active: boolean
+  temperature: number
+rooms.2.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.2.operating.programs.reducedHeating:
+  active: boolean
+  temperature: number
+rooms.2.operating.programs.standby:
+  active: boolean
+rooms.2.operating.state:
+  demand: string
+  level: string
+  reason: string
+rooms.2.quickmodes.manualTillNextSchedule:
+  active: boolean
+rooms.2.sensors.co2:
+  status: string
+rooms.2.sensors.humidity:
+  status: string
+rooms.2.sensors.temperature:
+  status: string
+rooms.2.temperature.levels.comfort.heating:
+  temperature: number
+rooms.2.temperature.levels.comfort.perceived:
+  temperature: number
+rooms.2.temperature.levels.normal.heating:
+  temperature: number
+rooms.2.temperature.levels.normal.perceived:
+  temperature: number
+rooms.2.temperature.levels.reduced.heating:
+  temperature: number
+rooms.2.temperature.levels.reduced.perceived:
+  temperature: number
+rooms.3.aggregatedStatus:
+  status: string
+rooms.3.childLock:
+  status: string
+rooms.3.co2:
+  concentration: number
+rooms.3.configuration.window.openState:
+  active: boolean
+rooms.3.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.3.operating.programs.comfortHeating:
+  active: boolean
+  temperature: number
+rooms.3.operating.programs.manualTillNextScheduleEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.3.operating.programs.manualTillNextScheduleHeating:
+  active: boolean
+rooms.3.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.3.operating.programs.normalHeating:
+  active: boolean
+  temperature: number
+rooms.3.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.3.operating.programs.reducedHeating:
+  active: boolean
+  temperature: number
+rooms.3.operating.programs.standby:
+  active: boolean
+rooms.3.operating.state:
+  demand: string
+  level: string
+  reason: string
+rooms.3.quickmodes.manualTillNextSchedule:
+  active: boolean
+rooms.3.sensors.co2:
+  status: string
+rooms.3.sensors.humidity:
+  status: string
+rooms.3.sensors.temperature:
+  status: string
+rooms.3.temperature.levels.comfort.heating:
+  temperature: number
+rooms.3.temperature.levels.comfort.perceived:
+  temperature: number
+rooms.3.temperature.levels.normal.heating:
+  temperature: number
+rooms.3.temperature.levels.normal.perceived:
+  temperature: number
+rooms.3.temperature.levels.reduced.heating:
+  temperature: number
+rooms.3.temperature.levels.reduced.perceived:
+  temperature: number
+rooms.features:
+  activated: array
+  supported: array
+rooms.features.remotePresenceProbability:
+  active: boolean
+rooms.features.supplyChannel0FTDC:
+  active: boolean
+rooms.features.supplyChannel0FTDCUseValveInformation:
+  active: boolean
+rooms.features.supplyChannel1FTDC:
+  active: boolean
+rooms.features.supplyChannel1FTDCUseValveInformation:
+  active: boolean
+rooms.features.supplyChannel2FTDC:
+  active: boolean
+rooms.features.supplyChannel2FTDCUseValveInformation:
+  active: boolean
+rooms.features.supplyChannel3FTDC:
+  active: boolean
+rooms.features.supplyChannel3FTDCUseValveInformation:
+  active: boolean
+rooms.others:
+  enabled: array
+rooms.others.0.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.0.operating.programs.comfortHeating:
+  active: boolean
+  temperature: number
+rooms.others.0.operating.programs.manualTillNextScheduleEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.0.operating.programs.manualTillNextScheduleHeating:
+  active: boolean
+rooms.others.0.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.0.operating.programs.normalHeating:
+  active: boolean
+  temperature: number
+rooms.others.0.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.0.operating.programs.reducedHeating:
+  active: boolean
+  temperature: number
+rooms.others.0.operating.programs.standby:
+  active: boolean
+rooms.others.0.operating.state:
+  demand: string
+  level: string
+  reason: string
+rooms.others.0.quickmodes.manualTillNextSchedule:
+  active: boolean
+rooms.others.0.sensors.co2:
+  status: string
+rooms.others.0.sensors.humidity:
+  status: string
+rooms.others.0.sensors.temperature:
+  status: string
+rooms.others.0.temperature.levels.comfort.heating:
+  temperature: number
+rooms.others.0.temperature.levels.comfort.perceived:
+  temperature: number
+rooms.others.0.temperature.levels.normal.heating:
+  temperature: number
+rooms.others.0.temperature.levels.normal.perceived:
+  temperature: number
+rooms.others.0.temperature.levels.reduced.heating:
+  temperature: number
+rooms.others.0.temperature.levels.reduced.perceived:
+  temperature: number
+rooms.others.1.operating.programs.comfortEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.1.operating.programs.comfortHeating:
+  active: boolean
+  temperature: number
+rooms.others.1.operating.programs.manualTillNextScheduleEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.1.operating.programs.manualTillNextScheduleHeating:
+  active: boolean
+rooms.others.1.operating.programs.normalEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.1.operating.programs.normalHeating:
+  active: boolean
+  temperature: number
+rooms.others.1.operating.programs.reducedEnergySaving:
+  active: boolean
+  demand: string
+  reason: string
+rooms.others.1.operating.programs.reducedHeating:
+  active: boolean
+  temperature: number
+rooms.others.1.operating.programs.standby:
+  active: boolean
+rooms.others.1.operating.state:
+  demand: string
+  level: string
+  reason: string
+rooms.others.1.quickmodes.manualTillNextSchedule:
+  active: boolean
+rooms.others.1.sensors.co2:
+  status: string
+rooms.others.1.sensors.humidity:
+  status: string
+rooms.others.1.sensors.temperature:
+  status: string
+rooms.others.1.temperature.levels.comfort.heating:
+  temperature: number
+rooms.others.1.temperature.levels.comfort.perceived:
+  temperature: number
+rooms.others.1.temperature.levels.normal.heating:
+  temperature: number
+rooms.others.1.temperature.levels.normal.perceived:
+  temperature: number
+rooms.others.1.temperature.levels.reduced.heating:
+  temperature: number
+rooms.others.1.temperature.levels.reduced.perceived:
+  temperature: number
+rooms.standaloneMode:
+  active: boolean
+rooms.status:
+  active: boolean
+  variant: string
+thermal.cockpit:
+  power: number
+  status: string
+trv.childLock:
+  status: string
+trv.display:
+  orientation: string
+trv.mountingMode:
+  active: boolean
+trv.sensors.window.openState:
+  status: string
+trv.valve.position:
+  position: number
+ventilation:
+  active: boolean
+ventilation.air.balance.offset:
+  input: number
+  output: number
+ventilation.airQuality.co.current:
+  status: string
+ventilation.airQuality.co2.current:
+  status: string
+ventilation.airQuality.dust.current:
+  status: string
+ventilation.airQuality.fineDust.current:
+  status: string
+ventilation.airQuality.humidity.current:
+  maxValue: number
+  minValue: number
+  status: string
+ventilation.airQuality.organicComponents.current:
+  status: string
+ventilation.airQuality.temperature.current:
+  status: string
+ventilation.bypass:
+  active: boolean
+ventilation.bypass.operating.modes.active:
+  level: string
+  state: string
+ventilation.bypass.operating.modes.automaticDynamicRegulation:
+  active: boolean
+ventilation.bypass.operating.modes.automaticSmoothRegulation:
+  active: boolean
+ventilation.bypass.operating.modes.off:
+  active: boolean
+ventilation.bypass.operating.modes.open:
+  active: boolean
+ventilation.fan.exhaust:
+  current: number
+  status: string
+  target: number
+ventilation.fan.supply:
+  current: number
+  status: string
+  target: number
+ventilation.filter.runtime:
+  operatingHours: number
+  overdueHours: number
+  remainingHours: number
+ventilation.heatExchanger.frostprotection:
+  status: string
+ventilation.levels.levelFour:
+  volumeFlow: number
+ventilation.levels.levelOne:
+  volumeFlow: number
+ventilation.levels.levelThree:
+  volumeFlow: number
+ventilation.levels.levelTwo:
+  volumeFlow: number
+ventilation.operating.modes.continuousSensorOverride:
+  active: boolean
+ventilation.operating.modes.filterChange:
+  active: boolean
+ventilation.operating.modes.levelTwo:
+  active: boolean
+ventilation.operating.modes.permanent:
+  active: boolean
+ventilation.operating.modes.sensorDriven:
+  active: boolean
+ventilation.operating.modes.sensorOverride:
+  active: boolean
+ventilation.operating.modes.standby:
+  active: boolean
+ventilation.operating.modes.ventilation:
+  active: boolean
+ventilation.operating.programs.automatic:
+  active: boolean
+ventilation.operating.programs.levelFour:
+  active: boolean
+  volumeFlow: number
+ventilation.operating.programs.levelOne:
+  active: boolean
+  volumeFlow: number
+ventilation.operating.programs.levelThree:
+  active: boolean
+  volumeFlow: number
+ventilation.operating.programs.levelTwo:
+  active: boolean
+  volumeFlow: number
+ventilation.operating.programs.standby:
+  active: boolean
+  volumeFlow: number
+ventilation.operating.state:
+  demand: string
+  level: string
+  reason: string
+ventilation.power.consumption.total:
+  day: array
+  dayValueReadAt: string
+  month: array
+  monthValueReadAt: string
+  week: array
+  weekValueReadAt: string
+  year: array
+  yearValueReadAt: string
+ventilation.preHeater:
+  active: boolean
+ventilation.preHeater.statistics:
+  hours: number
+  hoursUnit: string
+  starts: number
+ventilation.schedule:
+  active: boolean
+ventilation.sensors.airQuality:
+  status: string
+ventilation.sensors.humidity.exhaust:
+  status: string
+ventilation.sensors.humidity.extract:
+  status: string
+ventilation.sensors.humidity.outdoor:
+  status: string
+ventilation.sensors.humidity.supply:
+  status: string
+ventilation.sensors.temperature.exhaust:
+  status: string
+ventilation.sensors.temperature.extract:
+  status: string
+ventilation.sensors.temperature.outside:
+  status: string
+ventilation.sensors.temperature.supply:
+  status: string
+water.consumption.summary:
+  currentDay: number
+  lastSevenDays: number
+  total: number
+water.leakDetection.configuration.flowAlert:
+  maxDuration: number
+  maxFlow: number
+water.leakDetection.sensors.leakage:
+  enabled: array
+water.leakDetection.sensors.leakage.0:
+  status: string
+water.leakDetection.sensors.leakage.0.battery:
+  level: number
+water.leakDetection.sensors.leakage.0.name:
+  name: string
+water.leakDetection.sensors.leakage.0.version.hardware:
+  build: number
+  family: number
+  revision: number
+  version: number
+water.leakDetection.sensors.leakage.0.version.software:
+  build: number
+  family: number
+  revision: number
+  version: number
+water.leakDetection.sensors.leakage.1:
+  status: string
+water.leakDetection.sensors.leakage.1.battery:
+  level: number
+water.leakDetection.sensors.leakage.1.name:
+  name: string
+water.leakDetection.sensors.leakage.1.version.hardware:
+  build: number
+  family: number
+  revision: number
+  version: number
+water.leakDetection.sensors.leakage.1.version.software:
+  build: number
+  family: number
+  revision: number
+  version: number
+water.softener.configuration.lowSaltAlert:
+  lowLevelAlertDays: number
+water.softener.salt.level.days:
+  remaining: number
+water.valves.shutoff.holiday:
+  active: boolean
+water.valves.shutoff.motor:
+  state: string

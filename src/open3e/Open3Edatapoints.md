@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260512
-- Version of variant data points: 20260217
+- Version of general data points: 20260528
+- Version of variant data points: 20260527
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -31,54 +31,54 @@
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -138,7 +138,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -150,7 +150,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|hPa|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -167,7 +167,7 @@
 |**396**|[**DomesticHotWaterTemperatureSetpoint**](## "Temperature setpoint domestic hot water")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 | |- Mode|O3EByteVal|1||||
 | |- HygenieActive|O3EByteVal|1||||
@@ -673,14 +673,14 @@
 | |- String3|O3EInt32|4|V|||
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 | |- StateOfEnergy|O3EInt16|2|Wh|||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1842**|[**SecondaryCircuitFourThreeWayValve**](## "Circuit 2: Position of Four Three Way Valve")|*O3EComplexType*|2||ro||
 | |- Setpoint|O3EInt8|1|%|||
 | |- CurrentPosition|O3EInt8|1|%|||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 | |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
-| |- Unknown|O3EInt8|1||||
+| |- Unknown|RawCodec|1||||
 |**2256**|[**DesiredThermalEnergyDefrost**](## "Target value of thermal energy to perform next defrosting")|O3EInt16|2|Wh|ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
@@ -844,54 +844,54 @@
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**258**|[**StatusDtcHistory**](## "History of status messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - State|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**259**|[**InfoDtcList**](## "List of active info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**260**|[**InfoDtcHistory**](## "History of info messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Info|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**261**|[**ServiceDtcList**](## "List of active service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**262**|[**ServiceDtcHistory**](## "History of service messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - [Service](## "{0: NoServiceRequired, 1: HoursTillServiceExpired, 2: ReplaceSacrificialAnode, 4: RefillWaterSystem, 5: RegularMaintenanceActive, 6: OverhaulActive, 7: DurationOfLife, 8: BurnerOperatingHoursTillServiceExpired, 9: ServiceFuelCellSixMonthsTillServiceExpired, 10: ServiceFuelCellFiveMonthsTillServiceExpired, 11: ServiceFuelCellFourMonthsTillServiceExpired, 12: ServiceFuelCellThreeMonthsTillServiceExpired, 13: ServiceFuelCellTwoMonthTillServiceExpired, 14: ServiceFuelCellFourtyfiveDaysTillServiceExpired, 15: ServiceFuelCellOneMonthTillServiceExpired, 16: ServiceFuelCellSixMonthsTillOverhaulExpired, 17: ServiceFuelCellFiveMonthsTillOverhaulExpired, 18: ServiceFuelCellFourMonthsTillOverhaulExpired, 19: ServiceFuelCellThreeMonthsTillOverhaulExpired, 20: ServiceFuelCellTwoMonthTillOverhaulExpired, 21: ServiceFuelCellFourtyfiveDaysTillOverhaulExpired, 22: ServiceFuelCellOneMonthTillOverhaulExpired, 23: ServiceFuelCellSixMonthsTillEndOfLife, 24: ServiceFuelCellFiveMonthsTillEndOfLife, 25: ServiceFuelCellFourMonthsTillEndOfLife, 26: ServiceFuelCellThreeMonthsTillEndOfLife, 27: ServiceFuelCellTwoMonthTillEndOfLife, 28: ServiceFuelCellFourtyfiveDaysTillEndOfLife, 29: ServiceFuelCellOneMonthTillEndOfLife, 30: BalancingInProgress, 31: BackupPowerFunctionActive, 32: BatteryLow, 33: BatteryDeviceTurnedOff, 34: MaintenanceIntervalHydraulicFilterExpired, 35: MaintenanceIntervalVentilationFilterExpired, 36: ContaminationAirFilter, 37: LagDeviceDtcReported, 65533: ViewedServiceList, 65534: ServiceDoneSuccessful}")|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**263**|[**WarningDtcList**](## "List of active warning messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**264**|[**WarningDtcHistory**](## "History of warning messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Warning|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**265**|[**ErrorDtcList**](## "List of active error messages")|*O3EList*|122||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**266**|[**ErrorDtcHistory**](## "History of error messages")|*O3EList*|124||ro||
 | |- [Count](## "Number of entries listed")|O3EByteVal|2||||
 | |- [GrandTotal](## "Total number of entries")|O3EByteVal|2||||
 | |- - Error|O3EEnum|2||||
 | |- - [DateTime](## "Date of event")|O3EDateTime|8||||
-| |- - Unknown|O3EByteVal|2||||
+| |- - Unknown|RawCodec|2||||
 |**268**|[**FlowTemperatureSensor**](## "Flow temperature in the primary circuit downstream from the heat generator")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1036,7 +1036,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1048,7 +1048,7 @@
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
 | |- Average|O3EInt16|2|hPa|||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
 | |- Minimum|O3EInt16|2||||
@@ -1155,7 +1155,7 @@
 | |- [DateFormat](## "{0: DayMonthYear, 1: MonthDayYear, 2: YearMonthDay}")|O3EEnum|1||||
 | |- [TimeFormat](## "{0: TwentyFourHours, 1: TwelveHours}")|O3EEnum|1||||
 | |- TimeZone|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**386**|**DiverterValveTargetPosition**|O3EByteVal|1||**rw**||
 |**388**|[**ElectronicExpansionValveOneTargetPositionPercent**](## "Target position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|**rw**||
 |**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
@@ -1301,7 +1301,7 @@
 | |- Duration|O3EByteVal|1||||
 |**437**|**BypassOperationState**|*O3EComplexType*|2||**rw**||
 | |- BypassStatus|O3EByteVal|1||||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 |**438**|**MixerEightCircuitRoomTemperatureSetpoint**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Standard|O3EInt16|2||||
@@ -1325,7 +1325,7 @@
 | |- Actual|O3EInt8|1||||
 |**491**|[**DomesticHotWaterCirculationPump**](## "Request for domestic hot water circulation pump")|*O3EComplexType*|2||**rw**||
 | |- State|O3EByteVal|1||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 |**497**|[**DomesticHotWaterCirculationPumpMode**](## "Operation Mode of domestic hot water circulation pump")|*O3EComplexType*|5||**rw**|[See page 22f](https://static.viessmann-climatesolutions.com/resources/technical_documents/DE/de/VSA/6179923VSA00001_1.pdf?)|
 | |- Mode|O3EByteVal|1||||
 | |- HygenieActive|O3EByteVal|1||||
@@ -1412,7 +1412,7 @@
 | |- [State](## "{0: Off, 1: Hot water, 2: Parallel operation, 3: Chimney sweep, 4: Test mode, 5: External temperature setpoint, 6: External modulation setpoint, 7: Hygiene function, 8: Automatic}")|O3EEnum|1||||
 |**533**|**VentilationTargetOperationLevel**|*O3EComplexType*|2||**rw**||
 | |- Acutual|O3EByteVal|1||||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 |**534**|**DomesticHotWaterPumpPostRunTime**|RawCodec|2||ro||
 |**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- GridFeedInEnergy|O3EInt32|4|kWh|||
@@ -1425,10 +1425,10 @@
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 |**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
-| |- Unknown1|O3EByteVal|1||||
+| |- Unknown1|RawCodec|1||||
 | |- OperatingStatus|O3EByteVal|1||||
-| |- Unknown2|O3EByteVal|1||||
-| |- Unknown3|O3EByteVal|1||||
+| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 |**544**|**GasConsumptionCentralHeating**|*O3EComplexType*|12||ro||
 | |- Today|O3EInt16|2||||
 | |- Past7Days|O3EInt16|2||||
@@ -3168,31 +3168,657 @@
 | |- PastMonth|O3EInt16|2||||
 | |- CurrentYear|O3EInt16|2||||
 | |- PastYear|O3EInt16|2||||
-|**1349**|**FuelCellGasConsumptionMonthMatrix**|RawCodec|124||ro||
-|**1350**|**FuelCellGasConsumptionYearMatrix**|RawCodec|48||ro||
+|**1349**|[**FuelCellGasConsumptionMonthMatrix**](## "Fuel Cell Gas Consumption Per Month")|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1350**|[**FuelCellGasConsumptionYearMatrix**](## "Fuel Cell Gas Consumption Per Year")|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1351**|**FeedInEnergy**|RawCodec|24||ro||
-|**1352**|**FeedInEnergyMonthMatrix**|RawCodec|124||ro||
-|**1353**|**FeedInEnergyYearMatrix**|RawCodec|96||ro||
+|**1352**|**FeedInEnergyMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1353**|**FeedInEnergyYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1356**|**ProductionCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+| |- 01|O3EInt16|2||||
+| |- 02|O3EInt16|2||||
+| |- 03|O3EInt16|2||||
+| |- 04|O3EInt16|2||||
+| |- 05|O3EInt16|2||||
+| |- 06|O3EInt16|2||||
+| |- 07|O3EInt16|2||||
+| |- 08|O3EInt16|2||||
+| |- 09|O3EInt16|2||||
+| |- 10|O3EInt16|2||||
+| |- 11|O3EInt16|2||||
+| |- 12|O3EInt16|2||||
+| |- 13|O3EInt16|2||||
+| |- 14|O3EInt16|2||||
+| |- 15|O3EInt16|2||||
+| |- 16|O3EInt16|2||||
+| |- 17|O3EInt16|2||||
+| |- 18|O3EInt16|2||||
+| |- 19|O3EInt16|2||||
+| |- 20|O3EInt16|2||||
+| |- 21|O3EInt16|2||||
+| |- 22|O3EInt16|2||||
+| |- 23|O3EInt16|2||||
+| |- 24|O3EInt16|2||||
+| |- 25|O3EInt16|2||||
+| |- 26|O3EInt16|2||||
+| |- 27|O3EInt16|2||||
+| |- 28|O3EInt16|2||||
+| |- 29|O3EInt16|2||||
+| |- 30|O3EInt16|2||||
+| |- 31|O3EInt16|2||||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
+| |- 01_January|O3EInt16|2||||
+| |- 02_February|O3EInt16|2||||
+| |- 03_March|O3EInt16|2||||
+| |- 04_April|O3EInt16|2||||
+| |- 05_May|O3EInt16|2||||
+| |- 06_June|O3EInt16|2||||
+| |- 07_July|O3EInt16|2||||
+| |- 08_August|O3EInt16|2||||
+| |- 09_September|O3EInt16|2||||
+| |- 10_October|O3EInt16|2||||
+| |- 11_November|O3EInt16|2||||
+| |- 12_December|O3EInt16|2||||
 |**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
-|**1358**|**FuelCellOperationTimeMonthMatrix**|RawCodec|124||ro||
-|**1359**|**FuelCellOperationTimeYearMatrix**|RawCodec|48||ro||
+|**1358**|**FuelCellOperationTimeMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1359**|**FuelCellOperationTimeYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1360**|**FuelCellRunTime**|RawCodec|11||ro||
-|**1361**|**FuelCellRunTimeMonthMatrix**|RawCodec|124||ro||
-|**1362**|**FuelCellRunTimeYearMatrix**|RawCodec|48||ro||
+|**1361**|**FuelCellRunTimeMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1362**|**FuelCellRunTimeYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
 |**1363**|**FuelCellTargetOperationMode**|RawCodec|1||**rw**||
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1373**|**DemandCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+| |- 01|O3EInt16|2||||
+| |- 02|O3EInt16|2||||
+| |- 03|O3EInt16|2||||
+| |- 04|O3EInt16|2||||
+| |- 05|O3EInt16|2||||
+| |- 06|O3EInt16|2||||
+| |- 07|O3EInt16|2||||
+| |- 08|O3EInt16|2||||
+| |- 09|O3EInt16|2||||
+| |- 10|O3EInt16|2||||
+| |- 11|O3EInt16|2||||
+| |- 12|O3EInt16|2||||
+| |- 13|O3EInt16|2||||
+| |- 14|O3EInt16|2||||
+| |- 15|O3EInt16|2||||
+| |- 16|O3EInt16|2||||
+| |- 17|O3EInt16|2||||
+| |- 18|O3EInt16|2||||
+| |- 19|O3EInt16|2||||
+| |- 20|O3EInt16|2||||
+| |- 21|O3EInt16|2||||
+| |- 22|O3EInt16|2||||
+| |- 23|O3EInt16|2||||
+| |- 24|O3EInt16|2||||
+| |- 25|O3EInt16|2||||
+| |- 26|O3EInt16|2||||
+| |- 27|O3EInt16|2||||
+| |- 28|O3EInt16|2||||
+| |- 29|O3EInt16|2||||
+| |- 30|O3EInt16|2||||
+| |- 31|O3EInt16|2||||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
+| |- 01_January|O3EInt16|2||||
+| |- 02_February|O3EInt16|2||||
+| |- 03_March|O3EInt16|2||||
+| |- 04_April|O3EInt16|2||||
+| |- 05_May|O3EInt16|2||||
+| |- 06_June|O3EInt16|2||||
+| |- 07_July|O3EInt16|2||||
+| |- 08_August|O3EInt16|2||||
+| |- 09_September|O3EInt16|2||||
+| |- 10_October|O3EInt16|2||||
+| |- 11_November|O3EInt16|2||||
+| |- 12_December|O3EInt16|2||||
 |**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
-|**1384**|**FuelCellBreakdownRateMonthMatrix**|RawCodec|124||ro||
-|**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
-|**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
-|**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
+|**1384**|**FuelCellBreakdownRateMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1385**|**FuelCellBreakdownRateYearMatrix**|*O3EComplexType*|48||ro||
+| |- CurrentYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+| |- LastYear|*O3EList*|24||||
+| |- - 01_January|O3EInt16|2||||
+| |- - 02_February|O3EInt16|2||||
+| |- - 03_March|O3EInt16|2||||
+| |- - 04_April|O3EInt16|2||||
+| |- - 05_May|O3EInt16|2||||
+| |- - 06_June|O3EInt16|2||||
+| |- - 07_July|O3EInt16|2||||
+| |- - 08_August|O3EInt16|2||||
+| |- - 09_September|O3EInt16|2||||
+| |- - 10_October|O3EInt16|2||||
+| |- - 11_November|O3EInt16|2||||
+| |- - 12_December|O3EInt16|2||||
+|**1389**|**CoTwoSavingsMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**1390**|**CoTwoSavingsYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
 | |- Today|O3EInt32|4|kWh|||
 | |- Past7Days|O3EInt32|4|kWh|||
@@ -3703,7 +4329,7 @@
 | |- String3|O3EInt32|4|V|||
 |**1834**|[**ElectricalEnergyStorageStateOfEnergy**](## "SoC of Battery")|*O3EComplexType*|4||ro||
 | |- StateOfEnergy|O3EInt16|2|Wh|||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**1835**|**ManufacturerProperties**|RawCodec|20||ro||
 |**1836**|[**ElectricalEnergyStorageCurrentPower**](## "Current Power for Battery Discharging (positive values) and Charging (negative values)")|O3EInt32|4|W|ro||
 |**1837**|**ElectricalEnergyStorageCurrent**|*O3EComplexType*|4||ro||
@@ -3730,228 +4356,666 @@
 |**1854**|**ApartmentOneTimeScheduleFriday**|RawCodec|57||**rw**||
 |**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
 |**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
-|**1884**|**RoomOneProperty**|RawCodec|84||ro||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
-|**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
-|**1887**|**RoomTwoProperty**|RawCodec|84||ro||
+|**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
-|**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
-|**1890**|**RoomThreeProperty**|RawCodec|84||ro||
+|**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
-|**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
-|**1893**|**RoomFourProperty**|RawCodec|84||ro||
+|**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
-|**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
-|**1896**|**RoomFiveProperty**|RawCodec|84||ro||
+|**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
-|**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
-|**1899**|**RoomSixProperty**|RawCodec|84||ro||
+|**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
-|**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
-|**1902**|**RoomSevenProperty**|RawCodec|84||ro||
+|**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
-|**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
-|**1905**|**RoomEightProperty**|RawCodec|84||ro||
+|**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
-|**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
-|**1908**|**RoomNineProperty**|RawCodec|84||ro||
+|**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
-|**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
-|**1911**|**RoomTenProperty**|RawCodec|84||ro||
+|**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
-|**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
-|**1914**|**RoomElevenProperty**|RawCodec|84||ro||
+|**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
-|**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
-|**1917**|**RoomTwelveProperty**|RawCodec|84||ro||
+|**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
-|**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
-|**1920**|**RoomThirteenProperty**|RawCodec|84||ro||
+|**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
-|**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
-|**1923**|**RoomFourteenProperty**|RawCodec|84||ro||
+|**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
-|**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
-|**1926**|**RoomFifteenProperty**|RawCodec|84||ro||
+|**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
-|**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
-|**1929**|**RoomSixteenProperty**|RawCodec|84||ro||
+|**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
-|**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
-|**1932**|**RoomSeventeenProperty**|RawCodec|84||ro||
+|**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
-|**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
-|**1935**|**RoomEighteenProperty**|RawCodec|84||ro||
+|**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
-|**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
-|**1938**|**RoomNineteenProperty**|RawCodec|84||ro||
+|**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|8||||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown2|RawCodec|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|9||||
 |**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
-|**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
-|**1941**|**RoomTwentyProperty**|RawCodec|84||ro||
-|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
-| |- Roomname|O3EUtf8|39||||
-| |- Unknown1|RawCodec|4||||
-| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+|**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
 | |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
 | |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|29||||
+| |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|9||||
+| |- Unknown5|RawCodec|8||||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
+| |- Unknown1|RawCodec|1||||
+| |- Roomname|O3EUtf8|38||||
+| |- Unknown2|RawCodec|4||||
+| |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
+| |- Unknown3|RawCodec|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown4|RawCodec|29||||
+| |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
 |**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
-|**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
+|**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
+| |- ActualTemp|O3EInt16|2||||
+| |- MinimumTemp|O3EInt16|2||||
+| |- MaximumTemp|O3EInt16|2||||
+| |- Unknown1|RawCodec|2||||
+| |- Unknown2|RawCodec|1||||
+| |- ActualHumidity|O3EInt8|1||||
+| |- MinimumHumidity|O3EInt8|1||||
+| |- MaximumHumidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|1||||
+| |- Unknown4|RawCodec|1||||
+| |- Unknown5|RawCodec|32||||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
 |**1946**|**RoomOneTimeScheduleWednesday**|RawCodec|57||**rw**||
@@ -4097,22 +5161,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2085**|**ZigBeeOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2086**|**ZigBeeOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- ValveType|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4123,22 +5199,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2088**|**ZigBeeTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2089**|**ZigBeeTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4149,22 +5237,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2091**|**ZigBeeThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2092**|**ZigBeeThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4175,22 +5275,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2094**|**ZigBeeFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2095**|**ZigBeeFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4201,22 +5313,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2097**|**ZigBeeFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2098**|**ZigBeeFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4227,22 +5351,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2100**|**ZigBeeSixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2101**|**ZigBeeSixDeviceCurrentValues**|RawCodec|57||ro||
+|**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4253,22 +5389,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2103**|**ZigBeeSevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2104**|**ZigBeeSevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4279,22 +5427,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2106**|**ZigBeeEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2107**|**ZigBeeEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4305,22 +5465,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2109**|**ZigBeeNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2110**|**ZigBeeNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4331,22 +5503,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2112**|**ZigBeeTenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2113**|**ZigBeeTenDeviceCurrentValues**|RawCodec|57||ro||
+|**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4357,22 +5541,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2115**|**ZigBeeElevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2116**|**ZigBeeElevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4383,22 +5579,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2118**|**ZigBeeTwelveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2119**|**ZigBeeTwelveDeviceCurrentValues**|RawCodec|57||ro||
+|**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4409,22 +5617,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2121**|**ZigBeeThirteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2122**|**ZigBeeThirteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4435,22 +5655,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2124**|**ZigBeeFourteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2125**|**ZigBeeFourteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4461,22 +5693,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2127**|**ZigBeeFifteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2128**|**ZigBeeFifteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4487,22 +5731,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2130**|**ZigBeeSixteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2131**|**ZigBeeSixteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4513,22 +5769,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2133**|**ZigBeeSeventeenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|RawCodec|57||ro||
+|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4539,22 +5807,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2136**|**ZigBeeEighteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2137**|**ZigBeeEighteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4565,22 +5845,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2139**|**ZigBeeNineteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2140**|**ZigBeeNineteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4591,22 +5883,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2142**|**ZigBeeTwentyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2143**|**ZigBeeTwentyDeviceCurrentValues**|RawCodec|57||ro||
+|**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4656,7 +5960,7 @@
 |**2213**|**ApartmentOneSupplyChannelFourTimeScheduleSunday**|RawCodec|57||**rw**||
 |**2214**|[**BackupBoxConfiguration**](## "Configuration for Backup Box")|*O3EComplexType*|2||**rw**||
 | |- [DischargeLimit](## "Discharge limit of battery")|O3EInt8|1|%|||
-| |- Unknown|O3EInt8|1||||
+| |- Unknown|RawCodec|1||||
 |**2217**|**InputDemandSideManagementlReceiver**|RawCodec|1||ro||
 |**2218**|**RemoteLimitValueDemandSideManagement**|RawCodec|4||ro||
 |**2219**|**BatteryCalibration**|RawCodec|1||ro||
@@ -4706,22 +6010,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2261**|**ZigBeeTwentyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4732,22 +6048,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2264**|**ZigBeeTwentyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4758,22 +6086,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2267**|**ZigBeeTwentyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4784,22 +6124,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2270**|**ZigBeeTwentyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4810,22 +6162,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2273**|**ZigBeeTwentyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4836,22 +6200,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2276**|**ZigBeeTwentySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4862,22 +6238,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2279**|**ZigBeeTwentySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4888,22 +6276,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2282**|**ZigBeeTwentyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4914,22 +6314,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2285**|**ZigBeeTwentyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4940,22 +6352,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2288**|**ZigBeeThirtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2289**|**ZigBeeThirtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4966,22 +6390,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2291**|**ZigBeeThirtyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -4992,22 +6428,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2294**|**ZigBeeThirtyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5018,22 +6466,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2297**|**ZigBeeThirtyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5044,22 +6504,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2300**|**ZigBeeThirtyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5070,22 +6542,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2303**|**ZigBeeThirtyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5096,22 +6580,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2306**|**ZigBeeThirtySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5122,22 +6618,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2309**|**ZigBeeThirtySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5148,22 +6656,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2312**|**ZigBeeThirtyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5174,22 +6694,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2315**|**ZigBeeThirtyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5200,22 +6732,34 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- ViCareDevice|O3EEnum|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|26||||
+| |- Unknown2|RawCodec|8||||
+| |- ArticleNumber|O3EUtf8|16||||
+| |- Unknown3|RawCodec|2||||
 |**2318**|**ZigBeeFourtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
 | |- Prefix|RawCodec|2||||
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
-|**2319**|**ZigBeeFourtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
+| |- Unknown1|RawCodec|2||||
+| |- BatteryLevel|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- ActualTemperature|O3EInt16|2||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|12||||
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 | |- Unknown1|RawCodec|2||||
 | |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|38||||
-| |- Valve Type|O3EInt8|1||||
+| |- Unknown2|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1||||
+| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt8|1||||
-| |- OperatingStatus|O3EInt8|1||||
-| |- Unknown3|RawCodec|4||||
+| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
+| |- Humidity|O3EInt8|1||||
+| |- Unknown3|RawCodec|3||||
 | |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|5||||
 | |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
@@ -5225,10 +6769,10 @@
 |**2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
 |**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
 | |- ActualFlow|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
 | |- TargetFlow|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
 |**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
 |**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
@@ -5354,22 +6898,22 @@
 |**2426**|**MixerOneCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2427**|**MixerTwoCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2428**|**MixerThreeCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2429**|**MixerFourCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||ro||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2||||
-| |- Unknown|O3EByteVal|1||||
+| |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2||||
 |**2442**|**HeatPumpFrostProtection**|O3EInt8|1||ro||
 |**2444**|**LogLevelEmbbededApplication**|O3EInt8|1||ro||
@@ -5741,11 +7285,56 @@
 | |- CurrentYear|O3EInt32|4||||
 | |- PastYear|O3EInt32|4||||
 |**2533**|**PowerGridCodeSettingsNormSix**|RawCodec|27||ro||
-|**2534**|**BusTopologyMatrixSix**|RawCodec|181||ro||
-|**2535**|**BusTopologyMatrixSeven**|RawCodec|181||ro||
-|**2536**|**BusTopologyMatrixEight**|RawCodec|181||ro||
-|**2537**|**BusTopologyMatrixNine**|RawCodec|181||ro||
-|**2538**|**BusTopologyMatrixTen**|RawCodec|181||ro||
+|**2534**|**BusTopologyMatrixSix**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2535**|**BusTopologyMatrixSeven**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2536**|**BusTopologyMatrixEight**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2537**|**BusTopologyMatrixNine**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
+|**2538**|**BusTopologyMatrixTen**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- TopologyElement|*O3EComplexType*|36||||
+| |- - NodeID|O3EByteVal|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - DeviceProperty|O3EByteVal|1||||
+| |- - DeviceFunction|O3EByteVal|1||||
+| |- - SW-Version|O3ESoftVers|8||||
+| |- - HW-Version|O3ESoftVers|8||||
+| |- - VIN|O3EUtf8|16||||
 |**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
 |**2540**|**NoiseReductionSettings**|RawCodec|6||ro||
 |**2541**|**SupplyAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
@@ -5766,25 +7355,25 @@
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2547**|**MixerTwoCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2548**|**MixerThreeCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2549**|**MixerFourCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
-| |- Unknown|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 | |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
 |**2551**|**FlameBurnerTwo**|RawCodec|6||ro||
 |**2552**|**ModulationCurrentValueBurnerTwo**|RawCodec|2||ro||
@@ -5830,8 +7419,98 @@
 | |- Count|O3EInt8|1||||
 | |- - Unknown|RawCodec|2||||
 | |- - VIN|O3EUtf8|16||||
-|**2594**|**ElectricalPreHeaterMonthMatrix**|RawCodec|124||ro||
-|**2595**|**ElectricalPreHeaterYearMatrix**|RawCodec|96||ro||
+|**2594**|**ElectricalPreHeaterMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2595**|**ElectricalPreHeaterYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
 |**2598**|**VentilationFanAssignmentAvailable**|O3EByteVal|1||ro||
 |**2599**|**VentilationFanAssignmentSwitch**|O3EByteVal|1||ro||
 |**2600**|**ElectricalHeaterActivation**|RawCodec|2||ro||
@@ -5919,11 +7598,194 @@
 | |- PastYear|O3EInt32|4|kWh|||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
-|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
-|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|RawCodec|96||ro||
-|**2774**|**EnergyOwnConsumptionMonthMatrix**|RawCodec|124||ro||
-|**2775**|**EnergyOwnConsumptionYearMatrix**|RawCodec|96||ro||
-|**2776**|**ProductMatrixTwo**|RawCodec|181||ro||
+|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+|**2774**|**EnergyOwnConsumptionMonthMatrix**|*O3EComplexType*|124||ro||
+| |- CurrentMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+| |- LastMonth|*O3EList*|62||||
+| |- - 01|O3EInt16|2||||
+| |- - 02|O3EInt16|2||||
+| |- - 03|O3EInt16|2||||
+| |- - 04|O3EInt16|2||||
+| |- - 05|O3EInt16|2||||
+| |- - 06|O3EInt16|2||||
+| |- - 07|O3EInt16|2||||
+| |- - 08|O3EInt16|2||||
+| |- - 09|O3EInt16|2||||
+| |- - 10|O3EInt16|2||||
+| |- - 11|O3EInt16|2||||
+| |- - 12|O3EInt16|2||||
+| |- - 13|O3EInt16|2||||
+| |- - 14|O3EInt16|2||||
+| |- - 15|O3EInt16|2||||
+| |- - 16|O3EInt16|2||||
+| |- - 17|O3EInt16|2||||
+| |- - 18|O3EInt16|2||||
+| |- - 19|O3EInt16|2||||
+| |- - 20|O3EInt16|2||||
+| |- - 21|O3EInt16|2||||
+| |- - 22|O3EInt16|2||||
+| |- - 23|O3EInt16|2||||
+| |- - 24|O3EInt16|2||||
+| |- - 25|O3EInt16|2||||
+| |- - 26|O3EInt16|2||||
+| |- - 27|O3EInt16|2||||
+| |- - 28|O3EInt16|2||||
+| |- - 29|O3EInt16|2||||
+| |- - 30|O3EInt16|2||||
+| |- - 31|O3EInt16|2||||
+|**2775**|**EnergyOwnConsumptionYearMatrix**|*O3EComplexType*|96||ro||
+| |- CurrentYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+| |- LastYear|*O3EList*|48||||
+| |- - 01_January|O3EInt32|4||||
+| |- - 02_February|O3EInt32|4||||
+| |- - 03_March|O3EInt32|4||||
+| |- - 04_April|O3EInt32|4||||
+| |- - 05_May|O3EInt32|4||||
+| |- - 06_June|O3EInt32|4||||
+| |- - 07_July|O3EInt32|4||||
+| |- - 08_August|O3EInt32|4||||
+| |- - 09_September|O3EInt32|4||||
+| |- - 10_October|O3EInt32|4||||
+| |- - 11_November|O3EInt32|4||||
+| |- - 12_December|O3EInt32|4||||
+|**2776**|**ProductMatrixTwo**|*O3EList*|181||ro||
+| |- Count|O3EInt8|1||||
+| |- - Unknown|RawCodec|2||||
+| |- - VIN|O3EUtf8|16||||
 |**2777**|**PrimaryBootLoaderVersion**|RawCodec|8||ro||
 |**2778**|**ErrorMessageInputSelection**|RawCodec|2||ro||
 |**2779**|**DeltaTemperaturePumpControlSetpoint**|RawCodec|2||**rw**||
@@ -6791,31 +8653,31 @@
 |**1346**|**HeatEngineStatistical**|*O3EComplexType*|12||ro||
 |**1347**|**ObjectElectricalEnergyStatus**|RawCodec|10||ro||
 |**1348**|**FuelCellGasConsumption**|*O3EComplexType*|12||ro||
-|**1349**|**FuelCellGasConsumptionMonthMatrix**|RawCodec|124||ro||
-|**1350**|**FuelCellGasConsumptionYearMatrix**|RawCodec|48||ro||
+|**1349**|[**FuelCellGasConsumptionMonthMatrix**](## "Fuel Cell Gas Consumption Per Month")|*O3EComplexType*|124||ro||
+|**1350**|[**FuelCellGasConsumptionYearMatrix**](## "Fuel Cell Gas Consumption Per Year")|*O3EComplexType*|48||ro||
 |**1351**|**FeedInEnergy**|RawCodec|24||ro||
-|**1352**|**FeedInEnergyMonthMatrix**|RawCodec|124||ro||
-|**1353**|**FeedInEnergyYearMatrix**|RawCodec|96||ro||
+|**1352**|**FeedInEnergyMonthMatrix**|*O3EComplexType*|124||ro||
+|**1353**|**FeedInEnergyYearMatrix**|*O3EComplexType*|96||ro||
 |**1354**|**ProductionCoverageRate**|RawCodec|6||ro||
-|**1355**|**ProductionCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1356**|**ProductionCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1355**|**ProductionCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+|**1356**|**ProductionCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 |**1357**|**FuelCellOperationTime**|RawCodec|11||ro||
-|**1358**|**FuelCellOperationTimeMonthMatrix**|RawCodec|124||ro||
-|**1359**|**FuelCellOperationTimeYearMatrix**|RawCodec|48||ro||
+|**1358**|**FuelCellOperationTimeMonthMatrix**|*O3EComplexType*|124||ro||
+|**1359**|**FuelCellOperationTimeYearMatrix**|*O3EComplexType*|48||ro||
 |**1360**|**FuelCellRunTime**|RawCodec|11||ro||
-|**1361**|**FuelCellRunTimeMonthMatrix**|RawCodec|124||ro||
-|**1362**|**FuelCellRunTimeYearMatrix**|RawCodec|48||ro||
+|**1361**|**FuelCellRunTimeMonthMatrix**|*O3EComplexType*|124||ro||
+|**1362**|**FuelCellRunTimeYearMatrix**|*O3EComplexType*|48||ro||
 |**1363**|**FuelCellTargetOperationMode**|RawCodec|1||**rw**||
 |**1364**|**GenericSdioAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**1367**|**FuelCellThermalPower**|O3EInt16|2||ro||
 |**1371**|**DemandCoverageRate**|RawCodec|6||ro||
-|**1372**|**DemandCoverageRateMonthMatrix**|RawCodec|62||ro||
-|**1373**|**DemandCoverageRateYearMatrix**|RawCodec|24||ro||
+|**1372**|**DemandCoverageRateMonthMatrix**|*O3EComplexType*|62||ro||
+|**1373**|**DemandCoverageRateYearMatrix**|*O3EComplexType*|24||ro||
 |**1383**|**FuelCellBreakdownRate**|RawCodec|11||ro||
-|**1384**|**FuelCellBreakdownRateMonthMatrix**|RawCodec|124||ro||
-|**1385**|**FuelCellBreakdownRateYearMatrix**|RawCodec|48||ro||
-|**1389**|**CoTwoSavingsMonthMatrix**|RawCodec|124||ro||
-|**1390**|**CoTwoSavingsYearMatrix**|RawCodec|96||ro||
+|**1384**|**FuelCellBreakdownRateMonthMatrix**|*O3EComplexType*|124||ro||
+|**1385**|**FuelCellBreakdownRateYearMatrix**|*O3EComplexType*|48||ro||
+|**1389**|**CoTwoSavingsMonthMatrix**|*O3EComplexType*|124||ro||
+|**1390**|**CoTwoSavingsYearMatrix**|*O3EComplexType*|96||ro||
 |**1391**|[**GeneratedDomesticHotWaterOutput**](## "Generated Domestic Hot Water Output per specific period")|*O3EComplexType*|24||ro||
 |**1392**|[**GeneratedDomesticHotWaterOutputMonthMatrix**](## "Generated Domestic Hot Water Output Per Month")|*O3EComplexType*|124||ro||
 |**1393**|[**GeneratedDomesticHotWaterOutputYearMatrix**](## "Generated Domestic Hot Water Output Per Year")|*O3EComplexType*|96||ro||
@@ -7057,84 +8919,86 @@
 |**1854**|**ApartmentOneTimeScheduleFriday**|RawCodec|57||**rw**||
 |**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
 |**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
-|**1884**|**RoomOneProperty**|RawCodec|84||ro||
+|**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
-|**1886**|**RoomOneCurrentValues**|RawCodec|46||ro||
-|**1887**|**RoomTwoProperty**|RawCodec|84||ro||
+|**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
+|**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
 |**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
-|**1889**|**RoomTwoCurrentValues**|RawCodec|46||ro||
-|**1890**|**RoomThreeProperty**|RawCodec|84||ro||
+|**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
+|**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
 |**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
-|**1892**|**RoomThreeCurrentValues**|RawCodec|46||ro||
-|**1893**|**RoomFourProperty**|RawCodec|84||ro||
+|**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
+|**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
 |**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
-|**1895**|**RoomFourCurrentValues**|RawCodec|46||ro||
-|**1896**|**RoomFiveProperty**|RawCodec|84||ro||
+|**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
+|**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
 |**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
-|**1898**|**RoomFiveCurrentValues**|RawCodec|46||ro||
-|**1899**|**RoomSixProperty**|RawCodec|84||ro||
+|**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
+|**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
 |**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
-|**1901**|**RoomSixCurrentValues**|RawCodec|46||ro||
-|**1902**|**RoomSevenProperty**|RawCodec|84||ro||
+|**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
+|**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
 |**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
-|**1904**|**RoomSevenCurrentValues**|RawCodec|46||ro||
-|**1905**|**RoomEightProperty**|RawCodec|84||ro||
+|**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
+|**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
 |**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
-|**1907**|**RoomEightCurrentValues**|RawCodec|46||ro||
-|**1908**|**RoomNineProperty**|RawCodec|84||ro||
+|**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
+|**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
 |**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
-|**1910**|**RoomNineCurrentValues**|RawCodec|46||ro||
-|**1911**|**RoomTenProperty**|RawCodec|84||ro||
+|**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
+|**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
 |**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
-|**1913**|**RoomTenCurrentValues**|RawCodec|46||ro||
-|**1914**|**RoomElevenProperty**|RawCodec|84||ro||
+|**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
+|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
 |**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
-|**1916**|**RoomElevenCurrentValues**|RawCodec|46||ro||
-|**1917**|**RoomTwelveProperty**|RawCodec|84||ro||
+|**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
+|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
 |**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
-|**1919**|**RoomTwelveCurrentValues**|RawCodec|46||ro||
-|**1920**|**RoomThirteenProperty**|RawCodec|84||ro||
+|**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
+|**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
 |**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
-|**1922**|**RoomThirteenCurrentValues**|RawCodec|46||ro||
-|**1923**|**RoomFourteenProperty**|RawCodec|84||ro||
+|**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
 |**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
-|**1925**|**RoomFourteenCurrentValues**|RawCodec|46||ro||
-|**1926**|**RoomFifteenProperty**|RawCodec|84||ro||
+|**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
 |**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
-|**1928**|**RoomFifteenCurrentValues**|RawCodec|46||ro||
-|**1929**|**RoomSixteenProperty**|RawCodec|84||ro||
+|**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
 |**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
-|**1931**|**RoomSixteenCurrentValues**|RawCodec|46||ro||
-|**1932**|**RoomSeventeenProperty**|RawCodec|84||ro||
+|**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
 |**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
-|**1934**|**RoomSeventeenCurrentValues**|RawCodec|46||ro||
-|**1935**|**RoomEighteenProperty**|RawCodec|84||ro||
+|**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
+|**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 |**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
 |**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
-|**1937**|**RoomEighteenCurrentValues**|RawCodec|46||ro||
-|**1938**|**RoomNineteenProperty**|RawCodec|84||ro||
+|**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
 |**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
-|**1940**|**RoomNineteenCurrentValues**|RawCodec|46||ro||
-|**1941**|**RoomTwentyProperty**|RawCodec|84||ro||
+|**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
+|**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
 |**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
-|**1943**|**RoomTwentyCurrentValues**|RawCodec|46||ro||
+|**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|RawCodec|57||**rw**||
 |**1946**|**RoomOneTimeScheduleWednesday**|RawCodec|57||**rw**||
@@ -7277,83 +9141,83 @@
 |**2083**|**RoomTwentyTimeScheduleSunday**|RawCodec|57||**rw**||
 |**2084**|**ZigBeeOneDeviceProperty**|*O3EComplexType*|84||ro||
 |**2085**|**ZigBeeOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2086**|**ZigBeeOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2087**|**ZigBeeTwoDeviceProperty**|*O3EComplexType*|84||ro||
 |**2088**|**ZigBeeTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2089**|**ZigBeeTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2090**|**ZigBeeThreeDeviceProperty**|*O3EComplexType*|84||ro||
 |**2091**|**ZigBeeThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2092**|**ZigBeeThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2093**|**ZigBeeFourDeviceProperty**|*O3EComplexType*|84||ro||
 |**2094**|**ZigBeeFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2095**|**ZigBeeFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2096**|**ZigBeeFiveDeviceProperty**|*O3EComplexType*|84||ro||
 |**2097**|**ZigBeeFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2098**|**ZigBeeFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2099**|**ZigBeeSixDeviceProperty**|*O3EComplexType*|84||ro||
 |**2100**|**ZigBeeSixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2101**|**ZigBeeSixDeviceCurrentValues**|RawCodec|57||ro||
+|**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2102**|**ZigBeeSevenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2103**|**ZigBeeSevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2104**|**ZigBeeSevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2105**|**ZigBeeEightDeviceProperty**|*O3EComplexType*|84||ro||
 |**2106**|**ZigBeeEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2107**|**ZigBeeEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2108**|**ZigBeeNineDeviceProperty**|*O3EComplexType*|84||ro||
 |**2109**|**ZigBeeNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2110**|**ZigBeeNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2111**|**ZigBeeTenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2112**|**ZigBeeTenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2113**|**ZigBeeTenDeviceCurrentValues**|RawCodec|57||ro||
+|**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2114**|**ZigBeeElevenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2115**|**ZigBeeElevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2116**|**ZigBeeElevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2117**|**ZigBeeTwelveDeviceProperty**|*O3EComplexType*|84||ro||
 |**2118**|**ZigBeeTwelveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2119**|**ZigBeeTwelveDeviceCurrentValues**|RawCodec|57||ro||
+|**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2120**|**ZigBeeThirteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2121**|**ZigBeeThirteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2122**|**ZigBeeThirteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2123**|**ZigBeeFourteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2124**|**ZigBeeFourteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2125**|**ZigBeeFourteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2126**|**ZigBeeFifteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2127**|**ZigBeeFifteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2128**|**ZigBeeFifteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2129**|**ZigBeeSixteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2130**|**ZigBeeSixteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2131**|**ZigBeeSixteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2132**|**ZigBeeSeventeenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2133**|**ZigBeeSeventeenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|RawCodec|57||ro||
+|**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2135**|**ZigBeeEighteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2136**|**ZigBeeEighteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2137**|**ZigBeeEighteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2138**|**ZigBeeNineteenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2139**|**ZigBeeNineteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2140**|**ZigBeeNineteenDeviceCurrentValues**|RawCodec|57||ro||
+|**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2141**|**ZigBeeTwentyDeviceProperty**|*O3EComplexType*|84||ro||
 |**2142**|**ZigBeeTwentyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2143**|**ZigBeeTwentyDeviceCurrentValues**|RawCodec|57||ro||
+|**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2144**|**PointOfCommonCouplingAcActiveCurrent**|RawCodec|16||ro||
 |**2145**|**ObjectTopology**|RawCodec|38||ro||
@@ -7436,83 +9300,83 @@
 |**2259**|**RefrigerationCircuitStatus**|O3EByteVal|1||ro||
 |**2260**|**ZigBeeTwentyOneDeviceProperty**|*O3EComplexType*|84||ro||
 |**2261**|**ZigBeeTwentyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2263**|**ZigBeeTwentyTwoDeviceProperty**|*O3EComplexType*|84||ro||
 |**2264**|**ZigBeeTwentyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2266**|**ZigBeeTwentyThreeDeviceProperty**|*O3EComplexType*|84||ro||
 |**2267**|**ZigBeeTwentyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2269**|**ZigBeeTwentyFourDeviceProperty**|*O3EComplexType*|84||ro||
 |**2270**|**ZigBeeTwentyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2272**|**ZigBeeTwentyFiveDeviceProperty**|*O3EComplexType*|84||ro||
 |**2273**|**ZigBeeTwentyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2275**|**ZigBeeTwentySixDeviceProperty**|*O3EComplexType*|84||ro||
 |**2276**|**ZigBeeTwentySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2278**|**ZigBeeTwentySevenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2279**|**ZigBeeTwentySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2281**|**ZigBeeTwentyEightDeviceProperty**|*O3EComplexType*|84||ro||
 |**2282**|**ZigBeeTwentyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2284**|**ZigBeeTwentyNineDeviceProperty**|*O3EComplexType*|84||ro||
 |**2285**|**ZigBeeTwentyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2287**|**ZigBeeThirtyDeviceProperty**|*O3EComplexType*|84||ro||
 |**2288**|**ZigBeeThirtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2289**|**ZigBeeThirtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2290**|**ZigBeeThirtyOneDeviceProperty**|*O3EComplexType*|84||ro||
 |**2291**|**ZigBeeThirtyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|RawCodec|57||ro||
+|**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2293**|**ZigBeeThirtyTwoDeviceProperty**|*O3EComplexType*|84||ro||
 |**2294**|**ZigBeeThirtyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|RawCodec|57||ro||
+|**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2296**|**ZigBeeThirtyThreeDeviceProperty**|*O3EComplexType*|84||ro||
 |**2297**|**ZigBeeThirtyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|RawCodec|57||ro||
+|**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2299**|**ZigBeeThirtyFourDeviceProperty**|*O3EComplexType*|84||ro||
 |**2300**|**ZigBeeThirtyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|RawCodec|57||ro||
+|**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2302**|**ZigBeeThirtyFiveDeviceProperty**|*O3EComplexType*|84||ro||
 |**2303**|**ZigBeeThirtyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|RawCodec|57||ro||
+|**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2305**|**ZigBeeThirtySixDeviceProperty**|*O3EComplexType*|84||ro||
 |**2306**|**ZigBeeThirtySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|RawCodec|57||ro||
+|**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2308**|**ZigBeeThirtySevenDeviceProperty**|*O3EComplexType*|84||ro||
 |**2309**|**ZigBeeThirtySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|RawCodec|57||ro||
+|**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2311**|**ZigBeeThirtyEightDeviceProperty**|*O3EComplexType*|84||ro||
 |**2312**|**ZigBeeThirtyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|RawCodec|57||ro||
+|**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2314**|**ZigBeeThirtyNineDeviceProperty**|*O3EComplexType*|84||ro||
 |**2315**|**ZigBeeThirtyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|RawCodec|57||ro||
+|**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2317**|**ZigBeeFourtyDeviceProperty**|*O3EComplexType*|84||ro||
 |**2318**|**ZigBeeFourtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
-|**2319**|**ZigBeeFourtyDeviceCurrentValues**|RawCodec|57||ro||
+|**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
 |**2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
@@ -7649,11 +9513,11 @@
 |**2528**|**GeneratedCoolingOutputYearMatrix**|*O3EComplexType*|96||ro||
 |**2529**|**GeneratedCoolingOutput**|*O3EComplexType*|24||ro||
 |**2533**|**PowerGridCodeSettingsNormSix**|RawCodec|27||ro||
-|**2534**|**BusTopologyMatrixSix**|RawCodec|181||ro||
-|**2535**|**BusTopologyMatrixSeven**|RawCodec|181||ro||
-|**2536**|**BusTopologyMatrixEight**|RawCodec|181||ro||
-|**2537**|**BusTopologyMatrixNine**|RawCodec|181||ro||
-|**2538**|**BusTopologyMatrixTen**|RawCodec|181||ro||
+|**2534**|**BusTopologyMatrixSix**|*O3EList*|181||ro||
+|**2535**|**BusTopologyMatrixSeven**|*O3EList*|181||ro||
+|**2536**|**BusTopologyMatrixEight**|*O3EList*|181||ro||
+|**2537**|**BusTopologyMatrixNine**|*O3EList*|181||ro||
+|**2538**|**BusTopologyMatrixTen**|*O3EList*|181||ro||
 |**2539**|**AlternatingCurrentEnergyStatistic**|RawCodec|40||ro||
 |**2540**|**NoiseReductionSettings**|RawCodec|6||ro||
 |**2541**|**SupplyAirVolumeFlowConfigurationLimit**|*O3EComplexType*|4||ro||
@@ -7704,8 +9568,8 @@
 |**2591**|**HeatPumpCommonSettingsCooling**|RawCodec|8||ro||
 |**2592**|**ExpansionValveTheoreticalSetpoint**|RawCodec|4||**rw**||
 |**2593**|**ProductMatrix**|*O3EList*|181||ro||
-|**2594**|**ElectricalPreHeaterMonthMatrix**|RawCodec|124||ro||
-|**2595**|**ElectricalPreHeaterYearMatrix**|RawCodec|96||ro||
+|**2594**|**ElectricalPreHeaterMonthMatrix**|*O3EComplexType*|124||ro||
+|**2595**|**ElectricalPreHeaterYearMatrix**|*O3EComplexType*|96||ro||
 |**2598**|**VentilationFanAssignmentAvailable**|O3EByteVal|1||ro||
 |**2599**|**VentilationFanAssignmentSwitch**|O3EByteVal|1||ro||
 |**2600**|**ElectricalHeaterActivation**|RawCodec|2||ro||
@@ -7759,11 +9623,11 @@
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
-|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|RawCodec|124||ro||
-|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|RawCodec|96||ro||
-|**2774**|**EnergyOwnConsumptionMonthMatrix**|RawCodec|124||ro||
-|**2775**|**EnergyOwnConsumptionYearMatrix**|RawCodec|96||ro||
-|**2776**|**ProductMatrixTwo**|RawCodec|181||ro||
+|**2772**|**EnergyRecoveredCrossHeatExchangerMonthMatrix**|*O3EComplexType*|124||ro||
+|**2773**|**EnergyRecoveredCrossHeatExchangerYearMatrix**|*O3EComplexType*|96||ro||
+|**2774**|**EnergyOwnConsumptionMonthMatrix**|*O3EComplexType*|124||ro||
+|**2775**|**EnergyOwnConsumptionYearMatrix**|*O3EComplexType*|96||ro||
+|**2776**|**ProductMatrixTwo**|*O3EList*|181||ro||
 |**2777**|**PrimaryBootLoaderVersion**|RawCodec|8||ro||
 |**2778**|**ErrorMessageInputSelection**|RawCodec|2||ro||
 |**2779**|**DeltaTemperaturePumpControlSetpoint**|RawCodec|2||**rw**||

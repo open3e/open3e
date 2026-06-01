@@ -41,3 +41,4 @@ open3e_backups/
 .superpowers/
 .claude/
 temp/
+.local_data/
