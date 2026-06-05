@@ -2347,7 +2347,7 @@ E3Enums = {
         1: "MaximumEco",
         2: "MoreEco",
         3: "Eco",
-        4: "Komfort (Default)",
+        4: "Comfort (Default)",
         5: "More Comfort",
         6: "Maximum Comfort",
     },

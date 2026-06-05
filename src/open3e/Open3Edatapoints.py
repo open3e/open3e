@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20260528",
+    "Version": "20260605",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -1510,7 +1510,7 @@ dataIdentifiers = {
         3017 : O3EComplexType(9, "CoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")], acc="ro"),
         3018 : O3EComplexType(9, "HeatingCoolingBufferTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")], acc="ro"),
         3019 : O3EComplexType(9, "CompressorOutletTargetTemperature", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EEnum(1, "SensorStatus", "SensorStates")], acc="rw"),    # 250xH Unit °C
-        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode", acc="ro"),    # 0 = Eco, 1 = N/A, 2 = Comfort
+        3029 : O3EByteVal(1, "DomesticHotWaterEfficiencyMode", acc="rw"),    # 0 = Eco, 1 = N/A, 2 = Comfort
         3030 : RawCodec(2, "DomesticHotWaterEfficiencyModeAvailability", acc="ro"),
         3031 : RawCodec(2, "ExternalHeater", acc="ro"),
         3032 : O3EInt16(2, "PrimaryEnergyFactorElectricity", scale=100, acc="ro"),    # Unit kWh/kWh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
