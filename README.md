@@ -494,6 +494,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.4 (2026-06-05)
+* Write errors (device rejection, missing codec) are now reported on stdout; no output on success
+
 ### 0.7.3 (2026-05-29)
 * **ZigBee DIDs 2084–2319 structured**: ZigBeeDeviceProperty (incl. ArticleNumber), ZigBeeDeviceCurrentValues in 57-byte (gas heater) and 68-byte (heat pump) variants with WorkingMode, Setpoint, Display, ChildLock fields
 * **Room DIDs 1884–1943 structured**: RoomProperty (name, type, temperature control, window detection) and RoomCurrentValues (temperature, humidity min/max) in 84/85-byte variants
