@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260528
+- Version of general data points: 20260605
 - Version of variant data points: 20260527
 
 ### Remarks
@@ -4362,7 +4362,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4372,7 +4372,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4395,7 +4395,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4405,7 +4405,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4428,7 +4428,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4438,7 +4438,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4461,7 +4461,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4471,7 +4471,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4494,7 +4494,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4504,7 +4504,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4527,7 +4527,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4537,7 +4537,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4560,7 +4560,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4570,7 +4570,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4593,7 +4593,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4603,7 +4603,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4626,7 +4626,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4636,7 +4636,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4659,7 +4659,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4669,7 +4669,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4692,7 +4692,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4702,7 +4702,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4725,7 +4725,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4735,7 +4735,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4758,7 +4758,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4768,7 +4768,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4791,7 +4791,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4801,7 +4801,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4824,7 +4824,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4834,7 +4834,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4857,7 +4857,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4867,7 +4867,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4890,7 +4890,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4900,7 +4900,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4923,7 +4923,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4933,7 +4933,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4956,7 +4956,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4966,7 +4966,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -4989,7 +4989,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
@@ -4999,7 +4999,7 @@
 | |- Unknown2|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
 | |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Komfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|9||||
@@ -7992,7 +7992,7 @@
 | |- Maximum|O3EInt16|2||||
 | |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
-|**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||ro||
+|**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||**rw**||
 |**3030**|**DomesticHotWaterEfficiencyModeAvailability**|RawCodec|2||ro||
 |**3031**|**ExternalHeater**|RawCodec|2||ro||
 |**3032**|**PrimaryEnergyFactorElectricity**|O3EInt16|2||ro||
@@ -9774,7 +9774,7 @@
 |**3017**|**CoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
 |**3018**|**HeatingCoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
 |**3019**|**CompressorOutletTargetTemperature**|*O3EComplexType*|9||**rw**||
-|**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||ro||
+|**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||**rw**||
 |**3030**|**DomesticHotWaterEfficiencyModeAvailability**|RawCodec|2||ro||
 |**3031**|**ExternalHeater**|RawCodec|2||ro||
 |**3032**|**PrimaryEnergyFactorElectricity**|O3EInt16|2||ro||
