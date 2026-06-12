@@ -2360,16 +2360,15 @@ E3Enums = {
     "ViCareDeviceTypes": {
         1: "Climate sensor",
         2: "Thermostatic radiator valve",
+        3: "Floor thermostat",
         4: "Actuator underfloor heating - normally powerless closed",
         5: "Actuator underfloor heating - normally powerless open",
         7: "Repeater",
-    },
+    },    
 
-    "CurrentWorkingModeLevels": {
-        0: "StandBy",
-        1: "Unknown",   # value confirmed in enums.js, meaning TBD
-        64: "Heating",
-        100: "Cooling", # confirmed by Backes89 in discussion #235
+    "ValvePositionLevels": {
+        0: "Fully closed",
+        100: "Fully opened",
     },
 
     "DeviceDisplayModeStates": {

@@ -2819,9 +2819,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -2992,9 +2992,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3165,9 +3165,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3338,9 +3338,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3511,9 +3511,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3684,9 +3684,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3857,9 +3857,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4030,9 +4030,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4203,9 +4203,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4376,9 +4376,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4549,9 +4549,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4722,9 +4722,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4895,9 +4895,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5068,9 +5068,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5241,9 +5241,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5414,9 +5414,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5587,9 +5587,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5760,9 +5760,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5933,9 +5933,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6106,9 +6106,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6279,9 +6279,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6452,9 +6452,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6625,9 +6625,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6798,9 +6798,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6971,9 +6971,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7144,9 +7144,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7317,9 +7317,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7490,9 +7490,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7663,9 +7663,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7836,9 +7836,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8009,9 +8009,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8182,9 +8182,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8355,9 +8355,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8528,9 +8528,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8701,9 +8701,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8874,9 +8874,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9047,9 +9047,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9220,9 +9220,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9393,9 +9393,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9566,9 +9566,9 @@
           {
             "codec": "O3EEnum",
             "len": 1,
-            "id": "CurrentWorkingMode",
+            "id": "ValvePosition",
             "args": {
-              "listStr": "CurrentWorkingModeLevels",
+              "listStr": "ValvePositionLevels",
               "desc": "",
               "info": "",
               "acc": ""
