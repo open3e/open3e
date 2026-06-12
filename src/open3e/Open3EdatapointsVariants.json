@@ -3737,25 +3737,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -3765,17 +3754,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -3943,25 +3943,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -3971,17 +3960,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4149,25 +4149,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4177,17 +4166,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4355,25 +4355,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4383,17 +4372,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4561,25 +4561,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4589,17 +4578,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4767,25 +4767,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4795,17 +4784,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -4973,25 +4973,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5001,17 +4990,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5179,25 +5179,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5207,17 +5196,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5385,25 +5385,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5413,17 +5402,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5591,25 +5591,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5619,17 +5608,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -5797,25 +5797,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5825,17 +5814,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6003,25 +6003,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6031,17 +6020,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6209,25 +6209,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6237,17 +6226,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6415,25 +6415,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6443,17 +6432,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6621,25 +6621,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6649,17 +6638,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -6827,25 +6827,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6855,17 +6844,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7033,25 +7033,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7061,17 +7050,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7239,25 +7239,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7267,17 +7256,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7445,25 +7445,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7473,17 +7462,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7651,25 +7651,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7679,17 +7668,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -7857,25 +7857,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7885,17 +7874,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8063,25 +8063,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8091,17 +8080,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8269,25 +8269,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8297,17 +8286,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8475,25 +8475,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8503,17 +8492,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8681,25 +8681,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8709,17 +8698,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -8887,25 +8887,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8915,17 +8904,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -9093,25 +9093,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9121,17 +9110,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -9299,25 +9299,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9327,17 +9316,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -9505,25 +9505,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9533,17 +9522,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -9711,25 +9711,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9739,17 +9728,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -9917,25 +9917,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9945,17 +9934,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -10123,25 +10123,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10151,17 +10140,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -10329,25 +10329,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10357,17 +10346,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -10535,25 +10535,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10563,17 +10552,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -10741,25 +10741,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10769,17 +10758,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -10947,25 +10947,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10975,17 +10964,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -11153,25 +11153,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11181,17 +11170,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -11359,25 +11359,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11387,17 +11376,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -11565,25 +11565,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11593,17 +11582,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
@@ -11771,25 +11771,14 @@
             }
           },
           {
-            "codec": "O3EInt8",
-            "len": 1,
+            "codec": "O3EInt16",
+            "len": 2,
             "id": "ActualTemperature",
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "",
-              "desc": "",
-              "info": "",
-              "acc": ""
-            }
-          },
-          {
-            "codec": "O3EEnum",
-            "len": 1,
-            "id": "ValvePosition",
-            "args": {
-              "listStr": "ValvePositionLevels",
-              "desc": "",
+              "unit": "°C",
+              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11799,17 +11788,28 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1.0,
+              "scale": 1,
               "signed": false,
-              "unit": "",
-              "desc": "",
+              "unit": "%",
+              "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EEnum",
+            "len": 1,
+            "id": "ValveState",
+            "args": {
+              "listStr": "ValvePositionLevels",
+              "desc": "Valve output energized (FBH-Zone): 0=de-energized, 1=energized. Effective position depends on valve type NC/NO",
               "info": "",
               "acc": ""
             }
           },
           {
             "codec": "RawCodec",
-            "len": 3,
+            "len": 2,
             "id": "Unknown3",
             "args": {
               "desc": "",
