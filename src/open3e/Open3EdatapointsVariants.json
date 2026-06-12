@@ -3668,10 +3668,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -3809,7 +3822,7 @@
             "args": {
               "scale": 1.0,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3817,8 +3830,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -3841,10 +3874,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -3975,14 +4021,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3990,8 +4036,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4014,10 +4080,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -4148,14 +4227,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4163,8 +4242,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4187,10 +4286,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -4321,14 +4433,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4336,8 +4448,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4360,10 +4492,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -4494,14 +4639,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4509,8 +4654,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4533,10 +4698,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -4667,14 +4845,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4682,8 +4860,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4706,10 +4904,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -4840,14 +5051,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4855,8 +5066,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -4879,10 +5110,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5013,14 +5257,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5028,8 +5272,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5052,10 +5316,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5186,14 +5463,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5201,8 +5478,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5225,10 +5522,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5359,14 +5669,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5374,8 +5684,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5398,10 +5728,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5532,14 +5875,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5547,8 +5890,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5571,10 +5934,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5705,14 +6081,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5720,8 +6096,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5744,10 +6140,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -5878,14 +6287,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5893,8 +6302,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -5917,10 +6346,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6051,14 +6493,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6066,8 +6508,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6090,10 +6552,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6224,14 +6699,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6239,8 +6714,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6263,10 +6758,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6397,14 +6905,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6412,8 +6920,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6436,10 +6964,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6570,14 +7111,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6585,8 +7126,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6609,10 +7170,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6743,14 +7317,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6758,8 +7332,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6782,10 +7376,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -6916,14 +7523,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6931,8 +7538,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -6955,10 +7582,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7089,14 +7729,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7104,8 +7744,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7128,10 +7788,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7262,14 +7935,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7277,8 +7950,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7301,10 +7994,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7435,14 +8141,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7450,8 +8156,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7474,10 +8200,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7608,14 +8347,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7623,8 +8362,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7647,10 +8406,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7781,14 +8553,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7796,8 +8568,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7820,10 +8612,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -7954,14 +8759,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7969,8 +8774,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -7993,10 +8818,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8127,14 +8965,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8142,8 +8980,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -8166,10 +9024,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8300,14 +9171,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8315,8 +9186,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -8339,10 +9230,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8473,14 +9377,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8488,8 +9392,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -8512,10 +9436,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8646,14 +9583,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8661,8 +9598,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -8685,10 +9642,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8819,14 +9789,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8834,8 +9804,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -8858,10 +9848,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -8992,14 +9995,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9007,8 +10010,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9031,10 +10054,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -9165,14 +10201,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9180,8 +10216,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9204,10 +10260,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -9338,14 +10407,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9353,8 +10422,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9377,10 +10466,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -9511,14 +10613,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9526,8 +10628,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9550,10 +10672,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -9684,14 +10819,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9699,8 +10834,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9723,10 +10878,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -9857,14 +11025,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9872,8 +11040,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -9896,10 +11084,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -10030,14 +11231,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10045,8 +11246,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -10069,10 +11290,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -10203,14 +11437,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10218,8 +11452,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -10242,10 +11496,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -10376,14 +11643,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10391,8 +11658,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
@@ -10415,10 +11702,23 @@
         "subTypes": [
           {
             "codec": "RawCodec",
-            "len": 2,
+            "len": 1,
             "id": "Unknown1",
             "args": {
               "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt8",
+            "len": 1,
+            "id": "RSSI",
+            "args": {
+              "scale": 1,
+              "signed": true,
+              "unit": "dBm",
+              "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
               "info": "",
               "acc": ""
             }
@@ -10549,14 +11849,14 @@
               "acc": ""
             }
           },
-          {
+           {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 1.0,
+              "scale": 10,
               "signed": false,
-              "unit": "",
+              "unit": "°C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10564,8 +11864,28 @@
           },
           {
             "codec": "RawCodec",
-            "len": 12,
+            "len": 1,
             "id": "Unknown5",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 8,
+            "id": "ParentDeviceSerialnumber",
+            "args": {
+              "desc": "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 3,
+            "id": "Unknown6",
             "args": {
               "desc": "",
               "info": "",
