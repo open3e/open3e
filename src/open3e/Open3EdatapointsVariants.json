@@ -693,7 +693,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -706,7 +706,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -738,7 +738,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -846,7 +846,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -859,7 +859,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -891,7 +891,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -969,7 +969,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -999,7 +999,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1012,7 +1012,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1044,7 +1044,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1122,7 +1122,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1152,7 +1152,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1165,7 +1165,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1197,7 +1197,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1275,7 +1275,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1305,7 +1305,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1318,7 +1318,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1350,7 +1350,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1428,7 +1428,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1458,7 +1458,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1471,7 +1471,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1503,7 +1503,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1581,7 +1581,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1611,7 +1611,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1624,7 +1624,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1656,7 +1656,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1734,7 +1734,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1764,7 +1764,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1777,7 +1777,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1809,7 +1809,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -1887,7 +1887,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -1917,7 +1917,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -1930,7 +1930,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -1962,7 +1962,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2040,7 +2040,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2070,7 +2070,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2083,7 +2083,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2115,7 +2115,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2193,7 +2193,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2223,7 +2223,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2236,7 +2236,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2268,7 +2268,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2346,7 +2346,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2376,7 +2376,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2389,7 +2389,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2421,7 +2421,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2499,7 +2499,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2529,7 +2529,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2542,7 +2542,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2574,7 +2574,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2652,7 +2652,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2682,7 +2682,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2695,7 +2695,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2727,7 +2727,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2805,7 +2805,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2835,7 +2835,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -2848,7 +2848,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -2880,7 +2880,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -2958,7 +2958,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -2988,7 +2988,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -3001,7 +3001,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -3033,7 +3033,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -3111,7 +3111,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -3141,7 +3141,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -3154,7 +3154,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -3186,7 +3186,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -3264,7 +3264,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -3294,7 +3294,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -3307,7 +3307,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -3339,7 +3339,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -3417,7 +3417,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -3447,7 +3447,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -3460,7 +3460,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -3492,7 +3492,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -3570,7 +3570,7 @@
             "id": "TemperatureControl",
             "args": {
               "listStr": "TemperatureControlLevels",
-              "desc": "",
+              "desc": "Level 1 (Eco) .. 6 (Komfort), factory default 4",
               "info": "",
               "acc": ""
             }
@@ -3600,7 +3600,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkOne",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #1 (1-based index, 0 = none)",
@@ -3613,7 +3613,7 @@
             "len": 1,
             "id": "ZigbeeDeviceLinkTwo",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "",
               "desc": "Linked ZigBee device #2 (1-based index, 0 = none)",
@@ -3645,7 +3645,7 @@
           {
             "codec": "RawCodec",
             "len": 9,
-            "id": "Unknown5",
+            "id": "Unknown7",
             "args": {
               "desc": "",
               "info": "",
@@ -3681,7 +3681,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -3743,8 +3743,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -3754,7 +3754,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -3822,7 +3822,7 @@
             "args": {
               "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -3887,7 +3887,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -3949,8 +3949,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -3960,7 +3960,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -4021,14 +4021,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4093,7 +4093,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -4155,8 +4155,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4166,7 +4166,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -4227,14 +4227,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4299,7 +4299,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -4361,8 +4361,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4372,7 +4372,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -4433,14 +4433,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4505,7 +4505,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -4567,8 +4567,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4578,7 +4578,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -4639,14 +4639,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4711,7 +4711,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -4773,8 +4773,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4784,7 +4784,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -4845,14 +4845,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -4917,7 +4917,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -4979,8 +4979,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -4990,7 +4990,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -5051,14 +5051,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5123,7 +5123,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -5185,8 +5185,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5196,7 +5196,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -5257,14 +5257,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5329,7 +5329,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -5391,8 +5391,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5402,7 +5402,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -5463,14 +5463,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5535,7 +5535,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -5597,8 +5597,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5608,7 +5608,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -5669,14 +5669,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5741,7 +5741,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -5803,8 +5803,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -5814,7 +5814,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -5875,14 +5875,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -5947,7 +5947,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -6009,8 +6009,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6020,7 +6020,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -6081,14 +6081,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6153,7 +6153,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -6215,8 +6215,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6226,7 +6226,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -6287,14 +6287,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6359,7 +6359,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -6421,8 +6421,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6432,7 +6432,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -6493,14 +6493,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6565,7 +6565,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -6627,8 +6627,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6638,7 +6638,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -6699,14 +6699,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6771,7 +6771,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -6833,8 +6833,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -6844,7 +6844,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -6905,14 +6905,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -6977,7 +6977,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -7039,8 +7039,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7050,7 +7050,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -7111,14 +7111,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7183,7 +7183,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -7245,8 +7245,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7256,7 +7256,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -7317,14 +7317,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7389,7 +7389,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -7451,8 +7451,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7462,7 +7462,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -7523,14 +7523,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7595,7 +7595,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -7657,8 +7657,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7668,7 +7668,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -7729,14 +7729,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -7801,7 +7801,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -7863,8 +7863,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -7874,7 +7874,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -7935,14 +7935,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8007,7 +8007,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -8069,8 +8069,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8080,7 +8080,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -8141,14 +8141,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8213,7 +8213,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -8275,8 +8275,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8286,7 +8286,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -8347,14 +8347,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8419,7 +8419,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -8481,8 +8481,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8492,7 +8492,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -8553,14 +8553,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8625,7 +8625,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -8687,8 +8687,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8698,7 +8698,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -8759,14 +8759,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -8831,7 +8831,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -8893,8 +8893,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -8904,7 +8904,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -8965,14 +8965,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9037,7 +9037,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -9099,8 +9099,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9110,7 +9110,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -9171,14 +9171,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9243,7 +9243,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -9305,8 +9305,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9316,7 +9316,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -9377,14 +9377,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9449,7 +9449,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -9511,8 +9511,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9522,7 +9522,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -9583,14 +9583,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9655,7 +9655,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -9717,8 +9717,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9728,7 +9728,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -9789,14 +9789,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -9861,7 +9861,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -9923,8 +9923,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -9934,7 +9934,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -9995,14 +9995,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10067,7 +10067,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -10129,8 +10129,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10140,7 +10140,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -10201,14 +10201,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10273,7 +10273,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -10335,8 +10335,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10346,7 +10346,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -10407,14 +10407,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10479,7 +10479,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -10541,8 +10541,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10552,7 +10552,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -10613,14 +10613,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10685,7 +10685,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -10747,8 +10747,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10758,7 +10758,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -10819,14 +10819,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -10891,7 +10891,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -10953,8 +10953,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -10964,7 +10964,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -11025,14 +11025,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -11097,7 +11097,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -11159,8 +11159,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11170,7 +11170,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -11231,14 +11231,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -11303,7 +11303,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -11365,8 +11365,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11376,7 +11376,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -11437,14 +11437,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -11509,7 +11509,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -11571,8 +11571,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11582,7 +11582,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -11643,14 +11643,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
@@ -11715,7 +11715,7 @@
             "len": 1,
             "id": "RSSI",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": true,
               "unit": "dBm",
               "desc": "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).",
@@ -11777,8 +11777,8 @@
             "args": {
               "scale": 10,
               "signed": false,
-              "unit": "°C",
-              "desc": "uint16 LE, 0.1°C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7→25.1°C flips high byte 01→00). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) — use ValveState for zone heating state.",
+              "unit": "\u00b0C",
+              "desc": "uint16 LE, 0.1\u00b0C. Klimasensor/HandThermostat: room temperature. Verteiler: flow temperature. PROVEN by byte-boundary crossing (25.7\u219225.1\u00b0C flips high byte 01\u219200). FBH-Zone: no temperature; reads 2560.0 when heating demand=100% (demand byte shares the high-byte position) \u2014 use ValveState for zone heating state.",
               "info": "",
               "acc": ""
             }
@@ -11788,7 +11788,7 @@
             "len": 1,
             "id": "Humidity",
             "args": {
-              "scale": 1,
+              "scale": 1.0,
               "signed": false,
               "unit": "%",
               "desc": "Relative humidity (Klimasensor). HandThermostat: valve opening in % (verified: independent of room humidity)",
@@ -11849,14 +11849,14 @@
               "acc": ""
             }
           },
-           {
+          {
             "codec": "O3EInt8",
             "len": 1,
             "id": "DeviceTemperatureSetpoint",
             "args": {
-              "scale": 10,
+              "scale": 1.0,
               "signed": false,
-              "unit": "°C",
+              "unit": "\u00b0C",
               "desc": "",
               "info": "",
               "acc": ""
