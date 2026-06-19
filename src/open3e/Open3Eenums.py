@@ -2368,7 +2368,7 @@ E3Enums = {
 
     "ValvePositionLevels": {
         0: "Fully closed",
-        100: "Fully opened",
+        1: "Fully opened",
     },
 
     "DeviceDisplayModeStates": {
@@ -2379,6 +2379,12 @@ E3Enums = {
     "DeviceChildLockStates": {
         0: "Not Active",
         1: "Active",
+    },
+
+    "ZigBeeOperatingModes": {
+        0: "Standby",
+        1: "Heating",
+        2: "Cooling",
     },
 
     # see https://github.com/open3e/open3e/issues/259
