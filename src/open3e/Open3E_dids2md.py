@@ -44,7 +44,7 @@ DoI_default = [256,257,258,259,260,261,262,263,264,265,266,268,     # Frequently
                2486,2487,2488,2494,2495,2496,2569,2760,2735,2806,
                3016]
 md_indent = '- '                                                    # Indentation of sub codecs
-meta_codecs = ['O3EList','O3EComplexType']                          # List of meta codecs, show in italic
+meta_codecs = ['O3EList','O3EComplexType','O3ESwitch']              # List of meta codecs, show in italic
 ignored_ids = ['ListEntries']                                       # List of ids to be ignored (helper ids for json format)
 enums = dict(open3e.Open3Eenums.E3Enums)                            # Enumerations known to open3e
 enums_excluded = ['Errors','Warnings','States','Infos','Country']   # Do NOT list the entries of enumerations for those keys
@@ -76,7 +76,7 @@ def getIdStr(id, codecs, prefix):
         id_str = f'**{id}**'      # main id in bold
     else:
         id_str = id
-    if codecs['codec'] == 'O3EEnum' and codecs['args']['listStr'] in enums and not (codecs['args']['listStr'] in enums_excluded):
+    if codecs['codec'] in ('O3EEnum', 'O3ESwitch') and codecs['args']['listStr'] in enums and not (codecs['args']['listStr'] in enums_excluded):
         # Add list if enums as mouse over
         id_str = addMouseOver(id_str, json.dumps(enums[codecs['args']['listStr']],indent=None).replace('"',''))
     desc = getDescStrMouseOver(codecs)
@@ -123,6 +123,11 @@ def getAccesStr(codecs):
     else:
         return '**??**'
 
+def getCaseLabel(case_val, listStr):
+    text = enums.get(listStr, {}).get(int(case_val))
+    label = f'Case {case_val}' + (f': {text}' if text else '')
+    return f'*{label}*'
+
 def codec2md(codecs, prefix='', accessStr=''):
     md = ''
     if not (codecs['id'] in ignored_ids):
@@ -135,6 +140,27 @@ def codec2md(codecs, prefix='', accessStr=''):
                     md += f'|\n| |{codec2md(codec, prefix+md_indent, '')}'
                 else:
                     md += f'{codec2md(codec, prefix+md_indent, '')}'
+        elif 'cases' in codecs['args']:
+            # O3ESwitch: list each case labeled by its discriminator value/text
+            listStr = codecs['args'].get('listStr', '')
+            cases = codecs['args']['cases']
+            for case_val in sorted(cases, key=lambda k: int(k)):
+                case_codec = cases[case_val]
+                label = getCaseLabel(case_val, listStr)
+                md += f'|\n| |{prefix+md_indent}{label}|*case*|{case_codec["len"]}|||'
+                if case_codec['codec'] == 'O3EComplexType' and 'subTypes' in case_codec['args']:
+                    # Skip the generic complex-type wrapper row, list its subTypes directly
+                    for sub in case_codec['args']['subTypes']:
+                        if not (sub['id'] in ignored_ids):
+                            md += f'|\n| |{codec2md(sub, prefix+md_indent+md_indent, '')}'
+                        else:
+                            md += f'{codec2md(sub, prefix+md_indent+md_indent, '')}'
+                else:
+                    md += f'|\n| |{codec2md(case_codec, prefix+md_indent+md_indent, '')}'
+            default_codec = codecs['args'].get('default')
+            if default_codec is not None:
+                md += f'|\n| |{prefix+md_indent}*default*|*case*|{default_codec["len"]}|||'
+                md += f'|\n| |{codec2md(default_codec, prefix+md_indent+md_indent, '')}'
     return md
 
 def did2md(did, codecs):

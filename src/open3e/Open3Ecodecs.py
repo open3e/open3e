@@ -654,3 +654,73 @@ class O3EComplexType(udsoncan.DidCodec):
 
     def __len__(self) -> int:
         return self.string_len
+
+class O3ESwitch(udsoncan.DidCodec):
+    """
+    Decodes a 1-byte discriminator (looked up in E3Enums[listStr], same shape as O3EEnum)
+    followed by a device/variant-dependent payload selected from `cases` by the discriminator value.
+    All branches in `cases` (and `default`) must decode the same number of payload bytes, since that
+    width is fixed at construction time via `string_len`.
+    """
+    def __init__(self, string_len: int, idStr: str, listStr: str, cases: dict, default=None, desc:str='', info:str='', acc:str=''):
+        self.string_len = string_len
+        self.id = idStr
+        self.listStr = listStr
+        self.cases = cases
+        self.default = default
+        self.desc = desc
+        self.info = info
+        self.acc = acc
+        data_width = string_len - 1
+        for codec in list(cases.values()) + ([default] if default is not None else []):
+            assert codec.string_len == data_width, f'O3ESwitch "{idStr}": case "{codec.id}" has length {codec.string_len}, expected {data_width}'
+
+    def encode(self, string_ascii: Any) -> bytes:
+        if(flag_rawmode == True):
+            return RawCodec.encode(self, string_ascii)
+        val = int(string_ascii["ID"])
+        codec = self.cases.get(val, self.default)
+        if codec is None:
+            raise ValueError(f'O3ESwitch "{self.id}": no matching case for ID {val}')
+        disc_bin = val.to_bytes(length=1, byteorder="little", signed=False)
+        if isinstance(codec, O3EComplexType):
+            data_bin = codec.encode(string_ascii)
+        else:
+            data_bin = codec.encode(string_ascii[codec.id])
+        return disc_bin + data_bin
+
+    def decode(self, string_bin: bytes) -> Any:
+        if(flag_rawmode == True):
+            return RawCodec.decode(self, string_bin)
+        val = int.from_bytes(string_bin[0:1], byteorder="little", signed=False)
+        try:
+            txt = open3e.Open3Eenums.E3Enums[self.listStr][val]
+        except Exception:
+            txt = "not found in " + self.listStr
+        result = {"ID": val, "Text": txt}
+        codec = self.cases.get(val, self.default)
+        if codec is None:
+            result["Error"] = f"no matching case for ID {val}"
+            return result
+        try:
+            data_result = codec.decode(string_bin[1:1+codec.string_len])
+        except Exception as e:
+            data_result = str(e)
+        if isinstance(data_result, dict):
+            result.update(data_result)
+        else:
+            result[codec.id] = data_result
+        return result
+
+    def getCodecInfo(self):
+        casesInfo = {k: v.getCodecInfo() for k, v in self.cases.items()}
+        defaultInfo = self.default.getCodecInfo() if self.default is not None else None
+        return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"listStr":self.listStr, "cases":casesInfo, "default":defaultInfo, "desc":self.desc, "info":self.info, "acc":self.acc}})
+
+    def getCodecString(self):
+        casesStr = "{" + ", ".join(f'{k}: {v.getCodecString()}' for k, v in self.cases.items()) + "}"
+        defaultStr = self.default.getCodecString() if self.default is not None else "None"
+        return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", "{self.listStr}", {casesStr}, default={defaultStr}, desc="{self.desc}", info="{self.info}", acc="{self.acc}")')
+
+    def __len__(self) -> int:
+        return self.string_len

@@ -2358,6 +2358,7 @@ E3Enums = {
     },
 
     "ViCareDeviceTypes": {
+        0: "Empty slot - no device paired",
         1: "Climate sensor",
         2: "Thermostatic radiator valve",
         3: "Floor thermostat",

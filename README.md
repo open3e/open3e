@@ -8,6 +8,8 @@
 
 **_New: Web UI for browser-based configuration and monitoring_**
 
+**_New: ZigBee device data points (DIDs 2086–2319) now decode device-dependent bytes correctly based on the paired device type (Climate sensor, TRV, Floor thermostat/Verteiler, Actuator). The result structure changed: device-type-dependent fields are now nested under `ViCareDevice`._**
+
 <BR>
 
 # Open3E interface
@@ -493,6 +495,12 @@ If you want to work on the codebase you can clone the repository and work in "ed
 **Hint: If you get an error like "A "pyproject.toml" file was found, but editable mode currently requires a setup.py based build." you are running an old pip version. Editable mode requires pip version >= 21.1.**
 
 # Changelog
+
+### 0.7.5 (2026-06-19)
+* **New codec `O3ESwitch`**: decodes a device/variant-dependent payload selected by a discriminator byte (e.g. ZigBee device type), with per-case sub-structure and a fallback `default` case — see discussion #369
+* **ZigBee DIDs 2086–2319 corrected**: byte ranges that are interpreted differently depending on the paired device (Climate sensor, TRV, Floor thermostat/Verteiler, Actuator NC/NO) are now decoded via `O3ESwitch` instead of a single fixed layout, fixing wrong/misleading values for non-Climate-sensor devices
+* **Enum `ViCareDeviceTypes`**: added value `0` ("Empty slot - no device paired")
+* `open3e_dids2md` now renders `O3ESwitch` data points, listing each device-type case (and `default`) with its own sub-fields
 
 ### 0.7.4 (2026-06-05)
 * Write errors (device rejection, missing codec) are now reported on stdout; no output on success
