@@ -9382,6 +9382,9 @@
 |**2985**|**ExternalHeaterTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**2986**|**ExternalHeaterOperationState**|O3EByteVal|1||**rw**||
 |**2987**|**RefrigerantCycleUnlock**|O3EInt8|1||ro||
+|**2990**|**ElectricalEnergySystemBatteryCapacityDelta**|O3EFloat32|4||ro||
+|**2991**|**ElectricalEnergySystemBatteryCapacity**|O3EFloat32|4|Ah|ro||
+|**2992**|**ElectricalEnergySystemStateOfChargeUseable**|O3EFloat32|4|%|ro||
 |**2996**|**BatteryAmbientTemperatureHistogramTwoPointFour**|RawCodec|40||ro||
 |**2997**|**BatteryTemperatureHistogramTwoPointFour**|RawCodec|56||ro||
 |**2998**|**HardwareSignalCheckCsc**|RawCodec|8||ro||
@@ -11194,6 +11197,9 @@
 |**2985**|**ExternalHeaterTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**2986**|**ExternalHeaterOperationState**|O3EByteVal|1||**rw**||
 |**2987**|**RefrigerantCycleUnlock**|O3EInt8|1||ro||
+|**2990**|**ElectricalEnergySystemBatteryCapacityDelta**|O3EFloat32|4||ro||
+|**2991**|**ElectricalEnergySystemBatteryCapacity**|O3EFloat32|4|Ah|ro||
+|**2992**|**ElectricalEnergySystemStateOfChargeUseable**|O3EFloat32|4|%|ro||
 |**2996**|**BatteryAmbientTemperatureHistogramTwoPointFour**|RawCodec|40||ro||
 |**2997**|**BatteryTemperatureHistogramTwoPointFour**|RawCodec|56||ro||
 |**2998**|**HardwareSignalCheckCsc**|RawCodec|8||ro||
