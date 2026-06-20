@@ -1490,6 +1490,9 @@ dataIdentifiers = {
         2985 : O3EInt16(2, "ExternalHeaterTemperatureSetpoint", signed=True, acc="rw"),
         2986 : O3EByteVal(1, "ExternalHeaterOperationState", acc="rw"),
         2987 : O3EInt8(1, "RefrigerantCycleUnlock", scale=1.0, acc="ro"),
+        2990 : O3EFloat32(4, "ElectricalEnergySystemBatteryCapacityDelta"), # jsp3000k, https://github.com/open3e/open3e/discussions/27#discussioncomment-17362974
+        2991 : O3EFloat32(4, "ElectricalEnergySystemBatteryCapacity", unit="Ah"), # jsp3000k, https://github.com/open3e/open3e/discussions/27#discussioncomment-17362974
+        2992 : O3EFloat32(4, "ElectricalEnergySystemStateOfChargeUseable", unit="%"), # jsp3000k, https://github.com/open3e/open3e/discussions/27#discussioncomment-17362974
         2996 : RawCodec(40, "BatteryAmbientTemperatureHistogramTwoPointFour", acc="ro"),
         2997 : RawCodec(56, "BatteryTemperatureHistogramTwoPointFour", acc="ro"),
         2998 : RawCodec(8, "HardwareSignalCheckCsc", acc="ro"),
