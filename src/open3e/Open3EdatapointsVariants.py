@@ -8,7 +8,7 @@ from open3e.Open3Ecodecs import *
 # Unknown_* fields in the ZigBee device and Room records below use offset-based names:
 #   Unknown_<offset>        = a single unknown byte at that 0-based payload offset
 #   Unknown_<start>_<end>   = an unknown byte range (inclusive)
-# The same offset keeps the same name across device types, so they line up when diffing dumps.
+# The same offset keeps the same name across device types, so they line up when diffing dumps. 
 
 dataIdentifiers = {
     "name": "variants", 
