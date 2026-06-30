@@ -496,7 +496,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.7.5 (2026-06-20)
+### 0.7.5 (2026-06-30)
 * **New codec `O3ESwitch`**: decodes a device/variant-dependent payload selected by a discriminator byte (e.g. ZigBee device type), with per-case sub-structure and a fallback `default` case — see discussion #369
 * **ZigBee DIDs 2086–2319 corrected**: byte ranges that are interpreted differently depending on the paired device (Climate sensor, TRV, Floor thermostat/Verteiler, Actuator NC/NO) are now decoded via `O3ESwitch` instead of a single fixed layout, fixing wrong/misleading values for non-Climate-sensor devices
 * **Enum `ViCareDeviceTypes`**: added value `0` ("Empty slot - no device paired")

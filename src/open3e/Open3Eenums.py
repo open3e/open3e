@@ -2287,7 +2287,6 @@ E3Enums = {
     },
 
     "OpStates" : {
-        0: "Current",
         0: "ShutDown",
         1: "Reduced",
         2: "Normal",
