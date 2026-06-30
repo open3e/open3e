@@ -1,6 +1,6 @@
 # Open3E - List of data points
 - Version of general data points: 20260605
-- Version of variant data points: 20260527
+- Version of variant data points: 20260630
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
