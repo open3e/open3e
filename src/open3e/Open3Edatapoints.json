@@ -1433,8 +1433,8 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
-            "desc": "\u00b0C",
+            "unit": "\u00b0C",
+            "desc": "",
             "info": "",
             "acc": ""
           }
@@ -1512,8 +1512,8 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
-            "desc": "\u00b0C",
+            "unit": "\u00b0C",
+            "desc": "",
             "info": "",
             "acc": ""
           }
@@ -2581,7 +2581,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2660,7 +2660,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "\u00b0C",
+            "unit": "hPa",
             "desc": "",
             "info": "",
             "acc": ""
@@ -80786,5 +80786,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260605"
+  "Version": "20260701"
 }

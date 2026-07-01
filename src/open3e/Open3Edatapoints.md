@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20260605
+- Version of general data points: 20260701
 - Version of variant data points: 20260630
 
 ### Remarks
@@ -131,13 +131,13 @@
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -942,13 +942,13 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**279**|[**BufferMidTemperatureSensor**](## "Actual buffer mid temperature value")|*O3EComplexType*|9||ro||
-| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**281**|[**BufferTopTemperatureSensor**](## "Actual buffer top temperature value")|*O3EComplexType*|9||ro||
-| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1029,13 +1029,13 @@
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
