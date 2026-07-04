@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260605
-- Version of variant data points: 20260527
+- Version of general data points: 20260701
+- Version of variant data points: 20260630
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -131,13 +131,13 @@
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -942,13 +942,13 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**279**|[**BufferMidTemperatureSensor**](## "Actual buffer mid temperature value")|*O3EComplexType*|9||ro||
-| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**281**|[**BufferTopTemperatureSensor**](## "Actual buffer top temperature value")|*O3EComplexType*|9||ro||
-| |- [Actual](## "°C")|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1029,13 +1029,13 @@
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|hPa|||
 | |- Minimum|O3EInt16|2|hPa|||
 | |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|hPa|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -4366,16 +4366,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1884**|[**RoomOneProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
 |**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4399,16 +4403,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1887**|[**RoomTwoProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
 |**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4432,16 +4440,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1890**|[**RoomThreeProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
 |**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4465,16 +4477,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1893**|[**RoomFourProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
 |**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4498,16 +4514,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1896**|[**RoomFiveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
 |**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4531,16 +4551,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1899**|[**RoomSixProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
 |**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4564,16 +4588,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1902**|[**RoomSevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
 |**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4597,16 +4625,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1905**|[**RoomEightProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
 |**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4630,16 +4662,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1908**|[**RoomNineProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
 |**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4663,16 +4699,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1911**|[**RoomTenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
 |**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4696,16 +4736,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1914**|[**RoomElevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
 |**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4729,16 +4773,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1917**|[**RoomTwelveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
 |**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4762,16 +4810,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1920**|[**RoomThirteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
 |**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4795,16 +4847,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1923**|[**RoomFourteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
 |**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4828,16 +4884,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1926**|[**RoomFifteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
 |**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4861,16 +4921,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1929**|[**RoomSixteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
 |**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4894,16 +4958,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1932**|[**RoomSeventeenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
 |**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4927,16 +4995,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1935**|[**RoomEighteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
 |**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4960,16 +5032,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1938**|[**RoomNineteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
 |**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -4993,16 +5069,20 @@
 | |- Unknown4|RawCodec|29||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown5|RawCodec|8||||
-|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
-| |- Unknown1|RawCodec|1||||
+|**1941**|[**RoomTwentyProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
+| |- Unknown_00|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
-| |- Unknown2|RawCodec|4||||
+| |- Unknown_39_42|RawCodec|4||||
 | |- [Roomtype](## "{2: Bathroom, 3: Bedroom, 4: Hallway, 5: Living Room, 6: Childrens Room, 7: Kitchen, 8: Office, 9: Guest Toilet, 11: Others}")|O3EEnum|1||||
-| |- Unknown3|RawCodec|1||||
-| |- [TemperatureControl](## "{1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|29||||
+| |- [ChildLockActive](## "Room-side mirror of the child lock of the assigned TRV (1 = active); off44, was an unknown byte; proven by one-factor test {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- [TemperatureControl](## "Level 1 (Eco) .. 6 (Komfort), factory default 4 {1: MaximumEco, 2: MoreEco, 3: Eco, 4: Comfort (Default), 5: More Comfort, 6: Maximum Comfort}")|O3EEnum|1||||
+| |- Unknown_46|RawCodec|1||||
+| |- Unknown_47_54|RawCodec|8||||
+| |- [ZigbeeDeviceLinkOne](## "Linked ZigBee device #1 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [ZigbeeDeviceLinkTwo](## "Linked ZigBee device #2 (1-based index, 0 = none)")|O3EInt8|1||||
+| |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- Unknown5|RawCodec|9||||
+| |- Unknown_76_84|RawCodec|9||||
 |**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
 |**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
@@ -5161,7 +5241,7 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5175,31 +5255,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2087**|**ZigBeeTwoDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5213,31 +5339,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2090**|**ZigBeeThreeDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5251,31 +5423,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2093**|**ZigBeeFourDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5289,31 +5507,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2096**|**ZigBeeFiveDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5327,31 +5591,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2099**|**ZigBeeSixDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5365,31 +5675,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2102**|**ZigBeeSevenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5403,31 +5759,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2105**|**ZigBeeEightDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5441,31 +5843,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2108**|**ZigBeeNineDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5479,31 +5927,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2111**|**ZigBeeTenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5517,31 +6011,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2114**|**ZigBeeElevenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5555,31 +6095,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2117**|**ZigBeeTwelveDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5593,31 +6179,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2120**|**ZigBeeThirteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5631,31 +6263,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2123**|**ZigBeeFourteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5669,31 +6347,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2126**|**ZigBeeFifteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5707,31 +6431,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2129**|**ZigBeeSixteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5745,31 +6515,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2132**|**ZigBeeSeventeenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5783,31 +6599,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2135**|**ZigBeeEighteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5821,31 +6683,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2138**|**ZigBeeNineteenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5859,31 +6767,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2141**|**ZigBeeTwentyDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -5897,25 +6851,71 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2144**|**PointOfCommonCouplingAcActiveCurrent**|RawCodec|16||ro||
 |**2145**|**ObjectTopology**|RawCodec|38||ro||
 |**2146**|**ZigBeeApartmentOneProperty**|RawCodec|8||ro||
@@ -6010,7 +7010,7 @@
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6024,31 +7024,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2263**|**ZigBeeTwentyTwoDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6062,31 +7108,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2266**|**ZigBeeTwentyThreeDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6100,31 +7192,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2269**|**ZigBeeTwentyFourDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6138,31 +7276,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2272**|**ZigBeeTwentyFiveDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6176,31 +7360,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2275**|**ZigBeeTwentySixDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6214,31 +7444,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2278**|**ZigBeeTwentySevenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6252,31 +7528,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2281**|**ZigBeeTwentyEightDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6290,31 +7612,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2284**|**ZigBeeTwentyNineDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6328,31 +7696,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2287**|**ZigBeeThirtyDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6366,31 +7780,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2290**|**ZigBeeThirtyOneDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6404,31 +7864,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2293**|**ZigBeeThirtyTwoDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6442,31 +7948,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2296**|**ZigBeeThirtyThreeDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6480,31 +8032,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2299**|**ZigBeeThirtyFourDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6518,31 +8116,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2302**|**ZigBeeThirtyFiveDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6556,31 +8200,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2305**|**ZigBeeThirtySixDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6594,31 +8284,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2308**|**ZigBeeThirtySevenDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6632,31 +8368,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2311**|**ZigBeeThirtyEightDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6670,31 +8452,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2314**|**ZigBeeThirtyNineDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6708,31 +8536,77 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2317**|**ZigBeeFourtyDeviceProperty**|*O3EComplexType*|84||ro||
 | |- Serialnumber|RawCodec|8||||
 | |- SerialnumberPostfix|RawCodec|1||||
 | |- Devicename|O3EUtf8|39||||
 | |- Unknown1|RawCodec|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
 | |- Unknown2|RawCodec|8||||
 | |- ArticleNumber|O3EUtf8|16||||
@@ -6746,25 +8620,71 @@
 | |- BatteryLevel|O3EInt8|1||||
 | |- Unknown2|RawCodec|37||||
 | |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
+| |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- ActualTemperature|O3EInt16|2||||
 | |- Humidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|12||||
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown1|RawCodec|2||||
-| |- BatteryLevel|O3EInt8|1||||
-| |- Unknown2|RawCodec|37||||
-| |- SignalLevel|O3EInt8|1||||
-| |- [ViCareDevice](## "{1: Climate sensor, 2: Thermostatic radiator valve, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
-| |- ActualTemperature|O3EInt8|1||||
-| |- [CurrentWorkingMode](## "{0: StandBy, 1: Unknown, 64: Heating, 100: Cooling}")|O3EEnum|1||||
-| |- Humidity|O3EInt8|1||||
-| |- Unknown3|RawCodec|3||||
-| |- [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
-| |- Unknown4|RawCodec|5||||
-| |- [DeviceChildLockActive](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
-| |- DeviceTemperatureSetpoint|O3EInt8|1||||
-| |- Unknown5|RawCodec|12||||
+| |- Unknown_00|RawCodec|1||||
+| |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
+| |- BatteryLevel|O3EInt8|1|%|||
+| |- Unknown_03_39|RawCodec|37||||
+| |- SignalLevel|O3EInt8|1|%|||
+| |- [ViCareDevice](## "off41-55, device-dependent. type0: empty slot. type1 (Climate sensor): room temperature (int16) + humidity. type2 (TRV): room temperature (int16) + valve opening %, DisplayTurned (off48), plus ChildLockActive (off54) and DeviceTemperatureSetpoint (off55, scale=10). type3 (Floor thermostat/Verteiler): FlowTemperature is int16 at off42-43 (off43 = high byte, confirmed by live read 28.6 C); OperatingMode at off48. type4/5 (actuator NC/NO): generic Demand % at off43, plus ValveState at off45 (actuator energized 0/1). off45 reads 0 on type1/2/3 (kept as Unknown_45). Unknown_46_47 (off46-47) and Unknown_49_53 (off49-53) always present. off48 is DisplayTurned only on type2, OperatingMode on type3, raw elsewhere. off54/55 carry child lock + setpoint only on type2; raw on all other types. {0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|*O3ESwitch*|15||||
+| |- - *Case 0: Empty slot - no device paired*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- - *Case 1: Climate sensor*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Humidity|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 2: Thermostatic radiator valve*|*case*|14||||
+| |- - - ActualTemperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - ValveOpening|O3EInt8|1|%|||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [DeviceDisplayTurned](## "{0: Standard, 1: Turned}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - [DeviceChildLockActive](## "type2 (TRV) only: child lock (0/1, proven one-factor test). Mirrored in RoomProperty off44 (ChildLockActive). {0: Not Active, 1: Active}")|O3EEnum|1||||
+| |- - - [DeviceTemperatureSetpoint](## "type2 (TRV) only: TRV own setpoint (0xcd=205 -> 20.5C, scale=10). A room manual setpoint and the program/manual flag are NOT in these records (separate controller room DID).")|O3EInt8|1|[°C](## "°C or °F (system configuration)")|||
+| |- - *Case 3: Floor thermostat*|*case*|14||||
+| |- - - [FlowTemperature](## "int16 LE flow temperature, scale 10. Confirmed by live read: bytes 1e 01 -> 28.6 C. off43 is the HIGH BYTE of this value, not a separate state (flow exceeds 25.6 C, e.g. heating). The e3oncan codec reads off43 alone as CurrentWorkingMode, which is therefore just the temperature band (0:<25.6, 1:25.6-51.2, 2:51.2-76.8 C), not a real mode.")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - Unknown_45|RawCodec|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 4: Actuator underfloor heating - normally powerless closed*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *Case 5: Actuator underfloor heating - normally powerless open*|*case*|14||||
+| |- - - Unknown_42|RawCodec|1||||
+| |- - - [Demand](## "generic zone demand (0/100). Heat vs cool direction comes from the Verteiler OperatingMode, not this byte: reads 100 in cooling too. Proven via condensation cutoff (demand 0 when dew point >= flow temp).")|O3EInt8|1|%|||
+| |- - - Unknown_44|RawCodec|1||||
+| |- - - [ValveState](## "{0: Fully closed, 1: Fully opened}")|O3EEnum|1||||
+| |- - - Unknown_46_47|RawCodec|2||||
+| |- - - Unknown_48|RawCodec|1||||
+| |- - - Unknown_49_53|RawCodec|5||||
+| |- - - Unknown_54|RawCodec|1||||
+| |- - - Unknown_55|RawCodec|1||||
+| |- - *default*|*case*|14||||
+| |- - - Unknown_42_55|RawCodec|14||||
+| |- Unknown_56|RawCodec|1||||
+| |- [ParentDeviceSerialnumber](## "EUI64 of ZigBee routing parent (Repeater/Verteiler). Devices connected directly to the gateway show the coordinator EUI of the gateway radio module, which does not appear in any device list.")|RawCodec|8||||
+| |- Unknown_65_67|RawCodec|3||||
 |**2320**|[**DomesticHotWaterStatus**](## "Status of domestic hot water preparation {0: Idle, 1: Active, 2: Postrun}")|O3EEnum|1||ro||
 |**2321**|**ZigBeeApartmentOneDecoupleList**|RawCodec|91||ro||
 |**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
@@ -7942,6 +9862,9 @@
 |**2985**|**ExternalHeaterTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**2986**|**ExternalHeaterOperationState**|O3EByteVal|1||**rw**||
 |**2987**|**RefrigerantCycleUnlock**|O3EInt8|1||ro||
+|**2990**|**ElectricalEnergySystemBatteryCapacityDelta**|O3EFloat32|4||ro||
+|**2991**|**ElectricalEnergySystemBatteryCapacity**|O3EFloat32|4|Ah|ro||
+|**2992**|**ElectricalEnergySystemStateOfChargeUseable**|O3EFloat32|4|%|ro||
 |**2996**|**BatteryAmbientTemperatureHistogramTwoPointFour**|RawCodec|40||ro||
 |**2997**|**BatteryTemperatureHistogramTwoPointFour**|RawCodec|56||ro||
 |**2998**|**HardwareSignalCheckCsc**|RawCodec|8||ro||
@@ -8920,83 +10843,83 @@
 |**1855**|**ApartmentOneTimeScheduleSaturday**|RawCodec|57||**rw**||
 |**1856**|**ApartmentOneTimeScheduleSunday**|RawCodec|57||**rw**||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
-|**1884**|**RoomOneProperty**|*O3EComplexType*|85||ro||
+|**1884**|[**RoomOneProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
 |**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
-|**1887**|**RoomTwoProperty**|*O3EComplexType*|85||ro||
+|**1887**|[**RoomTwoProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
 |**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
-|**1890**|**RoomThreeProperty**|*O3EComplexType*|85||ro||
+|**1890**|[**RoomThreeProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
 |**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
-|**1893**|**RoomFourProperty**|*O3EComplexType*|85||ro||
+|**1893**|[**RoomFourProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
 |**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
-|**1896**|**RoomFiveProperty**|*O3EComplexType*|85||ro||
+|**1896**|[**RoomFiveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
 |**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
-|**1899**|**RoomSixProperty**|*O3EComplexType*|85||ro||
+|**1899**|[**RoomSixProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
 |**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
-|**1902**|**RoomSevenProperty**|*O3EComplexType*|85||ro||
+|**1902**|[**RoomSevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
 |**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
-|**1905**|**RoomEightProperty**|*O3EComplexType*|85||ro||
+|**1905**|[**RoomEightProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
 |**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
-|**1908**|**RoomNineProperty**|*O3EComplexType*|85||ro||
+|**1908**|[**RoomNineProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
 |**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
-|**1911**|**RoomTenProperty**|*O3EComplexType*|85||ro||
+|**1911**|[**RoomTenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
 |**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
-|**1914**|**RoomElevenProperty**|*O3EComplexType*|85||ro||
+|**1914**|[**RoomElevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
 |**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
-|**1917**|**RoomTwelveProperty**|*O3EComplexType*|85||ro||
+|**1917**|[**RoomTwelveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
 |**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
-|**1920**|**RoomThirteenProperty**|*O3EComplexType*|85||ro||
+|**1920**|[**RoomThirteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
 |**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
-|**1923**|**RoomFourteenProperty**|*O3EComplexType*|85||ro||
+|**1923**|[**RoomFourteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
 |**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
-|**1926**|**RoomFifteenProperty**|*O3EComplexType*|85||ro||
+|**1926**|[**RoomFifteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
 |**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
-|**1929**|**RoomSixteenProperty**|*O3EComplexType*|85||ro||
+|**1929**|[**RoomSixteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
 |**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
-|**1932**|**RoomSeventeenProperty**|*O3EComplexType*|85||ro||
+|**1932**|[**RoomSeventeenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
 |**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
 |**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
-|**1935**|**RoomEightteenProperty**|*O3EComplexType*|85||ro||
+|**1935**|[**RoomEighteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
 |**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
-|**1938**|**RoomNineteenProperty**|*O3EComplexType*|85||ro||
+|**1938**|[**RoomNineteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
 |**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
-|**1941**|**RoomTwentyProperty**|*O3EComplexType*|85||ro||
+|**1941**|[**RoomTwentyProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
 |**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
 |**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|RawCodec|57||**rw**||
@@ -9754,6 +11677,9 @@
 |**2985**|**ExternalHeaterTemperatureSetpoint**|O3EInt16|2||**rw**||
 |**2986**|**ExternalHeaterOperationState**|O3EByteVal|1||**rw**||
 |**2987**|**RefrigerantCycleUnlock**|O3EInt8|1||ro||
+|**2990**|**ElectricalEnergySystemBatteryCapacityDelta**|O3EFloat32|4||ro||
+|**2991**|**ElectricalEnergySystemBatteryCapacity**|O3EFloat32|4|Ah|ro||
+|**2992**|**ElectricalEnergySystemStateOfChargeUseable**|O3EFloat32|4|%|ro||
 |**2996**|**BatteryAmbientTemperatureHistogramTwoPointFour**|RawCodec|40||ro||
 |**2997**|**BatteryTemperatureHistogramTwoPointFour**|RawCodec|56||ro||
 |**2998**|**HardwareSignalCheckCsc**|RawCodec|8||ro||

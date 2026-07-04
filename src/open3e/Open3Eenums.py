@@ -2287,7 +2287,6 @@ E3Enums = {
     },
 
     "OpStates" : {
-        0: "Current",
         0: "ShutDown",
         1: "Reduced",
         2: "Normal",
@@ -2358,18 +2357,18 @@ E3Enums = {
     },
 
     "ViCareDeviceTypes": {
+        0: "Empty slot - no device paired",
         1: "Climate sensor",
         2: "Thermostatic radiator valve",
+        3: "Floor thermostat",
         4: "Actuator underfloor heating - normally powerless closed",
         5: "Actuator underfloor heating - normally powerless open",
         7: "Repeater",
-    },
+    },    
 
-    "CurrentWorkingModeLevels": {
-        0: "StandBy",
-        1: "Unknown",   # value confirmed in enums.js, meaning TBD
-        64: "Heating",
-        100: "Cooling", # confirmed by Backes89 in discussion #235
+    "ValvePositionLevels": {
+        0: "Fully closed",
+        1: "Fully opened",
     },
 
     "DeviceDisplayModeStates": {
@@ -2380,6 +2379,12 @@ E3Enums = {
     "DeviceChildLockStates": {
         0: "Not Active",
         1: "Active",
+    },
+
+    "ZigBeeOperatingModes": {
+        0: "Standby",
+        1: "Heating",
+        2: "Cooling",
     },
 
     # see https://github.com/open3e/open3e/issues/259
