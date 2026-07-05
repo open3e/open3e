@@ -11,16 +11,22 @@ open3e.Open3Ecodecs.flag_rawmode = False
 
 
 def _check_supported_type(codec, unsupported):
-    supported = True
-
     if type(codec) in unsupported:
         return False
-    
+
     if hasattr(codec, "subTypes"):
         for sub in codec.subTypes:
             if not _check_supported_type(sub, unsupported):
                 return False
-    
+
+    if hasattr(codec, "cases"):  # O3ESwitch
+        subcases = list(codec.cases.values())
+        if codec.default is not None:
+            subcases.append(codec.default)
+        for sub in subcases:
+            if not _check_supported_type(sub, unsupported):
+                return False
+
     return True
 
 def _calc_codec_length(codec):
