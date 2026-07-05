@@ -490,7 +490,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.7.5 (2026-07-01)
+### 0.7.5 (2026-07-05)
 * **New codec `O3ESwitch`**: decodes a device/variant-dependent payload selected by a discriminator byte (e.g. ZigBee device type), with per-case sub-structure and a fallback `default` case — see discussion #369
 * **ZigBee DIDs 2086–2319 corrected**: byte ranges that are interpreted differently depending on the paired device (Climate sensor, TRV, Floor thermostat/Verteiler, Actuator NC/NO) are now decoded via `O3ESwitch` instead of a single fixed layout, fixing wrong/misleading values for non-Climate-sensor devices
 * **Enum `ViCareDeviceTypes`**: added value `0` ("Empty slot - no device paired")
@@ -499,6 +499,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * **New `decimals` parameter** for all numeric codecs (`O3EInt`/`O3EInt8`/`16`/`32`/`64`, `O3EFloat32`) to round decoded values and avoid noisy floating point output. Default is `0` for integer codecs (no rounding, unchanged behavior) and `2` for `O3EFloat32`
 * ZigBee `SignalLevel` (`scale=2.55`) now uses `decimals=2`, e.g. `49.41` instead of `49.411764705882355`
 * **Sensor unit fixes** in `Open3Edatapoints.py`: corrected swapped `unit=` on `Average` field of DID 321 (`CompressorInletTemperatureSensor`, was `hPa` → `°C`) and DID 322 (`CompressorInletPressureSensor`, was `°C` → `hPa`); fixed DID 279/281 (`BufferMid`/`BufferTopTemperatureSensor`) where `Actual` used `desc=` instead of `unit=`
+* **ZigBee DIDs 2086–2143 and 2262–2319** (all 40 standard 57-byte `*DeviceCurrentValues`): replaced flat fixed-layout codec with `O3ESwitch` matching the 68-byte variant structure; named `RSSI` (off01), added `unit=` and `decimals=2` to `SignalLevel`, per-case sub-structure for all 5 device types (Climate sensor, TRV, Floor thermostat, Actuator NC/NO)
 
 ### 0.7.4 (2026-06-05)
 * Write errors (device rejection, missing codec) are now reported on stdout; no output on success
