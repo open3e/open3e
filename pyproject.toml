@@ -49,10 +49,11 @@ dependencies = [
   "doipclient",
   "python-can",
   "can-isotp>=2.0.2",
-  "paho-mqtt>=2.0.0"
+  "paho-mqtt>=2.0.0",
+  "rich>=13.0"
 ]
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "black>=26.3.1", "rich>=13.0"]
+dev = ["pytest", "pytest-cov", "black>=26.3.1"]
 web = [
     "fastapi>=0.110",
     "uvicorn[standard]>=0.29",
