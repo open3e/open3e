@@ -2342,6 +2342,12 @@ E3Enums = {
         11: "Others",
     },
 
+    "RoomSetpoints": {
+        2: "Reduced",
+        3: "Normal",
+        4: "Comfort",
+    },
+
     "TemperatureControlLevels": {
         1: "MaximumEco",
         2: "MoreEco",
