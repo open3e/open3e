@@ -147,6 +147,8 @@ def main():
                     )
                     if response.positive:
                         dlen = len(response) - 3
+                        if dlen <= 0:
+                            continue
                         data = response.data[2:]
                         dstr = "(unknown)"
                         if(did in dicDidEnums):

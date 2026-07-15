@@ -31,7 +31,7 @@ version_file_template = 'git_ref = "{scm_version.node}"'
 # PEP 621 https://peps.python.org/pep-0621/
 [project]
 name = "open3e"
-version = "0.6.2"
+version = "0.7.5"
 # for automated versioning by pypa/setuptools_scm. see https://peps.python.org/pep-0621/#dynamic
 # dynamic = ["version"]
 description = "Connects to E3 (vcal, vdens, vx3...) controllers via CAN or DOIP (UDS)."
@@ -49,10 +49,11 @@ dependencies = [
   "doipclient",
   "python-can",
   "can-isotp>=2.0.2",
-  "paho-mqtt>=2.0.0"
+  "paho-mqtt>=2.0.0",
+  "rich>=13.0"
 ]
 [project.optional-dependencies]
-dev = ["pytest", "pytest-cov", "black==21.10b0"]
+dev = ["pytest", "pytest-cov", "black>=26.3.1"]
 [project.urls]
 Homepage = "https://github.com/open3e/open3e"
 documentation = "https://github.com/open3e/open3e"
@@ -61,8 +62,10 @@ repository = "https://github.com/open3e/open3e"
 [project.scripts]
 open3e = "open3e.Open3Eclient:main"
 open3e_depictSystem = "open3e.Open3E_depictSystem:main"
+open3e_depictSysDev = "open3e.Open3E_depictSysDev:main"
 open3e_dids2json = "open3e.Open3E_dids2json:main"
 open3e_dids2md = "open3e.Open3E_dids2md:main"
+open3e_topology = "open3e.Open3E_topology:main"
 
 [tool.pytest.ini_options]
 pythonpath = "."

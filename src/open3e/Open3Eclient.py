@@ -550,7 +550,8 @@ def main():
                         ensure_ecu(ecu)
                         print_write(ecu, did, sub, val, raw=True)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=True, useService77=False, sub=sub)
-                    #print(f"return: {succ}, code: {code}")
+                    if succ is not True:
+                        print(f"[ERROR] write: {succ}, code: {code}")
             elif(args.json == True):
                 writeArg = args.write.split("=")
                 lsteds = eval_complex(writeArg[0])
@@ -568,7 +569,8 @@ def main():
                     ensure_ecu(ecu)
                     print_write(ecu, did, sub, val)
                     succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
-                #print(f"return: {succ}, code: {code}")  
+                if succ is not True:
+                    print(f"[ERROR] write: {succ}, code: {code}")
             else:
                 jobs = args.write.split(",")
                 for job in jobs:
@@ -588,7 +590,8 @@ def main():
                         ensure_ecu(ecu)
                         print_write(ecu, did, sub, val)
                         succ,code = dicEcus[ecu].writeByDid(did, val, raw=False, useService77=False, sub=sub)
-                    #print(f"return: {succ}, code: {code}")
+                    if succ is not True:
+                        print(f"[ERROR] write: {succ}, code: {code}")
             time.sleep(0.1)
 
         # read all
