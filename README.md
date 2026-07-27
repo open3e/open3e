@@ -365,7 +365,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.7.6 (2026-07-26)
+### 0.7.6 (2026-07-27)
 * Added physical units (`°C`, `V`, `µA`, `rpm`, `%`, `min`, `h`, `m³`, `kWh`) to ~50 existing DID field definitions
 * **DID 912 `DaylightSavingTimeActive`**: restructured from opaque `RawCodec` to typed `O3EComplexType` with 5 named byte fields; access changed ro → rw
 * **DIDs 933–940 `MixerOne–EightCircuitProperty`**: new structured `O3EComplexType` definitions with 8 sub-fields each (temperatures, setpoints, flow rates)
@@ -375,6 +375,8 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * **DIDs 1139, 2426–2429**: access corrected ro → rw
 * **DID 2830 `EmergencyMode`**: `RawCodec` → `O3EByteVal` (proper boolean)
 * **New device-length variants**: DID 504 at 10 bytes (`DomesticHotWaterSetpointMetaData`), DID 874 at 2 bytes (`LegionellaProtectionTargetTemperatureSetpoint`)
+* **DIDs 1885–1942 `Room{One–Twenty}Setpoints`**: structured with `O3EComplexType` (30 bytes) — `ComfortTemp`, `NormalTemp`, `ReducedTemp` (all `O3EInt16 signed`) plus 24 unknown bytes; previously opaque `RawCodec(30)`
+* **DIDs 1886–1943 `Room{One–Twenty}CurrentValues`**: extended structure — `CurrentSetpoint` (O3EEnum `RoomSetpoints`) and `IsCurrentlyHeating` (O3EByteVal) decoded from previously unknown bytes
 
 ### 0.7.5 (2026-07-05)
 * **New codec `O3ESwitch`**: decodes a device/variant-dependent payload selected by a discriminator byte (e.g. ZigBee device type), with per-case sub-structure and a fallback `default` case — see discussion #369
