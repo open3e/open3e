@@ -4441,7 +4441,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
+|**1885**|**RoomOneSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4452,8 +4456,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4478,7 +4485,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+|**1888**|**RoomTwoSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4489,8 +4500,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4515,7 +4529,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+|**1891**|**RoomThreeSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4526,8 +4544,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4552,7 +4573,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+|**1894**|**RoomFourSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4563,8 +4588,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4589,7 +4617,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+|**1897**|**RoomFiveSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4600,8 +4632,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4626,7 +4661,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+|**1900**|**RoomSixSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4637,8 +4676,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4663,7 +4705,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+|**1903**|**RoomSevenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4674,8 +4720,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4700,7 +4749,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+|**1906**|**RoomEightSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4711,8 +4764,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4737,7 +4793,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+|**1909**|**RoomNineSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4748,8 +4808,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4774,7 +4837,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+|**1912**|**RoomTenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4785,8 +4852,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4811,7 +4881,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1915**|**RoomElevenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4822,8 +4896,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4848,7 +4925,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1918**|**RoomTwelveSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4859,8 +4940,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4885,7 +4969,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+|**1921**|**RoomThirteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4896,8 +4984,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4922,7 +5013,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+|**1924**|**RoomFourteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4933,8 +5028,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4959,7 +5057,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+|**1927**|**RoomFifteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -4970,8 +5072,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -4996,7 +5101,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+|**1930**|**RoomSixteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -5007,8 +5116,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -5033,7 +5145,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+|**1933**|**RoomSeventeenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -5044,8 +5160,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -5070,7 +5189,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+|**1936**|**RoomEighteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -5081,8 +5204,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -5107,7 +5233,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+|**1939**|**RoomNineteenSetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -5118,8 +5248,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 | |- Unknown1|RawCodec|1||||
 | |- Roomname|O3EUtf8|38||||
@@ -5144,7 +5277,11 @@
 | |- [Unknown_57_74](## "maybe more linked zigbee devices or other room properties")|RawCodec|18||||
 | |- [WindowDetection](## "{0: Not Active, 1: Active}")|O3EEnum|1||||
 | |- Unknown_76_84|RawCodec|9||||
-|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+|**1942**|**RoomTwentySetpoints**|*O3EComplexType*|30||**rw**||
+| |- ComfortTemp|O3EInt16|2||||
+| |- NormalTemp|O3EInt16|2||||
+| |- ReducedTemp|O3EInt16|2||||
+| |- Unknown|RawCodec|24||||
 |**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 | |- ActualTemp|O3EInt16|2||||
 | |- MinimumTemp|O3EInt16|2||||
@@ -5155,8 +5292,11 @@
 | |- MinimumHumidity|O3EInt8|1||||
 | |- MaximumHumidity|O3EInt8|1||||
 | |- Unknown3|RawCodec|1||||
-| |- Unknown4|RawCodec|1||||
-| |- Unknown5|RawCodec|32||||
+| |- Unknown4|RawCodec|20||||
+| |- [CurrentSetpoint](## "{2: Reduced, 3: Normal, 4: Comfort}")|O3EEnum|1||||
+| |- Unknown5|RawCodec|9||||
+| |- IsCurrentlyHeating|O3EByteVal|1||||
+| |- Unknown6|RawCodec|2||||
 |**1944**|**RoomOneTimeScheduleMonday**|*O3EList*|57||**rw**||
 | |- Count|O3EByteVal|1||||
 | |- Schedules|*O3EComplexType*|7||||
@@ -13907,83 +14047,83 @@
 |**1856**|**ApartmentOneTimeScheduleSunday**|*O3EList*|57||**rw**||
 |**1884**|**RoomOneProperty**|*O3EComplexType*|84||ro||
 |**1884**|[**RoomOneProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1885**|**RoomOneSetpoints**|RawCodec|30||**rw**||
+|**1885**|**RoomOneSetpoints**|*O3EComplexType*|30||**rw**||
 |**1886**|**RoomOneCurrentValues**|*O3EComplexType*|46||ro||
 |**1887**|**RoomTwoProperty**|*O3EComplexType*|84||ro||
 |**1887**|[**RoomTwoProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1888**|**RoomTwoSetpoints**|RawCodec|30||**rw**||
+|**1888**|**RoomTwoSetpoints**|*O3EComplexType*|30||**rw**||
 |**1889**|**RoomTwoCurrentValues**|*O3EComplexType*|46||ro||
 |**1890**|**RoomThreeProperty**|*O3EComplexType*|84||ro||
 |**1890**|[**RoomThreeProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1891**|**RoomThreeSetpoints**|RawCodec|30||**rw**||
+|**1891**|**RoomThreeSetpoints**|*O3EComplexType*|30||**rw**||
 |**1892**|**RoomThreeCurrentValues**|*O3EComplexType*|46||ro||
 |**1893**|**RoomFourProperty**|*O3EComplexType*|84||ro||
 |**1893**|[**RoomFourProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1894**|**RoomFourSetpoints**|RawCodec|30||**rw**||
+|**1894**|**RoomFourSetpoints**|*O3EComplexType*|30||**rw**||
 |**1895**|**RoomFourCurrentValues**|*O3EComplexType*|46||ro||
 |**1896**|**RoomFiveProperty**|*O3EComplexType*|84||ro||
 |**1896**|[**RoomFiveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1897**|**RoomFiveSetpoints**|RawCodec|30||**rw**||
+|**1897**|**RoomFiveSetpoints**|*O3EComplexType*|30||**rw**||
 |**1898**|**RoomFiveCurrentValues**|*O3EComplexType*|46||ro||
 |**1899**|**RoomSixProperty**|*O3EComplexType*|84||ro||
 |**1899**|[**RoomSixProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1900**|**RoomSixSetpoints**|RawCodec|30||**rw**||
+|**1900**|**RoomSixSetpoints**|*O3EComplexType*|30||**rw**||
 |**1901**|**RoomSixCurrentValues**|*O3EComplexType*|46||ro||
 |**1902**|**RoomSevenProperty**|*O3EComplexType*|84||ro||
 |**1902**|[**RoomSevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1903**|**RoomSevenSetpoints**|RawCodec|30||**rw**||
+|**1903**|**RoomSevenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1904**|**RoomSevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1905**|**RoomEightProperty**|*O3EComplexType*|84||ro||
 |**1905**|[**RoomEightProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1906**|**RoomEightSetpoints**|RawCodec|30||**rw**||
+|**1906**|**RoomEightSetpoints**|*O3EComplexType*|30||**rw**||
 |**1907**|**RoomEightCurrentValues**|*O3EComplexType*|46||ro||
 |**1908**|**RoomNineProperty**|*O3EComplexType*|84||ro||
 |**1908**|[**RoomNineProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1909**|**RoomNineSetpoints**|RawCodec|30||**rw**||
+|**1909**|**RoomNineSetpoints**|*O3EComplexType*|30||**rw**||
 |**1910**|**RoomNineCurrentValues**|*O3EComplexType*|46||ro||
 |**1911**|**RoomTenProperty**|*O3EComplexType*|84||ro||
 |**1911**|[**RoomTenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1912**|**RoomTenSetpoints**|RawCodec|30||**rw**||
+|**1912**|**RoomTenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1913**|**RoomTenCurrentValues**|*O3EComplexType*|46||ro||
 |**1914**|**RoomElevenProperty**|*O3EComplexType*|84||ro||
 |**1914**|[**RoomElevenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1915**|**RoomElevenSetpoints**|RawCodec|30||**rw**||
+|**1915**|**RoomElevenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1916**|**RoomElevenCurrentValues**|*O3EComplexType*|46||ro||
 |**1917**|**RoomTwelveProperty**|*O3EComplexType*|84||ro||
 |**1917**|[**RoomTwelveProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1918**|**RoomTwelveSetpoints**|RawCodec|30||**rw**||
+|**1918**|**RoomTwelveSetpoints**|*O3EComplexType*|30||**rw**||
 |**1919**|**RoomTwelveCurrentValues**|*O3EComplexType*|46||ro||
 |**1920**|**RoomThirteenProperty**|*O3EComplexType*|84||ro||
 |**1920**|[**RoomThirteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1921**|**RoomThirteenSetpoints**|RawCodec|30||**rw**||
+|**1921**|**RoomThirteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1922**|**RoomThirteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1923**|**RoomFourteenProperty**|*O3EComplexType*|84||ro||
 |**1923**|[**RoomFourteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1924**|**RoomFourteenSetpoints**|RawCodec|30||**rw**||
+|**1924**|**RoomFourteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1925**|**RoomFourteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1926**|**RoomFifteenProperty**|*O3EComplexType*|84||ro||
 |**1926**|[**RoomFifteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1927**|**RoomFifteenSetpoints**|RawCodec|30||**rw**||
+|**1927**|**RoomFifteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1928**|**RoomFifteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1929**|**RoomSixteenProperty**|*O3EComplexType*|84||ro||
 |**1929**|[**RoomSixteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1930**|**RoomSixteenSetpoints**|RawCodec|30||**rw**||
+|**1930**|**RoomSixteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1931**|**RoomSixteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1932**|**RoomSeventeenProperty**|*O3EComplexType*|84||ro||
 |**1932**|[**RoomSeventeenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1933**|**RoomSeventeenSetpoints**|RawCodec|30||**rw**||
+|**1933**|**RoomSeventeenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1934**|**RoomSeventeenCurrentValues**|*O3EComplexType*|46||ro||
 |**1935**|**RoomEighteenProperty**|*O3EComplexType*|84||ro||
 |**1935**|[**RoomEighteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1936**|**RoomEighteenSetpoints**|RawCodec|30||**rw**||
+|**1936**|**RoomEighteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1937**|**RoomEighteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1938**|**RoomNineteenProperty**|*O3EComplexType*|84||ro||
 |**1938**|[**RoomNineteenProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1939**|**RoomNineteenSetpoints**|RawCodec|30||**rw**||
+|**1939**|**RoomNineteenSetpoints**|*O3EComplexType*|30||**rw**||
 |**1940**|**RoomNineteenCurrentValues**|*O3EComplexType*|46||ro||
 |**1941**|**RoomTwentyProperty**|*O3EComplexType*|84||ro||
 |**1941**|[**RoomTwentyProperty**](## "DeviceLinkOne/Two: 1-based index of linked ZigBee device (0 = not linked). DID of linked device: N<=20: Property=2084+(N-1)*3, N>=21: Property=2260+(N-21)*3; Setpoint=+1, CurrentValues=+2")|*O3EComplexType*|85||ro||
-|**1942**|**RoomTwentySetpoints**|RawCodec|30||**rw**||
+|**1942**|**RoomTwentySetpoints**|*O3EComplexType*|30||**rw**||
 |**1943**|**RoomTwentyCurrentValues**|*O3EComplexType*|46||ro||
 |**1944**|**RoomOneTimeScheduleMonday**|*O3EList*|57||**rw**||
 |**1945**|**RoomOneTimeScheduleTuesday**|*O3EList*|57||**rw**||

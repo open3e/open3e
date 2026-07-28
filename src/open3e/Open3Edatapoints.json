@@ -45053,10 +45053,64 @@
     }
   },
   "1885": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomOneSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -45184,7 +45238,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -45193,9 +45247,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -45314,10 +45400,64 @@
     }
   },
   "1888": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomTwoSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -45445,7 +45585,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -45454,9 +45594,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -45575,10 +45747,64 @@
     }
   },
   "1891": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomThreeSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -45706,7 +45932,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -45715,9 +45941,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -45836,10 +46094,64 @@
     }
   },
   "1894": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomFourSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -45967,7 +46279,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -45976,9 +46288,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -46097,10 +46441,64 @@
     }
   },
   "1897": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomFiveSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -46228,7 +46626,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -46237,9 +46635,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -46358,10 +46788,64 @@
     }
   },
   "1900": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomSixSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -46489,7 +46973,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -46498,9 +46982,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -46619,10 +47135,64 @@
     }
   },
   "1903": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomSevenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -46750,7 +47320,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -46759,9 +47329,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -46880,10 +47482,64 @@
     }
   },
   "1906": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomEightSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -47011,7 +47667,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -47020,9 +47676,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -47141,10 +47829,64 @@
     }
   },
   "1909": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomNineSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -47272,7 +48014,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -47281,9 +48023,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -47402,10 +48176,64 @@
     }
   },
   "1912": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomTenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -47533,7 +48361,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -47542,9 +48370,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -47663,10 +48523,64 @@
     }
   },
   "1915": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomElevenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -47794,7 +48708,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -47803,9 +48717,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -47924,10 +48870,64 @@
     }
   },
   "1918": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomTwelveSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -48055,7 +49055,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -48064,9 +49064,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -48185,10 +49217,64 @@
     }
   },
   "1921": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomThirteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -48316,7 +49402,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -48325,9 +49411,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -48446,10 +49564,64 @@
     }
   },
   "1924": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomFourteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -48577,7 +49749,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -48586,9 +49758,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -48707,10 +49911,64 @@
     }
   },
   "1927": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomFifteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -48838,7 +50096,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -48847,9 +50105,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -48968,10 +50258,64 @@
     }
   },
   "1930": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomSixteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -49099,7 +50443,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -49108,9 +50452,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -49229,10 +50605,64 @@
     }
   },
   "1933": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomSeventeenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -49360,7 +50790,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -49369,9 +50799,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -49490,10 +50952,64 @@
     }
   },
   "1936": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomEighteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -49621,7 +51137,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -49630,9 +51146,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -49751,10 +51299,64 @@
     }
   },
   "1939": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomNineteenSetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -49882,7 +51484,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -49891,9 +51493,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
@@ -50012,10 +51646,64 @@
     }
   },
   "1942": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 30,
     "id": "RoomTwentySetpoints",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ComfortTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "NormalTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ReducedTemp",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 24,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "rw"
@@ -50143,7 +51831,7 @@
         },
         {
           "codec": "RawCodec",
-          "len": 1,
+          "len": 20,
           "id": "Unknown4",
           "args": {
             "desc": "",
@@ -50152,9 +51840,41 @@
           }
         },
         {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "CurrentSetpoint",
+          "args": {
+            "listStr": "RoomSetpoints",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
           "codec": "RawCodec",
-          "len": 32,
+          "len": 9,
           "id": "Unknown5",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "IsCurrentlyHeating",
+          "args": {
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown6",
           "args": {
             "desc": "",
             "info": "",
