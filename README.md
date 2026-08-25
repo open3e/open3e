@@ -365,6 +365,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.7 (2026-08-25)
+* **`open3e_depictSystem`**: device scan now stops at CAN address `0x6ef` (was `0x6ff`); addresses above `0x6ef` cannot respond because the reply address `rx = tx + 0x10` would exceed `0x6ff`
+
 ### 0.7.6 (2026-07-27)
 * Added physical units (`°C`, `V`, `µA`, `rpm`, `%`, `min`, `h`, `m³`, `kWh`) to ~50 existing DID field definitions
 * **DID 912 `DaylightSavingTimeActive`**: restructured from opaque `RawCodec` to typed `O3EComplexType` with 5 named byte fields; access changed ro → rw
