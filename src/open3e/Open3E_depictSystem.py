@@ -43,9 +43,9 @@ import importlib.util
 
 
 def main():
-    # cob scan, default 0x680 to 0x6ff  
+    # cob scan, default 0x680 to 0x6ef  
     startcob = 0x680
-    lastcob = 0x6ff
+    lastcob = 0x6ef
 
     # did scan, default 256 to 4000
     startdid = 256
@@ -56,7 +56,7 @@ def main():
 
 
     # scan methods ~~~~~~~~~~~~~~~~~~~~~~
-    def scan_cobs(startcob:int, lastcob:int) -> tuple:  # list of responding cobs tuples (cobid,devprop)
+    def scan_cobs(startcob:int, lastcob:int):  # returns list of responding cobs tuples (cobid,devprop)
         lstfounds = []
         lstskips = []  # skip respond cobs    
         chkdid = 256
@@ -119,7 +119,7 @@ def main():
         return lstfounds
 
 
-    def scan_dids(ecutx:int, startdid:int, lastdid:int) -> tuple:  # list of tuples (did,len,data)
+    def scan_dids(ecutx:int, startdid:int, lastdid:int):  # list of tuples (did,len,data)
         print(f"scan {shex(ecutx)} for DIDs {startdid} to {lastdid} ...") 
         lstfounds = []
 

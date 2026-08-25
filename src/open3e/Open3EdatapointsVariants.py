@@ -15,10 +15,12 @@ dataIdentifiers = {
     "Version": "20260630",
     "dids" : 
     {
+        504 : { 10: O3EComplexType(10, "DomesticHotWaterSetpointMetaData", [O3EInt16(2, "LowerBufferLimitTemperature", signed=True, unit="°C"), O3EInt16(2, "MinimumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "DefaultBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "MaximumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "UpperBufferLimitTemperature", signed=True, unit="°C")], acc="rw")},
         627 : { 12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro")},
         628 : { 12: O3EUtf8(12, "CentralHeatingTwoCircuitName", acc="ro")},
         629 : { 12: O3EUtf8(12, "CentralHeatingThreeCircuitName", acc="ro")},
         630 : { 12: O3EUtf8(12, "CentralHeatingFourCircuitName", acc="ro")},
+        874 : {  2: O3EComplexType(2, "LegionellaProtectionTargetTemperatureSetpoint", [O3EInt16(2, "Setpoint", unit="°C")], acc="rw")},
         1006 : { 3: O3EComplexType(3, "TargetQuickMode", [O3EByteVal(1, "SetModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], desc="External request for one-time charging of domestic hot water (0: off, 2: one-time request)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="rw")},
         1007 : { 3: O3EComplexType(3, "CurrentQuickMode", [O3EByteVal(1, "ModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], desc="State of external request for one-time charging of domestic hot water (0: off, 2: on)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="ro")},
         1008 : { 3: O3EComplexType(3, "MixerOneCircuitTargetQuickMode", [O3EByteVal(1, "SetModeParty"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], acc="rw")},

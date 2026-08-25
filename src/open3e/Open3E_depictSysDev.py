@@ -66,7 +66,7 @@ import open3e.Open3Eenums
 logger = logging.getLogger("open3e.depictSysDev")
 
 DEFAULT_STARTCOB = 0x680
-DEFAULT_LASTCOB = 0x6ff
+DEFAULT_LASTCOB = 0x6ef
 DEFAULT_STARTDID = 256
 DEFAULT_LASTDID = 4000
 DEFAULT_LOG_FILE = "open3e_depictSysDev.log"

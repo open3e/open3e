@@ -1,4 +1,88 @@
 {
+  "504": {
+    "10": {
+      "codec": "O3EComplexType",
+      "len": 10,
+      "id": "DomesticHotWaterSetpointMetaData",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "LowerBufferLimitTemperature",
+            "args": {
+              "scale": 10.0,
+              "signed": true,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "MinimumBufferTemperature",
+            "args": {
+              "scale": 10.0,
+              "signed": true,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "DefaultBufferTemperature",
+            "args": {
+              "scale": 10.0,
+              "signed": true,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "MaximumBufferTemperature",
+            "args": {
+              "scale": 10.0,
+              "signed": true,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "UpperBufferLimitTemperature",
+            "args": {
+              "scale": 10.0,
+              "signed": true,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
+      }
+    }
+  },
   "627": {
     "12": {
       "codec": "O3EUtf8",
@@ -44,6 +128,34 @@
         "desc": "",
         "info": "",
         "acc": "ro"
+      }
+    }
+  },
+  "874": {
+    "2": {
+      "codec": "O3EComplexType",
+      "len": 2,
+      "id": "LegionellaProtectionTargetTemperatureSetpoint",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Setpoint",
+            "args": {
+              "scale": 10.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "\u00b0C",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
