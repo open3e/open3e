@@ -16,7 +16,7 @@
 
 E3Enums = {
     "name": "Open3E Enumerations",
-    "Version": "20260701",
+    "Version": "20260727",
     "Errors" : {
         0:"NoErrorAvailable",
         1:"InterruptionFlowTemperatureSensor",
