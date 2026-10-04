@@ -12,7 +12,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "variants", 
-    "Version": "20260630",
+    "Version": "20260727",
     "dids" : 
     {
         504 : { 10: O3EComplexType(10, "DomesticHotWaterSetpointMetaData", [O3EInt16(2, "LowerBufferLimitTemperature", signed=True, unit="°C"), O3EInt16(2, "MinimumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "DefaultBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "MaximumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "UpperBufferLimitTemperature", signed=True, unit="°C")], acc="rw")},

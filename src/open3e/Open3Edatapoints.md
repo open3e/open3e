@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20260705
-- Version of variant data points: 20260630
+- Version of general data points: 20261003
+- Version of variant data points: 20260727
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -12026,7 +12026,7 @@
 | |- OutsideTemperatureLimit|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
 | |- RoomTemperatureLimit|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-|**2428**|**MixerThreeCircuitRoomEcoFunctionS ettings**|*O3EComplexType*|6||**rw**||
+|**2428**|**MixerThreeCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||**rw**||
 | |- State|O3EBool|1||||
 | |- OutsideTemperatureLimit|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
@@ -14572,7 +14572,7 @@
 |**2425**|**BatteryModuleTypeId**|RawCodec|2||ro||
 |**2426**|**MixerOneCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||**rw**||
 |**2427**|**MixerTwoCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||**rw**||
-|**2428**|**MixerThreeCircuitRoomEcoFunctionS ettings**|*O3EComplexType*|6||**rw**||
+|**2428**|**MixerThreeCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||**rw**||
 |**2429**|**MixerFourCircuitRoomEcoFunctionSettings**|*O3EComplexType*|6||**rw**||
 |**2442**|**HeatPumpFrostProtection**|O3EInt8|1||ro||
 |**2444**|**LogLevelEmbbededApplication**|O3EInt8|1||ro||

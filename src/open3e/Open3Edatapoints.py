@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20260705",
+    "Version": "20261003",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -1181,7 +1181,7 @@ dataIdentifiers = {
         2425 : RawCodec(2, "BatteryModuleTypeId", acc="ro"),
         2426 : O3EComplexType(6, "MixerOneCircuitRoomEcoFunctionSettings", [O3EBool(1, "State"), O3EInt16(2, "OutsideTemperatureLimit", signed=True, unit="°C"), RawCodec(1, "Unknown"), O3EInt16(2, "RoomTemperatureLimit", signed=True, unit="°C")], acc="rw"),
         2427 : O3EComplexType(6, "MixerTwoCircuitRoomEcoFunctionSettings", [O3EBool(1, "State"), O3EInt16(2, "OutsideTemperatureLimit", signed=True, unit="°C"), RawCodec(1, "Unknown"), O3EInt16(2, "RoomTemperatureLimit", signed=True, unit="°C")], acc="rw"),
-        2428 : O3EComplexType(6, "MixerThreeCircuitRoomEcoFunctionS ettings", [O3EBool(1, "State"), O3EInt16(2, "OutsideTemperatureLimit", signed=True, unit="°C"), RawCodec(1, "Unknown"), O3EInt16(2, "RoomTemperatureLimit", signed=True, unit="°C")], acc="rw"),
+        2428 : O3EComplexType(6, "MixerThreeCircuitRoomEcoFunctionSettings", [O3EBool(1, "State"), O3EInt16(2, "OutsideTemperatureLimit", signed=True, unit="°C"), RawCodec(1, "Unknown"), O3EInt16(2, "RoomTemperatureLimit", signed=True, unit="°C")], acc="rw"),
         2429 : O3EComplexType(6, "MixerFourCircuitRoomEcoFunctionSettings", [O3EBool(1, "State"), O3EInt16(2, "OutsideTemperatureLimit", signed=True, unit="°C"), RawCodec(1, "Unknown"), O3EInt16(2, "RoomTemperatureLimit", signed=True, unit="°C")], acc="rw"),
         2442 : O3EInt8(1, "HeatPumpFrostProtection", scale=1.0, acc="ro"),
         2444 : O3EInt8(1, "LogLevelEmbbededApplication", scale=1.0, acc="ro"),

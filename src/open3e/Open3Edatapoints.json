@@ -98069,7 +98069,7 @@
   "2428": {
     "codec": "O3EComplexType",
     "len": 6,
-    "id": "MixerThreeCircuitRoomEcoFunctionS ettings",
+    "id": "MixerThreeCircuitRoomEcoFunctionSettings",
     "args": {
       "subTypes": [
         {
@@ -114948,5 +114948,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20260705"
+  "Version": "20261003"
 }
