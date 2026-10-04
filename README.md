@@ -369,7 +369,8 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 ### 0.7.8 (2026-10-03)
 * **DID 2428 `MixerThreeCircuitRoomEcoFunctionSettings`**: removed a stray space in the identifier to match the naming convention
-* Data point definitions version set to `20261003`
+* Common data point definitions version set to `20261003`
+* Version of variant data point definitions and enums corrected to 20260727
 
 ### 0.7.7 (2026-08-25)
 * **`open3e_depictSystem`**: device scan now stops at CAN address `0x6ef` (was `0x6ff`); addresses above `0x6ef` cannot respond because the reply address `rx = tx + 0x10` would exceed `0x6ff`
