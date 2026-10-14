@@ -40673,13 +40673,43 @@
     }
   },
   "1593": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 4,
     "id": "BufferHysteresis",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOn",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "SetpointSwitchOff",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "1594": {
