@@ -4054,7 +4054,9 @@
 |**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
 |**1591**|**ElectricalEnergyInverterOperationState**|RawCodec|6||**rw**||
 |**1592**|**ElectricalEnergyInverterPath**|RawCodec|1||ro||
-|**1593**|**BufferHysteresis**|RawCodec|4||ro||
+|**1593**|**BufferHysteresis**|*O3EComplexType*|4||**rw**||
+| |- SetpointSwitchOn|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- SetpointSwitchOff|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 |**1594**|**LastApplicationUpdate**|O3ESdate|3||ro||
 |**1595**|**ParameterIdentificationVersionFactory**|RawCodec|8||ro||
 |**1596**|**IncreasedReturnTemperatureSensor**|*O3EComplexType*|9||ro||
@@ -13884,7 +13886,7 @@
 |**1590**|**ElectricalEnergySystemOperationState**|RawCodec|6||**rw**||
 |**1591**|**ElectricalEnergyInverterOperationState**|RawCodec|6||**rw**||
 |**1592**|**ElectricalEnergyInverterPath**|RawCodec|1||ro||
-|**1593**|**BufferHysteresis**|RawCodec|4||ro||
+|**1593**|**BufferHysteresis**|*O3EComplexType*|4||**rw**||
 |**1594**|**LastApplicationUpdate**|O3ESdate|3||ro||
 |**1595**|**ParameterIdentificationVersionFactory**|RawCodec|8||ro||
 |**1596**|**IncreasedReturnTemperatureSensor**|*O3EComplexType*|9||ro||

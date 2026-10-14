@@ -555,7 +555,7 @@ dataIdentifiers = {
         1590 : RawCodec(6, "ElectricalEnergySystemOperationState", acc="rw"),
         1591 : RawCodec(6, "ElectricalEnergyInverterOperationState", acc="rw"),
         1592 : RawCodec(1, "ElectricalEnergyInverterPath", acc="ro"),
-        1593 : RawCodec(4, "BufferHysteresis", acc="ro"),
+        1593 : O3EComplexType(4, "BufferHysteresis", [O3EInt16(2, "SetpointSwitchOn", signed=True, unit="°C" ), O3EInt16(2, "SetpointSwitchOff", signed=True, unit="°C")], acc="rw"),
         1594 : O3ESdate(3, "LastApplicationUpdate", acc="ro"),
         1595 : RawCodec(8, "ParameterIdentificationVersionFactory", acc="ro"),
         1596 : O3EComplexType(9, "IncreasedReturnTemperatureSensor", [O3EInt16(2, "Actual", signed=True), O3EInt16(2, "Minimum", signed=True), O3EInt16(2, "Maximum", signed=True), O3EInt16(2, "Average", signed=True), O3EByteVal(1, "Error")], acc="ro"),
