@@ -367,6 +367,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.9 (2026-10-14)
+* Add decoding for **DID 1593 `BufferHysteresis`**, refer to PR #392
+
 ### 0.7.8 (2026-10-03)
 * **DID 2428 `MixerThreeCircuitRoomEcoFunctionSettings`**: removed a stray space in the identifier to match the naming convention
 * Common data point definitions version set to `20261003`
