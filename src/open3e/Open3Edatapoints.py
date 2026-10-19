@@ -1228,7 +1228,7 @@ dataIdentifiers = {
         2489 : O3EComplexType(3, "FrostProtectionStatus", [O3EBool(1, "Status"), RawCodec(2, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
         2490 : RawCodec(1, "StartUpWizardState", acc="ro"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput", acc="ro"),
-        2493 : O3EComplexType(2, "VentilationBypassPosition", [O3EInt8(1, "BypassPosition", scale=1.0, unit="%"), RawCodec(1, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
+        2493 : O3EComplexType(2, "VentilationBypassPosition", [O3EInt8(1, "BypassPosition", scale=1.0, unit="%"), O3EInt8(1, "Unknown", scale=1.0, unit="%", desc="Follows BypassPosition with a delay while the flap moves, possibly the actual position")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
         2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale=1, signed=True, unit="W", desc="Actual thermal power output of the refrigeration circuit", acc="ro"),    # Unit: Watts
         2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale=1, signed=True, unit="W", desc="Actual thermal power output of the auxiliary heater", acc="ro"),    # Unit: Watts
         2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale=1, signed=True, unit="W", desc="Actual thermal power output of the system", acc="ro"),    # Unit: Watts
@@ -1480,7 +1480,7 @@ dataIdentifiers = {
         2942 : RawCodec(137, "ListOfLayerSettingServiceDevices", acc="ro"),
         2944 : O3EByteVal(1, "NodeIdOnExternalCan", acc="ro"),
         2945 : RawCodec(1, "PointOfCommonCouplingEnergyMeterConnectedPhases", acc="ro"),
-        2946 : O3EComplexType(24, "EnergyConsumptionElectricalPreHeater", [O3EInt32(4, "Today", scale=10, unit="kWh"), O3EInt32(4, "Past7Days", scale=10, unit="kWh"), O3EInt32(4, "CurrentMonth", scale=10, unit="kWh"), O3EInt32(4, "PastMonth", scale=10, unit="kWh"), O3EInt32(4, "CurrentYear", scale=10, unit="kWh"), O3EInt32(4, "PastYear", scale=10, unit="kWh")], desc="Energy consumption of electrical pre-heater", acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
+        2946 : O3EComplexType(24, "EnergyConsumptionElectricalPreHeater", [O3EInt32(4, "Today", scale=10, unit="kWh"), O3EInt32(4, "Past7Days", scale=10, unit="kWh"), O3EInt32(4, "CurrentMonth", scale=10, unit="kWh"), O3EInt32(4, "PastMonth", scale=10, unit="kWh"), O3EInt32(4, "CurrentYear", scale=10, unit="kWh"), O3EInt32(4, "PastYear", scale=10, unit="kWh")], desc="Energy consumption of electrical pre-heater", acc="ro"),    # Vitoair FS 300, structure by analogy with DID 2760 (sample device has no pre-heater, all zeros), see https://github.com/MojoOli/open3e-ha/issues/63
         2947 : RawCodec(5, "SleepModePrevention", acc="ro"),
         2952 : RawCodec(137, "ListOfLayerSettingServiceDevicesTwo", acc="ro"),
         2953 : RawCodec(10, "CascadeSystemConfigurationArray", acc="ro"),
