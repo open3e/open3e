@@ -1225,10 +1225,10 @@ dataIdentifiers = {
         2486 : O3EInt32(4, "CurrentElectricalPowerConsumptionRefrigerantCircuit", scale=1, signed=True, unit="W", desc="Actual electrical power consumption of the refrigeration circuit", acc="ro"),
         2487 : O3EInt32(4, "CurrentElectricalPowerConsumptionElectricHeater", scale=1, signed=True, unit="W", desc="Actual electrical power consumption of the auxiliary heater", acc="ro"),
         2488 : O3EInt32(4, "CurrentElectricalPowerConsumptionSystem", scale=1, signed=True, unit="W", desc="Actual total electrical power consumption of the system", acc="ro"),
-        2489 : O3EComplexType(3, "FrostProtectionStatus", [O3EByteVal(1, "Status", desc="0: inactive, 1: active"), RawCodec(2, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
+        2489 : O3EComplexType(3, "FrostProtectionStatus", [O3EBool(1, "Status"), RawCodec(2, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
         2490 : RawCodec(1, "StartUpWizardState", acc="ro"),
         2491 : RawCodec(1, "DomesticHotWaterDemandInput", acc="ro"),
-        2493 : O3EComplexType(2, "VentilationBypassPosition", [O3EByteVal(1, "BypassPosition", unit="%"), RawCodec(1, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
+        2493 : O3EComplexType(2, "VentilationBypassPosition", [O3EInt8(1, "BypassPosition", scale=1.0, unit="%"), RawCodec(1, "Unknown")], acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
         2494 : O3EInt32(4, "CurrentThermalCapacityRefrigerantCircuit", scale=1, signed=True, unit="W", desc="Actual thermal power output of the refrigeration circuit", acc="ro"),    # Unit: Watts
         2495 : O3EInt32(4, "CurrentThermalCapacityElectricHeater", scale=1, signed=True, unit="W", desc="Actual thermal power output of the auxiliary heater", acc="ro"),    # Unit: Watts
         2496 : O3EInt32(4, "CurrentThermalCapacitySystem", scale=1, signed=True, unit="W", desc="Actual thermal power output of the system", acc="ro"),    # Unit: Watts
@@ -1411,7 +1411,7 @@ dataIdentifiers = {
         2843 : O3EInt16(2, "SecondaryHeatExchangerMinimumVolumeFlow", acc="ro"),
         2844 : O3EInt16(2, "SecondaryHeatExchangerMinimumOutletTemperature", acc="ro"),
         2845 : O3EInt16(2, "SecondaryHeatExchangerMaximumOutletTemperature", acc="ro"),
-        2846 : O3EByteVal(1, "VentilationBypassDynamicVentilationLevel", acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
+        2846 : O3EInt8(1, "VentilationBypassDynamicVentilationLevel", scale=1.0, acc="ro"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
         2847 : RawCodec(8, "CrankCaseHeaterStatistics", acc="ro"),
         2848 : O3EInt16(2, "CrankCaseHeaterTemperatureStatistics", acc="ro"),
         2849 : RawCodec(27, "CrankCaseHeaterOnTimer", acc="ro"),
