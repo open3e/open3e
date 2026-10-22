@@ -2393,6 +2393,13 @@ E3Enums = {
         2: "Cooling",
     },
 
+    # byte 0 of ZigBee*DeviceCurrentValues, verified by unplugging and replugging repeaters
+    "ZigBeeConnectionStates": {
+        0: "Empty slot",
+        3: "Connected",
+        5: "Not reachable",
+    },
+
     # see https://github.com/open3e/open3e/issues/259
     "SensorStates": {
         0: "no_error",
