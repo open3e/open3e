@@ -203,6 +203,63 @@
         "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "rw"
       }
+    },
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "TargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "OpMode",
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "Required",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Runtime",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "min",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "rw"
+      }
     }
   },
   "1007": {
@@ -246,6 +303,63 @@
           }
         ],
         "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "ro"
+      }
+    },
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "CurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "OpMode",
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "Required",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Runtime",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "min",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes",
         "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "ro"
       }
@@ -30064,6 +30178,58 @@
             "codec": "RawCodec",
             "len": 3,
             "id": "Unknown_65_67",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
+    }
+  },
+  "2605": {
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "QuickModeRuntime",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "NoiseReduced",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Intensive",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
             "args": {
               "desc": "",
               "info": "",

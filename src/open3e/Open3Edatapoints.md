@@ -2079,6 +2079,11 @@
 | |- SetModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
+|**1006**|[**TargetQuickMode**](## "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes")|*O3EComplexType*|6||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+| |- OpMode|O3EByteVal|1||||
+| |- Required|O3EBool|1||||
+| |- Runtime|O3EInt16|2|min|||
+| |- Unknown|RawCodec|2||||
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- OpMode|O3EByteVal|1||||
 | |- Required|O3EBool|1||||
@@ -2087,6 +2092,11 @@
 | |- ModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
+|**1007**|[**CurrentQuickMode**](## "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes")|*O3EComplexType*|6||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+| |- OpMode|O3EByteVal|1||||
+| |- Required|O3EBool|1||||
+| |- Runtime|O3EInt16|2|min|||
+| |- Unknown|RawCodec|2||||
 |**1008**|**MixerOneCircuitTargetQuickMode**|RawCodec|4||**rw**||
 |**1008**|**MixerOneCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
 | |- SetModeParty|O3EByteVal|1||||
@@ -12097,10 +12107,14 @@
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
-|**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
+|**2489**|**FrostProtectionStatus**|*O3EComplexType*|3||ro||
+| |- Status|O3EBool|1||||
+| |- Unknown|RawCodec|2||||
 |**2490**|**StartUpWizardState**|RawCodec|1||ro||
 |**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
-|**2493**|**VentilationBypassPosition**|RawCodec|2||ro||
+|**2493**|**VentilationBypassPosition**|*O3EComplexType*|2||ro||
+| |- BypassPosition|O3EInt8|1|%|||
+| |- [Unknown](## "Follows BypassPosition with a delay while the flap moves, possibly the actual position")|O3EInt8|1|%|||
 |**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
@@ -12644,9 +12658,16 @@
 |**2605**|**QuickModeRuntime**|*O3EComplexType*|4||ro||
 | |- NoiseReduced|O3EInt16|2||||
 | |- Intensive|O3EInt16|2||||
+|**2605**|**QuickModeRuntime**|*O3EComplexType*|6||ro||
+| |- NoiseReduced|O3EInt16|2||||
+| |- Intensive|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2606**|**ExternalTriggerActivation**|O3EByteVal|1||ro||
 |**2607**|**ExternalTriggerSettings**|O3EByteVal|1||ro||
-|**2608**|**FilterSettings**|RawCodec|28||ro||
+|**2608**|**FilterSettings**|*O3EComplexType*|28||ro||
+| |- ChangeInterval|O3EInt16|2|d|||
+| |- FilterOneEan|O3EUtf8|13||||
+| |- FilterTwoEan|O3EUtf8|13||||
 |**2609**|**CommissioningStatus**|RawCodec|6||ro||
 |**2610**|**SetDeliveryStateExpert**|RawCodec|1||ro||
 |**2611**|**NominalThermalCapacityIndoorUnit**|O3EInt32|4||ro||
@@ -12711,7 +12732,13 @@
 |**2752**|**DiagnosticFanOperation**|O3EInt8|1||ro||
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
-|**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
+|**2759**|[**EnergyRecoveredCrossHeatExchanger**](## "Energy recovered by cross heat exchanger")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 | |- Today|O3EInt32|4|kWh|||
 | |- Past7Days|O3EInt32|4|kWh|||
@@ -12973,6 +13000,7 @@
 |**2843**|**SecondaryHeatExchangerMinimumVolumeFlow**|O3EInt16|2||ro||
 |**2844**|**SecondaryHeatExchangerMinimumOutletTemperature**|O3EInt16|2||ro||
 |**2845**|**SecondaryHeatExchangerMaximumOutletTemperature**|O3EInt16|2||ro||
+|**2846**|**VentilationBypassDynamicVentilationLevel**|O3EInt8|1||ro||
 |**2847**|**CrankCaseHeaterStatistics**|RawCodec|8||ro||
 |**2848**|**CrankCaseHeaterTemperatureStatistics**|O3EInt16|2||ro||
 |**2849**|**CrankCaseHeaterOnTimer**|RawCodec|27||ro||
@@ -13055,7 +13083,13 @@
 |**2942**|**ListOfLayerSettingServiceDevices**|RawCodec|137||ro||
 |**2944**|**NodeIdOnExternalCan**|O3EByteVal|1||ro||
 |**2945**|**PointOfCommonCouplingEnergyMeterConnectedPhases**|RawCodec|1||ro||
-|**2946**|**EnergyConsumptionElectricalPreHeater**|RawCodec|24||ro||
+|**2946**|[**EnergyConsumptionElectricalPreHeater**](## "Energy consumption of electrical pre-heater")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2947**|**SleepModePrevention**|RawCodec|5||ro||
 |**2952**|**ListOfLayerSettingServiceDevicesTwo**|RawCodec|137||ro||
 |**2953**|**CascadeSystemConfigurationArray**|RawCodec|10||ro||
@@ -13194,6 +13228,7 @@
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
+|**3206**|**FilterPercentageBlocked**|O3EInt16|2|%|ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
 | |- Offset|O3EInt8|1||||
 | |- Unknown|RawCodec|1||||
@@ -13651,8 +13686,10 @@
 |**1004**|[**CentralHeatingRegulationMode**](## "{0: Nothing, 1: ConstantControlled, 4: WeatherByOutsideSensorControlled, 7: WeatherByOutsideSensorAndRoomCorrectionControlled, 10: ConstantControlledWithExternalThermostat, 13: WeatherByOutsideAndZones, 15: WeatherByOutsideSensorAndAutomaticAdaptationControlled}")|O3EEnum|1||ro||
 |**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|4||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|3||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1006**|[**TargetQuickMode**](## "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes")|*O3EComplexType*|6||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1007**|[**CurrentQuickMode**](## "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes")|*O3EComplexType*|6||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1008**|**MixerOneCircuitTargetQuickMode**|RawCodec|4||**rw**||
 |**1008**|**MixerOneCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
 |**1009**|**MixerTwoCircuitTargetQuickMode**|RawCodec|4||**rw**||
@@ -14618,10 +14655,10 @@
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
-|**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
+|**2489**|**FrostProtectionStatus**|*O3EComplexType*|3||ro||
 |**2490**|**StartUpWizardState**|RawCodec|1||ro||
 |**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
-|**2493**|**VentilationBypassPosition**|RawCodec|2||ro||
+|**2493**|**VentilationBypassPosition**|*O3EComplexType*|2||ro||
 |**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
@@ -14706,9 +14743,10 @@
 |**2603**|**PrimaryHeatExchangerCommonSettings**|RawCodec|4||ro||
 |**2604**|**LevelSwitchActivation**|O3EByteVal|1||ro||
 |**2605**|**QuickModeRuntime**|*O3EComplexType*|4||ro||
+|**2605**|**QuickModeRuntime**|*O3EComplexType*|6||ro||
 |**2606**|**ExternalTriggerActivation**|O3EByteVal|1||ro||
 |**2607**|**ExternalTriggerSettings**|O3EByteVal|1||ro||
-|**2608**|**FilterSettings**|RawCodec|28||ro||
+|**2608**|**FilterSettings**|*O3EComplexType*|28||ro||
 |**2609**|**CommissioningStatus**|RawCodec|6||ro||
 |**2610**|**SetDeliveryStateExpert**|RawCodec|1||ro||
 |**2611**|**NominalThermalCapacityIndoorUnit**|O3EInt32|4||ro||
@@ -14747,7 +14785,7 @@
 |**2752**|**DiagnosticFanOperation**|O3EInt8|1||ro||
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
-|**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
+|**2759**|[**EnergyRecoveredCrossHeatExchanger**](## "Energy recovered by cross heat exchanger")|*O3EComplexType*|24||ro||
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
@@ -14804,6 +14842,7 @@
 |**2843**|**SecondaryHeatExchangerMinimumVolumeFlow**|O3EInt16|2||ro||
 |**2844**|**SecondaryHeatExchangerMinimumOutletTemperature**|O3EInt16|2||ro||
 |**2845**|**SecondaryHeatExchangerMaximumOutletTemperature**|O3EInt16|2||ro||
+|**2846**|**VentilationBypassDynamicVentilationLevel**|O3EInt8|1||ro||
 |**2847**|**CrankCaseHeaterStatistics**|RawCodec|8||ro||
 |**2848**|**CrankCaseHeaterTemperatureStatistics**|O3EInt16|2||ro||
 |**2849**|**CrankCaseHeaterOnTimer**|RawCodec|27||ro||
@@ -14872,7 +14911,7 @@
 |**2942**|**ListOfLayerSettingServiceDevices**|RawCodec|137||ro||
 |**2944**|**NodeIdOnExternalCan**|O3EByteVal|1||ro||
 |**2945**|**PointOfCommonCouplingEnergyMeterConnectedPhases**|RawCodec|1||ro||
-|**2946**|**EnergyConsumptionElectricalPreHeater**|RawCodec|24||ro||
+|**2946**|[**EnergyConsumptionElectricalPreHeater**](## "Energy consumption of electrical pre-heater")|*O3EComplexType*|24||ro||
 |**2947**|**SleepModePrevention**|RawCodec|5||ro||
 |**2952**|**ListOfLayerSettingServiceDevicesTwo**|RawCodec|137||ro||
 |**2953**|**CascadeSystemConfigurationArray**|RawCodec|10||ro||
@@ -14962,6 +15001,7 @@
 |**3170**|[**DomesticHotWaterTankAnodeSensor**](## "Anode current of the DHW tank")|*O3EComplexType*|9||ro||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
+|**3206**|**FilterPercentageBlocked**|O3EInt16|2|%|ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
 |**3213**|**ExternalHeaterTemperatureSensor**|*O3EComplexType*|9||ro||
 |**3215**|**ExternalHeaterSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||

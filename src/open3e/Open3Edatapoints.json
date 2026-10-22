@@ -98910,10 +98910,32 @@
     }
   },
   "2489": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "FrostProtectionStatus",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "Status",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -98940,10 +98962,40 @@
     }
   },
   "2493": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "VentilationBypassPosition",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BypassPosition",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "%",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "%",
+            "desc": "Follows BypassPosition with a delay while the flap moves, possibly the actual position",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -106164,10 +106216,46 @@
     }
   },
   "2608": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 28,
     "id": "FilterSettings",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ChangeInterval",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "d",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 13,
+          "id": "FilterOneEan",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 13,
+          "id": "FilterTwoEan",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -107000,11 +107088,97 @@
     }
   },
   "2759": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 24,
     "id": "EnergyRecoveredCrossHeatExchanger",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Today",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Past7Days",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Energy recovered by cross heat exchanger",
       "info": "",
       "acc": "ro"
     }
@@ -110475,6 +110649,20 @@
       "acc": "ro"
     }
   },
+  "2846": {
+    "codec": "O3EInt8",
+    "len": 1,
+    "id": "VentilationBypassDynamicVentilationLevel",
+    "args": {
+      "scale": 1.0,
+      "signed": false,
+      "decimals": 0,
+      "unit": "",
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
   "2847": {
     "codec": "RawCodec",
     "len": 8,
@@ -111482,11 +111670,97 @@
     }
   },
   "2946": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 24,
     "id": "EnergyConsumptionElectricalPreHeater",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Today",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Past7Days",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Energy consumption of electrical pre-heater",
       "info": "",
       "acc": "ro"
     }
@@ -113110,6 +113384,20 @@
     "len": 199,
     "id": "ExtendedEventLoggingHistory",
     "args": {
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3206": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "FilterPercentageBlocked",
+    "args": {
+      "scale": 1.0,
+      "signed": false,
+      "decimals": 0,
+      "unit": "%",
       "desc": "",
       "info": "",
       "acc": "ro"
