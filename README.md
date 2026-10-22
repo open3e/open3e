@@ -367,6 +367,12 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.10 (2026-10-22)
+* **Vitoair FS 300 (VCU)**: added 6-byte variants for **DIDs 1006/1007 `TargetQuickMode`/`CurrentQuickMode`** and **DID 2605 `QuickModeRuntime`**, refer to PR #398
+* **Vitoair FS 300 (VCU)**: decoded previously raw **DIDs 2489 `FrostProtectionStatus`, 2493 `VentilationBypassPosition`, 2608 `FilterSettings`, 2759 `EnergyRecoveredCrossHeatExchanger`, 2946 `EnergyConsumptionElectricalPreHeater`**, and added new **DIDs 2846 `VentilationBypassDynamicVentilationLevel`, 3206 `FilterPercentageBlocked`**, refer to PR #399
+* Fixed `flag_binary` not being reset after a failed sub-DID write (timeout, negative response, or length mismatch), which caused all subsequent `RawCodec` reads to return raw bytes instead of hex strings until restart; also added a length check for the encoded sub value before it is spliced into the DID payload, refer to PR #401
+* CI: pinned the integration-test runner to `ubuntu-22.04`; `ubuntu-latest` (now Ubuntu 26.04) currently shares a host kernel with `ubuntu-24.04` for which no matching `linux-modules-extra` package exists yet, so the vcan module setup failed
+
 ### 0.7.9 (2026-10-14)
 * Add decoding for **DID 1593 `BufferHysteresis`**, refer to PR #392
 
