@@ -62625,9 +62625,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -62713,11 +62713,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -63448,9 +63449,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -63536,11 +63537,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -64271,9 +64273,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -64359,11 +64361,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -65094,9 +65097,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -65182,11 +65185,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -65917,9 +65921,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -66005,11 +66009,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -66740,9 +66745,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -66828,11 +66833,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -67563,9 +67569,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -67651,11 +67657,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -68386,9 +68393,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -68474,11 +68481,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -69209,9 +69217,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -69297,11 +69305,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -70032,9 +70041,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -70120,11 +70129,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -70855,9 +70865,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -70943,11 +70953,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -71678,9 +71689,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -71766,11 +71777,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -72501,9 +72513,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -72589,11 +72601,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -73324,9 +73337,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -73412,11 +73425,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -74147,9 +74161,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -74235,11 +74249,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -74970,9 +74985,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -75058,11 +75073,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -75793,9 +75809,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -75881,11 +75897,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -76616,9 +76633,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -76704,11 +76721,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -77439,9 +77457,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -77527,11 +77545,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -78262,9 +78281,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -78350,11 +78369,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -80035,9 +80055,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -80123,11 +80143,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -80858,9 +80879,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -80946,11 +80967,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -81681,9 +81703,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -81769,11 +81791,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -82504,9 +82527,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -82592,11 +82615,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -83327,9 +83351,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -83415,11 +83439,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -84150,9 +84175,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -84238,11 +84263,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -84973,9 +84999,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -85061,11 +85087,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -85796,9 +85823,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -85884,11 +85911,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -86619,9 +86647,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -86707,11 +86735,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -87442,9 +87471,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -87530,11 +87559,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -88265,9 +88295,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -88353,11 +88383,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -89088,9 +89119,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -89176,11 +89207,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -89911,9 +89943,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -89999,11 +90031,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -90734,9 +90767,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -90822,11 +90855,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -91557,9 +91591,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -91645,11 +91679,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -92380,9 +92415,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -92468,11 +92503,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -93203,9 +93239,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -93291,11 +93327,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -94026,9 +94063,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -94114,11 +94151,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -94849,9 +94887,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -94937,11 +94975,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -95672,9 +95711,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -95760,11 +95799,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
