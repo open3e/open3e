@@ -16,7 +16,7 @@
 
 E3Enums = {
     "name": "Open3E Enumerations",
-    "Version": "20260727",
+    "Version": "20261022",
     "Errors" : {
         0:"NoErrorAvailable",
         1:"InterruptionFlowTemperatureSensor",
@@ -2391,6 +2391,13 @@ E3Enums = {
         0: "Standby",
         1: "Heating",
         2: "Cooling",
+    },
+
+    # byte 0 of ZigBee*DeviceCurrentValues, verified by unplugging and replugging repeaters
+    "ZigBeeConnectionStates": {
+        0: "Empty slot",
+        3: "Connected",
+        5: "Not reachable",
     },
 
     # see https://github.com/open3e/open3e/issues/259
