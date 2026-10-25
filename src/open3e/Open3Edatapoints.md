@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261022
+- Version of general data points: 20261025
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -11905,7 +11905,7 @@
 | |- Unknown|RawCodec|2||||
 |**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
 | |- TargetFlow|O3EInt16|2||||
-| |- Unknown|RawCodec|2||||
+| |- ExhaustFlow|O3EInt16|2||||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
 |**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||

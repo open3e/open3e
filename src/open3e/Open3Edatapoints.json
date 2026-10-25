@@ -96545,10 +96545,14 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown",
+          "id": "ExhaustFlow",
           "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -115306,5 +115310,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20261022"
+  "Version": "20261025"
 }
