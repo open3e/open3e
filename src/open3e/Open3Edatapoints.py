@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261022",
+    "Version": "20261025",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -1116,7 +1116,7 @@ dataIdentifiers = {
         2320 : O3EEnum(1, "DomesticHotWaterStatus", "DomesticHotWaterPreparationStates", desc="Status of domestic hot water preparation", acc="ro"),    # 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList", acc="ro"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow", [O3EInt16(2, "ActualFlow", scale=1.0), RawCodec(2, "Unknown")], acc="rw"),
-        2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow", [O3EInt16(2, "TargetFlow", scale=1.0), RawCodec(2, "Unknown")], acc="ro"),
+        2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow", [O3EInt16(2, "TargetFlow", scale=1.0), O3EInt16(2, "ExhaustFlow", scale=1.0)], acc="ro"),
         2329 : RawCodec(14, "BatteryEnergyUsedAverage", acc="ro"),
         2330 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardTwo", "DigitalInputConfigurations", acc="ro"),
         2331 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardThree", "DigitalInputConfigurations", acc="ro"),
