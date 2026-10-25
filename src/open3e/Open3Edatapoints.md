@@ -21,7 +21,7 @@
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
@@ -186,7 +186,7 @@
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -577,7 +577,7 @@
 | |- - 12_December|O3EInt32|4|kWh|||
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
 | |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
@@ -697,10 +697,10 @@
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
@@ -834,7 +834,7 @@
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
@@ -1970,13 +1970,13 @@
 |**925**|**FillingVenting**|RawCodec|5||ro||
 |**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
 |**928**|**ElectronicTraceabilityNumber**|O3EUtf8|16||ro||
-|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas}")|O3EEnum|1||ro||
+|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas, 4: BioGas}")|O3EEnum|1||ro||
 |**930**|**ExternalTargetCentralHeatingFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**931**|**DomesticHotWaterFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**933**|**MixerOneCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1984,8 +1984,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**934**|**MixerTwoCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1993,8 +1993,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**935**|**MixerThreeCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2002,8 +2002,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**936**|**MixerFourCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2011,8 +2011,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**937**|**MixerFiveCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2020,8 +2020,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**938**|**MixerSixCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2029,8 +2029,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**939**|**MixerSevenCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2038,8 +2038,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**940**|**MixerEightCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2055,7 +2055,7 @@
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2289,7 +2289,7 @@
 |**1229**|**FuelCellGasTypeSetting**|RawCodec|1||ro||
 |**1230**|**FuelCellCountrySetting**|RawCodec|1||ro||
 |**1231**|**FuelCellPrimaryPump**|RawCodec|4||ro||
-|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**1233**|**GatewayRemoteVisibleOneTwo**|RawCodec|68||ro||
 |**1234**|**GatewayRemoteVisibleThreeFour**|RawCodec|68||ro||
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
@@ -2312,7 +2312,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2322,7 +2322,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2332,7 +2332,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2342,7 +2342,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -3957,28 +3957,28 @@
 |**1411**|**ResetServiceInterval**|O3EByteVal|1||ro||
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1416**|[**MixerTwoCircuitOperationState**](## "Heating curcuit 2: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1417**|[**MixerThreeCircuitOperationState**](## "Heating curcuit 3: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1418**|[**MixerFourCircuitOperationState**](## "Heating curcuit 4: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1419**|[**MixerFiveCircuitOperationState**](## "Heating curcuit 5: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1420**|[**MixerSixCircuitOperationState**](## "Heating curcuit 6: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1421**|[**MixerSevenCircuitOperationState**](## "Heating curcuit 7: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1422**|[**MixerEightCircuitOperationState**](## "Heating curcuit 8: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1431**|**CarbonEmissionSettings**|RawCodec|8||ro||
 |**1432**|**CentralHeatingPumpPerformance**|*O3EComplexType*|4||**rw**||
 | |- Unknown|RawCodec|2||||
@@ -11907,9 +11907,9 @@
 | |- TargetFlow|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
-|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -11941,10 +11941,10 @@
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
 |**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2353**|**TargetDemandHeatProducer**|*O3EComplexType*|4||ro||
 | |- StateHeating|O3EByteVal|1||||
@@ -12426,7 +12426,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12436,7 +12436,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12446,7 +12446,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12456,7 +12456,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12466,7 +12466,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12493,25 +12493,25 @@
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2547**|**MixerTwoCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2548**|**MixerThreeCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2549**|**MixerFourCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2551**|**FlameBurnerTwo**|RawCodec|6||ro||
 |**2552**|**ModulationCurrentValueBurnerTwo**|RawCodec|2||ro||
 |**2553**|**HeatEngineStatisticalBurnerTwo**|RawCodec|12||ro||
@@ -13658,7 +13658,7 @@
 |**925**|**FillingVenting**|RawCodec|5||ro||
 |**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
 |**928**|**ElectronicTraceabilityNumber**|O3EUtf8|16||ro||
-|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas}")|O3EEnum|1||ro||
+|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas, 4: BioGas}")|O3EEnum|1||ro||
 |**930**|**ExternalTargetCentralHeatingFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**931**|**DomesticHotWaterFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**933**|**MixerOneCircuitProperty**|*O3EComplexType*|9||ro||
@@ -13773,7 +13773,7 @@
 |**1229**|**FuelCellGasTypeSetting**|RawCodec|1||ro||
 |**1230**|**FuelCellCountrySetting**|RawCodec|1||ro||
 |**1231**|**FuelCellPrimaryPump**|RawCodec|4||ro||
-|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**1233**|**GatewayRemoteVisibleOneTwo**|RawCodec|68||ro||
 |**1234**|**GatewayRemoteVisibleThreeFour**|RawCodec|68||ro||
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
@@ -14548,9 +14548,9 @@
 |**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
 |**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
-|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2335**|**BatteryModuleCoulombCounters**|RawCodec|8||ro||
