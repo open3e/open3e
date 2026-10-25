@@ -1,6 +1,6 @@
 # Open3E - List of data points
-- Version of general data points: 20261014
-- Version of variant data points: 20260727
+- Version of general data points: 20261022
+- Version of variant data points: 20261022
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
@@ -21,7 +21,7 @@
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
@@ -186,7 +186,7 @@
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -577,7 +577,7 @@
 | |- - 12_December|O3EInt32|4|kWh|||
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1603**|[**PointOfCommonCouplingPower**](## "Actual Power at Point of Common Coupling")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 | |- [ActivePower](## "Active Power")|O3EInt16|2|W|||
 | |- [ReactivePower](## "Reactive Power")|O3EInt16|2|VA|||
@@ -697,10 +697,10 @@
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2369**|[**HeatPumpCompressorStatistical**](## "Statistics for heat pump compressor starts")|*O3EComplexType*|14||ro||
 | |- Unknown1|RawCodec|6||||
@@ -834,7 +834,7 @@
 | ---: | :--- | :---  | ---:   | :---: |  :---:  | :---         |
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
@@ -1970,13 +1970,13 @@
 |**925**|**FillingVenting**|RawCodec|5||ro||
 |**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
 |**928**|**ElectronicTraceabilityNumber**|O3EUtf8|16||ro||
-|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas}")|O3EEnum|1||ro||
+|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas, 4: BioGas}")|O3EEnum|1||ro||
 |**930**|**ExternalTargetCentralHeatingFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**931**|**DomesticHotWaterFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**933**|**MixerOneCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1984,8 +1984,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**934**|**MixerTwoCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1993,8 +1993,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**935**|**MixerThreeCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2002,8 +2002,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**936**|**MixerFourCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2011,8 +2011,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**937**|**MixerFiveCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2020,8 +2020,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**938**|**MixerSixCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2029,8 +2029,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**939**|**MixerSevenCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2038,8 +2038,8 @@
 | |- RoomTemperatureCorrectionFactor|O3EByteVal|1||||
 |**940**|**MixerEightCircuitProperty**|*O3EComplexType*|9||ro||
 | |- [MixerCircuitType](## "{0: NormalCentralHeating, 1: UnderFloorCentralHeating, 2: SwimmingPool, 3: Baseboard, 4: Radiator, 5: RadiantUnderfloorHeating, 6: Snowmelt, 7: AirHandler, 8: FanCoil}")|O3EEnum|1||||
-| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
-| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour}")|O3EEnum|1||||
+| |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
+| |- [RemoteControl](## "{0: Nothing, 48: RemoteControlOne, 49: RemoteControlTwo, 50: RemoteControlThree, 51: RemoteControlFour, 52: RemoteControlFive, 53: RemoteControlSix, 54: RemoteControlSeven, 55: RemoteControlEight, 56: RemoteControlNine}")|O3EEnum|1||||
 | |- [Priority](## "{0: Off, 1: DomesticHotWater}")|O3EEnum|1||||
 | |- BusAddress|O3EByteVal|1||||
 | |- FlowTemperatureOffset|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -2055,7 +2055,7 @@
 | |- [Count](## "Number of list entries")|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2079,6 +2079,11 @@
 | |- SetModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
+|**1006**|[**TargetQuickMode**](## "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes")|*O3EComplexType*|6||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+| |- OpMode|O3EByteVal|1||||
+| |- Required|O3EBool|1||||
+| |- Runtime|O3EInt16|2|min|||
+| |- Unknown|RawCodec|2||||
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 | |- OpMode|O3EByteVal|1||||
 | |- Required|O3EBool|1||||
@@ -2087,6 +2092,11 @@
 | |- ModeOneTimesHotWater|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 | |- Unknown|RawCodec|1||||
+|**1007**|[**CurrentQuickMode**](## "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes")|*O3EComplexType*|6||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+| |- OpMode|O3EByteVal|1||||
+| |- Required|O3EBool|1||||
+| |- Runtime|O3EInt16|2|min|||
+| |- Unknown|RawCodec|2||||
 |**1008**|**MixerOneCircuitTargetQuickMode**|RawCodec|4||**rw**||
 |**1008**|**MixerOneCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
 | |- SetModeParty|O3EByteVal|1||||
@@ -2279,7 +2289,7 @@
 |**1229**|**FuelCellGasTypeSetting**|RawCodec|1||ro||
 |**1230**|**FuelCellCountrySetting**|RawCodec|1||ro||
 |**1231**|**FuelCellPrimaryPump**|RawCodec|4||ro||
-|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**1233**|**GatewayRemoteVisibleOneTwo**|RawCodec|68||ro||
 |**1234**|**GatewayRemoteVisibleThreeFour**|RawCodec|68||ro||
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
@@ -2302,7 +2312,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2312,7 +2322,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2322,7 +2332,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -2332,7 +2342,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -3947,28 +3957,28 @@
 |**1411**|**ResetServiceInterval**|O3EByteVal|1||ro||
 |**1415**|[**MixerOneCircuitOperationState**](## "Heating curcuit 1: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1416**|[**MixerTwoCircuitOperationState**](## "Heating curcuit 2: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1417**|[**MixerThreeCircuitOperationState**](## "Heating curcuit 3: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1418**|[**MixerFourCircuitOperationState**](## "Heating curcuit 4: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1419**|[**MixerFiveCircuitOperationState**](## "Heating curcuit 5: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1420**|[**MixerSixCircuitOperationState**](## "Heating curcuit 6: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1421**|[**MixerSevenCircuitOperationState**](## "Heating curcuit 7: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1422**|[**MixerEightCircuitOperationState**](## "Heating curcuit 8: Operating Mode")|*O3EComplexType*|2||**rw**||
 | |- [Mode](## "Requested Operating Mode {0: Off, 1: Heating, 2: Parallel Operation: Heating HotWater, 3: Parallel Operation: Heating Cooling, 4: TestMode, 5: Cooling, 255: Automatic}")|O3EEnum|1||||
-| |- [State](## "Actual Operating Mode {0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "Actual Operating Mode {0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**1431**|**CarbonEmissionSettings**|RawCodec|8||ro||
 |**1432**|**CentralHeatingPumpPerformance**|*O3EComplexType*|4||**rw**||
 | |- Unknown|RawCodec|2||||
@@ -6286,7 +6296,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2085**|**ZigBeeOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6294,7 +6304,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6357,7 +6367,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2086**|**ZigBeeOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6388,7 +6398,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -6424,7 +6434,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2088**|**ZigBeeTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6432,7 +6442,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6495,7 +6505,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2089**|**ZigBeeTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6526,7 +6536,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -6562,7 +6572,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2091**|**ZigBeeThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6570,7 +6580,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6633,7 +6643,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2092**|**ZigBeeThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6664,7 +6674,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -6700,7 +6710,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2094**|**ZigBeeFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6708,7 +6718,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6771,7 +6781,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2095**|**ZigBeeFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6802,7 +6812,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -6838,7 +6848,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2097**|**ZigBeeFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6846,7 +6856,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6909,7 +6919,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2098**|**ZigBeeFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -6940,7 +6950,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -6976,7 +6986,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2100**|**ZigBeeSixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -6984,7 +6994,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7047,7 +7057,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2101**|**ZigBeeSixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7078,7 +7088,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7114,7 +7124,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2103**|**ZigBeeSevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7122,7 +7132,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7185,7 +7195,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2104**|**ZigBeeSevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7216,7 +7226,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7252,7 +7262,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2106**|**ZigBeeEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7260,7 +7270,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7323,7 +7333,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2107**|**ZigBeeEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7354,7 +7364,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7390,7 +7400,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2109**|**ZigBeeNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7398,7 +7408,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7461,7 +7471,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2110**|**ZigBeeNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7492,7 +7502,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7528,7 +7538,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2112**|**ZigBeeTenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7536,7 +7546,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7599,7 +7609,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2113**|**ZigBeeTenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7630,7 +7640,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7666,7 +7676,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2115**|**ZigBeeElevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7674,7 +7684,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7737,7 +7747,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2116**|**ZigBeeElevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7768,7 +7778,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7804,7 +7814,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2118**|**ZigBeeTwelveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7812,7 +7822,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7875,7 +7885,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2119**|**ZigBeeTwelveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -7906,7 +7916,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -7942,7 +7952,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2121**|**ZigBeeThirteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -7950,7 +7960,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8013,7 +8023,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2122**|**ZigBeeThirteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8044,7 +8054,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8080,7 +8090,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2124**|**ZigBeeFourteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8088,7 +8098,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8151,7 +8161,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2125**|**ZigBeeFourteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8182,7 +8192,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8218,7 +8228,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2127**|**ZigBeeFifteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8226,7 +8236,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8289,7 +8299,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2128**|**ZigBeeFifteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8320,7 +8330,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8356,7 +8366,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2130**|**ZigBeeSixteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8364,7 +8374,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8427,7 +8437,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2131**|**ZigBeeSixteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8458,7 +8468,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8494,7 +8504,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2133**|**ZigBeeSeventeenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8502,7 +8512,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8565,7 +8575,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2134**|**ZigBeeSeventeenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8596,7 +8606,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8632,7 +8642,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2136**|**ZigBeeEighteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8640,7 +8650,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8703,7 +8713,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2137**|**ZigBeeEighteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8734,7 +8744,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8770,7 +8780,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2139**|**ZigBeeNineteenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8778,7 +8788,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8841,7 +8851,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2140**|**ZigBeeNineteenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8872,7 +8882,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -8908,7 +8918,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2142**|**ZigBeeTwentyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -8916,7 +8926,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -8979,7 +8989,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2143**|**ZigBeeTwentyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9010,7 +9020,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9135,7 +9145,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2261**|**ZigBeeTwentyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9143,7 +9153,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9206,7 +9216,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2262**|**ZigBeeTwentyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9237,7 +9247,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9273,7 +9283,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2264**|**ZigBeeTwentyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9281,7 +9291,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9344,7 +9354,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2265**|**ZigBeeTwentyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9375,7 +9385,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9411,7 +9421,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2267**|**ZigBeeTwentyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9419,7 +9429,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9482,7 +9492,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2268**|**ZigBeeTwentyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9513,7 +9523,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9549,7 +9559,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2270**|**ZigBeeTwentyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9557,7 +9567,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9620,7 +9630,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2271**|**ZigBeeTwentyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9651,7 +9661,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9687,7 +9697,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2273**|**ZigBeeTwentyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9695,7 +9705,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9758,7 +9768,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2274**|**ZigBeeTwentyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9789,7 +9799,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9825,7 +9835,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2276**|**ZigBeeTwentySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9833,7 +9843,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9896,7 +9906,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2277**|**ZigBeeTwentySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -9927,7 +9937,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -9963,7 +9973,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2279**|**ZigBeeTwentySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -9971,7 +9981,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10034,7 +10044,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2280**|**ZigBeeTwentySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10065,7 +10075,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10101,7 +10111,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2282**|**ZigBeeTwentyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10109,7 +10119,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10172,7 +10182,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2283**|**ZigBeeTwentyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10203,7 +10213,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10239,7 +10249,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2285**|**ZigBeeTwentyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10247,7 +10257,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10310,7 +10320,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2286**|**ZigBeeTwentyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10341,7 +10351,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10377,7 +10387,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2288**|**ZigBeeThirtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10385,7 +10395,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10448,7 +10458,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2289**|**ZigBeeThirtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10479,7 +10489,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10515,7 +10525,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2291**|**ZigBeeThirtyOneDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10523,7 +10533,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10586,7 +10596,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2292**|**ZigBeeThirtyOneDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10617,7 +10627,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10653,7 +10663,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2294**|**ZigBeeThirtyTwoDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10661,7 +10671,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10724,7 +10734,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2295**|**ZigBeeThirtyTwoDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10755,7 +10765,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10791,7 +10801,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2297**|**ZigBeeThirtyThreeDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10799,7 +10809,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10862,7 +10872,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2298**|**ZigBeeThirtyThreeDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -10893,7 +10903,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -10929,7 +10939,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2300**|**ZigBeeThirtyFourDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -10937,7 +10947,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11000,7 +11010,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2301**|**ZigBeeThirtyFourDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11031,7 +11041,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11067,7 +11077,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2303**|**ZigBeeThirtyFiveDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11075,7 +11085,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11138,7 +11148,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2304**|**ZigBeeThirtyFiveDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11169,7 +11179,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11205,7 +11215,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2306**|**ZigBeeThirtySixDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11213,7 +11223,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11276,7 +11286,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2307**|**ZigBeeThirtySixDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11307,7 +11317,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11343,7 +11353,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2309**|**ZigBeeThirtySevenDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11351,7 +11361,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11414,7 +11424,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2310**|**ZigBeeThirtySevenDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11445,7 +11455,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11481,7 +11491,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2312**|**ZigBeeThirtyEightDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11489,7 +11499,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11552,7 +11562,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2313**|**ZigBeeThirtyEightDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11583,7 +11593,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11619,7 +11629,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2315**|**ZigBeeThirtyNineDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11627,7 +11637,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11690,7 +11700,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2316**|**ZigBeeThirtyNineDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11721,7 +11731,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11757,7 +11767,7 @@
 | |- Unknown1|RawCodec|1||||
 | |- [ViCareDevice](## "{0: Empty slot - no device paired, 1: Climate sensor, 2: Thermostatic radiator valve, 3: Floor thermostat, 4: Actuator underfloor heating - normally powerless closed, 5: Actuator underfloor heating - normally powerless open, 7: Repeater}")|O3EEnum|1||||
 | |- Firmware-Version|O3ESoftVers|8||||
-| |- Unknown2|RawCodec|8||||
+| |- Hardware-Version|O3ESoftVers|8||||
 | |- ArticleNumber|O3EUtf8|16||||
 | |- Unknown3|RawCodec|2||||
 |**2318**|**ZigBeeFourtyDeviceSetpoint**|*O3EComplexType*|13||**rw**||
@@ -11765,7 +11775,7 @@
 | |- MaximumFlowTemperature|O3EInt16|2||||
 | |- Unused|RawCodec|9||||
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|57||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11828,7 +11838,7 @@
 | |- - *default*|*case*|15||||
 | |- - - Unknown_42_56|RawCodec|15||||
 |**2319**|**ZigBeeFourtyDeviceCurrentValues**|*O3EComplexType*|68||ro||
-| |- Unknown_00|RawCodec|1||||
+| |- [ConnectionState](## "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values {0: Empty slot, 3: Connected, 5: Not reachable}")|O3EEnum|1||||
 | |- [RSSI](## "Radio signal strength (signed dBm). SignalLevel is the percent representation of this value. 0x00 for FBH zones (no own radio).")|O3EInt8|1|dBm|||
 | |- BatteryLevel|O3EInt8|1|%|||
 | |- Unknown_03_39|RawCodec|37||||
@@ -11859,7 +11869,7 @@
 | |- - - Unknown_44|RawCodec|1||||
 | |- - - Unknown_45|RawCodec|1||||
 | |- - - Unknown_46_47|RawCodec|2||||
-| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
+| |- - - [OperatingMode](## "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode. {0: Standby, 1: Heating, 2: Cooling}")|O3EEnum|1||||
 | |- - - Unknown_49_53|RawCodec|5||||
 | |- - - Unknown_54|RawCodec|1||||
 | |- - - Unknown_55|RawCodec|1||||
@@ -11897,9 +11907,9 @@
 | |- TargetFlow|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
-|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -11931,10 +11941,10 @@
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
 |**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
-| |- [PowerState](## "{0: Off, 1: On, 2: Out of range}")|O3EEnum|1||||
+| |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
 |**2353**|**TargetDemandHeatProducer**|*O3EComplexType*|4||ro||
 | |- StateHeating|O3EByteVal|1||||
@@ -12097,10 +12107,14 @@
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
-|**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
+|**2489**|**FrostProtectionStatus**|*O3EComplexType*|3||ro||
+| |- Status|O3EBool|1||||
+| |- Unknown|RawCodec|2||||
 |**2490**|**StartUpWizardState**|RawCodec|1||ro||
 |**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
-|**2493**|**VentilationBypassPosition**|RawCodec|2||ro||
+|**2493**|**VentilationBypassPosition**|*O3EComplexType*|2||ro||
+| |- BypassPosition|O3EInt8|1|%|||
+| |- [Unknown](## "Follows BypassPosition with a delay while the flap moves, possibly the actual position")|O3EInt8|1|%|||
 |**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
@@ -12412,7 +12426,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12422,7 +12436,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12432,7 +12446,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12442,7 +12456,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12452,7 +12466,7 @@
 | |- Count|O3EInt8|1||||
 | |- TopologyElement|*O3EComplexType*|36||||
 | |- - NodeID|O3EByteVal|1||||
-| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus}")|O3EEnum|1||||
+| |- - [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
 | |- - DeviceProperty|O3EByteVal|1||||
 | |- - DeviceFunction|O3EByteVal|1||||
 | |- - SW-Version|O3ESoftVers|8||||
@@ -12479,25 +12493,25 @@
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2547**|**MixerTwoCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2548**|**MixerThreeCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2549**|**MixerFourCircuitRoomTemperatureSetpointCooling**|*O3EComplexType*|9||**rw**||
 | |- Comfort|O3EInt16|2||||
 | |- Normal|O3EInt16|2||||
 | |- Reduced|O3EInt16|2||||
 | |- Unknown|RawCodec|2||||
-| |- [State](## "{0: ShutDown, 1: Reduced, 2: Normal, 3: Comfort, 5: Fixed Value, 6: Antifreeze protection, 7: Energy Save: reduced, 8: Energy Save: normal, 9: Energy Save: comfort, 10: Cooling: normal, 11: Cooling: comfort, 12: No request}")|O3EEnum|1||||
+| |- [State](## "{0: Off, 1: Heating Reduced, 2: Heating Normal, 3: Heating Comfort, 4: Fixed Flow Temperature, 5: Frost Protection, 6: Energy Saving Reduced, 7: Energy Saving Normal, 8: Energy Saving Comfort, 9: Cooling Reduced, 10: Cooling Normal, 11: Cooling Comfort, 255: No request}")|O3EEnum|1||||
 |**2551**|**FlameBurnerTwo**|RawCodec|6||ro||
 |**2552**|**ModulationCurrentValueBurnerTwo**|RawCodec|2||ro||
 |**2553**|**HeatEngineStatisticalBurnerTwo**|RawCodec|12||ro||
@@ -12644,9 +12658,16 @@
 |**2605**|**QuickModeRuntime**|*O3EComplexType*|4||ro||
 | |- NoiseReduced|O3EInt16|2||||
 | |- Intensive|O3EInt16|2||||
+|**2605**|**QuickModeRuntime**|*O3EComplexType*|6||ro||
+| |- NoiseReduced|O3EInt16|2||||
+| |- Intensive|O3EInt16|2||||
+| |- Unknown|RawCodec|2||||
 |**2606**|**ExternalTriggerActivation**|O3EByteVal|1||ro||
 |**2607**|**ExternalTriggerSettings**|O3EByteVal|1||ro||
-|**2608**|**FilterSettings**|RawCodec|28||ro||
+|**2608**|**FilterSettings**|*O3EComplexType*|28||ro||
+| |- ChangeInterval|O3EInt16|2|d|||
+| |- FilterOneEan|O3EUtf8|13||||
+| |- FilterTwoEan|O3EUtf8|13||||
 |**2609**|**CommissioningStatus**|RawCodec|6||ro||
 |**2610**|**SetDeliveryStateExpert**|RawCodec|1||ro||
 |**2611**|**NominalThermalCapacityIndoorUnit**|O3EInt32|4||ro||
@@ -12711,7 +12732,13 @@
 |**2752**|**DiagnosticFanOperation**|O3EInt8|1||ro||
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
-|**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
+|**2759**|[**EnergyRecoveredCrossHeatExchanger**](## "Energy recovered by cross heat exchanger")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 | |- Today|O3EInt32|4|kWh|||
 | |- Past7Days|O3EInt32|4|kWh|||
@@ -12973,6 +13000,7 @@
 |**2843**|**SecondaryHeatExchangerMinimumVolumeFlow**|O3EInt16|2||ro||
 |**2844**|**SecondaryHeatExchangerMinimumOutletTemperature**|O3EInt16|2||ro||
 |**2845**|**SecondaryHeatExchangerMaximumOutletTemperature**|O3EInt16|2||ro||
+|**2846**|**VentilationBypassDynamicVentilationLevel**|O3EInt8|1||ro||
 |**2847**|**CrankCaseHeaterStatistics**|RawCodec|8||ro||
 |**2848**|**CrankCaseHeaterTemperatureStatistics**|O3EInt16|2||ro||
 |**2849**|**CrankCaseHeaterOnTimer**|RawCodec|27||ro||
@@ -13055,7 +13083,13 @@
 |**2942**|**ListOfLayerSettingServiceDevices**|RawCodec|137||ro||
 |**2944**|**NodeIdOnExternalCan**|O3EByteVal|1||ro||
 |**2945**|**PointOfCommonCouplingEnergyMeterConnectedPhases**|RawCodec|1||ro||
-|**2946**|**EnergyConsumptionElectricalPreHeater**|RawCodec|24||ro||
+|**2946**|[**EnergyConsumptionElectricalPreHeater**](## "Energy consumption of electrical pre-heater")|*O3EComplexType*|24||ro||
+| |- Today|O3EInt32|4|kWh|||
+| |- Past7Days|O3EInt32|4|kWh|||
+| |- CurrentMonth|O3EInt32|4|kWh|||
+| |- PastMonth|O3EInt32|4|kWh|||
+| |- CurrentYear|O3EInt32|4|kWh|||
+| |- PastYear|O3EInt32|4|kWh|||
 |**2947**|**SleepModePrevention**|RawCodec|5||ro||
 |**2952**|**ListOfLayerSettingServiceDevicesTwo**|RawCodec|137||ro||
 |**2953**|**CascadeSystemConfigurationArray**|RawCodec|10||ro||
@@ -13194,6 +13228,7 @@
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
+|**3206**|**FilterPercentageBlocked**|O3EInt16|2|%|ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
 | |- Offset|O3EInt8|1||||
 | |- Unknown|RawCodec|1||||
@@ -13623,7 +13658,7 @@
 |**925**|**FillingVenting**|RawCodec|5||ro||
 |**927**|[**BuildingType**](## "Type of building {0: OneFamily, 1: MultiFamilyOnlyHeating, 2: MultiFamilyHeatingDomesticHotWater, 3: TownHouse}")|O3EEnum|1||ro||
 |**928**|**ElectronicTraceabilityNumber**|O3EUtf8|16||ro||
-|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas}")|O3EEnum|1||ro||
+|**929**|[**GasType**](## "{1: LLGas, 2: EGas, 3: LiquidGas, 4: BioGas}")|O3EEnum|1||ro||
 |**930**|**ExternalTargetCentralHeatingFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**931**|**DomesticHotWaterFlowSetpointMetaData**|RawCodec|10||**rw**||
 |**933**|**MixerOneCircuitProperty**|*O3EComplexType*|9||ro||
@@ -13651,8 +13686,10 @@
 |**1004**|[**CentralHeatingRegulationMode**](## "{0: Nothing, 1: ConstantControlled, 4: WeatherByOutsideSensorControlled, 7: WeatherByOutsideSensorAndRoomCorrectionControlled, 10: ConstantControlledWithExternalThermostat, 13: WeatherByOutsideAndZones, 15: WeatherByOutsideSensorAndAutomaticAdaptationControlled}")|O3EEnum|1||ro||
 |**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|4||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1006**|[**TargetQuickMode**](## "External request for one-time charging of domestic hot water (0: off, 2: one-time request)")|*O3EComplexType*|3||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1006**|[**TargetQuickMode**](## "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes")|*O3EComplexType*|6||**rw**|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1007**|[**CurrentQuickMode**](## "State of external request for one-time charging of domestic hot water (0: off, 2: on)")|*O3EComplexType*|3||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
+|**1007**|[**CurrentQuickMode**](## "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes")|*O3EComplexType*|6||ro|[Link](https://github.com/open3e/open3e/discussions/318)|
 |**1008**|**MixerOneCircuitTargetQuickMode**|RawCodec|4||**rw**||
 |**1008**|**MixerOneCircuitTargetQuickMode**|*O3EComplexType*|3||**rw**||
 |**1009**|**MixerTwoCircuitTargetQuickMode**|RawCodec|4||**rw**||
@@ -13736,7 +13773,7 @@
 |**1229**|**FuelCellGasTypeSetting**|RawCodec|1||ro||
 |**1230**|**FuelCellCountrySetting**|RawCodec|1||ro||
 |**1231**|**FuelCellPrimaryPump**|RawCodec|4||ro||
-|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**1232**|[**GenericDigitalInputConfigurationOnBoardOne**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**1233**|**GatewayRemoteVisibleOneTwo**|RawCodec|68||ro||
 |**1234**|**GatewayRemoteVisibleThreeFour**|RawCodec|68||ro||
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
@@ -14511,9 +14548,9 @@
 |**2327**|**VentilationTargetVolumeFlow**|*O3EComplexType*|4||**rw**||
 |**2328**|**VentilationCurrentVolumeFlow**|*O3EComplexType*|4||ro||
 |**2329**|**BatteryEnergyUsedAverage**|RawCodec|14||ro||
-|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
-|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt}")|O3EEnum|1||ro||
+|**2330**|[**GenericDigitalInputConfigurationOnBoardTwo**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2331**|[**GenericDigitalInputConfigurationOnBoardThree**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
+|**2332**|[**GenericDigitalInputConfigurationOnBoardFour**](## "{0: Nothing, 1: FaultSignal, 2: DhwCirculation, 3: FaultSignalAndLocked, 4: ExternalHeatDemand, 5: ExternalLocked, 6: ExternalThermostat, 7: RoomTemperatureLimiter, 8: CallForHeat, 9: SmartGridReadyInputOne, 10: SmartGridReadyInputTwo, 11: PowerSupplierLock, 12: ExternalCoolingDemand, 13: PrioritizedDemandDeactivationOtherCircuits, 14: LockCircuitOne, 15: LockCircuitTwo, 16: ExternalDemandAutomatic, 17: FanControl, 18: FanRpmControl, 19: DefrostHeaterControlOne, 20: DefrostHeaterControlTwo, 21: DayNigthOperation, 22: DayNigthOperationPlusDirectControlDigitalOutputOne, 23: PermanentHeating, 24: DirectControlDryContactOne, 25: DirectControlDryContactTwo, 26: DirectControlDryContactThree, 27: DirectControlDigitalOutputTwentyFourVolt, 28: PhotovoltaicSignal, 29: OffpeakGridSignalDigitalInput, 30: ParagraphFourteenAInputOne, 31: ParagraphFourteenAInputTwo, 32: ParagraphFourteenALimitationDemand, 33: ExternalSwitchHeatingCooling}")|O3EEnum|1||ro||
 |**2333**|[**EconomizerLiquidTemperatureSensor**](## "Actual temperature economizer inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2334**|[**EvaporatorVaporTemperatureSensor**](## "Actual temperature avaporator inlet")|*O3EComplexType*|9||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2335**|**BatteryModuleCoulombCounters**|RawCodec|8||ro||
@@ -14618,10 +14655,10 @@
 |**2486**|[**CurrentElectricalPowerConsumptionRefrigerantCircuit**](## "Actual electrical power consumption of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2487**|[**CurrentElectricalPowerConsumptionElectricHeater**](## "Actual electrical power consumption of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2488**|[**CurrentElectricalPowerConsumptionSystem**](## "Actual total electrical power consumption of the system")|O3EInt32|4|W|ro||
-|**2489**|**FrostProtectionStatus**|RawCodec|3||ro||
+|**2489**|**FrostProtectionStatus**|*O3EComplexType*|3||ro||
 |**2490**|**StartUpWizardState**|RawCodec|1||ro||
 |**2491**|**DomesticHotWaterDemandInput**|RawCodec|1||ro||
-|**2493**|**VentilationBypassPosition**|RawCodec|2||ro||
+|**2493**|**VentilationBypassPosition**|*O3EComplexType*|2||ro||
 |**2494**|[**CurrentThermalCapacityRefrigerantCircuit**](## "Actual thermal power output of the refrigeration circuit")|O3EInt32|4|W|ro||
 |**2495**|[**CurrentThermalCapacityElectricHeater**](## "Actual thermal power output of the auxiliary heater")|O3EInt32|4|W|ro||
 |**2496**|[**CurrentThermalCapacitySystem**](## "Actual thermal power output of the system")|O3EInt32|4|W|ro||
@@ -14706,9 +14743,10 @@
 |**2603**|**PrimaryHeatExchangerCommonSettings**|RawCodec|4||ro||
 |**2604**|**LevelSwitchActivation**|O3EByteVal|1||ro||
 |**2605**|**QuickModeRuntime**|*O3EComplexType*|4||ro||
+|**2605**|**QuickModeRuntime**|*O3EComplexType*|6||ro||
 |**2606**|**ExternalTriggerActivation**|O3EByteVal|1||ro||
 |**2607**|**ExternalTriggerSettings**|O3EByteVal|1||ro||
-|**2608**|**FilterSettings**|RawCodec|28||ro||
+|**2608**|**FilterSettings**|*O3EComplexType*|28||ro||
 |**2609**|**CommissioningStatus**|RawCodec|6||ro||
 |**2610**|**SetDeliveryStateExpert**|RawCodec|1||ro||
 |**2611**|**NominalThermalCapacityIndoorUnit**|O3EInt32|4||ro||
@@ -14747,7 +14785,7 @@
 |**2752**|**DiagnosticFanOperation**|O3EInt8|1||ro||
 |**2753**|**DiagnosticHeatExchangerConstraints**|O3EInt8|1||ro||
 |**2758**|**GasPressureSwitchErrorReaction**|RawCodec|1||ro||
-|**2759**|**EnergyRecoveredCrossHeatExchanger**|RawCodec|24||ro||
+|**2759**|[**EnergyRecoveredCrossHeatExchanger**](## "Energy recovered by cross heat exchanger")|*O3EComplexType*|24||ro||
 |**2760**|[**EnergyOwnConsumption**](## "Own Energy Consumption")|*O3EComplexType*|24||ro||
 |**2767**|**DiagnosticMonitoringPressureDrop**|O3EInt8|1||ro||
 |**2768**|**DiagnosticMonitoringPressurePeaks**|O3EInt8|1||ro||
@@ -14804,6 +14842,7 @@
 |**2843**|**SecondaryHeatExchangerMinimumVolumeFlow**|O3EInt16|2||ro||
 |**2844**|**SecondaryHeatExchangerMinimumOutletTemperature**|O3EInt16|2||ro||
 |**2845**|**SecondaryHeatExchangerMaximumOutletTemperature**|O3EInt16|2||ro||
+|**2846**|**VentilationBypassDynamicVentilationLevel**|O3EInt8|1||ro||
 |**2847**|**CrankCaseHeaterStatistics**|RawCodec|8||ro||
 |**2848**|**CrankCaseHeaterTemperatureStatistics**|O3EInt16|2||ro||
 |**2849**|**CrankCaseHeaterOnTimer**|RawCodec|27||ro||
@@ -14872,7 +14911,7 @@
 |**2942**|**ListOfLayerSettingServiceDevices**|RawCodec|137||ro||
 |**2944**|**NodeIdOnExternalCan**|O3EByteVal|1||ro||
 |**2945**|**PointOfCommonCouplingEnergyMeterConnectedPhases**|RawCodec|1||ro||
-|**2946**|**EnergyConsumptionElectricalPreHeater**|RawCodec|24||ro||
+|**2946**|[**EnergyConsumptionElectricalPreHeater**](## "Energy consumption of electrical pre-heater")|*O3EComplexType*|24||ro||
 |**2947**|**SleepModePrevention**|RawCodec|5||ro||
 |**2952**|**ListOfLayerSettingServiceDevicesTwo**|RawCodec|137||ro||
 |**2953**|**CascadeSystemConfigurationArray**|RawCodec|10||ro||
@@ -14962,6 +15001,7 @@
 |**3170**|[**DomesticHotWaterTankAnodeSensor**](## "Anode current of the DHW tank")|*O3EComplexType*|9||ro||
 |**3190**|**RefrigerantCircuitFourWayValvePosition**|O3EByteVal|1||ro||
 |**3191**|**ExtendedEventLoggingHistory**|RawCodec|199||ro||
+|**3206**|**FilterPercentageBlocked**|O3EInt16|2|%|ro||
 |**3212**|**BivalentMixerDomesticHotWaterTemperatureOffset**|*O3EComplexType*|2||**rw**||
 |**3213**|**ExternalHeaterTemperatureSensor**|*O3EComplexType*|9||ro||
 |**3215**|**ExternalHeaterSeparatorTemperatureSensor**|*O3EComplexType*|9||ro||
