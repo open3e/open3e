@@ -1116,7 +1116,7 @@ dataIdentifiers = {
         2320 : O3EEnum(1, "DomesticHotWaterStatus", "DomesticHotWaterPreparationStates", desc="Status of domestic hot water preparation", acc="ro"),    # 0 = Idle, 1 = Active, 2 = Postrun
         2321 : RawCodec(91, "ZigBeeApartmentOneDecoupleList", acc="ro"),
         2327 : O3EComplexType(4, "VentilationTargetVolumeFlow", [O3EInt16(2, "ActualFlow", scale=1.0), RawCodec(2, "Unknown")], acc="rw"),
-        2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow", [O3EInt16(2, "TargetFlow", scale=1.0), RawCodec(2, "Unknown")], acc="ro"),
+        2328 : O3EComplexType(4, "VentilationCurrentVolumeFlow", [O3EInt16(2, "TargetFlow", scale=1.0), O3EInt16(2, "ExhaustFlow", scale=1.0)], acc="ro"),
         2329 : RawCodec(14, "BatteryEnergyUsedAverage", acc="ro"),
         2330 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardTwo", "DigitalInputConfigurations", acc="ro"),
         2331 : O3EEnum(1, "GenericDigitalInputConfigurationOnBoardThree", "DigitalInputConfigurations", acc="ro"),
