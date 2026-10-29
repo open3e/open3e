@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261025",
+    "Version": "20261029",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -613,7 +613,7 @@ dataIdentifiers = {
         1703 : RawCodec(1, "EebusConnectionStatus", acc="ro"),
         1706 : RawCodec(1, "GenericMZIOAccessoryTwoModuleFunction", acc="ro"),
         1710 : O3ESoftVers(8, "FunctionalSoftwareVersion", acc="ro"),
-        1718 : O3EComplexType(2, "ElectricalEnergySystemConfiguration", [O3EByteVal(1, "Netzbetriebsart"), O3EByteVal(1, "Elektrische Anlagenkomponenten")], acc="ro"),
+        1718 : O3EComplexType(2, "ElectricalEnergySystemConfiguration", [O3EEnum(1, "InverterType", "ElectricalEnergySystemInverterTypes"), O3EEnum(1, "SystemType", "EnergyManagementControlUnitTypes")], acc="ro"),    # corrected per viGuide APK (STR_2ByteStrucElectEnergSysteConfiMapper)
         1719 : RawCodec(3, "SolarIntervalFunction", acc="ro"),
         1721 : O3EComplexType(8, "WaterPressureConfiguration", [O3EInt16(2, "Default Pressure", signed=False, unit="bar"), O3EInt16(2, "Normal Pressure Delta", signed=False, unit="bar"), O3EInt16(2, "Maximum Pressure", signed=False, unit="bar"), O3EInt16(2, "Error Threshold", signed=False, unit="bar")], acc="rw"),
         1728 : RawCodec(2, "ThermostatTerminalOneCircuitPump", acc="ro"),
@@ -1588,6 +1588,8 @@ dataIdentifiers = {
         3337 : O3EComplexType(8, "HeatingCoolingHysteresisHeatingCircuitThree", [O3EInt16(2, "TurnOnHysteresis_Heating"), O3EInt16(2, "TurnOffHysteresis_Heating"), O3EInt16(2, "TurnOnHysteresis_Cooling"), O3EInt16(2, "TurnOffHysteresis_Cooling")], acc="ro"),
         3338 : O3EComplexType(8, "HeatingCoolingHysteresisHeatingCircuitFour", [O3EInt16(2, "TurnOnHysteresis_Heating"), O3EInt16(2, "TurnOffHysteresis_Heating"), O3EInt16(2, "TurnOnHysteresis_Cooling"), O3EInt16(2, "TurnOffHysteresis_Cooling")], acc="ro"),
         3366 : O3EComplexType(16, "ElectricalActivePowerStatusReport", [O3EInt32(4, "15MinPower", scale=1.0), O3EInt32(4, "15MinEnergy", scale=10), O3EInt32(4, "Unknown1", scale=1.0), O3EInt32(4, "Unknown2", scale=1.0)], acc="ro"),    # §14a EnWG Unit W,Wh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
+        3369 : O3EEnum(1, "ElectricalActivePowerConsumptionLimitationSettings", "FourteenAConfigurationModes", acc="ro"),    # new, found in viGuide APK (DOP_1ByteTextTableElectActivPowerConsuLimitSetti); selects how §14a EnWG grid-operator load limitation is implemented
+        3370 : RawCodec(4, "ElectricalActivePowerConsumptionLimitationSettingsConfiguration", acc="ro"),    # new, found in viGuide APK (STR_4ByteStrucElectActivPowerConsuLimitSettiConfiMapper); byte 0 bits 0-4 = Yes/No support flags for the 5 modes of DID 3369 (WithoutFourteenA, Static, DigitalContacts, EEBUS, HEMS) in that order, bits 5-7 and bytes 1-3 reserved; no bitfield codec available yet in open3e
         3384 : O3EComplexType(4, "ElectricalActivePowerConsumptionLimitationDefaultValue", [O3EInt16(2, "Default", scale=1), O3EInt16(2, "CurrentValue", scale=1)], acc="ro"),    #250xx Unit W; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
     }
 }

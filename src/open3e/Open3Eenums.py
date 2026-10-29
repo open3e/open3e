@@ -16,7 +16,7 @@
 
 E3Enums = {
     "name": "Open3E Enumerations",
-    "Version": "20261025",
+    "Version": "20261029",
     "Errors" : {
         0:"NoErrorAvailable",
         1:"InterruptionFlowTemperatureSensor",
@@ -2710,4 +2710,25 @@ E3Enums = {
         3: "Heating/Cooling and Internal Buffer",
         4: "Domestic Hot Water and Internal Buffer",
     },
+
+    "ElectricalEnergySystemInverterTypes": {
+        0: "Nothing",
+        1: "Inverter",
+        2: "Inverter With Island Function",
+    }, # found in viGuide APK (DOP_1ByteTextTableElectEnergMatriInver), used for DID 1718 byte 0
+
+    "EnergyManagementControlUnitTypes": {
+        0: "Nothing",
+        1: "Hybrid",
+        2: "Photovoltaic",
+        3: "Battery",
+    }, # found in viGuide APK (DOP_1ByteTextTableDevicFunctEMCU), used for DID 1718 byte 1
+
+    "FourteenAConfigurationModes": {
+        0: "Without §14a EnWG",
+        1: "§14a EnWG Static",
+        2: "§14a EnWG Digital Contacts",
+        3: "§14a EnWG EEBUS",
+        4: "§14a EnWG HEMS",
+    }, # found in viGuide APK (DOP_1ByteTextTableElectActivPowerConsuLimitSetti), used for DID 3369
 }

@@ -367,11 +367,13 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.7.11 (2026-10-25)
+### 0.7.11 (2026-10-29)
 * **ZigBee devices**: decoded `Hardware-Version` (previously raw, in **40 `ZigBee*DeviceProperty` DIDs**) and device `ConnectionState` (previously raw, in **80 `ZigBee*DeviceCurrentValues` definitions**, both 57- and 68-byte variants) with new enum `ZigBeeConnectionStates`, refer to PR #402
 * **`OpStates`**: corrected per issue #145 — the previous decoding (sourced from an older viGuide app version) was field-confirmed wrong; new values cross-checked against two independent reports (Philip-Wiege's systematic testing on a Vitocal 250-A, wangnick's observation of value 255 on unused heating circuits) and against the current viGuide app's data
 * **`Errors`**: extended from 1098 to 1351 entries based on the current viGuide app's error catalogue; corrected two entries that were misplaced at positions 1095/1096 (`WallboxGeneralError`/`EebusConfigurationIncorrect`), which are now at their actual positions 65533/65534 together with the two special values (`ViewedErrorList`/`ErrorHasBeenConfirmed`) that had been shown there before
 * Added missing enum values found by comparing against the current viGuide app: **`GasTypes`** (+1: `BioGas`), **`BusTypes`** (+2: `PWM`, `IP`), **`RemoteControls`** (+5), **`DigitalInputConfigurations`** (+6), **`PowerStates`** (+1)
+* **DID 1718 `ElectricalEnergySystemConfiguration`**: decoded both previously raw bytes as `InverterType` and `SystemType`, with new enums `ElectricalEnergySystemInverterTypes` and `EnergyManagementControlUnitTypes`, based on the current viGuide app's structure mapping
+* Added new **DID 3369 `ElectricalActivePowerConsumptionLimitationSettings`** (§14a EnWG load-limitation mode selector, new enum `FourteenAConfigurationModes`) and **DID 3370 `ElectricalActivePowerConsumptionLimitationSettingsConfiguration`** (raw 4-byte support-flags bitmask for the five modes of DID 3369), found in the current viGuide app
 
 ### 0.7.10 (2026-10-22)
 * **Vitoair FS 300 (VCU)**: added 6-byte variants for **DIDs 1006/1007 `TargetQuickMode`/`CurrentQuickMode`** and **DID 2605 `QuickModeRuntime`**, refer to PR #398
