@@ -42118,22 +42118,22 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Netzbetriebsart",
+          "id": "InverterType",
           "args": {
-            "unit": "",
+            "listStr": "ElectricalEnergySystemInverterTypes",
             "desc": "",
             "info": "",
             "acc": ""
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Elektrische Anlagenkomponenten",
+          "id": "SystemType",
           "args": {
-            "unit": "",
+            "listStr": "EnergyManagementControlUnitTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -115270,6 +115270,27 @@
       "acc": "ro"
     }
   },
+  "3369": {
+    "codec": "O3EEnum",
+    "len": 1,
+    "id": "ElectricalActivePowerConsumptionLimitationSettings",
+    "args": {
+      "listStr": "FourteenAConfigurationModes",
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3370": {
+    "codec": "RawCodec",
+    "len": 4,
+    "id": "ElectricalActivePowerConsumptionLimitationSettingsConfiguration",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
   "3384": {
     "codec": "O3EComplexType",
     "len": 4,
@@ -115310,5 +115331,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20261025"
+  "Version": "20261029"
 }

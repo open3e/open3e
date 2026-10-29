@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261025
+- Version of general data points: 20261029
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -4190,8 +4190,8 @@
 |**1706**|**GenericMZIOAccessoryTwoModuleFunction**|RawCodec|1||ro||
 |**1710**|**FunctionalSoftwareVersion**|O3ESoftVers|8||ro||
 |**1718**|**ElectricalEnergySystemConfiguration**|*O3EComplexType*|2||ro||
-| |- Netzbetriebsart|O3EByteVal|1||||
-| |- Elektrische Anlagenkomponenten|O3EByteVal|1||||
+| |- [InverterType](## "{0: Nothing, 1: Inverter, 2: Inverter With Island Function}")|O3EEnum|1||||
+| |- [SystemType](## "{0: Nothing, 1: Hybrid, 2: Photovoltaic, 3: Battery}")|O3EEnum|1||||
 |**1719**|**SolarIntervalFunction**|RawCodec|3||ro||
 |**1721**|**WaterPressureConfiguration**|*O3EComplexType*|8||**rw**||
 | |- Default Pressure|O3EInt16|2|bar|||
@@ -13365,6 +13365,8 @@
 | |- 15MinEnergy|O3EInt32|4||||
 | |- Unknown1|O3EInt32|4||||
 | |- Unknown2|O3EInt32|4||||
+|**3369**|[**ElectricalActivePowerConsumptionLimitationSettings**](## "{0: Without \u00a714a EnWG, 1: \u00a714a EnWG Static, 2: \u00a714a EnWG Digital Contacts, 3: \u00a714a EnWG EEBUS, 4: \u00a714a EnWG HEMS}")|O3EEnum|1||ro||
+|**3370**|**ElectricalActivePowerConsumptionLimitationSettingsConfiguration**|RawCodec|4||ro||
 |**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
 | |- Default|O3EInt16|2||||
 | |- CurrentValue|O3EInt16|2||||
@@ -15019,5 +15021,7 @@
 |**3337**|**HeatingCoolingHysteresisHeatingCircuitThree**|*O3EComplexType*|8||ro||
 |**3338**|**HeatingCoolingHysteresisHeatingCircuitFour**|*O3EComplexType*|8||ro||
 |**3366**|**ElectricalActivePowerStatusReport**|*O3EComplexType*|16||ro||
+|**3369**|[**ElectricalActivePowerConsumptionLimitationSettings**](## "{0: Without \u00a714a EnWG, 1: \u00a714a EnWG Static, 2: \u00a714a EnWG Digital Contacts, 3: \u00a714a EnWG EEBUS, 4: \u00a714a EnWG HEMS}")|O3EEnum|1||ro||
+|**3370**|**ElectricalActivePowerConsumptionLimitationSettingsConfiguration**|RawCodec|4||ro||
 |**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
 
