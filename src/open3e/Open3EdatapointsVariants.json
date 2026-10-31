@@ -203,6 +203,63 @@
         "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "rw"
       }
+    },
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "TargetQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "OpMode",
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "Required",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Runtime",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "min",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "rw"
+      }
     }
   },
   "1007": {
@@ -246,6 +303,63 @@
           }
         ],
         "desc": "State of external request for one-time charging of domestic hot water (0: off, 2: on)",
+        "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
+        "acc": "ro"
+      }
+    },
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "CurrentQuickMode",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EByteVal",
+            "len": 1,
+            "id": "OpMode",
+            "args": {
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EBool",
+            "len": 1,
+            "id": "Required",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Runtime",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "min",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "Active quick mode of Vitoair (OpMode 8: intensive, 9: noise reduced) with remaining runtime in minutes",
         "info": "[Link](https://github.com/open3e/open3e/discussions/318)",
         "acc": "ro"
       }
@@ -3845,11 +3959,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -4185,7 +4300,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -4501,11 +4616,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -4841,7 +4957,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -5157,11 +5273,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -5497,7 +5614,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -5813,11 +5930,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -6153,7 +6271,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -6469,11 +6587,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -6809,7 +6928,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -7125,11 +7244,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -7465,7 +7585,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -7781,11 +7901,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -8121,7 +8242,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -8437,11 +8558,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -8777,7 +8899,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -9093,11 +9215,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -9433,7 +9556,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -9749,11 +9872,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -10089,7 +10213,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -10405,11 +10529,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -10745,7 +10870,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -11061,11 +11186,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -11401,7 +11527,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -11717,11 +11843,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -12057,7 +12184,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -12373,11 +12500,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -12713,7 +12841,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -13029,11 +13157,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -13369,7 +13498,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -13685,11 +13814,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -14025,7 +14155,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -14341,11 +14471,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -14681,7 +14812,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -14997,11 +15128,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -15337,7 +15469,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -15653,11 +15785,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -15993,7 +16126,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -16309,11 +16442,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -16649,7 +16783,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -16965,11 +17099,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -17305,7 +17440,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -17621,11 +17756,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -17961,7 +18097,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -18277,11 +18413,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -18617,7 +18754,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -18933,11 +19070,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -19273,7 +19411,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -19589,11 +19727,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -19929,7 +20068,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -20245,11 +20384,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -20585,7 +20725,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -20901,11 +21041,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -21241,7 +21382,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -21557,11 +21698,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -21897,7 +22039,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -22213,11 +22355,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -22553,7 +22696,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -22869,11 +23012,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -23209,7 +23353,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -23525,11 +23669,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -23865,7 +24010,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -24181,11 +24326,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -24521,7 +24667,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -24837,11 +24983,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -25177,7 +25324,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -25493,11 +25640,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -25833,7 +25981,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -26149,11 +26297,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -26489,7 +26638,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -26805,11 +26954,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -27145,7 +27295,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -27461,11 +27611,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -27801,7 +27952,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -28117,11 +28268,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -28457,7 +28609,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -28773,11 +28925,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -29113,7 +29266,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -29429,11 +29582,12 @@
       "args": {
         "subTypes": [
           {
-            "codec": "RawCodec",
+            "codec": "O3EEnum",
             "len": 1,
-            "id": "Unknown_00",
+            "id": "ConnectionState",
             "args": {
-              "desc": "",
+              "listStr": "ZigBeeConnectionStates",
+              "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
               "info": "",
               "acc": ""
             }
@@ -29769,7 +29923,7 @@
                         "id": "OperatingMode",
                         "args": {
                           "listStr": "ZigBeeOperatingModes",
-                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) not yet confirmed on a clean capture.",
+                          "desc": "off48 state byte. Observed 0 (Standby, flow 28.6 C) and 2 (Cooling). 1 (Heating) observed on two distributors in all captures over several days while the system was in heating mode.",
                           "info": "",
                           "acc": ""
                         }
@@ -30077,5 +30231,57 @@
       }
     }
   },
-  "Version": "20260727"
+  "2605": {
+    "6": {
+      "codec": "O3EComplexType",
+      "len": 6,
+      "id": "QuickModeRuntime",
+      "args": {
+        "subTypes": [
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "NoiseReduced",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "O3EInt16",
+            "len": 2,
+            "id": "Intensive",
+            "args": {
+              "scale": 1.0,
+              "signed": false,
+              "decimals": 0,
+              "unit": "",
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          },
+          {
+            "codec": "RawCodec",
+            "len": 2,
+            "id": "Unknown",
+            "args": {
+              "desc": "",
+              "info": "",
+              "acc": ""
+            }
+          }
+        ],
+        "desc": "",
+        "info": "",
+        "acc": "ro"
+      }
+    }
+  },
+  "Version": "20261022"
 }
