@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261029
+- Version of general data points: 20261031
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -4179,7 +4179,12 @@
 |**1693**|**GridOperatorConfigurationLock**|O3EByteVal|1||ro||
 |**1694**|**GatewayEthernetEnable**|O3EByteVal|1||ro||
 |**1695**|**GatewayEthernetConfig**|RawCodec|21||ro||
-|**1696**|**GatewayEthernetIp**|RawCodec|20||ro||
+|**1696**|**GatewayEthernetIp**|*O3EComplexType*|20||ro||
+| |- LAN_IP-Address|O3EIp4Addr|4||||
+| |- SubnetMask|O3EIp4Addr|4||||
+| |- Gateway_IP-Address|O3EIp4Addr|4||||
+| |- DNSServer1|O3EIp4Addr|4||||
+| |- DNSServer2|O3EIp4Addr|4||||
 |**1697**|**GatewayEthernetNetworkStatus**|O3EByteVal|1||ro||
 |**1698**|**SupportedFeaturesTelemetryControlUnit**|RawCodec|16||ro||
 |**1699**|**ActivatedFeaturesTelemetryControlUnit**|RawCodec|16||ro||
@@ -13974,7 +13979,7 @@
 |**1693**|**GridOperatorConfigurationLock**|O3EByteVal|1||ro||
 |**1694**|**GatewayEthernetEnable**|O3EByteVal|1||ro||
 |**1695**|**GatewayEthernetConfig**|RawCodec|21||ro||
-|**1696**|**GatewayEthernetIp**|RawCodec|20||ro||
+|**1696**|**GatewayEthernetIp**|*O3EComplexType*|20||ro||
 |**1697**|**GatewayEthernetNetworkStatus**|O3EByteVal|1||ro||
 |**1698**|**SupportedFeaturesTelemetryControlUnit**|RawCodec|16||ro||
 |**1699**|**ActivatedFeaturesTelemetryControlUnit**|RawCodec|16||ro||

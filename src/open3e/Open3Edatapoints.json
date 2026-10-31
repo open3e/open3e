@@ -42011,10 +42011,62 @@
     }
   },
   "1696": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 20,
     "id": "GatewayEthernetIp",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "LAN_IP-Address",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "SubnetMask",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "Gateway_IP-Address",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "DNSServer1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "DNSServer2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -115331,5 +115383,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20261029"
+  "Version": "20261031"
 }
