@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261029",
+    "Version": "20261031",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -603,7 +603,7 @@ dataIdentifiers = {
         1693 : O3EByteVal(1, "GridOperatorConfigurationLock", acc="ro"),
         1694 : O3EByteVal(1, "GatewayEthernetEnable", acc="ro"),
         1695 : RawCodec(21, "GatewayEthernetConfig", acc="ro"),
-        1696 : RawCodec(20, "GatewayEthernetIp", acc="ro"),
+        1696 : O3EComplexType(20, "GatewayEthernetIp", [O3EIp4Addr(4, "LAN_IP-Address"), O3EIp4Addr(4, "SubnetMask"), O3EIp4Addr(4, "Gateway_IP-Address"), O3EIp4Addr(4, "DNSServer1"), O3EIp4Addr(4, "DNSServer2")], acc="ro"),
         1697 : O3EByteVal(1, "GatewayEthernetNetworkStatus", acc="ro"),
         1698 : RawCodec(16, "SupportedFeaturesTelemetryControlUnit", acc="ro"),
         1699 : RawCodec(16, "ActivatedFeaturesTelemetryControlUnit", acc="ro"),
