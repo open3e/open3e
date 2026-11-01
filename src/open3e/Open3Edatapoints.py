@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261031",
+    "Version": "20261101",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -162,7 +162,7 @@ dataIdentifiers = {
         535 : O3EComplexType(12, "ObjectElectricalEnergyStatistical", [O3EInt32(4, "GridFeedInEnergy", scale=10, unit="kWh"), O3EInt32(4, "GridSuppliedEnergy", scale=10, unit="kWh"), O3EInt32(4, "ProducedEnergy", scale=10, unit="kWh")], desc="Cumulative Grid Energy Statistics", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)", acc="ro"),
         537 : O3EComplexType(2, "ExternalMixerOneCircuitTargetOperationMode", [O3EByteVal(1, "Mode"), O3EByteVal(1, "State")], acc="rw"),
         538 : O3EComplexType(2, "ExternalDomesticHotWaterTargetOperationMode", [O3EByteVal(1, "Mode"), O3EByteVal(1, "State")], acc="rw"),
-        543 : O3EComplexType(4, "SmartGridReadyConsolidator", [RawCodec(1, "Unknown1"), O3EByteVal(1, "OperatingStatus"), RawCodec(1, "Unknown2"), RawCodec(1, "Unknown3")], acc="ro"),    # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
+        543 : O3EComplexType(4, "SmartGridReadyConsolidator", [RawCodec(1, "Unknown1"), O3EByteVal(1, "OperatingStatus"), O3EByteVal(1, "ExternalOperatingStatus"), RawCodec(1, "Unknown3")], desc="Smart Grid state. OperatingStatus: state from the SG-Ready inputs. ExternalOperatingStatus: external Smart Grid setting; writing it is refused (NRC 0x22). Both 1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation", acc="ro"),    # ref https://github.com/open3e/open3e/discussions/110#discussioncomment-9880590
         544 : O3EComplexType(12, "GasConsumptionCentralHeating", [O3EInt16(2, "Today", unit="m³" ), O3EInt16(2, "Past7Days", unit="m³"), O3EInt16(2, "CurrentMonth", unit="m³"), O3EInt16(2, "PastMonth", unit="m³"), O3EInt16(2, "CurrentYear", unit="m³"), O3EInt16(2, "PastYear", unit="m³")], acc="ro"),
         545 : O3EComplexType(12, "GasConsumptionDomesticHotWater", [O3EInt16(2, "Today", unit="m³"), O3EInt16(2, "Past7Days", unit="m³"), O3EInt16(2, "CurrentMonth", unit="m³" ), O3EInt16(2, "PastMonth", unit="m³"), O3EInt16(2, "CurrentYear", unit="m³"), O3EInt16(2, "PastYear", unit="m³")], acc="ro"),
         548 : O3EComplexType(24, "EnergyConsumptionCentralHeating", [O3EInt32(4, "Today", scale=10, unit="kWh" ), O3EInt32(4, "Past7Days", scale=10, unit="kWh"), O3EInt32(4, "CurrentMonth", scale=10, unit="kWh"), O3EInt32(4, "PastMonth", scale=10, unit="kWh"), O3EInt32(4, "CurrentYear", scale=10, unit="kWh"), O3EInt32(4, "PastYear", scale=10, unit="kWh")], acc="ro"),       565 : O3EComplexType(24, "EnergyConsumptionDomesticHotWater", [O3EInt32(4, "Today", scale=10), O3EInt32(4, "Past7Days", scale=10), O3EInt32(4, "CurrentMonth", scale=10), O3EInt32(4, "PastMonth", scale=10), O3EInt32(4, "CurrentYear", scale=10), O3EInt32(4, "PastYear", scale=10)], acc="ro"),
@@ -295,7 +295,7 @@ dataIdentifiers = {
         918 : O3EByteVal(1, "TradeFairMode", acc="ro"),
         919 : O3EInt16(2, "OutsideTemperatureDampingFactor", scale=1, unit="min", acc="ro"),
         920 : RawCodec(36, "ThreeAxisAccelerationSensor", acc="ro"),
-        921 : O3EComplexType(2, "ExternalAccessInProgress", [O3EByteVal(1, "Mode"), O3EByteVal(1, "State")], acc="ro"),
+        921 : O3EComplexType(2, "ExternalAccessInProgress", [O3EByteVal(1, "Mode"), O3EByteVal(1, "State")], desc="External requesting system. Mode: selected system (0: none, 1: DIO module, 2: BACnet, 3: KNX, 4: Modbus, 5: EEBus, 6: plug). State: connection status, same values (0: no connection)", acc="ro"),
         922 : O3EInt16(2, "ProductionTraceabilityByte", acc="ro"),
         923 : RawCodec(8, "RealTimeClockStatus", acc="ro"),
         924 : O3EByteVal(1, "StartUpWizard", acc="ro"),
@@ -1137,7 +1137,7 @@ dataIdentifiers = {
         2346 : O3EInt8(1, "CompressorSpeedPercent", scale=1.0, unit="%", desc="Actual speed of heat pump compressor", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)", acc="ro"),
         2348 : RawCodec(8, "PhotovoltaicsActivePowerLimitationEnergyManagementSystem", acc="ro"),
         2349 : RawCodec(8, "PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem", acc="ro"),
-        2350 : O3EByteVal(1, "EnergyManagmentSystemResultingControlState", acc="ro"),
+        2350 : O3EByteVal(1, "EnergyManagmentSystemResultingControlState", desc="Resulting energy management (Smart Grid) state (1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation)", acc="ro"),
         2351 : O3EComplexType(2, "HeatPumpCompressor", [O3EEnum(1, "PowerState", "PowerStates"), O3EByteVal(1, "ErrorState")], desc="Actual state of the heat pump compressor", acc="ro"),
         2352 : O3EComplexType(2, "AdditionalElectricHeater", [O3EEnum(1, "PowerState", "PowerStates"), O3EByteVal(1, "ErrorState")], desc="Actual state of the electric auxiliary heating", acc="ro"),
         2353 : O3EComplexType(4, "TargetDemandHeatProducer", [O3EByteVal(1, "StateHeating"), O3EInt16(2, "FlowTemperature", signed=True, unit="°C"), O3EByteVal(1, "Modulation", unit="%")], acc="ro"),

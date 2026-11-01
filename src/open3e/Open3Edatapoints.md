@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261031
+- Version of general data points: 20261101
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -1430,10 +1430,10 @@
 |**538**|**ExternalDomesticHotWaterTargetOperationMode**|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
-|**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
+|**543**|[**SmartGridReadyConsolidator**](## "Smart Grid state. OperatingStatus: state from the SG-Ready inputs. ExternalOperatingStatus: external Smart Grid setting; writing it is refused (NRC 0x22). Both 1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation")|*O3EComplexType*|4||ro||
 | |- Unknown1|RawCodec|1||||
 | |- OperatingStatus|O3EByteVal|1||||
-| |- Unknown2|RawCodec|1||||
+| |- ExternalOperatingStatus|O3EByteVal|1||||
 | |- Unknown3|RawCodec|1||||
 |**544**|**GasConsumptionCentralHeating**|*O3EComplexType*|12||ro||
 | |- Today|O3EInt16|2|m³|||
@@ -1961,7 +1961,7 @@
 |**918**|**TradeFairMode**|O3EByteVal|1||ro||
 |**919**|**OutsideTemperatureDampingFactor**|O3EInt16|2|min|ro||
 |**920**|**ThreeAxisAccelerationSensor**|RawCodec|36||ro||
-|**921**|**ExternalAccessInProgress**|*O3EComplexType*|2||ro||
+|**921**|[**ExternalAccessInProgress**](## "External requesting system. Mode: selected system (0: none, 1: DIO module, 2: BACnet, 3: KNX, 4: Modbus, 5: EEBus, 6: plug). State: connection status, same values (0: no connection)")|*O3EComplexType*|2||ro||
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 |**922**|**ProductionTraceabilityByte**|O3EInt16|2||ro||
@@ -11944,7 +11944,7 @@
 |**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
-|**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
+|**2350**|[**EnergyManagmentSystemResultingControlState**](## "Resulting energy management (Smart Grid) state (1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation)")|O3EByteVal|1||ro||
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
 | |- [PowerState](## "{0: Off, 1: On, 2: Out of range, 255: Not available}")|O3EEnum|1||||
 | |- ErrorState|O3EByteVal|1||||
@@ -13520,7 +13520,7 @@
 |**535**|[**ObjectElectricalEnergyStatistical**](## "Cumulative Grid Energy Statistics")|*O3EComplexType*|12||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vx3)|
 |**537**|**ExternalMixerOneCircuitTargetOperationMode**|*O3EComplexType*|2||**rw**||
 |**538**|**ExternalDomesticHotWaterTargetOperationMode**|*O3EComplexType*|2||**rw**||
-|**543**|**SmartGridReadyConsolidator**|*O3EComplexType*|4||ro||
+|**543**|[**SmartGridReadyConsolidator**](## "Smart Grid state. OperatingStatus: state from the SG-Ready inputs. ExternalOperatingStatus: external Smart Grid setting; writing it is refused (NRC 0x22). Both 1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation")|*O3EComplexType*|4||ro||
 |**544**|**GasConsumptionCentralHeating**|*O3EComplexType*|12||ro||
 |**545**|**GasConsumptionDomesticHotWater**|*O3EComplexType*|12||ro||
 |**548**|**EnergyConsumptionCentralHeating**|*O3EComplexType*|24||ro||
@@ -13658,7 +13658,7 @@
 |**918**|**TradeFairMode**|O3EByteVal|1||ro||
 |**919**|**OutsideTemperatureDampingFactor**|O3EInt16|2|min|ro||
 |**920**|**ThreeAxisAccelerationSensor**|RawCodec|36||ro||
-|**921**|**ExternalAccessInProgress**|*O3EComplexType*|2||ro||
+|**921**|[**ExternalAccessInProgress**](## "External requesting system. Mode: selected system (0: none, 1: DIO module, 2: BACnet, 3: KNX, 4: Modbus, 5: EEBus, 6: plug). State: connection status, same values (0: no connection)")|*O3EComplexType*|2||ro||
 |**922**|**ProductionTraceabilityByte**|O3EInt16|2||ro||
 |**923**|**RealTimeClockStatus**|RawCodec|8||ro||
 |**924**|**StartUpWizard**|O3EByteVal|1||ro||
@@ -14574,7 +14574,7 @@
 |**2346**|[**CompressorSpeedPercent**](## "Actual speed of heat pump compressor")|O3EInt8|1|%|ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**2348**|**PhotovoltaicsActivePowerLimitationEnergyManagementSystem**|RawCodec|8||ro||
 |**2349**|**PhotovoltaicsActivePowerLimitationFallbackEnergyManagementSystem**|RawCodec|8||ro||
-|**2350**|**EnergyManagmentSystemResultingControlState**|O3EByteVal|1||ro||
+|**2350**|[**EnergyManagmentSystemResultingControlState**](## "Resulting energy management (Smart Grid) state (1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation)")|O3EByteVal|1||ro||
 |**2351**|[**HeatPumpCompressor**](## "Actual state of the heat pump compressor")|*O3EComplexType*|2||ro||
 |**2352**|[**AdditionalElectricHeater**](## "Actual state of the electric auxiliary heating")|*O3EComplexType*|2||ro||
 |**2353**|**TargetDemandHeatProducer**|*O3EComplexType*|4||ro||
