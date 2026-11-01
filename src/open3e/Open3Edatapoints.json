@@ -7471,10 +7471,11 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown2",
+          "id": "ExternalOperatingStatus",
           "args": {
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7491,7 +7492,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Smart Grid state. OperatingStatus: state from the SG-Ready inputs. ExternalOperatingStatus: external Smart Grid setting; writing it is refused (NRC 0x22). Both 1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation",
       "info": "",
       "acc": "ro"
     }
@@ -13367,7 +13368,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "External requesting system. Mode: selected system (0: none, 1: DIO module, 2: BACnet, 3: KNX, 4: Modbus, 5: EEBus, 6: plug). State: connection status, same values (0: no connection)",
       "info": "",
       "acc": "ro"
     }
@@ -97019,7 +97020,7 @@
     "id": "EnergyManagmentSystemResultingControlState",
     "args": {
       "unit": "",
-      "desc": "",
+      "desc": "Resulting energy management (Smart Grid) state (1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation)",
       "info": "",
       "acc": "ro"
     }
