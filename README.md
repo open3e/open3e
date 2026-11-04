@@ -367,6 +367,9 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.12 (2026-11-04)
+* Fixed `O3EUtf8` decoding: strings now end at the first NUL byte. Leftover bytes behind it caused a `UnicodeDecodeError`, e.g. for **DID 628 `CentralHeatingTwoCircuitName`**, refer to issue #409
+
 ### 0.7.11 (2026-10-29)
 * **ZigBee devices**: decoded `Hardware-Version` (previously raw, in **40 `ZigBee*DeviceProperty` DIDs**) and device `ConnectionState` (previously raw, in **80 `ZigBee*DeviceCurrentValues` definitions**, both 57- and 68-byte variants) with new enum `ZigBeeConnectionStates`, refer to PR #402
 * **`OpStates`**: corrected per issue #145 — the previous decoding (sourced from an older viGuide app version) was field-confirmed wrong; new values cross-checked against two independent reports (Philip-Wiege's systematic testing on a Vitocal 250-A, wangnick's observation of value 255 on unused heating circuits) and against the current viGuide app's data

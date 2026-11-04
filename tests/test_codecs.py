@@ -141,3 +141,12 @@ def test_datapoints_length():
         subcodec_len_sum = _calc_codec_length(codec)
 
         assert codec_len == subcodec_len_sum, f"Did {did}: Length {codec_len} does not match sum of subType lenghts {subcodec_len_sum}" 
+
+
+@pytest.mark.parametrize("raw_hex, expected", [
+    ("45472f4f470000000000000000000000000000000000000000000000000000000000000000000000", "EG/OG"),
+    ("55470000ffffffff00000000010000005a360203a300007a495a360003a500007a495a3600000000", "UG"),
+])
+def test_utf8_ends_at_first_nul(monkeypatch, raw_hex, expected):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    assert O3EUtf8(40, "CircuitName").decode(bytes.fromhex(raw_hex)) == expected

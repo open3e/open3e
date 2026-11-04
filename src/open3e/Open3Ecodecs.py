@@ -232,8 +232,8 @@ class O3EUtf8(udsoncan.DidCodec):
     def decode(self, string_bin: bytes) -> Any:
         if(flag_rawmode == True): 
             return RawCodec.decode(self, string_bin)
-        mystr = string_bin[0:self.string_len].decode('utf-8')
-        return mystr.replace('\x00', '')
+        # bytes behind the terminating NUL may hold leftover data which is not valid UTF-8
+        return string_bin[0:self.string_len].split(b'\x00', 1)[0].decode('utf-8')
        
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"desc":self.desc, "info":self.info, "acc":self.acc}})
