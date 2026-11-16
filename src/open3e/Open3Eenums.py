@@ -2511,6 +2511,12 @@ E3Enums = {
         63 : "APARTMENTTRANSFERSTATION",
         64 : "DHWTS",
         65 : "VENTILATIONUNIT",
+        66 : "DCIOU",
+        67 : "HIOU",
+        68 : "SCUMASTER", # #1 new list
+        71 : "OCU", # #54 new list
+        72 : "OPCU", # #61 new list
+        74 : "HIOU", # #66 new list
     },
 
     "GasTypes" : {
