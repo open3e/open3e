@@ -116,10 +116,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -134,10 +134,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -146,10 +146,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1014,10 +1014,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1032,10 +1032,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1044,10 +1044,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
