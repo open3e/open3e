@@ -116,10 +116,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -134,10 +134,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -146,10 +146,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**355**|[**SecondaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature secondary heat exchanger outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1014,10 +1014,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**318**|[**WaterPressureSensor**](## "Actual pressure heat generator circulation")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**320**|[**PrimaryHeatExchangerLiquidTemperatureSensor**](## "Actual temperature primary heat exchanger inlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1032,10 +1032,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**322**|[**CompressorInletPressureSensor**](## "Actual pressure compressor inlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**324**|[**CompressorOutletTemperatureSensor**](## "Actual temperature compressor outlet")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -1044,10 +1044,10 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**325**|[**CompressorOutletPressureSensor**](## "Actual pressure compressor outlet")|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2|hPa|||
-| |- Minimum|O3EInt16|2|hPa|||
-| |- Maximum|O3EInt16|2|hPa|||
-| |- Average|O3EInt16|2|hPa|||
+| |- Actual|O3EInt16|2|bar|||
+| |- Minimum|O3EInt16|2|bar|||
+| |- Maximum|O3EInt16|2|bar|||
+| |- Average|O3EInt16|2|bar|||
 | |- Unknown|RawCodec|1||||
 |**327**|**OutdoorAirTemperatureSensor**|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2||||
@@ -1906,19 +1906,19 @@
 |**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
-|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
@@ -13632,10 +13632,10 @@
 |**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
-|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
-|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
-|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
-|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 |**884**|**MixerFiveCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 |**885**|**MixerSixCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 |**886**|**MixerSevenCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
