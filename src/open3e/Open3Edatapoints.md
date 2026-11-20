@@ -1906,19 +1906,19 @@
 |**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
-|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
-|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
 | |- Gradient|O3EInt8|1||||
 | |- Level|O3EInt8|1||||
 | |- BasePoint|O3EInt16|2||||
@@ -13632,10 +13632,10 @@
 |**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
-|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
-|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
-|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
-|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
+|**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**881**|**MixerTwoCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**882**|**MixerThreeCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
+|**883**|**MixerFourCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
 |**884**|**MixerFiveCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 |**885**|**MixerSixCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
 |**886**|**MixerSevenCircuitCentralHeatingCurve**|*O3EComplexType*|4||ro||
