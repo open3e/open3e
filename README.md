@@ -367,8 +367,10 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
-### 0.7.12 (2026-11-04)
+### 0.7.12 (2026-11-21)
 * Fixed `O3EUtf8` decoding: strings now end at the first NUL byte. Leftover bytes behind it caused a `UnicodeDecodeError`, e.g. for **DID 628 `CentralHeatingTwoCircuitName`**, refer to issue #409
+* **DIDs 880-883 `Mixer<n>CircuitCentralHeatingCurve`**: marked as writable, confirmed by writing DID 880 on a Vitocal 250-A, refer to PR #410
+* **DIDs 318 `WaterPressureSensor`, 322 `CompressorInletPressureSensor`, 325 `CompressorOutletPressureSensor`**: corrected the unit from `hPa` to `bar`; decoded values are unchanged, refer to PR #410
 
 ### 0.7.11 (2026-10-29)
 * **ZigBee devices**: decoded `Hardware-Version` (previously raw, in **40 `ZigBee*DeviceProperty` DIDs**) and device `ConnectionState` (previously raw, in **80 `ZigBee*DeviceCurrentValues` definitions**, both 57- and 68-byte variants) with new enum `ZigBeeConnectionStates`, refer to PR #402
