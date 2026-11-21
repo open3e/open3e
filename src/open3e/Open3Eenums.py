@@ -2516,7 +2516,8 @@ E3Enums = {
         68 : "SCUMASTER", # #1 new list
         71 : "OCU", # #54 new list
         72 : "OPCU", # #61 new list
-        74 : "HIOU", # #66 new list
+        73 : "DCIOU", # DeviceConnectionInputOutputUnit1 #66 new list
+        74 : "HIOU", # #67 new list
     },
 
     "GasTypes" : {
