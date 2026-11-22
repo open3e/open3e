@@ -14904,7 +14904,7 @@
           }
         }
       ],
-      "desc": "Flow rate and temperature in the primary circuit of the heat generator",
+      "desc": "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead",
       "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
@@ -106760,7 +106760,7 @@
       "scale": 1,
       "signed": false,
       "decimals": 0,
-      "unit": "",
+      "unit": "W",
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -110482,10 +110482,79 @@
     }
   },
   "2808": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "InverterInternalPowerModuleTemperature",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -113296,10 +113365,40 @@
     }
   },
   "3119": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "RefrigerantCircuitFourWayValveStatistical",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Count",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Duration",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "s",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -115358,7 +115457,7 @@
             "scale": 1,
             "signed": false,
             "decimals": 0,
-            "unit": "",
+            "unit": "W",
             "desc": "",
             "info": "",
             "acc": ""
@@ -115372,7 +115471,7 @@
             "scale": 1,
             "signed": false,
             "decimals": 0,
-            "unit": "",
+            "unit": "W",
             "desc": "",
             "info": "",
             "acc": ""
@@ -115384,5 +115483,41 @@
       "acc": "ro"
     }
   },
-  "Version": "20261121"
+  "3737": {
+    "codec": "O3EComplexType",
+    "len": 3,
+    "id": "AllengraSensorOutdoorUnit",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "l/h",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Flow rate in the heating water circuit, measured at the outdoor unit",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "Version": "20261122"
 }

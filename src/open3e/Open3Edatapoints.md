@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261121
+- Version of general data points: 20261122
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -22,8 +22,8 @@
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
-| |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 74: HIOU}")|O3EEnum|1||||
-| |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 74: HIOU}")|O3EEnum|1||||
+| |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 73: DCIOU, 74: HIOU}")|O3EEnum|1||||
+| |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 73: DCIOU, 74: HIOU}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
@@ -193,7 +193,7 @@
 | |- - HW-Version|O3ESoftVers|8||||
 | |- - VIN|O3EUtf8|16||||
 |**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|l/h|||
 | |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
@@ -773,7 +773,7 @@
 |**902**|[**MalfunctionIdentification**](## "Indicates whether faults are present")|O3EByteVal|1||ro||
 |**954**|[**BusTopologyMatrix**](## "Matrix of CAN bus topology")|*O3EList*|181||ro||
 |**987**|[**MixerOneCircuitFlowTemperatureTargetSetpoint**](## "Temperature setpoint heating curcuit 1")|O3EInt16|2|[°C](## "°C or °F (system configuration)")|**rw**||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**1190**|[**ThermalPower**](## "Actual thermal power output of the system")|*O3EComplexType*|4||ro||
 |**1294**|[**EnergyConsumptionCentralHeatingMonthMatrix**](## "Energy Consumption Central Heating Per Month")|*O3EComplexType*|124||ro||
 |**1311**|[**EnergyConsumptionDomesticHotWaterMonthMatrix**](## "Energy Consumption Domestic Hot Water Per Month")|*O3EComplexType*|124||ro||
@@ -835,8 +835,8 @@
 |**256**|[**BusIdentification**](## "Device infos")|*O3EComplexType*|36||ro||
 | |- BusAddress|O3EByteVal|1||||
 | |- [BusType](## "{0: OwnBus, 1: PlusBus, 2: CanInternal, 3: CanExternal, 4: InternalUart, 5: Zigbee, 6: CanRaw, 7: Unkown, 8: ModBus, 9: EEBUS, 10: PlusBusTwo, 11: ISquaredCBus, 12: HEMS_Bus, 13: TL_SolarLogBus, 14: ServiceBus, 15: PWM, 16: IP}")|O3EEnum|1||||
-| |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 74: HIOU}")|O3EEnum|1||||
-| |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 74: HIOU}")|O3EEnum|1||||
+| |- [DeviceProperty](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 73: DCIOU, 74: HIOU}")|O3EEnum|1||||
+| |- [DeviceFunction](## "{0: NOTHING, 1: BACKENDGATEWAY, 2: HMUMASTER, 3: HMUSLAVE, 4: MCUMASTER, 5: MCUSLAVE, 6: HMI, 7: BCU, 8: GASAIRRATIOSYSTEM, 9: ADIO, 10: DIO, 11: KNXGATEWAY, 12: BACNETGATEWAY, 13: MODBUSGATEWAY, 14: MBUS, 15: FRIWASTATION, 16: FUELCELL, 17: CSC, 18: PHOTOVOLTAIC, 19: PRODUCTIONGATEWAY, 20: DIAGNOSTICGATEWAY, 21: SDIO, 22: MTWOIO, 23: REMOTECONTROLLOCAL, 24: CLIMASENSOR, 25: TEMPERATURERADIATORVALVE, 26: UNDERFLOORHEATINGVALVE, 27: ENERGYMETER, 28: EMCUMASTER, 29: EMCUSLAVE, 30: BMCU, 31: HPMUMASTER, 32: HPMUSLAVE, 33: VCMU, 34: EHCU, 35: MZIO, 36: PBE, 37: HBMU, 38: OSME, 39: TWOSTEPPERMOTOR, 40: INVERTER, 41: SMARTROOMCONTROL, 42: VCUMASTER, 43: VCUSLAVE, 44: CANOPENIOMODULE, 45: FAN, 46: ELECTRICALPREHEATER, 47: ELECTRICALPOSTHEATER, 48: GENERICHEATPUMP, 49: HOMEENERGYMANAGEMENTSYSTEM, 50: EEBUSHUB, 51: HIO, 52: BCUSLAVE, 53: UNDERFLOORHEATINGBOX, 54: ZIGBEERANGEEXTENDER, 55: AIRQUALITYSENSOR, 56: WATERSOFTENER, 57: AIRPURIFIER, 58: CONNECTIONADAPTERSTEPPERMOTOR, 59: REFRIGERATIONFURNITURETYPE, 60: SOLARLOGGATEWAY, 61: SYSTEMCONTROLLEREMBEDDED, 62: WALLBOX, 63: APARTMENTTRANSFERSTATION, 64: DHWTS, 65: VENTILATIONUNIT, 66: DCIOU, 67: HIOU, 68: SCUMASTER, 71: OCU, 72: OPCU, 73: DCIOU, 74: HIOU}")|O3EEnum|1||||
 | |- [SW-Version](## "??.???.YYcw.ver")|O3ESoftVers|8||||
 | |- HW-Version|O3ESoftVers|8||||
 | |- VIN|O3EUtf8|16||||
@@ -2146,7 +2146,7 @@
 | |- Actual|O3EInt16|2||||
 | |- Unknown2|RawCodec|1||||
 |**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 | |- Actual|O3EInt16|2|l/h|||
 | |- Temperature|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- Unknown|RawCodec|1||||
@@ -12703,7 +12703,7 @@
 | |- CurrentYear|O3EInt8|1||||
 | |- EnergyThermal|O3EInt32|4||||
 | |- EnergyElectric|O3EInt32|4||||
-|**2626**|**MaximumPowerElectricalHeater**|O3EInt32|4||ro||
+|**2626**|**MaximumPowerElectricalHeater**|O3EInt32|4|W|ro||
 |**2627**|**CompressorStartUpTimer**|O3EInt16|2||ro||
 |**2629**|**DesiredThermalCapacity**|O3EInt32|4||ro||
 |**2630**|**CompressorMinMaxSpeedHeating**|*O3EComplexType*|4||ro||
@@ -12983,7 +12983,12 @@
 | |- Mode|O3EByteVal|1||||
 | |- [State](## "{0: Off, 1: ShutDown, 2: Heating, 3: Cooling, 4: Manual, 5: De-icing, 6: Grid-lock}")|O3EEnum|1||||
 |**2807**|**InverterHousingTemperature**|RawCodec|9||ro||
-|**2808**|**InverterInternalPowerModuleTemperature**|RawCodec|9||ro||
+|**2808**|**InverterInternalPowerModuleTemperature**|*O3EComplexType*|9||ro||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**2809**|**PumpMinSpeedConfiguration**|RawCodec|1||ro||
 |**2810**|**CentralHeatingPumpFeedbackSignalHandlingMode**|RawCodec|1||ro||
 |**2826**|**FuelCellNetworkSystemProtectionErrorHistory**|RawCodec|40||ro||
@@ -13216,7 +13221,9 @@
 |**3115**|**DeviceDigitalOutputThreeValueStatistical**|RawCodec|8||ro||
 |**3116**|**DeviceDigitalOutputFourValueStatistical**|RawCodec|8||ro||
 |**3117**|**DeviceDigitalOutputFiveValueStatistical**|RawCodec|8||ro||
-|**3119**|**RefrigerantCircuitFourWayValveStatistical**|RawCodec|8||ro||
+|**3119**|**RefrigerantCircuitFourWayValveStatistical**|*O3EComplexType*|8||ro||
+| |- Count|O3EInt32|4||||
+| |- Duration|O3EInt32|4|s|||
 |**3120**|**CompressorCrankCaseHeaterStatistical**|RawCodec|8||ro||
 |**3129**|**FanDuctHeaterStatistical**|RawCodec|8||ro||
 |**3134**|**DomesticHotWaterCirculationPumpStatistical**|RawCodec|8||**rw**||
@@ -13373,8 +13380,11 @@
 |**3369**|[**ElectricalActivePowerConsumptionLimitationSettings**](## "{0: Without \u00a714a EnWG, 1: \u00a714a EnWG Static, 2: \u00a714a EnWG Digital Contacts, 3: \u00a714a EnWG EEBUS, 4: \u00a714a EnWG HEMS}")|O3EEnum|1||ro||
 |**3370**|**ElectricalActivePowerConsumptionLimitationSettingsConfiguration**|RawCodec|4||ro||
 |**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
-| |- Default|O3EInt16|2||||
-| |- CurrentValue|O3EInt16|2||||
+| |- Default|O3EInt16|2|W|||
+| |- CurrentValue|O3EInt16|2|W|||
+|**3737**|[**AllengraSensorOutdoorUnit**](## "Flow rate in the heating water circuit, measured at the outdoor unit")|*O3EComplexType*|3||ro||
+| |- Actual|O3EInt16|2|l/h|||
+| |- Unknown|RawCodec|1||||
 ## All presently known data points in compact format
 
 [Back to table of contents](#table-of-contents)
@@ -13716,7 +13726,7 @@
 |**1040**|**SupplyAirFan**|*O3EComplexType*|6||ro||
 |**1041**|**ExhaustAirFan**|*O3EComplexType*|6||ro||
 |**1042**|**PrimaryHeatExchangerTemperatureSensor**|RawCodec|9||ro||
-|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
+|**1043**|[**AllengraSensor**](## "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead")|*O3EComplexType*|5||ro|[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)|
 |**1044**|**SecondaryCentralHeatingPump**|RawCodec|2||ro||
 |**1047**|**TimeSeriesRecordedFlowTemperatureSensor**|RawCodec|11||ro||
 |**1084**|**FlowTemperatureMinimumMaximumLimit**|RawCodec|4||**rw**||
@@ -14764,7 +14774,7 @@
 |**2623**|**SeasonalEnergyEfficiencyRatioCooling**|*O3EComplexType*|9||ro||
 |**2624**|**SeasonalCoefficientOfPerformanceDomesticHotWater**|*O3EComplexType*|9||ro||
 |**2625**|**SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater**|*O3EComplexType*|9||ro||
-|**2626**|**MaximumPowerElectricalHeater**|O3EInt32|4||ro||
+|**2626**|**MaximumPowerElectricalHeater**|O3EInt32|4|W|ro||
 |**2627**|**CompressorStartUpTimer**|O3EInt16|2||ro||
 |**2629**|**DesiredThermalCapacity**|O3EInt32|4||ro||
 |**2630**|**CompressorMinMaxSpeedHeating**|*O3EComplexType*|4||ro||
@@ -14827,7 +14837,7 @@
 |**2805**|**InverterSelfTestResultThree**|RawCodec|151||ro||
 |**2806**|[**RefrigerationCircuitOperationMode**](## "Actual operating mode of the refrigeration circuit")|*O3EComplexType*|2||ro||
 |**2807**|**InverterHousingTemperature**|RawCodec|9||ro||
-|**2808**|**InverterInternalPowerModuleTemperature**|RawCodec|9||ro||
+|**2808**|**InverterInternalPowerModuleTemperature**|*O3EComplexType*|9||ro||
 |**2809**|**PumpMinSpeedConfiguration**|RawCodec|1||ro||
 |**2810**|**CentralHeatingPumpFeedbackSignalHandlingMode**|RawCodec|1||ro||
 |**2826**|**FuelCellNetworkSystemProtectionErrorHistory**|RawCodec|40||ro||
@@ -14996,7 +15006,7 @@
 |**3115**|**DeviceDigitalOutputThreeValueStatistical**|RawCodec|8||ro||
 |**3116**|**DeviceDigitalOutputFourValueStatistical**|RawCodec|8||ro||
 |**3117**|**DeviceDigitalOutputFiveValueStatistical**|RawCodec|8||ro||
-|**3119**|**RefrigerantCircuitFourWayValveStatistical**|RawCodec|8||ro||
+|**3119**|**RefrigerantCircuitFourWayValveStatistical**|*O3EComplexType*|8||ro||
 |**3120**|**CompressorCrankCaseHeaterStatistical**|RawCodec|8||ro||
 |**3129**|**FanDuctHeaterStatistical**|RawCodec|8||ro||
 |**3134**|**DomesticHotWaterCirculationPumpStatistical**|RawCodec|8||**rw**||
@@ -15029,4 +15039,5 @@
 |**3369**|[**ElectricalActivePowerConsumptionLimitationSettings**](## "{0: Without \u00a714a EnWG, 1: \u00a714a EnWG Static, 2: \u00a714a EnWG Digital Contacts, 3: \u00a714a EnWG EEBUS, 4: \u00a714a EnWG HEMS}")|O3EEnum|1||ro||
 |**3370**|**ElectricalActivePowerConsumptionLimitationSettingsConfiguration**|RawCodec|4||ro||
 |**3384**|**ElectricalActivePowerConsumptionLimitationDefaultValue**|*O3EComplexType*|4||ro||
+|**3737**|[**AllengraSensorOutdoorUnit**](## "Flow rate in the heating water circuit, measured at the outdoor unit")|*O3EComplexType*|3||ro||
 
