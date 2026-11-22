@@ -132,7 +132,10 @@ class O3EFloat32(udsoncan.DidCodec):
     def encode(self, string_ascii: Any) -> bytes:
         if(flag_rawmode == True):
             return RawCodec.encode(self, string_ascii)
-        val = float(eval(str(string_ascii)))
+        if isinstance(string_ascii, (int, float)):
+            val = float(string_ascii)  # also covers nan and inf, which eval() cannot parse
+        else:
+            val = float(eval(str(string_ascii)))
         return struct.pack('<f', val)
 
     def decode(self, string_bin: bytes) -> Any:
