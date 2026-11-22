@@ -13133,10 +13133,10 @@
 | |- Average|O3EInt16|2||||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3015**|**HeatSinkTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3016**|[**HeatingBufferTemperatureSensor**](## "Actual temperature of the heating buffer")|*O3EComplexType*|9||ro||
 | |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
@@ -13145,22 +13145,22 @@
 | |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3017**|**CoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3018**|**HeatingCoolingBufferTemperatureSensor**|*O3EComplexType*|9||ro||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3019**|**CompressorOutletTargetTemperature**|*O3EComplexType*|9||**rw**||
-| |- Actual|O3EInt16|2||||
-| |- Minimum|O3EInt16|2||||
-| |- Maximum|O3EInt16|2||||
-| |- Average|O3EInt16|2||||
+| |- Actual|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Minimum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Maximum|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
+| |- Average|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
 | |- [SensorStatus](## "{0: no_error, 1: interruption, 2: short_circuit, 3: electrical_fault, 4: not_available, 5: invalidates}")|O3EEnum|1||||
 |**3029**|**DomesticHotWaterEfficiencyMode**|O3EByteVal|1||**rw**||
 |**3030**|**DomesticHotWaterEfficiencyModeAvailability**|RawCodec|2||ro||
