@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261121",
+    "Version": "20261122",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -341,7 +341,7 @@ dataIdentifiers = {
         1040 : O3EComplexType(6, "SupplyAirFan", [RawCodec(3, "Unknown1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "Unknown2")], acc="ro"),
         1041 : O3EComplexType(6, "ExhaustAirFan", [RawCodec(3, "Unknown1"), O3EInt16(2, "Actual", signed=True), RawCodec(1, "Unknown2")], acc="ro"),
         1042 : RawCodec(9, "PrimaryHeatExchangerTemperatureSensor", acc="ro"),
-        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Actual", unit="l/h"), O3EInt16(2, "Temperature", unit="°C"), RawCodec(1, "Unknown")], desc="Flow rate and temperature in the primary circuit of the heat generator", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)", acc="ro"),
+        1043 : O3EComplexType(5, "AllengraSensor", [O3EInt16(2, "Actual", unit="l/h"), O3EInt16(2, "Temperature", unit="°C"), RawCodec(1, "Unknown")], desc="Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead", info="[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)", acc="ro"),    # Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
         1044 : RawCodec(2, "SecondaryCentralHeatingPump", acc="ro"),
         1047 : RawCodec(11, "TimeSeriesRecordedFlowTemperatureSensor", acc="ro"),
         1084 : RawCodec(4, "FlowTemperatureMinimumMaximumLimit", acc="rw"),
@@ -1326,7 +1326,7 @@ dataIdentifiers = {
         2623 : O3EComplexType(9, "SeasonalEnergyEfficiencyRatioCooling", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)], acc="ro"),    #250-xH
         2624 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)], acc="ro"),    #250-xH
         2625 : O3EComplexType(9, "SeasonalCoefficientOfPerformanceHeatingAndDomesticHotWater", [O3EInt8(1, "CurrentYear", scale=10), O3EInt32(4, "EnergyThermal", scale=10), O3EInt32(4, "EnergyElectric", scale=10)], acc="ro"),    #250-xH
-        2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale=1, acc="ro"),
+        2626 : O3EInt32(4, "MaximumPowerElectricalHeater", scale=1, unit="W", acc="ro"),    # Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
         2627 : O3EInt16(2, "CompressorStartUpTimer", acc="ro"),
         2629 : O3EInt32(4, "DesiredThermalCapacity", scale=1, signed=True, acc="ro"),    # Unit: Watts
         2630 : O3EComplexType(4, "CompressorMinMaxSpeedHeating", [O3EInt16(2, "Min", scale=10, signed=True), O3EInt16(2, "Max", scale=10, signed=True)], acc="ro"),    #250SH Unit RpS
@@ -1389,7 +1389,7 @@ dataIdentifiers = {
         2805 : RawCodec(151, "InverterSelfTestResultThree", acc="ro"),
         2806 : O3EComplexType(2, "RefrigerationCircuitOperationMode", [O3EByteVal(1, "Mode"), O3EEnum(1, "State", "RefrigerationCircuitOperationModes")], desc="Actual operating mode of the refrigeration circuit", acc="ro"),
         2807 : RawCodec(9, "InverterHousingTemperature", acc="ro"),
-        2808 : RawCodec(9, "InverterInternalPowerModuleTemperature", acc="ro"),
+        2808 : O3EComplexType(9, "InverterInternalPowerModuleTemperature", [O3EInt16(2, "Actual", signed=True, unit="°C"), O3EInt16(2, "Minimum", signed=True, unit="°C"), O3EInt16(2, "Maximum", signed=True, unit="°C"), O3EInt16(2, "Average", signed=True, unit="°C"), O3EEnum(1, "SensorStatus", "SensorStates")], acc="ro"),    # Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
         2809 : RawCodec(1, "PumpMinSpeedConfiguration", acc="ro"),
         2810 : RawCodec(1, "CentralHeatingPumpFeedbackSignalHandlingMode", acc="ro"),
         2826 : RawCodec(40, "FuelCellNetworkSystemProtectionErrorHistory", acc="ro"),
@@ -1558,7 +1558,7 @@ dataIdentifiers = {
         3115 : RawCodec(8, "DeviceDigitalOutputThreeValueStatistical", acc="ro"),
         3116 : RawCodec(8, "DeviceDigitalOutputFourValueStatistical", acc="ro"),
         3117 : RawCodec(8, "DeviceDigitalOutputFiveValueStatistical", acc="ro"),
-        3119 : RawCodec(8, "RefrigerantCircuitFourWayValveStatistical", acc="ro"),
+        3119 : O3EComplexType(8, "RefrigerantCircuitFourWayValveStatistical", [O3EInt32(4, "Count", scale=1), O3EInt32(4, "Duration", scale=1, unit="s")], acc="ro"),    # Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
         3120 : RawCodec(8, "CompressorCrankCaseHeaterStatistical", acc="ro"),
         3129 : RawCodec(8, "FanDuctHeaterStatistical", acc="ro"),
         3134 : RawCodec(8, "DomesticHotWaterCirculationPumpStatistical", acc="rw"),
@@ -1590,6 +1590,7 @@ dataIdentifiers = {
         3366 : O3EComplexType(16, "ElectricalActivePowerStatusReport", [O3EInt32(4, "15MinPower", scale=1.0), O3EInt32(4, "15MinEnergy", scale=10), O3EInt32(4, "Unknown1", scale=1.0), O3EInt32(4, "Unknown2", scale=1.0)], acc="ro"),    # §14a EnWG Unit W,Wh; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
         3369 : O3EEnum(1, "ElectricalActivePowerConsumptionLimitationSettings", "FourteenAConfigurationModes", acc="ro"),    # new, found in viGuide APK (DOP_1ByteTextTableElectActivPowerConsuLimitSetti); selects how §14a EnWG grid-operator load limitation is implemented
         3370 : RawCodec(4, "ElectricalActivePowerConsumptionLimitationSettingsConfiguration", acc="ro"),    # new, found in viGuide APK (STR_4ByteStrucElectActivPowerConsuLimitSettiConfiMapper); byte 0 bits 0-4 = Yes/No support flags for the 5 modes of DID 3369 (WithoutFourteenA, Static, DigitalContacts, EEBUS, HEMS) in that order, bits 5-7 and bytes 1-3 reserved; no bitfield codec available yet in open3e
-        3384 : O3EComplexType(4, "ElectricalActivePowerConsumptionLimitationDefaultValue", [O3EInt16(2, "Default", scale=1), O3EInt16(2, "CurrentValue", scale=1)], acc="ro"),    #250xx Unit W; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous
+        3384 : O3EComplexType(4, "ElectricalActivePowerConsumptionLimitationDefaultValue", [O3EInt16(2, "Default", scale=1, unit="W"), O3EInt16(2, "CurrentValue", scale=1, unit="W")], acc="ro"),    #250xx Unit W; Source: https://github.com/open3e/open3e/wiki/070-%E2%80%90-List-of-divergent-codecs#miscellaneous; Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
+        3737 : O3EComplexType(3, "AllengraSensorOutdoorUnit", [O3EInt16(2, "Actual", scale=1, unit="l/h"), RawCodec(1, "Unknown")], desc="Flow rate in the heating water circuit, measured at the outdoor unit", acc="ro"),    # Source: https://github.com/open3e/open3e/discussions/393#discussioncomment-19793092
     }
 }
