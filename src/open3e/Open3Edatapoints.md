@@ -160,7 +160,7 @@
 |**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
 | |- State|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1|%|||
-| |- Actual|O3EInt8|1||||
+| |- Actual|O3EInt8|1|%|||
 | |- Unknown|RawCodec|1||||
 |**389**|[**ElectronicExpansionValveOneCurrentPositionPercent**](## "Actual position expansion valve one (secondary heat exchanger outlet)")|O3EInt8|1|%|ro||
 |**391**|[**ElectronicExpansionValveTwoCurrentPositionPercent**](## "Actual position expansion valve two (evaporator outlet)")|O3EInt8|1|%|ro||
@@ -1148,7 +1148,7 @@
 |**381**|[**CentralHeatingPump**](## "Status of the primary circuit pump")|*O3EComplexType*|4||ro|[Link](https://github.com/open3e/open3e/discussions/212)|
 | |- State|O3EByteVal|1||||
 | |- TargetValue|O3EInt8|1|%|||
-| |- Actual|O3EInt8|1||||
+| |- Actual|O3EInt8|1|%|||
 | |- Unknown|RawCodec|1||||
 |**382**|**UnitsAndFormats**|*O3EComplexType*|5||ro||
 | |- [Units](## "{0: Metric, 1: Imperial}")|O3EEnum|1||||
