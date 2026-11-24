@@ -1,5 +1,5 @@
 # Open3E - List of data points
-- Version of general data points: 20261122
+- Version of general data points: 20261124
 - Version of variant data points: 20261022
 
 ### Remarks
@@ -2295,7 +2295,10 @@
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
 |**1236**|**GatewayRemoteVisibleSevenEight**|RawCodec|68||ro||
 |**1237**|**GatewayRemoteVisibleNineTen**|RawCodec|68||ro||
-|**1238**|**AvailableActorSensorComponents**|RawCodec|31||ro||
+|**1238**|[**AvailableActorSensorComponents**](## "Actuators and sensors fitted to this device, listed by their data point numbers")|*O3EList*|31||ro||
+| |- [Count](## "Number of entries listed")|O3EByteVal|1||||
+| |- Components|*O3EComplexType*|2||||
+| |- - [Did](## "Data point number of the actuator or sensor")|O3EByteVal|2||||
 |**1239**|**ActorSensorTest**|RawCodec|2||ro||
 |**1240**|**CentralHeatingPumpMode**|O3EByteVal|1||ro||
 |**1241**|**MixerOneCircuitPumpMode**|O3EByteVal|1||ro||
@@ -13796,7 +13799,7 @@
 |**1235**|**GatewayRemoteVisibleFiveSix**|RawCodec|68||ro||
 |**1236**|**GatewayRemoteVisibleSevenEight**|RawCodec|68||ro||
 |**1237**|**GatewayRemoteVisibleNineTen**|RawCodec|68||ro||
-|**1238**|**AvailableActorSensorComponents**|RawCodec|31||ro||
+|**1238**|[**AvailableActorSensorComponents**](## "Actuators and sensors fitted to this device, listed by their data point numbers")|*O3EList*|31||ro||
 |**1239**|**ActorSensorTest**|RawCodec|2||ro||
 |**1240**|**CentralHeatingPumpMode**|O3EByteVal|1||ro||
 |**1241**|**MixerOneCircuitPumpMode**|O3EByteVal|1||ro||

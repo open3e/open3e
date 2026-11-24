@@ -16657,11 +16657,47 @@
     }
   },
   "1238": {
-    "codec": "RawCodec",
+    "codec": "O3EList",
     "len": 31,
     "id": "AvailableActorSensorComponents",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Count",
+          "args": {
+            "unit": "",
+            "desc": "Number of entries listed",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EComplexType",
+          "len": 2,
+          "id": "Components",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EByteVal",
+                "len": 2,
+                "id": "Did",
+                "args": {
+                  "unit": "",
+                  "desc": "Data point number of the actuator or sensor",
+                  "info": "",
+                  "acc": ""
+                }
+              }
+            ],
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Actuators and sensors fitted to this device, listed by their data point numbers",
       "info": "",
       "acc": "ro"
     }
@@ -115519,5 +115555,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20261122"
+  "Version": "20261124"
 }
