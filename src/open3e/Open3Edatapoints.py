@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261122",
+    "Version": "20261124",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -411,7 +411,7 @@ dataIdentifiers = {
         1235 : RawCodec(68, "GatewayRemoteVisibleFiveSix", acc="ro"),
         1236 : RawCodec(68, "GatewayRemoteVisibleSevenEight", acc="ro"),
         1237 : RawCodec(68, "GatewayRemoteVisibleNineTen", acc="ro"),
-        1238 : RawCodec(31, "AvailableActorSensorComponents", acc="ro"),
+        1238 : O3EList(31, "AvailableActorSensorComponents", [O3EByteVal(1, "Count", desc="Number of entries listed"), O3EComplexType(2, "Components", [O3EByteVal(2, "Did", desc="Data point number of the actuator or sensor")])], desc="Actuators and sensors fitted to this device, listed by their data point numbers", acc="ro"),
         1239 : RawCodec(2, "ActorSensorTest", acc="ro"),
         1240 : O3EByteVal(1, "CentralHeatingPumpMode", acc="ro"),
         1241 : O3EByteVal(1, "MixerOneCircuitPumpMode", acc="ro"),
