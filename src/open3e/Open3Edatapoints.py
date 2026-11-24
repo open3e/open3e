@@ -85,7 +85,7 @@ dataIdentifiers = {
         378 : O3EComplexType(4, "PointOfCommonCouplingPhaseOne", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)], acc="ro"),
         379 : O3EComplexType(4, "PointOfCommonCouplingPhaseTwo", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)], acc="ro"),
         380 : O3EComplexType(4, "PointOfCommonCouplingPhaseThree", [O3EInt16(2, "ActivePower", scale=1.0, signed=True), O3EInt16(2, "ReactivePower", scale=1.0, signed=True)], acc="ro"),
-        381 : O3EComplexType(4, "CentralHeatingPump", [O3EByteVal(1, "State"), O3EInt8(1, "TargetValue", scale=1.0, unit="%"), O3EInt8(1, "Actual", scale=1.0), RawCodec(1, "Unknown")], desc="Status of the primary circuit pump", info="[Link](https://github.com/open3e/open3e/discussions/212)", acc="ro"),    # Unit %, MyHomeMyData, see discussion #212
+        381 : O3EComplexType(4, "CentralHeatingPump", [O3EByteVal(1, "State"), O3EInt8(1, "TargetValue", scale=1.0, unit="%"), O3EInt8(1, "Actual", scale=1.0, unit="%"), RawCodec(1, "Unknown")], desc="Status of the primary circuit pump", info="[Link](https://github.com/open3e/open3e/discussions/212)", acc="ro"),    # Unit %, MyHomeMyData, see discussion #212
         382 : O3EComplexType(5, "UnitsAndFormats", [O3EEnum(1, "Units", "Units"), O3EEnum(1, "DateFormat", "DateFormats"), O3EEnum(1, "TimeFormat", "TimeFormats"), O3EByteVal(1, "TimeZone"), RawCodec(1, "Unknown")], acc="ro"),
         386 : O3EByteVal(1, "DiverterValveTargetPosition", acc="rw"),
         388 : O3EInt8(1, "ElectronicExpansionValveOneTargetPositionPercent", scale=1.0, unit="%", desc="Target position expansion valve one (secondary heat exchanger outlet)", acc="rw"),
