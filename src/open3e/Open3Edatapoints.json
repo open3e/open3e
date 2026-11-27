@@ -9156,7 +9156,7 @@
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "628": {
@@ -9166,7 +9166,7 @@
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "629": {
@@ -9176,7 +9176,7 @@
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "630": {
@@ -9186,47 +9186,47 @@
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "631": {
     "codec": "O3EUtf8",
-    "len": 12,
+    "len": 40,
     "id": "CentralHeatingFiveCircuitName",
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "632": {
     "codec": "O3EUtf8",
-    "len": 12,
+    "len": 40,
     "id": "CentralHeatingSixCircuitName",
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "633": {
     "codec": "O3EUtf8",
-    "len": 12,
+    "len": 40,
     "id": "CentralHeatingSevenCircuitName",
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "634": {
     "codec": "O3EUtf8",
-    "len": 12,
+    "len": 40,
     "id": "CentralHeatingEightCircuitName",
     "args": {
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "645": {
@@ -115555,5 +115555,5 @@
       "acc": "ro"
     }
   },
-  "Version": "20261124"
+  "Version": "20261127"
 }

@@ -128,11 +128,15 @@ def getCaseLabel(case_val, listStr):
     label = f'Case {case_val}' + (f': {text}' if text else '')
     return f'*{label}*'
 
+def getLenStr(length):
+    # length 0 marks a data point with variable length
+    return '0 (variable)' if length == 0 else str(length)
+
 def codec2md(codecs, prefix='', accessStr=''):
     md = ''
     if not (codecs['id'] in ignored_ids):
         # skip json helper ids
-        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{str(codecs['len'])}|{getUniStr(codecs)}|{getDescStrTableColumn(codecs)}{accessStr}|{getInfoStr(codecs)}'
+        md += F'{prefix}{getIdStr(codecs['id'], codecs, prefix)}|{getCodecStr(codecs['codec'])}|{getLenStr(codecs['len'])}|{getUniStr(codecs)}|{getDescStrTableColumn(codecs)}{accessStr}|{getInfoStr(codecs)}'
     if not args.compact:
         if 'subTypes' in codecs['args']:
             for codec in codecs['args']['subTypes']:
@@ -257,7 +261,8 @@ def main():
     md += '### Remarks\n'
     md += '* Information on write access to data points (column Access) is based on documents of Viessmann\n'
     md += '  * ro => data point is read only\n'
-    md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n\n'
+    md += '  * rw => data point is read and write. However, device my reject or ignore write access anyway\n'
+    md += '* Length 0 (variable) => the device sends the data point with variable length, e.g. a text plus a terminating NUL. The length of the general data point is the upper limit\n\n'
 
     if args.dids == None:
         md += '### Table of contents\n'

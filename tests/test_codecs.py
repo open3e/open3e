@@ -1,6 +1,7 @@
 from open3e.Open3Ecodecs import O3EByteVal, O3EComplexType, O3EInt8, O3EInt16, RawCodec, O3EUtf8, O3EDateTime, O3EList, O3EEnum, O3ESdate, \
     O3EStime, O3EUtc, O3ESoftVers, O3EMacAddr, O3EIp4Addr
 import open3e.Open3Ecodecs
+import udsoncan
 
 from open3e.Open3Edatapoints import dataIdentifiers
 import random 
@@ -150,3 +151,78 @@ def test_datapoints_length():
 def test_utf8_ends_at_first_nul(monkeypatch, raw_hex, expected):
     monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
     assert O3EUtf8(40, "CircuitName").decode(bytes.fromhex(raw_hex)) == expected
+
+
+# ~~~~~~ O3EUtf8 with variable length (string_len == 0), refer to discussion #415 ~~~~~~
+
+@pytest.mark.parametrize("raw_hex, expected", [
+    ("484b3100", "HK1"),                                  # 4 bytes
+    ("484b313100", "HK11"),                               # 5 bytes, renamed in ViCare
+    ("4865697a6b726569732031" + "00", "Heizkreis 1"),     # 12 bytes
+    ("45472f4f47" + "00" * 35, "EG/OG"),                  # 40 bytes, padded like heat pumps
+])
+def test_utf8_variable_length_decode(monkeypatch, raw_hex, expected):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    assert O3EUtf8(0, "CentralHeatingOneCircuitName").decode(bytes.fromhex(raw_hex)) == expected
+
+
+def test_utf8_variable_length_reads_all_remaining_data():
+    with pytest.raises(udsoncan.DidCodec.ReadAllRemainingData):
+        len(O3EUtf8(0, "CentralHeatingOneCircuitName"))
+    assert len(O3EUtf8(40, "CentralHeatingOneCircuitName")) == 40
+
+
+def test_utf8_variable_length_encode(monkeypatch):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    assert O3EUtf8(0, "CentralHeatingOneCircuitName").encode("HK11") == bytes.fromhex("484b313100")
+    assert O3EUtf8(0, "CentralHeatingOneCircuitName").encode("Bäder") == "Bäder".encode("utf-8") + b"\x00"
+
+
+def test_utf8_fixed_length_encode_pads_with_nul(monkeypatch):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    encoded = O3EUtf8(40, "CentralHeatingOneCircuitName").encode("EG/OG")
+    assert encoded == b"EG/OG" + bytes(35)
+    assert O3EUtf8(40, "CentralHeatingOneCircuitName").decode(encoded) == "EG/OG"
+
+
+def test_utf8_fixed_length_encode_too_long(monkeypatch):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    O3EUtf8(12, "CentralHeatingOneCircuitName").encode("x" * 12)   # fits exactly, no NUL needed
+    with pytest.raises(ValueError, match="too long"):
+        O3EUtf8(12, "CentralHeatingOneCircuitName").encode("x" * 13)
+
+
+def test_utf8_encode_rejects_nul(monkeypatch):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    with pytest.raises(ValueError, match="NUL"):
+        O3EUtf8(0, "CentralHeatingOneCircuitName").encode("HK\x001")
+
+
+def test_utf8_variable_length_raw_mode(monkeypatch):
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", True)
+    codec = O3EUtf8(0, "CentralHeatingOneCircuitName")
+    assert codec.encode("484b3100") == bytes.fromhex("484b3100")
+    assert codec.decode(bytes.fromhex("484b3100")) == "484b3100"
+
+
+@pytest.mark.parametrize("payload_hex, expected", [
+    ("484b3100", "HK1"),
+    ("4865697a6b726569732031" + "00", "Heizkreis 1"),
+])
+def test_utf8_variable_length_via_udsoncan(monkeypatch, payload_hex, expected):
+    # positive response 0x62 of ReadDataByIdentifier for DID 627 (0x0273), parsed by udsoncan
+    monkeypatch.setattr(open3e.Open3Ecodecs, "flag_rawmode", False)
+    didconfig = {627: O3EUtf8(0, "CentralHeatingOneCircuitName")}
+    response = udsoncan.Response.from_payload(bytes.fromhex("620273" + payload_hex))
+    udsoncan.services.ReadDataByIdentifier.interpret_response(response, didlist=[627], didconfig=didconfig)
+    assert response.service_data.values[627] == expected
+
+
+def test_variants_of_circuit_names():
+    from open3e.Open3EdatapointsVariants import dataIdentifiers as variants
+    for did in range(627, 635):
+        assert list(variants["dids"][did].keys()) == [0]
+        assert variants["dids"][did][0].getCodecInfo()["len"] == 0
+        assert variants["dids"][did][0].acc == "rw"
+        assert dataIdentifiers["dids"][did].string_len == 40
+        assert dataIdentifiers["dids"][did].acc == "rw"

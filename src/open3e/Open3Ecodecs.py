@@ -227,16 +227,32 @@ class O3EUtf8(udsoncan.DidCodec):
         self.info = info
         self.acc = acc
 
-    def encode(self, string_ascii: Any) -> bytes:        
-        if(flag_rawmode == True): 
+    # string_len == 0 means variable length: the device sends the text plus one terminating NUL,
+    # so the length changes at runtime (e.g. when the name is changed in ViCare).
+    # Reading takes all remaining bytes of the response, writing sends text plus one NUL without padding.
+    # The upper limit for writing is checked by the caller (common length of the data point).
+
+    def encode(self, string_ascii: Any) -> bytes:
+        if(flag_rawmode == True):
+            if(self.string_len == 0):
+                return bytes(string_ascii) if flag_binary else bytes.fromhex(string_ascii)
             return RawCodec.encode(self, string_ascii)
-        raise Exception("not implemented yet")
+        string_bin = str(string_ascii).encode('utf-8')
+        if(b'\x00' in string_bin):
+            raise ValueError(f'Text for {self.id} must not contain NUL characters')
+        if(self.string_len == 0):
+            return string_bin + b'\x00'
+        if(len(string_bin) > self.string_len):
+            raise ValueError(f'Text for {self.id} is too long: {len(string_bin)} bytes, maximum is {self.string_len}')
+        return string_bin + bytes(self.string_len - len(string_bin))
 
     def decode(self, string_bin: bytes) -> Any:
-        if(flag_rawmode == True): 
+        if(flag_rawmode == True):
             return RawCodec.decode(self, string_bin)
+        if(self.string_len > 0):
+            string_bin = string_bin[0:self.string_len]
         # bytes behind the terminating NUL may hold leftover data which is not valid UTF-8
-        return string_bin[0:self.string_len].split(b'\x00', 1)[0].decode('utf-8')
+        return string_bin.split(b'\x00', 1)[0].decode('utf-8')
        
     def getCodecInfo(self):
         return ({"codec": self.__class__.__name__, "len": self.string_len, "id": self.id, "args": {"desc":self.desc, "info":self.info, "acc":self.acc}})
@@ -245,7 +261,14 @@ class O3EUtf8(udsoncan.DidCodec):
         return (f'{self.__class__.__name__}({self.string_len}, "{self.id}", desc="{self.desc}", info="{self.info}", acc="{self.acc}")')
 
     def __len__(self) -> int:
+        if(self.string_len == 0):
+            # variable length: udsoncan takes all remaining bytes of the response
+            raise udsoncan.DidCodec.ReadAllRemainingData
         return self.string_len
+
+    def __bool__(self) -> bool:
+        # without this, truth tests (e.g. 'if codec:') would call __len__ and fail for variable length
+        return True
 
 
 class O3ESoftVers(udsoncan.DidCodec):  # also working with hardware version

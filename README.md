@@ -367,6 +367,14 @@ If you want to work on the codebase you can clone the repository and work in "ed
 
 # Changelog
 
+### 0.7.13 (2026-11-27)
+* **Data points with variable length**: a variant with length `0` marks a data point whose length changes at runtime. The length of the general data point is the upper limit. Reading takes all bytes of the response, writing sends the text plus one terminating NUL without padding. Writing with service 77 is rejected for such data points, refer to discussion #415
+* **DIDs 627-634 `CentralHeating<n>CircuitName`**: replaced the 12-byte variants by one variable length variant, as some devices (e.g. Vitodens) send the name plus a terminating NUL only. Changed length of DIDs 631-634 from 12 to 40 bytes like DIDs 627-630. Marked all eight DIDs as writable
+* `O3EUtf8` supports writing now: text is padded with NUL bytes to the fixed length, or sent with one terminating NUL for variable length
+* If a device sends a different length than defined (e.g. a heating circuit name renamed after running `open3e_depictSystem`), the value is decoded with the variable length variant anyway and a hint to run `open3e_depictSystem` again is shown
+* `open3e_depictSystem`: uses the variable length variant if no variant of the measured length exists and the length does not exceed the length of the general data point
+* **Note:** For devices sending names shorter than 40 bytes, please run `open3e_depictSystem` again before writing DIDs 627-634
+
 ### 0.7.12 (2026-11-24)
 * Fixed `O3EUtf8` decoding: strings now end at the first NUL byte. Leftover bytes behind it caused a `UnicodeDecodeError`, e.g. for **DID 628 `CentralHeatingTwoCircuitName`**, refer to issue #409
 * **DIDs 880-883 `Mixer<n>CircuitCentralHeatingCurve`**: marked as writable, confirmed by writing DID 880 on a Vitocal 250-A, refer to PR #410

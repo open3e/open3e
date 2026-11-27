@@ -21,7 +21,7 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "general", 
-    "Version": "20261124",
+    "Version": "20261127",
     "dids" : 
     {
         256 : O3EComplexType(36, "BusIdentification", [O3EByteVal(1, "BusAddress"), O3EEnum(1, "BusType", "BusTypes"), O3EEnum(1, "DeviceProperty", "Devices"), O3EEnum(1, "DeviceFunction", "Devices"), O3ESoftVers(8, "SW-Version", desc="??.???.YYcw.ver"), O3ESoftVers(8, "HW-Version"), O3EUtf8(16, "VIN")], desc="Device infos", acc="ro"),
@@ -202,14 +202,14 @@ dataIdentifiers = {
         623 : O3EComplexType(181, "ServiceEngineer", [O3EUtf8(20, "Name"), O3EUtf8(15, "PreName"), O3EUtf8(20, "Street"), O3EUtf8(10, "StreetExtension"), O3EUtf8(7, "ZipCode"), O3EUtf8(15, "Region"), O3EUtf8(15, "City"), O3EUtf8(16, "Phone"), O3EUtf8(16, "Mobile"), O3EUtf8(30, "Email"), O3EEnum(1, "Country", "Countries"), O3EUtf8(16, "Identification Number")], acc="ro"),    # vizard\app\src\main\assets\one_click_configuration8.json
         624 : O3EComplexType(181, "TechnicalSupport", [O3EUtf8(20, "Name"), O3EUtf8(15, "PreName"), O3EUtf8(20, "Street"), O3EUtf8(10, "StreetExtension"), O3EUtf8(7, "ZipCode"), O3EUtf8(15, "Region"), O3EUtf8(15, "City"), O3EUtf8(16, "Phone"), O3EUtf8(16, "Mobile"), O3EUtf8(30, "Email"), O3EEnum(1, "Country", "Countries"), O3EUtf8(16, "Identification Number")], acc="ro"),
         625 : O3EComplexType(26, "ObjectDetails", [O3EInt32(4, "Latitude", scale=10000, signed=True), O3EInt32(4, "Longitude", scale=10000, signed=True), O3EInt16(2, "Altitude", scale=1, signed=True), O3EInt16(2, "OrientationHorizontally", scale=1, signed=True), O3EInt16(2, "OrientationVertically", scale=1, signed=True), O3EInt16(2, "HeatingLoadPerSquareMeterPerYear", scale=1), O3EInt16(2, "CentralHeatingCylinderSize", scale=10), O3EInt16(2, "DomesticHotWaterCylinderSize", scale=10), O3EInt16(2, "BufferCylinderSize", scale=10), O3EInt16(2, "InstallationRoomSize", scale=10), O3EInt16(2, "NitrogenOxide", scale=1)], acc="ro"),    # vizard\app\src\main\assets\one_click_configuration5.json
-        627 : O3EUtf8(40, "CentralHeatingOneCircuitName", acc="ro"),    # vizard\app\src\main\assets\one_click_configuration5.json
-        628 : O3EUtf8(40, "CentralHeatingTwoCircuitName", acc="ro"),
-        629 : O3EUtf8(40, "CentralHeatingThreeCircuitName", acc="ro"),
-        630 : O3EUtf8(40, "CentralHeatingFourCircuitName", acc="ro"),
-        631 : O3EUtf8(12, "CentralHeatingFiveCircuitName", acc="ro"),
-        632 : O3EUtf8(12, "CentralHeatingSixCircuitName", acc="ro"),
-        633 : O3EUtf8(12, "CentralHeatingSevenCircuitName", acc="ro"),
-        634 : O3EUtf8(12, "CentralHeatingEightCircuitName", acc="ro"),
+        627 : O3EUtf8(40, "CentralHeatingOneCircuitName", acc="rw"),    # vizard\app\src\main\assets\one_click_configuration5.json
+        628 : O3EUtf8(40, "CentralHeatingTwoCircuitName", acc="rw"),
+        629 : O3EUtf8(40, "CentralHeatingThreeCircuitName", acc="rw"),
+        630 : O3EUtf8(40, "CentralHeatingFourCircuitName", acc="rw"),
+        631 : O3EUtf8(40, "CentralHeatingFiveCircuitName", acc="rw"),
+        632 : O3EUtf8(40, "CentralHeatingSixCircuitName", acc="rw"),
+        633 : O3EUtf8(40, "CentralHeatingSevenCircuitName", acc="rw"),
+        634 : O3EUtf8(40, "CentralHeatingEightCircuitName", acc="rw"),
         645 : O3EByteVal(1, "GenericAnalogDigitalAccessoryOneModulFunction", acc="ro"),
         646 : O3EByteVal(1, "GenericAnalogDigitalAccessoryTwoModulFunction", acc="ro"),
         647 : O3EByteVal(1, "GenericAnalogDigitalAccessoryThreeModulFunction", acc="ro"),
