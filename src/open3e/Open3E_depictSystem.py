@@ -272,6 +272,8 @@ def main():
                     sline += 'None,'
                 elif(varitem := dicvariants.get(did, {}).get(dlen)):
                     sline += varitem.getCodecString() + ','
+                elif(1 <= dlen <= genlen) and (varitem := dicvariants.get(did, {}).get(0)):  # variable length
+                    sline += varitem.getCodecString() + ','
                 else:
                     sline += 'RawCodec(' + str(dlen) + ', \"' + idstr + '\"),'                    
                 file.write(sline + '\n')

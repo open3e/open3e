@@ -84,50 +84,98 @@
     }
   },
   "627": {
-    "12": {
+    "0": {
       "codec": "O3EUtf8",
-      "len": 12,
+      "len": 0,
       "id": "CentralHeatingOneCircuitName",
       "args": {
         "desc": "",
         "info": "",
-        "acc": "ro"
+        "acc": "rw"
       }
     }
   },
   "628": {
-    "12": {
+    "0": {
       "codec": "O3EUtf8",
-      "len": 12,
+      "len": 0,
       "id": "CentralHeatingTwoCircuitName",
       "args": {
         "desc": "",
         "info": "",
-        "acc": "ro"
+        "acc": "rw"
       }
     }
   },
   "629": {
-    "12": {
+    "0": {
       "codec": "O3EUtf8",
-      "len": 12,
+      "len": 0,
       "id": "CentralHeatingThreeCircuitName",
       "args": {
         "desc": "",
         "info": "",
-        "acc": "ro"
+        "acc": "rw"
       }
     }
   },
   "630": {
-    "12": {
+    "0": {
       "codec": "O3EUtf8",
-      "len": 12,
+      "len": 0,
       "id": "CentralHeatingFourCircuitName",
       "args": {
         "desc": "",
         "info": "",
-        "acc": "ro"
+        "acc": "rw"
+      }
+    }
+  },
+  "631": {
+    "0": {
+      "codec": "O3EUtf8",
+      "len": 0,
+      "id": "CentralHeatingFiveCircuitName",
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "rw"
+      }
+    }
+  },
+  "632": {
+    "0": {
+      "codec": "O3EUtf8",
+      "len": 0,
+      "id": "CentralHeatingSixCircuitName",
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "rw"
+      }
+    }
+  },
+  "633": {
+    "0": {
+      "codec": "O3EUtf8",
+      "len": 0,
+      "id": "CentralHeatingSevenCircuitName",
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "rw"
+      }
+    }
+  },
+  "634": {
+    "0": {
+      "codec": "O3EUtf8",
+      "len": 0,
+      "id": "CentralHeatingEightCircuitName",
+      "args": {
+        "desc": "",
+        "info": "",
+        "acc": "rw"
       }
     }
   },
@@ -30283,5 +30331,5 @@
       }
     }
   },
-  "Version": "20261022"
+  "Version": "20261127"
 }

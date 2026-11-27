@@ -88,6 +88,34 @@ def test_datapoints_file_different_length_writes_rawcodec(tmp_path, monkeypatch)
     assert '256 : RawCodec(999, "BusIdentification"),' in text
 
 
+@pytest.mark.parametrize("dlen, expected", [
+    (40, '627 : None,'),                                                              # common length, e.g. heat pumps
+    (12, '627 : O3EUtf8(12, "CentralHeatingOneCircuitName", desc="", info="", acc="ro"),'),  # exact variant wins
+    (4, '627 : O3EUtf8(0, "CentralHeatingOneCircuitName", desc="", info="", acc="rw"),'),    # variable length
+    (1, '627 : O3EUtf8(0, "CentralHeatingOneCircuitName", desc="", info="", acc="rw"),'),
+    (41, '627 : RawCodec(41, "CentralHeatingOneCircuitName"),'),                     # longer than common length
+])
+def test_datapoints_file_variable_length_variant(tmp_path, monkeypatch, dlen, expected):
+    from open3e.Open3Ecodecs import O3EUtf8
+    monkeypatch.chdir(tmp_path)
+    data_identifiers = dict(open3e.Open3Edatapoints.dataIdentifiers["dids"])
+    variants = {627: {12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro"),
+                      0: O3EUtf8(0, "CentralHeatingOneCircuitName", acc="rw")}}
+    write_datapoints_file([(627, dlen, b"\x00" * dlen)], 0x681, "MCUMASTER", variants,
+                           data_identifiers, {})
+    text = (tmp_path / "Open3Edatapoints_681.py").read_text()
+    assert expected in text
+
+
+def test_datapoints_file_variable_length_ignored_for_unknown_did(tmp_path, monkeypatch):
+    from open3e.Open3Ecodecs import O3EUtf8
+    monkeypatch.chdir(tmp_path)
+    variants = {9999: {0: O3EUtf8(0, "Something", acc="rw")}}
+    write_datapoints_file([(9999, 4, b"\x00" * 4)], 0x681, "MCUMASTER", variants, {}, {})
+    text = (tmp_path / "Open3Edatapoints_681.py").read_text()
+    assert '9999 : RawCodec(4, "Unknown"),' in text
+
+
 def test_simul_datafile_format(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     write_simul_datafile([(256, 2, b"\x01\x02")], 0x681, "MCUMASTER")

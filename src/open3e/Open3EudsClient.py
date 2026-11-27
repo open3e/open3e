@@ -50,7 +50,11 @@ class Open3EudsClient(Client):
                 response = super().write_data_by_identifier(did, value)
                 return response
             except NegativeResponseException as e:
-                print('Device rejected this write access (negative response). You may try again using the experimental service 77 by adding command line option -f77 (see readme).\nErr: '+str(e))
+                if(getattr(self.config['data_identifiers'].get(did), 'string_len', None) == 0):
+                    # service 77 is not supported for data points with variable length
+                    print('Device rejected this write access (negative response). The device may expect a fixed length for this data point. Please run open3e_depictSystem again.\nErr: '+str(e))
+                else:
+                    print('Device rejected this write access (negative response). You may try again using the experimental service 77 by adding command line option -f77 (see readme).\nErr: '+str(e))
                 return Response(code=ResponseCode.ConditionsNotCorrect)
         else:
             print('Using writeDataByIdentifier service 77. Verify the result!')

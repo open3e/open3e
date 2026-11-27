@@ -36,6 +36,7 @@ import os
 import sys
 
 import open3e.Open3Edatapoints
+import open3e.Open3EdatapointsVariants
 import open3e.Open3Ecodecs
 from open3e.Open3Ecodecs import *
 
@@ -285,13 +286,56 @@ class O3Eclass():
     # not global anymore... ;-)
     def _readByDid(self, did:int, raw:bool):
         if(did in self.dataIdentifiers):
-            with open3e.Open3Ecodecs.codec_lock:
-                open3e.Open3Ecodecs.flag_rawmode = raw
-                response = self.uds_client.read_data_by_identifier([did])
+            try:
+                with open3e.Open3Ecodecs.codec_lock:
+                    open3e.Open3Ecodecs.flag_rawmode = raw
+                    response = self.uds_client.read_data_by_identifier([did])
+            except (InvalidResponseException, UnexpectedResponseException):
+                # length of response does not fit the codec. Data points with variable length
+                # (e.g. heating circuit names renamed after depictSystem) are decoded nevertheless.
+                varcodec = self._get_variable_length_codec(did)
+                if(varcodec is None):
+                    raise
+                string_bin,_ = self.readPure(did, binary=True)
+                if(not isinstance(string_bin, bytes)):
+                    raise
+                print(f"Note: Length of DID {did} at {hex(self.tx)} does not fit the codec, decoded with variable length. Running open3e_depictSystem again should fix this.")
+                with open3e.Open3Ecodecs.codec_lock:
+                    open3e.Open3Ecodecs.flag_rawmode = raw
+                    return varcodec.decode(string_bin), varcodec.id
             # return value and idstr
             return response.service_data.values[did], self.dataIdentifiers[did].id
         else:
             return self.readPure(did)
+
+    def _get_variable_length_codec(self, did:int):
+        # returns the variable length variant (length 0) of a data point, if the actual codec has a fixed length
+        if(getattr(self.dataIdentifiers.get(did), 'string_len', None) == 0):
+            return None
+        return open3e.Open3EdatapointsVariants.dataIdentifiers["dids"].get(did, {}).get(0)
+
+    @staticmethod
+    def _get_common_length(did:int):
+        # length of the data point in the general table, used as upper limit for data points with variable length
+        codec = open3e.Open3Edatapoints.dataIdentifiers["dids"].get(did)
+        return getattr(codec, 'string_len', None)
+
+    def _check_variable_length_write(self, did:int, val, raw:bool, useService77:bool, readecu=None):
+        # checks before writing a data point with variable length (codec length 0).
+        # For service 77 a separate instance without device specific codecs is used (refer to Open3Eclient),
+        # so the codec of the device is taken from readecu, if given.
+        codecs = readecu.dataIdentifiers if readecu is not None else self.dataIdentifiers
+        codec = codecs.get(did, self.dataIdentifiers[did])
+        if(getattr(codec, 'string_len', None) != 0):
+            return
+        if(useService77):
+            raise ValueError(f"DID {did} has variable length. Writing with service 77 is not supported for such data points.")
+        maxlen = self._get_common_length(did)
+        if(maxlen):
+            open3e.Open3Ecodecs.flag_rawmode = raw
+            enclen = len(codec.encode(val))
+            if(enclen > maxlen):
+                raise ValueError(f"Value for DID {did} is too long: {enclen} bytes, maximum is {maxlen}")
 
 
     def writeByDid(self, did, val, raw:bool, useService77=False, sub=None, readecu=None):
@@ -305,6 +349,7 @@ class O3Eclass():
             
             if(sub is None):
                 with open3e.Open3Ecodecs.codec_lock:
+                    self._check_variable_length_write(idid, val, raw, useService77, readecu)
                     return self._writeByDid(idid, val, raw, useService77)
 
             selectedDid = self.dataIdentifiers[idid]

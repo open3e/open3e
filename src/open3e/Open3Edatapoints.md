@@ -1,11 +1,12 @@
 # Open3E - List of data points
-- Version of general data points: 20261124
-- Version of variant data points: 20261022
+- Version of general data points: 20261127
+- Version of variant data points: 20261127
 
 ### Remarks
 * Information on write access to data points (column Access) is based on documents of Viessmann
   * ro => data point is read only
   * rw => data point is read and write. However, device my reject or ignore write access anyway
+* Length 0 (variable) => the device sends the data point with variable length, e.g. a text plus a terminating NUL. The length of the general data point is the upper limit
 
 ### Table of contents
 [Frequently used data points including subs](#frequently-used-data-points-including-subs)
@@ -1577,18 +1578,22 @@
 | |- BufferCylinderSize|O3EInt16|2||||
 | |- InstallationRoomSize|O3EInt16|2||||
 | |- NitrogenOxide|O3EInt16|2||||
-|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|40||ro||
-|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|12||ro||
-|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|40||ro||
-|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|12||ro||
-|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|40||ro||
-|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|12||ro||
-|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|40||ro||
-|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|12||ro||
-|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|12||ro||
-|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|12||ro||
-|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|12||ro||
-|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|12||ro||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|40||**rw**||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|40||**rw**||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|40||**rw**||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|40||**rw**||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|40||**rw**||
+|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|40||**rw**||
+|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|40||**rw**||
+|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|40||**rw**||
+|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|0 (variable)||**rw**||
 |**645**|**GenericAnalogDigitalAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**646**|**GenericAnalogDigitalAccessoryTwoModulFunction**|O3EByteVal|1||ro||
 |**647**|**GenericAnalogDigitalAccessoryThreeModulFunction**|O3EByteVal|1||ro||
@@ -13573,18 +13578,22 @@
 |**623**|**ServiceEngineer**|*O3EComplexType*|181||ro||
 |**624**|**TechnicalSupport**|*O3EComplexType*|181||ro||
 |**625**|**ObjectDetails**|*O3EComplexType*|26||ro||
-|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|40||ro||
-|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|12||ro||
-|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|40||ro||
-|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|12||ro||
-|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|40||ro||
-|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|12||ro||
-|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|40||ro||
-|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|12||ro||
-|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|12||ro||
-|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|12||ro||
-|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|12||ro||
-|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|12||ro||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|40||**rw**||
+|**627**|**CentralHeatingOneCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|40||**rw**||
+|**628**|**CentralHeatingTwoCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|40||**rw**||
+|**629**|**CentralHeatingThreeCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|40||**rw**||
+|**630**|**CentralHeatingFourCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|40||**rw**||
+|**631**|**CentralHeatingFiveCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|40||**rw**||
+|**632**|**CentralHeatingSixCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|40||**rw**||
+|**633**|**CentralHeatingSevenCircuitName**|O3EUtf8|0 (variable)||**rw**||
+|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|40||**rw**||
+|**634**|**CentralHeatingEightCircuitName**|O3EUtf8|0 (variable)||**rw**||
 |**645**|**GenericAnalogDigitalAccessoryOneModulFunction**|O3EByteVal|1||ro||
 |**646**|**GenericAnalogDigitalAccessoryTwoModulFunction**|O3EByteVal|1||ro||
 |**647**|**GenericAnalogDigitalAccessoryThreeModulFunction**|O3EByteVal|1||ro||

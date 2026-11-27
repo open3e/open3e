@@ -1,6 +1,11 @@
 """
     List of variants of data points having other lengths.
     Typically depends on device and/or Viessmann software version.
+
+    Length 0 marks a data point with variable length: the device sends e.g. a text plus a
+    terminating NUL, so the length changes at runtime. The length of the general data point
+    (Open3Edatapoints.py) is the upper limit. open3e_depictSystem selects this variant if no
+    variant with the measured length exists and the measured length does not exceed the upper limit.
 """
 
 from open3e.Open3Ecodecs import *
@@ -12,14 +17,18 @@ from open3e.Open3Ecodecs import *
 
 dataIdentifiers = {
     "name": "variants", 
-    "Version": "20261022",
+    "Version": "20261127",
     "dids" : 
     {
         504 : { 10: O3EComplexType(10, "DomesticHotWaterSetpointMetaData", [O3EInt16(2, "LowerBufferLimitTemperature", signed=True, unit="°C"), O3EInt16(2, "MinimumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "DefaultBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "MaximumBufferTemperature", signed=True, unit="°C"), O3EInt16(2, "UpperBufferLimitTemperature", signed=True, unit="°C")], acc="rw")},
-        627 : { 12: O3EUtf8(12, "CentralHeatingOneCircuitName", acc="ro")},
-        628 : { 12: O3EUtf8(12, "CentralHeatingTwoCircuitName", acc="ro")},
-        629 : { 12: O3EUtf8(12, "CentralHeatingThreeCircuitName", acc="ro")},
-        630 : { 12: O3EUtf8(12, "CentralHeatingFourCircuitName", acc="ro")},
+        627 : {  0: O3EUtf8(0, "CentralHeatingOneCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        628 : {  0: O3EUtf8(0, "CentralHeatingTwoCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        629 : {  0: O3EUtf8(0, "CentralHeatingThreeCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        630 : {  0: O3EUtf8(0, "CentralHeatingFourCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        631 : {  0: O3EUtf8(0, "CentralHeatingFiveCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        632 : {  0: O3EUtf8(0, "CentralHeatingSixCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        633 : {  0: O3EUtf8(0, "CentralHeatingSevenCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
+        634 : {  0: O3EUtf8(0, "CentralHeatingEightCircuitName", acc="rw")},    # variable length: text plus terminating NUL, refer to discussion #415
         874 : {  2: O3EComplexType(2, "LegionellaProtectionTargetTemperatureSetpoint", [O3EInt16(2, "Setpoint", unit="°C")], acc="rw")},
         1006 : { 3: O3EComplexType(3, "TargetQuickMode", [O3EByteVal(1, "SetModeOneTimesHotWater"), O3EByteVal(1, "State"), RawCodec(1, "Unknown")], desc="External request for one-time charging of domestic hot water (0: off, 2: one-time request)", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="rw"),
              6: O3EComplexType(6, "TargetQuickMode", [O3EByteVal(1, "OpMode"), O3EBool(1, "Required"), O3EInt16(2, "Runtime", scale=1.0, unit="min"), RawCodec(2, "Unknown")], desc="Quick mode request of Vitoair (OpMode 8: intensive, 9: noise reduced) with runtime in minutes", info="[Link](https://github.com/open3e/open3e/discussions/318)", acc="rw"),    # Vitoair FS 300, see https://github.com/MojoOli/open3e-ha/issues/63
