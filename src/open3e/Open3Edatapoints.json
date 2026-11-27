@@ -2381,7 +2381,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2395,7 +2395,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2409,7 +2409,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2423,7 +2423,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2618,7 +2618,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2632,7 +2632,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2646,7 +2646,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2660,7 +2660,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2775,7 +2775,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2789,7 +2789,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2803,7 +2803,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -2817,7 +2817,7 @@
             "scale": 100,
             "signed": false,
             "decimals": 0,
-            "unit": "hPa",
+            "unit": "bar",
             "desc": "",
             "info": "",
             "acc": ""
@@ -4122,7 +4122,7 @@
             "scale": 1.0,
             "signed": false,
             "decimals": 0,
-            "unit": "",
+            "unit": "%",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7471,10 +7471,11 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EByteVal",
           "len": 1,
-          "id": "Unknown2",
+          "id": "ExternalOperatingStatus",
           "args": {
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -7491,7 +7492,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "Smart Grid state. OperatingStatus: state from the SG-Ready inputs. ExternalOperatingStatus: external Smart Grid setting; writing it is refused (NRC 0x22). Both 1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation",
       "info": "",
       "acc": "ro"
     }
@@ -12703,7 +12704,7 @@
       ],
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "881": {
@@ -12757,7 +12758,7 @@
       ],
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "882": {
@@ -12811,7 +12812,7 @@
       ],
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "883": {
@@ -12865,7 +12866,7 @@
       ],
       "desc": "",
       "info": "",
-      "acc": "ro"
+      "acc": "rw"
     }
   },
   "884": {
@@ -13367,7 +13368,7 @@
           }
         }
       ],
-      "desc": "",
+      "desc": "External requesting system. Mode: selected system (0: none, 1: DIO module, 2: BACnet, 3: KNX, 4: Modbus, 5: EEBus, 6: plug). State: connection status, same values (0: no connection)",
       "info": "",
       "acc": "ro"
     }
@@ -14903,7 +14904,7 @@
           }
         }
       ],
-      "desc": "Flow rate and temperature in the primary circuit of the heat generator",
+      "desc": "Flow rate and temperature in the primary circuit of the heat generator. Returns 0 on some devices which provide the flow rate with DID 3737 on the outdoor unit instead",
       "info": "[Link](https://github.com/open3e/open3e/wiki/036-DoI-%E2%80%90-Data-points-of-Interest/#data-points-of-vitocal-250)",
       "acc": "ro"
     }
@@ -16656,11 +16657,47 @@
     }
   },
   "1238": {
-    "codec": "RawCodec",
+    "codec": "O3EList",
     "len": 31,
     "id": "AvailableActorSensorComponents",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EByteVal",
+          "len": 1,
+          "id": "Count",
+          "args": {
+            "unit": "",
+            "desc": "Number of entries listed",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EComplexType",
+          "len": 2,
+          "id": "Components",
+          "args": {
+            "subTypes": [
+              {
+                "codec": "O3EByteVal",
+                "len": 2,
+                "id": "Did",
+                "args": {
+                  "unit": "",
+                  "desc": "Data point number of the actuator or sensor",
+                  "info": "",
+                  "acc": ""
+                }
+              }
+            ],
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Actuators and sensors fitted to this device, listed by their data point numbers",
       "info": "",
       "acc": "ro"
     }
@@ -42011,10 +42048,62 @@
     }
   },
   "1696": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 20,
     "id": "GatewayEthernetIp",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "LAN_IP-Address",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "SubnetMask",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "Gateway_IP-Address",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "DNSServer1",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EIp4Addr",
+          "len": 4,
+          "id": "DNSServer2",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -42118,22 +42207,22 @@
     "args": {
       "subTypes": [
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Netzbetriebsart",
+          "id": "InverterType",
           "args": {
-            "unit": "",
+            "listStr": "ElectricalEnergySystemInverterTypes",
             "desc": "",
             "info": "",
             "acc": ""
           }
         },
         {
-          "codec": "O3EByteVal",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Elektrische Anlagenkomponenten",
+          "id": "SystemType",
           "args": {
-            "unit": "",
+            "listStr": "EnergyManagementControlUnitTypes",
             "desc": "",
             "info": "",
             "acc": ""
@@ -62625,9 +62714,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -62713,11 +62802,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -63448,9 +63538,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -63536,11 +63626,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -64271,9 +64362,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -64359,11 +64450,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -65094,9 +65186,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -65182,11 +65274,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -65917,9 +66010,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -66005,11 +66098,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -66740,9 +66834,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -66828,11 +66922,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -67563,9 +67658,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -67651,11 +67746,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -68386,9 +68482,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -68474,11 +68570,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -69209,9 +69306,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -69297,11 +69394,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -70032,9 +70130,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -70120,11 +70218,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -70855,9 +70954,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -70943,11 +71042,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -71678,9 +71778,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -71766,11 +71866,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -72501,9 +72602,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -72589,11 +72690,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -73324,9 +73426,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -73412,11 +73514,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -74147,9 +74250,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -74235,11 +74338,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -74970,9 +75074,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -75058,11 +75162,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -75793,9 +75898,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -75881,11 +75986,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -76616,9 +76722,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -76704,11 +76810,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -77439,9 +77546,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -77527,11 +77634,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -78262,9 +78370,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -78350,11 +78458,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -80035,9 +80144,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -80123,11 +80232,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -80858,9 +80968,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -80946,11 +81056,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -81681,9 +81792,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -81769,11 +81880,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -82504,9 +82616,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -82592,11 +82704,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -83327,9 +83440,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -83415,11 +83528,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -84150,9 +84264,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -84238,11 +84352,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -84973,9 +85088,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -85061,11 +85176,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -85796,9 +85912,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -85884,11 +86000,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -86619,9 +86736,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -86707,11 +86824,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -87442,9 +87560,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -87530,11 +87648,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -88265,9 +88384,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -88353,11 +88472,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -89088,9 +89208,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -89176,11 +89296,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -89911,9 +90032,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -89999,11 +90120,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -90734,9 +90856,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -90822,11 +90944,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -91557,9 +91680,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -91645,11 +91768,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -92380,9 +92504,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -92468,11 +92592,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -93203,9 +93328,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -93291,11 +93416,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -94026,9 +94152,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -94114,11 +94240,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -94849,9 +94976,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -94937,11 +95064,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -95672,9 +95800,9 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3ESoftVers",
           "len": 8,
-          "id": "Unknown2",
+          "id": "Hardware-Version",
           "args": {
             "desc": "",
             "info": "",
@@ -95760,11 +95888,12 @@
     "args": {
       "subTypes": [
         {
-          "codec": "RawCodec",
+          "codec": "O3EEnum",
           "len": 1,
-          "id": "Unknown_00",
+          "id": "ConnectionState",
           "args": {
-            "desc": "",
+            "listStr": "ZigBeeConnectionStates",
+            "desc": "3 connected, 5 not reachable, 0 empty slot. The gateway sets 5 only after about 16 min without a message from the device and keeps showing its last values",
             "info": "",
             "acc": ""
           }
@@ -96505,10 +96634,14 @@
           }
         },
         {
-          "codec": "RawCodec",
+          "codec": "O3EInt16",
           "len": 2,
-          "id": "Unknown",
+          "id": "ExhaustFlow",
           "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "",
             "desc": "",
             "info": "",
             "acc": ""
@@ -96923,7 +97056,7 @@
     "id": "EnergyManagmentSystemResultingControlState",
     "args": {
       "unit": "",
-      "desc": "",
+      "desc": "Resulting energy management (Smart Grid) state (1: off/utility lock, 2: normal, 3: preferred operation, 4: forced operation)",
       "info": "",
       "acc": "ro"
     }
@@ -98910,10 +99043,32 @@
     }
   },
   "2489": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 3,
     "id": "FrostProtectionStatus",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EBool",
+          "len": 1,
+          "id": "Status",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 2,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -98940,10 +99095,40 @@
     }
   },
   "2493": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 2,
     "id": "VentilationBypassPosition",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "BypassPosition",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "%",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt8",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "%",
+            "desc": "Follows BypassPosition with a delay while the flap moves, possibly the actual position",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -106164,10 +106349,46 @@
     }
   },
   "2608": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 28,
     "id": "FilterSettings",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "ChangeInterval",
+          "args": {
+            "scale": 1.0,
+            "signed": false,
+            "decimals": 0,
+            "unit": "d",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 13,
+          "id": "FilterOneEan",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EUtf8",
+          "len": 13,
+          "id": "FilterTwoEan",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -106575,7 +106796,7 @@
       "scale": 1,
       "signed": false,
       "decimals": 0,
-      "unit": "",
+      "unit": "W",
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -107000,11 +107221,97 @@
     }
   },
   "2759": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 24,
     "id": "EnergyRecoveredCrossHeatExchanger",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Today",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Past7Days",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Energy recovered by cross heat exchanger",
       "info": "",
       "acc": "ro"
     }
@@ -110211,10 +110518,79 @@
     }
   },
   "2808": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 9,
     "id": "InverterInternalPowerModuleTemperature",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Minimum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Maximum",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Average",
+          "args": {
+            "scale": 10.0,
+            "signed": true,
+            "decimals": 0,
+            "unit": "\u00b0C",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EEnum",
+          "len": 1,
+          "id": "SensorStatus",
+          "args": {
+            "listStr": "SensorStates",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -110467,6 +110843,20 @@
     "id": "SecondaryHeatExchangerMaximumOutletTemperature",
     "args": {
       "scale": 10.0,
+      "signed": false,
+      "decimals": 0,
+      "unit": "",
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "2846": {
+    "codec": "O3EInt8",
+    "len": 1,
+    "id": "VentilationBypassDynamicVentilationLevel",
+    "args": {
+      "scale": 1.0,
       "signed": false,
       "decimals": 0,
       "unit": "",
@@ -111482,11 +111872,97 @@
     }
   },
   "2946": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 24,
     "id": "EnergyConsumptionElectricalPreHeater",
     "args": {
-      "desc": "",
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Today",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Past7Days",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastMonth",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "CurrentYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "PastYear",
+          "args": {
+            "scale": 10,
+            "signed": false,
+            "decimals": 0,
+            "unit": "kWh",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Energy consumption of electrical pre-heater",
       "info": "",
       "acc": "ro"
     }
@@ -111872,7 +112348,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -111886,7 +112362,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -111900,7 +112376,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -111914,7 +112390,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112030,7 +112506,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112044,7 +112520,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112058,7 +112534,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112072,7 +112548,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112109,7 +112585,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112123,7 +112599,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112137,7 +112613,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112151,7 +112627,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112188,7 +112664,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112202,7 +112678,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112216,7 +112692,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112230,7 +112706,7 @@
             "scale": 10.0,
             "signed": true,
             "decimals": 0,
-            "unit": "",
+            "unit": "\u00b0C",
             "desc": "",
             "info": "",
             "acc": ""
@@ -112925,10 +113401,40 @@
     }
   },
   "3119": {
-    "codec": "RawCodec",
+    "codec": "O3EComplexType",
     "len": 8,
     "id": "RefrigerantCircuitFourWayValveStatistical",
     "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Count",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "O3EInt32",
+          "len": 4,
+          "id": "Duration",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "s",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -113110,6 +113616,20 @@
     "len": 199,
     "id": "ExtendedEventLoggingHistory",
     "args": {
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3206": {
+    "codec": "O3EInt16",
+    "len": 2,
+    "id": "FilterPercentageBlocked",
+    "args": {
+      "scale": 1.0,
+      "signed": false,
+      "decimals": 0,
+      "unit": "%",
       "desc": "",
       "info": "",
       "acc": "ro"
@@ -114938,6 +115458,27 @@
       "acc": "ro"
     }
   },
+  "3369": {
+    "codec": "O3EEnum",
+    "len": 1,
+    "id": "ElectricalActivePowerConsumptionLimitationSettings",
+    "args": {
+      "listStr": "FourteenAConfigurationModes",
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "3370": {
+    "codec": "RawCodec",
+    "len": 4,
+    "id": "ElectricalActivePowerConsumptionLimitationSettingsConfiguration",
+    "args": {
+      "desc": "",
+      "info": "",
+      "acc": "ro"
+    }
+  },
   "3384": {
     "codec": "O3EComplexType",
     "len": 4,
@@ -114952,7 +115493,7 @@
             "scale": 1,
             "signed": false,
             "decimals": 0,
-            "unit": "",
+            "unit": "W",
             "desc": "",
             "info": "",
             "acc": ""
@@ -114966,7 +115507,7 @@
             "scale": 1,
             "signed": false,
             "decimals": 0,
-            "unit": "",
+            "unit": "W",
             "desc": "",
             "info": "",
             "acc": ""
@@ -114978,5 +115519,41 @@
       "acc": "ro"
     }
   },
-  "Version": "20261014"
+  "3737": {
+    "codec": "O3EComplexType",
+    "len": 3,
+    "id": "AllengraSensorOutdoorUnit",
+    "args": {
+      "subTypes": [
+        {
+          "codec": "O3EInt16",
+          "len": 2,
+          "id": "Actual",
+          "args": {
+            "scale": 1,
+            "signed": false,
+            "decimals": 0,
+            "unit": "l/h",
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        },
+        {
+          "codec": "RawCodec",
+          "len": 1,
+          "id": "Unknown",
+          "args": {
+            "desc": "",
+            "info": "",
+            "acc": ""
+          }
+        }
+      ],
+      "desc": "Flow rate in the heating water circuit, measured at the outdoor unit",
+      "info": "",
+      "acc": "ro"
+    }
+  },
+  "Version": "20261124"
 }

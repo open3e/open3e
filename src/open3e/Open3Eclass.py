@@ -334,15 +334,20 @@ class O3Eclass():
             with open3e.Open3Ecodecs.codec_lock:
                 # encode value to bytes
                 open3e.Open3Ecodecs.flag_rawmode = raw
-                string_bin_sub = selectedSub.encode(val)
+                string_bin_sub = bytes(selectedSub.encode(val))
+                if(len(string_bin_sub) != selectedSub.string_len):
+                    raise ValueError(f"Encoded value for sub {selectedSub.id} of DID {idid} has {len(string_bin_sub)} bytes, expected {selectedSub.string_len}")
 
-                # replace bytes in did data bytes   #TODO ggf. noch Laenge pruefen!
-                string_bin = string_bin[:startIndexSub] + bytes(string_bin_sub) + string_bin[stopIndexSub:]
+                # replace bytes in did data bytes
+                string_bin = string_bin[:startIndexSub] + string_bin_sub + string_bin[stopIndexSub:]
 
                 # write back #TODO hier waere binaeres Schreiben wuenschenswert ohne Umweg ueber Codecs
                 open3e.Open3Ecodecs.flag_binary = True
-                ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)
-                open3e.Open3Ecodecs.flag_binary = False
+                try:
+                    ret1,ret2 = self._writeByDid(idid, string_bin, True, useService77)
+                finally:
+                    # reset also on errors, otherwise every RawCodec keeps returning bytes instead of hex
+                    open3e.Open3Ecodecs.flag_binary = False
             return ret1,ret2
         except NegativeResponseException as e:
             return f'Device rejected this write access. {e}', f'ERR/{hex(self.tx)}.{idid}'
