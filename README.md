@@ -376,6 +376,7 @@ If you want to work on the codebase you can clone the repository and work in "ed
 * Added unit `°C` to **DIDs 3015 `HeatSinkTemperatureSensor`, 3017 `CoolingBufferTemperatureSensor`, 3018 `HeatingCoolingBufferTemperatureSensor` and 3019 `CompressorOutletTargetTemperature`**, refer to issue #412
 * Added definition for **DID 1238 `AvailableActorSensorComponents`**
 * **`Devices`** enum: added device types 66 `DCIOU`, 67 `HIOU`, 68 `SCUMASTER`, 71 `OCU`, 72 `OPCU`, 73 `DCIOU` and 74 `HIOU`
+* **DIDs 873 `LegionellaProtectionActivation`, 875 `LegionellaProtectionStartTime` and 876 `LegionellaProtectionWeekday`**: marked as writable (the hygiene program of the ViCare app), confirmed by switching it off and on and changing its start time and weekday on a Vitodens 222-W
 
 ### 0.7.11 (2026-10-29)
 * **ZigBee devices**: decoded `Hardware-Version` (previously raw, in **40 `ZigBee*DeviceProperty` DIDs**) and device `ConnectionState` (previously raw, in **80 `ZigBee*DeviceCurrentValues` definitions**, both 57- and 68-byte variants) with new enum `ZigBeeConnectionStates`, refer to PR #402
