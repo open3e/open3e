@@ -1894,7 +1894,7 @@
 | |- - Stop|O3EStime|2||||
 | |- - Unknown|RawCodec|2||||
 | |- - Mode|O3EByteVal|1||||
-|**873**|**LegionellaProtectionActivation**|*O3EComplexType*|2||ro||
+|**873**|**LegionellaProtectionActivation**|*O3EComplexType*|2||**rw**||
 | |- Mode|O3EByteVal|1||||
 | |- State|O3EByteVal|1||||
 |**874**|**LegionellaProtectionTargetTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
@@ -1902,8 +1902,8 @@
 | |- Unknown|RawCodec|1||||
 |**874**|**LegionellaProtectionTargetTemperatureSetpoint**|*O3EComplexType*|2||**rw**||
 | |- Setpoint|O3EInt16|2|[°C](## "°C or °F (system configuration)")|||
-|**875**|**LegionellaProtectionStartTime**|O3EStime|2||ro||
-|**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
+|**875**|**LegionellaProtectionStartTime**|O3EStime|2||**rw**||
+|**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||**rw**||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
 |**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
@@ -13638,11 +13638,11 @@
 |**786**|**MixerFourCircuitTimeScheduleFriday**|*O3EList*|57||**rw**||
 |**787**|**MixerFourCircuitTimeScheduleSaturday**|*O3EList*|57||**rw**||
 |**788**|**MixerFourCircuitTimeScheduleSunday**|*O3EList*|57||**rw**||
-|**873**|**LegionellaProtectionActivation**|*O3EComplexType*|2||ro||
+|**873**|**LegionellaProtectionActivation**|*O3EComplexType*|2||**rw**||
 |**874**|**LegionellaProtectionTargetTemperatureSetpoint**|*O3EComplexType*|3||**rw**||
 |**874**|**LegionellaProtectionTargetTemperatureSetpoint**|*O3EComplexType*|2||**rw**||
-|**875**|**LegionellaProtectionStartTime**|O3EStime|2||ro||
-|**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||ro||
+|**875**|**LegionellaProtectionStartTime**|O3EStime|2||**rw**||
+|**876**|**LegionellaProtectionWeekday**|O3EByteVal|1||**rw**||
 |**877**|**LegionellaProtectionLastSuccessfulStartTime**|O3EStime|3||ro||
 |**878**|**LegionellaProtectionLastSuccessfulWeekday**|O3EByteVal|1||ro||
 |**880**|**MixerOneCircuitCentralHeatingCurve**|*O3EComplexType*|4||**rw**||
